@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -27,17 +28,19 @@ class CustomTextFormField extends StatelessWidget {
     this.focusNode,
     this.onEditingComplete,
     this.validating,
+    this.textCapitalization = TextCapitalization.none,
   });
 
   final TextEditingController? controller;
   final TextInputType? keyboardType;
-  final IconData? prefixIcon;
+  final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool? obscureText;
   final bool isEmail;
   final bool? enabled;
   final String? label;
   final List<String>? autofillHints;
+  final TextCapitalization textCapitalization;
   final Function(String submittedText)? onSubmit;
   final Function(String? value)? onSaved;
   final void Function()? onTap;
@@ -66,9 +69,10 @@ class CustomTextFormField extends StatelessWidget {
         ],
       ),
       child: TextFormField(
-        enabled: enabled ?? true,
-        focusNode: focusNode,
         controller: controller,
+        focusNode: focusNode,
+        enabled: enabled ?? true,
+        textCapitalization: textCapitalization,
         textAlign: textAlign ?? TextAlign.start,
         keyboardType: keyboardType ?? TextInputType.text,
         obscureText: obscureText ?? false,
@@ -78,19 +82,17 @@ class CustomTextFormField extends StatelessWidget {
         autofillHints: autofillHints,
         onFieldSubmitted: onSubmit,
         onChanged: onChanged,
-        onTapOutside: (event) => FocusScope.of(context).unfocus(),
         style: AppTextStyles.textStyle13Light,
+        cursorColor: Colors.black,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: AppColors.secondaryColor,
           errorStyle: AppTextStyles.textStyle13Light.copyWith(
             color: Colors.red,
           ),
           hintText: hintText,
           errorMaxLines: 1,
-          prefixIcon: prefixIcon == null
-              ? null
-              : Icon(
-                  prefixIcon,
-                ),
+          prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           labelText: label,
           labelStyle: Theme.of(context).textTheme.titleSmall,
