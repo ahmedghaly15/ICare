@@ -45,6 +45,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  assets:
+    - assets/
+    - assets/images/
+
   fonts:
     - family: inter
       fonts:
@@ -58,3 +62,14 @@ flutter:
           weight: 600
         - asset: assets/fonts/inter/inter-Bold.ttf
           weight: 700
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/appIcon.png"
+
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/src/core/utils/
+  filename: app_assets.dart
+  field_prefix: null
