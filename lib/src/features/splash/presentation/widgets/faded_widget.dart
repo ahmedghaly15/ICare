@@ -16,10 +16,10 @@ class FadedWidget extends StatefulWidget {
 
 class _FadedWidgetState extends State<FadedWidget>
     with SingleTickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation<double> _fadeAnimation;
+  late final AnimationController _animationController;
+  late final Animation<double> _fadeAnimation;
 
-  void _initAnimation() {
+  void _initFadeAnimation() {
     _animationController = AnimationController(
       vsync: this,
       duration: widget.duration,
@@ -40,7 +40,7 @@ class _FadedWidgetState extends State<FadedWidget>
 
   @override
   void initState() {
-    _initAnimation();
+    _initFadeAnimation();
     super.initState();
   }
 
