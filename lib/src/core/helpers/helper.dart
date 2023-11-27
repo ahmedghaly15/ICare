@@ -92,4 +92,7 @@ class Helper {
   static void keyboardUnfocus(BuildContext context) {
     FocusScope.of(context).unfocus();
   }
+
+  static void requestFocus(BuildContext context, FocusNode focusNode) =>
+      FocusScope.of(context).requestFocus(focusNode);
 }

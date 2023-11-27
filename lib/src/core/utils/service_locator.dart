@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:icare/src/config/routes/app_router.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
+import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
 
 final GetIt serviceLocator = GetIt.instance;
 
@@ -25,6 +26,8 @@ class ServiceLocator {
 
   void _setupForCubits() {
     serviceLocator.registerFactory<LoginCubit>(() => LoginCubit());
+
+    serviceLocator.registerFactory<RegisterCubit>(() => RegisterCubit());
   }
 
   void _setupForConfig() {

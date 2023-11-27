@@ -1,9 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/routes/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/core/widgets/bottom_spacer.dart';
+import 'package:icare/src/features/auth/presentation/widgets/auth_description.dart';
+import 'package:icare/src/features/auth/presentation/widgets/auth_title.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_auth_app_bar.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/custom_social_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/login_form.dart';
@@ -24,16 +29,10 @@ class LoginViewBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const CustomAuthAppBar(),
-                  Text(
-                    'Login',
-                    style: AppTextStyles.textStyle20Bold.copyWith(
-                      color: AppColors.fontPrimaryColor,
-                    ),
-                  ),
+                  const AuthTitle(title: 'Login'),
                   SizedBox(height: 7.h),
-                  Text(
-                    'Login and continue using the app',
-                    style: AppTextStyles.textStyle13Light,
+                  const AuthDescription(
+                    description: 'Login and continue using the app',
                   ),
                   SizedBox(height: 25.h),
                   const LoginForm(),
@@ -77,7 +76,8 @@ class LoginViewBody extends StatelessWidget {
                         style: AppTextStyles.textStyle16Light,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            context.pushRoute(const RegisterRoute()),
                         child: Text(
                           'Register here',
                           style: AppTextStyles.textStyle16Light.copyWith(
@@ -85,6 +85,7 @@ class LoginViewBody extends StatelessWidget {
                           ),
                         ),
                       ),
+                      const BottomSpacer(),
                     ],
                   ),
                 ],

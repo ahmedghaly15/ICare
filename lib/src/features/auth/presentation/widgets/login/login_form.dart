@@ -60,7 +60,8 @@ class _LoginFormState extends State<LoginForm> {
             validating: (String? value) =>
                 Helper.validateEmailField(context, value: value),
             onEditingComplete: () =>
-                FocusScope.of(context).requestFocus(_passwordFocusNode),
+                Helper.requestFocus(context, _passwordFocusNode),
+            keyboardType: TextInputType.emailAddress,
           ),
           const BottomTextFieldSpacer(),
           const CustomTextFieldLabel(label: 'Password'),
@@ -68,6 +69,7 @@ class _LoginFormState extends State<LoginForm> {
             builder: (context, state) => CustomTextFormField(
               controller: _passwordController,
               focusNode: _passwordFocusNode,
+              keyboardType: TextInputType.visiblePassword,
               autofillHints: const <String>[AutofillHints.password],
               obscureText:
                   BlocProvider.of<LoginCubit>(context).isLoginPassVisible,
@@ -84,7 +86,10 @@ class _LoginFormState extends State<LoginForm> {
               onSubmit: (String? val) => _login(context),
             ),
           ),
-          const ForgotPasswordTextButton(),
+          Container(
+            margin: EdgeInsets.only(top: 19.h),
+            child: const ForgotPasswordTextButton(),
+          ),
           SizedBox(height: 10.h),
           PrimaryButton(
             text: 'Login',

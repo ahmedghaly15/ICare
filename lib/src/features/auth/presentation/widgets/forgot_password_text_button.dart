@@ -9,8 +9,8 @@ class ForgotPasswordTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: AlignmentDirectional.centerEnd,
-      child: TextButton(
-        onPressed: () {},
+      child: InkWell(
+        onTap: () {},
         child: Text(
           'Forgot Password?',
           style: AppTextStyles.textStyle13Light.copyWith(

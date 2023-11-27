@@ -42,7 +42,7 @@ class SplashViewBody extends StatelessWidget {
                 PrimaryButton(
                   text: 'Register',
                   textColor: AppColors.primaryColor,
-                  onPressed: () {},
+                  onPressed: () => context.pushRoute(const RegisterRoute()),
                   backgroundColor: AppColors.secondaryColor,
                   hasShadow: false,
                 ),

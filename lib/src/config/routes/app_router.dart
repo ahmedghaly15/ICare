@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
+import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/splash/presentation/views/splash_view.dart';
 
 part 'app_router.gr.dart';
@@ -23,6 +24,7 @@ class AppRouter extends _$AppRouter {
               page: LoginRoute.page,
               initial: true,
             ),
+            _buildCustomRoute(page: RegisterRoute.page),
           ],
         ),
       ];
