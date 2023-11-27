@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/routes/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
@@ -33,7 +35,8 @@ class SplashViewBody extends StatelessWidget {
               children: <Widget>[
                 PrimaryButton(
                   text: 'Login',
-                  onPressed: () {},
+                  onPressed: () => context.pushRoute(const LoginRoute()),
+                  hasShadow: false,
                 ),
                 SizedBox(height: 8.h),
                 PrimaryButton(
@@ -41,6 +44,7 @@ class SplashViewBody extends StatelessWidget {
                   textColor: AppColors.primaryColor,
                   onPressed: () {},
                   backgroundColor: AppColors.secondaryColor,
+                  hasShadow: false,
                 ),
               ],
             ),

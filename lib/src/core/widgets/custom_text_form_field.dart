@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 
@@ -59,13 +60,9 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(borderRadius ?? 50.0.r),
         boxShadow: <BoxShadow>[
-          BoxShadow(
-            offset: Offset(0.w, 4.h),
-            blurRadius: 4.w,
-            spreadRadius: 0,
-            color: Colors.black.withOpacity(0.25),
-          ),
+          Helper.buildBoxShadow(),
         ],
       ),
       child: TextFormField(
@@ -82,7 +79,7 @@ class CustomTextFormField extends StatelessWidget {
         autofillHints: autofillHints,
         onFieldSubmitted: onSubmit,
         onChanged: onChanged,
-        style: AppTextStyles.textStyle13Light,
+        style: _customTextFieldTextStyle(),
         cursorColor: Colors.black,
         decoration: InputDecoration(
           filled: true,
@@ -91,6 +88,7 @@ class CustomTextFormField extends StatelessWidget {
             color: Colors.red,
           ),
           hintText: hintText,
+          hintStyle: _customTextFieldTextStyle(),
           errorMaxLines: 1,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
@@ -101,7 +99,6 @@ class CustomTextFormField extends StatelessWidget {
                 top: 15.h,
                 bottom: 15.h,
                 left: 35.w,
-                right: 15.w,
               ),
           enabledBorder:
               _buildOutlinedInputBorder(context, borderRadius: borderRadius),
@@ -117,6 +114,12 @@ class CustomTextFormField extends StatelessWidget {
         validator: validating,
         onEditingComplete: onEditingComplete,
       ),
+    );
+  }
+
+  TextStyle _customTextFieldTextStyle() {
+    return AppTextStyles.textStyle13Light.copyWith(
+      color: AppColors.fontPrimaryColor,
     );
   }
 
