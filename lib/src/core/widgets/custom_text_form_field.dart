@@ -123,8 +123,10 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  OutlineInputBorder _buildOutlinedInputBorder(BuildContext context,
-      {double? borderRadius}) {
+  OutlineInputBorder _buildOutlinedInputBorder(
+    BuildContext context, {
+    double? borderRadius,
+  }) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(borderRadius ?? 50.0.r),
       borderSide: BorderSide(

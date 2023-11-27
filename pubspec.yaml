@@ -12,6 +12,8 @@ dependencies:
 
   # A declarative routing solution for navigation
   auto_route: ^7.8.4
+  # Implement value based equality
+  equatable: ^2.0.5
   # Simple direct Service Locator that allows to access the concrete implementation from everywhere
   get_it: ^7.6.4
   # State management

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
+import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
@@ -22,19 +24,7 @@ class _LoginFormState extends State<LoginForm> {
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
-  late final GlobalKey<FormState> _formKey;
-  late AutovalidateMode autovalidateMode;
-
-  void _initFormAttributes() {
-    _formKey = GlobalKey<FormState>();
-    autovalidateMode = AutovalidateMode.disabled;
-  }
-
-  @override
-  void initState() {
-    _initFormAttributes();
-    super.initState();
-  }
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -57,7 +47,6 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      autovalidateMode: autovalidateMode,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -68,31 +57,49 @@ class _LoginFormState extends State<LoginForm> {
             autofillHints: const <String>[AutofillHints.email],
             hintText: 'Enter your email',
             suffixIcon: const CustomSuffixIcon(icon: Icons.email_outlined),
-            validating: (String? value) => Helper.validateEmailField(value),
+            validating: (String? value) =>
+                Helper.validateEmailField(context, value: value),
             onEditingComplete: () =>
                 FocusScope.of(context).requestFocus(_passwordFocusNode),
           ),
           const BottomTextFieldSpacer(),
           const CustomTextFieldLabel(label: 'Password'),
-          CustomTextFormField(
-            controller: _passwordController,
-            focusNode: _passwordFocusNode,
-            autofillHints: const <String>[AutofillHints.password],
-            suffixIcon: CustomSuffixIcon(
-              icon: Icons.visibility,
-              onTap: () {},
+          BlocBuilder<LoginCubit, LoginState>(
+            builder: (context, state) => CustomTextFormField(
+              controller: _passwordController,
+              focusNode: _passwordFocusNode,
+              autofillHints: const <String>[AutofillHints.password],
+              obscureText:
+                  BlocProvider.of<LoginCubit>(context).isLoginPassVisible,
+              suffixIcon: CustomSuffixIcon(
+                icon: BlocProvider.of<LoginCubit>(context).isLoginPassVisible
+                    ? Icons.visibility
+                    : Icons.visibility_off,
+                onTap: () =>
+                    BlocProvider.of<LoginCubit>(context).changePassVisibility(),
+              ),
+              hintText: 'Enter your password',
+              validating: (String? value) =>
+                  Helper.validatePasswordField(context, value: value),
+              onSubmit: (String? val) => _login(context),
             ),
-            hintText: 'Enter your password',
-            validating: (String? value) => Helper.validatePasswordField(value),
           ),
           const ForgotPasswordTextButton(),
           SizedBox(height: 10.h),
           PrimaryButton(
             text: 'Login',
-            onPressed: () {},
+            onPressed: () => _login(context),
           ),
         ],
       ),
     );
+  }
+
+  void _login(BuildContext context) {
+    if (_formKey.currentState!.validate()) {
+      Helper.keyboardUnfocus(context);
+      debugPrint('EMAIL: ${_emailController.text}');
+      debugPrint('PASSWORD: ${_passwordController.text}');
+    }
   }
 }
