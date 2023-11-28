@@ -36,7 +36,6 @@ class SplashViewBody extends StatelessWidget {
                 PrimaryButton(
                   text: 'Login',
                   onPressed: () => context.pushRoute(const LoginRoute()),
-                  hasShadow: false,
                 ),
                 SizedBox(height: 8.h),
                 PrimaryButton(
@@ -44,7 +43,6 @@ class SplashViewBody extends StatelessWidget {
                   textColor: AppColors.primaryColor,
                   onPressed: () => context.pushRoute(const RegisterRoute()),
                   backgroundColor: AppColors.secondaryColor,
-                  hasShadow: false,
                 ),
               ],
             ),

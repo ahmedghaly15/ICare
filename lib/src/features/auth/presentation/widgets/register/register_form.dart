@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/helpers/helper.dart';
-import 'package:icare/src/core/widgets/custom_text_form_field.dart';
-import 'package:icare/src/core/widgets/primary_button.dart';
-import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
-import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
-import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
-import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
-import 'package:icare/src/features/auth/presentation/widgets/forgot_password_text_button.dart';
+import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/rive_utils.dart';
+import 'package:icare/src/features/auth/presentation/widgets/custom_positioned.dart';
+import 'package:icare/src/features/auth/presentation/widgets/register/register_form_content.dart';
+import 'package:rive/rive.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -29,7 +25,28 @@ class _RegisterFormState extends State<RegisterForm> {
   final FocusNode _passwordFocusNode = FocusNode();
   final FocusNode _confirmPasswordFocusNode = FocusNode();
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late final GlobalKey<FormState> _formKey;
+  late AutovalidateMode autovalidateMode;
+
+  void _initFormAttributes() {
+    _formKey = GlobalKey<FormState>();
+    autovalidateMode = AutovalidateMode.disabled;
+  }
+
+  bool isShowLoading = false;
+  bool isShowConfetti = false;
+
+  late SMITrigger check;
+  late SMITrigger error;
+  late SMITrigger reset;
+
+  late SMITrigger confetti;
+
+  @override
+  void initState() {
+    _initFormAttributes();
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -54,120 +71,99 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          const CustomTextFieldLabel(label: 'Name'),
-          CustomTextFormField(
-            controller: _nameController,
-            focusNode: _nameFocusNode,
-            hintText: 'Enter your name',
-            validating: (String? value) =>
-                Helper.validateNameField(context, value: value),
-            onEditingComplete: () =>
-                Helper.requestFocus(context, _emailFocusNode),
-            autofillHints: const <String>[AutofillHints.name],
-            keyboardType: TextInputType.name,
-            textCapitalization: TextCapitalization.words,
-          ),
-          const BottomTextFieldSpacer(),
-          const CustomTextFieldLabel(label: 'Email'),
-          CustomTextFormField(
-            controller: _emailController,
-            focusNode: _emailFocusNode,
-            autofillHints: const <String>[AutofillHints.email],
-            hintText: 'Enter your email',
-            suffixIcon: const CustomSuffixIcon(icon: Icons.email_outlined),
-            validating: (String? value) =>
-                Helper.validateEmailField(context, value: value),
-            onEditingComplete: () =>
-                Helper.requestFocus(context, _passwordFocusNode),
-            keyboardType: TextInputType.emailAddress,
-          ),
-          const BottomTextFieldSpacer(),
-          Container(
-            margin: EdgeInsets.only(bottom: 7.w),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                const CustomTextFieldLabel(
-                  label: 'Password',
-                  hasBottomMargin: false,
+    return Stack(
+      children: <Widget>[
+        RegisterFormContent(
+          formKey: _formKey,
+          autovalidateMode: autovalidateMode,
+          nameController: _nameController,
+          emailController: _emailController,
+          passwordController: _passwordController,
+          confirmPasswordController: _confirmPasswordController,
+          nameFocusNode: _nameFocusNode,
+          emailFocusNode: _emailFocusNode,
+          passwordFocusNode: _passwordFocusNode,
+          confirmPasswordFocusNode: _confirmPasswordFocusNode,
+          register: () => _register(context),
+        ),
+        isShowLoading
+            ? CustomPositioned(
+                child: RiveAnimation.asset(
+                  AppAssets.riveCheck,
+                  onInit: (Artboard artboard) {
+                    StateMachineController controller =
+                        RiveUtils.getRiveController(artboard);
+                    check = controller.findSMI("Check") as SMITrigger;
+                    error = controller.findSMI("Error") as SMITrigger;
+                    reset = controller.findSMI("Reset") as SMITrigger;
+                  },
                 ),
-                Container(
-                  margin: EdgeInsets.only(right: 6.w),
-                  child: const ForgotPasswordTextButton(),
+              )
+            : const SizedBox(),
+        isShowConfetti
+            ? CustomPositioned(
+                child: Transform.scale(
+                  scale: 7,
+                  child: RiveAnimation.asset(
+                    AppAssets.riveConfetti,
+                    onInit: (artboard) {
+                      StateMachineController controller =
+                          RiveUtils.getRiveController(artboard);
+
+                      confetti =
+                          controller.findSMI("Trigger explosion") as SMITrigger;
+                    },
+                  ),
                 ),
-              ],
-            ),
-          ),
-          BlocBuilder<RegisterCubit, RegisterState>(
-            builder: (context, state) => CustomTextFormField(
-              controller: _passwordController,
-              focusNode: _passwordFocusNode,
-              keyboardType: TextInputType.visiblePassword,
-              autofillHints: const <String>[AutofillHints.password],
-              obscureText:
-                  BlocProvider.of<RegisterCubit>(context).isRegisterPassVisible,
-              suffixIcon: CustomSuffixIcon(
-                icon: BlocProvider.of<RegisterCubit>(context)
-                        .isRegisterPassVisible
-                    ? Icons.visibility
-                    : Icons.visibility_off,
-                onTap: () => BlocProvider.of<RegisterCubit>(context)
-                    .changePassVisibility(),
-              ),
-              hintText: 'Enter your password',
-              validating: (String? value) =>
-                  Helper.validatePasswordField(context, value: value),
-              onEditingComplete: () =>
-                  Helper.requestFocus(context, _confirmPasswordFocusNode),
-            ),
-          ),
-          const BottomTextFieldSpacer(),
-          const CustomTextFieldLabel(label: 'Confirm Password'),
-          BlocBuilder<RegisterCubit, RegisterState>(
-            builder: (context, state) => CustomTextFormField(
-              controller: _confirmPasswordController,
-              focusNode: _confirmPasswordFocusNode,
-              keyboardType: TextInputType.visiblePassword,
-              autofillHints: const <String>[AutofillHints.password],
-              obscureText:
-                  BlocProvider.of<RegisterCubit>(context).isConfirmPassVisible,
-              suffixIcon: CustomSuffixIcon(
-                icon:
-                    BlocProvider.of<RegisterCubit>(context).isConfirmPassVisible
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                onTap: () => BlocProvider.of<RegisterCubit>(context)
-                    .changeConfirmPassVisibility(),
-              ),
-              hintText: 'Confirm your password',
-              validating: (String? value) =>
-                  Helper.validateConfirmPasswordField(
-                context,
-                value: value,
-                password: _passwordController.text.trim(),
-                confirmPassword: _confirmPasswordController.text.trim(),
-              ),
-              onSubmit: (String? val) => _register(context),
-            ),
-          ),
-          SizedBox(height: 46.h),
-          PrimaryButton(
-            text: 'Register',
-            onPressed: () => _register(context),
-          ),
-        ],
-      ),
+              )
+            : const SizedBox(),
+      ],
     );
   }
 
   void _register(BuildContext context) {
-    if (_formKey.currentState!.validate()) {
-      Helper.keyboardUnfocus(context);
-    }
+    Helper.keyboardUnfocus(context);
+
+    setState(() {
+      isShowLoading = true;
+      isShowConfetti = true;
+    });
+
+    Future.delayed(
+      const Duration(seconds: 1),
+      () {
+        if (_formKey.currentState!.validate()) {
+          // If everything looks good, it shows success animation
+          check.fire();
+          Future.delayed(
+            const Duration(seconds: 2),
+            () {
+              setState(() {
+                isShowLoading = false;
+              });
+
+              confetti.fire();
+
+              Future.delayed(
+                const Duration(seconds: 1),
+                () {},
+              );
+            },
+          );
+        } else {
+          // Or error animation
+          error.fire();
+          Future.delayed(
+            const Duration(seconds: 2),
+            () {
+              setState(() {
+                isShowLoading = false;
+                autovalidateMode = AutovalidateMode.always;
+              });
+            },
+          );
+        }
+      },
+    );
   }
 }

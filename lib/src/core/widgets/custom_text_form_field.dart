@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 
@@ -28,8 +27,8 @@ class CustomTextFormField extends StatelessWidget {
     this.onTap,
     this.focusNode,
     this.onEditingComplete,
-    this.validating,
     this.textCapitalization = TextCapitalization.none,
+    this.validating,
   });
 
   final TextEditingController? controller;
@@ -58,62 +57,53 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius ?? 50.0.r),
-        boxShadow: <BoxShadow>[
-          Helper.buildBoxShadow(),
-        ],
-      ),
-      child: TextFormField(
-        controller: controller,
-        focusNode: focusNode,
-        enabled: enabled ?? true,
-        textCapitalization: textCapitalization,
-        textAlign: textAlign ?? TextAlign.start,
-        keyboardType: keyboardType ?? TextInputType.text,
-        obscureText: obscureText ?? false,
-        maxLength: maxLength,
-        onSaved: onSaved,
-        onTap: onTap,
-        autofillHints: autofillHints,
-        onFieldSubmitted: onSubmit,
-        onChanged: onChanged,
-        style: _customTextFieldTextStyle(),
-        cursorColor: Colors.black,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: AppColors.secondaryColor,
-          errorStyle: AppTextStyles.textStyle13Light.copyWith(
-            color: Colors.red,
-          ),
-          hintText: hintText,
-          hintStyle: _customTextFieldTextStyle(),
-          errorMaxLines: 1,
-          prefixIcon: prefixIcon,
-          suffixIcon: suffixIcon,
-          labelText: label,
-          labelStyle: Theme.of(context).textTheme.titleSmall,
-          contentPadding: contentPadding ??
-              EdgeInsets.only(
-                top: 15.h,
-                bottom: 15.h,
-                left: 35.w,
-              ),
-          enabledBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          focusedBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          errorBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          focusedErrorBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          border:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+    return TextFormField(
+      controller: controller,
+      focusNode: focusNode,
+      enabled: enabled ?? true,
+      textCapitalization: textCapitalization,
+      textAlign: textAlign ?? TextAlign.start,
+      keyboardType: keyboardType ?? TextInputType.text,
+      obscureText: obscureText ?? false,
+      maxLength: maxLength,
+      onSaved: onSaved,
+      onTap: onTap,
+      autofillHints: autofillHints,
+      onFieldSubmitted: onSubmit,
+      onChanged: onChanged,
+      style: _customTextFieldTextStyle(),
+      cursorColor: Colors.black,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: AppColors.secondaryColor,
+        errorStyle: AppTextStyles.textStyle13Light.copyWith(
+          color: Colors.red,
         ),
-        validator: validating,
-        onEditingComplete: onEditingComplete,
+        hintText: hintText,
+        hintStyle: _customTextFieldTextStyle(),
+        errorMaxLines: null,
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
+        labelText: label,
+        labelStyle: Theme.of(context).textTheme.titleSmall,
+        contentPadding: contentPadding ??
+            EdgeInsets.only(
+              top: 15.h,
+              bottom: 15.h,
+              left: 35.w,
+            ),
+        enabledBorder:
+            _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+        focusedBorder:
+            _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+        errorBorder:
+            _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+        focusedErrorBorder:
+            _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+        border: _buildOutlinedInputBorder(context, borderRadius: borderRadius),
       ),
+      validator: validating,
+      onEditingComplete: onEditingComplete,
     );
   }
 

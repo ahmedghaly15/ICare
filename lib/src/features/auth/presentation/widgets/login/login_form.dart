@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/helpers/helper.dart';
-import 'package:icare/src/core/widgets/custom_text_form_field.dart';
-import 'package:icare/src/core/widgets/primary_button.dart';
-import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
-import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
-import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
-import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
-import 'package:icare/src/features/auth/presentation/widgets/forgot_password_text_button.dart';
+import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/rive_utils.dart';
+import 'package:icare/src/features/auth/presentation/widgets/custom_positioned.dart';
+import 'package:icare/src/features/auth/presentation/widgets/login/login_form_content.dart';
+import 'package:rive/rive.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -24,7 +20,28 @@ class _LoginFormState extends State<LoginForm> {
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  late final GlobalKey<FormState> _formKey;
+  late AutovalidateMode autovalidateMode;
+
+  void _initFormAttributes() {
+    _formKey = GlobalKey<FormState>();
+    autovalidateMode = AutovalidateMode.disabled;
+  }
+
+  bool isShowLoading = false;
+  bool isShowConfetti = false;
+
+  late SMITrigger check;
+  late SMITrigger error;
+  late SMITrigger reset;
+
+  late SMITrigger confetti;
+
+  @override
+  void initState() {
+    _initFormAttributes();
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -45,66 +62,95 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          const CustomTextFieldLabel(label: 'Email'),
-          CustomTextFormField(
-            controller: _emailController,
-            focusNode: _emailFocusNode,
-            autofillHints: const <String>[AutofillHints.email],
-            hintText: 'Enter your email',
-            suffixIcon: const CustomSuffixIcon(icon: Icons.email_outlined),
-            validating: (String? value) =>
-                Helper.validateEmailField(context, value: value),
-            onEditingComplete: () =>
-                Helper.requestFocus(context, _passwordFocusNode),
-            keyboardType: TextInputType.emailAddress,
-          ),
-          const BottomTextFieldSpacer(),
-          const CustomTextFieldLabel(label: 'Password'),
-          BlocBuilder<LoginCubit, LoginState>(
-            builder: (context, state) => CustomTextFormField(
-              controller: _passwordController,
-              focusNode: _passwordFocusNode,
-              keyboardType: TextInputType.visiblePassword,
-              autofillHints: const <String>[AutofillHints.password],
-              obscureText:
-                  BlocProvider.of<LoginCubit>(context).isLoginPassVisible,
-              suffixIcon: CustomSuffixIcon(
-                icon: BlocProvider.of<LoginCubit>(context).isLoginPassVisible
-                    ? Icons.visibility
-                    : Icons.visibility_off,
-                onTap: () =>
-                    BlocProvider.of<LoginCubit>(context).changePassVisibility(),
-              ),
-              hintText: 'Enter your password',
-              validating: (String? value) =>
-                  Helper.validatePasswordField(context, value: value),
-              onSubmit: (String? val) => _login(context),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 19.h),
-            child: const ForgotPasswordTextButton(),
-          ),
-          SizedBox(height: 10.h),
-          PrimaryButton(
-            text: 'Login',
-            onPressed: () => _login(context),
-          ),
-        ],
-      ),
+    return Stack(
+      children: <Widget>[
+        LoginFormContent(
+          formKey: _formKey,
+          autovalidateMode: autovalidateMode,
+          emailController: _emailController,
+          passwordController: _passwordController,
+          emailFocusNode: _emailFocusNode,
+          passwordFocusNode: _passwordFocusNode,
+          login: () => _login(context),
+        ),
+        isShowLoading
+            ? CustomPositioned(
+                child: RiveAnimation.asset(
+                  AppAssets.riveCheck,
+                  onInit: (Artboard artboard) {
+                    StateMachineController controller =
+                        RiveUtils.getRiveController(artboard);
+                    check = controller.findSMI("Check") as SMITrigger;
+                    error = controller.findSMI("Error") as SMITrigger;
+                    reset = controller.findSMI("Reset") as SMITrigger;
+                  },
+                ),
+              )
+            : const SizedBox(),
+        isShowConfetti
+            ? CustomPositioned(
+                child: Transform.scale(
+                  scale: 7,
+                  child: RiveAnimation.asset(
+                    AppAssets.riveConfetti,
+                    onInit: (artboard) {
+                      StateMachineController controller =
+                          RiveUtils.getRiveController(artboard);
+
+                      confetti =
+                          controller.findSMI("Trigger explosion") as SMITrigger;
+                    },
+                  ),
+                ),
+              )
+            : const SizedBox(),
+      ],
     );
   }
 
   void _login(BuildContext context) {
-    if (_formKey.currentState!.validate()) {
-      Helper.keyboardUnfocus(context);
-      debugPrint('EMAIL: ${_emailController.text}');
-      debugPrint('PASSWORD: ${_passwordController.text}');
-    }
+    Helper.keyboardUnfocus(context);
+
+    setState(() {
+      isShowLoading = true;
+      isShowConfetti = true;
+    });
+
+    Future.delayed(
+      const Duration(seconds: 1),
+      () {
+        if (_formKey.currentState!.validate()) {
+          // If everything looks good, it shows success animation
+          check.fire();
+          Future.delayed(
+            const Duration(seconds: 2),
+            () {
+              setState(() {
+                isShowLoading = false;
+              });
+
+              confetti.fire();
+
+              Future.delayed(
+                const Duration(seconds: 1),
+                () {},
+              );
+            },
+          );
+        } else {
+          // Or error animation
+          error.fire();
+          Future.delayed(
+            const Duration(seconds: 2),
+            () {
+              setState(() {
+                isShowLoading = false;
+                autovalidateMode = AutovalidateMode.always;
+              });
+            },
+          );
+        }
+      },
+    );
   }
 }

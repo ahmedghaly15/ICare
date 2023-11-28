@@ -32,6 +32,8 @@ dependencies:
   flutter_screenutil: ^5.9.0
   # Updating app's launcher icon.
   flutter_launcher_icons: ^0.13.1
+  # Animations built with the Rive editor
+  rive: ^0.12.3
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +52,7 @@ flutter:
   assets:
     - assets/
     - assets/images/
+    - assets/rive/
 
   fonts:
     - family: inter

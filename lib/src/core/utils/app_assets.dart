@@ -5,10 +5,6 @@ class AppAssets {
   /// assets/app_icon.png
   static const String appIcon = "assets/app_icon.png";
 
-  /// Assets for imagesAuthLogo
-  /// assets/images/auth_logo.png
-  static const String imagesAuthLogo = "assets/images/auth_logo.png";
-
   /// Assets for imagesFacebook Logo
   /// assets/images/facebook _logo.png
   static const String imagesFacebookLogo = "assets/images/facebook _logo.png";
@@ -24,4 +20,12 @@ class AppAssets {
   /// Assets for imagesXLogo
   /// assets/images/x_logo.png
   static const String imagesXLogo = "assets/images/x_logo.png";
+
+  /// Assets for riveCheck
+  /// assets/rive/check.riv
+  static const String riveCheck = "assets/rive/check.riv";
+
+  /// Assets for riveConfetti
+  /// assets/rive/confetti.riv
+  static const String riveConfetti = "assets/rive/confetti.riv";
 }
