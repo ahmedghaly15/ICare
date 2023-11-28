@@ -9,7 +9,6 @@ import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_s
 import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
-import 'package:icare/src/features/auth/presentation/widgets/forgot_password_text_button.dart';
 
 class RegisterFormContent extends StatelessWidget {
   const RegisterFormContent({
@@ -68,22 +67,7 @@ class RegisterFormContent extends StatelessWidget {
             passwordFocusNode: passwordFocusNode,
           ),
           const BottomTextFieldSpacer(),
-          Container(
-            margin: EdgeInsets.only(bottom: 7.w),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                const CustomTextFieldLabel(
-                  label: 'Password',
-                  hasBottomMargin: false,
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 6.w),
-                  child: const ForgotPasswordTextButton(),
-                ),
-              ],
-            ),
-          ),
+          const CustomTextFieldLabel(label: 'Password'),
           BlocBuilder<RegisterCubit, RegisterState>(
             builder: (context, state) => CustomTextFormField(
               controller: passwordController,
@@ -126,7 +110,7 @@ class RegisterFormContent extends StatelessWidget {
                     .changeConfirmPassVisibility(),
               ),
               hintText: 'Confirm your password',
-              onSubmit: (String? val) => register,
+              onSubmit: (String val) => register,
               validating: (String? value) =>
                   Helper.validateConfirmPasswordField(
                 context,

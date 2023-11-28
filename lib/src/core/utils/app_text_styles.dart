@@ -9,6 +9,11 @@ class AppTextStyles {
     color: AppColors.fontPrimaryColor,
   );
 
+  static TextStyle textStyle25Bold = TextStyle(
+    fontSize: 25.0.sp,
+    fontWeight: FontWeight.bold,
+  );
+
   static TextStyle primaryButtonTextStyle = TextStyle(
     fontSize: 24.0.sp,
     fontWeight: FontWeight.w500,
@@ -31,6 +36,11 @@ class AppTextStyles {
 
   static TextStyle textStyle16Bold = TextStyle(
     fontSize: 16.0.sp,
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle textStyle15Bold = TextStyle(
+    fontSize: 15.0.sp,
     fontWeight: FontWeight.bold,
   );
 

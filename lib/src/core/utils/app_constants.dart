@@ -15,4 +15,6 @@ class AppConstants {
 
   static EdgeInsetsGeometry get authHorizontalPadding =>
       EdgeInsets.symmetric(horizontal: 25.w);
+
+  static const double authTopMargin = 27.0;
 }

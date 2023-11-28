@@ -3,21 +3,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 
-class CustomTextFieldLabel extends StatelessWidget {
-  const CustomTextFieldLabel({
+class AuthBigSizTitle extends StatelessWidget {
+  const AuthBigSizTitle({
     super.key,
-    required this.label,
+    required this.title,
   });
 
-  final String label;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 35.w, bottom: 7.h),
+      margin: EdgeInsets.only(bottom: 13.h),
+      alignment: AlignmentDirectional.center,
       child: Text(
-        label,
-        style: AppTextStyles.textStyle16Bold.copyWith(
+        'Forgot Password',
+        style: AppTextStyles.textStyle25Bold.copyWith(
           color: AppColors.fontPrimaryColor,
         ),
       ),

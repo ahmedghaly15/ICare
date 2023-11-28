@@ -10,12 +10,14 @@ class EmailTextFormField extends StatelessWidget {
     this.emailFocusNode,
     this.passwordFocusNode,
     this.hasEditingComplete = true,
+    this.onSubmit,
   });
 
   final TextEditingController emailController;
   final FocusNode? emailFocusNode;
   final FocusNode? passwordFocusNode;
   final bool hasEditingComplete;
+  final Function(String submittedText)? onSubmit;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class EmailTextFormField extends StatelessWidget {
       keyboardType: TextInputType.emailAddress,
       validating: (String? value) =>
           Helper.validateEmailField(context, value: value),
+      onSubmit: onSubmit,
     );
   }
 }

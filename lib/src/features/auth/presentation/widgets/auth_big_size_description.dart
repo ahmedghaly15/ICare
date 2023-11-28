@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 
-class AuthDescription extends StatelessWidget {
-  const AuthDescription({
+class AuthBigSizeDescription extends StatelessWidget {
+  const AuthBigSizeDescription({
     super.key,
     required this.description,
   });
@@ -13,7 +13,10 @@ class AuthDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       description,
-      style: AppTextStyles.textStyle13Light,
+      style: AppTextStyles.textStyle15Bold.copyWith(
+        color: Colors.black.withOpacity(0.58),
+      ),
+      textAlign: TextAlign.center,
     );
   }
 }

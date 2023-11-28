@@ -34,6 +34,8 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   # Animations built with the Rive editor
   rive: ^0.12.3
+  # Animated loading indicators
+  flutter_spinkit: ^5.2.0
 
 dev_dependencies:
   flutter_test:

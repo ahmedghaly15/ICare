@@ -63,7 +63,7 @@ class LoginFormContent extends StatelessWidget {
                     BlocProvider.of<LoginCubit>(context).changePassVisibility(),
               ),
               hintText: 'Enter your password',
-              onSubmit: (String? val) => login,
+              onSubmit: (String val) => login,
               validating: (String? value) =>
                   Helper.validatePasswordField(context, value: value),
             ),

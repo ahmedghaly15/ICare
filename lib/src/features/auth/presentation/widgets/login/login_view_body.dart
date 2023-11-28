@@ -7,8 +7,8 @@ import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 import 'package:icare/src/core/widgets/bottom_spacer.dart';
-import 'package:icare/src/features/auth/presentation/widgets/auth_description.dart';
-import 'package:icare/src/features/auth/presentation/widgets/auth_title.dart';
+import 'package:icare/src/features/auth/presentation/widgets/auth_small_size_description.dart';
+import 'package:icare/src/features/auth/presentation/widgets/auth_medium_size_title.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_auth_app_bar.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/custom_social_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/login_form.dart';
@@ -29,9 +29,9 @@ class LoginViewBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const CustomAuthAppBar(),
-                  const AuthTitle(title: 'Login'),
+                  const AuthMediumSizeTitle(title: 'Login'),
                   SizedBox(height: 7.h),
-                  const AuthDescription(
+                  const AuthSmallSizeDescription(
                     description: 'Login and continue using the app',
                   ),
                   SizedBox(height: 25.h),
