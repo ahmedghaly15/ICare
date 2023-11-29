@@ -81,7 +81,7 @@ class LoginViewBody extends StatelessWidget {
                             context.pushRoute(const RegisterRoute()),
                         child: Text(
                           'Register here',
-                          style: AppTextStyles.textStyle16Light.copyWith(
+                          style: AppTextStyles.textStyle16Bold.copyWith(
                             color: AppColors.fontPrimaryColor,
                           ),
                         ),

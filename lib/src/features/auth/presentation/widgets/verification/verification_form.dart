@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/routes/app_router.dart';
+import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 import 'package:pinput/pinput.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,7 +47,7 @@ class _VerificationFormState extends State<VerificationForm> {
                   height: 15.w,
                   width: 15.w,
                   decoration: const BoxDecoration(
-                    color: Colors.black,
+                    color: AppColors.fontPrimaryColor,
                     shape: BoxShape.circle,
                   ),
                 ),
@@ -58,7 +59,7 @@ class _VerificationFormState extends State<VerificationForm> {
                     color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(205.r)),
                     border: Border.all(
-                      color: Colors.black,
+                      color: AppColors.fontPrimaryColor,
                       width: 1.w,
                     ),
                   ),

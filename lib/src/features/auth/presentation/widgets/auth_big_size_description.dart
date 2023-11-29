@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 
 class AuthBigSizeDescription extends StatelessWidget {
@@ -14,7 +15,7 @@ class AuthBigSizeDescription extends StatelessWidget {
     return Text(
       description,
       style: AppTextStyles.textStyle15Bold.copyWith(
-        color: Colors.black.withOpacity(0.58),
+        color: AppColors.fontPrimaryColor.withOpacity(0.6),
       ),
       textAlign: TextAlign.center,
     );

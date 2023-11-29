@@ -14,13 +14,16 @@ class CustomSuffixIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      padding: EdgeInsets.only(right: 23.w),
-      onPressed: onTap,
-      icon: Icon(
-        icon,
-        color: AppColors.fontPrimaryColor,
-        size: 20.w,
+    return Container(
+      margin: EdgeInsets.only(right: 13.w),
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        onPressed: onTap,
+        icon: Icon(
+          icon,
+          color: AppColors.fontPrimaryColor,
+          size: 20.w,
+        ),
       ),
     );
   }

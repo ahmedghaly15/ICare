@@ -78,7 +78,7 @@ class LoginFormContent extends StatelessWidget {
               onTap: () => context.pushRoute(const ForgotPasswordRoute()),
               child: Text(
                 'Forgot Password?',
-                style: AppTextStyles.textStyle13Light.copyWith(
+                style: AppTextStyles.textStyle13Bold.copyWith(
                   color: AppColors.fontPrimaryColor,
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 import 'package:icare/src/core/widgets/custom_arrow_back_button.dart';
@@ -43,7 +44,9 @@ class VerificationView extends StatelessWidget {
                   Flexible(
                     child: Text(
                       email,
-                      style: AppTextStyles.textStyle15Bold,
+                      style: AppTextStyles.textStyle15Bold.copyWith(
+                        color: AppColors.fontPrimaryColor,
+                      ),
                       textAlign: TextAlign.center,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
@@ -52,7 +55,7 @@ class VerificationView extends StatelessWidget {
                   Text(
                     ' for verification',
                     style: AppTextStyles.textStyle15Bold.copyWith(
-                      color: Colors.black.withOpacity(0.58),
+                      color: AppColors.fontPrimaryColor.withOpacity(0.6),
                     ),
                     textAlign: TextAlign.center,
                   ),
