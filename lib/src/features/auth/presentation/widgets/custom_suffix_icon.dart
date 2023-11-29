@@ -14,9 +14,10 @@ class CustomSuffixIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
+    return IconButton(
+      padding: EdgeInsets.only(right: 23.w),
       onPressed: onTap,
-      child: Icon(
+      icon: Icon(
         icon,
         color: AppColors.fontPrimaryColor,
         size: 20.w,

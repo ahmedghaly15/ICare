@@ -7,7 +7,9 @@ abstract class RegisterState extends Equatable {
   List<Object> get props => [];
 }
 
-class RegisterInitial extends RegisterState {}
+class RegisterInitial extends RegisterState {
+  const RegisterInitial();
+}
 
 class ChangePassVisibilityState extends RegisterState {
   final bool isRegisterPassVisible;

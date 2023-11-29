@@ -4,6 +4,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';
+import 'package:icare/src/features/auth/presentation/views/reset_password_view.dart';
 import 'package:icare/src/features/auth/presentation/views/verification_view.dart';
 import 'package:icare/src/features/splash/presentation/views/splash_view.dart';
 
@@ -30,6 +31,7 @@ class AppRouter extends _$AppRouter {
             _buildCustomRoute(page: RegisterRoute.page),
             _buildCustomRoute(page: ForgotPasswordRoute.page),
             _buildCustomRoute(page: VerificationRoute.page),
+            _buildCustomRoute(page: ResetPasswordRoute.page),
           ],
         ),
       ];

@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:icare/src/config/routes/app_router.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 import 'package:pinput/pinput.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -63,18 +65,17 @@ class _VerificationFormState extends State<VerificationForm> {
                 ),
                 separatorBuilder: (index) => SizedBox(width: 15.w),
                 validator: (value) {
-                  if (value!.isEmpty) {
-                    return "Pin is Empty";
+                  if (value!.isEmpty || value.length < 4) {
+                    return 'Wrong OTP';
                   }
                   return null;
                 },
-                onSubmitted: (String val) => _verifyCode(),
               ),
             ),
             const Spacer(),
             PrimaryButton(
               text: 'Continue',
-              onPressed: () => _verifyCode(),
+              onPressed: () => _verifyCode(context),
             ),
             const BottomSpacer(),
           ],
@@ -83,8 +84,9 @@ class _VerificationFormState extends State<VerificationForm> {
     );
   }
 
-  void _verifyCode() {
+  void _verifyCode(BuildContext context) {
     if (_formKey.currentState!.validate()) {
+      context.pushRoute(const ResetPasswordRoute());
       debugPrint('CODE: ${_otpController.text}');
     }
   }
