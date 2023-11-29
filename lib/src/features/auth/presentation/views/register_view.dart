@@ -12,32 +12,37 @@ import 'package:icare/src/features/auth/presentation/widgets/custom_auth_app_bar
 import 'package:icare/src/features/auth/presentation/widgets/register/register_form.dart';
 
 @RoutePage()
-class RegisterView extends StatelessWidget {
+class RegisterView extends StatelessWidget implements AutoRouteWrapper {
   const RegisterView({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (context) => serviceLocator.get<RegisterCubit>(),
+      child: this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider(
-        create: (context) => serviceLocator.get<RegisterCubit>(),
-        child: SafeArea(
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: AppConstants.authHorizontalPadding,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  const CustomAuthAppBar(),
-                  const AuthMediumSizeTitle(title: 'Register'),
-                  SizedBox(height: 7.h),
-                  const AuthSmallSizeDescription(
-                    description: 'Enter your personal information ',
-                  ),
-                  SizedBox(height: 25.h),
-                  const RegisterForm(),
-                  const BottomSpacer(),
-                ],
-              ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: AppConstants.authHorizontalPadding,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const CustomAuthAppBar(),
+                const AuthMediumSizeTitle(title: 'Register'),
+                SizedBox(height: 7.h),
+                const AuthSmallSizeDescription(
+                  description: 'Enter your personal information ',
+                ),
+                SizedBox(height: 25.h),
+                const RegisterForm(),
+                const BottomSpacer(),
+              ],
             ),
           ),
         ),

@@ -6,7 +6,7 @@ import 'package:icare/src/config/routes/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
-import 'package:icare/src/features/splash/presentation/widgets/faded_widget.dart';
+import 'package:icare/src/features/start/presentation/widgets/faded_widget.dart';
 
 @RoutePage()
 class StartView extends StatefulWidget {

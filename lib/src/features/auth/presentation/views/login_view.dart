@@ -6,16 +6,21 @@ import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.da
 import 'package:icare/src/features/auth/presentation/widgets/login/login_view_body.dart';
 
 @RoutePage()
-class LoginView extends StatelessWidget {
+class LoginView extends StatelessWidget implements AutoRouteWrapper {
   const LoginView({super.key});
 
   @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider(
+      create: (context) => serviceLocator.get<LoginCubit>(),
+      child: this,
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (context) => serviceLocator.get<LoginCubit>(),
-        child: const LoginViewBody(),
-      ),
+    return const Scaffold(
+      body: LoginViewBody(),
     );
   }
 }

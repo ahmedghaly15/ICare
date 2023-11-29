@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/bloc_observer.dart';
 import 'package:icare/icare_app.dart';
 import 'package:icare/src/core/utils/service_locator.dart';
 
@@ -6,6 +8,8 @@ import 'package:icare/src/core/utils/service_locator.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  Bloc.observer = MyBlocObserver();
 
   ServiceLocator().serviceLocatorSetup();
 

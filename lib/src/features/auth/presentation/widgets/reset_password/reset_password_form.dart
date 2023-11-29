@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/bottom_spacer.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
@@ -59,68 +60,70 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
   Widget build(BuildContext context) {
     return BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
       builder: (context, state) {
-        return Form(
-          key: _formKey,
-          autovalidateMode: autovalidateMode,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              const CustomTextFieldLabel(label: 'Password'),
-              CustomTextFormField(
-                controller: _passwordController,
-                focusNode: _passwordFocusNode,
-                keyboardType: TextInputType.visiblePassword,
-                autofillHints: const <String>[AutofillHints.password],
-                obscureText: BlocProvider.of<ResetPasswordCubit>(context)
-                    .isResetPassVisible,
-                suffixIcon: CustomSuffixIcon(
-                  icon: BlocProvider.of<ResetPasswordCubit>(context)
-                          .isResetPassVisible
-                      ? Icons.visibility
-                      : Icons.visibility_off,
-                  onTap: () => BlocProvider.of<ResetPasswordCubit>(context)
-                      .changePassVisibility(),
+        return Expanded(
+          child: Form(
+            key: _formKey,
+            autovalidateMode: autovalidateMode,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const CustomTextFieldLabel(label: 'Password'),
+                CustomTextFormField(
+                  controller: _passwordController,
+                  focusNode: _passwordFocusNode,
+                  keyboardType: TextInputType.visiblePassword,
+                  autofillHints: const <String>[AutofillHints.password],
+                  obscureText: BlocProvider.of<ResetPasswordCubit>(context)
+                      .isResetPassVisible,
+                  suffixIcon: CustomSuffixIcon(
+                    icon: BlocProvider.of<ResetPasswordCubit>(context)
+                            .isResetPassVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                    onTap: () => BlocProvider.of<ResetPasswordCubit>(context)
+                        .changePassVisibility(),
+                  ),
+                  hintText: 'Enter your password',
+                  onEditingComplete: () =>
+                      Helper.requestFocus(context, _confirmPasswordFocusNode),
+                  validating: (String? value) =>
+                      Helper.validatePasswordField(context, value: value),
                 ),
-                hintText: 'Enter your password',
-                onEditingComplete: () =>
-                    Helper.requestFocus(context, _confirmPasswordFocusNode),
-                validating: (String? value) =>
-                    Helper.validatePasswordField(context, value: value),
-              ),
-              const BottomTextFieldSpacer(),
-              const CustomTextFieldLabel(label: 'Confirm Password'),
-              CustomTextFormField(
-                controller: _confirmPasswordController,
-                focusNode: _confirmPasswordFocusNode,
-                keyboardType: TextInputType.visiblePassword,
-                autofillHints: const <String>[AutofillHints.password],
-                obscureText: BlocProvider.of<ResetPasswordCubit>(context)
-                    .isConfirmPassVisible,
-                suffixIcon: CustomSuffixIcon(
-                  icon: BlocProvider.of<ResetPasswordCubit>(context)
-                          .isConfirmPassVisible
-                      ? Icons.visibility
-                      : Icons.visibility_off,
-                  onTap: () => BlocProvider.of<ResetPasswordCubit>(context)
-                      .changeConfirmPassVisibility(),
+                const BottomTextFieldSpacer(),
+                const CustomTextFieldLabel(label: 'Confirm Password'),
+                CustomTextFormField(
+                  controller: _confirmPasswordController,
+                  focusNode: _confirmPasswordFocusNode,
+                  keyboardType: TextInputType.visiblePassword,
+                  autofillHints: const <String>[AutofillHints.password],
+                  obscureText: BlocProvider.of<ResetPasswordCubit>(context)
+                      .isConfirmPassVisible,
+                  suffixIcon: CustomSuffixIcon(
+                    icon: BlocProvider.of<ResetPasswordCubit>(context)
+                            .isConfirmPassVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                    onTap: () => BlocProvider.of<ResetPasswordCubit>(context)
+                        .changeConfirmPassVisibility(),
+                  ),
+                  hintText: 'Confirm your password',
+                  validating: (String? value) =>
+                      Helper.validateConfirmPasswordField(
+                    context,
+                    password: _passwordController.text,
+                    confirmPassword: _confirmPasswordController.text,
+                    value: value,
+                  ),
                 ),
-                hintText: 'Confirm your password',
-                onSubmit: (String val) => _confirmResetPassword(context),
-                validating: (String? value) =>
-                    Helper.validateConfirmPasswordField(
-                  context,
-                  password: _passwordController.text,
-                  confirmPassword: _confirmPasswordController.text,
-                  value: value,
+                SizedBox(height: 24.h),
+                const Spacer(),
+                PrimaryButton(
+                  text: 'Confirm',
+                  onPressed: () => _confirmResetPassword(context),
                 ),
-              ),
-              const Spacer(),
-              PrimaryButton(
-                text: 'Confirm',
-                onPressed: () => _confirmResetPassword(context),
-              ),
-              const BottomSpacer(heightSpace: 16.0),
-            ],
+                const BottomSpacer(heightSpace: 16.0),
+              ],
+            ),
           ),
         );
       },
