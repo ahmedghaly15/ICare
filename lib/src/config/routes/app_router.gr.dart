@@ -45,10 +45,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ResetPasswordView(),
       );
     },
-    SplashRoute.name: (routeData) {
+    StartRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SplashView(),
+        child: const StartView(),
       );
     },
     VerificationRoute.name: (routeData) {
@@ -135,15 +135,15 @@ class ResetPasswordRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SplashView]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute({List<PageRouteInfo>? children})
+/// [StartView]
+class StartRoute extends PageRouteInfo<void> {
+  const StartRoute({List<PageRouteInfo>? children})
       : super(
-          SplashRoute.name,
+          StartRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'SplashRoute';
+  static const String name = 'StartRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

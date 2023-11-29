@@ -6,7 +6,7 @@ import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/auth/presentation/views/reset_password_view.dart';
 import 'package:icare/src/features/auth/presentation/views/verification_view.dart';
-import 'package:icare/src/features/splash/presentation/views/splash_view.dart';
+import 'package:icare/src/features/start/presentation/views/start_view.dart';
 
 part 'app_router.gr.dart';
 
@@ -19,7 +19,7 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           initial: true,
-          page: SplashRoute.page,
+          page: StartRoute.page,
         ),
         AutoRoute(
           page: AuthRoute.page,
