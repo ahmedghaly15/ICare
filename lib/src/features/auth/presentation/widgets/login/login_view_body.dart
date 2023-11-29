@@ -1,14 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:icare/src/config/routes/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 import 'package:icare/src/core/widgets/bottom_spacer.dart';
-import 'package:icare/src/features/auth/presentation/widgets/auth_small_size_description.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_medium_size_title.dart';
+import 'package:icare/src/features/auth/presentation/widgets/auth_small_size_description.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_auth_app_bar.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/custom_social_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/login_form.dart';

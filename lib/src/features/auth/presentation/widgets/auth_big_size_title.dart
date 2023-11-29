@@ -17,7 +17,7 @@ class AuthBigSizTitle extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 13.h),
       alignment: AlignmentDirectional.center,
       child: Text(
-        'Forgot Password',
+        title,
         style: AppTextStyles.textStyle25Bold.copyWith(
           color: AppColors.fontPrimaryColor,
         ),
