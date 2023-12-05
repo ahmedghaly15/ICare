@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/widgets/bottom_spacer.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
@@ -84,10 +84,10 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                         .changePassVisibility(),
                   ),
                   hintText: 'Enter your password',
-                  onEditingComplete: () =>
-                      Helper.requestFocus(context, _confirmPasswordFocusNode),
+                  onEditingComplete: () => AuthHelper.requestFocus(
+                      context, _confirmPasswordFocusNode),
                   validating: (String? value) =>
-                      Helper.validatePasswordField(context, value: value),
+                      AuthHelper.validatePasswordField(context, value: value),
                 ),
                 const BottomTextFieldSpacer(),
                 const CustomTextFieldLabel(label: 'Confirm Password'),
@@ -108,7 +108,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                   ),
                   hintText: 'Confirm your password',
                   validating: (String? value) =>
-                      Helper.validateConfirmPasswordField(
+                      AuthHelper.validateConfirmPasswordField(
                     context,
                     password: _passwordController.text,
                     confirmPassword: _confirmPasswordController.text,
@@ -132,7 +132,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
 
   void _confirmResetPassword(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-      Helper.keyboardUnfocus(context);
+      AuthHelper.keyboardUnfocus(context);
       debugPrint('NEW PASSWORD: ${_passwordController.text}');
       debugPrint('NEW CONFIRMED PASSWORD: ${_confirmPasswordController.text}');
     } else {

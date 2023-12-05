@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
 
@@ -28,11 +28,11 @@ class EmailTextFormField extends StatelessWidget {
       hintText: 'Enter your email',
       suffixIcon: const CustomSuffixIcon(icon: Icons.email_outlined),
       onEditingComplete: () => hasEditingComplete
-          ? Helper.requestFocus(context, passwordFocusNode!)
+          ? AuthHelper.requestFocus(context, passwordFocusNode!)
           : null,
       keyboardType: TextInputType.emailAddress,
       validating: (String? value) =>
-          Helper.validateEmailField(context, value: value),
+          AuthHelper.validateEmailField(context, value: value),
       onSubmit: onSubmit,
     );
   }

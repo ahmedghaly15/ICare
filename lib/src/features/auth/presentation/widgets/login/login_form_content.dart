@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/config/routes/app_router.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/config/router/app_router.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_colors.dart';
 import 'package:icare/src/core/utils/app_text_styles.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
@@ -68,7 +68,7 @@ class LoginFormContent extends StatelessWidget {
               hintText: 'Enter your password',
               onSubmit: (String val) => login,
               validating: (String? value) =>
-                  Helper.validatePasswordField(context, value: value),
+                  AuthHelper.validatePasswordField(context, value: value),
             ),
           ),
           Container(

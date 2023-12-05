@@ -24,9 +24,10 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: AuthRoute.page,
           children: <AutoRoute>[
-            AutoRoute(
-              page: LoginRoute.page,
+            _buildCustomRoute(
               initial: true,
+              page: LoginRoute.page,
+              transitionsBuilder: TransitionsBuilders.fadeIn,
             ),
             _buildCustomRoute(page: RegisterRoute.page),
             _buildCustomRoute(page: ForgotPasswordRoute.page),
@@ -40,11 +41,13 @@ class AppRouter extends _$AppRouter {
     bool initial = false,
     required PageInfo<dynamic> page,
     List<AutoRoute>? children,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transitionsBuilder,
   }) {
     return CustomRoute(
       initial: initial,
       page: page,
-      transitionsBuilder: AppConstants.transitionsBuilder,
+      transitionsBuilder: transitionsBuilder ?? AppConstants.transitionsBuilder,
       durationInMilliseconds: AppConstants.transitionDuration,
       children: children,
     );

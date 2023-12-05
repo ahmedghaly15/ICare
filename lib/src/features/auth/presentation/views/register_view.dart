@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/utils/service_locator.dart';
+import 'package:icare/service_locator.dart';
 import 'package:icare/src/core/widgets/bottom_spacer.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_medium_size_title.dart';
@@ -18,7 +18,7 @@ class RegisterView extends StatelessWidget implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
-      create: (context) => serviceLocator.get<RegisterCubit>(),
+      create: (context) => getIt.get<RegisterCubit>(),
       child: this,
     );
   }

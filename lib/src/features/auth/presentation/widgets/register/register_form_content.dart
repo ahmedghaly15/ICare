@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
@@ -52,12 +52,12 @@ class RegisterFormContent extends StatelessWidget {
             focusNode: nameFocusNode,
             hintText: 'Enter your name',
             onEditingComplete: () =>
-                Helper.requestFocus(context, emailFocusNode),
+                AuthHelper.requestFocus(context, emailFocusNode),
             autofillHints: const <String>[AutofillHints.name],
             keyboardType: TextInputType.name,
             textCapitalization: TextCapitalization.words,
             validating: (String? value) =>
-                Helper.validateNameField(context, value: value),
+                AuthHelper.validateNameField(context, value: value),
           ),
           const BottomTextFieldSpacer(),
           const CustomTextFieldLabel(label: 'Email'),
@@ -86,9 +86,9 @@ class RegisterFormContent extends StatelessWidget {
               ),
               hintText: 'Enter your password',
               onEditingComplete: () =>
-                  Helper.requestFocus(context, confirmPasswordFocusNode),
+                  AuthHelper.requestFocus(context, confirmPasswordFocusNode),
               validating: (String? value) =>
-                  Helper.validatePasswordField(context, value: value),
+                  AuthHelper.validatePasswordField(context, value: value),
             ),
           ),
           const BottomTextFieldSpacer(),
@@ -112,7 +112,7 @@ class RegisterFormContent extends StatelessWidget {
               hintText: 'Confirm your password',
               onSubmit: (String val) => register,
               validating: (String? value) =>
-                  Helper.validateConfirmPasswordField(
+                  AuthHelper.validateConfirmPasswordField(
                 context,
                 password: passwordController.text,
                 confirmPassword: confirmPasswordController.text,

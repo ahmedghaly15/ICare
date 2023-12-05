@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:icare/src/config/routes/app_router.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/config/router/app_router.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/widgets/bottom_spacer.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
@@ -65,7 +65,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
 
   void _forgotPassword(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-      Helper.keyboardUnfocus(context);
+      AuthHelper.keyboardUnfocus(context);
 
       context.pushRoute(VerificationRoute(email: _emailController.text.trim()));
     } else {

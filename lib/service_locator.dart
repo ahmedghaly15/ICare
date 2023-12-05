@@ -1,13 +1,13 @@
 import 'package:get_it/get_it.dart';
-import 'package:icare/src/config/routes/app_router.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 
-final GetIt serviceLocator = GetIt.instance;
+final GetIt getIt = GetIt.instance;
 
 class ServiceLocator {
-  void serviceLocatorSetup() {
+  void setupServiceLocator() {
     _setupForConfig();
 
     _setupForDatasources();
@@ -26,16 +26,16 @@ class ServiceLocator {
   void _setupForUseCases() {}
 
   void _setupForCubits() {
-    serviceLocator.registerFactory<LoginCubit>(() => LoginCubit());
+    getIt.registerFactory<LoginCubit>(() => LoginCubit());
 
-    serviceLocator.registerFactory<RegisterCubit>(() => RegisterCubit());
+    getIt.registerFactory<RegisterCubit>(() => RegisterCubit());
 
-    serviceLocator.registerFactory<ResetPasswordCubit>(
+    getIt.registerFactory<ResetPasswordCubit>(
       () => ResetPasswordCubit(),
     );
   }
 
   void _setupForConfig() {
-    serviceLocator.registerSingleton<AppRouter>(AppRouter());
+    getIt.registerSingleton<AppRouter>(AppRouter());
   }
 }

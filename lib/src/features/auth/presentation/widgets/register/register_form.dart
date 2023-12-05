@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/rive_utils.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_positioned.dart';
@@ -122,7 +122,7 @@ class _RegisterFormState extends State<RegisterForm> {
   }
 
   void _register(BuildContext context) {
-    Helper.keyboardUnfocus(context);
+    AuthHelper.keyboardUnfocus(context);
 
     setState(() {
       isShowLoading = true;
