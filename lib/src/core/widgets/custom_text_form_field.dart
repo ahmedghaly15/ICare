@@ -108,9 +108,7 @@ class CustomTextFormField extends StatelessWidget {
   }
 
   TextStyle _customTextFieldTextStyle() {
-    return AppTextStyles.textStyle13Light.copyWith(
-      color: AppColors.fontPrimaryColor,
-    );
+    return AppTextStyles.textStyle13Light;
   }
 
   OutlineInputBorder _buildOutlinedInputBorder(

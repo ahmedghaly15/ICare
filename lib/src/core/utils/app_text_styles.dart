@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
 
 class AppTextStyles {
-  static TextStyle authTitleTextStyle = TextStyle(
+  static TextStyle textStyle30Bold = TextStyle(
     fontSize: 30.sp,
     fontWeight: FontWeight.bold,
-    color: AppColors.fontPrimaryColor,
   );
 
   static TextStyle textStyle25Bold = TextStyle(

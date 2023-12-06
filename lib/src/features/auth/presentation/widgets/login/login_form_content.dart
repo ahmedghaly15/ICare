@@ -10,7 +10,6 @@ import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
-import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
 
@@ -58,11 +57,13 @@ class LoginFormContent extends StatelessWidget {
               autofillHints: const <String>[AutofillHints.password],
               obscureText:
                   BlocProvider.of<LoginCubit>(context).isLoginPassVisible,
-              suffixIcon: CustomSuffixIcon(
-                icon: BlocProvider.of<LoginCubit>(context).isLoginPassVisible
-                    ? Icons.visibility
-                    : Icons.visibility_off,
-                onTap: () =>
+              suffixIcon: IconButton(
+                padding: EdgeInsets.zero,
+                icon: Icon(
+                    BlocProvider.of<LoginCubit>(context).isLoginPassVisible
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                onPressed: () =>
                     BlocProvider.of<LoginCubit>(context).changePassVisibility(),
               ),
               hintText: 'Enter your password',
@@ -72,19 +73,18 @@ class LoginFormContent extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 19.h),
             alignment: AlignmentDirectional.centerEnd,
-            child: InkWell(
-              onTap: () => context.pushRoute(const ForgotPasswordRoute()),
+            margin: EdgeInsets.only(bottom: 6.h),
+            child: TextButton(
+              onPressed: () => context.pushRoute(const ForgotPasswordRoute()),
               child: Text(
                 'Forgot Password?',
                 style: AppTextStyles.textStyle13Bold.copyWith(
-                  color: AppColors.fontPrimaryColor,
+                  color: AppColors.primaryColor,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 10.h),
           PrimaryButton(
             text: 'Login',
             onPressed: login,

@@ -6,7 +6,6 @@ import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
-import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
 
@@ -76,12 +75,12 @@ class RegisterFormContent extends StatelessWidget {
               autofillHints: const <String>[AutofillHints.password],
               obscureText:
                   BlocProvider.of<RegisterCubit>(context).isRegisterPassVisible,
-              suffixIcon: CustomSuffixIcon(
-                icon: BlocProvider.of<RegisterCubit>(context)
+              suffixIcon: IconButton(
+                icon: Icon(BlocProvider.of<RegisterCubit>(context)
                         .isRegisterPassVisible
                     ? Icons.visibility
-                    : Icons.visibility_off,
-                onTap: () => BlocProvider.of<RegisterCubit>(context)
+                    : Icons.visibility_off),
+                onPressed: () => BlocProvider.of<RegisterCubit>(context)
                     .changePassVisibility(),
               ),
               hintText: 'Enter your password',
@@ -101,12 +100,13 @@ class RegisterFormContent extends StatelessWidget {
               autofillHints: const <String>[AutofillHints.password],
               obscureText:
                   BlocProvider.of<RegisterCubit>(context).isConfirmPassVisible,
-              suffixIcon: CustomSuffixIcon(
-                icon:
+              suffixIcon: IconButton(
+                padding: EdgeInsets.zero,
+                icon: Icon(
                     BlocProvider.of<RegisterCubit>(context).isConfirmPassVisible
                         ? Icons.visibility
-                        : Icons.visibility_off,
-                onTap: () => BlocProvider.of<RegisterCubit>(context)
+                        : Icons.visibility_off),
+                onPressed: () => BlocProvider.of<RegisterCubit>(context)
                     .changeConfirmPassVisibility(),
               ),
               hintText: 'Confirm your password',

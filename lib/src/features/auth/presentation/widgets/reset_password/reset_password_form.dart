@@ -7,7 +7,6 @@ import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
-import 'package:icare/src/features/auth/presentation/widgets/custom_suffix_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 
 class ResetPasswordForm extends StatefulWidget {
@@ -75,13 +74,15 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                   autofillHints: const <String>[AutofillHints.password],
                   obscureText: BlocProvider.of<ResetPasswordCubit>(context)
                       .isResetPassVisible,
-                  suffixIcon: CustomSuffixIcon(
-                    icon: BlocProvider.of<ResetPasswordCubit>(context)
+                  suffixIcon: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: Icon(BlocProvider.of<ResetPasswordCubit>(context)
                             .isResetPassVisible
                         ? Icons.visibility
-                        : Icons.visibility_off,
-                    onTap: () => BlocProvider.of<ResetPasswordCubit>(context)
-                        .changePassVisibility(),
+                        : Icons.visibility_off),
+                    onPressed: () =>
+                        BlocProvider.of<ResetPasswordCubit>(context)
+                            .changePassVisibility(),
                   ),
                   hintText: 'Enter your password',
                   onEditingComplete: () => AuthHelper.requestFocus(
@@ -98,13 +99,18 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
                   autofillHints: const <String>[AutofillHints.password],
                   obscureText: BlocProvider.of<ResetPasswordCubit>(context)
                       .isConfirmPassVisible,
-                  suffixIcon: CustomSuffixIcon(
-                    icon: BlocProvider.of<ResetPasswordCubit>(context)
-                            .isConfirmPassVisible
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                    onTap: () => BlocProvider.of<ResetPasswordCubit>(context)
-                        .changeConfirmPassVisibility(),
+                  suffixIcon: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: Icon(
+                      BlocProvider.of<ResetPasswordCubit>(context)
+                              .isConfirmPassVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      size: 20.w,
+                    ),
+                    onPressed: () =>
+                        BlocProvider.of<ResetPasswordCubit>(context)
+                            .changeConfirmPassVisibility(),
                   ),
                   hintText: 'Confirm your password',
                   validating: (String? value) =>
