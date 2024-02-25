@@ -10,6 +10,8 @@ class ServiceLocator {
   void setupServiceLocator() {
     _setupForConfig();
 
+    _setupForCore();
+
     _setupForDatasources();
 
     _setupForRepos();
@@ -38,4 +40,6 @@ class ServiceLocator {
   void _setupForConfig() {
     getIt.registerSingleton<AppRouter>(AppRouter());
   }
+
+  void _setupForCore() {}
 }

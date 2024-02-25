@@ -1,8 +1,3 @@
-import 'package:equatable/equatable.dart';
-
-class NoParams extends Equatable {
+class NoParams {
   const NoParams();
-
-  @override
-  List<Object?> get props => [];
 }

@@ -1,10 +1,7 @@
 part of 'login_cubit.dart';
 
-abstract class LoginState extends Equatable {
+abstract class LoginState {
   const LoginState();
-
-  @override
-  List<Object> get props => [];
 }
 
 class LoginInitial extends LoginState {
@@ -15,7 +12,4 @@ class ChangePassVisibilityState extends LoginState {
   final bool isLoginPassVisible;
 
   const ChangePassVisibilityState({required this.isLoginPassVisible});
-
-  @override
-  List<Object> get props => [isLoginPassVisible];
 }
