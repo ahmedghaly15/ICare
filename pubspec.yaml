@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Firebase
+  firebase_auth: ^4.4.0
+  firebase_core: ^2.9.0
   # A declarative routing solution for navigation
   auto_route: ^7.8.4
   # Implement value based equality
