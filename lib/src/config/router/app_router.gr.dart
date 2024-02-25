@@ -30,19 +30,19 @@ abstract class _$AppRouter extends RootStackRouter {
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const LoginView(),
+        child: WrappedRoute(child: const LoginView()),
       );
     },
     RegisterRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const RegisterView(),
+        child: WrappedRoute(child: const RegisterView()),
       );
     },
     ResetPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ResetPasswordView(),
+        child: WrappedRoute(child: const ResetPasswordView()),
       );
     },
     StartRoute.name: (routeData) {
