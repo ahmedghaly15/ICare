@@ -3,7 +3,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/service_locator.dart';
+import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/widgets/custom_arrow_back_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_big_size_description.dart';

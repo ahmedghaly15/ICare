@@ -6,8 +6,8 @@ import 'package:icare/src/features/auth/presentation/cubits/reset_password/reset
 
 final GetIt getIt = GetIt.instance;
 
-class ServiceLocator {
-  void setupServiceLocator() {
+class DependencyInjection {
+  void setup() {
     _setupForConfig();
 
     _setupForCore();
