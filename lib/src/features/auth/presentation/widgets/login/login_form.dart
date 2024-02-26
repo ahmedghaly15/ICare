@@ -34,13 +34,6 @@ class _LoginFormState extends State<LoginForm> {
   late SMITrigger confettiTrigger;
 
   @override
-  void dispose() {
-    super.dispose();
-    context.read<LoginCubit>().disposeController();
-    context.read<LoginCubit>().disposeFocusNodes();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[

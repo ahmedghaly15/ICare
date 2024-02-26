@@ -11,14 +11,18 @@ class LoginCubit extends Cubit<LoginState> {
     _initFormAttributes();
   }
 
+  @override
+  Future<void> close() {
+    _disposeController();
+    _disposeFocusNodes();
+    return super.close();
+  }
+
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
-
   late final FocusNode emailFocusNode;
   late final FocusNode passwordFocusNode;
-
   late final GlobalKey<FormState> formKey;
-
   late AutovalidateMode autovalidateMode;
 
   void _initFormAttributes() {
@@ -30,12 +34,12 @@ class LoginCubit extends Cubit<LoginState> {
     autovalidateMode = AutovalidateMode.disabled;
   }
 
-  void disposeFocusNodes() {
+  void _disposeFocusNodes() {
     emailFocusNode.dispose();
     passwordFocusNode.dispose();
   }
 
-  void disposeController() {
+  void _disposeController() {
     emailController.dispose();
     passwordController.dispose();
   }
