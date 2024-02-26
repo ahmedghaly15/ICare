@@ -21,7 +21,7 @@ class ICareApp extends StatelessWidget {
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         title: AppStrings.appTitle,
-        theme: AppThemes.lightTheme,
+        theme: AppThemes.lightTheme(context),
         routerConfig: getIt.get<AppRouter>().config(
               navigatorObservers: () => [
                 AppRoutesObserver(),

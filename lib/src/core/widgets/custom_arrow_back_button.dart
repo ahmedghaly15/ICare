@@ -17,16 +17,12 @@ class CustomArrowBackButton extends StatelessWidget {
         shape: BoxShape.rectangle,
         border: Border.all(color: Colors.black, width: 1),
       ),
-      child: Center(
-        child: MaterialButton(
-          padding: EdgeInsets.zero,
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          onPressed: () => context.popRoute(),
-          child: Icon(
-            Icons.arrow_back_ios_new,
-            color: AppColors.primaryColor,
-            size: SizeConfig.width * 0.05,
-          ),
+      child: MaterialButton(
+        onPressed: () => context.popRoute(),
+        child: Icon(
+          Icons.arrow_back_ios_new,
+          color: AppColors.primaryColor,
+          size: SizeConfig.width * 0.05,
         ),
       ),
     );

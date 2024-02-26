@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 
 class EmailTextFormField extends StatelessWidget {
@@ -24,8 +25,11 @@ class EmailTextFormField extends StatelessWidget {
       controller: emailController,
       focusNode: emailFocusNode,
       autofillHints: const <String>[AutofillHints.email],
-      hintText: 'Enter your email',
-      suffixIcon: const Icon(Icons.email_outlined),
+      hintText: AppStrings.enterYourEmail,
+      suffixIcon: const Icon(
+        Icons.email_outlined,
+        color: Colors.black,
+      ),
       onEditingComplete: () => hasEditingComplete
           ? AuthHelper.requestFocus(context, passwordFocusNode!)
           : null,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/rive_utils.dart';
+import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_positioned.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/login_form_content.dart';
 import 'package:rive/rive.dart';
@@ -14,50 +17,25 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  final FocusNode _emailFocusNode = FocusNode();
-  final FocusNode _passwordFocusNode = FocusNode();
-
-  late final GlobalKey<FormState> _formKey;
-  late AutovalidateMode autovalidateMode;
-
-  void _initFormAttributes() {
-    _formKey = GlobalKey<FormState>();
-    autovalidateMode = AutovalidateMode.disabled;
-  }
-
   bool isShowLoading = false;
   bool isShowConfetti = false;
 
   late SMITrigger check;
   late SMITrigger error;
   late SMITrigger reset;
-
   late SMITrigger confetti;
 
   @override
   void initState() {
-    _initFormAttributes();
     super.initState();
+    context.read<LoginCubit>().initFormAttributes();
   }
 
   @override
   void dispose() {
     super.dispose();
-    _disposeController();
-    _disposeFocusNodes();
-  }
-
-  void _disposeFocusNodes() {
-    _emailFocusNode.dispose();
-    _passwordFocusNode.dispose();
-  }
-
-  void _disposeController() {
-    _emailController.dispose();
-    _passwordController.dispose();
+    context.read<LoginCubit>().disposeController();
+    context.read<LoginCubit>().disposeFocusNodes();
   }
 
   @override
@@ -65,12 +43,12 @@ class _LoginFormState extends State<LoginForm> {
     return Stack(
       children: <Widget>[
         LoginFormContent(
-          formKey: _formKey,
-          autovalidateMode: autovalidateMode,
-          emailController: _emailController,
-          passwordController: _passwordController,
-          emailFocusNode: _emailFocusNode,
-          passwordFocusNode: _passwordFocusNode,
+          formKey: context.read<LoginCubit>().formKey,
+          autovalidateMode: context.read<LoginCubit>().autovalidateMode,
+          emailController: context.read<LoginCubit>().emailController,
+          passwordController: context.read<LoginCubit>().passwordController,
+          emailFocusNode: context.read<LoginCubit>().emailFocusNode,
+          passwordFocusNode: context.read<LoginCubit>().passwordFocusNode,
           login: () => _login(context),
         ),
         isShowLoading
@@ -80,13 +58,16 @@ class _LoginFormState extends State<LoginForm> {
                   onInit: (Artboard artboard) {
                     StateMachineController controller =
                         RiveUtils.getRiveController(artboard);
-                    check = controller.findSMI("Check") as SMITrigger;
-                    error = controller.findSMI("Error") as SMITrigger;
-                    reset = controller.findSMI("Reset") as SMITrigger;
+                    check =
+                        controller.findSMI(AppStrings.riveCheck) as SMITrigger;
+                    error =
+                        controller.findSMI(AppStrings.riveError) as SMITrigger;
+                    reset =
+                        controller.findSMI(AppStrings.riveReset) as SMITrigger;
                   },
                 ),
               )
-            : const SizedBox(),
+            : const SizedBox.shrink(),
         isShowConfetti
             ? CustomPositioned(
                 child: Transform.scale(
@@ -98,12 +79,13 @@ class _LoginFormState extends State<LoginForm> {
                           RiveUtils.getRiveController(artboard);
 
                       confetti =
-                          controller.findSMI("Trigger explosion") as SMITrigger;
+                          controller.findSMI(AppStrings.riveTriggerExplosion)
+                              as SMITrigger;
                     },
                   ),
                 ),
               )
-            : const SizedBox(),
+            : const SizedBox.shrink(),
       ],
     );
   }
@@ -119,7 +101,7 @@ class _LoginFormState extends State<LoginForm> {
     Future.delayed(
       const Duration(seconds: 1),
       () {
-        if (_formKey.currentState!.validate()) {
+        if (context.read<LoginCubit>().formKey.currentState!.validate()) {
           // If everything looks good, it shows success animation
           check.fire();
           Future.delayed(
@@ -133,7 +115,11 @@ class _LoginFormState extends State<LoginForm> {
 
               Future.delayed(
                 const Duration(seconds: 1),
-                () {},
+                () {
+                  debugPrint(
+                    'Email: ${context.read<LoginCubit>().emailController.text}',
+                  );
+                },
               );
             },
           );
@@ -145,7 +131,8 @@ class _LoginFormState extends State<LoginForm> {
             () {
               setState(() {
                 isShowLoading = false;
-                autovalidateMode = AutovalidateMode.always;
+                context.read<LoginCubit>().autovalidateMode =
+                    AutovalidateMode.always;
               });
             },
           );
