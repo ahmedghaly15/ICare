@@ -90,7 +90,7 @@ class _LoginFormState extends State<LoginForm> {
                     current is Loading ||
                     current is Success ||
                     current is Error,
-                listener: (context, state) => loginListener(state),
+                listener: (context, state) => _loginListener(state),
                 child: PrimaryButton(
                   text: AppStrings.login,
                   onPressed: () => _login(context),
@@ -122,7 +122,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Null loginListener(LoginState<dynamic> state) {
+  Null _loginListener(LoginState<dynamic> state) {
     return state.whenOrNull(
       loading: () {
         setState(() {

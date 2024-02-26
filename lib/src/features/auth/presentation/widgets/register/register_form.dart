@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/core/helpers/auth_helper.dart';
@@ -133,11 +134,16 @@ class _RegisterFormState extends State<RegisterForm> {
                 ),
               ),
               MySizedBox.height46,
-              PrimaryButton(
-                text: AppStrings.register,
-                onPressed: () {
-                  _register(context);
-                },
+              BlocListener<RegisterCubit, RegisterState>(
+                listenWhen: (previous, current) =>
+                    current is Loading ||
+                    current is Success ||
+                    current is Error,
+                listener: (context, state) => _registerListener(state),
+                child: PrimaryButton(
+                  text: AppStrings.register,
+                  onPressed: () => _register(context),
+                ),
               ),
             ],
           ),
@@ -146,14 +152,7 @@ class _RegisterFormState extends State<RegisterForm> {
             ? CustomPositioned(
                 child: RiveAnimation.asset(
                   AppAssets.riveCheck,
-                  onInit: (Artboard artboard) {
-                    final StateMachineController controller =
-                        RiveUtils.getRiveController(artboard);
-                    checkTrigger =
-                        controller.findSMI(AppStrings.riveCheck) as SMITrigger;
-                    errorTrigger =
-                        controller.findSMI(AppStrings.riveError) as SMITrigger;
-                  },
+                  onInit: (Artboard artboard) => _initRiveCheck(artboard),
                 ),
               )
             : const SizedBox.shrink(),
@@ -163,14 +162,7 @@ class _RegisterFormState extends State<RegisterForm> {
                   scale: 7,
                   child: RiveAnimation.asset(
                     AppAssets.riveConfetti,
-                    onInit: (artboard) {
-                      final StateMachineController controller =
-                          RiveUtils.getRiveController(artboard);
-
-                      confettiTrigger =
-                          controller.findSMI(AppStrings.riveTriggerExplosion)
-                              as SMITrigger;
-                    },
+                    onInit: (artboard) => _initRiveConfetti(artboard),
                   ),
                 ),
               )
@@ -179,50 +171,70 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  void _register(BuildContext context) {
-    AuthHelper.keyboardUnfocus(context);
+  Null _registerListener(RegisterState<dynamic> state) {
+    return state.whenOrNull(
+      loading: () {
+        setState(() {
+          isShowLoading = true;
+          isShowConfetti = true;
+        });
+      },
+      success: (data) {
+        checkTrigger.fire();
 
-    setState(() {
-      isShowLoading = true;
-      isShowConfetti = true;
-    });
+        Future.delayed(
+          const Duration(seconds: 2),
+          () {
+            setState(() {
+              isShowLoading = false;
+            });
 
-    Future.delayed(
-      const Duration(seconds: 1),
-      () {
-        if (context.read<RegisterCubit>().formKey.currentState!.validate()) {
-          // If everything looks good, it shows success animation
-          checkTrigger.fire();
-          Future.delayed(
-            const Duration(seconds: 2),
-            () {
-              setState(() {
-                isShowLoading = false;
-              });
+            confettiTrigger.fire();
+          },
+        );
+      },
+      error: (error) {
+        errorTrigger.fire();
 
-              confettiTrigger.fire();
+        Future.delayed(const Duration(seconds: 2), () {
+          setState(() {
+            isShowLoading = false;
+          });
 
-              Future.delayed(
-                const Duration(seconds: 1),
-                () {},
-              );
-            },
+          CustomDialog.show(
+            context: context,
+            state: CustomDialogStates.error,
+            message: error,
           );
-        } else {
-          // Or error animation
-          errorTrigger.fire();
-          Future.delayed(
-            const Duration(seconds: 2),
-            () {
-              setState(() {
-                isShowLoading = false;
-                context.read<RegisterCubit>().autovalidateMode =
-                    AutovalidateMode.always;
-              });
-            },
-          );
-        }
+        });
       },
     );
+  }
+
+  void _initRiveConfetti(Artboard artboard) {
+    final StateMachineController controller =
+        RiveUtils.getRiveController(artboard);
+
+    confettiTrigger =
+        controller.findSMI(AppStrings.riveTriggerExplosion) as SMITrigger;
+  }
+
+  void _initRiveCheck(Artboard artboard) {
+    final StateMachineController controller =
+        RiveUtils.getRiveController(artboard);
+    checkTrigger = controller.findSMI(AppStrings.riveCheck) as SMITrigger;
+    errorTrigger = controller.findSMI(AppStrings.riveError) as SMITrigger;
+  }
+
+  void _register(BuildContext context) {
+    AuthHelper.keyboardUnfocus(context);
+    if (context.read<RegisterCubit>().formKey.currentState!.validate()) {
+      // context.read<RegisterCubit>().register();
+    } else {
+      setState(() {
+        context.read<RegisterCubit>().autovalidateMode =
+            AutovalidateMode.always;
+      });
+    }
   }
 }

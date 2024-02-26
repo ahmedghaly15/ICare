@@ -21,7 +21,7 @@ mixin _$RegisterState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function() error,
+    required TResult Function(String error) error,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$RegisterState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function()? error,
+    TResult? Function(String error)? error,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$RegisterState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function()? error,
+    TResult Function(String error)? error,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) =>
@@ -134,7 +134,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function() error,
+    required TResult Function(String error) error,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return initial();
@@ -146,7 +146,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function()? error,
+    TResult? Function(String error)? error,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return initial?.call();
@@ -158,7 +158,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function()? error,
+    TResult Function(String error)? error,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -255,7 +255,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function() error,
+    required TResult Function(String error) error,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return loading();
@@ -267,7 +267,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function()? error,
+    TResult? Function(String error)? error,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return loading?.call();
@@ -279,7 +279,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function()? error,
+    TResult Function(String error)? error,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -403,7 +403,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function() error,
+    required TResult Function(String error) error,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return success(data);
@@ -415,7 +415,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function()? error,
+    TResult? Function(String error)? error,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return success?.call(data);
@@ -427,7 +427,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function()? error,
+    TResult Function(String error)? error,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -493,6 +493,8 @@ abstract class _$$ErrorImplCopyWith<T, $Res> {
   factory _$$ErrorImplCopyWith(
           _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
       __$$ErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -502,26 +504,50 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl<T> _value, $Res Function(_$ErrorImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ErrorImpl<T> implements Error<T> {
-  const _$ErrorImpl();
+  const _$ErrorImpl({required this.error});
+
+  @override
+  final String error;
 
   @override
   String toString() {
-    return 'RegisterState<$T>.error()';
+    return 'RegisterState<$T>.error(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ErrorImpl<T>);
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      __$$ErrorImplCopyWithImpl<T, _$ErrorImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -529,10 +555,10 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function() error,
+    required TResult Function(String error) error,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
-    return error();
+    return error(this.error);
   }
 
   @override
@@ -541,10 +567,10 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function()? error,
+    TResult? Function(String error)? error,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
-    return error?.call();
+    return error?.call(this.error);
   }
 
   @override
@@ -553,12 +579,12 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function()? error,
+    TResult Function(String error)? error,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error();
+      return error(this.error);
     }
     return orElse();
   }
@@ -606,7 +632,12 @@ class _$ErrorImpl<T> implements Error<T> {
 }
 
 abstract class Error<T> implements RegisterState<T> {
-  const factory Error() = _$ErrorImpl<T>;
+  const factory Error({required final String error}) = _$ErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -679,7 +710,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
-    required TResult Function() error,
+    required TResult Function(String error) error,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return changePassVisibility(isRegisterPassVisible);
@@ -691,7 +722,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
-    TResult? Function()? error,
+    TResult? Function(String error)? error,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return changePassVisibility?.call(isRegisterPassVisible);
@@ -703,7 +734,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
-    TResult Function()? error,
+    TResult Function(String error)? error,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
