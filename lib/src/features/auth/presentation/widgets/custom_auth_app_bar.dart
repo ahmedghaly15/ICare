@@ -23,13 +23,11 @@ class CustomAuthAppBar extends StatelessWidget {
           const Spacer(),
           Column(
             children: <Widget>[
-              FittedBox(
-                child: Image.asset(
-                  AppAssets.appIcon,
-                  height: SizeConfig.height * 0.15,
-                  width: SizeConfig.height * 0.15,
-                  fit: BoxFit.contain,
-                ),
+              Image.asset(
+                AppAssets.appIcon,
+                height: SizeConfig.height * 0.15,
+                width: SizeConfig.height * 0.15,
+                fit: BoxFit.contain,
               ),
               Text(
                 AppStrings.appTitle,

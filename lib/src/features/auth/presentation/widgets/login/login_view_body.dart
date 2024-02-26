@@ -1,10 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_medium_size_title.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_small_size_description.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_auth_app_bar.dart';
@@ -20,18 +21,18 @@ class LoginViewBody extends StatelessWidget {
         slivers: [
           SliverPadding(
             padding: AppConstants.authHorizontalPadding,
-            sliver: SliverToBoxAdapter(
+            sliver: const SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const CustomAuthAppBar(),
-                  const AuthMediumSizeTitle(title: 'Login'),
-                  SizedBox(height: 7.h),
-                  const AuthSmallSizeDescription(
-                    description: 'Login and continue using the app',
+                  CustomAuthAppBar(),
+                  AuthMediumSizeTitle(title: AppStrings.login),
+                  MySizedBox(height: 7),
+                  AuthSmallSizeDescription(
+                    description: AppStrings.loginDescription,
                   ),
-                  SizedBox(height: 25.h),
-                  const LoginForm(),
+                  MySizedBox(height: 25),
+                  LoginForm(),
                 ],
               ),
             ),
@@ -42,20 +43,20 @@ class LoginViewBody extends StatelessWidget {
               hasScrollBody: false,
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 27.h),
+                  const MySizedBox(height: 27),
                   const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "Don't have an account?",
+                        AppStrings.dontHavAcc,
                         style: AppTextStyles.textStyle16Light(context),
                       ),
                       TextButton(
                         onPressed: () =>
                             context.pushRoute(const RegisterRoute()),
                         child: Text(
-                          'Register here',
+                          AppStrings.registerHere,
                           style:
                               AppTextStyles.textStyle16Bold(context).copyWith(
                             color: AppColors.primaryColor,
