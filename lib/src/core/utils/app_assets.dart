@@ -33,6 +33,10 @@ class AppAssets {
   /// assets/fonts/inter/OFL.txt
   static const String fontsInterOFL = "assets/fonts/inter/OFL.txt";
 
+  /// Assets for imagesAppLogo
+  /// assets/images/app_logo.svg
+  static const String imagesAppLogo = "assets/images/app_logo.svg";
+
   /// Assets for imagesStart
   /// assets/images/start.jpg
   static const String imagesStart = "assets/images/start.jpg";

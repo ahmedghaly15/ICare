@@ -11,8 +11,8 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  firebase_auth: ^4.4.0
-  firebase_core: ^2.9.0
+  firebase_auth: ^4.17.5
+  firebase_core: ^2.25.4
   # A declarative routing solution for navigation
   auto_route: ^7.8.4
   # Code generator (mainly used with Cubit & retrofit)
@@ -48,6 +48,8 @@ dependencies:
   flutter_spinkit: ^5.2.0
   # (OTP) text field
   pinput: ^3.0.1
+  # Approximate how Flutter app looks and performs on another device.
+  device_preview: ^1.1.0
 
 dev_dependencies:
   flutter_test:

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/start/presentation/widgets/faded_widget.dart';
 
@@ -51,8 +52,8 @@ class _StartViewState extends State<StartView> {
             child: Image.asset(
               AppAssets.imagesStart,
               fit: BoxFit.cover,
-              height: double.infinity,
-              width: double.infinity,
+              height: SizeConfig.height,
+              width: SizeConfig.width,
             ),
           ),
           FadedWidget(
