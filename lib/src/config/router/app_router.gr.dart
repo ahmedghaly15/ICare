@@ -39,26 +39,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const RegisterView()),
       );
     },
-    ResetPasswordRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const ResetPasswordView()),
-      );
-    },
     StartRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const StartView(),
-      );
-    },
-    VerificationRoute.name: (routeData) {
-      final args = routeData.argsAs<VerificationRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: VerificationView(
-          key: args.key,
-          email: args.email,
-        ),
       );
     },
   };
@@ -121,20 +105,6 @@ class RegisterRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [ResetPasswordView]
-class ResetPasswordRoute extends PageRouteInfo<void> {
-  const ResetPasswordRoute({List<PageRouteInfo>? children})
-      : super(
-          ResetPasswordRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ResetPasswordRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
 /// [StartView]
 class StartRoute extends PageRouteInfo<void> {
   const StartRoute({List<PageRouteInfo>? children})
@@ -146,42 +116,4 @@ class StartRoute extends PageRouteInfo<void> {
   static const String name = 'StartRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [VerificationView]
-class VerificationRoute extends PageRouteInfo<VerificationRouteArgs> {
-  VerificationRoute({
-    Key? key,
-    required String email,
-    List<PageRouteInfo>? children,
-  }) : super(
-          VerificationRoute.name,
-          args: VerificationRouteArgs(
-            key: key,
-            email: email,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'VerificationRoute';
-
-  static const PageInfo<VerificationRouteArgs> page =
-      PageInfo<VerificationRouteArgs>(name);
-}
-
-class VerificationRouteArgs {
-  const VerificationRouteArgs({
-    this.key,
-    required this.email,
-  });
-
-  final Key? key;
-
-  final String email;
-
-  @override
-  String toString() {
-    return 'VerificationRouteArgs{key: $key, email: $email}';
-  }
 }

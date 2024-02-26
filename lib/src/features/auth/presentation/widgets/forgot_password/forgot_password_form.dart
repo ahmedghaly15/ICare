@@ -1,8 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
-import 'package:icare/src/core/widgets/bottom_spacer.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
@@ -56,7 +54,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
               text: 'Continue',
               onPressed: () => _forgotPassword(context),
             ),
-            const BottomSpacer(),
+            MySizedBox.height8,
           ],
         ),
       ),
@@ -67,7 +65,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
     if (_formKey.currentState!.validate()) {
       AuthHelper.keyboardUnfocus(context);
 
-      context.pushRoute(VerificationRoute(email: _emailController.text.trim()));
+      // context.pushRoute(VerificationRoute(email: _emailController.text.trim()));
     } else {
       setState(() {
         autovalidateMode = AutovalidateMode.always;

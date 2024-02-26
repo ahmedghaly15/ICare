@@ -24,4 +24,6 @@ class AppStrings {
   static const String name = 'Name';
   static const String enterYourName = 'Enter your name';
   static const String enterYourPersonalInfo = 'Enter your personal information';
+  static const String forgotPasswordDescription =
+      "Enter the email associated with your account to reset your password. We'll send you a link to create a new one.";
 }
