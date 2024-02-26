@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/features/auth/data/models/login_request_params.dart';
+import 'package:icare/src/features/auth/domain/usecases/login.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(const LoginState.initial());
+  final LoginUseCase _loginUseCase;
 
-  void login() {
-    emit(const LoginState.loading());
-  }
+  LoginCubit(this._loginUseCase) : super(const LoginState.initial());
 
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
@@ -36,6 +36,22 @@ class LoginCubit extends Cubit<LoginState> {
   void disposeController() {
     emailController.dispose();
     passwordController.dispose();
+  }
+
+  void login() async {
+    emit(const LoginState.loading());
+
+    final response = await _loginUseCase(
+      LoginRequestParams(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+      ),
+    );
+
+    response.when(
+      success: (loginResponse) => emit(LoginState.success(data: loginResponse)),
+      error: (error) => emit(LoginState.error(error: error.failureMsg ?? '')),
+    );
   }
 
   bool isLoginPassVisible = true;
