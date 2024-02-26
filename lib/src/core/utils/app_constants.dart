@@ -9,7 +9,7 @@ class AppConstants {
     Animation<double>,
     Widget,
   )? get transitionsBuilder => TransitionsBuilders.slideLeftWithFade;
-  static int get transitionDuration => 300;
+  static int get transitionDuration => 400;
 
   static const ScrollPhysics scrollPhysics = BouncingScrollPhysics();
 
@@ -17,4 +17,7 @@ class AppConstants {
       EdgeInsets.symmetric(horizontal: 25.w);
 
   static const double authTopMargin = 27.0;
+
+  static const double desktop = 1200;
+  static const double tablet = 800;
 }

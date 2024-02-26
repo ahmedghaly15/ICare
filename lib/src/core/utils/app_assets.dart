@@ -5,21 +5,42 @@ class AppAssets {
   /// assets/app_icon.png
   static const String appIcon = "assets/app_icon.png";
 
-  /// Assets for imagesFacebook Logo
-  /// assets/images/facebook _logo.png
-  static const String imagesFacebookLogo = "assets/images/facebook _logo.png";
+  /// Assets for fontsInterInterBold
+  /// assets/fonts/inter/Inter-Bold.ttf
+  static const String fontsInterInterBold = "assets/fonts/inter/Inter-Bold.ttf";
 
-  /// Assets for imagesGoogleLogo
-  /// assets/images/google_logo.png
-  static const String imagesGoogleLogo = "assets/images/google_logo.png";
+  /// Assets for fontsInterInterLight
+  /// assets/fonts/inter/Inter-Light.ttf
+  static const String fontsInterInterLight =
+      "assets/fonts/inter/Inter-Light.ttf";
 
-  /// Assets for imagesSplash
-  /// assets/images/splash.jpg
-  static const String imagesSplash = "assets/images/splash.jpg";
+  /// Assets for fontsInterInterMedium
+  /// assets/fonts/inter/Inter-Medium.ttf
+  static const String fontsInterInterMedium =
+      "assets/fonts/inter/Inter-Medium.ttf";
 
-  /// Assets for imagesXLogo
-  /// assets/images/x_logo.png
-  static const String imagesXLogo = "assets/images/x_logo.png";
+  /// Assets for fontsInterInterRegular
+  /// assets/fonts/inter/Inter-Regular.ttf
+  static const String fontsInterInterRegular =
+      "assets/fonts/inter/Inter-Regular.ttf";
+
+  /// Assets for fontsInterInterSemiBold
+  /// assets/fonts/inter/Inter-SemiBold.ttf
+  static const String fontsInterInterSemiBold =
+      "assets/fonts/inter/Inter-SemiBold.ttf";
+
+  /// Assets for fontsInterOFL
+  /// assets/fonts/inter/OFL.txt
+  static const String fontsInterOFL = "assets/fonts/inter/OFL.txt";
+
+  /// Assets for imagesStart
+  /// assets/images/start.jpg
+  static const String imagesStart = "assets/images/start.jpg";
+
+  /// Assets for imagesStartScreenImage
+  /// assets/images/start_screen_image.svg
+  static const String imagesStartScreenImage =
+      "assets/images/start_screen_image.svg";
 
   /// Assets for riveCheck
   /// assets/rive/check.riv
