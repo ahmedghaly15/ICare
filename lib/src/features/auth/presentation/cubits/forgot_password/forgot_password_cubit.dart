@@ -7,9 +7,25 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   final ForgotPasswordUseCase _forgotPasswordUseCase;
 
   ForgotPasswordCubit(this._forgotPasswordUseCase)
-      : super(const ForgotPasswordState.initial());
+      : super(const ForgotPasswordState.initial()) {
+    _initFormAttributes();
+  }
 
   late final TextEditingController emailController;
+  late final GlobalKey<FormState> formKey;
+  late AutovalidateMode autovalidateMode;
+
+  void _initFormAttributes() {
+    formKey = GlobalKey<FormState>();
+    emailController = TextEditingController();
+    autovalidateMode = AutovalidateMode.disabled;
+  }
+
+  @override
+  Future<void> close() {
+    emailController.dispose();
+    return super.close();
+  }
 
   void forgotPassword() async {
     emit(const ForgotPasswordState.loading());
