@@ -6,13 +6,11 @@ part 'user_model.g.dart';
 class UserModel {
   final String? name;
   final String? email;
-  final String? password;
   final String? uId;
 
   UserModel({
     this.name,
     this.email,
-    this.password,
     this.uId,
   });
 
