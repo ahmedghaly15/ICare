@@ -2,7 +2,7 @@
 // responsive font size
 // (min , max) fontsize
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/size_config.dart';
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
   double scaleFactor = getScaleFactor(context);
@@ -23,9 +23,9 @@ double getScaleFactor(BuildContext context) {
   // double width = physicalWidth / devicePixelRatio;
 
   double width = MediaQuery.sizeOf(context).width;
-  if (width < AppConstants.tablet) {
+  if (width < SizeConfig.tablet) {
     return width / 550;
-  } else if (width < AppConstants.desktop) {
+  } else if (width < SizeConfig.desktop) {
     return width / 1000;
   } else {
     return width / 1920;

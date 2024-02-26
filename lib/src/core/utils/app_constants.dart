@@ -17,7 +17,4 @@ class AppConstants {
       EdgeInsets.symmetric(horizontal: 25.w);
 
   static const double authTopMargin = 27.0;
-
-  static const double desktop = 1200;
-  static const double tablet = 800;
 }
