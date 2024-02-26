@@ -22,7 +22,7 @@ mixin _$LoginState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function(bool isLoginPassVisible) changePassVisibility,
+    required TResult Function(bool boolean) convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,7 +31,7 @@ mixin _$LoginState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,7 +40,7 @@ mixin _$LoginState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,8 +50,7 @@ mixin _$LoginState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
-    required TResult Function(ChangePassVisibility<T> value)
-        changePassVisibility,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,7 +59,7 @@ mixin _$LoginState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
-    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,7 +68,7 @@ mixin _$LoginState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
-    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,7 +134,7 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function(bool isLoginPassVisible) changePassVisibility,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return initial();
   }
@@ -147,7 +146,7 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return initial?.call();
   }
@@ -159,7 +158,7 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -175,8 +174,7 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
-    required TResult Function(ChangePassVisibility<T> value)
-        changePassVisibility,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return initial(this);
   }
@@ -188,7 +186,7 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
-    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return initial?.call(this);
   }
@@ -200,7 +198,7 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
-    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -256,7 +254,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function(bool isLoginPassVisible) changePassVisibility,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return loading();
   }
@@ -268,7 +266,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return loading?.call();
   }
@@ -280,7 +278,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -296,8 +294,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
-    required TResult Function(ChangePassVisibility<T> value)
-        changePassVisibility,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return loading(this);
   }
@@ -309,7 +306,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
-    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return loading?.call(this);
   }
@@ -321,7 +318,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
-    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -404,7 +401,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function(bool isLoginPassVisible) changePassVisibility,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return success(data);
   }
@@ -416,7 +413,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return success?.call(data);
   }
@@ -428,7 +425,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -444,8 +441,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
-    required TResult Function(ChangePassVisibility<T> value)
-        changePassVisibility,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return success(this);
   }
@@ -457,7 +453,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
-    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return success?.call(this);
   }
@@ -469,7 +465,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
-    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -556,7 +552,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function(bool isLoginPassVisible) changePassVisibility,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return error(this.error);
   }
@@ -568,7 +564,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return error?.call(this.error);
   }
@@ -580,7 +576,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -596,8 +592,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
-    required TResult Function(ChangePassVisibility<T> value)
-        changePassVisibility,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return error(this);
   }
@@ -609,7 +604,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
-    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return error?.call(this);
   }
@@ -621,7 +616,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
-    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -647,7 +642,7 @@ abstract class _$$ChangePassVisibilityImplCopyWith<T, $Res> {
           $Res Function(_$ChangePassVisibilityImpl<T>) then) =
       __$$ChangePassVisibilityImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({bool isLoginPassVisible});
+  $Res call({bool boolean});
 }
 
 /// @nodoc
@@ -661,12 +656,12 @@ class __$$ChangePassVisibilityImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoginPassVisible = null,
+    Object? boolean = null,
   }) {
     return _then(_$ChangePassVisibilityImpl<T>(
-      isLoginPassVisible: null == isLoginPassVisible
-          ? _value.isLoginPassVisible
-          : isLoginPassVisible // ignore: cast_nullable_to_non_nullable
+      boolean: null == boolean
+          ? _value.boolean
+          : boolean // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -675,14 +670,14 @@ class __$$ChangePassVisibilityImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
-  const _$ChangePassVisibilityImpl({required this.isLoginPassVisible});
+  const _$ChangePassVisibilityImpl({required this.boolean});
 
   @override
-  final bool isLoginPassVisible;
+  final bool boolean;
 
   @override
   String toString() {
-    return 'LoginState<$T>.changePassVisibility(isLoginPassVisible: $isLoginPassVisible)';
+    return 'LoginState<$T>.convertBoolValue(boolean: $boolean)';
   }
 
   @override
@@ -690,12 +685,11 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ChangePassVisibilityImpl<T> &&
-            (identical(other.isLoginPassVisible, isLoginPassVisible) ||
-                other.isLoginPassVisible == isLoginPassVisible));
+            (identical(other.boolean, boolean) || other.boolean == boolean));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoginPassVisible);
+  int get hashCode => Object.hash(runtimeType, boolean);
 
   @JsonKey(ignore: true)
   @override
@@ -711,9 +705,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
-    required TResult Function(bool isLoginPassVisible) changePassVisibility,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
-    return changePassVisibility(isLoginPassVisible);
+    return convertBoolValue(boolean);
   }
 
   @override
@@ -723,9 +717,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
-    return changePassVisibility?.call(isLoginPassVisible);
+    return convertBoolValue?.call(boolean);
   }
 
   @override
@@ -735,11 +729,11 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
-    TResult Function(bool isLoginPassVisible)? changePassVisibility,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
-    if (changePassVisibility != null) {
-      return changePassVisibility(isLoginPassVisible);
+    if (convertBoolValue != null) {
+      return convertBoolValue(boolean);
     }
     return orElse();
   }
@@ -751,10 +745,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
-    required TResult Function(ChangePassVisibility<T> value)
-        changePassVisibility,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
-    return changePassVisibility(this);
+    return convertBoolValue(this);
   }
 
   @override
@@ -764,9 +757,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
-    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
-    return changePassVisibility?.call(this);
+    return convertBoolValue?.call(this);
   }
 
   @override
@@ -776,21 +769,21 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
-    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
-    if (changePassVisibility != null) {
-      return changePassVisibility(this);
+    if (convertBoolValue != null) {
+      return convertBoolValue(this);
     }
     return orElse();
   }
 }
 
 abstract class ChangePassVisibility<T> implements LoginState<T> {
-  const factory ChangePassVisibility({required final bool isLoginPassVisible}) =
+  const factory ChangePassVisibility({required final bool boolean}) =
       _$ChangePassVisibilityImpl<T>;
 
-  bool get isLoginPassVisible;
+  bool get boolean;
   @JsonKey(ignore: true)
   _$$ChangePassVisibilityImplCopyWith<T, _$ChangePassVisibilityImpl<T>>
       get copyWith => throw _privateConstructorUsedError;

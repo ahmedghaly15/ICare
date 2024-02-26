@@ -7,7 +7,9 @@ import 'package:icare/src/features/auth/presentation/cubits/login/login_state.da
 class LoginCubit extends Cubit<LoginState> {
   final LoginUseCase _loginUseCase;
 
-  LoginCubit(this._loginUseCase) : super(const LoginState.initial());
+  LoginCubit(this._loginUseCase) : super(const LoginState.initial()) {
+    _initFormAttributes();
+  }
 
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
@@ -19,7 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   late AutovalidateMode autovalidateMode;
 
-  void initFormAttributes() {
+  void _initFormAttributes() {
     emailController = TextEditingController();
     passwordController = TextEditingController();
     emailFocusNode = FocusNode();
@@ -59,7 +61,6 @@ class LoginCubit extends Cubit<LoginState> {
   void changePassVisibility() {
     isLoginPassVisible = !isLoginPassVisible;
 
-    emit(LoginState.changePassVisibility(
-        isLoginPassVisible: isLoginPassVisible));
+    emit(LoginState.convertBoolValue(boolean: isLoginPassVisible));
   }
 }
