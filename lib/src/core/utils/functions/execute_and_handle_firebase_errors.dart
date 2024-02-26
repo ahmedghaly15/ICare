@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/firebase/firebase_error_handler.dart';
+import 'package:icare/src/core/firebase/firebase_auth_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/network/network_info.dart';
 import 'package:icare/src/core/utils/app_strings.dart';

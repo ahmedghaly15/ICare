@@ -13,15 +13,20 @@ class PositionedAppIcon extends StatelessWidget {
         height: 48.h,
         width: 48.h,
         decoration: BoxDecoration(
+          color: Colors.white,
           shape: BoxShape.circle,
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: Colors.black.withOpacity(0.25),
+              offset: const Offset(0, 4),
+              blurRadius: 4,
+              spreadRadius: 0,
+              blurStyle: BlurStyle.outer,
             ),
           ],
         ),
         child: Image.asset(
-          AppAssets.appIcon,
+          AppAssets.imagesAppLogo,
         ),
       ),
     );

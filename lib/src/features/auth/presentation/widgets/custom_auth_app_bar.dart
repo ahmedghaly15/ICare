@@ -24,7 +24,7 @@ class CustomAuthAppBar extends StatelessWidget {
           Column(
             children: <Widget>[
               Image.asset(
-                AppAssets.appIcon,
+                AppAssets.imagesAppLogo,
                 height: SizeConfig.height * 0.15,
                 width: SizeConfig.height * 0.15,
                 fit: BoxFit.contain,

@@ -40,6 +40,7 @@ class CustomDialog {
                       ),
                       margin: EdgeInsets.symmetric(horizontal: 24.w),
                       decoration: BoxDecoration(
+                        color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(24.r)),
                       ),
                       child: Column(

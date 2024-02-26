@@ -5,7 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/start/presentation/widgets/faded_widget.dart';
 
@@ -64,12 +66,12 @@ class _StartViewState extends State<StartView> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     PrimaryButton(
-                      text: 'Login',
+                      text: AppStrings.login,
                       onPressed: () => context.pushRoute(const LoginRoute()),
                     ),
-                    SizedBox(height: 8.h),
+                    MySizedBox.height8,
                     PrimaryButton(
-                      text: 'Register',
+                      text: AppStrings.register,
                       textColor: AppColors.primaryColor,
                       onPressed: () => context.pushRoute(const RegisterRoute()),
                       backgroundColor: AppColors.secondaryColor,
