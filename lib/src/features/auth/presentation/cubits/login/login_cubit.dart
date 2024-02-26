@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-part 'login_state.dart';
+import 'package:icare/src/features/auth/presentation/cubits/login/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(const LoginInitial());
+  LoginCubit() : super(const LoginState.initial());
+
+  void login() {
+    emit(const LoginState.loading());
+  }
 
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
@@ -40,6 +43,7 @@ class LoginCubit extends Cubit<LoginState> {
   void changePassVisibility() {
     isLoginPassVisible = !isLoginPassVisible;
 
-    emit(ChangePassVisibilityState(isLoginPassVisible: isLoginPassVisible));
+    emit(LoginState.changePassVisibility(
+        isLoginPassVisible: isLoginPassVisible));
   }
 }

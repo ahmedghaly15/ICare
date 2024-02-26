@@ -1,15 +1,13 @@
-part of 'login_cubit.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-abstract class LoginState {
-  const LoginState();
-}
+part 'login_state.freezed.dart';
 
-class LoginInitial extends LoginState {
-  const LoginInitial();
-}
-
-class ChangePassVisibilityState extends LoginState {
-  final bool isLoginPassVisible;
-
-  const ChangePassVisibilityState({required this.isLoginPassVisible});
+@freezed
+class LoginState<T> with _$LoginState<T> {
+  const factory LoginState.initial() = _LoginInitial;
+  const factory LoginState.loading() = Loading;
+  const factory LoginState.success({required T data}) = Success<T>;
+  const factory LoginState.error({required String error}) = Error;
+  const factory LoginState.changePassVisibility(
+      {required bool isLoginPassVisible}) = ChangePassVisibility;
 }
