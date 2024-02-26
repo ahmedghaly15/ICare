@@ -20,11 +20,11 @@ void main() async {
 
   Bloc.observer = MyBlocObserver();
 
-  DependencyInjection().setup();
+  await DependencyInjection().setup();
 
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => const ICareApp(),
     ),
   );

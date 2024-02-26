@@ -1,12 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/rive_utils.dart';
+import 'package:icare/src/core/widgets/custom_text_form_field.dart';
+import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
+import 'package:icare/src/features/auth/presentation/cubits/login/login_state.dart';
+import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_positioned.dart';
-import 'package:icare/src/features/auth/presentation/widgets/login/login_form_content.dart';
+import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
+import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
 import 'package:rive/rive.dart';
 
 class LoginForm extends StatefulWidget {
@@ -20,16 +29,9 @@ class _LoginFormState extends State<LoginForm> {
   bool isShowLoading = false;
   bool isShowConfetti = false;
 
-  late SMITrigger check;
-  late SMITrigger error;
-  late SMITrigger reset;
-  late SMITrigger confetti;
-
-  @override
-  void initState() {
-    super.initState();
-    context.read<LoginCubit>().initFormAttributes();
-  }
+  late SMITrigger checkTrigger;
+  late SMITrigger errorTrigger;
+  late SMITrigger confettiTrigger;
 
   @override
   void dispose() {
@@ -42,29 +44,79 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        LoginFormContent(
-          formKey: context.read<LoginCubit>().formKey,
+        Form(
+          key: context.read<LoginCubit>().formKey,
           autovalidateMode: context.read<LoginCubit>().autovalidateMode,
-          emailController: context.read<LoginCubit>().emailController,
-          passwordController: context.read<LoginCubit>().passwordController,
-          emailFocusNode: context.read<LoginCubit>().emailFocusNode,
-          passwordFocusNode: context.read<LoginCubit>().passwordFocusNode,
-          login: () => _login(context),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const CustomTextFieldLabel(label: AppStrings.email),
+              EmailTextFormField(
+                emailController: context.read<LoginCubit>().emailController,
+                emailFocusNode: context.read<LoginCubit>().emailFocusNode,
+                passwordFocusNode: context.read<LoginCubit>().passwordFocusNode,
+              ),
+              const BottomTextFieldSpacer(),
+              const CustomTextFieldLabel(label: AppStrings.password),
+              BlocBuilder<LoginCubit, LoginState>(
+                builder: (context, state) => CustomTextFormField(
+                  controller: context.read<LoginCubit>().passwordController,
+                  focusNode: context.read<LoginCubit>().passwordFocusNode,
+                  keyboardType: TextInputType.visiblePassword,
+                  autofillHints: const <String>[AutofillHints.password],
+                  obscureText: context.read<LoginCubit>().isLoginPassVisible,
+                  suffixIcon: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: Icon(
+                      context.read<LoginCubit>().isLoginPassVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: Colors.black,
+                    ),
+                    onPressed: () =>
+                        context.read<LoginCubit>().changePassVisibility(),
+                  ),
+                  hintText: AppStrings.enterYourPassword,
+                  onSubmit: (String val) => _login(context),
+                  validating: (String? value) =>
+                      AuthHelper.validatePasswordField(context, value: value),
+                ),
+              ),
+              Container(
+                alignment: AlignmentDirectional.centerEnd,
+                margin: EdgeInsets.only(bottom: 6.h),
+                child: TextButton(
+                  onPressed: () =>
+                      context.pushRoute(const ForgotPasswordRoute()),
+                  child: const Text(AppStrings.forgotPassword),
+                ),
+              ),
+              BlocListener<LoginCubit, LoginState>(
+                listenWhen: (previous, current) =>
+                    current is Loading ||
+                    current is Success ||
+                    current is Error,
+                listener: (context, state) => loginListener(state),
+                child: PrimaryButton(
+                  text: AppStrings.login,
+                  onPressed: () {
+                    _login(context);
+
+                    debugPrint(
+                        'EMAIL: ${context.read<LoginCubit>().emailController.text}');
+                    debugPrint(
+                        'EMAIL: ${context.read<LoginCubit>().passwordController.text}');
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
         isShowLoading
             ? CustomPositioned(
                 child: RiveAnimation.asset(
                   AppAssets.riveCheck,
-                  onInit: (Artboard artboard) {
-                    StateMachineController controller =
-                        RiveUtils.getRiveController(artboard);
-                    check =
-                        controller.findSMI(AppStrings.riveCheck) as SMITrigger;
-                    error =
-                        controller.findSMI(AppStrings.riveError) as SMITrigger;
-                    reset =
-                        controller.findSMI(AppStrings.riveReset) as SMITrigger;
-                  },
+                  onInit: (Artboard artboard) => _initRiveCheck(artboard),
                 ),
               )
             : const SizedBox.shrink(),
@@ -74,14 +126,7 @@ class _LoginFormState extends State<LoginForm> {
                   scale: 7,
                   child: RiveAnimation.asset(
                     AppAssets.riveConfetti,
-                    onInit: (artboard) {
-                      StateMachineController controller =
-                          RiveUtils.getRiveController(artboard);
-
-                      confetti =
-                          controller.findSMI(AppStrings.riveTriggerExplosion)
-                              as SMITrigger;
-                    },
+                    onInit: (artboard) => _initRiveConfetti(artboard),
                   ),
                 ),
               )
@@ -90,54 +135,67 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
+  Null loginListener(LoginState<dynamic> state) {
+    return state.whenOrNull(
+      loading: () {
+        setState(() {
+          isShowLoading = true;
+          isShowConfetti = true;
+        });
+      },
+      success: (data) {
+        checkTrigger.fire();
+
+        Future.delayed(
+          const Duration(seconds: 2),
+          () {
+            setState(() {
+              isShowLoading = false;
+            });
+
+            confettiTrigger.fire();
+          },
+        );
+      },
+      error: (error) {
+        errorTrigger.fire();
+
+        Future.delayed(const Duration(seconds: 2), () {
+          setState(() {
+            isShowLoading = false;
+          });
+
+          debugPrint('ERROR WHILE LOGIN: $error');
+        });
+      },
+    );
+  }
+
+  void _initRiveConfetti(Artboard artboard) {
+    final StateMachineController controller =
+        RiveUtils.getRiveController(artboard);
+
+    confettiTrigger =
+        controller.findSMI(AppStrings.riveTriggerExplosion) as SMITrigger;
+  }
+
+  void _initRiveCheck(Artboard artboard) {
+    final StateMachineController controller =
+        RiveUtils.getRiveController(artboard);
+    checkTrigger = controller.findSMI(AppStrings.riveCheck) as SMITrigger;
+    errorTrigger = controller.findSMI(AppStrings.riveError) as SMITrigger;
+  }
+
   void _login(BuildContext context) {
     AuthHelper.keyboardUnfocus(context);
 
-    setState(() {
-      isShowLoading = true;
-      isShowConfetti = true;
-    });
-
-    Future.delayed(
-      const Duration(seconds: 1),
-      () {
-        if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-          // If everything looks good, it shows success animation
-          check.fire();
-          Future.delayed(
-            const Duration(seconds: 2),
-            () {
-              setState(() {
-                isShowLoading = false;
-              });
-
-              confetti.fire();
-
-              Future.delayed(
-                const Duration(seconds: 1),
-                () {
-                  debugPrint(
-                    'Email: ${context.read<LoginCubit>().emailController.text}',
-                  );
-                },
-              );
-            },
-          );
-        } else {
-          // Or error animation
-          error.fire();
-          Future.delayed(
-            const Duration(seconds: 2),
-            () {
-              setState(() {
-                isShowLoading = false;
-                context.read<LoginCubit>().autovalidateMode =
-                    AutovalidateMode.always;
-              });
-            },
-          );
-        }
-      },
-    );
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().login();
+    } else {
+      setState(
+        () => context.read<LoginCubit>().autovalidateMode =
+            AutovalidateMode.always,
+      );
+    }
   }
 }

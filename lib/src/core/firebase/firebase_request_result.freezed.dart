@@ -229,10 +229,10 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorHandler = freezed,
+    Object? errorHandler = null,
   }) {
     return _then(_$ErrorImpl<T>(
-      errorHandler: freezed == errorHandler
+      errorHandler: null == errorHandler
           ? _value.errorHandler
           : errorHandler // ignore: cast_nullable_to_non_nullable
               as FirebaseAuthErrorHandler,
@@ -258,13 +258,12 @@ class _$ErrorImpl<T> implements Error<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ErrorImpl<T> &&
-            const DeepCollectionEquality()
-                .equals(other.errorHandler, errorHandler));
+            (identical(other.errorHandler, errorHandler) ||
+                other.errorHandler == errorHandler));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(errorHandler));
+  int get hashCode => Object.hash(runtimeType, errorHandler);
 
   @JsonKey(ignore: true)
   @override
