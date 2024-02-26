@@ -1,7 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:icare/src/features/auth/data/datasources/forgot_password_datasource.dart';
+import 'package:icare/src/features/auth/data/repositories/forgot_password_repo.dart';
 import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
+import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
+import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -37,28 +41,44 @@ class DependencyInjection {
   }
 
   void _setupForDatasources() {
+    // ========== Login feature ==========
     getIt.registerLazySingleton<LoginDataSource>(() => LoginDataSourceImpl());
 
+    // ========== Register feature ==========
     getIt.registerLazySingleton<RegisterDataSource>(
       () => RegisterDataSourceImpl(),
+    );
+
+    // ========== ForgotPassword feature ==========
+    getIt.registerLazySingleton<ForgotPasswordDataSource>(
+      () => ForgotPasswordDataSourceImpl(),
     );
   }
 
   void _setupForRepos() {
+    // ========== Login feature ==========
     getIt.registerLazySingleton<LoginRepo>(
       () => LoginRepo(getIt.get<LoginDataSource>()),
     );
 
+    // ========== Register feature ==========
     getIt.registerLazySingleton<RegisterRepo>(
       () => RegisterRepoImpl(getIt.get<RegisterDataSource>()),
+    );
+
+    // ========== ForgotPassword feature ==========
+    getIt.registerLazySingleton<ForgotPasswordRepo>(
+      () => ForgotPasswordRepo(getIt.get<ForgotPasswordDataSource>()),
     );
   }
 
   void _setupForUseCases() {
+    // ========== Login feature ==========
     getIt.registerLazySingleton<LoginUseCase>(
       () => LoginUseCase(getIt.get<LoginRepo>()),
     );
 
+    // ========== Register feature ==========
     getIt.registerLazySingleton<RegisterUseCase>(
       () => RegisterUseCase(getIt.get<RegisterRepo>()),
     );
@@ -66,18 +86,30 @@ class DependencyInjection {
     getIt.registerLazySingleton<CreateFirestoreUserUseCase>(
       () => CreateFirestoreUserUseCase(getIt.get<RegisterRepo>()),
     );
+
+    // ========== ForgotPassword feature ==========
+    getIt.registerLazySingleton<ForgotPasswordUseCase>(
+      () => ForgotPasswordUseCase(getIt.get<ForgotPasswordRepo>()),
+    );
   }
 
   void _setupForCubits() {
+    // ========== Login feature ==========
     getIt.registerFactory<LoginCubit>(
       () => LoginCubit(getIt.get<LoginUseCase>()),
     );
 
+    // ========== Register feature ==========
     getIt.registerFactory<RegisterCubit>(
       () => RegisterCubit(
         registerUseCase: getIt.get<RegisterUseCase>(),
         createFirestoreUserUseCase: getIt.get<CreateFirestoreUserUseCase>(),
       ),
+    );
+
+    // ========== ForgotPassword feature ==========
+    getIt.registerFactory<ForgotPasswordCubit>(
+      () => ForgotPasswordCubit(getIt.get<ForgotPasswordUseCase>()),
     );
   }
 
