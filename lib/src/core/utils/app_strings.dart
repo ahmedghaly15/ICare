@@ -18,4 +18,5 @@ class AppStrings {
   static const String enterYourEmail = 'Enter your email';
   static const String forgotPassword = 'Forgot Password?';
   static const String noInternetConnection = 'No internet connection';
+  static const String register = 'Register';
 }

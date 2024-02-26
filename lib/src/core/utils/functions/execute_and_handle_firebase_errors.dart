@@ -16,7 +16,7 @@ Future<FirebaseRequestResult> executeAndHandleFirebaseErrors(
     } catch (error) {
       if (error is FirebaseException) {
         return FirebaseRequestResult.error(
-          errorHandler: FirebaseAuthErrorHandler.handleError(error.code),
+          errorHandler: FirebaseAuthErrorHandler.handleError(error),
         );
       } else {
         return FirebaseRequestResult.error(

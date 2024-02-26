@@ -4,9 +4,9 @@ import 'package:icare/src/core/errors/failure.dart';
 class FirebaseAuthErrorHandler extends Failure {
   const FirebaseAuthErrorHandler({super.failureMsg});
 
-  factory FirebaseAuthErrorHandler.handleError(String error) {
+  factory FirebaseAuthErrorHandler.handleError(dynamic error) {
     if (error is FirebaseException) {
-      return FirebaseAuthErrorHandler.fromCode(error);
+      return FirebaseAuthErrorHandler.fromCode(error.code);
     } else {
       return FirebaseAuthErrorHandler(failureMsg: error);
     }
@@ -34,6 +34,10 @@ class FirebaseAuthErrorHandler extends Failure {
         return const FirebaseAuthErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.invalidEmail,
         );
+      case FirebaseAuthCodes.invalidCredential:
+        return const FirebaseAuthErrorHandler(
+          failureMsg: FirebaseAuthErrorMessages.invalidCredential,
+        );
       default:
         return const FirebaseAuthErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.defaultError,
@@ -49,6 +53,8 @@ class FirebaseAuthErrorMessages {
   static const String emailAlreadyInUse = 'Email already in use';
   static const String invalidEmail = 'Invalid email';
   static const String defaultError = 'An error occurred';
+  static const String invalidCredential =
+      'Incorrect login details. Please ensure your email and password are correct.';
 }
 
 class FirebaseAuthCodes {
@@ -57,4 +63,5 @@ class FirebaseAuthCodes {
   static const String weakPassword = 'weak-password';
   static const String emailAlreadyInUse = 'email-already-in-use';
   static const String invalidEmail = 'invalid-email';
+  static const String invalidCredential = 'invalid-credential';
 }
