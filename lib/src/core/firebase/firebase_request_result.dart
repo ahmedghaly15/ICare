@@ -7,5 +7,5 @@ part 'firebase_request_result.freezed.dart';
 class FirebaseRequestResult<T> with _$FirebaseRequestResult<T> {
   const factory FirebaseRequestResult.success({required T data}) = Success<T>;
   const factory FirebaseRequestResult.error(
-      {required FirebaseErrorHandler errorHandler}) = Error<T>;
+      {required FirebaseAuthErrorHandler errorHandler}) = Error<T>;
 }
