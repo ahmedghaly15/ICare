@@ -229,7 +229,7 @@ class _RegisterFormState extends State<RegisterForm> {
   void _register(BuildContext context) {
     AuthHelper.keyboardUnfocus(context);
     if (context.read<RegisterCubit>().formKey.currentState!.validate()) {
-      // context.read<RegisterCubit>().register();
+      context.read<RegisterCubit>().register();
     } else {
       setState(() {
         context.read<RegisterCubit>().autovalidateMode =

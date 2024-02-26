@@ -22,6 +22,7 @@ mixin _$RegisterState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +32,7 @@ mixin _$RegisterState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +42,7 @@ mixin _$RegisterState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) =>
@@ -50,6 +53,8 @@ mixin _$RegisterState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CreateFirestoreUserSuccess<T> value)
+        createFirestoreUserSuccess,
     required TResult Function(ChangePassVisibility<T> value)
         changePassVisibility,
   }) =>
@@ -60,6 +65,8 @@ mixin _$RegisterState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
   }) =>
       throw _privateConstructorUsedError;
@@ -69,6 +76,8 @@ mixin _$RegisterState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
     required TResult orElse(),
   }) =>
@@ -135,6 +144,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return initial();
@@ -147,6 +157,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return initial?.call();
@@ -159,6 +170,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -175,6 +187,8 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CreateFirestoreUserSuccess<T> value)
+        createFirestoreUserSuccess,
     required TResult Function(ChangePassVisibility<T> value)
         changePassVisibility,
   }) {
@@ -188,6 +202,8 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
   }) {
     return initial?.call(this);
@@ -200,6 +216,8 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -256,6 +274,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return loading();
@@ -268,6 +287,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return loading?.call();
@@ -280,6 +300,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -296,6 +317,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CreateFirestoreUserSuccess<T> value)
+        createFirestoreUserSuccess,
     required TResult Function(ChangePassVisibility<T> value)
         changePassVisibility,
   }) {
@@ -309,6 +332,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
   }) {
     return loading?.call(this);
@@ -321,6 +346,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -404,6 +431,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return success(data);
@@ -416,6 +444,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return success?.call(data);
@@ -428,6 +457,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -444,6 +474,8 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CreateFirestoreUserSuccess<T> value)
+        createFirestoreUserSuccess,
     required TResult Function(ChangePassVisibility<T> value)
         changePassVisibility,
   }) {
@@ -457,6 +489,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
   }) {
     return success?.call(this);
@@ -469,6 +503,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -556,6 +592,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return error(this.error);
@@ -568,6 +605,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return error?.call(this.error);
@@ -580,6 +618,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -596,6 +635,8 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CreateFirestoreUserSuccess<T> value)
+        createFirestoreUserSuccess,
     required TResult Function(ChangePassVisibility<T> value)
         changePassVisibility,
   }) {
@@ -609,6 +650,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
   }) {
     return error?.call(this);
@@ -621,6 +664,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -638,6 +683,142 @@ abstract class Error<T> implements RegisterState<T> {
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CreateFirestoreUserSuccessImplCopyWith<T, $Res> {
+  factory _$$CreateFirestoreUserSuccessImplCopyWith(
+          _$CreateFirestoreUserSuccessImpl<T> value,
+          $Res Function(_$CreateFirestoreUserSuccessImpl<T>) then) =
+      __$$CreateFirestoreUserSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$CreateFirestoreUserSuccessImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res,
+        _$CreateFirestoreUserSuccessImpl<T>>
+    implements _$$CreateFirestoreUserSuccessImplCopyWith<T, $Res> {
+  __$$CreateFirestoreUserSuccessImplCopyWithImpl(
+      _$CreateFirestoreUserSuccessImpl<T> _value,
+      $Res Function(_$CreateFirestoreUserSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CreateFirestoreUserSuccessImpl<T>
+    implements CreateFirestoreUserSuccess<T> {
+  const _$CreateFirestoreUserSuccessImpl();
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.createFirestoreUserSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateFirestoreUserSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function() createFirestoreUserSuccess,
+    required TResult Function(bool isRegisterPassVisible) changePassVisibility,
+  }) {
+    return createFirestoreUserSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? createFirestoreUserSuccess,
+    TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
+  }) {
+    return createFirestoreUserSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? createFirestoreUserSuccess,
+    TResult Function(bool isRegisterPassVisible)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (createFirestoreUserSuccess != null) {
+      return createFirestoreUserSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RegisterInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(CreateFirestoreUserSuccess<T> value)
+        createFirestoreUserSuccess,
+    required TResult Function(ChangePassVisibility<T> value)
+        changePassVisibility,
+  }) {
+    return createFirestoreUserSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RegisterInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
+    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+  }) {
+    return createFirestoreUserSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RegisterInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
+    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (createFirestoreUserSuccess != null) {
+      return createFirestoreUserSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateFirestoreUserSuccess<T> implements RegisterState<T> {
+  const factory CreateFirestoreUserSuccess() =
+      _$CreateFirestoreUserSuccessImpl<T>;
 }
 
 /// @nodoc
@@ -711,6 +892,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
     return changePassVisibility(isRegisterPassVisible);
@@ -723,6 +905,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
     return changePassVisibility?.call(isRegisterPassVisible);
@@ -735,6 +918,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
@@ -751,6 +935,8 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(CreateFirestoreUserSuccess<T> value)
+        createFirestoreUserSuccess,
     required TResult Function(ChangePassVisibility<T> value)
         changePassVisibility,
   }) {
@@ -764,6 +950,8 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
   }) {
     return changePassVisibility?.call(this);
@@ -776,6 +964,8 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(CreateFirestoreUserSuccess<T> value)?
+        createFirestoreUserSuccess,
     TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
     required TResult orElse(),
   }) {

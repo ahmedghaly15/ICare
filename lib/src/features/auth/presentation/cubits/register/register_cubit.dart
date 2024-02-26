@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
+import 'package:icare/src/features/auth/data/models/register_request_params.dart';
+import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
+import 'package:icare/src/features/auth/domain/usecases/register.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit() : super(const RegisterState.initial()) {
+  final RegisterUseCase registerUseCase;
+  final CreateFirestoreUserUseCase createFirestoreUserUseCase;
+
+  RegisterCubit({
+    required this.registerUseCase,
+    required this.createFirestoreUserUseCase,
+  }) : super(const RegisterState.initial()) {
     _initFormAttributes();
   }
 
@@ -76,5 +86,43 @@ class RegisterCubit extends Cubit<RegisterState> {
 
     emit(RegisterState.changePassVisibility(
         isRegisterPassVisible: isConfirmPassVisible));
+  }
+
+  void _createFirestoreUser(CreateFirestoreUserParams params) async {
+    final response = await createFirestoreUserUseCase(params);
+
+    response.when(
+      success: (success) {
+        emit(const RegisterState.createFirestoreUserSuccess());
+        emit(RegisterState.success(data: params.uId));
+      },
+      error: (error) =>
+          emit(RegisterState.error(error: error.failureMsg ?? '')),
+    );
+  }
+
+  void register() async {
+    emit(const RegisterState.loading());
+
+    final response = await registerUseCase(
+      RegisterRequestParams(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+      ),
+    );
+
+    response.when(
+      success: (credential) {
+        _createFirestoreUser(
+          CreateFirestoreUserParams(
+            name: nameController.text.trim(),
+            email: emailController.text.trim(),
+            uId: credential.user!.uid,
+          ),
+        );
+      },
+      error: (error) =>
+          emit(RegisterState.error(error: error.failureMsg ?? '')),
+    );
   }
 }

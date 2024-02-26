@@ -74,7 +74,12 @@ class DependencyInjection {
       () => LoginCubit(getIt.get<LoginUseCase>()),
     );
 
-    getIt.registerFactory<RegisterCubit>(() => RegisterCubit());
+    getIt.registerFactory<RegisterCubit>(
+      () => RegisterCubit(
+        registerUseCase: getIt.get<RegisterUseCase>(),
+        createFirestoreUserUseCase: getIt.get<CreateFirestoreUserUseCase>(),
+      ),
+    );
 
     getIt.registerFactory<ResetPasswordCubit>(
       () => ResetPasswordCubit(),
