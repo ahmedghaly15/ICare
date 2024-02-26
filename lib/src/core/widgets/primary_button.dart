@@ -6,7 +6,8 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
-    required this.text,
+    this.text,
+    this.child,
     required this.onPressed,
     this.borderRadius,
     this.textStyle,
@@ -15,7 +16,8 @@ class PrimaryButton extends StatelessWidget {
     this.hasShadow = true,
   });
 
-  final String text;
+  final String? text;
+  final Widget? child;
   final double? borderRadius;
   final TextStyle? textStyle;
   final Color? backgroundColor;
@@ -44,13 +46,14 @@ class PrimaryButton extends StatelessWidget {
       ),
       child: MaterialButton(
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: textStyle ??
-              AppTextStyles.textStyle24Medium(context).copyWith(
-                color: textColor ?? Colors.white,
-              ),
-        ),
+        child: child ??
+            Text(
+              text!,
+              style: textStyle ??
+                  AppTextStyles.textStyle24Medium(context).copyWith(
+                    color: textColor ?? Colors.white,
+                  ),
+            ),
       ),
     );
   }
