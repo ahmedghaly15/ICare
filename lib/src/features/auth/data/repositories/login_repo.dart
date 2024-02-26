@@ -4,13 +4,13 @@ import 'package:icare/src/features/auth/data/datasources/login_datasource.dart';
 import 'package:icare/src/features/auth/data/models/login_request_params.dart';
 
 class LoginRepo {
-  final LoginDataSource loginDataSource;
+  final LoginDataSource _loginDataSource;
 
-  const LoginRepo({required this.loginDataSource});
+  const LoginRepo(this._loginDataSource);
 
   Future<FirebaseRequestResult> login(LoginRequestParams params) async {
     return executeAndHandleFirebaseErrors(
-      () async => await loginDataSource.login(params),
+      () async => await _loginDataSource.login(params),
     );
   }
 }

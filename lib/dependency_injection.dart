@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/network/network_info.dart';
+import 'package:icare/src/features/auth/data/datasources/login_datasource.dart';
+import 'package:icare/src/features/auth/data/repositories/login_repo.dart';
+import 'package:icare/src/features/auth/domain/usecases/login.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
@@ -28,14 +31,26 @@ class DependencyInjection {
     _setupForCubits();
   }
 
-  void _setupForDatasources() {}
+  void _setupForDatasources() {
+    getIt.registerLazySingleton<LoginDataSource>(() => LoginDataSourceImpl());
+  }
 
-  void _setupForRepos() {}
+  void _setupForRepos() {
+    getIt.registerLazySingleton<LoginRepo>(
+      () => LoginRepo(getIt.get<LoginDataSource>()),
+    );
+  }
 
-  void _setupForUseCases() {}
+  void _setupForUseCases() {
+    getIt.registerLazySingleton<LoginUseCase>(
+      () => LoginUseCase(getIt.get<LoginRepo>()),
+    );
+  }
 
   void _setupForCubits() {
-    getIt.registerFactory<LoginCubit>(() => LoginCubit());
+    getIt.registerFactory<LoginCubit>(
+      () => LoginCubit(getIt.get<LoginUseCase>()),
+    );
 
     getIt.registerFactory<RegisterCubit>(() => RegisterCubit());
 
