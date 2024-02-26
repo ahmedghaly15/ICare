@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 
 class AuthBigSizeDescription extends StatelessWidget {
   const AuthBigSizeDescription({
@@ -13,7 +13,7 @@ class AuthBigSizeDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       description,
-      style: AppTextStyles.textStyle15Bold,
+      style: AppTextStyles.textStyle15Bold(context),
       textAlign: TextAlign.center,
     );
   }

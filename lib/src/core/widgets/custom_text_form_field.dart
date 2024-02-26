@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -71,16 +71,16 @@ class CustomTextFormField extends StatelessWidget {
       autofillHints: autofillHints,
       onFieldSubmitted: onSubmit,
       onChanged: onChanged,
-      style: _customTextFieldTextStyle(),
+      style: _customTextFieldTextStyle(context),
       cursorColor: Colors.black,
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.secondaryColor,
-        errorStyle: AppTextStyles.textStyle13Light.copyWith(
+        errorStyle: AppTextStyles.textStyle13Light(context).copyWith(
           color: Colors.red,
         ),
         hintText: hintText,
-        hintStyle: _customTextFieldTextStyle(),
+        hintStyle: _customTextFieldTextStyle(context),
         errorMaxLines: null,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
@@ -107,8 +107,8 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  TextStyle _customTextFieldTextStyle() {
-    return AppTextStyles.textStyle13Light;
+  TextStyle _customTextFieldTextStyle(BuildContext context) {
+    return AppTextStyles.textStyle13Light(context);
   }
 
   OutlineInputBorder _buildOutlinedInputBorder(

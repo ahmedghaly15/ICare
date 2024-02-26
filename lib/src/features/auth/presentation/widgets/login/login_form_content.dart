@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
@@ -79,7 +79,7 @@ class LoginFormContent extends StatelessWidget {
               onPressed: () => context.pushRoute(const ForgotPasswordRoute()),
               child: Text(
                 'Forgot Password?',
-                style: AppTextStyles.textStyle13Bold.copyWith(
+                style: AppTextStyles.textStyle13Bold(context).copyWith(
                   color: AppColors.primaryColor,
                 ),
               ),

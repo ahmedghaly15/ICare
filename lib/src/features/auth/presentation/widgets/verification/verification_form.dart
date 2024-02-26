@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/router/app_router.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:pinput/pinput.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/bottom_spacer.dart';
@@ -53,7 +53,7 @@ class _VerificationFormState extends State<VerificationForm> {
                 defaultPinTheme: PinTheme(
                   height: 40.h,
                   width: 60.w,
-                  textStyle: AppTextStyles.textStyle20Bold,
+                  textStyle: AppTextStyles.textStyle20Bold(context),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(205.r)),

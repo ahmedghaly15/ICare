@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 
 class CustomTextFieldLabel extends StatelessWidget {
   const CustomTextFieldLabel({
@@ -16,7 +16,7 @@ class CustomTextFieldLabel extends StatelessWidget {
       margin: EdgeInsets.only(left: 35.w, bottom: 7.h),
       child: Text(
         label,
-        style: AppTextStyles.textStyle16Bold,
+        style: AppTextStyles.textStyle16Bold(context),
       ),
     );
   }

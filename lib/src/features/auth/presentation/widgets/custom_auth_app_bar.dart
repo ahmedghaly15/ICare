@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/widgets/custom_arrow_back_button.dart';
 
 class CustomAuthAppBar extends StatelessWidget {
@@ -32,7 +32,7 @@ class CustomAuthAppBar extends StatelessWidget {
               ),
               Text(
                 AppStrings.appTitle,
-                style: AppTextStyles.textStyle30Bold.copyWith(
+                style: AppTextStyles.textStyle30Bold(context).copyWith(
                   color: AppColors.primaryColor,
                 ),
               ),

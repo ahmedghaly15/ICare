@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 
 class AuthBigSizTitle extends StatelessWidget {
   const AuthBigSizTitle({
@@ -17,7 +17,7 @@ class AuthBigSizTitle extends StatelessWidget {
       alignment: AlignmentDirectional.center,
       child: Text(
         title,
-        style: AppTextStyles.textStyle25Bold,
+        style: AppTextStyles.textStyle25Bold(context),
       ),
     );
   }

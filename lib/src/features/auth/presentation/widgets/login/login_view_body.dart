@@ -2,16 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
-import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_medium_size_title.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_small_size_description.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_auth_app_bar.dart';
-import 'package:icare/src/features/auth/presentation/widgets/login/custom_social_icon.dart';
 import 'package:icare/src/features/auth/presentation/widgets/login/login_form.dart';
-import 'package:icare/src/features/auth/presentation/widgets/login/or_log_with.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -35,26 +32,6 @@ class LoginViewBody extends StatelessWidget {
                   ),
                   SizedBox(height: 25.h),
                   const LoginForm(),
-                  SizedBox(height: 17.h),
-                  const OrLogWith(),
-                  SizedBox(height: 30.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      CustomSocialButton(
-                        icon: AppAssets.imagesFacebookLogo,
-                        onPressed: () {},
-                      ),
-                      CustomSocialButton(
-                        icon: AppAssets.imagesGoogleLogo,
-                        onPressed: () {},
-                      ),
-                      CustomSocialButton(
-                        icon: AppAssets.imagesXLogo,
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),
@@ -72,14 +49,15 @@ class LoginViewBody extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         "Don't have an account?",
-                        style: AppTextStyles.textStyle16Light,
+                        style: AppTextStyles.textStyle16Light(context),
                       ),
                       TextButton(
                         onPressed: () =>
                             context.pushRoute(const RegisterRoute()),
                         child: Text(
                           'Register here',
-                          style: AppTextStyles.textStyle16Bold.copyWith(
+                          style:
+                              AppTextStyles.textStyle16Bold(context).copyWith(
                             color: AppColors.primaryColor,
                           ),
                         ),

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/start/presentation/widgets/faded_widget.dart';
 
@@ -49,34 +49,32 @@ class _StartViewState extends State<StartView> {
         children: <Widget>[
           FadedWidget(
             child: Image.asset(
-              AppAssets.imagesSplash,
+              AppAssets.imagesStart,
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
             ),
           ),
           FadedWidget(
-            child: Padding(
-              padding: EdgeInsets.only(
-                left: 24.0.w,
-                right: 24.0.w,
-                bottom: 16.h,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  PrimaryButton(
-                    text: 'Login',
-                    onPressed: () => context.pushRoute(const LoginRoute()),
-                  ),
-                  SizedBox(height: 8.h),
-                  PrimaryButton(
-                    text: 'Register',
-                    textColor: AppColors.primaryColor,
-                    onPressed: () => context.pushRoute(const RegisterRoute()),
-                    backgroundColor: AppColors.secondaryColor,
-                  ),
-                ],
+            child: SafeArea(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    PrimaryButton(
+                      text: 'Login',
+                      onPressed: () => context.pushRoute(const LoginRoute()),
+                    ),
+                    SizedBox(height: 8.h),
+                    PrimaryButton(
+                      text: 'Register',
+                      textColor: AppColors.primaryColor,
+                      onPressed: () => context.pushRoute(const RegisterRoute()),
+                      backgroundColor: AppColors.secondaryColor,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

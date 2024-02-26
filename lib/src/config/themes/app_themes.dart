@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 
 class AppThemes {

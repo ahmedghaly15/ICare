@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 
 class AuthSmallSizeDescription extends StatelessWidget {
   const AuthSmallSizeDescription({
@@ -13,7 +13,7 @@ class AuthSmallSizeDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       description,
-      style: AppTextStyles.textStyle13Light,
+      style: AppTextStyles.textStyle13Light(context),
     );
   }
 }

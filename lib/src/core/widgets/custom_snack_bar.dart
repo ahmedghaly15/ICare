@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_text_styles.dart';
+import 'package:icare/src/config/themes/app_text_styles.dart';
 
 enum CustomSnackBarStates { warning, success }
 
@@ -33,13 +33,13 @@ class CustomSnackBar {
                     state == CustomSnackBarStates.warning
                         ? 'Warning'
                         : 'Success',
-                    style: AppTextStyles.textStyle16Medium.copyWith(
+                    style: AppTextStyles.textStyle16Medium(context).copyWith(
                       color: Colors.white,
                     ),
                   ),
                   Text(
                     message,
-                    style: AppTextStyles.textStyle13Light
+                    style: AppTextStyles.textStyle13Light(context)
                         .copyWith(color: Colors.white),
                   ),
                 ],

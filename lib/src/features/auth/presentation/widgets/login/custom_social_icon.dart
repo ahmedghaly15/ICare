@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/helpers/helper.dart';
-import 'package:icare/src/core/utils/app_colors.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 
 class CustomSocialButton extends StatelessWidget {
   const CustomSocialButton({

@@ -27,7 +27,6 @@ class AppRouter extends _$AppRouter {
             _buildCustomRoute(
               initial: true,
               page: LoginRoute.page,
-              transitionsBuilder: TransitionsBuilders.fadeIn,
             ),
             _buildCustomRoute(page: RegisterRoute.page),
             _buildCustomRoute(page: ForgotPasswordRoute.page),
