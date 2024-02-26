@@ -3,8 +3,12 @@ import 'package:get_it/get_it.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/network/network_info.dart';
 import 'package:icare/src/features/auth/data/datasources/login_datasource.dart';
+import 'package:icare/src/features/auth/data/datasources/register_datasource.dart';
 import 'package:icare/src/features/auth/data/repositories/login_repo.dart';
+import 'package:icare/src/features/auth/data/repositories/register_repo_impl.dart';
+import 'package:icare/src/features/auth/domain/repositories/register_repo.dart';
 import 'package:icare/src/features/auth/domain/usecases/login.dart';
+import 'package:icare/src/features/auth/domain/usecases/register.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
@@ -33,17 +37,29 @@ class DependencyInjection {
 
   void _setupForDatasources() {
     getIt.registerLazySingleton<LoginDataSource>(() => LoginDataSourceImpl());
+
+    getIt.registerLazySingleton<RegisterDataSource>(
+      () => RegisterDataSourceImpl(),
+    );
   }
 
   void _setupForRepos() {
     getIt.registerLazySingleton<LoginRepo>(
       () => LoginRepo(getIt.get<LoginDataSource>()),
     );
+
+    getIt.registerLazySingleton<RegisterRepo>(
+      () => RegisterRepoImpl(getIt.get<RegisterDataSource>()),
+    );
   }
 
   void _setupForUseCases() {
     getIt.registerLazySingleton<LoginUseCase>(
       () => LoginUseCase(getIt.get<LoginRepo>()),
+    );
+
+    getIt.registerLazySingleton<RegisterUseCase>(
+      () => RegisterUseCase(getIt.get<RegisterRepo>()),
     );
   }
 
