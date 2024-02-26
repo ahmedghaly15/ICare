@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rive/rive.dart';
+
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
@@ -17,7 +18,6 @@ import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_s
 import 'package:icare/src/features/auth/presentation/widgets/custom_positioned.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
-import 'package:rive/rive.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -30,9 +30,9 @@ class _LoginFormState extends State<LoginForm> {
   bool isShowLoading = false;
   bool isShowConfetti = false;
 
-  late SMITrigger checkTrigger;
-  late SMITrigger errorTrigger;
-  late SMITrigger confettiTrigger;
+  late final SMITrigger checkTrigger;
+  late final SMITrigger errorTrigger;
+  late final SMITrigger confettiTrigger;
 
   @override
   Widget build(BuildContext context) {

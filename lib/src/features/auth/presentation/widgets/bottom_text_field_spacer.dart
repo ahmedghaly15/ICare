@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 
 class BottomTextFieldSpacer extends StatelessWidget {
   const BottomTextFieldSpacer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: 18.h);
+    return MySizedBox.height18;
   }
 }

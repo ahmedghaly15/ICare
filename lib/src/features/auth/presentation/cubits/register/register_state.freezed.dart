@@ -1,0 +1,767 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'register_state.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+/// @nodoc
+mixin _$RegisterState<T> {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function() error,
+    required TResult Function(bool isRegisterPassVisible) changePassVisibility,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function()? error,
+    TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function()? error,
+    TResult Function(bool isRegisterPassVisible)? changePassVisibility,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RegisterInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(ChangePassVisibility<T> value)
+        changePassVisibility,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RegisterInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RegisterInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RegisterStateCopyWith<T, $Res> {
+  factory $RegisterStateCopyWith(
+          RegisterState<T> value, $Res Function(RegisterState<T>) then) =
+      _$RegisterStateCopyWithImpl<T, $Res, RegisterState<T>>;
+}
+
+/// @nodoc
+class _$RegisterStateCopyWithImpl<T, $Res, $Val extends RegisterState<T>>
+    implements $RegisterStateCopyWith<T, $Res> {
+  _$RegisterStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$RegisterInitialImplCopyWith<T, $Res> {
+  factory _$$RegisterInitialImplCopyWith(_$RegisterInitialImpl<T> value,
+          $Res Function(_$RegisterInitialImpl<T>) then) =
+      __$$RegisterInitialImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RegisterInitialImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$RegisterInitialImpl<T>>
+    implements _$$RegisterInitialImplCopyWith<T, $Res> {
+  __$$RegisterInitialImplCopyWithImpl(_$RegisterInitialImpl<T> _value,
+      $Res Function(_$RegisterInitialImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
+  const _$RegisterInitialImpl();
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.initial()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RegisterInitialImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function() error,
+    required TResult Function(bool isRegisterPassVisible) changePassVisibility,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function()? error,
+    TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function()? error,
+    TResult Function(bool isRegisterPassVisible)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RegisterInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(ChangePassVisibility<T> value)
+        changePassVisibility,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RegisterInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RegisterInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegisterInitial<T> implements RegisterState<T> {
+  const factory _RegisterInitial() = _$RegisterInitialImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$LoadingImplCopyWith<T, $Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl<T> value, $Res Function(_$LoadingImpl<T>) then) =
+      __$$LoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LoadingImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$LoadingImpl<T>>
+    implements _$$LoadingImplCopyWith<T, $Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl<T> _value, $Res Function(_$LoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadingImpl<T> implements Loading<T> {
+  const _$LoadingImpl();
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.loading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function() error,
+    required TResult Function(bool isRegisterPassVisible) changePassVisibility,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function()? error,
+    TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function()? error,
+    TResult Function(bool isRegisterPassVisible)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RegisterInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(ChangePassVisibility<T> value)
+        changePassVisibility,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RegisterInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RegisterInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Loading<T> implements RegisterState<T> {
+  const factory Loading() = _$LoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SuccessImplCopyWith<T, $Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl<T> value, $Res Function(_$SuccessImpl<T>) then) =
+      __$$SuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$SuccessImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$SuccessImpl<T>>
+    implements _$$SuccessImplCopyWith<T, $Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl<T> _value, $Res Function(_$SuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SuccessImpl<T>(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessImpl<T> implements Success<T> {
+  const _$SuccessImpl({required this.data});
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.success(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
+      __$$SuccessImplCopyWithImpl<T, _$SuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function() error,
+    required TResult Function(bool isRegisterPassVisible) changePassVisibility,
+  }) {
+    return success(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function()? error,
+    TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
+  }) {
+    return success?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function()? error,
+    TResult Function(bool isRegisterPassVisible)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RegisterInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(ChangePassVisibility<T> value)
+        changePassVisibility,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RegisterInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RegisterInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Success<T> implements RegisterState<T> {
+  const factory Success({required final T data}) = _$SuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorImplCopyWith<T, $Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
+      __$$ErrorImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ErrorImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$ErrorImpl<T>>
+    implements _$$ErrorImplCopyWith<T, $Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl<T> _value, $Res Function(_$ErrorImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ErrorImpl<T> implements Error<T> {
+  const _$ErrorImpl();
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.error()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ErrorImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function() error,
+    required TResult Function(bool isRegisterPassVisible) changePassVisibility,
+  }) {
+    return error();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function()? error,
+    TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
+  }) {
+    return error?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function()? error,
+    TResult Function(bool isRegisterPassVisible)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RegisterInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(ChangePassVisibility<T> value)
+        changePassVisibility,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RegisterInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RegisterInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Error<T> implements RegisterState<T> {
+  const factory Error() = _$ErrorImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$ChangePassVisibilityImplCopyWith<T, $Res> {
+  factory _$$ChangePassVisibilityImplCopyWith(
+          _$ChangePassVisibilityImpl<T> value,
+          $Res Function(_$ChangePassVisibilityImpl<T>) then) =
+      __$$ChangePassVisibilityImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({bool isRegisterPassVisible});
+}
+
+/// @nodoc
+class __$$ChangePassVisibilityImplCopyWithImpl<T, $Res>
+    extends _$RegisterStateCopyWithImpl<T, $Res, _$ChangePassVisibilityImpl<T>>
+    implements _$$ChangePassVisibilityImplCopyWith<T, $Res> {
+  __$$ChangePassVisibilityImplCopyWithImpl(_$ChangePassVisibilityImpl<T> _value,
+      $Res Function(_$ChangePassVisibilityImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isRegisterPassVisible = null,
+  }) {
+    return _then(_$ChangePassVisibilityImpl<T>(
+      isRegisterPassVisible: null == isRegisterPassVisible
+          ? _value.isRegisterPassVisible
+          : isRegisterPassVisible // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
+  const _$ChangePassVisibilityImpl({required this.isRegisterPassVisible});
+
+  @override
+  final bool isRegisterPassVisible;
+
+  @override
+  String toString() {
+    return 'RegisterState<$T>.changePassVisibility(isRegisterPassVisible: $isRegisterPassVisible)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangePassVisibilityImpl<T> &&
+            (identical(other.isRegisterPassVisible, isRegisterPassVisible) ||
+                other.isRegisterPassVisible == isRegisterPassVisible));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isRegisterPassVisible);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangePassVisibilityImplCopyWith<T, _$ChangePassVisibilityImpl<T>>
+      get copyWith => __$$ChangePassVisibilityImplCopyWithImpl<T,
+          _$ChangePassVisibilityImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function() error,
+    required TResult Function(bool isRegisterPassVisible) changePassVisibility,
+  }) {
+    return changePassVisibility(isRegisterPassVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function()? error,
+    TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
+  }) {
+    return changePassVisibility?.call(isRegisterPassVisible);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function()? error,
+    TResult Function(bool isRegisterPassVisible)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (changePassVisibility != null) {
+      return changePassVisibility(isRegisterPassVisible);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RegisterInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(ChangePassVisibility<T> value)
+        changePassVisibility,
+  }) {
+    return changePassVisibility(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RegisterInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(ChangePassVisibility<T> value)? changePassVisibility,
+  }) {
+    return changePassVisibility?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RegisterInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(ChangePassVisibility<T> value)? changePassVisibility,
+    required TResult orElse(),
+  }) {
+    if (changePassVisibility != null) {
+      return changePassVisibility(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangePassVisibility<T> implements RegisterState<T> {
+  const factory ChangePassVisibility(
+          {required final bool isRegisterPassVisible}) =
+      _$ChangePassVisibilityImpl<T>;
+
+  bool get isRegisterPassVisible;
+  @JsonKey(ignore: true)
+  _$$ChangePassVisibilityImplCopyWith<T, _$ChangePassVisibilityImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}

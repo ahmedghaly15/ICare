@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rive/rive.dart';
+
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/rive_utils.dart';
+import 'package:icare/src/core/widgets/custom_text_form_field.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/core/widgets/primary_button.dart';
+import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
+import 'package:icare/src/features/auth/presentation/cubits/register/register_state.dart';
+import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_positioned.dart';
-import 'package:icare/src/features/auth/presentation/widgets/register/register_form_content.dart';
-import 'package:rive/rive.dart';
+import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
+import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -14,92 +24,139 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
-  final TextEditingController _nameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
-
-  final FocusNode _nameFocusNode = FocusNode();
-  final FocusNode _emailFocusNode = FocusNode();
-  final FocusNode _passwordFocusNode = FocusNode();
-  final FocusNode _confirmPasswordFocusNode = FocusNode();
-
-  late final GlobalKey<FormState> _formKey;
-  late AutovalidateMode autovalidateMode;
-
-  void _initFormAttributes() {
-    _formKey = GlobalKey<FormState>();
-    autovalidateMode = AutovalidateMode.disabled;
-  }
-
   bool isShowLoading = false;
   bool isShowConfetti = false;
 
-  late SMITrigger check;
-  late SMITrigger error;
-  late SMITrigger reset;
-
-  late SMITrigger confetti;
-
-  @override
-  void initState() {
-    _initFormAttributes();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _disposeController();
-    _disposeFocusNodes();
-  }
-
-  void _disposeFocusNodes() {
-    _nameFocusNode.dispose();
-    _emailFocusNode.dispose();
-    _passwordFocusNode.dispose();
-    _confirmPasswordFocusNode.dispose();
-  }
-
-  void _disposeController() {
-    _nameController.dispose();
-    _emailController.dispose();
-    _passwordController.dispose();
-    _confirmPasswordController.dispose();
-  }
+  late final SMITrigger checkTrigger;
+  late final SMITrigger errorTrigger;
+  late final SMITrigger confettiTrigger;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        RegisterFormContent(
-          formKey: _formKey,
-          autovalidateMode: autovalidateMode,
-          nameController: _nameController,
-          emailController: _emailController,
-          passwordController: _passwordController,
-          confirmPasswordController: _confirmPasswordController,
-          nameFocusNode: _nameFocusNode,
-          emailFocusNode: _emailFocusNode,
-          passwordFocusNode: _passwordFocusNode,
-          confirmPasswordFocusNode: _confirmPasswordFocusNode,
-          register: () => _register(context),
+        Form(
+          key: context.read<RegisterCubit>().formKey,
+          autovalidateMode: context.read<RegisterCubit>().autovalidateMode,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const CustomTextFieldLabel(label: AppStrings.name),
+              CustomTextFormField(
+                controller: context.read<RegisterCubit>().nameController,
+                focusNode: context.read<RegisterCubit>().nameFocusNode,
+                hintText: AppStrings.enterYourName,
+                onEditingComplete: () => AuthHelper.requestFocus(
+                  context,
+                  context.read<RegisterCubit>().emailFocusNode,
+                ),
+                autofillHints: const <String>[AutofillHints.name],
+                keyboardType: TextInputType.name,
+                textCapitalization: TextCapitalization.words,
+                validating: (String? value) =>
+                    AuthHelper.validateNameField(context, value: value),
+              ),
+              const BottomTextFieldSpacer(),
+              const CustomTextFieldLabel(label: AppStrings.email),
+              EmailTextFormField(
+                emailController: context.read<RegisterCubit>().emailController,
+                emailFocusNode: context.read<RegisterCubit>().emailFocusNode,
+                passwordFocusNode:
+                    context.read<RegisterCubit>().passwordFocusNode,
+              ),
+              const BottomTextFieldSpacer(),
+              const CustomTextFieldLabel(label: AppStrings.password),
+              BlocBuilder<RegisterCubit, RegisterState>(
+                builder: (context, state) => CustomTextFormField(
+                  controller: context.read<RegisterCubit>().passwordController,
+                  focusNode: context.read<RegisterCubit>().passwordFocusNode,
+                  keyboardType: TextInputType.visiblePassword,
+                  autofillHints: const <String>[AutofillHints.password],
+                  obscureText:
+                      context.read<RegisterCubit>().isRegisterPassVisible,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      context.read<RegisterCubit>().isRegisterPassVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: Colors.black,
+                    ),
+                    onPressed: () =>
+                        context.read<RegisterCubit>().changePassVisibility(),
+                  ),
+                  hintText: AppStrings.enterYourPassword,
+                  onEditingComplete: () => AuthHelper.requestFocus(
+                    context,
+                    context.read<RegisterCubit>().confirmPasswordFocusNode,
+                  ),
+                  validating: (String? value) =>
+                      AuthHelper.validatePasswordField(context, value: value),
+                ),
+              ),
+              const BottomTextFieldSpacer(),
+              const CustomTextFieldLabel(label: AppStrings.confirmPassword),
+              BlocBuilder<RegisterCubit, RegisterState>(
+                builder: (context, state) => CustomTextFormField(
+                  controller:
+                      context.read<RegisterCubit>().confirmPasswordController,
+                  focusNode:
+                      context.read<RegisterCubit>().confirmPasswordFocusNode,
+                  keyboardType: TextInputType.visiblePassword,
+                  autofillHints: const <String>[AutofillHints.password],
+                  obscureText:
+                      context.read<RegisterCubit>().isConfirmPassVisible,
+                  suffixIcon: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: Icon(
+                      context.read<RegisterCubit>().isConfirmPassVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: Colors.black,
+                    ),
+                    onPressed: () => context
+                        .read<RegisterCubit>()
+                        .changeConfirmPassVisibility(),
+                  ),
+                  hintText: AppStrings.confirmYourPassword,
+                  onSubmit: (String val) => _register(context),
+                  validating: (String? value) =>
+                      AuthHelper.validateConfirmPasswordField(
+                    context,
+                    password:
+                        context.read<RegisterCubit>().passwordController.text,
+                    confirmPassword: context
+                        .read<RegisterCubit>()
+                        .confirmPasswordController
+                        .text,
+                    value: value,
+                  ),
+                ),
+              ),
+              MySizedBox.height46,
+              PrimaryButton(
+                text: AppStrings.register,
+                onPressed: () {
+                  _register(context);
+                },
+              ),
+            ],
+          ),
         ),
         isShowLoading
             ? CustomPositioned(
                 child: RiveAnimation.asset(
                   AppAssets.riveCheck,
                   onInit: (Artboard artboard) {
-                    StateMachineController controller =
+                    final StateMachineController controller =
                         RiveUtils.getRiveController(artboard);
-                    check = controller.findSMI("Check") as SMITrigger;
-                    error = controller.findSMI("Error") as SMITrigger;
-                    reset = controller.findSMI("Reset") as SMITrigger;
+                    checkTrigger =
+                        controller.findSMI(AppStrings.riveCheck) as SMITrigger;
+                    errorTrigger =
+                        controller.findSMI(AppStrings.riveError) as SMITrigger;
                   },
                 ),
               )
-            : const SizedBox(),
+            : const SizedBox.shrink(),
         isShowConfetti
             ? CustomPositioned(
                 child: Transform.scale(
@@ -107,16 +164,17 @@ class _RegisterFormState extends State<RegisterForm> {
                   child: RiveAnimation.asset(
                     AppAssets.riveConfetti,
                     onInit: (artboard) {
-                      StateMachineController controller =
+                      final StateMachineController controller =
                           RiveUtils.getRiveController(artboard);
 
-                      confetti =
-                          controller.findSMI("Trigger explosion") as SMITrigger;
+                      confettiTrigger =
+                          controller.findSMI(AppStrings.riveTriggerExplosion)
+                              as SMITrigger;
                     },
                   ),
                 ),
               )
-            : const SizedBox(),
+            : const SizedBox.shrink(),
       ],
     );
   }
@@ -132,9 +190,9 @@ class _RegisterFormState extends State<RegisterForm> {
     Future.delayed(
       const Duration(seconds: 1),
       () {
-        if (_formKey.currentState!.validate()) {
+        if (context.read<RegisterCubit>().formKey.currentState!.validate()) {
           // If everything looks good, it shows success animation
-          check.fire();
+          checkTrigger.fire();
           Future.delayed(
             const Duration(seconds: 2),
             () {
@@ -142,7 +200,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 isShowLoading = false;
               });
 
-              confetti.fire();
+              confettiTrigger.fire();
 
               Future.delayed(
                 const Duration(seconds: 1),
@@ -152,13 +210,14 @@ class _RegisterFormState extends State<RegisterForm> {
           );
         } else {
           // Or error animation
-          error.fire();
+          errorTrigger.fire();
           Future.delayed(
             const Duration(seconds: 2),
             () {
               setState(() {
                 isShowLoading = false;
-                autovalidateMode = AutovalidateMode.always;
+                context.read<RegisterCubit>().autovalidateMode =
+                    AutovalidateMode.always;
               });
             },
           );

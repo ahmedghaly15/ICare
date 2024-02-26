@@ -4,7 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/widgets/bottom_spacer.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_medium_size_title.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_small_size_description.dart';
@@ -27,24 +28,32 @@ class RegisterView extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: AppConstants.authHorizontalPadding,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                const CustomAuthAppBar(),
-                const AuthMediumSizeTitle(title: 'Register'),
-                SizedBox(height: 7.h),
-                const AuthSmallSizeDescription(
-                  description: 'Enter your personal information ',
+        child: CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: AppConstants.authHorizontalPadding,
+              sliver: const SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    CustomAuthAppBar(),
+                    AuthMediumSizeTitle(title: AppStrings.register),
+                    MySizedBox.height7,
+                    AuthSmallSizeDescription(
+                      description: AppStrings.enterYourPersonalInfo,
+                    ),
+                  ],
                 ),
-                SizedBox(height: 25.h),
-                const RegisterForm(),
-                const BottomSpacer(),
-              ],
+              ),
             ),
-          ),
+            SliverPadding(
+              padding: EdgeInsets.all(AppConstants.horizontalPaddingVal.h),
+              sliver: const SliverFillRemaining(
+                hasScrollBody: false,
+                child: RegisterForm(),
+              ),
+            ),
+          ],
         ),
       ),
     );

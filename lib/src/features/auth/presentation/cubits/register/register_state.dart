@@ -1,15 +1,14 @@
-part of 'register_cubit.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-abstract class RegisterState {
-  const RegisterState();
-}
+part 'register_state.freezed.dart';
 
-class RegisterInitial extends RegisterState {
-  const RegisterInitial();
-}
-
-class ChangePassVisibilityState extends RegisterState {
-  final bool isRegisterPassVisible;
-
-  const ChangePassVisibilityState({required this.isRegisterPassVisible});
+@freezed
+class RegisterState<T> with _$RegisterState<T> {
+  const factory RegisterState.initial() = _RegisterInitial;
+  const factory RegisterState.loading() = Loading;
+  const factory RegisterState.success({required T data}) = Success<T>;
+  const factory RegisterState.error() = Error;
+  const factory RegisterState.changePassVisibility({
+    required bool isRegisterPassVisible,
+  }) = ChangePassVisibility;
 }
