@@ -16,7 +16,6 @@ import 'package:icare/src/features/auth/domain/usecases/login.dart';
 import 'package:icare/src/features/auth/domain/usecases/register.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
-import 'package:icare/src/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -79,10 +78,6 @@ class DependencyInjection {
         registerUseCase: getIt.get<RegisterUseCase>(),
         createFirestoreUserUseCase: getIt.get<CreateFirestoreUserUseCase>(),
       ),
-    );
-
-    getIt.registerFactory<ResetPasswordCubit>(
-      () => ResetPasswordCubit(),
     );
   }
 
