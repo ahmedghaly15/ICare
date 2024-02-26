@@ -104,7 +104,8 @@ class DependencyInjection {
       () => FirebaseFirestore.instance,
     );
 
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
     getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
   }
 }

@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_model.dart';
+part of 'icare_user.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
+ICareUser _$ICareUserFromJson(Map<String, dynamic> json) => ICareUser(
       name: json['name'] as String?,
       email: json['email'] as String?,
       uId: json['uId'] as String?,
     );
 
-Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
+Map<String, dynamic> _$ICareUserToJson(ICareUser instance) => <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
       'uId': instance.uId,

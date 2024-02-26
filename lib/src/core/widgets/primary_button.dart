@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 
@@ -34,7 +33,12 @@ class PrimaryButton extends StatelessWidget {
         borderRadius: BorderRadiusDirectional.circular(borderRadius ?? 50.0.r),
         boxShadow: hasShadow
             ? <BoxShadow>[
-                Helper.buildBoxShadow(),
+                BoxShadow(
+                  offset: Offset(0.w, 4.h),
+                  blurRadius: 4.w,
+                  spreadRadius: 0,
+                  color: Colors.black.withOpacity(0.25),
+                ),
               ]
             : null,
       ),
