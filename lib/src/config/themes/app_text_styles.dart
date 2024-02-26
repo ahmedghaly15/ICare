@@ -22,6 +22,11 @@ class AppTextStyles {
         fontWeight: FontWeight.bold,
       );
 
+  static TextStyle textStyle18Bold(BuildContext context) => TextStyle(
+        fontSize: getResponsiveFontSize(context, fontSize: 18),
+        fontWeight: FontWeight.bold,
+      );
+
   static TextStyle textStyle16Light(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 16),
         fontWeight: FontWeight.w300,
