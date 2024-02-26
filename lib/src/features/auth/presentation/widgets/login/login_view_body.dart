@@ -27,11 +27,11 @@ class LoginViewBody extends StatelessWidget {
                 children: <Widget>[
                   CustomAuthAppBar(),
                   AuthMediumSizeTitle(title: AppStrings.login),
-                  MySizedBox(height: 7),
+                  MySizedBox.height7,
                   AuthSmallSizeDescription(
                     description: AppStrings.loginDescription,
                   ),
-                  MySizedBox(height: 25),
+                  MySizedBox.height25,
                   LoginForm(),
                 ],
               ),
@@ -43,7 +43,7 @@ class LoginViewBody extends StatelessWidget {
               hasScrollBody: false,
               child: Column(
                 children: <Widget>[
-                  const MySizedBox(height: 27),
+                  MySizedBox.height27,
                   const Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

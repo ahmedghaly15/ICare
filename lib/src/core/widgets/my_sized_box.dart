@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MySizedBox extends StatelessWidget {
-  const MySizedBox({super.key, this.height, this.width});
+class CustomSizedBox extends StatelessWidget {
+  const CustomSizedBox({super.key, this.height, this.width});
 
   final double? height;
   final double? width;
@@ -14,4 +14,10 @@ class MySizedBox extends StatelessWidget {
       width: width?.w,
     );
   }
+}
+
+class MySizedBox {
+  static const CustomSizedBox height7 = CustomSizedBox(height: 7);
+  static const CustomSizedBox height25 = CustomSizedBox(height: 25);
+  static const CustomSizedBox height27 = CustomSizedBox(height: 27);
 }
