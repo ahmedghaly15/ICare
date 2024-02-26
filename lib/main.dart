@@ -10,6 +10,7 @@ import 'package:icare/dependency_injection.dart';
 //TODO: use flutter_spinkit in forgot password and reset password screens
 //TODO: add splash screen
 //TODO: delete not used packages from pubspec
+// TODO: add Regx for validation like in docdoc app
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
