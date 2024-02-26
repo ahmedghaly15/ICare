@@ -8,7 +8,7 @@ class LoginRepo {
 
   const LoginRepo(this._loginDataSource);
 
-  Future<FirebaseRequestResult> login(LoginRequestParams params) async {
+  Future<FirebaseRequestResult> login(LoginRequestParams params) {
     return executeAndHandleFirebaseErrors(
       () async => await _loginDataSource.login(params),
     );
