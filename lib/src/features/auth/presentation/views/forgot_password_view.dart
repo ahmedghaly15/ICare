@@ -30,7 +30,7 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
         child: CustomScrollView(
           slivers: [
             SliverPadding(
-              padding: AppConstants.authHorizontalPadding,
+              padding: AppConstants.horizontalPadding,
               sliver: SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(

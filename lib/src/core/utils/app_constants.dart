@@ -13,7 +13,7 @@ class AppConstants {
 
   static const ScrollPhysics scrollPhysics = BouncingScrollPhysics();
 
-  static EdgeInsetsGeometry get authHorizontalPadding =>
+  static EdgeInsetsGeometry get horizontalPadding =>
       EdgeInsets.symmetric(horizontal: horizontalPaddingVal.w);
 
   static const double horizontalPaddingVal = 25;
@@ -21,5 +21,7 @@ class AppConstants {
   static const double authTopMargin = 27.0;
 
   static Duration get onboardingScrollingDuration =>
-      const Duration(milliseconds: 650);
+      const Duration(milliseconds: 300);
+
+  static Curve get onboardingScrollingCurve => Curves.fastEaseInToSlowEaseOut;
 }

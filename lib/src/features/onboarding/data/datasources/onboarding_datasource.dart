@@ -6,7 +6,7 @@ import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/features/onboarding/data/models/navigate_between_pages_params.dart';
+import 'package:icare/src/features/onboarding/data/models/navigate_among_pages_params.dart';
 import 'package:icare/src/features/onboarding/data/models/onboarding_item.dart';
 
 abstract class OnboardingDatasource {
@@ -14,9 +14,7 @@ abstract class OnboardingDatasource {
 
   void navigateAmongPages(NavigateAmongPagesParams params);
 
-  void previousPage(PageController pageController);
-
-  void skipToLogin(BuildContext context);
+  void skip(BuildContext context);
 }
 
 class OnboardingDatasourceImpl implements OnboardingDatasource {
@@ -37,7 +35,7 @@ class OnboardingDatasourceImpl implements OnboardingDatasource {
 
     params.pageController.nextPage(
       duration: AppConstants.onboardingScrollingDuration,
-      curve: Curves.fastEaseInToSlowEaseOut,
+      curve: AppConstants.onboardingScrollingCurve,
     );
   }
 
@@ -58,24 +56,26 @@ class OnboardingDatasourceImpl implements OnboardingDatasource {
           title: AppStrings.onboarding3Title,
           description: AppStrings.onboarding3Description,
         ),
+        OnboardingItem(
+          image: AppAssets.imagesOnboarding4,
+          title: AppStrings.onboarding4Title,
+          description: AppStrings.onboarding4Description,
+        ),
+        OnboardingItem(
+          image: AppAssets.imagesOnboarding5,
+          title: AppStrings.onboarding5Title,
+          description: AppStrings.onboarding5Description,
+        ),
       ];
 
   @override
-  void previousPage(PageController pageController) {
-    pageController.previousPage(
-      duration: AppConstants.onboardingScrollingDuration,
-      curve: Curves.fastEaseInToSlowEaseOut,
-    );
-  }
-
-  @override
-  void skipToLogin(BuildContext context) {
+  void skip(BuildContext context) {
     getIt
         .get<CacheHelper>()
         .saveData(key: AppStrings.cachedOnboarding, value: true)
         .then((value) {
       if (value) {
-        context.replaceRoute(const LoginRoute());
+        context.replaceRoute(const StartRoute());
       }
     });
   }

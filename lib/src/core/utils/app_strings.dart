@@ -43,4 +43,13 @@ class AppStrings {
   static const String onboarding3Title = 'Easy access to useful information';
   static const String onboarding3Description =
       'Access to information by asking AI chatting bot';
+  static const String onboarding4Title =
+      'Funny and easy way to know your baby emotion';
+  static const String onboarding4Description =
+      'Access to information by asking AI chatting bot';
+  static const String onboarding5Title = 'Help baby develop an accurate speech';
+  static const String onboarding5Description =
+      'Access to information by asking AI chatting bot';
+  static const String next = 'Next';
+  static const String skip = 'Skip';
 }

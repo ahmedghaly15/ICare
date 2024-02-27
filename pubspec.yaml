@@ -49,6 +49,8 @@ dependencies:
   rive: ^0.12.4
   # Approximate how Flutter app looks and performs on another device.
   device_preview: ^1.1.0
+  # A PageView widget adjusting it's height to currently displayed page
+  expandable_page_view: ^1.0.17
 
 dev_dependencies:
   flutter_test:

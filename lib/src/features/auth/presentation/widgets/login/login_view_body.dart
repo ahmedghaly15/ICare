@@ -19,7 +19,7 @@ class LoginViewBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverPadding(
-            padding: AppConstants.authHorizontalPadding,
+            padding: AppConstants.horizontalPadding,
             sliver: const SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +37,7 @@ class LoginViewBody extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: AppConstants.authHorizontalPadding,
+            padding: AppConstants.horizontalPadding,
             sliver: const SliverFillRemaining(
               hasScrollBody: false,
               child: Column(

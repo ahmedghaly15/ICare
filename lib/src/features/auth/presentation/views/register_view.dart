@@ -31,7 +31,7 @@ class RegisterView extends StatelessWidget implements AutoRouteWrapper {
         child: CustomScrollView(
           slivers: [
             SliverPadding(
-              padding: AppConstants.authHorizontalPadding,
+              padding: AppConstants.horizontalPadding,
               sliver: const SliverToBoxAdapter(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

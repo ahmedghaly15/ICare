@@ -5,6 +5,7 @@ import 'package:icare/src/features/auth/presentation/views/forgot_password_view.
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/home/home_view.dart';
+import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
 
 part 'app_router.gr.dart';
@@ -16,8 +17,12 @@ class AppRouter extends _$AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(
+        _buildCustomRoute(
+          page: OnboardingRoute.page,
           initial: true,
+        ),
+        AutoRoute(
+          // initial: true,
           page: StartRoute.page,
         ),
         AutoRoute(
