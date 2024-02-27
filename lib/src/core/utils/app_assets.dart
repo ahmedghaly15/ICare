@@ -33,6 +33,10 @@ class AppAssets {
   /// assets/fonts/inter/OFL.txt
   static const String fontsInterOFL = "assets/fonts/inter/OFL.txt";
 
+  /// Assets for iconsGoogle
+  /// assets/icons/google.png
+  static const String iconsGoogle = "assets/icons/google.png";
+
   /// Assets for imagesAppLogo
   /// assets/images/app_logo.png
   static const String imagesAppLogo = "assets/images/app_logo.png";
@@ -48,13 +52,4 @@ class AppAssets {
   /// Assets for riveConfetti
   /// assets/rive/confetti.riv
   static const String riveConfetti = "assets/rive/confetti.riv";
-
-  /// Assets for svgsAppLogoSvg
-  /// assets/svgs/app_logo_svg.svg
-  static const String svgsAppLogoSvg = "assets/svgs/app_logo_svg.svg";
-
-  /// Assets for svgsStartScreenBackground
-  /// assets/svgs/start_screen_background.svg
-  static const String svgsStartScreenBackground =
-      "assets/svgs/start_screen_background.svg";
 }

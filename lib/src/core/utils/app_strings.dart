@@ -30,4 +30,6 @@ class AppStrings {
   static const String resetPassword = 'Reset Password';
   static const String resetPasswordEmailIsSent =
       "We've sent a password reset link to your email. Please check your inbox!";
+  static const String or = 'Or';
+  static const String signInWithGoogle = 'Sign in with Google';
 }
