@@ -32,4 +32,15 @@ class AppStrings {
       "We've sent a password reset link to your email. Please check your inbox!";
   static const String or = 'Or';
   static const String signInWithGoogle = 'Sign in with Google';
+  static const String cachedOnboarding = 'onboarding';
+  static const String onboarding1Title = 'Scheduling all baby needs';
+  static const String onboarding1Description =
+      'Get your baby on time and on track scheduling the time of baby eat ,sleep and taking medicine';
+
+  static const String onboarding2Title = 'Understand your baby better';
+  static const String onboarding2Description =
+      'Help you to understand the reason why your baby crying';
+  static const String onboarding3Title = 'Easy access to useful information';
+  static const String onboarding3Description =
+      'Access to information by asking AI chatting bot';
 }
