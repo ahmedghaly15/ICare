@@ -52,4 +52,5 @@ class AppStrings {
       'Access to information by asking AI chatting bot';
   static const String next = 'Next';
   static const String skip = 'Skip';
+  static const String cachedUserId = 'cachedUserId';
 }

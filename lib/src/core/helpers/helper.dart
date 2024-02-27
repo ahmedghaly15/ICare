@@ -1,1 +1,3 @@
-class Helper {}
+class Helper {
+  static String? uId;
+}
