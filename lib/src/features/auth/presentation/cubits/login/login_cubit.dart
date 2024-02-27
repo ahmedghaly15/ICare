@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/entities/no_params.dart';
+import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
 import 'package:icare/src/features/auth/data/models/login_request_params.dart';
+import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
 import 'package:icare/src/features/auth/domain/usecases/login.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_state.dart';
@@ -9,10 +11,12 @@ import 'package:icare/src/features/auth/presentation/cubits/login/login_state.da
 class LoginCubit extends Cubit<LoginState> {
   final LoginUseCase loginUseCase;
   final SignInWithGoogleUseCase signInWithGoogleUseCase;
+  final CreateFirestoreUserUseCase createFirestoreUserUseCase;
 
   LoginCubit({
     required this.loginUseCase,
     required this.signInWithGoogleUseCase,
+    required this.createFirestoreUserUseCase,
   }) : super(const LoginState.initial()) {
     _initFormAttributes();
   }
@@ -72,8 +76,16 @@ class LoginCubit extends Cubit<LoginState> {
     final response = await signInWithGoogleUseCase(const NoParams());
 
     response.when(
-      success: (credential) =>
-          emit(LoginState.signInWithGoogleSuccess(data: credential.user!.uid)),
+      success: (credential) async {
+        await createFirestoreUserUseCase(
+          CreateFirestoreUserParams(
+            name: credential.user!.displayName,
+            email: credential.user!.email,
+            uId: credential.user!.uid,
+          ),
+        );
+        emit(LoginState.signInWithGoogleSuccess(data: credential.user!.uid));
+      },
       error: (error) =>
           emit(LoginState.signInWithGoogleError(error: error.failureMsg ?? '')),
     );

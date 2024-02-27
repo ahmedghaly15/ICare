@@ -104,6 +104,7 @@ class DependencyInjection {
       () => LoginCubit(
         loginUseCase: getIt.get<LoginUseCase>(),
         signInWithGoogleUseCase: getIt.get<SignInWithGoogleUseCase>(),
+        createFirestoreUserUseCase: getIt.get<CreateFirestoreUserUseCase>(),
       ),
     );
 
