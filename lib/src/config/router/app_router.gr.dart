@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const Auth(),
       );
     },
+    EntryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EntryView(),
+      );
+    },
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -70,6 +76,20 @@ class AuthRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AuthRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EntryView]
+class EntryRoute extends PageRouteInfo<void> {
+  const EntryRoute({List<PageRouteInfo>? children})
+      : super(
+          EntryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EntryRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

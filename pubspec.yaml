@@ -52,7 +52,7 @@ dependencies:
   # A PageView widget adjusting it's height to currently displayed page
   expandable_page_view: ^1.0.17
   # For splash screen
-  flutter_native_splash: ^2.3.13
+  flutter_native_splash: ^2.3.10
 
 dev_dependencies:
   flutter_test:
