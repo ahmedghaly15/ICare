@@ -8,6 +8,9 @@ import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.da
 import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
+import 'package:icare/src/features/onboarding/data/datasources/onboarding_datasource.dart';
+import 'package:icare/src/features/onboarding/data/repositories/onboarding_repo.dart';
+import 'package:icare/src/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -55,6 +58,11 @@ class DependencyInjection {
     getIt.registerLazySingleton<ForgotPasswordDataSource>(
       () => ForgotPasswordDataSourceImpl(),
     );
+
+    // ========== Onboarding feature ==========
+    getIt.registerLazySingleton<OnboardingDatasource>(
+      () => OnboardingDatasourceImpl(),
+    );
   }
 
   void _setupForRepos() {
@@ -71,6 +79,11 @@ class DependencyInjection {
     // ========== ForgotPassword feature ==========
     getIt.registerLazySingleton<ForgotPasswordRepo>(
       () => ForgotPasswordRepo(getIt.get<ForgotPasswordDataSource>()),
+    );
+
+    // ========== Onboarding feature ==========
+    getIt.registerLazySingleton<OnboardingRepo>(
+      () => OnboardingRepo(getIt.get<OnboardingDatasource>()),
     );
   }
 
@@ -120,6 +133,11 @@ class DependencyInjection {
     // ========== ForgotPassword feature ==========
     getIt.registerFactory<ForgotPasswordCubit>(
       () => ForgotPasswordCubit(getIt.get<ForgotPasswordUseCase>()),
+    );
+
+    // ========== Onboarding feature ==========
+    getIt.registerFactory<OnboardingCubit>(
+      () => OnboardingCubit(getIt.get<OnboardingRepo>()),
     );
   }
 
