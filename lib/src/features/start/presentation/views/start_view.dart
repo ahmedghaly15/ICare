@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
@@ -12,37 +11,8 @@ import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/start/presentation/widgets/faded_widget.dart';
 
 @RoutePage()
-class StartView extends StatefulWidget {
+class StartView extends StatelessWidget {
   const StartView({super.key});
-
-  @override
-  State<StartView> createState() => _StartViewState();
-}
-
-class _StartViewState extends State<StartView> {
-  void _setSystemUIOverlayStyle() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-    final double bottomPadding = View.of(context).viewPadding.bottom;
-
-    // Set the color based on the presence of the system navigation bar
-    final Color? systemNavigationBarColor =
-        bottomPadding > 0 ? null : Colors.transparent;
-
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(
-        systemNavigationBarColor: systemNavigationBarColor,
-        statusBarColor: Colors.transparent,
-        statusBarBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-      ),
-    );
-  }
-
-  @override
-  void didChangeDependencies() {
-    _setSystemUIOverlayStyle();
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
