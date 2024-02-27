@@ -5,6 +5,7 @@ import 'package:icare/src/features/auth/data/datasources/forgot_password_datasou
 import 'package:icare/src/features/auth/data/repositories/forgot_password_repo.dart';
 import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
 import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
+import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -78,6 +79,10 @@ class DependencyInjection {
       () => LoginUseCase(getIt.get<LoginRepo>()),
     );
 
+    getIt.registerLazySingleton<SignInWithGoogleUseCase>(
+      () => SignInWithGoogleUseCase(getIt.get<LoginRepo>()),
+    );
+
     // ========== Register feature ==========
     getIt.registerLazySingleton<RegisterUseCase>(
       () => RegisterUseCase(getIt.get<RegisterRepo>()),
@@ -96,7 +101,10 @@ class DependencyInjection {
   void _setupForCubits() {
     // ========== Login feature ==========
     getIt.registerFactory<LoginCubit>(
-      () => LoginCubit(getIt.get<LoginUseCase>()),
+      () => LoginCubit(
+        loginUseCase: getIt.get<LoginUseCase>(),
+        signInWithGoogleUseCase: getIt.get<SignInWithGoogleUseCase>(),
+      ),
     );
 
     // ========== Register feature ==========

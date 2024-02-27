@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
@@ -44,9 +45,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
             builder: (context, state) {
               return PrimaryButton(
                 child: state is Loading
-                    ? const CircularProgressIndicator(
-                        color: Colors.white,
-                      )
+                    ? const CustomCircularProgressIndicator()
                     : Text(
                         AppStrings.resetPassword,
                         style:
