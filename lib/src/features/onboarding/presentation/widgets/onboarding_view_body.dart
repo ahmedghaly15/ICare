@@ -8,6 +8,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/onboarding/presentation/cubit/onboarding_cubit.dart';
+import 'package:icare/src/features/onboarding/presentation/widgets/custom_dot_indicators.dart';
 import 'package:icare/src/features/onboarding/presentation/widgets/page_view_item.dart';
 
 class OnboardingViewBody extends StatelessWidget {
@@ -88,64 +89,6 @@ class OnboardingViewBody extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class CustomDotsIndicators extends StatefulWidget {
-  const CustomDotsIndicators({
-    super.key,
-  });
-
-  @override
-  State<CustomDotsIndicators> createState() => _CustomDotsIndicatorsState();
-}
-
-class _CustomDotsIndicatorsState extends State<CustomDotsIndicators> {
-  int _currentIndex = 0;
-
-  @override
-  void initState() {
-    context.read<OnboardingCubit>().pageController.addListener(() {
-      _currentIndex =
-          context.read<OnboardingCubit>().pageController.page!.round();
-
-      setState(() {});
-    });
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(
-        context.read<OnboardingCubit>().onboardingItems().length,
-        (index) => CustomDotIndicator(isActive: index == _currentIndex),
-        growable: false,
-      ),
-    );
-  }
-}
-
-class CustomDotIndicator extends StatelessWidget {
-  const CustomDotIndicator({
-    super.key,
-    required this.isActive,
-  });
-
-  final bool isActive;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: AppConstants.onboardingScrollingDuration,
-      width: 15.h,
-      height: 15.h,
-      margin: EdgeInsets.only(right: 10.w),
-      decoration: BoxDecoration(
-        color: isActive ? AppColors.primaryColor : AppColors.lightGrey,
-        shape: BoxShape.circle,
       ),
     );
   }
