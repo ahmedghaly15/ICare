@@ -29,25 +29,27 @@ class StartView extends StatelessWidget {
             ),
           ),
           FadedWidget(
-            child: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    PrimaryButton(
-                      text: AppStrings.login,
-                      onPressed: () => context.pushRoute(const LoginRoute()),
-                    ),
-                    MySizedBox.height8,
-                    PrimaryButton(
-                      text: AppStrings.register,
-                      textColor: AppColors.primaryColor,
-                      onPressed: () => context.pushRoute(const RegisterRoute()),
-                      backgroundColor: AppColors.secondaryColor,
-                    ),
-                  ],
-                ),
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: 24.w,
+                right: 24.w,
+                bottom: 24.h,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  PrimaryButton(
+                    text: AppStrings.login,
+                    onPressed: () => context.pushRoute(const LoginRoute()),
+                  ),
+                  MySizedBox.height8,
+                  PrimaryButton(
+                    text: AppStrings.register,
+                    textColor: AppColors.primaryColor,
+                    onPressed: () => context.pushRoute(const RegisterRoute()),
+                    backgroundColor: AppColors.secondaryColor,
+                  ),
+                ],
               ),
             ),
           ),
