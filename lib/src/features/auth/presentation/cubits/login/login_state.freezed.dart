@@ -22,6 +22,9 @@ mixin _$LoginState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
     required TResult Function(bool boolean) convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +34,9 @@ mixin _$LoginState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
     TResult? Function(bool boolean)? convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +46,9 @@ mixin _$LoginState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
     TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) =>
@@ -50,6 +59,12 @@ mixin _$LoginState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
     required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +74,11 @@ mixin _$LoginState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +88,9 @@ mixin _$LoginState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) =>
@@ -134,6 +157,9 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
     required TResult Function(bool boolean) convertBoolValue,
   }) {
     return initial();
@@ -146,6 +172,9 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
     TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return initial?.call();
@@ -158,6 +187,9 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
     TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -174,6 +206,12 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
     required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return initial(this);
@@ -186,6 +224,11 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return initial?.call(this);
@@ -198,6 +241,9 @@ class _$LoginInitialImpl<T> implements _LoginInitial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -254,6 +300,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
     required TResult Function(bool boolean) convertBoolValue,
   }) {
     return loading();
@@ -266,6 +315,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
     TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return loading?.call();
@@ -278,6 +330,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
     TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -294,6 +349,12 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
     required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return loading(this);
@@ -306,6 +367,11 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return loading?.call(this);
@@ -318,6 +384,9 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -401,6 +470,9 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
     required TResult Function(bool boolean) convertBoolValue,
   }) {
     return success(data);
@@ -413,6 +485,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
     TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return success?.call(data);
@@ -425,6 +500,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
     TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -441,6 +519,12 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
     required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return success(this);
@@ -453,6 +537,11 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return success?.call(this);
@@ -465,6 +554,9 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -552,6 +644,9 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
     required TResult Function(bool boolean) convertBoolValue,
   }) {
     return error(this.error);
@@ -564,6 +659,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
     TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return error?.call(this.error);
@@ -576,6 +674,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
     TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -592,6 +693,12 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
     required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return error(this);
@@ -604,6 +711,11 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return error?.call(this);
@@ -616,6 +728,9 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -633,6 +748,509 @@ abstract class Error<T> implements LoginState<T> {
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignInWithGoogleLoadingImplCopyWith<T, $Res> {
+  factory _$$SignInWithGoogleLoadingImplCopyWith(
+          _$SignInWithGoogleLoadingImpl<T> value,
+          $Res Function(_$SignInWithGoogleLoadingImpl<T>) then) =
+      __$$SignInWithGoogleLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SignInWithGoogleLoadingImplCopyWithImpl<T, $Res>
+    extends _$LoginStateCopyWithImpl<T, $Res, _$SignInWithGoogleLoadingImpl<T>>
+    implements _$$SignInWithGoogleLoadingImplCopyWith<T, $Res> {
+  __$$SignInWithGoogleLoadingImplCopyWithImpl(
+      _$SignInWithGoogleLoadingImpl<T> _value,
+      $Res Function(_$SignInWithGoogleLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignInWithGoogleLoadingImpl<T> implements SignInWithGoogleLoading<T> {
+  const _$SignInWithGoogleLoadingImpl();
+
+  @override
+  String toString() {
+    return 'LoginState<$T>.signInWithGoogleLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignInWithGoogleLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
+    required TResult Function(bool boolean) convertBoolValue,
+  }) {
+    return signInWithGoogleLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
+    TResult? Function(bool boolean)? convertBoolValue,
+  }) {
+    return signInWithGoogleLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
+    TResult Function(bool boolean)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogleLoading != null) {
+      return signInWithGoogleLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
+  }) {
+    return signInWithGoogleLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
+  }) {
+    return signInWithGoogleLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogleLoading != null) {
+      return signInWithGoogleLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInWithGoogleLoading<T> implements LoginState<T> {
+  const factory SignInWithGoogleLoading() = _$SignInWithGoogleLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SignInWithGoogleSuccessImplCopyWith<T, $Res> {
+  factory _$$SignInWithGoogleSuccessImplCopyWith(
+          _$SignInWithGoogleSuccessImpl<T> value,
+          $Res Function(_$SignInWithGoogleSuccessImpl<T>) then) =
+      __$$SignInWithGoogleSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({T data});
+}
+
+/// @nodoc
+class __$$SignInWithGoogleSuccessImplCopyWithImpl<T, $Res>
+    extends _$LoginStateCopyWithImpl<T, $Res, _$SignInWithGoogleSuccessImpl<T>>
+    implements _$$SignInWithGoogleSuccessImplCopyWith<T, $Res> {
+  __$$SignInWithGoogleSuccessImplCopyWithImpl(
+      _$SignInWithGoogleSuccessImpl<T> _value,
+      $Res Function(_$SignInWithGoogleSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$SignInWithGoogleSuccessImpl<T>(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignInWithGoogleSuccessImpl<T> implements SignInWithGoogleSuccess<T> {
+  const _$SignInWithGoogleSuccessImpl({required this.data});
+
+  @override
+  final T data;
+
+  @override
+  String toString() {
+    return 'LoginState<$T>.signInWithGoogleSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignInWithGoogleSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignInWithGoogleSuccessImplCopyWith<T, _$SignInWithGoogleSuccessImpl<T>>
+      get copyWith => __$$SignInWithGoogleSuccessImplCopyWithImpl<T,
+          _$SignInWithGoogleSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
+    required TResult Function(bool boolean) convertBoolValue,
+  }) {
+    return signInWithGoogleSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
+    TResult? Function(bool boolean)? convertBoolValue,
+  }) {
+    return signInWithGoogleSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
+    TResult Function(bool boolean)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogleSuccess != null) {
+      return signInWithGoogleSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
+  }) {
+    return signInWithGoogleSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
+  }) {
+    return signInWithGoogleSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogleSuccess != null) {
+      return signInWithGoogleSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInWithGoogleSuccess<T> implements LoginState<T> {
+  const factory SignInWithGoogleSuccess({required final T data}) =
+      _$SignInWithGoogleSuccessImpl<T>;
+
+  T get data;
+  @JsonKey(ignore: true)
+  _$$SignInWithGoogleSuccessImplCopyWith<T, _$SignInWithGoogleSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignInWithGoogleErrorImplCopyWith<T, $Res> {
+  factory _$$SignInWithGoogleErrorImplCopyWith(
+          _$SignInWithGoogleErrorImpl<T> value,
+          $Res Function(_$SignInWithGoogleErrorImpl<T>) then) =
+      __$$SignInWithGoogleErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$SignInWithGoogleErrorImplCopyWithImpl<T, $Res>
+    extends _$LoginStateCopyWithImpl<T, $Res, _$SignInWithGoogleErrorImpl<T>>
+    implements _$$SignInWithGoogleErrorImplCopyWith<T, $Res> {
+  __$$SignInWithGoogleErrorImplCopyWithImpl(
+      _$SignInWithGoogleErrorImpl<T> _value,
+      $Res Function(_$SignInWithGoogleErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$SignInWithGoogleErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignInWithGoogleErrorImpl<T> implements SignInWithGoogleError<T> {
+  const _$SignInWithGoogleErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'LoginState<$T>.signInWithGoogleError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignInWithGoogleErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignInWithGoogleErrorImplCopyWith<T, _$SignInWithGoogleErrorImpl<T>>
+      get copyWith => __$$SignInWithGoogleErrorImplCopyWithImpl<T,
+          _$SignInWithGoogleErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
+    required TResult Function(bool boolean) convertBoolValue,
+  }) {
+    return signInWithGoogleError(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
+    TResult? Function(bool boolean)? convertBoolValue,
+  }) {
+    return signInWithGoogleError?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
+    TResult Function(bool boolean)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogleError != null) {
+      return signInWithGoogleError(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoginInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
+  }) {
+    return signInWithGoogleError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoginInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
+  }) {
+    return signInWithGoogleError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoginInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogleError != null) {
+      return signInWithGoogleError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInWithGoogleError<T> implements LoginState<T> {
+  const factory SignInWithGoogleError({required final String error}) =
+      _$SignInWithGoogleErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$SignInWithGoogleErrorImplCopyWith<T, _$SignInWithGoogleErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -705,6 +1323,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String error) error,
+    required TResult Function() signInWithGoogleLoading,
+    required TResult Function(T data) signInWithGoogleSuccess,
+    required TResult Function(String error) signInWithGoogleError,
     required TResult Function(bool boolean) convertBoolValue,
   }) {
     return convertBoolValue(boolean);
@@ -717,6 +1338,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String error)? error,
+    TResult? Function()? signInWithGoogleLoading,
+    TResult? Function(T data)? signInWithGoogleSuccess,
+    TResult? Function(String error)? signInWithGoogleError,
     TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return convertBoolValue?.call(boolean);
@@ -729,6 +1353,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String error)? error,
+    TResult Function()? signInWithGoogleLoading,
+    TResult Function(T data)? signInWithGoogleSuccess,
+    TResult Function(String error)? signInWithGoogleError,
     TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
@@ -745,6 +1372,12 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(SignInWithGoogleLoading<T> value)
+        signInWithGoogleLoading,
+    required TResult Function(SignInWithGoogleSuccess<T> value)
+        signInWithGoogleSuccess,
+    required TResult Function(SignInWithGoogleError<T> value)
+        signInWithGoogleError,
     required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return convertBoolValue(this);
@@ -757,6 +1390,11 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(SignInWithGoogleLoading<T> value)?
+        signInWithGoogleLoading,
+    TResult? Function(SignInWithGoogleSuccess<T> value)?
+        signInWithGoogleSuccess,
+    TResult? Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return convertBoolValue?.call(this);
@@ -769,6 +1407,9 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(SignInWithGoogleLoading<T> value)? signInWithGoogleLoading,
+    TResult Function(SignInWithGoogleSuccess<T> value)? signInWithGoogleSuccess,
+    TResult Function(SignInWithGoogleError<T> value)? signInWithGoogleError,
     TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {

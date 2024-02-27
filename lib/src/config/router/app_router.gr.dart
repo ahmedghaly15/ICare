@@ -24,7 +24,7 @@ abstract class _$AppRouter extends RootStackRouter {
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ForgotPasswordView(),
+        child: WrappedRoute(child: const ForgotPasswordView()),
       );
     },
     LoginRoute.name: (routeData) {

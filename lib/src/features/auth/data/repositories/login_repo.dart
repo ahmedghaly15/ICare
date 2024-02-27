@@ -13,4 +13,10 @@ class LoginRepo {
       () async => await _loginDataSource.login(params),
     );
   }
+
+  Future<FirebaseRequestResult> signInWithGoogle() {
+    return executeAndHandleFirebaseErrors(
+      () async => await _loginDataSource.signInWithGoogle(),
+    );
+  }
 }
