@@ -6,7 +6,7 @@ import 'package:icare/src/features/auth/presentation/views/forgot_password_view.
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/baby/presentation/views/baby_view.dart';
-import 'package:icare/src/features/bottom_nav_bar/layout_view.dart';
+import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
 import 'package:icare/src/features/entry/presentation/views/entry_view.dart';
 import 'package:icare/src/features/home/home_view.dart';
 import 'package:icare/src/features/medical/presentation/views/medical_view.dart';

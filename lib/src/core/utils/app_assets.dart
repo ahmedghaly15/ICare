@@ -37,14 +37,18 @@ class AppAssets {
   /// assets/icons/google.png
   static const String iconsGoogle = "assets/icons/google.png";
 
-  /// Assets for iconsStartScreenBackground
-  /// assets/icons/start_screen_background.svg
-  static const String iconsStartScreenBackground =
-      "assets/icons/start_screen_background.svg";
-
   /// Assets for imagesAppLogo
   /// assets/images/app_logo.png
   static const String imagesAppLogo = "assets/images/app_logo.png";
+
+  /// Assets for imagesDarkSplash
+  /// assets/images/dark_splash.png
+  static const String imagesDarkSplash = "assets/images/dark_splash.png";
+
+  /// Assets for imagesDarkSplashAndroid12
+  /// assets/images/dark_splash_android_12.png
+  static const String imagesDarkSplashAndroid12 =
+      "assets/images/dark_splash_android_12.png";
 
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.png
@@ -66,14 +70,18 @@ class AppAssets {
   /// assets/images/onboarding5.png
   static const String imagesOnboarding5 = "assets/images/onboarding5.png";
 
+  /// Assets for imagesSplash
+  /// assets/images/splash.png
+  static const String imagesSplash = "assets/images/splash.png";
+
+  /// Assets for imagesSplashAndroid12
+  /// assets/images/splash_android_12.png
+  static const String imagesSplashAndroid12 =
+      "assets/images/splash_android_12.png";
+
   /// Assets for imagesStart
   /// assets/images/start.jpg
   static const String imagesStart = "assets/images/start.jpg";
-
-  /// Assets for imagesStartScreenImage
-  /// assets/images/start_screen_image.svg
-  static const String imagesStartScreenImage =
-      "assets/images/start_screen_image.svg";
 
   /// Assets for riveCheck
   /// assets/rive/check.riv
@@ -82,4 +90,28 @@ class AppAssets {
   /// Assets for riveConfetti
   /// assets/rive/confetti.riv
   static const String riveConfetti = "assets/rive/confetti.riv";
+
+  /// Assets for svgsBabyIcon
+  /// assets/svgs/baby_icon.svg
+  static const String svgsBabyIcon = "assets/svgs/baby_icon.svg";
+
+  /// Assets for svgsGreyBabyIcon
+  /// assets/svgs/grey_baby_icon.svg
+  static const String svgsGreyBabyIcon = "assets/svgs/grey_baby_icon.svg";
+
+  /// Assets for svgsGreyHomeIcon
+  /// assets/svgs/grey_home_icon.svg
+  static const String svgsGreyHomeIcon = "assets/svgs/grey_home_icon.svg";
+
+  /// Assets for svgsGreyMedicalIcon
+  /// assets/svgs/grey_medical_icon.svg
+  static const String svgsGreyMedicalIcon = "assets/svgs/grey_medical_icon.svg";
+
+  /// Assets for svgsHomeIcon
+  /// assets/svgs/home_icon.svg
+  static const String svgsHomeIcon = "assets/svgs/home_icon.svg";
+
+  /// Assets for svgsMedicalIcon
+  /// assets/svgs/medical_icon.svg
+  static const String svgsMedicalIcon = "assets/svgs/medical_icon.svg";
 }

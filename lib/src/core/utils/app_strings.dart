@@ -54,4 +54,7 @@ class AppStrings {
   static const String next = 'Next';
   static const String skip = 'Skip';
   static const String cachedUserId = 'cachedUserId';
+  static const String home = 'Home';
+  static const String medical = 'Medical';
+  static const String baby = 'Baby';
 }

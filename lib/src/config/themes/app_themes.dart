@@ -20,7 +20,7 @@ class AppThemes {
             foregroundColor: AppColors.primaryColor,
           ),
         ),
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
           showSelectedLabels: true,
           showUnselectedLabels: true,
           type: BottomNavigationBarType.fixed,
@@ -28,6 +28,8 @@ class AppThemes {
           elevation: 0.0,
           selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: AppColors.greyColor,
+          selectedLabelStyle: AppTextStyles.textStyle15Bold(context),
+          unselectedLabelStyle: AppTextStyles.textStyle15Bold(context),
         ),
       );
 }
