@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:icare/src/core/api/api_service.dart';
+import 'package:icare/src/core/api/dio_factory.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/features/auth/data/datasources/forgot_password_datasource.dart';
 import 'package:icare/src/features/auth/data/repositories/forgot_password_repo.dart';
@@ -155,6 +158,9 @@ class DependencyInjection {
     getIt.registerLazySingleton<CacheHelper>(
       () => CacheHelper(getIt.get<SharedPreferences>()),
     );
+
+    final Dio dio = DioFactory.getDio();
+    getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
   }
 
   Future<void> _setupForExternal() async {
