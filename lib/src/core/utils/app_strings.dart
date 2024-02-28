@@ -33,21 +33,22 @@ class AppStrings {
   static const String or = 'Or';
   static const String signInWithGoogle = 'Sign in with Google';
   static const String cachedOnboarding = 'onboarding';
-  static const String onboarding1Title = 'Scheduling all baby needs';
+  static const String onboarding1Title = 'Scheduling All Baby Needs';
   static const String onboarding1Description =
       'Get your baby on time and on track scheduling the time of baby eat ,sleep and taking medicine';
 
-  static const String onboarding2Title = 'Understand your baby better';
+  static const String onboarding2Title = 'Understand Your Baby Better';
   static const String onboarding2Description =
       'Help you to understand the reason why your baby crying';
-  static const String onboarding3Title = 'Easy access to useful information';
+  static const String onboarding3Title = 'Easy Access to Useful Information';
   static const String onboarding3Description =
       'Access to information by asking AI chatting bot';
   static const String onboarding4Title =
-      'Funny and easy way to know your baby emotion';
+      'Funny and Easy Way to Know Your Baby Emotion';
   static const String onboarding4Description =
       'Access to information by asking AI chatting bot';
-  static const String onboarding5Title = 'Help baby develop an accurate speech';
+  static const String onboarding5Title =
+      'Help Your Baby Develop an Accurate Speech';
   static const String onboarding5Description =
       'Access to information by asking AI chatting bot';
   static const String next = 'Next';

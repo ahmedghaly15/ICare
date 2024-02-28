@@ -93,7 +93,10 @@ class _LoginFormState extends State<LoginForm> {
                 listener: (context, state) => _loginListener(state),
                 child: PrimaryButton(
                   text: AppStrings.login,
-                  onPressed: () => _login(context),
+                  onPressed: () {
+                    context.pushRoute(const BottomNavBarRoute());
+                    // _login(context);
+                  },
                 ),
               ),
             ],

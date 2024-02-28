@@ -18,20 +18,20 @@ abstract class OnboardingDatasource {
 }
 
 class OnboardingDatasourceImpl implements OnboardingDatasource {
-  void _navigateToLoginView(BuildContext context) {
+  void _navigateToStartView(BuildContext context) {
     getIt
         .get<CacheHelper>()
         .saveData(key: AppStrings.cachedOnboarding, value: true)
         .then((value) {
       if (value) {
-        context.replaceRoute(const LoginRoute());
+        context.replaceRoute(const StartRoute());
       }
     });
   }
 
   @override
   void navigateAmongPages(NavigateAmongPagesParams params) {
-    if (params.isLastBoarding) _navigateToLoginView(params.context);
+    if (params.isLastBoarding) _navigateToStartView(params.context);
 
     params.pageController.nextPage(
       duration: AppConstants.onboardingScrollingDuration,
