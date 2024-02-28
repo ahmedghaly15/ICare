@@ -5,8 +5,11 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';
+import 'package:icare/src/features/baby/presentation/views/baby_view.dart';
+import 'package:icare/src/features/bottom_nav_bar/layout_view.dart';
 import 'package:icare/src/features/entry/presentation/views/entry_view.dart';
 import 'package:icare/src/features/home/home_view.dart';
+import 'package:icare/src/features/medical/presentation/views/medical_view.dart';
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
 
@@ -38,9 +41,21 @@ class AppRouter extends _$AppRouter {
         ),
         AutoRoute(
           page: BottomNavBarRoute.page,
-          children: const <AutoRoute>[],
+          children: <AutoRoute>[
+            AutoRoute(
+              page: LayoutRoute.page,
+              initial: true,
+              children: <AutoRoute>[
+                AutoRoute(
+                  page: HomeRoute.page,
+                  initial: true,
+                ),
+                AutoRoute(page: MedicalRoute.page),
+                AutoRoute(page: BabyRoute.page),
+              ],
+            ),
+          ],
         ),
-        _buildCustomRoute(page: HomeRoute.page),
       ];
 
   CustomRoute _buildCustomRoute({

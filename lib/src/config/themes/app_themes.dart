@@ -20,5 +20,14 @@ class AppThemes {
             foregroundColor: AppColors.primaryColor,
           ),
         ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          selectedItemColor: AppColors.primaryColor,
+          unselectedItemColor: AppColors.greyColor,
+        ),
       );
 }

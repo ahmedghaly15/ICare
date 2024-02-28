@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const Auth(),
       );
     },
+    BabyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BabyView(),
+      );
+    },
     BottomNavBarRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -45,10 +51,22 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeView(),
       );
     },
+    LayoutRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LayoutView(),
+      );
+    },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: WrappedRoute(child: const LoginView()),
+      );
+    },
+    MedicalRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MedicalView(),
       );
     },
     OnboardingRoute.name: (routeData) {
@@ -82,6 +100,20 @@ class AuthRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AuthRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BabyView]
+class BabyRoute extends PageRouteInfo<void> {
+  const BabyRoute({List<PageRouteInfo>? children})
+      : super(
+          BabyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BabyRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -143,6 +175,20 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [LayoutView]
+class LayoutRoute extends PageRouteInfo<void> {
+  const LayoutRoute({List<PageRouteInfo>? children})
+      : super(
+          LayoutRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LayoutRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [LoginView]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
@@ -152,6 +198,20 @@ class LoginRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LoginRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MedicalView]
+class MedicalRoute extends PageRouteInfo<void> {
+  const MedicalRoute({List<PageRouteInfo>? children})
+      : super(
+          MedicalRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MedicalRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
