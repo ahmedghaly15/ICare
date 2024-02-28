@@ -11,6 +11,11 @@ import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.da
 import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
+import 'package:icare/src/features/medical/data/datasources/medical_datasource.dart';
+import 'package:icare/src/features/medical/data/repositories/medical_repo_impl.dart';
+import 'package:icare/src/features/medical/domain/repositories/medical_repo.dart';
+import 'package:icare/src/features/medical/domain/usecases/get_medical.dart';
+import 'package:icare/src/features/medical/presentation/cubit/medical_cubit.dart';
 import 'package:icare/src/features/onboarding/data/datasources/onboarding_datasource.dart';
 import 'package:icare/src/features/onboarding/data/repositories/onboarding_repo.dart';
 import 'package:icare/src/features/onboarding/presentation/cubit/onboarding_cubit.dart';
@@ -66,6 +71,11 @@ class DependencyInjection {
     getIt.registerLazySingleton<OnboardingDatasource>(
       () => OnboardingDatasourceImpl(),
     );
+
+    // ========== Medical feature ==========
+    getIt.registerLazySingleton<MedicalDatasource>(
+      () => MedicalDatasourceImpl(getIt.get<ApiService>()),
+    );
   }
 
   void _setupForRepos() {
@@ -87,6 +97,11 @@ class DependencyInjection {
     // ========== Onboarding feature ==========
     getIt.registerLazySingleton<OnboardingRepo>(
       () => OnboardingRepo(getIt.get<OnboardingDatasource>()),
+    );
+
+    // ========== Medical feature ==========
+    getIt.registerLazySingleton<MedicalRepo>(
+      () => MedicalRepoImpl(getIt.get<MedicalDatasource>()),
     );
   }
 
@@ -112,6 +127,11 @@ class DependencyInjection {
     // ========== ForgotPassword feature ==========
     getIt.registerLazySingleton<ForgotPasswordUseCase>(
       () => ForgotPasswordUseCase(getIt.get<ForgotPasswordRepo>()),
+    );
+
+    // ========== Medical feature ==========
+    getIt.registerLazySingleton<GetMedicalUseCase>(
+      () => GetMedicalUseCase(getIt.get<MedicalRepo>()),
     );
   }
 
@@ -141,6 +161,11 @@ class DependencyInjection {
     // ========== Onboarding feature ==========
     getIt.registerFactory<OnboardingCubit>(
       () => OnboardingCubit(getIt.get<OnboardingRepo>()),
+    );
+
+    // ========== Medical feature ==========
+    getIt.registerFactory<MedicalCubit>(
+      () => MedicalCubit(getMedicalUseCase: getIt.get<GetMedicalUseCase>()),
     );
   }
 
