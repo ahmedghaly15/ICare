@@ -10,7 +10,7 @@ class MedicalRepoImpl implements MedicalRepo {
   const MedicalRepoImpl(this._medicalDatasource);
 
   @override
-  Future<ApiResult<GetMedicalResponse>> getMedical() async {
+  Future<ApiResult<List<GetMedicalResponse>>> getMedical() async {
     try {
       final response = await _medicalDatasource.getMedical();
 

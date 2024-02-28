@@ -1,12 +1,13 @@
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_medical_response.g.dart';
 
 @JsonSerializable()
 class GetMedicalResponse {
-  @JsonKey(name: 'medical_category_name')
+  @JsonKey(name: AppStrings.medicalCategoryName)
   final String medicalCategoryName;
-  @JsonKey(name: 'medical_category_image')
+  @JsonKey(name: AppStrings.medicalCategoryImage)
   final String medicalCategoryImage;
 
   const GetMedicalResponse({
@@ -15,5 +16,5 @@ class GetMedicalResponse {
   });
 
   factory GetMedicalResponse.fromJson(Map<String, dynamic> json) =>
-      _$GetMedicalResponseFromJson(json);
+      _$GetMedicalResponseDataFromJson(json);
 }
