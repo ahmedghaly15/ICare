@@ -57,4 +57,6 @@ class AppStrings {
   static const String home = 'Home';
   static const String medical = 'Medical';
   static const String baby = 'Baby';
+  static const String medicalCategoryName = 'medical_category_name';
+  static const String medicalCategoryImage = 'medical_category_image';
 }
