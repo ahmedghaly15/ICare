@@ -10,5 +10,5 @@ abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
   @GET(EndPoints.medical)
-  Future<GetMedicalResponse> getMedical();
+  Future<List<GetMedicalResponse>> getMedical();
 }
