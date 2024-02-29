@@ -18,7 +18,7 @@ class GoogleBlocConsumer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listenWhen: (context, state) =>
+      listenWhen: (_, state) =>
           state is SignInWithGoogleLoading ||
           state is SignInWithGoogleSuccess ||
           state is SignInWithGoogleError,

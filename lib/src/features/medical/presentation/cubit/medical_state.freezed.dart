@@ -20,7 +20,7 @@ mixin _$MedicalState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getMedicalLoading,
-    required TResult Function(T data) getMedicalSuccess,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
     required TResult Function(String error) getMedicalError,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$MedicalState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getMedicalLoading,
-    TResult? Function(T data)? getMedicalSuccess,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult? Function(String error)? getMedicalError,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$MedicalState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getMedicalLoading,
-    TResult Function(T data)? getMedicalSuccess,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult Function(String error)? getMedicalError,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getMedicalLoading,
-    required TResult Function(T data) getMedicalSuccess,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
     required TResult Function(String error) getMedicalError,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getMedicalLoading,
-    TResult? Function(T data)? getMedicalSuccess,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult? Function(String error)? getMedicalError,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getMedicalLoading,
-    TResult Function(T data)? getMedicalSuccess,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult Function(String error)? getMedicalError,
     required TResult orElse(),
   }) {
@@ -241,7 +241,7 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getMedicalLoading,
-    required TResult Function(T data) getMedicalSuccess,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
     required TResult Function(String error) getMedicalError,
   }) {
     return getMedicalLoading();
@@ -252,7 +252,7 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getMedicalLoading,
-    TResult? Function(T data)? getMedicalSuccess,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult? Function(String error)? getMedicalError,
   }) {
     return getMedicalLoading?.call();
@@ -263,7 +263,7 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getMedicalLoading,
-    TResult Function(T data)? getMedicalSuccess,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult Function(String error)? getMedicalError,
     required TResult orElse(),
   }) {
@@ -321,7 +321,7 @@ abstract class _$$GetMedicalSuccessImplCopyWith<T, $Res> {
           $Res Function(_$GetMedicalSuccessImpl<T>) then) =
       __$$GetMedicalSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({List<GetMedicalResponse> data});
 }
 
 /// @nodoc
@@ -335,13 +335,13 @@ class __$$GetMedicalSuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$GetMedicalSuccessImpl<T>(
-      freezed == data
-          ? _value.data
+      null == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as T,
+              as List<GetMedicalResponse>,
     ));
   }
 }
@@ -349,10 +349,16 @@ class __$$GetMedicalSuccessImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
-  const _$GetMedicalSuccessImpl(this.data);
+  const _$GetMedicalSuccessImpl(final List<GetMedicalResponse> data)
+      : _data = data;
 
+  final List<GetMedicalResponse> _data;
   @override
-  final T data;
+  List<GetMedicalResponse> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString() {
@@ -364,12 +370,12 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetMedicalSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -384,7 +390,7 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getMedicalLoading,
-    required TResult Function(T data) getMedicalSuccess,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
     required TResult Function(String error) getMedicalError,
   }) {
     return getMedicalSuccess(data);
@@ -395,7 +401,7 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getMedicalLoading,
-    TResult? Function(T data)? getMedicalSuccess,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult? Function(String error)? getMedicalError,
   }) {
     return getMedicalSuccess?.call(data);
@@ -406,7 +412,7 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getMedicalLoading,
-    TResult Function(T data)? getMedicalSuccess,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult Function(String error)? getMedicalError,
     required TResult orElse(),
   }) {
@@ -455,9 +461,10 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
 }
 
 abstract class GetMedicalSuccess<T> implements MedicalState<T> {
-  const factory GetMedicalSuccess(final T data) = _$GetMedicalSuccessImpl<T>;
+  const factory GetMedicalSuccess(final List<GetMedicalResponse> data) =
+      _$GetMedicalSuccessImpl<T>;
 
-  T get data;
+  List<GetMedicalResponse> get data;
   @JsonKey(ignore: true)
   _$$GetMedicalSuccessImplCopyWith<T, _$GetMedicalSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -530,7 +537,7 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getMedicalLoading,
-    required TResult Function(T data) getMedicalSuccess,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
     required TResult Function(String error) getMedicalError,
   }) {
     return getMedicalError(error);
@@ -541,7 +548,7 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getMedicalLoading,
-    TResult? Function(T data)? getMedicalSuccess,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult? Function(String error)? getMedicalError,
   }) {
     return getMedicalError?.call(error);
@@ -552,7 +559,7 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getMedicalLoading,
-    TResult Function(T data)? getMedicalSuccess,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
     TResult Function(String error)? getMedicalError,
     required TResult orElse(),
   }) {
