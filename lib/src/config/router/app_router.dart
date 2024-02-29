@@ -60,7 +60,10 @@ class AppRouter extends _$AppRouter {
             ),
           ],
         ),
-        _buildCustomRoute(page: MedicalCategoryDetailsRoute.page),
+        _buildCustomRoute(
+          page: MedicalCategoryDetailsRoute.page,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+        ),
       ];
 
   CustomRoute _buildCustomRoute({

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
 
-class MedicalCategory extends StatelessWidget {
-  const MedicalCategory({
+class MedicalCategoryItem extends StatelessWidget {
+  const MedicalCategoryItem({
     super.key,
     required this.medicalCategory,
     required this.onPressed,
@@ -25,13 +26,13 @@ class MedicalCategory extends StatelessWidget {
         child: Card(
           elevation: 8.h,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25.r),
+            borderRadius: BorderRadius.circular(AppConstants.radiusVal),
           ),
           child: Stack(
             alignment: AlignmentDirectional.topEnd,
             children: <Widget>[
               ClipRRect(
-                borderRadius: BorderRadius.circular(25.r),
+                borderRadius: BorderRadius.circular(AppConstants.radiusVal),
                 child: CustomCachedNetworkImage(
                   imageUrl: medicalCategory.medicalCategoryImage,
                 ),

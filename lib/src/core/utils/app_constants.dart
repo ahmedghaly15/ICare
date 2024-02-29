@@ -18,6 +18,8 @@ class AppConstants {
 
   static const double horizontalPaddingVal = 25;
 
+  static double radiusVal = 25.0.r;
+
   static const double authTopMargin = 27.0;
 
   static Duration get onboardingScrollingDuration =>

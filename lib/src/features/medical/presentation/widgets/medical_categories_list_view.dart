@@ -6,7 +6,7 @@ import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
-import 'package:icare/src/features/medical/presentation/widgets/medical_category.dart';
+import 'package:icare/src/features/medical/presentation/widgets/medical_category_item.dart';
 
 class MedicalCategoriesListView extends StatelessWidget {
   const MedicalCategoriesListView({
@@ -27,16 +27,13 @@ class MedicalCategoriesListView extends StatelessWidget {
         physics: AppConstants.scrollPhysics,
         itemCount: medicalCategories.length,
         itemBuilder: (_, index) => Bounce(
-          child: MedicalCategory(
+          child: MedicalCategoryItem(
             medicalCategory: medicalCategories[index],
-            onPressed: () {
-              context.pushRoute(
-                MedicalCategoryDetailsRoute(
-                  medicalCategory: medicalCategories[index],
-                ),
-              );
-              // debugPrint('DATA: ${medicalCategories[index].data.toString()}');
-            },
+            onPressed: () => context.pushRoute(
+              MedicalCategoryDetailsRoute(
+                medicalCategory: medicalCategories[index],
+              ),
+            ),
           ),
         ),
         separatorBuilder: (_, __) => MySizedBox.height20,
