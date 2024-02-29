@@ -24,4 +24,11 @@ class AppConstants {
       const Duration(milliseconds: 300);
 
   static Curve get onboardingScrollingCurve => Curves.fastEaseInToSlowEaseOut;
+
+  static BoxShadow get primaryBoxShadow => BoxShadow(
+        offset: Offset(0.w, 4.h),
+        blurRadius: 4.w,
+        spreadRadius: 0,
+        color: Colors.black.withOpacity(0.25),
+      );
 }
