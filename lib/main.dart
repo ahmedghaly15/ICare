@@ -12,16 +12,16 @@ import 'package:icare/dependency_injection.dart';
 //TODO: delete not used packages from pubspec
 // TODO: add Regx for validation like in docdoc app
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await DependencyInjection().setup();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   Bloc.observer = MyBlocObserver();
-
-  await DependencyInjection().setup();
 
   runApp(
     DevicePreview(

@@ -95,6 +95,7 @@ class _LoginFormState extends State<LoginForm> {
                   text: AppStrings.login,
                   onPressed: () {
                     context.pushRoute(const BottomNavBarRoute());
+                    // BlocProvider.of<MedicalCubit>(context).getMedical();
                     // _login(context);
                   },
                 ),

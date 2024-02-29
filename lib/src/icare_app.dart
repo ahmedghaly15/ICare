@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/app_routes_observer.dart';
 import 'package:icare/src/config/router/app_router.dart';
@@ -7,6 +8,7 @@ import 'package:icare/src/config/themes/app_themes.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/features/medical/presentation/cubit/medical_cubit.dart';
 
 class ICareApp extends StatelessWidget {
   const ICareApp({super.key});
@@ -18,16 +20,21 @@ class ICareApp extends StatelessWidget {
       designSize: const Size(360, 800),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        title: AppStrings.appTitle,
-        theme: AppThemes.lightTheme(context),
-        routerConfig: getIt.get<AppRouter>().config(
-              navigatorObservers: () => [
-                AppRoutesObserver(),
-                AutoRouteObserver(),
-              ],
-            ),
+      child: BlocProvider<MedicalCubit>(
+        lazy: false,
+        create: (BuildContext context) =>
+            getIt.get<MedicalCubit>()..getMedical(),
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          title: AppStrings.appTitle,
+          theme: AppThemes.lightTheme(context),
+          routerConfig: getIt.get<AppRouter>().config(
+                navigatorObservers: () => [
+                  AppRoutesObserver(),
+                  AutoRouteObserver(),
+                ],
+              ),
+        ),
       ),
     );
   }
