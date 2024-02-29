@@ -5,14 +5,14 @@ import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
 
-class MedicalItem extends StatelessWidget {
-  const MedicalItem({
+class MedicalCategory extends StatelessWidget {
+  const MedicalCategory({
     super.key,
-    required this.itemInfo,
+    required this.medicalCategory,
     required this.onPressed,
   });
 
-  final GetMedicalResponse itemInfo;
+  final GetMedicalResponse medicalCategory;
   final VoidCallback onPressed;
 
   @override
@@ -33,7 +33,7 @@ class MedicalItem extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(25.r),
                 child: CustomCachedNetworkImage(
-                  imageUrl: itemInfo.medicalCategoryImage,
+                  imageUrl: medicalCategory.medicalCategoryImage,
                 ),
               ),
               Container(

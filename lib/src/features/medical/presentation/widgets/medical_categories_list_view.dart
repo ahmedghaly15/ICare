@@ -1,18 +1,20 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
-import 'package:icare/src/features/medical/presentation/widgets/medical_item.dart';
+import 'package:icare/src/features/medical/presentation/widgets/medical_category.dart';
 
-class MedicalItemsListView extends StatelessWidget {
-  const MedicalItemsListView({
+class MedicalCategoriesListView extends StatelessWidget {
+  const MedicalCategoriesListView({
     super.key,
-    required this.medicalItems,
+    required this.medicalCategories,
   });
 
-  final List<GetMedicalResponse> medicalItems;
+  final List<GetMedicalResponse> medicalCategories;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +25,17 @@ class MedicalItemsListView extends StatelessWidget {
           vertical: 40.h,
         ),
         physics: AppConstants.scrollPhysics,
-        itemCount: medicalItems.length,
+        itemCount: medicalCategories.length,
         itemBuilder: (_, index) => Bounce(
-          child: MedicalItem(
-            itemInfo: medicalItems[index],
+          child: MedicalCategory(
+            medicalCategory: medicalCategories[index],
             onPressed: () {
-              debugPrint('DATA: ${medicalItems[index].data.toString()}');
+              context.pushRoute(
+                MedicalCategoryDetailsRoute(
+                  medicalCategory: medicalCategories[index],
+                ),
+              );
+              // debugPrint('DATA: ${medicalCategories[index].data.toString()}');
             },
           ),
         ),

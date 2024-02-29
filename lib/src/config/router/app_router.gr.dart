@@ -63,6 +63,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const LoginView()),
       );
     },
+    MedicalCategoryDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<MedicalCategoryDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: MedicalCategoryDetailsView(
+          key: args.key,
+          medicalCategory: args.medicalCategory,
+        ),
+      );
+    },
     MedicalRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -200,6 +210,45 @@ class LoginRoute extends PageRouteInfo<void> {
   static const String name = 'LoginRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MedicalCategoryDetailsView]
+class MedicalCategoryDetailsRoute
+    extends PageRouteInfo<MedicalCategoryDetailsRouteArgs> {
+  MedicalCategoryDetailsRoute({
+    Key? key,
+    required GetMedicalResponse medicalCategory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          MedicalCategoryDetailsRoute.name,
+          args: MedicalCategoryDetailsRouteArgs(
+            key: key,
+            medicalCategory: medicalCategory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'MedicalCategoryDetailsRoute';
+
+  static const PageInfo<MedicalCategoryDetailsRouteArgs> page =
+      PageInfo<MedicalCategoryDetailsRouteArgs>(name);
+}
+
+class MedicalCategoryDetailsRouteArgs {
+  const MedicalCategoryDetailsRouteArgs({
+    this.key,
+    required this.medicalCategory,
+  });
+
+  final Key? key;
+
+  final GetMedicalResponse medicalCategory;
+
+  @override
+  String toString() {
+    return 'MedicalCategoryDetailsRouteArgs{key: $key, medicalCategory: $medicalCategory}';
+  }
 }
 
 /// generated route for

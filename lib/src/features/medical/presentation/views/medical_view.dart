@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/features/medical/presentation/cubit/medical_cubit.dart';
 import 'package:icare/src/features/medical/presentation/cubit/medical_state.dart';
-import 'package:icare/src/features/medical/presentation/widgets/medical_items_list_view.dart';
+import 'package:icare/src/features/medical/presentation/widgets/medical_categories_list_view.dart';
 
 @RoutePage()
 class MedicalView extends StatelessWidget {
@@ -21,7 +21,7 @@ class MedicalView extends StatelessWidget {
         if (state is GetMedicalLoading) {
           return const Center(child: CustomCircularProgressIndicator());
         } else if (state is GetMedicalSuccess) {
-          return MedicalItemsListView(medicalItems: state.data);
+          return MedicalCategoriesListView(medicalCategories: state.data);
         } else {
           return const Center(child: Text('Error'));
         }
