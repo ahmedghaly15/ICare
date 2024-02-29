@@ -9,7 +9,6 @@ class GetMedicalResponse {
   final String medicalCategoryName;
   @JsonKey(name: AppStrings.medicalCategoryImage)
   final String medicalCategoryImage;
-  @JsonKey(name: AppStrings.data)
   final List<GetMedicalResponseData> data;
 
   const GetMedicalResponse({
@@ -25,19 +24,13 @@ class GetMedicalResponse {
 @JsonSerializable()
 class GetMedicalResponseData {
   @JsonKey(name: AppStrings.diseaseName)
-  final String? diseaseName;
+  final String diseaseName;
   @JsonKey(name: AppStrings.diseaseImage)
-  final String? diseaseImage;
-  @JsonKey(name: AppStrings.diseaseType)
-  final String? diseaseType;
-  @JsonKey(name: AppStrings.diseaseTypeImage)
-  final String? diseaseTypeImage;
+  final String diseaseImage;
 
   const GetMedicalResponseData({
-    this.diseaseName,
-    this.diseaseImage,
-    this.diseaseType,
-    this.diseaseTypeImage,
+    required this.diseaseName,
+    required this.diseaseImage,
   });
 
   factory GetMedicalResponseData.fromJson(Map<String, dynamic> json) =>

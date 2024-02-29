@@ -34,7 +34,7 @@ class DiseaseItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(AppConstants.radiusVal),
               child: CustomCachedNetworkImage(
-                imageUrl: diseaseInfo.diseaseImage!,
+                imageUrl: diseaseInfo.diseaseImage,
               ),
             ),
             Positioned(
@@ -50,7 +50,7 @@ class DiseaseItem extends StatelessWidget {
                 ),
                 padding: EdgeInsets.all(8.0.h),
                 child: Text(
-                  diseaseInfo.diseaseName!,
+                  diseaseInfo.diseaseName,
                   style: AppTextStyles.textStyle20Bold(context)
                       .copyWith(color: Colors.white),
                   textAlign: TextAlign.center,
