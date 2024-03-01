@@ -19,7 +19,8 @@ import 'package:icare/src/features/medical/data/datasources/medical_datasource.d
 import 'package:icare/src/features/medical/data/repositories/medical_repo.dart';
 import 'package:icare/src/features/emergency/domain/usecases/get_emergency_diseases.dart';
 import 'package:icare/src/features/medical/domain/usecases/get_medical.dart';
-import 'package:icare/src/features/medical_info/data/datasources/medical_info_datasource.dart';
+import 'package:icare/src/features/medical_info/data/datasources/medical_info_local_datasource.dart';
+import 'package:icare/src/features/medical_info/data/datasources/medical_info_remote_datasource.dart';
 import 'package:icare/src/features/medical_info/data/repositories/medical_info_repo.dart';
 import 'package:icare/src/features/medical_info/domain/usecases/get_medical_info.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
@@ -95,8 +96,12 @@ class DependencyInjection {
     );
 
     // ========== MedicalInfo feature ==========
-    getIt.registerLazySingleton<MedicalInfoDatasource>(
+    getIt.registerLazySingleton<MedicalInfoRemoteDatasource>(
       () => MedicalInfoDatasourceImpl(getIt.get<ApiService>()),
+    );
+
+    getIt.registerLazySingleton<MedicalInfoLocalDatasource>(
+      () => MedicalInfoLocalDatasourceImpl(),
     );
   }
 
@@ -136,7 +141,10 @@ class DependencyInjection {
 
     // ========== MedicalInfo feature ==========
     getIt.registerLazySingleton<MedicalInfoRepo>(
-      () => MedicalInfoRepo(getIt.get<MedicalInfoDatasource>()),
+      () => MedicalInfoRepo(
+        getIt.get<MedicalInfoRemoteDatasource>(),
+        getIt.get<MedicalInfoLocalDatasource>(),
+      ),
     );
   }
 

@@ -17,4 +17,6 @@ class GetMedicalInfoResponse {
 
   factory GetMedicalInfoResponse.fromJson(Map<String, dynamic> json) =>
       _$GetMedicalInfoResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GetMedicalInfoResponseToJson(this);
 }

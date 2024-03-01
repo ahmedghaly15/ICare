@@ -9,11 +9,11 @@ import 'package:icare/src/features/emergency/data/datasources/emergency_local_da
 import 'package:icare/src/features/emergency/data/models/get_emergency_diseases_response.dart';
 
 class EmergencyRepo {
-  final EmergencyRemoteDatasource _emergencyDatasource;
+  final EmergencyRemoteDatasource _emergencyRemoteDatasource;
   final EmergencyLocalDatasource _emergencyLocalDatasource;
 
   const EmergencyRepo(
-    this._emergencyDatasource,
+    this._emergencyRemoteDatasource,
     this._emergencyLocalDatasource,
   );
 
@@ -24,21 +24,21 @@ class EmergencyRepo {
         .getStringData(key: AppStrings.cachedEmergencyDiseases);
 
     if (jsonString == null) {
-      debugPrint('NO CACHED DATA');
+      debugPrint('GOT NO CACHED EMERGENCY DATA');
 
       try {
-        final data = await _emergencyDatasource.getEmergencyDiseases();
+        final data = await _emergencyRemoteDatasource.getEmergencyDiseases();
         await _emergencyLocalDatasource.cacheEmergencyDiseases(data);
         return ApiResult.success(data);
       } catch (error) {
         return ApiResult.error(ErrorHandler.handle(error));
       }
     } else {
-      debugPrint('CACHED DATA');
-      final List<GetEmergencyDiseasesResponse> data =
-          await _emergencyLocalDatasource.getCachedEmergencyDiseases();
+      debugPrint('GOT CACHED EMERGENCY DATA');
 
-      return ApiResult.success(data);
+      return ApiResult.success(
+        _emergencyLocalDatasource.getCachedEmergencyDiseases(),
+      );
     }
   }
 }
