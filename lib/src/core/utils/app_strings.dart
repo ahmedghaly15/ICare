@@ -63,4 +63,6 @@ class AppStrings {
   static const String diseaseImage = 'disease_image';
   static const String data = 'data';
   static const String pediatricEmergency = 'Pediatric Emergency';
+  static const String diseaseType = 'disease_type';
+  static const String diseaseTypeImage = 'disease_type_image';
 }
