@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/features/medical/presentation/cubit/medical_cubit.dart';
 import 'package:icare/src/features/medical/presentation/cubit/medical_state.dart';
+import 'package:icare/src/features/medical/presentation/widgets/custom_sliver_grid.dart';
 import 'package:icare/src/features/medical/presentation/widgets/disease_item.dart';
 
 class EmergencyDiseasesBlocBuilder extends StatelessWidget {
@@ -26,13 +26,7 @@ class EmergencyDiseasesBlocBuilder extends StatelessWidget {
         } else if (state is GetEmergencyDiseasesSuccess) {
           return SliverPadding(
             padding: EdgeInsets.symmetric(vertical: 16.h),
-            sliver: SliverGrid(
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: SizeConfig.width,
-                mainAxisExtent: SizeConfig.height * 0.25,
-                mainAxisSpacing: 16.h,
-                childAspectRatio: 1,
-              ),
+            sliver: CustomSliverGrid(
               delegate: SliverChildBuilderDelegate(
                 (_, index) => AnimationConfiguration.staggeredGrid(
                   position: index,
