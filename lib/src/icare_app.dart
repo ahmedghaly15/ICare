@@ -9,6 +9,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class ICareApp extends StatelessWidget {
   const ICareApp({super.key});
@@ -20,9 +21,16 @@ class ICareApp extends StatelessWidget {
       designSize: const Size(360, 800),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: BlocProvider<MedicalCubit>(
-        lazy: false,
-        create: (context) => getIt.get<MedicalCubit>()..getMedical(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider<MedicalCubit>(
+            lazy: false,
+            create: (_) => getIt.get<MedicalCubit>()..getMedical(),
+          ),
+          BlocProvider<UserCubit>(
+            create: (_) => getIt.get<UserCubit>()..getUserData(),
+          ),
+        ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: AppStrings.appTitle,

@@ -29,6 +29,10 @@ import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_
 import 'package:icare/src/features/onboarding/data/datasources/onboarding_datasource.dart';
 import 'package:icare/src/features/onboarding/data/repositories/onboarding_repo.dart';
 import 'package:icare/src/features/onboarding/presentation/cubit/onboarding_cubit.dart';
+import 'package:icare/src/features/user/data/datasources/user_datasource.dart';
+import 'package:icare/src/features/user/data/repositories/user_repo.dart';
+import 'package:icare/src/features/user/domain/usecases/get_user_data.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -108,6 +112,11 @@ class DependencyInjection {
     getIt.registerLazySingleton<MedicalInfoLocalDatasource>(
       () => const MedicalInfoLocalDatasourceImpl(),
     );
+
+    // ========== User feature ==========
+    getIt.registerLazySingleton<UserDataSource>(
+      () => const UserDatasourceImpl(),
+    );
   }
 
   void _setupForRepos() {
@@ -154,6 +163,11 @@ class DependencyInjection {
         getIt.get<MedicalInfoLocalDatasource>(),
       ),
     );
+
+    // ========== User feature ==========
+    getIt.registerLazySingleton<UserRepo>(
+      () => UserRepo(getIt.get<UserDataSource>()),
+    );
   }
 
   void _setupForUseCases() {
@@ -193,6 +207,11 @@ class DependencyInjection {
     // ========== MedicalInfo feature ==========
     getIt.registerLazySingleton<GetMedicalInfoUseCase>(
       () => GetMedicalInfoUseCase(getIt.get<MedicalInfoRepo>()),
+    );
+
+    // ========== User feature ==========
+    getIt.registerLazySingleton<GetUserDataUseCase>(
+      () => GetUserDataUseCase(getIt.get<UserRepo>()),
     );
   }
 
@@ -237,6 +256,11 @@ class DependencyInjection {
     // ========== MedicalInfo feature ==========
     getIt.registerFactory<MedicalInfoCubit>(
       () => MedicalInfoCubit(getIt.get<GetMedicalInfoUseCase>()),
+    );
+
+    // ========== User feature ==========
+    getIt.registerFactory<UserCubit>(
+      () => UserCubit(getIt.get<GetUserDataUseCase>()),
     );
   }
 
