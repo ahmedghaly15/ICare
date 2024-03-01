@@ -18,6 +18,8 @@ abstract class OnboardingDatasource {
 }
 
 class OnboardingDatasourceImpl implements OnboardingDatasource {
+  const OnboardingDatasourceImpl();
+
   void _navigateToStartView(BuildContext context) {
     getIt
         .get<CacheHelper>()

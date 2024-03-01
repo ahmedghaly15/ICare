@@ -15,7 +15,8 @@ import 'package:icare/src/features/emergency/data/datasources/emergency_remote_d
 import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 import 'package:icare/src/features/emergency/data/repositories/emergency_repo.dart';
 import 'package:icare/src/features/emergency/presentation/cubit/emergency_cubit.dart';
-import 'package:icare/src/features/medical/data/datasources/medical_datasource.dart';
+import 'package:icare/src/features/medical/data/datasources/medical_local_datasource.dart';
+import 'package:icare/src/features/medical/data/datasources/medical_remote_datasource.dart';
 import 'package:icare/src/features/medical/data/repositories/medical_repo.dart';
 import 'package:icare/src/features/emergency/domain/usecases/get_emergency_diseases.dart';
 import 'package:icare/src/features/medical/domain/usecases/get_medical.dart';
@@ -64,44 +65,48 @@ class DependencyInjection {
 
   void _setupForDatasources() {
     // ========== Login feature ==========
-    getIt.registerLazySingleton<LoginDataSource>(() => LoginDataSourceImpl());
+    getIt.registerLazySingleton<LoginDataSource>(
+        () => const LoginDataSourceImpl());
 
     // ========== Register feature ==========
     getIt.registerLazySingleton<RegisterDataSource>(
-      () => RegisterDataSourceImpl(),
+      () => const RegisterDataSourceImpl(),
     );
 
     // ========== ForgotPassword feature ==========
     getIt.registerLazySingleton<ForgotPasswordDataSource>(
-      () => ForgotPasswordDataSourceImpl(),
+      () => const ForgotPasswordDataSourceImpl(),
     );
 
     // ========== Onboarding feature ==========
     getIt.registerLazySingleton<OnboardingDatasource>(
-      () => OnboardingDatasourceImpl(),
+      () => const OnboardingDatasourceImpl(),
     );
 
     // ========== Medical feature ==========
-    getIt.registerLazySingleton<MedicalDatasource>(
-      () => MedicalDatasourceImpl(getIt.get<ApiService>()),
+    getIt.registerLazySingleton<MedicalRemoteDatasource>(
+      () => MedicalRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
+
+    getIt.registerLazySingleton<MedicalLocalDatasource>(
+        () => const MedicalLocalDatasourceImpl());
 
     // ========== Emergency feature ==========
     getIt.registerLazySingleton<EmergencyRemoteDatasource>(
-      () => EmergencyDatasourceImpl(getIt.get<ApiService>()),
+      () => EmergencyRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
 
     getIt.registerLazySingleton<EmergencyLocalDatasource>(
-      () => EmergencyLocalDatasourceImpl(),
+      () => const EmergencyLocalDatasourceImpl(),
     );
 
     // ========== MedicalInfo feature ==========
     getIt.registerLazySingleton<MedicalInfoRemoteDatasource>(
-      () => MedicalInfoDatasourceImpl(getIt.get<ApiService>()),
+      () => MedicalInfoRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
 
     getIt.registerLazySingleton<MedicalInfoLocalDatasource>(
-      () => MedicalInfoLocalDatasourceImpl(),
+      () => const MedicalInfoLocalDatasourceImpl(),
     );
   }
 
@@ -128,7 +133,10 @@ class DependencyInjection {
 
     // ========== Medical feature ==========
     getIt.registerLazySingleton<MedicalRepo>(
-      () => MedicalRepo(getIt.get<MedicalDatasource>()),
+      () => MedicalRepo(
+        getIt.get<MedicalRemoteDatasource>(),
+        getIt.get<MedicalLocalDatasource>(),
+      ),
     );
 
     // ========== Emergency feature ==========

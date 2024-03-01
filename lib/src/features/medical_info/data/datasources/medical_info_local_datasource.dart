@@ -9,9 +9,13 @@ abstract class MedicalInfoLocalDatasource {
   Future<bool> cacheMedicalInfo(List<GetMedicalInfoResponse> data);
 
   List<GetMedicalInfoResponse> getCachedMedicalInfo();
+
+  String? getJsonString();
 }
 
 class MedicalInfoLocalDatasourceImpl implements MedicalInfoLocalDatasource {
+  const MedicalInfoLocalDatasourceImpl();
+
   @override
   Future<bool> cacheMedicalInfo(List<GetMedicalInfoResponse> data) async {
     return await getIt.get<CacheHelper>().saveData(
@@ -21,14 +25,17 @@ class MedicalInfoLocalDatasourceImpl implements MedicalInfoLocalDatasource {
   }
 
   @override
-  List<GetMedicalInfoResponse> getCachedMedicalInfo() {
-    final String? jsonString = getIt
+  String? getJsonString() {
+    return getIt
         .get<CacheHelper>()
         .getStringData(key: AppStrings.cachedMedicalInfo);
+  }
 
+  @override
+  List<GetMedicalInfoResponse> getCachedMedicalInfo() {
     final List<GetMedicalInfoResponse> data = [];
 
-    for (final element in json.decode(jsonString!)) {
+    for (final element in json.decode(getJsonString()!)) {
       data.add(GetMedicalInfoResponse.fromJson(element));
     }
 

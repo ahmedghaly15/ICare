@@ -9,9 +9,13 @@ abstract class EmergencyLocalDatasource {
   Future<bool> cacheEmergencyDiseases(List<GetEmergencyDiseasesResponse> data);
 
   List<GetEmergencyDiseasesResponse> getCachedEmergencyDiseases();
+
+  String? getJsonString();
 }
 
 class EmergencyLocalDatasourceImpl implements EmergencyLocalDatasource {
+  const EmergencyLocalDatasourceImpl();
+
   @override
   Future<bool> cacheEmergencyDiseases(
       List<GetEmergencyDiseasesResponse> data) async {
@@ -22,14 +26,17 @@ class EmergencyLocalDatasourceImpl implements EmergencyLocalDatasource {
   }
 
   @override
-  List<GetEmergencyDiseasesResponse> getCachedEmergencyDiseases() {
-    final String? jsonString = getIt
+  String? getJsonString() {
+    return getIt
         .get<CacheHelper>()
         .getStringData(key: AppStrings.cachedEmergencyDiseases);
+  }
 
+  @override
+  List<GetEmergencyDiseasesResponse> getCachedEmergencyDiseases() {
     final List<GetEmergencyDiseasesResponse> data = [];
 
-    for (final element in json.decode(jsonString!)) {
+    for (final element in json.decode(getJsonString()!)) {
       data.add(GetEmergencyDiseasesResponse.fromJson(element));
     }
 

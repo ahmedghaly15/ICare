@@ -68,4 +68,5 @@ class AppStrings {
   static const String medicalInfo = 'Medical Information';
   static const String cachedEmergencyDiseases = 'cachedEmergencyDiseases';
   static const String cachedMedicalInfo = 'cachedMedicalInfo';
+  static const String cachedMedical = 'cachedMedical';
 }

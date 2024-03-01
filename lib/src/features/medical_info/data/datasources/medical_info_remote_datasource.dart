@@ -5,10 +5,10 @@ abstract class MedicalInfoRemoteDatasource {
   Future<List<GetMedicalInfoResponse>> getMedicalInfo();
 }
 
-class MedicalInfoDatasourceImpl implements MedicalInfoRemoteDatasource {
+class MedicalInfoRemoteDatasourceImpl implements MedicalInfoRemoteDatasource {
   final ApiService _apiService;
 
-  const MedicalInfoDatasourceImpl(this._apiService);
+  const MedicalInfoRemoteDatasourceImpl(this._apiService);
 
   @override
   Future<List<GetMedicalInfoResponse>> getMedicalInfo() async {

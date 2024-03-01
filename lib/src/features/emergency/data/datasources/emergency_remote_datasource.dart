@@ -5,10 +5,10 @@ abstract class EmergencyRemoteDatasource {
   Future<List<GetEmergencyDiseasesResponse>> getEmergencyDiseases();
 }
 
-class EmergencyDatasourceImpl implements EmergencyRemoteDatasource {
+class EmergencyRemoteDatasourceImpl implements EmergencyRemoteDatasource {
   final ApiService _apiService;
 
-  const EmergencyDatasourceImpl(this._apiService);
+  const EmergencyRemoteDatasourceImpl(this._apiService);
 
   @override
   Future<List<GetEmergencyDiseasesResponse>> getEmergencyDiseases() async {

@@ -10,6 +10,8 @@ abstract class LoginDataSource {
 }
 
 class LoginDataSourceImpl implements LoginDataSource {
+  const LoginDataSourceImpl();
+
   @override
   Future<UserCredential> login(LoginRequestParams params) async {
     return await getIt.get<FirebaseAuth>().signInWithEmailAndPassword(

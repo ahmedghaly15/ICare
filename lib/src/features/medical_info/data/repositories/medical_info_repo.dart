@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
-import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/medical_info/data/datasources/medical_info_local_datasource.dart';
 import 'package:icare/src/features/medical_info/data/datasources/medical_info_remote_datasource.dart';
 import 'package:icare/src/features/medical_info/data/models/get_medical_info_response.dart';
@@ -18,11 +15,7 @@ class MedicalInfoRepo {
   );
 
   Future<ApiResult<List<GetMedicalInfoResponse>>> getMedicalInfo() async {
-    final String? jsonString = getIt
-        .get<CacheHelper>()
-        .getStringData(key: AppStrings.cachedMedicalInfo);
-
-    if (jsonString == null) {
+    if (_medicalInfoLocalDatasource.getJsonString() == null) {
       debugPrint('GOT NO CACHED MEDICAL INFO DATA');
 
       try {

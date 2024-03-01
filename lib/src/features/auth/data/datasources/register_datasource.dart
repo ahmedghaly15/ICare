@@ -13,6 +13,8 @@ abstract class RegisterDataSource {
 }
 
 class RegisterDataSourceImpl implements RegisterDataSource {
+  const RegisterDataSourceImpl();
+
   @override
   Future<UserCredential> register(RegisterRequestParams params) async {
     return await getIt.get<FirebaseAuth>().createUserWithEmailAndPassword(

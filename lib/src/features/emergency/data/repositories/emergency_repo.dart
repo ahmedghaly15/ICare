@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
-import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 import 'package:icare/src/features/emergency/data/models/get_emergency_diseases_response.dart';
@@ -19,11 +16,7 @@ class EmergencyRepo {
 
   Future<ApiResult<List<GetEmergencyDiseasesResponse>>>
       getEmergencyDiseases() async {
-    final String? jsonString = getIt
-        .get<CacheHelper>()
-        .getStringData(key: AppStrings.cachedEmergencyDiseases);
-
-    if (jsonString == null) {
+    if (_emergencyLocalDatasource.getJsonString() == null) {
       debugPrint('GOT NO CACHED EMERGENCY DATA');
 
       try {

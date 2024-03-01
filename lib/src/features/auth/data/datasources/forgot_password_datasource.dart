@@ -6,6 +6,8 @@ abstract class ForgotPasswordDataSource {
 }
 
 class ForgotPasswordDataSourceImpl implements ForgotPasswordDataSource {
+  const ForgotPasswordDataSourceImpl();
+
   @override
   Future<void> forgotPassword(String email) async {
     return await getIt.get<FirebaseAuth>().sendPasswordResetEmail(email: email);
