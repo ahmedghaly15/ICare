@@ -2,6 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
+import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/config/router/app_router.dart';
@@ -90,14 +94,12 @@ class _LoginFormState extends State<LoginForm> {
                     current is Loading ||
                     current is Success ||
                     current is Error,
-                listener: (context, state) => _loginListener(state),
+                listener: (context, state) {
+                  _handleLoginState(state);
+                },
                 child: PrimaryButton(
                   text: AppStrings.login,
-                  onPressed: () {
-                    context.pushRoute(const BottomNavBarRoute());
-                    // BlocProvider.of<MedicalCubit>(context).getMedical();
-                    // _login(context);
-                  },
+                  onPressed: () => _login(context),
                 ),
               ),
             ],
@@ -126,8 +128,8 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  Null _loginListener(LoginState<dynamic> state) {
-    return state.whenOrNull(
+  void _handleLoginState(LoginState<dynamic> state) {
+    state.whenOrNull(
       loading: () {
         setState(() {
           isShowLoading = true;
@@ -135,31 +137,58 @@ class _LoginFormState extends State<LoginForm> {
         });
       },
       success: (data) {
-        checkTrigger.fire();
-
-        Future.delayed(
-          const Duration(seconds: 2),
-          () {
-            setState(() {
-              isShowLoading = false;
-            });
-
-            confettiTrigger.fire();
-          },
-        );
+        _successLoginListener(data);
       },
       error: (error) {
-        errorTrigger.fire();
+        _errorLoginListener(error);
+      },
+    );
+  }
 
-        Future.delayed(const Duration(seconds: 2), () {
-          setState(() {
-            isShowLoading = false;
-          });
+  void _successLoginListener(String data) {
+    checkTrigger.fire();
 
-          CustomDialog.show(
-            context: context,
-            state: CustomDialogStates.error,
-            message: error,
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        setState(() {
+          isShowLoading = false;
+        });
+
+        confettiTrigger.fire();
+      },
+    );
+    Future.delayed(const Duration(seconds: 3), () => _navigateToHome(data));
+  }
+
+  void _errorLoginListener(String error) {
+    errorTrigger.fire();
+
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        isShowLoading = false;
+      });
+
+      CustomDialog.show(
+        context: context,
+        state: CustomDialogStates.error,
+        message: error,
+      );
+    });
+  }
+
+  void _navigateToHome(String data) {
+    Helper.uId = data;
+
+    getIt
+        .get<CacheHelper>()
+        .saveData(key: AppStrings.cachedUserId, value: data)
+        .then(
+      (value) {
+        context.read<UserCubit>().getUserData().then((value) {
+          context.router.pushAndPopUntil(
+            const BottomNavBarRoute(),
+            predicate: (route) => route.settings.name == BottomNavBarRoute.name,
           );
         });
       },

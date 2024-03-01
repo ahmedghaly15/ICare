@@ -15,11 +15,15 @@ class UserCubit extends Cubit<UserState> {
   Future<void> getUserData() async {
     emit(const UserState.getUserDataLoading());
 
-    _getUserDataUseCase(const NoParams()).listen((event) {
-      Helper.currentUser = ICareUser.fromJson(event.data()!);
-      emit(UserState.getUserData(Helper.currentUser!));
-    }).onError((error) {
-      emit(UserState.getUserDataError(error.toString()));
-    });
+    final result = await _getUserDataUseCase(const NoParams());
+
+    result.when(
+      success: (user) {
+        Helper.currentUser = ICareUser.fromJson(user.data()!);
+        emit(UserState.getUserData(Helper.currentUser!));
+      },
+      error: (error) =>
+          emit(UserState.getUserDataError(error.failureMsg ?? '')),
+    );
   }
 }

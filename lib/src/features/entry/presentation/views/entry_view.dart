@@ -16,7 +16,7 @@ class EntryView extends StatefulWidget {
 }
 
 class _EntryViewState extends State<EntryView> {
-  void _goToNext() {
+  void _goToNextView() {
     Helper.uId =
         getIt.get<CacheHelper>().getStringData(key: AppStrings.cachedUserId);
 
@@ -25,7 +25,7 @@ class _EntryViewState extends State<EntryView> {
 
     if (onboarding != null) {
       if (Helper.uId != null) {
-        context.replaceRoute(const HomeRoute());
+        context.replaceRoute(const BottomNavBarRoute());
       } else {
         context.replaceRoute(const StartRoute());
       }
@@ -38,7 +38,7 @@ class _EntryViewState extends State<EntryView> {
   void initState() {
     // To ensure that navigation calls are performed after the widget tree has been built
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _goToNext();
+      _goToNextView();
     });
     super.initState();
   }
