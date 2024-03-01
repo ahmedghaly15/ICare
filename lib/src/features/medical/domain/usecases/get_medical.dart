@@ -5,7 +5,7 @@ import 'package:icare/src/features/medical/data/models/get_medical_response.dart
 import 'package:icare/src/features/medical/domain/repositories/medical_repo.dart';
 
 class GetMedicalUseCase
-    implements BaseUseCases<ApiResult<List<GetMedicalResponse>>, NoParams> {
+    implements BaseUseCase<List<GetMedicalResponse>, NoParams> {
   final MedicalRepo _medicalRepo;
 
   const GetMedicalUseCase(this._medicalRepo);

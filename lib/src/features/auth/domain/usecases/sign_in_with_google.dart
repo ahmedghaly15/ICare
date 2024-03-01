@@ -1,10 +1,10 @@
 import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
-import 'package:icare/src/core/usecases/base_usecase.dart';
+import 'package:icare/src/core/usecases/my_usecase.dart';
 import 'package:icare/src/features/auth/data/repositories/login_repo.dart';
 
 class SignInWithGoogleUseCase
-    implements BaseUseCases<FirebaseRequestResult, NoParams> {
+    implements MyUseCase<FirebaseRequestResult, NoParams> {
   final LoginRepo _loginRepo;
 
   const SignInWithGoogleUseCase(this._loginRepo);

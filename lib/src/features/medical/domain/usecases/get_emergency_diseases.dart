@@ -5,8 +5,7 @@ import 'package:icare/src/features/medical/data/models/get_emergency_diseases_re
 import 'package:icare/src/features/medical/domain/repositories/medical_repo.dart';
 
 class GetEmergencyDiseasesUseCase
-    implements
-        BaseUseCases<ApiResult<List<GetEmergencyDiseasesResponse>>, NoParams> {
+    implements BaseUseCase<List<GetEmergencyDiseasesResponse>, NoParams> {
   final MedicalRepo _medicalRepo;
 
   const GetEmergencyDiseasesUseCase(this._medicalRepo);
