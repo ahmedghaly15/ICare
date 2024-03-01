@@ -1,16 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
-import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
-import 'package:icare/src/features/emergency/data/datasources/emergency_datasource.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
+import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 import 'package:icare/src/features/emergency/data/models/get_emergency_diseases_response.dart';
 
 class EmergencyRepo {
-  final EmergencyDatasource _emergencyDatasource;
+  final EmergencyRemoteDatasource _emergencyDatasource;
+  final EmergencyLocalDatasource _emergencyLocalDatasource;
 
-  const EmergencyRepo(this._emergencyDatasource);
+  const EmergencyRepo(
+    this._emergencyDatasource,
+    this._emergencyLocalDatasource,
+  );
 
-  Future<ApiResult<List<GetEmergencyDiseasesResponse>>> getEmergencyDiseases() {
-    return executeAndHandleErrors<List<GetEmergencyDiseasesResponse>>(
-      () async => await _emergencyDatasource.getEmergencyDiseases(),
-    );
+  Future<ApiResult<List<GetEmergencyDiseasesResponse>>>
+      getEmergencyDiseases() async {
+    final String? jsonString = getIt
+        .get<CacheHelper>()
+        .getStringData(key: AppStrings.cachedEmergencyDiseases);
+
+    if (jsonString == null) {
+      debugPrint('NO CACHED DATA');
+
+      try {
+        final data = await _emergencyDatasource.getEmergencyDiseases();
+        await _emergencyLocalDatasource.cacheEmergencyDiseases(data);
+        return ApiResult.success(data);
+      } catch (error) {
+        return ApiResult.error(ErrorHandler.handle(error));
+      }
+    } else {
+      debugPrint('CACHED DATA');
+      final List<GetEmergencyDiseasesResponse> data =
+          await _emergencyLocalDatasource.getCachedEmergencyDiseases();
+
+      return ApiResult.success(data);
+    }
   }
 }

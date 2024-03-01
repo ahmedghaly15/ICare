@@ -11,7 +11,8 @@ import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.da
 import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
-import 'package:icare/src/features/emergency/data/datasources/emergency_datasource.dart';
+import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
+import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 import 'package:icare/src/features/emergency/data/repositories/emergency_repo.dart';
 import 'package:icare/src/features/emergency/presentation/cubit/emergency_cubit.dart';
 import 'package:icare/src/features/medical/data/datasources/medical_datasource.dart';
@@ -85,8 +86,12 @@ class DependencyInjection {
     );
 
     // ========== Emergency feature ==========
-    getIt.registerLazySingleton<EmergencyDatasource>(
+    getIt.registerLazySingleton<EmergencyRemoteDatasource>(
       () => EmergencyDatasourceImpl(getIt.get<ApiService>()),
+    );
+
+    getIt.registerLazySingleton<EmergencyLocalDatasource>(
+      () => EmergencyLocalDatasourceImpl(),
     );
 
     // ========== MedicalInfo feature ==========
@@ -123,7 +128,10 @@ class DependencyInjection {
 
     // ========== Emergency feature ==========
     getIt.registerLazySingleton<EmergencyRepo>(
-      () => EmergencyRepo(getIt.get<EmergencyDatasource>()),
+      () => EmergencyRepo(
+        getIt.get<EmergencyRemoteDatasource>(),
+        getIt.get<EmergencyLocalDatasource>(),
+      ),
     );
 
     // ========== MedicalInfo feature ==========
