@@ -1,6 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/config/router/app_router.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/core/helpers/auth_helper.dart';
@@ -180,31 +186,58 @@ class _RegisterFormState extends State<RegisterForm> {
         });
       },
       success: (data) {
-        checkTrigger.fire();
-
-        Future.delayed(
-          const Duration(seconds: 2),
-          () {
-            setState(() {
-              isShowLoading = false;
-            });
-
-            confettiTrigger.fire();
-          },
-        );
+        _successListener(data);
       },
       error: (error) {
-        errorTrigger.fire();
+        _errorListener(error);
+      },
+    );
+  }
 
-        Future.delayed(const Duration(seconds: 2), () {
-          setState(() {
-            isShowLoading = false;
-          });
+  void _errorListener(String error) {
+    errorTrigger.fire();
 
-          CustomDialog.show(
-            context: context,
-            state: CustomDialogStates.error,
-            message: error,
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() {
+        isShowLoading = false;
+      });
+
+      CustomDialog.show(
+        context: context,
+        state: CustomDialogStates.error,
+        message: error,
+      );
+    });
+  }
+
+  void _successListener(String data) {
+    checkTrigger.fire();
+
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        setState(() {
+          isShowLoading = false;
+        });
+
+        confettiTrigger.fire();
+      },
+    );
+    Future.delayed(const Duration(seconds: 3), () => _navigateToHome(data));
+  }
+
+  void _navigateToHome(String data) {
+    Helper.uId = data;
+
+    getIt
+        .get<CacheHelper>()
+        .saveData(key: AppStrings.cachedUserId, value: data)
+        .then(
+      (value) {
+        context.read<UserCubit>().getUserData().then((value) {
+          context.router.pushAndPopUntil(
+            const BottomNavBarRoute(),
+            predicate: (route) => route.settings.name == BottomNavBarRoute.name,
           );
         });
       },

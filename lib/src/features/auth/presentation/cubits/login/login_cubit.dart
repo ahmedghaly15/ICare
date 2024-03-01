@@ -65,9 +65,8 @@ class LoginCubit extends Cubit<LoginState> {
     );
 
     response.when(
-      success: (loginResponse) {
-        emit(LoginState.success(loginResponse.user!.uid));
-      },
+      success: (loginResponse) =>
+          emit(LoginState.success(loginResponse.user!.uid)),
       error: (error) => emit(LoginState.error(error: error.failureMsg ?? '')),
     );
   }

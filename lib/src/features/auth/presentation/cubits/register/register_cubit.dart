@@ -94,7 +94,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     response.when(
       success: (success) {
         emit(const RegisterState.createFirestoreUserSuccess());
-        emit(RegisterState.success(data: params.uId));
+        emit(RegisterState.success(params.uId));
       },
       error: (error) =>
           emit(RegisterState.error(error: error.failureMsg ?? '')),

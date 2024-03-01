@@ -20,7 +20,7 @@ mixin _$RegisterState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(String uId) success,
     required TResult Function(String error) error,
     required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
@@ -30,7 +30,7 @@ mixin _$RegisterState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(String uId)? success,
     TResult? Function(String error)? error,
     TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -40,7 +40,7 @@ mixin _$RegisterState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(String uId)? success,
     TResult Function(String error)? error,
     TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -142,7 +142,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(String uId) success,
     required TResult Function(String error) error,
     required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
@@ -155,7 +155,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(String uId)? success,
     TResult? Function(String error)? error,
     TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -168,7 +168,7 @@ class _$RegisterInitialImpl<T> implements _RegisterInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(String uId)? success,
     TResult Function(String error)? error,
     TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -272,7 +272,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(String uId) success,
     required TResult Function(String error) error,
     required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
@@ -285,7 +285,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(String uId)? success,
     TResult? Function(String error)? error,
     TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -298,7 +298,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(String uId)? success,
     TResult Function(String error)? error,
     TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -368,7 +368,7 @@ abstract class _$$SuccessImplCopyWith<T, $Res> {
           _$SuccessImpl<T> value, $Res Function(_$SuccessImpl<T>) then) =
       __$$SuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({T data});
+  $Res call({String uId});
 }
 
 /// @nodoc
@@ -382,13 +382,13 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? uId = null,
   }) {
     return _then(_$SuccessImpl<T>(
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T,
+      null == uId
+          ? _value.uId
+          : uId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -396,14 +396,14 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$SuccessImpl<T> implements Success<T> {
-  const _$SuccessImpl({required this.data});
+  const _$SuccessImpl(this.uId);
 
   @override
-  final T data;
+  final String uId;
 
   @override
   String toString() {
-    return 'RegisterState<$T>.success(data: $data)';
+    return 'RegisterState<$T>.success(uId: $uId)';
   }
 
   @override
@@ -411,12 +411,11 @@ class _$SuccessImpl<T> implements Success<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.uId, uId) || other.uId == uId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, uId);
 
   @JsonKey(ignore: true)
   @override
@@ -429,12 +428,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(String uId) success,
     required TResult Function(String error) error,
     required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
   }) {
-    return success(data);
+    return success(uId);
   }
 
   @override
@@ -442,12 +441,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(String uId)? success,
     TResult? Function(String error)? error,
     TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
   }) {
-    return success?.call(data);
+    return success?.call(uId);
   }
 
   @override
@@ -455,14 +454,14 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(String uId)? success,
     TResult Function(String error)? error,
     TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(data);
+      return success(uId);
     }
     return orElse();
   }
@@ -516,9 +515,9 @@ class _$SuccessImpl<T> implements Success<T> {
 }
 
 abstract class Success<T> implements RegisterState<T> {
-  const factory Success({required final T data}) = _$SuccessImpl<T>;
+  const factory Success(final String uId) = _$SuccessImpl<T>;
 
-  T get data;
+  String get uId;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -590,7 +589,7 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(String uId) success,
     required TResult Function(String error) error,
     required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
@@ -603,7 +602,7 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(String uId)? success,
     TResult? Function(String error)? error,
     TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -616,7 +615,7 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(String uId)? success,
     TResult Function(String error)? error,
     TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -730,7 +729,7 @@ class _$CreateFirestoreUserSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(String uId) success,
     required TResult Function(String error) error,
     required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
@@ -743,7 +742,7 @@ class _$CreateFirestoreUserSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(String uId)? success,
     TResult? Function(String error)? error,
     TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -756,7 +755,7 @@ class _$CreateFirestoreUserSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(String uId)? success,
     TResult Function(String error)? error,
     TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -890,7 +889,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function(String uId) success,
     required TResult Function(String error) error,
     required TResult Function() createFirestoreUserSuccess,
     required TResult Function(bool isRegisterPassVisible) changePassVisibility,
@@ -903,7 +902,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function(String uId)? success,
     TResult? Function(String error)? error,
     TResult? Function()? createFirestoreUserSuccess,
     TResult? Function(bool isRegisterPassVisible)? changePassVisibility,
@@ -916,7 +915,7 @@ class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function(String uId)? success,
     TResult Function(String error)? error,
     TResult Function()? createFirestoreUserSuccess,
     TResult Function(bool isRegisterPassVisible)? changePassVisibility,
