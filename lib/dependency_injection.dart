@@ -14,6 +14,7 @@ import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forg
 import 'package:icare/src/features/medical/data/datasources/medical_datasource.dart';
 import 'package:icare/src/features/medical/data/repositories/medical_repo_impl.dart';
 import 'package:icare/src/features/medical/domain/repositories/medical_repo.dart';
+import 'package:icare/src/features/medical/domain/usecases/get_emergency_diseases.dart';
 import 'package:icare/src/features/medical/domain/usecases/get_medical.dart';
 import 'package:icare/src/features/medical/presentation/cubit/medical_cubit.dart';
 import 'package:icare/src/features/onboarding/data/datasources/onboarding_datasource.dart';
@@ -133,6 +134,10 @@ class DependencyInjection {
     getIt.registerLazySingleton<GetMedicalUseCase>(
       () => GetMedicalUseCase(getIt.get<MedicalRepo>()),
     );
+
+    getIt.registerLazySingleton<GetEmergencyDiseasesUseCase>(
+      () => GetEmergencyDiseasesUseCase(getIt.get<MedicalRepo>()),
+    );
   }
 
   void _setupForCubits() {
@@ -165,7 +170,10 @@ class DependencyInjection {
 
     // ========== Medical feature ==========
     getIt.registerFactory<MedicalCubit>(
-      () => MedicalCubit(getMedicalUseCase: getIt.get<GetMedicalUseCase>()),
+      () => MedicalCubit(
+        getMedicalUseCase: getIt.get<GetMedicalUseCase>(),
+        getEmergencyDiseasesUseCase: getIt.get<GetEmergencyDiseasesUseCase>(),
+      ),
     );
   }
 
