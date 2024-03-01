@@ -80,6 +80,36 @@ class _ApiService implements ApiService {
     return value;
   }
 
+  @override
+  Future<List<GetMedicalInfoResponse>> getMedicalInfo() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<List<dynamic>>(
+        _setStreamType<List<GetMedicalInfoResponse>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'http://192.168.1.6/diseases',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var value = _result.data!
+        .map((dynamic i) =>
+            GetMedicalInfoResponse.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

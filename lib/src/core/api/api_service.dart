@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:icare/src/core/api/end_points.dart';
 import 'package:icare/src/features/medical/data/models/get_emergency_diseases_response.dart';
+import 'package:icare/src/features/medical/data/models/get_medical_info_response.dart';
 import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -15,4 +16,7 @@ abstract class ApiService {
 
   @GET(EndPoints.emergency)
   Future<List<GetEmergencyDiseasesResponse>> getEmergencyDiseases();
+
+  @GET(EndPoints.medicalInfo)
+  Future<List<GetMedicalInfoResponse>> getMedicalInfo();
 }
