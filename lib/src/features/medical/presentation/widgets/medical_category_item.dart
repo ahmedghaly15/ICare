@@ -23,6 +23,9 @@ class MedicalCategoryItem extends StatelessWidget {
       child: MaterialButton(
         padding: EdgeInsets.zero,
         onPressed: onPressed,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusVal),
+        ),
         child: Card(
           elevation: 8.h,
           shape: RoundedRectangleBorder(

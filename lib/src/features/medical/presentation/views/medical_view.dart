@@ -18,12 +18,12 @@ class MedicalView extends StatelessWidget {
           state is GetMedicalLoading ||
           state is GetMedicalError,
       builder: (context, state) {
-        if (state is GetMedicalLoading) {
-          return const Center(child: CustomCircularProgressIndicator());
+        if (state is GetMedicalError) {
+          return Center(child: Text('ERROR: ${state.error}'));
         } else if (state is GetMedicalSuccess) {
           return MedicalCategoriesListView(medicalCategories: state.data);
         } else {
-          return const Center(child: Text('Error'));
+          return const Center(child: CustomCircularProgressIndicator());
         }
       },
     );

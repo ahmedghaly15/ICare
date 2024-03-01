@@ -22,8 +22,7 @@ class ICareApp extends StatelessWidget {
       splitScreenMode: true,
       child: BlocProvider<MedicalCubit>(
         lazy: false,
-        create: (BuildContext context) =>
-            getIt.get<MedicalCubit>()..getMedical(),
+        create: (context) => getIt.get<MedicalCubit>()..getMedical(),
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: AppStrings.appTitle,

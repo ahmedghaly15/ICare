@@ -42,6 +42,10 @@ class PrimaryButton extends StatelessWidget {
       ),
       child: MaterialButton(
         onPressed: onPressed,
+        shape: RoundedRectangleBorder(
+          borderRadius:
+              BorderRadiusDirectional.circular(borderRadius ?? 50.0.r),
+        ),
         child: child ??
             Text(
               text!,

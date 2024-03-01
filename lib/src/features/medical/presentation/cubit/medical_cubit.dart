@@ -25,7 +25,7 @@ class MedicalCubit extends Cubit<MedicalState> {
     );
   }
 
-  void getEmergencyDiseases() async {
+  Future<void> getEmergencyDiseases() async {
     emit(const MedicalState.getEmergencyDiseasesLoading());
 
     final result = await getEmergencyDiseasesUseCase(const NoParams());

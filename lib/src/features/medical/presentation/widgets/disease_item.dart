@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
-import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
+import 'package:icare/src/features/medical/data/models/get_emergency_diseases_response.dart';
 
 class DiseaseItem extends StatelessWidget {
   const DiseaseItem({
@@ -12,7 +12,7 @@ class DiseaseItem extends StatelessWidget {
     required this.onPressed,
   });
 
-  final GetMedicalResponseData diseaseInfo;
+  final GetEmergencyDiseasesResponse diseaseInfo;
   final VoidCallback onPressed;
 
   @override
