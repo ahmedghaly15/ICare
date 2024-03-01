@@ -10,15 +10,10 @@ GetMedicalResponse _$GetMedicalResponseFromJson(Map<String, dynamic> json) =>
     GetMedicalResponse(
       medicalCategoryName: json['medical_category_name'] as String,
       medicalCategoryImage: json['medical_category_image'] as String,
-      data: (json['data'] as List<dynamic>)
-          .map(
-              (e) => GetMedicalResponseData.fromJson(e as Map<String, dynamic>))
-          .toList(),
     );
 
-GetMedicalResponseData _$GetMedicalResponseDataFromJson(
-        Map<String, dynamic> json) =>
-    GetMedicalResponseData(
-      diseaseName: json['disease_name'] as String,
-      diseaseImage: json['disease_image'] as String,
-    );
+Map<String, dynamic> _$GetMedicalResponseToJson(GetMedicalResponse instance) =>
+    <String, dynamic>{
+      'medical_category_name': instance.medicalCategoryName,
+      'medical_category_image': instance.medicalCategoryImage,
+    };

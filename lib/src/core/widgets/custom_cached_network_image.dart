@@ -17,7 +17,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
       fit: BoxFit.cover,
       width: double.infinity,
       height: double.infinity,
-      errorWidget: (context, url, error) => const CachedImageErrorIcon(),
+      errorWidget: (_, __, ___) => const CachedImageErrorIcon(),
     );
   }
 }

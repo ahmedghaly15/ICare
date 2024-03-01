@@ -11,4 +11,6 @@ abstract class ApiService {
 
   @GET(EndPoints.medical)
   Future<List<GetMedicalResponse>> getMedical();
+
+  // @GET()
 }
