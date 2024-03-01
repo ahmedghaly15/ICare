@@ -26,6 +26,10 @@ mixin _$MedicalState<T> {
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,9 @@ mixin _$MedicalState<T> {
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +57,9 @@ mixin _$MedicalState<T> {
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +75,11 @@ mixin _$MedicalState<T> {
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,6 +94,9 @@ mixin _$MedicalState<T> {
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +111,9 @@ mixin _$MedicalState<T> {
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,6 +183,10 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) {
     return initial();
   }
@@ -177,6 +202,9 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) {
     return initial?.call();
   }
@@ -192,6 +220,9 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -213,6 +244,11 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) {
     return initial(this);
   }
@@ -230,6 +266,9 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) {
     return initial?.call(this);
   }
@@ -247,6 +286,9 @@ class _$MedicalInitialImpl<T> implements _MedicalInitial<T> {
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -307,6 +349,10 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) {
     return getMedicalLoading();
   }
@@ -322,6 +368,9 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) {
     return getMedicalLoading?.call();
   }
@@ -337,6 +386,9 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getMedicalLoading != null) {
@@ -358,6 +410,11 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) {
     return getMedicalLoading(this);
   }
@@ -375,6 +432,9 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) {
     return getMedicalLoading?.call(this);
   }
@@ -392,6 +452,9 @@ class _$GetMedicalLoadingImpl<T> implements GetMedicalLoading<T> {
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getMedicalLoading != null) {
@@ -486,6 +549,10 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) {
     return getMedicalSuccess(data);
   }
@@ -501,6 +568,9 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) {
     return getMedicalSuccess?.call(data);
   }
@@ -516,6 +586,9 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getMedicalSuccess != null) {
@@ -537,6 +610,11 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) {
     return getMedicalSuccess(this);
   }
@@ -554,6 +632,9 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) {
     return getMedicalSuccess?.call(this);
   }
@@ -571,6 +652,9 @@ class _$GetMedicalSuccessImpl<T> implements GetMedicalSuccess<T> {
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getMedicalSuccess != null) {
@@ -663,6 +747,10 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) {
     return getMedicalError(error);
   }
@@ -678,6 +766,9 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) {
     return getMedicalError?.call(error);
   }
@@ -693,6 +784,9 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getMedicalError != null) {
@@ -714,6 +808,11 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) {
     return getMedicalError(this);
   }
@@ -731,6 +830,9 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) {
     return getMedicalError?.call(this);
   }
@@ -748,6 +850,9 @@ class _$GetMedicalErrorImpl<T> implements GetMedicalError<T> {
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getMedicalError != null) {
@@ -817,6 +922,10 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) {
     return getEmergencyDiseasesLoading();
   }
@@ -832,6 +941,9 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) {
     return getEmergencyDiseasesLoading?.call();
   }
@@ -847,6 +959,9 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getEmergencyDiseasesLoading != null) {
@@ -868,6 +983,11 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) {
     return getEmergencyDiseasesLoading(this);
   }
@@ -885,6 +1005,9 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) {
     return getEmergencyDiseasesLoading?.call(this);
   }
@@ -902,6 +1025,9 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getEmergencyDiseasesLoading != null) {
@@ -1002,6 +1128,10 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) {
     return getEmergencyDiseasesSuccess(data);
   }
@@ -1017,6 +1147,9 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) {
     return getEmergencyDiseasesSuccess?.call(data);
   }
@@ -1032,6 +1165,9 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getEmergencyDiseasesSuccess != null) {
@@ -1053,6 +1189,11 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) {
     return getEmergencyDiseasesSuccess(this);
   }
@@ -1070,6 +1211,9 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) {
     return getEmergencyDiseasesSuccess?.call(this);
   }
@@ -1087,6 +1231,9 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getEmergencyDiseasesSuccess != null) {
@@ -1186,6 +1333,10 @@ class _$GetEmergencyDiseasesErrorImpl<T>
     required TResult Function(List<GetEmergencyDiseasesResponse> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
   }) {
     return getEmergencyDiseasesError(error);
   }
@@ -1201,6 +1352,9 @@ class _$GetEmergencyDiseasesErrorImpl<T>
     TResult? Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
   }) {
     return getEmergencyDiseasesError?.call(error);
   }
@@ -1216,6 +1370,9 @@ class _$GetEmergencyDiseasesErrorImpl<T>
     TResult Function(List<GetEmergencyDiseasesResponse> data)?
         getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getEmergencyDiseasesError != null) {
@@ -1237,6 +1394,11 @@ class _$GetEmergencyDiseasesErrorImpl<T>
         getEmergencyDiseasesSuccess,
     required TResult Function(GetEmergencyDiseasesError<T> value)
         getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
   }) {
     return getEmergencyDiseasesError(this);
   }
@@ -1254,6 +1416,9 @@ class _$GetEmergencyDiseasesErrorImpl<T>
         getEmergencyDiseasesSuccess,
     TResult? Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
   }) {
     return getEmergencyDiseasesError?.call(this);
   }
@@ -1271,6 +1436,9 @@ class _$GetEmergencyDiseasesErrorImpl<T>
         getEmergencyDiseasesSuccess,
     TResult Function(GetEmergencyDiseasesError<T> value)?
         getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
     required TResult orElse(),
   }) {
     if (getEmergencyDiseasesError != null) {
@@ -1288,5 +1456,578 @@ abstract class GetEmergencyDiseasesError<T> implements MedicalState<T> {
   @JsonKey(ignore: true)
   _$$GetEmergencyDiseasesErrorImplCopyWith<T,
           _$GetEmergencyDiseasesErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetMedicalInfoLoadingImplCopyWith<T, $Res> {
+  factory _$$GetMedicalInfoLoadingImplCopyWith(
+          _$GetMedicalInfoLoadingImpl<T> value,
+          $Res Function(_$GetMedicalInfoLoadingImpl<T>) then) =
+      __$$GetMedicalInfoLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetMedicalInfoLoadingImplCopyWithImpl<T, $Res>
+    extends _$MedicalStateCopyWithImpl<T, $Res, _$GetMedicalInfoLoadingImpl<T>>
+    implements _$$GetMedicalInfoLoadingImplCopyWith<T, $Res> {
+  __$$GetMedicalInfoLoadingImplCopyWithImpl(
+      _$GetMedicalInfoLoadingImpl<T> _value,
+      $Res Function(_$GetMedicalInfoLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetMedicalInfoLoadingImpl<T> implements GetMedicalInfoLoading<T> {
+  const _$GetMedicalInfoLoadingImpl();
+
+  @override
+  String toString() {
+    return 'MedicalState<$T>.getMedicalInfoLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMedicalInfoLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getMedicalLoading,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
+    required TResult Function(String error) getMedicalError,
+    required TResult Function() getEmergencyDiseasesLoading,
+    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+        getEmergencyDiseasesSuccess,
+    required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
+  }) {
+    return getMedicalInfoLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getMedicalLoading,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
+    TResult? Function(String error)? getMedicalError,
+    TResult? Function()? getEmergencyDiseasesLoading,
+    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
+        getEmergencyDiseasesSuccess,
+    TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
+  }) {
+    return getMedicalInfoLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getMedicalLoading,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
+    TResult Function(String error)? getMedicalError,
+    TResult Function()? getEmergencyDiseasesLoading,
+    TResult Function(List<GetEmergencyDiseasesResponse> data)?
+        getEmergencyDiseasesSuccess,
+    TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
+    required TResult orElse(),
+  }) {
+    if (getMedicalInfoLoading != null) {
+      return getMedicalInfoLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MedicalInitial<T> value) initial,
+    required TResult Function(GetMedicalLoading<T> value) getMedicalLoading,
+    required TResult Function(GetMedicalSuccess<T> value) getMedicalSuccess,
+    required TResult Function(GetMedicalError<T> value) getMedicalError,
+    required TResult Function(GetEmergencyDiseasesLoading<T> value)
+        getEmergencyDiseasesLoading,
+    required TResult Function(GetEmergencyDiseasesSuccess<T> value)
+        getEmergencyDiseasesSuccess,
+    required TResult Function(GetEmergencyDiseasesError<T> value)
+        getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
+  }) {
+    return getMedicalInfoLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MedicalInitial<T> value)? initial,
+    TResult? Function(GetMedicalLoading<T> value)? getMedicalLoading,
+    TResult? Function(GetMedicalSuccess<T> value)? getMedicalSuccess,
+    TResult? Function(GetMedicalError<T> value)? getMedicalError,
+    TResult? Function(GetEmergencyDiseasesLoading<T> value)?
+        getEmergencyDiseasesLoading,
+    TResult? Function(GetEmergencyDiseasesSuccess<T> value)?
+        getEmergencyDiseasesSuccess,
+    TResult? Function(GetEmergencyDiseasesError<T> value)?
+        getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
+  }) {
+    return getMedicalInfoLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MedicalInitial<T> value)? initial,
+    TResult Function(GetMedicalLoading<T> value)? getMedicalLoading,
+    TResult Function(GetMedicalSuccess<T> value)? getMedicalSuccess,
+    TResult Function(GetMedicalError<T> value)? getMedicalError,
+    TResult Function(GetEmergencyDiseasesLoading<T> value)?
+        getEmergencyDiseasesLoading,
+    TResult Function(GetEmergencyDiseasesSuccess<T> value)?
+        getEmergencyDiseasesSuccess,
+    TResult Function(GetEmergencyDiseasesError<T> value)?
+        getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
+    required TResult orElse(),
+  }) {
+    if (getMedicalInfoLoading != null) {
+      return getMedicalInfoLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMedicalInfoLoading<T> implements MedicalState<T> {
+  const factory GetMedicalInfoLoading() = _$GetMedicalInfoLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetMedicalInfoSuccessImplCopyWith<T, $Res> {
+  factory _$$GetMedicalInfoSuccessImplCopyWith(
+          _$GetMedicalInfoSuccessImpl<T> value,
+          $Res Function(_$GetMedicalInfoSuccessImpl<T>) then) =
+      __$$GetMedicalInfoSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<GetMedicalInfoResponse> data});
+}
+
+/// @nodoc
+class __$$GetMedicalInfoSuccessImplCopyWithImpl<T, $Res>
+    extends _$MedicalStateCopyWithImpl<T, $Res, _$GetMedicalInfoSuccessImpl<T>>
+    implements _$$GetMedicalInfoSuccessImplCopyWith<T, $Res> {
+  __$$GetMedicalInfoSuccessImplCopyWithImpl(
+      _$GetMedicalInfoSuccessImpl<T> _value,
+      $Res Function(_$GetMedicalInfoSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GetMedicalInfoSuccessImpl<T>(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<GetMedicalInfoResponse>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetMedicalInfoSuccessImpl<T> implements GetMedicalInfoSuccess<T> {
+  const _$GetMedicalInfoSuccessImpl(final List<GetMedicalInfoResponse> data)
+      : _data = data;
+
+  final List<GetMedicalInfoResponse> _data;
+  @override
+  List<GetMedicalInfoResponse> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'MedicalState<$T>.getMedicalInfoSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMedicalInfoSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetMedicalInfoSuccessImplCopyWith<T, _$GetMedicalInfoSuccessImpl<T>>
+      get copyWith => __$$GetMedicalInfoSuccessImplCopyWithImpl<T,
+          _$GetMedicalInfoSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getMedicalLoading,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
+    required TResult Function(String error) getMedicalError,
+    required TResult Function() getEmergencyDiseasesLoading,
+    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+        getEmergencyDiseasesSuccess,
+    required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
+  }) {
+    return getMedicalInfoSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getMedicalLoading,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
+    TResult? Function(String error)? getMedicalError,
+    TResult? Function()? getEmergencyDiseasesLoading,
+    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
+        getEmergencyDiseasesSuccess,
+    TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
+  }) {
+    return getMedicalInfoSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getMedicalLoading,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
+    TResult Function(String error)? getMedicalError,
+    TResult Function()? getEmergencyDiseasesLoading,
+    TResult Function(List<GetEmergencyDiseasesResponse> data)?
+        getEmergencyDiseasesSuccess,
+    TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
+    required TResult orElse(),
+  }) {
+    if (getMedicalInfoSuccess != null) {
+      return getMedicalInfoSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MedicalInitial<T> value) initial,
+    required TResult Function(GetMedicalLoading<T> value) getMedicalLoading,
+    required TResult Function(GetMedicalSuccess<T> value) getMedicalSuccess,
+    required TResult Function(GetMedicalError<T> value) getMedicalError,
+    required TResult Function(GetEmergencyDiseasesLoading<T> value)
+        getEmergencyDiseasesLoading,
+    required TResult Function(GetEmergencyDiseasesSuccess<T> value)
+        getEmergencyDiseasesSuccess,
+    required TResult Function(GetEmergencyDiseasesError<T> value)
+        getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
+  }) {
+    return getMedicalInfoSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MedicalInitial<T> value)? initial,
+    TResult? Function(GetMedicalLoading<T> value)? getMedicalLoading,
+    TResult? Function(GetMedicalSuccess<T> value)? getMedicalSuccess,
+    TResult? Function(GetMedicalError<T> value)? getMedicalError,
+    TResult? Function(GetEmergencyDiseasesLoading<T> value)?
+        getEmergencyDiseasesLoading,
+    TResult? Function(GetEmergencyDiseasesSuccess<T> value)?
+        getEmergencyDiseasesSuccess,
+    TResult? Function(GetEmergencyDiseasesError<T> value)?
+        getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
+  }) {
+    return getMedicalInfoSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MedicalInitial<T> value)? initial,
+    TResult Function(GetMedicalLoading<T> value)? getMedicalLoading,
+    TResult Function(GetMedicalSuccess<T> value)? getMedicalSuccess,
+    TResult Function(GetMedicalError<T> value)? getMedicalError,
+    TResult Function(GetEmergencyDiseasesLoading<T> value)?
+        getEmergencyDiseasesLoading,
+    TResult Function(GetEmergencyDiseasesSuccess<T> value)?
+        getEmergencyDiseasesSuccess,
+    TResult Function(GetEmergencyDiseasesError<T> value)?
+        getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
+    required TResult orElse(),
+  }) {
+    if (getMedicalInfoSuccess != null) {
+      return getMedicalInfoSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMedicalInfoSuccess<T> implements MedicalState<T> {
+  const factory GetMedicalInfoSuccess(final List<GetMedicalInfoResponse> data) =
+      _$GetMedicalInfoSuccessImpl<T>;
+
+  List<GetMedicalInfoResponse> get data;
+  @JsonKey(ignore: true)
+  _$$GetMedicalInfoSuccessImplCopyWith<T, _$GetMedicalInfoSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetMedicalInfoErrorImplCopyWith<T, $Res> {
+  factory _$$GetMedicalInfoErrorImplCopyWith(_$GetMedicalInfoErrorImpl<T> value,
+          $Res Function(_$GetMedicalInfoErrorImpl<T>) then) =
+      __$$GetMedicalInfoErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetMedicalInfoErrorImplCopyWithImpl<T, $Res>
+    extends _$MedicalStateCopyWithImpl<T, $Res, _$GetMedicalInfoErrorImpl<T>>
+    implements _$$GetMedicalInfoErrorImplCopyWith<T, $Res> {
+  __$$GetMedicalInfoErrorImplCopyWithImpl(_$GetMedicalInfoErrorImpl<T> _value,
+      $Res Function(_$GetMedicalInfoErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetMedicalInfoErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetMedicalInfoErrorImpl<T> implements GetMedicalInfoError<T> {
+  const _$GetMedicalInfoErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'MedicalState<$T>.getMedicalInfoError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetMedicalInfoErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetMedicalInfoErrorImplCopyWith<T, _$GetMedicalInfoErrorImpl<T>>
+      get copyWith => __$$GetMedicalInfoErrorImplCopyWithImpl<T,
+          _$GetMedicalInfoErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getMedicalLoading,
+    required TResult Function(List<GetMedicalResponse> data) getMedicalSuccess,
+    required TResult Function(String error) getMedicalError,
+    required TResult Function() getEmergencyDiseasesLoading,
+    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+        getEmergencyDiseasesSuccess,
+    required TResult Function(String error) getEmergencyDiseasesError,
+    required TResult Function() getMedicalInfoLoading,
+    required TResult Function(List<GetMedicalInfoResponse> data)
+        getMedicalInfoSuccess,
+    required TResult Function(String error) getMedicalInfoError,
+  }) {
+    return getMedicalInfoError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getMedicalLoading,
+    TResult? Function(List<GetMedicalResponse> data)? getMedicalSuccess,
+    TResult? Function(String error)? getMedicalError,
+    TResult? Function()? getEmergencyDiseasesLoading,
+    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
+        getEmergencyDiseasesSuccess,
+    TResult? Function(String error)? getEmergencyDiseasesError,
+    TResult? Function()? getMedicalInfoLoading,
+    TResult? Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult? Function(String error)? getMedicalInfoError,
+  }) {
+    return getMedicalInfoError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getMedicalLoading,
+    TResult Function(List<GetMedicalResponse> data)? getMedicalSuccess,
+    TResult Function(String error)? getMedicalError,
+    TResult Function()? getEmergencyDiseasesLoading,
+    TResult Function(List<GetEmergencyDiseasesResponse> data)?
+        getEmergencyDiseasesSuccess,
+    TResult Function(String error)? getEmergencyDiseasesError,
+    TResult Function()? getMedicalInfoLoading,
+    TResult Function(List<GetMedicalInfoResponse> data)? getMedicalInfoSuccess,
+    TResult Function(String error)? getMedicalInfoError,
+    required TResult orElse(),
+  }) {
+    if (getMedicalInfoError != null) {
+      return getMedicalInfoError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_MedicalInitial<T> value) initial,
+    required TResult Function(GetMedicalLoading<T> value) getMedicalLoading,
+    required TResult Function(GetMedicalSuccess<T> value) getMedicalSuccess,
+    required TResult Function(GetMedicalError<T> value) getMedicalError,
+    required TResult Function(GetEmergencyDiseasesLoading<T> value)
+        getEmergencyDiseasesLoading,
+    required TResult Function(GetEmergencyDiseasesSuccess<T> value)
+        getEmergencyDiseasesSuccess,
+    required TResult Function(GetEmergencyDiseasesError<T> value)
+        getEmergencyDiseasesError,
+    required TResult Function(GetMedicalInfoLoading<T> value)
+        getMedicalInfoLoading,
+    required TResult Function(GetMedicalInfoSuccess<T> value)
+        getMedicalInfoSuccess,
+    required TResult Function(GetMedicalInfoError<T> value) getMedicalInfoError,
+  }) {
+    return getMedicalInfoError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_MedicalInitial<T> value)? initial,
+    TResult? Function(GetMedicalLoading<T> value)? getMedicalLoading,
+    TResult? Function(GetMedicalSuccess<T> value)? getMedicalSuccess,
+    TResult? Function(GetMedicalError<T> value)? getMedicalError,
+    TResult? Function(GetEmergencyDiseasesLoading<T> value)?
+        getEmergencyDiseasesLoading,
+    TResult? Function(GetEmergencyDiseasesSuccess<T> value)?
+        getEmergencyDiseasesSuccess,
+    TResult? Function(GetEmergencyDiseasesError<T> value)?
+        getEmergencyDiseasesError,
+    TResult? Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult? Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult? Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
+  }) {
+    return getMedicalInfoError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_MedicalInitial<T> value)? initial,
+    TResult Function(GetMedicalLoading<T> value)? getMedicalLoading,
+    TResult Function(GetMedicalSuccess<T> value)? getMedicalSuccess,
+    TResult Function(GetMedicalError<T> value)? getMedicalError,
+    TResult Function(GetEmergencyDiseasesLoading<T> value)?
+        getEmergencyDiseasesLoading,
+    TResult Function(GetEmergencyDiseasesSuccess<T> value)?
+        getEmergencyDiseasesSuccess,
+    TResult Function(GetEmergencyDiseasesError<T> value)?
+        getEmergencyDiseasesError,
+    TResult Function(GetMedicalInfoLoading<T> value)? getMedicalInfoLoading,
+    TResult Function(GetMedicalInfoSuccess<T> value)? getMedicalInfoSuccess,
+    TResult Function(GetMedicalInfoError<T> value)? getMedicalInfoError,
+    required TResult orElse(),
+  }) {
+    if (getMedicalInfoError != null) {
+      return getMedicalInfoError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetMedicalInfoError<T> implements MedicalState<T> {
+  const factory GetMedicalInfoError(final String error) =
+      _$GetMedicalInfoErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetMedicalInfoErrorImplCopyWith<T, _$GetMedicalInfoErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

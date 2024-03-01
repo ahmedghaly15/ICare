@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/features/medical/data/models/get_emergency_diseases_response.dart';
+import 'package:icare/src/features/medical/data/models/get_medical_info_response.dart';
 import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
 
 part 'medical_state.freezed.dart';
@@ -18,4 +19,10 @@ class MedicalState<T> with _$MedicalState<T> {
       List<GetEmergencyDiseasesResponse> data) = GetEmergencyDiseasesSuccess<T>;
   const factory MedicalState.getEmergencyDiseasesError(String error) =
       GetEmergencyDiseasesError;
+
+  const factory MedicalState.getMedicalInfoLoading() = GetMedicalInfoLoading;
+  const factory MedicalState.getMedicalInfoSuccess(
+      List<GetMedicalInfoResponse> data) = GetMedicalInfoSuccess<T>;
+  const factory MedicalState.getMedicalInfoError(String error) =
+      GetMedicalInfoError;
 }
