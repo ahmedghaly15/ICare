@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
+    EmergencyDiseasesRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EmergencyDiseasesView(),
+      );
+    },
     EntryRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -61,16 +67,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: WrappedRoute(child: const LoginView()),
-      );
-    },
-    MedicalCategoryDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<MedicalCategoryDetailsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: MedicalCategoryDetailsView(
-          key: args.key,
-          medicalCategory: args.medicalCategory,
-        ),
       );
     },
     MedicalRoute.name: (routeData) {
@@ -143,6 +139,20 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [EmergencyDiseasesView]
+class EmergencyDiseasesRoute extends PageRouteInfo<void> {
+  const EmergencyDiseasesRoute({List<PageRouteInfo>? children})
+      : super(
+          EmergencyDiseasesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EmergencyDiseasesRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [EntryView]
 class EntryRoute extends PageRouteInfo<void> {
   const EntryRoute({List<PageRouteInfo>? children})
@@ -210,45 +220,6 @@ class LoginRoute extends PageRouteInfo<void> {
   static const String name = 'LoginRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [MedicalCategoryDetailsView]
-class MedicalCategoryDetailsRoute
-    extends PageRouteInfo<MedicalCategoryDetailsRouteArgs> {
-  MedicalCategoryDetailsRoute({
-    Key? key,
-    required GetMedicalResponse medicalCategory,
-    List<PageRouteInfo>? children,
-  }) : super(
-          MedicalCategoryDetailsRoute.name,
-          args: MedicalCategoryDetailsRouteArgs(
-            key: key,
-            medicalCategory: medicalCategory,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'MedicalCategoryDetailsRoute';
-
-  static const PageInfo<MedicalCategoryDetailsRouteArgs> page =
-      PageInfo<MedicalCategoryDetailsRouteArgs>(name);
-}
-
-class MedicalCategoryDetailsRouteArgs {
-  const MedicalCategoryDetailsRouteArgs({
-    this.key,
-    required this.medicalCategory,
-  });
-
-  final Key? key;
-
-  final GetMedicalResponse medicalCategory;
-
-  @override
-  String toString() {
-    return 'MedicalCategoryDetailsRouteArgs{key: $key, medicalCategory: $medicalCategory}';
-  }
 }
 
 /// generated route for
