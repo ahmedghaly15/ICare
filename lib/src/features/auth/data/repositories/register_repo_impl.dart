@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/auth/data/datasources/register_datasource.dart';
@@ -11,17 +12,19 @@ class RegisterRepoImpl implements RegisterRepo {
   const RegisterRepoImpl(this._registerDataSource);
 
   @override
-  Future<FirebaseRequestResult> createFirestoreUser(
+  Future<FirebaseRequestResult<void>> createFirestoreUser(
     CreateFirestoreUserParams params,
   ) {
-    return executeAndHandleFirebaseErrors(
+    return executeAndHandleFirebaseErrors<void>(
       () async => await _registerDataSource.createFirestoreUser(params),
     );
   }
 
   @override
-  Future<FirebaseRequestResult> register(RegisterRequestParams params) {
-    return executeAndHandleFirebaseErrors(
+  Future<FirebaseRequestResult<UserCredential>> register(
+    RegisterRequestParams params,
+  ) {
+    return executeAndHandleFirebaseErrors<UserCredential>(
       () async => await _registerDataSource.register(params),
     );
   }

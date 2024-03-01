@@ -7,8 +7,8 @@ class ForgotPasswordRepo {
 
   const ForgotPasswordRepo(this._forgotPasswordDataSource);
 
-  Future<FirebaseRequestResult> forgotPassword(String email) {
-    return executeAndHandleFirebaseErrors(
+  Future<FirebaseRequestResult<void>> forgotPassword(String email) {
+    return executeAndHandleFirebaseErrors<void>(
       () async => await _forgotPasswordDataSource.forgotPassword(email),
     );
   }

@@ -65,7 +65,8 @@ class LoginCubit extends Cubit<LoginState> {
     );
 
     response.when(
-      success: (loginResponse) => emit(LoginState.success(data: loginResponse)),
+      success: (loginResponse) =>
+          emit(LoginState.success(loginResponse.user!.uid)),
       error: (error) => emit(LoginState.error(error: error.failureMsg ?? '')),
     );
   }
@@ -79,8 +80,8 @@ class LoginCubit extends Cubit<LoginState> {
       success: (credential) async {
         await createFirestoreUserUseCase(
           CreateFirestoreUserParams(
-            name: credential.user!.displayName,
-            email: credential.user!.email,
+            name: credential.user!.displayName!,
+            email: credential.user!.email!,
             uId: credential.user!.uid,
           ),
         );

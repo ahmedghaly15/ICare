@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/auth/data/datasources/login_datasource.dart';
@@ -8,14 +9,16 @@ class LoginRepo {
 
   const LoginRepo(this._loginDataSource);
 
-  Future<FirebaseRequestResult> login(LoginRequestParams params) {
-    return executeAndHandleFirebaseErrors(
+  Future<FirebaseRequestResult<UserCredential>> login(
+    LoginRequestParams params,
+  ) {
+    return executeAndHandleFirebaseErrors<UserCredential>(
       () async => await _loginDataSource.login(params),
     );
   }
 
-  Future<FirebaseRequestResult> signInWithGoogle() {
-    return executeAndHandleFirebaseErrors(
+  Future<FirebaseRequestResult<UserCredential>> signInWithGoogle() {
+    return executeAndHandleFirebaseErrors<UserCredential>(
       () async => await _loginDataSource.signInWithGoogle(),
     );
   }

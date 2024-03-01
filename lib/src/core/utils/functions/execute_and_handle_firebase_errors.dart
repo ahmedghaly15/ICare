@@ -5,14 +5,14 @@ import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/network/network_info.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 
-Future<FirebaseRequestResult> executeAndHandleFirebaseErrors(
+Future<FirebaseRequestResult<T>> executeAndHandleFirebaseErrors<T>(
   Future Function() function,
 ) async {
   if (await getIt.get<NetworkInfo>().isConnected) {
     try {
       final response = await function();
 
-      return FirebaseRequestResult.success(data: response);
+      return FirebaseRequestResult<T>.success(data: response);
     } catch (error) {
       if (error is FirebaseException) {
         return FirebaseRequestResult.error(
