@@ -9,7 +9,8 @@ import 'package:icare/src/features/baby/presentation/views/baby_view.dart';
 import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
 import 'package:icare/src/features/entry/presentation/views/entry_view.dart';
 import 'package:icare/src/features/home/home_view.dart';
-import 'package:icare/src/features/medical/presentation/views/emergency_diseases_view.dart';
+import 'package:icare/src/features/emergency/presentation/views/emergency_diseases_view.dart';
+import 'package:icare/src/features/medical_info/presentation/views/medical_info_view.dart';
 import 'package:icare/src/features/medical/presentation/views/medical_view.dart';
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
@@ -61,6 +62,10 @@ class AppRouter extends _$AppRouter {
         ),
         _buildCustomRoute(
           page: EmergencyDiseasesRoute.page,
+          transitionsBuilder: TransitionsBuilders.fadeIn,
+        ),
+        _buildCustomRoute(
+          page: MedicalInfoRoute.page,
           transitionsBuilder: TransitionsBuilders.fadeIn,
         ),
       ];

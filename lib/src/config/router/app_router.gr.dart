@@ -36,7 +36,7 @@ abstract class _$AppRouter extends RootStackRouter {
     EmergencyDiseasesRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EmergencyDiseasesView(),
+        child: WrappedRoute(child: const EmergencyDiseasesView()),
       );
     },
     EntryRoute.name: (routeData) {
@@ -67,6 +67,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: WrappedRoute(child: const LoginView()),
+      );
+    },
+    MedicalInfoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const MedicalInfoView()),
       );
     },
     MedicalRoute.name: (routeData) {
@@ -218,6 +224,20 @@ class LoginRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LoginRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MedicalInfoView]
+class MedicalInfoRoute extends PageRouteInfo<void> {
+  const MedicalInfoRoute({List<PageRouteInfo>? children})
+      : super(
+          MedicalInfoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MedicalInfoRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

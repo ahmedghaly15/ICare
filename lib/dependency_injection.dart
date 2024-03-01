@@ -11,12 +11,18 @@ import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.da
 import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
+import 'package:icare/src/features/emergency/data/datasources/emergency_datasource.dart';
+import 'package:icare/src/features/emergency/data/repositories/emergency_repo.dart';
+import 'package:icare/src/features/emergency/presentation/cubit/emergency_cubit.dart';
 import 'package:icare/src/features/medical/data/datasources/medical_datasource.dart';
-import 'package:icare/src/features/medical/data/repositories/medical_repo_impl.dart';
-import 'package:icare/src/features/medical/domain/repositories/medical_repo.dart';
-import 'package:icare/src/features/medical/domain/usecases/get_emergency_diseases.dart';
+import 'package:icare/src/features/medical/data/repositories/medical_repo.dart';
+import 'package:icare/src/features/emergency/domain/usecases/get_emergency_diseases.dart';
 import 'package:icare/src/features/medical/domain/usecases/get_medical.dart';
-import 'package:icare/src/features/medical/presentation/cubit/medical_cubit.dart';
+import 'package:icare/src/features/medical_info/data/datasources/medical_info_datasource.dart';
+import 'package:icare/src/features/medical_info/data/repositories/medical_info_repo.dart';
+import 'package:icare/src/features/medical_info/domain/usecases/get_medical_info.dart';
+import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
+import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_cubit.dart';
 import 'package:icare/src/features/onboarding/data/datasources/onboarding_datasource.dart';
 import 'package:icare/src/features/onboarding/data/repositories/onboarding_repo.dart';
 import 'package:icare/src/features/onboarding/presentation/cubit/onboarding_cubit.dart';
@@ -77,6 +83,16 @@ class DependencyInjection {
     getIt.registerLazySingleton<MedicalDatasource>(
       () => MedicalDatasourceImpl(getIt.get<ApiService>()),
     );
+
+    // ========== Emergency feature ==========
+    getIt.registerLazySingleton<EmergencyDatasource>(
+      () => EmergencyDatasourceImpl(getIt.get<ApiService>()),
+    );
+
+    // ========== MedicalInfo feature ==========
+    getIt.registerLazySingleton<MedicalInfoDatasource>(
+      () => MedicalInfoDatasourceImpl(getIt.get<ApiService>()),
+    );
   }
 
   void _setupForRepos() {
@@ -102,7 +118,17 @@ class DependencyInjection {
 
     // ========== Medical feature ==========
     getIt.registerLazySingleton<MedicalRepo>(
-      () => MedicalRepoImpl(getIt.get<MedicalDatasource>()),
+      () => MedicalRepo(getIt.get<MedicalDatasource>()),
+    );
+
+    // ========== Emergency feature ==========
+    getIt.registerLazySingleton<EmergencyRepo>(
+      () => EmergencyRepo(getIt.get<EmergencyDatasource>()),
+    );
+
+    // ========== MedicalInfo feature ==========
+    getIt.registerLazySingleton<MedicalInfoRepo>(
+      () => MedicalInfoRepo(getIt.get<MedicalInfoDatasource>()),
     );
   }
 
@@ -135,8 +161,14 @@ class DependencyInjection {
       () => GetMedicalUseCase(getIt.get<MedicalRepo>()),
     );
 
+    // ========== Emergency feature ==========
     getIt.registerLazySingleton<GetEmergencyDiseasesUseCase>(
-      () => GetEmergencyDiseasesUseCase(getIt.get<MedicalRepo>()),
+      () => GetEmergencyDiseasesUseCase(getIt.get<EmergencyRepo>()),
+    );
+
+    // ========== MedicalInfo feature ==========
+    getIt.registerLazySingleton<GetMedicalInfoUseCase>(
+      () => GetMedicalInfoUseCase(getIt.get<MedicalInfoRepo>()),
     );
   }
 
@@ -170,10 +202,17 @@ class DependencyInjection {
 
     // ========== Medical feature ==========
     getIt.registerFactory<MedicalCubit>(
-      () => MedicalCubit(
-        getMedicalUseCase: getIt.get<GetMedicalUseCase>(),
-        getEmergencyDiseasesUseCase: getIt.get<GetEmergencyDiseasesUseCase>(),
-      ),
+      () => MedicalCubit(getIt.get<GetMedicalUseCase>()),
+    );
+
+    // ========== Emergency feature ==========
+    getIt.registerFactory<EmergencyCubit>(
+      () => EmergencyCubit(getIt.get<GetEmergencyDiseasesUseCase>()),
+    );
+
+    // ========== MedicalInfo feature ==========
+    getIt.registerFactory<MedicalInfoCubit>(
+      () => MedicalInfoCubit(getIt.get<GetMedicalInfoUseCase>()),
     );
   }
 
