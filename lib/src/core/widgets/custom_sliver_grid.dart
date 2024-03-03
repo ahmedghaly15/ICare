@@ -18,7 +18,7 @@ class CustomSliverGrid extends StatelessWidget {
       sliver: SliverGrid(
         gridDelegate: gridDelegate ??
             SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 1, // Ensure two items per row
+              crossAxisCount: 2, // Ensure two items per row
               mainAxisSpacing: 16.h, // Main axis (vertical) spacing
               crossAxisSpacing: 16.w, // Cross axis (horizontal) spacing
               childAspectRatio: 1,

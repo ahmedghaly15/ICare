@@ -77,7 +77,7 @@ class _LoginFormState extends State<LoginForm> {
                   hintText: AppStrings.enterYourPassword,
                   onSubmit: (String val) => _login(context),
                   validating: (String? value) =>
-                      AuthHelper.validatePasswordField(context, value: value),
+                      AuthHelper.validatePasswordField(value: value),
                 ),
               ),
               Container(

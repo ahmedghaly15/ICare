@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:icare/src/core/helpers/app_regex.dart';
 
 class AuthHelper {
-  static String? validatePasswordField(BuildContext context, {String? value}) {
-    if (value!.isEmpty) {
+  static String? validatePasswordField({String? value}) {
+    if (value == null || value.isEmpty) {
       return "Password can't be blank!";
-    } else if (value.length < 6) {
-      return "Password must be more than 5 characters";
+    } else if (!AppRegex.isPasswordValid(value)) {
+      return "Please enter a valid password";
     }
-
     return null;
   }
 
-  static String? validateEmailField(BuildContext context, {String? value}) {
-    if (value!.isEmpty) {
+  static String? validateEmailField({String? value}) {
+    if (value == null || value.isEmpty) {
       return "Email can't be blank!";
-    }
-    if (!value.contains('@')) {
-      return "Write a valid email";
+    } else if (!AppRegex.isEmailValid(value)) {
+      return "Please enter a valid email";
     }
     return null;
   }
 
-  static String? validateNameField(BuildContext context, {String? value}) {
+  static String? validateNameField({String? value}) {
     if (value!.isEmpty) {
       return "Name can't be blank!";
     }
@@ -31,8 +30,7 @@ class AuthHelper {
     return null;
   }
 
-  static String? validateConfirmPasswordField(
-    BuildContext context, {
+  static String? validateConfirmPasswordField({
     String? value,
     required String password,
     required String confirmPassword,

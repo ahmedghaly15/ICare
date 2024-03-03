@@ -61,7 +61,7 @@ class _RegisterFormState extends State<RegisterForm> {
                 keyboardType: TextInputType.name,
                 textCapitalization: TextCapitalization.words,
                 validating: (String? value) =>
-                    AuthHelper.validateNameField(context, value: value),
+                    AuthHelper.validateNameField(value: value),
               ),
               const BottomTextFieldSpacer(),
               const CustomTextFieldLabel(label: AppStrings.email),
@@ -97,7 +97,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     context.read<RegisterCubit>().confirmPasswordFocusNode,
                   ),
                   validating: (String? value) =>
-                      AuthHelper.validatePasswordField(context, value: value),
+                      AuthHelper.validatePasswordField(value: value),
                 ),
               ),
               const BottomTextFieldSpacer(),
@@ -128,7 +128,6 @@ class _RegisterFormState extends State<RegisterForm> {
                   onSubmit: (String val) => _register(context),
                   validating: (String? value) =>
                       AuthHelper.validateConfirmPasswordField(
-                    context,
                     password:
                         context.read<RegisterCubit>().passwordController.text,
                     confirmPassword: context

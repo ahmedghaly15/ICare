@@ -35,7 +35,7 @@ class EmailTextFormField extends StatelessWidget {
           : null,
       keyboardType: TextInputType.emailAddress,
       validating: (String? value) =>
-          AuthHelper.validateEmailField(context, value: value),
+          AuthHelper.validateEmailField(value: value),
       onSubmit: onSubmit,
     );
   }
