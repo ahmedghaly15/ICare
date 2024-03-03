@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:icare/src/core/widgets/custom_sliver_grid.dart';
 import 'package:icare/src/core/widgets/disease_item.dart';
 import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_cubit.dart';
 import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_state.dart';
@@ -23,22 +24,35 @@ class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
             child: Text('ERROR: ${state.error}'),
           );
         } else if (state is GetMedicalInfoSuccess) {
-          return CustomSliverGrid(
-            delegate: SliverChildBuilderDelegate(
-              (_, index) => AnimationConfiguration.staggeredGrid(
-                position: index,
-                columnCount: state.data.length,
-                child: ScaleAnimation(
-                  child: FadeInAnimation(
-                    child: DiseaseItem(
-                      diseaseImageUrl: state.data[index].diseaseTypeImage,
-                      diseaseName: state.data[index].diseaseType,
-                      onPressed: () {},
+          return SliverPadding(
+            padding: EdgeInsets.symmetric(vertical: 16.h),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return AnimationConfiguration.staggeredList(
+                    position: index,
+                    duration: AppConstants.animationConfigurationDuration,
+                    child: SlideAnimation(
+                      horizontalOffset: 200.w,
+                      child: FadeInAnimation(
+                        child: AspectRatio(
+                          aspectRatio: 1.5,
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: 16.h),
+                            child: DiseaseItem(
+                              diseaseImageUrl:
+                                  state.data[index].diseaseTypeImage,
+                              diseaseName: state.data[index].diseaseType,
+                              onPressed: () {},
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                },
+                childCount: state.data.length,
               ),
-              childCount: state.data.length,
             ),
           );
         } else {

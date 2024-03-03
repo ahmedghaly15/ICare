@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/features/emergency/presentation/cubit/emergency_cubit.dart';
 import 'package:icare/src/features/emergency/presentation/cubit/emergency_state.dart';
@@ -27,6 +28,7 @@ class EmergencyDiseasesBlocBuilder extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (_, index) => AnimationConfiguration.staggeredGrid(
                 position: index,
+                duration: AppConstants.animationConfigurationDuration,
                 columnCount: state.data.length,
                 child: ScaleAnimation(
                   child: FadeInAnimation(

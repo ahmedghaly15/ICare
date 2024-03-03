@@ -33,4 +33,7 @@ class AppConstants {
         spreadRadius: 0,
         color: Colors.black.withOpacity(0.25),
       );
+
+  static const Duration animationConfigurationDuration =
+      Duration(milliseconds: 375);
 }

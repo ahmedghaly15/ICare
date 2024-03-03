@@ -23,6 +23,7 @@ class MedicalRepo {
         await _medicalLocalDatasource.cacheMedical(data);
         return ApiResult.success(data);
       } catch (error) {
+        debugPrint('ERROR: ${error.toString()}');
         return ApiResult.error(ErrorHandler.handle(error));
       }
     } else {

@@ -21,18 +21,18 @@ class DiseaseItem extends StatelessWidget {
       padding: EdgeInsets.zero,
       onPressed: onPressed,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(AppConstants.radiusVal),
+        borderRadius: _diseaseItemBorderRadius(),
       ),
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConstants.radiusVal),
+          borderRadius: _diseaseItemBorderRadius(),
         ),
         elevation: 8.h,
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
             ClipRRect(
-              borderRadius: BorderRadius.circular(AppConstants.radiusVal),
+              borderRadius: _diseaseItemBorderRadius(),
               child: CustomCachedNetworkImage(
                 imageUrl: diseaseImageUrl,
               ),
@@ -62,4 +62,7 @@ class DiseaseItem extends StatelessWidget {
       ),
     );
   }
+
+  BorderRadius _diseaseItemBorderRadius() =>
+      BorderRadius.circular(AppConstants.radiusVal);
 }
