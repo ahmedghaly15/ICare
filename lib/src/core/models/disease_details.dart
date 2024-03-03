@@ -5,6 +5,7 @@ part 'disease_details.g.dart';
 
 @JsonSerializable()
 class DiseaseDetails {
+  @JsonKey(name: AppStrings.symptoms)
   final List<String> symptoms;
   @JsonKey(name: AppStrings.redFlags)
   final List<String> redFlags;

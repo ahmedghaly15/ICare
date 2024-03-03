@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.1.6/';
+    baseUrl ??= 'http://192.168.1.8/';
   }
 
   final Dio _dio;
@@ -34,7 +34,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.6/medical',
+              'http://192.168.1.8/medical',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -64,7 +64,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.6/Emergency/',
+              'http://192.168.1.8/Emergency/',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -93,7 +93,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.6/diseases',
+              'http://192.168.1.8/diseases',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -110,7 +110,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<DiseaseDetails> getEmergencyDiseaseDetails(String diseaseName) async {
+  Future<DiseaseDetails> getEmergencyDiseaseDetails(String diseaseId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -123,7 +123,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.6/Emergency/${diseaseName}',
+              'http://192.168.1.8/Emergency/${diseaseId}',
               queryParameters: queryParameters,
               data: _data,
             )

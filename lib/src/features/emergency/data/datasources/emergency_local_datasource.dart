@@ -14,9 +14,11 @@ abstract class EmergencyLocalDatasource {
   List<DiseaseData> getCachedEmergencyDiseases();
 
   Future<bool> cacheEmergencyDiseaseDetails(
-      String diseaseName, DiseaseDetails data);
+    String diseaseName,
+    DiseaseDetails data,
+  );
 
-  DiseaseDetails getCachedEmergencyDiseaseDetails(String diseaseName);
+  DiseaseDetails getCachedEmergencyDiseaseDetails(String diseaseId);
 }
 
 class EmergencyLocalDatasourceImpl implements EmergencyLocalDatasource {

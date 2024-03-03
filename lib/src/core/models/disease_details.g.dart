@@ -9,7 +9,7 @@ part of 'disease_details.dart';
 DiseaseDetails _$DiseaseDetailsFromJson(Map<String, dynamic> json) =>
     DiseaseDetails(
       symptoms:
-          (json['symptoms'] as List<dynamic>).map((e) => e as String).toList(),
+          (json['Symptoms'] as List<dynamic>).map((e) => e as String).toList(),
       redFlags:
           (json['Red_Flags'] as List<dynamic>).map((e) => e as String).toList(),
       initialManagement: (json['Initial_Management'] as List<dynamic>)
@@ -20,7 +20,7 @@ DiseaseDetails _$DiseaseDetailsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$DiseaseDetailsToJson(DiseaseDetails instance) =>
     <String, dynamic>{
-      'symptoms': instance.symptoms,
+      'Symptoms': instance.symptoms,
       'Red_Flags': instance.redFlags,
       'Initial_Management': instance.initialManagement,
       'Do_Or_Not': instance.doOrNot,

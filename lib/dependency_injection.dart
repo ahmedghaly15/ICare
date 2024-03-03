@@ -14,6 +14,7 @@ import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forg
 import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 import 'package:icare/src/features/emergency/data/repositories/emergency_repo.dart';
+import 'package:icare/src/features/emergency/domain/usecases/get_emergency_disease_details.dart';
 import 'package:icare/src/features/emergency/presentation/cubit/emergency_cubit.dart';
 import 'package:icare/src/features/medical/data/datasources/medical_local_datasource.dart';
 import 'package:icare/src/features/medical/data/datasources/medical_remote_datasource.dart';
@@ -204,6 +205,10 @@ class DependencyInjection {
       () => GetEmergencyDiseasesUseCase(getIt.get<EmergencyRepo>()),
     );
 
+    getIt.registerLazySingleton<GetEmergencyDiseaseDetailsUseCase>(
+      () => GetEmergencyDiseaseDetailsUseCase(getIt.get<EmergencyRepo>()),
+    );
+
     // ========== MedicalInfo feature ==========
     getIt.registerLazySingleton<GetMedicalInfoUseCase>(
       () => GetMedicalInfoUseCase(getIt.get<MedicalInfoRepo>()),
@@ -250,7 +255,10 @@ class DependencyInjection {
 
     // ========== Emergency feature ==========
     getIt.registerFactory<EmergencyCubit>(
-      () => EmergencyCubit(getIt.get<GetEmergencyDiseasesUseCase>()),
+      () => EmergencyCubit(
+        getIt.get<GetEmergencyDiseasesUseCase>(),
+        getIt.get<GetEmergencyDiseaseDetailsUseCase>(),
+      ),
     );
 
     // ========== MedicalInfo feature ==========

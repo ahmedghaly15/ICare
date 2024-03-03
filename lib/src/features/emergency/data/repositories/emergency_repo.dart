@@ -39,23 +39,25 @@ class EmergencyRepo {
   }
 
   Future<ApiResult<DiseaseDetails>> getEmergencyDiseaseDetails(
-    String diseaseName,
+    String diseaseId,
   ) async {
-    if (_emergencyLocalDatasource.getJsonString(diseaseName) == null) {
+    if (_emergencyLocalDatasource.getJsonString(diseaseId) == null) {
       debugPrint('GOT NO CACHED EMERGENCY DISEASE DETAILS DATA');
 
       final data = await _emergencyRemoteDatasource
-          .getEmergencyDiseaseDetails(diseaseName);
+          .getEmergencyDiseaseDetails(diseaseId);
 
       await _emergencyLocalDatasource.cacheEmergencyDiseaseDetails(
-          diseaseName, data);
+        diseaseId,
+        data,
+      );
 
       return ApiResult.success(data);
     } else {
       debugPrint('GOT CACHED EMERGENCY DISEASE DETAILS DATA');
 
       return ApiResult.success(
-        _emergencyLocalDatasource.getCachedEmergencyDiseaseDetails(diseaseName),
+        _emergencyLocalDatasource.getCachedEmergencyDiseaseDetails(diseaseId),
       );
     }
   }

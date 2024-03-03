@@ -13,6 +13,9 @@ class HomeView extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           context.pushRoute(const AuthRoute());
+          // context
+          //     .read<EmergencyCubit>()
+          //     .getEmergencyDiseaseDetails('65e4a4ef8ed0c5d25deaf4f8');
         },
         child: Text(
           'Home View',

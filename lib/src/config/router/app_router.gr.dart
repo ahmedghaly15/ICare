@@ -42,7 +42,7 @@ abstract class _$AppRouter extends RootStackRouter {
     EmergencyDiseasesRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const EmergencyDiseasesView()),
+        child: const EmergencyDiseasesView(),
       );
     },
     EntryRoute.name: (routeData) {

@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:icare/src/core/api/end_points.dart';
 import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/models/disease_details.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/medical_info/data/models/get_medical_info_response.dart';
 import 'package:icare/src/features/medical/data/models/get_medical_response.dart';
 import 'package:retrofit/retrofit.dart';
@@ -22,8 +21,8 @@ abstract class ApiService {
   @GET(EndPoints.medicalInfo)
   Future<List<GetMedicalInfoResponse>> getMedicalInfo();
 
-  @GET('${EndPoints.emergency}${AppStrings.diseaseName}')
+  @GET('${EndPoints.emergency}{disease_id}')
   Future<DiseaseDetails> getEmergencyDiseaseDetails(
-    @Path(AppStrings.diseaseName) String diseaseName,
+    @Path('disease_id') String diseaseId,
   );
 }

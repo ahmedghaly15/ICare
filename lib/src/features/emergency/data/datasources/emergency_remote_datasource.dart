@@ -5,7 +5,7 @@ import 'package:icare/src/core/models/disease_details.dart';
 abstract class EmergencyRemoteDatasource {
   Future<List<DiseaseData>> getEmergencyDiseases();
 
-  Future<DiseaseDetails> getEmergencyDiseaseDetails(String diseaseName);
+  Future<DiseaseDetails> getEmergencyDiseaseDetails(String diseaseId);
 }
 
 class EmergencyRemoteDatasourceImpl implements EmergencyRemoteDatasource {
@@ -19,7 +19,7 @@ class EmergencyRemoteDatasourceImpl implements EmergencyRemoteDatasource {
   }
 
   @override
-  Future<DiseaseDetails> getEmergencyDiseaseDetails(String diseaseName) async {
-    return await _apiService.getEmergencyDiseaseDetails(diseaseName);
+  Future<DiseaseDetails> getEmergencyDiseaseDetails(String diseaseId) async {
+    return await _apiService.getEmergencyDiseaseDetails(diseaseId);
   }
 }

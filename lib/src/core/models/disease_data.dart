@@ -9,10 +9,13 @@ class DiseaseData {
   final String diseaseName;
   @JsonKey(name: AppStrings.diseaseImage)
   final String diseaseImage;
+  @JsonKey(name: AppStrings.responseItemId)
+  final String id;
 
   const DiseaseData({
     required this.diseaseName,
     required this.diseaseImage,
+    required this.id,
   });
 
   factory DiseaseData.fromJson(Map<String, dynamic> json) =>
