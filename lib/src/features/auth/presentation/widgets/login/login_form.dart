@@ -2,10 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
+import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/config/router/app_router.dart';
@@ -158,7 +155,10 @@ class _LoginFormState extends State<LoginForm> {
         confettiTrigger.fire();
       },
     );
-    Future.delayed(const Duration(seconds: 3), () => _navigateToHome(data));
+    Future.delayed(
+      const Duration(seconds: 3),
+      () => navigateToHomeAfterLoginOrRegister(context, data),
+    );
   }
 
   void _errorLoginListener(String error) {
@@ -175,24 +175,6 @@ class _LoginFormState extends State<LoginForm> {
         message: error,
       );
     });
-  }
-
-  void _navigateToHome(String data) {
-    Helper.uId = data;
-
-    getIt
-        .get<CacheHelper>()
-        .saveData(key: AppStrings.cachedUserId, value: data)
-        .then(
-      (value) {
-        context.read<UserCubit>().getUserData().then((value) {
-          context.router.pushAndPopUntil(
-            const BottomNavBarRoute(),
-            predicate: (route) => route.settings.name == BottomNavBarRoute.name,
-          );
-        });
-      },
-    );
   }
 
   void _initRiveConfetti(Artboard artboard) {

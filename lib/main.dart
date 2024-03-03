@@ -7,8 +7,6 @@ import 'package:icare/src/core/firebase/firebase_options.dart';
 import 'package:icare/src/icare_app.dart';
 import 'package:icare/dependency_injection.dart';
 
-// TODO: add Regx for validation like in docdoc app
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

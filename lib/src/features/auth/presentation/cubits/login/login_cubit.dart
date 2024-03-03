@@ -85,7 +85,7 @@ class LoginCubit extends Cubit<LoginState> {
             uId: credential.user!.uid,
           ),
         );
-        emit(LoginState.signInWithGoogleSuccess(data: credential.user!.uid));
+        emit(LoginState.signInWithGoogleSuccess(credential.user!.uid));
       },
       error: (error) =>
           emit(LoginState.signInWithGoogleError(error: error.failureMsg ?? '')),

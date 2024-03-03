@@ -9,7 +9,7 @@ class LoginState<T> with _$LoginState<T> {
   const factory LoginState.success(String uId) = Success<T>;
   const factory LoginState.error({required String error}) = Error;
   const factory LoginState.signInWithGoogleLoading() = SignInWithGoogleLoading;
-  const factory LoginState.signInWithGoogleSuccess({required T data}) =
+  const factory LoginState.signInWithGoogleSuccess(String uId) =
       SignInWithGoogleSuccess<T>;
   const factory LoginState.signInWithGoogleError({required String error}) =
       SignInWithGoogleError;
