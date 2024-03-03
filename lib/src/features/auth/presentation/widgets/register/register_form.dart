@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/app_regex.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/features/auth/presentation/widgets/register/password_validations.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/core/helpers/auth_helper.dart';
@@ -32,6 +34,35 @@ class _RegisterFormState extends State<RegisterForm> {
   late final SMITrigger checkTrigger;
   late final SMITrigger errorTrigger;
   late final SMITrigger confettiTrigger;
+
+  bool hasLowercase = false;
+  bool hasUppercase = false;
+  bool hasSpecialCharacters = false;
+  bool hasNumber = false;
+  bool hasMinLength = false;
+
+  @override
+  void initState() {
+    _setupPasswordControllerListener();
+    super.initState();
+  }
+
+  void _setupPasswordControllerListener() {
+    context.read<RegisterCubit>().passwordController.addListener(() {
+      setState(() {
+        hasUppercase = AppRegex.hasUpperCase(
+            context.read<RegisterCubit>().passwordController.text);
+        hasLowercase = AppRegex.hasLowerCase(
+            context.read<RegisterCubit>().passwordController.text);
+        hasSpecialCharacters = AppRegex.hasSpecialCharacter(
+            context.read<RegisterCubit>().passwordController.text);
+        hasNumber = AppRegex.hasNumber(
+            context.read<RegisterCubit>().passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(
+            context.read<RegisterCubit>().passwordController.text);
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +163,14 @@ class _RegisterFormState extends State<RegisterForm> {
                     value: value,
                   ),
                 ),
+              ),
+              MySizedBox.height25,
+              PasswordValidations(
+                hasLowercase: hasLowercase,
+                hasUppercase: hasUppercase,
+                hasSpecialCharacters: hasSpecialCharacters,
+                hasNumber: hasNumber,
+                hasMinLength: hasMinLength,
               ),
               MySizedBox.height46,
               BlocListener<RegisterCubit, RegisterState>(
