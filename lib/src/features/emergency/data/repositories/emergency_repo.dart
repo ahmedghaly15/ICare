@@ -3,7 +3,7 @@ import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
 import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/models/disease_details.dart';
-import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 
@@ -17,7 +17,9 @@ class EmergencyRepo {
   );
 
   Future<ApiResult<List<DiseaseData>>> getEmergencyDiseases() async {
-    if (_emergencyLocalDatasource.getJsonString() == null) {
+    if (_emergencyLocalDatasource
+            .getJsonString(AppStrings.cachedEmergencyDiseases) ==
+        null) {
       debugPrint('GOT NO CACHED EMERGENCY DATA');
 
       try {
@@ -38,11 +40,23 @@ class EmergencyRepo {
 
   Future<ApiResult<DiseaseDetails>> getEmergencyDiseaseDetails(
     String diseaseName,
-  ) {
-    return executeAndHandleErrors<DiseaseDetails>(
-      () async => await _emergencyRemoteDatasource.getEmergencyDiseaseDetails(
-        diseaseName,
-      ),
-    );
+  ) async {
+    if (_emergencyLocalDatasource.getJsonString(diseaseName) == null) {
+      debugPrint('GOT NO CACHED EMERGENCY DISEASE DETAILS DATA');
+
+      final data = await _emergencyRemoteDatasource
+          .getEmergencyDiseaseDetails(diseaseName);
+
+      await _emergencyLocalDatasource.cacheEmergencyDiseaseDetails(
+          diseaseName, data);
+
+      return ApiResult.success(data);
+    } else {
+      debugPrint('GOT CACHED EMERGENCY DISEASE DETAILS DATA');
+
+      return ApiResult.success(
+        _emergencyLocalDatasource.getCachedEmergencyDiseaseDetails(diseaseName),
+      );
+    }
   }
 }
