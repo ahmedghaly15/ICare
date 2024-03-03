@@ -45,7 +45,9 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
             builder: (context, state) {
               return PrimaryButton(
                 child: state is Loading
-                    ? const CustomCircularProgressIndicator()
+                    ? const CustomCircularProgressIndicator(
+                        color: Colors.white,
+                      )
                     : Text(
                         AppStrings.resetPassword,
                         style:

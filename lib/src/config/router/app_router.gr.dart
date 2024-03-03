@@ -69,6 +69,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const LoginView()),
       );
     },
+    MedicalInfoCategoryDiseasesRoute.name: (routeData) {
+      final args = routeData.argsAs<MedicalInfoCategoryDiseasesRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: MedicalInfoCategoryDiseasesView(
+          key: args.key,
+          categoryName: args.categoryName,
+          disease: args.disease,
+        ),
+      );
+    },
     MedicalInfoRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -226,6 +237,50 @@ class LoginRoute extends PageRouteInfo<void> {
   static const String name = 'LoginRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [MedicalInfoCategoryDiseasesView]
+class MedicalInfoCategoryDiseasesRoute
+    extends PageRouteInfo<MedicalInfoCategoryDiseasesRouteArgs> {
+  MedicalInfoCategoryDiseasesRoute({
+    Key? key,
+    required String categoryName,
+    required List<DiseaseData> disease,
+    List<PageRouteInfo>? children,
+  }) : super(
+          MedicalInfoCategoryDiseasesRoute.name,
+          args: MedicalInfoCategoryDiseasesRouteArgs(
+            key: key,
+            categoryName: categoryName,
+            disease: disease,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'MedicalInfoCategoryDiseasesRoute';
+
+  static const PageInfo<MedicalInfoCategoryDiseasesRouteArgs> page =
+      PageInfo<MedicalInfoCategoryDiseasesRouteArgs>(name);
+}
+
+class MedicalInfoCategoryDiseasesRouteArgs {
+  const MedicalInfoCategoryDiseasesRouteArgs({
+    this.key,
+    required this.categoryName,
+    required this.disease,
+  });
+
+  final Key? key;
+
+  final String categoryName;
+
+  final List<DiseaseData> disease;
+
+  @override
+  String toString() {
+    return 'MedicalInfoCategoryDiseasesRouteArgs{key: $key, categoryName: $categoryName, disease: $disease}';
+  }
 }
 
 /// generated route for

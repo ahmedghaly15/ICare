@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/disease_item.dart';
@@ -43,7 +45,14 @@ class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
                               diseaseImageUrl:
                                   state.data[index].diseaseTypeImage,
                               diseaseName: state.data[index].diseaseType,
-                              onPressed: () {},
+                              onPressed: () {
+                                context.pushRoute(
+                                  MedicalInfoCategoryDiseasesRoute(
+                                    categoryName: state.data[index].diseaseType,
+                                    disease: state.data[index].diseases,
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),

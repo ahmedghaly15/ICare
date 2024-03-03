@@ -28,9 +28,7 @@ class GoogleBlocConsumer extends StatelessWidget {
         return PrimaryButton(
           backgroundColor: Colors.white,
           child: state is SignInWithGoogleLoading
-              ? const CustomCircularProgressIndicator(
-                  color: AppColors.primaryColor,
-                )
+              ? const CustomCircularProgressIndicator()
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
