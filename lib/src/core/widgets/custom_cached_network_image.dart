@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/widgets/cached_image_error_icon.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 
 class CustomCachedNetworkImage extends StatelessWidget {
   const CustomCachedNetworkImage({
@@ -17,7 +18,11 @@ class CustomCachedNetworkImage extends StatelessWidget {
       fit: BoxFit.cover,
       width: double.infinity,
       height: double.infinity,
-      errorWidget: (_, __, ___) => const CachedImageErrorIcon(),
+      errorWidget: (_, __, ___) => Icon(
+        Icons.error,
+        size: 22.h,
+        color: AppColors.primaryColor,
+      ),
     );
   }
 }
