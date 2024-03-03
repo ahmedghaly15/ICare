@@ -76,14 +76,14 @@ abstract class _$AppRouter extends RootStackRouter {
         child: MedicalInfoCategoryDiseasesView(
           key: args.key,
           categoryName: args.categoryName,
-          disease: args.disease,
+          diseases: args.disease,
         ),
       );
     },
     MedicalInfoRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const MedicalInfoView()),
+        child: const MedicalInfoView(),
       );
     },
     MedicalRoute.name: (routeData) {
