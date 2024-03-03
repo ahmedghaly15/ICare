@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
 import 'package:icare/src/core/models/disease_data.dart';
+import 'package:icare/src/core/models/disease_details.dart';
+import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 
@@ -32,5 +34,15 @@ class EmergencyRepo {
         _emergencyLocalDatasource.getCachedEmergencyDiseases(),
       );
     }
+  }
+
+  Future<ApiResult<DiseaseDetails>> getEmergencyDiseaseDetails(
+    String diseaseName,
+  ) {
+    return executeAndHandleErrors<DiseaseDetails>(
+      () async => await _emergencyRemoteDatasource.getEmergencyDiseaseDetails(
+        diseaseName,
+      ),
+    );
   }
 }

@@ -123,7 +123,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.6/Emergency//${diseaseName}',
+              'http://192.168.1.6/Emergency/${diseaseName}',
               queryParameters: queryParameters,
               data: _data,
             )
