@@ -1,13 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
-import 'package:icare/src/core/widgets/custom_circle_back_button.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/features/disease_details/presentation/widgets/disease_image.dart';
+import 'package:icare/src/features/disease_details/presentation/widgets/disease_info_section_item.dart';
 
 @RoutePage()
 class DiseaseDetailsView extends StatelessWidget {
@@ -32,31 +31,9 @@ class DiseaseDetailsView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(
-              height: SizeConfig.height * 0.35,
-              child: Stack(
-                children: <Widget>[
-                  ClipRRect(
-                    borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(
-                        AppConstants.radiusVal,
-                      ),
-                    ),
-                    child: const CustomCachedNetworkImage(
-                      imageUrl:
-                          'https://res.cloudinary.com/dkeeazjre/image/upload/v1703870178/Photos/xidgjcc4eqwu8d3bljuh.jpg',
-                    ),
-                  ),
-                  Positioned(
-                    top: 10.h,
-                    left: 10.w,
-                    child: const CustomCircleBackButton(
-                      icon: Icons.keyboard_arrow_down_outlined,
-                      size: 24,
-                    ),
-                  ),
-                ],
-              ),
+            const DiseaseImage(
+              imageUrl:
+                  'https://res.cloudinary.com/dkeeazjre/image/upload/v1703870178/Photos/xidgjcc4eqwu8d3bljuh.jpg',
             ),
             MySizedBox.height12,
             SizedBox(
@@ -64,29 +41,7 @@ class DiseaseDetailsView extends StatelessWidget {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 physics: AppConstants.scrollPhysics,
-                itemBuilder: (_, index) => MaterialButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () {},
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(50.r)),
-                  ),
-                  child: Container(
-                    margin: EdgeInsets.only(
-                      left: index == 0 ? 10.w : 0,
-                      right: index == 3 ? 10.w : 0,
-                    ),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
-                    decoration: BoxDecoration(
-                      color: AppColors.lightGrey,
-                      borderRadius: BorderRadius.all(Radius.circular(50.r)),
-                    ),
-                    child: Text(
-                      'initial manangment',
-                      style: AppTextStyles.textStyle13Bold(context),
-                    ),
-                  ),
-                ),
+                itemBuilder: (_, index) => DiseaseInfoSectionItem(index: index),
                 separatorBuilder: (_, __) => MySizedBox.width6,
                 itemCount: 4,
               ),
