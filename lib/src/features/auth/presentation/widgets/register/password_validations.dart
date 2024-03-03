@@ -24,55 +24,58 @@ class PasswordValidations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        ValidationRow(
-            text: 'At least 1 lowercase letter', hasValidated: hasLowercase),
+        _validationRow(
+          context,
+          'At least 1 lowercase letter',
+          hasLowercase,
+        ),
         MySizedBox.height2,
-        ValidationRow(
-            text: 'At least 1 uppercase letter', hasValidated: hasUppercase),
+        _validationRow(
+          context,
+          'At least 1 uppercase letter',
+          hasUppercase,
+        ),
         MySizedBox.height2,
-        ValidationRow(
-            text: 'At least 1 special character',
-            hasValidated: hasSpecialCharacters),
+        _validationRow(
+          context,
+          'At least 1 special character',
+          hasSpecialCharacters,
+        ),
         MySizedBox.height2,
-        ValidationRow(text: 'At least 1 number', hasValidated: hasNumber),
+        _validationRow(
+          context,
+          'At least 1 number',
+          hasNumber,
+        ),
         MySizedBox.height2,
-        ValidationRow(
-            text: 'At least 8 characters long', hasValidated: hasMinLength),
+        _validationRow(
+          context,
+          'At least 8 characters long',
+          hasMinLength,
+        ),
       ],
     );
   }
 }
 
-class ValidationRow extends StatelessWidget {
-  const ValidationRow({
-    super.key,
-    required this.text,
-    required this.hasValidated,
-  });
-
-  final String text;
-  final bool hasValidated;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CircleAvatar(
-          radius: 2.5.r,
-          backgroundColor:
-              hasValidated ? AppColors.primaryColor : AppColors.greyColor,
+Widget _validationRow(BuildContext context, String text, bool hasValidated) {
+  return Row(
+    children: [
+      CircleAvatar(
+        radius: 2.5.r,
+        backgroundColor:
+            hasValidated ? AppColors.primaryColor : AppColors.greyColor,
+      ),
+      MySizedBox.width6,
+      Text(
+        text,
+        style: AppTextStyles.textStyle13Regular(context).copyWith(
+          decoration: hasValidated ? TextDecoration.lineThrough : null,
+          decorationColor: AppColors.primaryColor,
+          decorationThickness: 2,
+          color: hasValidated ? AppColors.primaryColor : AppColors.greyColor,
         ),
-        MySizedBox.width6,
-        Text(
-          text,
-          style: AppTextStyles.textStyle13Regular(context).copyWith(
-            decoration: hasValidated ? TextDecoration.lineThrough : null,
-            decorationColor: AppColors.primaryColor,
-            decorationThickness: 2,
-            color: hasValidated ? AppColors.primaryColor : AppColors.greyColor,
-          ),
-        ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
 }
