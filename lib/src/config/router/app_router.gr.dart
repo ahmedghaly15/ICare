@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
+    DiseaseDetailsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DiseaseDetailsView(),
+      );
+    },
     EmergencyDiseasesRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -76,7 +82,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: MedicalInfoCategoryDiseasesView(
           key: args.key,
           categoryName: args.categoryName,
-          diseases: args.disease,
+          diseases: args.diseases,
         ),
       );
     },
@@ -151,6 +157,20 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BottomNavBarRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [DiseaseDetailsView]
+class DiseaseDetailsRoute extends PageRouteInfo<void> {
+  const DiseaseDetailsRoute({List<PageRouteInfo>? children})
+      : super(
+          DiseaseDetailsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DiseaseDetailsRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -246,14 +266,14 @@ class MedicalInfoCategoryDiseasesRoute
   MedicalInfoCategoryDiseasesRoute({
     Key? key,
     required String categoryName,
-    required List<DiseaseData> disease,
+    required List<DiseaseData> diseases,
     List<PageRouteInfo>? children,
   }) : super(
           MedicalInfoCategoryDiseasesRoute.name,
           args: MedicalInfoCategoryDiseasesRouteArgs(
             key: key,
             categoryName: categoryName,
-            disease: disease,
+            diseases: diseases,
           ),
           initialChildren: children,
         );
@@ -268,18 +288,18 @@ class MedicalInfoCategoryDiseasesRouteArgs {
   const MedicalInfoCategoryDiseasesRouteArgs({
     this.key,
     required this.categoryName,
-    required this.disease,
+    required this.diseases,
   });
 
   final Key? key;
 
   final String categoryName;
 
-  final List<DiseaseData> disease;
+  final List<DiseaseData> diseases;
 
   @override
   String toString() {
-    return 'MedicalInfoCategoryDiseasesRouteArgs{key: $key, categoryName: $categoryName, disease: $disease}';
+    return 'MedicalInfoCategoryDiseasesRouteArgs{key: $key, categoryName: $categoryName, diseases: $diseases}';
   }
 }
 

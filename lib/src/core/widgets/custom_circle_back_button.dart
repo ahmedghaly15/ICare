@@ -5,7 +5,14 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
 class CustomCircleBackButton extends StatelessWidget {
-  const CustomCircleBackButton({super.key});
+  const CustomCircleBackButton({
+    super.key,
+    this.icon = Icons.arrow_back_ios_new,
+    this.size = 16,
+  });
+
+  final IconData icon;
+  final double size;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +29,9 @@ class CustomCircleBackButton extends StatelessWidget {
         onPressed: () => context.popRoute(),
         shape: const CircleBorder(),
         child: Icon(
-          Icons.arrow_back_ios_new,
+          icon,
           color: Colors.white,
-          size: 16.h,
+          size: size.h,
         ),
       ),
     );

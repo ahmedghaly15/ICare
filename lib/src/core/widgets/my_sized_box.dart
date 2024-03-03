@@ -18,6 +18,7 @@ class CustomSizedBox extends StatelessWidget {
 
 class MySizedBox {
   static const CustomSizedBox height2 = CustomSizedBox(height: 2);
+  static const CustomSizedBox height12 = CustomSizedBox(height: 12);
   static const CustomSizedBox height7 = CustomSizedBox(height: 7);
   static const CustomSizedBox height20 = CustomSizedBox(height: 20);
   static const CustomSizedBox height25 = CustomSizedBox(height: 25);
