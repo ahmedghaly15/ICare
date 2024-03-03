@@ -69,4 +69,9 @@ class AppStrings {
   static const String cachedEmergencyDiseases = 'cachedEmergencyDiseases';
   static const String cachedMedicalInfo = 'cachedMedicalInfo';
   static const String cachedMedical = 'cachedMedical';
+  static const String redFlags = 'Red_Flags';
+  static const String initialManagement = 'Initial_Management';
+  static const String doOrNot = 'Do_Or_Not';
+  static const String dO = 'Do';
+  static const String dont = 'Do Not';
 }
