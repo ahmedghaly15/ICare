@@ -1,20 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'get_emergency_diseases_response.dart';
+part of 'disease_data.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-GetEmergencyDiseasesResponse _$GetEmergencyDiseasesResponseFromJson(
-        Map<String, dynamic> json) =>
-    GetEmergencyDiseasesResponse(
+DiseaseData _$DiseaseDataFromJson(Map<String, dynamic> json) => DiseaseData(
       diseaseName: json['disease_name'] as String,
       diseaseImage: json['disease_image'] as String,
     );
 
-Map<String, dynamic> _$GetEmergencyDiseasesResponseToJson(
-        GetEmergencyDiseasesResponse instance) =>
+Map<String, dynamic> _$DiseaseDataToJson(DiseaseData instance) =>
     <String, dynamic>{
       'disease_name': instance.diseaseName,
       'disease_image': instance.diseaseImage,

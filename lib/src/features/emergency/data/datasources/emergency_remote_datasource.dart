@@ -1,8 +1,8 @@
 import 'package:icare/src/core/api/api_service.dart';
-import 'package:icare/src/features/emergency/data/models/get_emergency_diseases_response.dart';
+import 'package:icare/src/core/models/disease_data.dart';
 
 abstract class EmergencyRemoteDatasource {
-  Future<List<GetEmergencyDiseasesResponse>> getEmergencyDiseases();
+  Future<List<DiseaseData>> getEmergencyDiseases();
 }
 
 class EmergencyRemoteDatasourceImpl implements EmergencyRemoteDatasource {
@@ -11,7 +11,7 @@ class EmergencyRemoteDatasourceImpl implements EmergencyRemoteDatasource {
   const EmergencyRemoteDatasourceImpl(this._apiService);
 
   @override
-  Future<List<GetEmergencyDiseasesResponse>> getEmergencyDiseases() async {
+  Future<List<DiseaseData>> getEmergencyDiseases() async {
     return await _apiService.getEmergencyDiseases();
   }
 }

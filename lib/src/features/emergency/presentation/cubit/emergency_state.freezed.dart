@@ -20,7 +20,7 @@ mixin _$EmergencyState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getEmergencyDiseasesLoading,
-    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+    required TResult Function(List<DiseaseData> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
   }) =>
@@ -29,8 +29,7 @@ mixin _$EmergencyState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getEmergencyDiseasesLoading,
-    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult? Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
   }) =>
       throw _privateConstructorUsedError;
@@ -38,8 +37,7 @@ mixin _$EmergencyState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getEmergencyDiseasesLoading,
-    TResult Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
     required TResult orElse(),
   }) =>
@@ -139,7 +137,7 @@ class _$EmergencyInitialImpl<T> implements _EmergencyInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getEmergencyDiseasesLoading,
-    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+    required TResult Function(List<DiseaseData> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
   }) {
@@ -151,8 +149,7 @@ class _$EmergencyInitialImpl<T> implements _EmergencyInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getEmergencyDiseasesLoading,
-    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult? Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
   }) {
     return initial?.call();
@@ -163,8 +160,7 @@ class _$EmergencyInitialImpl<T> implements _EmergencyInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getEmergencyDiseasesLoading,
-    TResult Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
     required TResult orElse(),
   }) {
@@ -270,7 +266,7 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getEmergencyDiseasesLoading,
-    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+    required TResult Function(List<DiseaseData> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
   }) {
@@ -282,8 +278,7 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getEmergencyDiseasesLoading,
-    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult? Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
   }) {
     return getEmergencyDiseasesLoading?.call();
@@ -294,8 +289,7 @@ class _$GetEmergencyDiseasesLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getEmergencyDiseasesLoading,
-    TResult Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
     required TResult orElse(),
   }) {
@@ -364,7 +358,7 @@ abstract class _$$GetEmergencyDiseasesSuccessImplCopyWith<T, $Res> {
           $Res Function(_$GetEmergencyDiseasesSuccessImpl<T>) then) =
       __$$GetEmergencyDiseasesSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({List<GetEmergencyDiseasesResponse> data});
+  $Res call({List<DiseaseData> data});
 }
 
 /// @nodoc
@@ -386,7 +380,7 @@ class __$$GetEmergencyDiseasesSuccessImplCopyWithImpl<T, $Res>
       null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<GetEmergencyDiseasesResponse>,
+              as List<DiseaseData>,
     ));
   }
 }
@@ -395,13 +389,12 @@ class __$$GetEmergencyDiseasesSuccessImplCopyWithImpl<T, $Res>
 
 class _$GetEmergencyDiseasesSuccessImpl<T>
     implements GetEmergencyDiseasesSuccess<T> {
-  const _$GetEmergencyDiseasesSuccessImpl(
-      final List<GetEmergencyDiseasesResponse> data)
+  const _$GetEmergencyDiseasesSuccessImpl(final List<DiseaseData> data)
       : _data = data;
 
-  final List<GetEmergencyDiseasesResponse> _data;
+  final List<DiseaseData> _data;
   @override
-  List<GetEmergencyDiseasesResponse> get data {
+  List<DiseaseData> get data {
     if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
@@ -437,7 +430,7 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getEmergencyDiseasesLoading,
-    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+    required TResult Function(List<DiseaseData> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
   }) {
@@ -449,8 +442,7 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getEmergencyDiseasesLoading,
-    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult? Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
   }) {
     return getEmergencyDiseasesSuccess?.call(data);
@@ -461,8 +453,7 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getEmergencyDiseasesLoading,
-    TResult Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
     required TResult orElse(),
   }) {
@@ -520,11 +511,10 @@ class _$GetEmergencyDiseasesSuccessImpl<T>
 }
 
 abstract class GetEmergencyDiseasesSuccess<T> implements EmergencyState<T> {
-  const factory GetEmergencyDiseasesSuccess(
-          final List<GetEmergencyDiseasesResponse> data) =
+  const factory GetEmergencyDiseasesSuccess(final List<DiseaseData> data) =
       _$GetEmergencyDiseasesSuccessImpl<T>;
 
-  List<GetEmergencyDiseasesResponse> get data;
+  List<DiseaseData> get data;
   @JsonKey(ignore: true)
   _$$GetEmergencyDiseasesSuccessImplCopyWith<T,
           _$GetEmergencyDiseasesSuccessImpl<T>>
@@ -603,7 +593,7 @@ class _$GetEmergencyDiseasesErrorImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() getEmergencyDiseasesLoading,
-    required TResult Function(List<GetEmergencyDiseasesResponse> data)
+    required TResult Function(List<DiseaseData> data)
         getEmergencyDiseasesSuccess,
     required TResult Function(String error) getEmergencyDiseasesError,
   }) {
@@ -615,8 +605,7 @@ class _$GetEmergencyDiseasesErrorImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? getEmergencyDiseasesLoading,
-    TResult? Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult? Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult? Function(String error)? getEmergencyDiseasesError,
   }) {
     return getEmergencyDiseasesError?.call(error);
@@ -627,8 +616,7 @@ class _$GetEmergencyDiseasesErrorImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? getEmergencyDiseasesLoading,
-    TResult Function(List<GetEmergencyDiseasesResponse> data)?
-        getEmergencyDiseasesSuccess,
+    TResult Function(List<DiseaseData> data)? getEmergencyDiseasesSuccess,
     TResult Function(String error)? getEmergencyDiseasesError,
     required TResult orElse(),
   }) {

@@ -51,13 +51,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<GetEmergencyDiseasesResponse>> getEmergencyDiseases() async {
+  Future<List<DiseaseData>> getEmergencyDiseases() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<GetEmergencyDiseasesResponse>>(Options(
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<DiseaseData>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -74,8 +74,7 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) =>
-            GetEmergencyDiseasesResponse.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => DiseaseData.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

@@ -24,7 +24,7 @@ class ICareApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<MedicalCubit>(
-            lazy: false,
+            // lazy: false,
             create: (_) => getIt.get<MedicalCubit>()..getMedical(),
           ),
           BlocProvider<UserCubit>(

@@ -2,13 +2,13 @@ import 'dart:convert';
 
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
+import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/features/emergency/data/models/get_emergency_diseases_response.dart';
 
 abstract class EmergencyLocalDatasource {
-  Future<bool> cacheEmergencyDiseases(List<GetEmergencyDiseasesResponse> data);
+  Future<bool> cacheEmergencyDiseases(List<DiseaseData> data);
 
-  List<GetEmergencyDiseasesResponse> getCachedEmergencyDiseases();
+  List<DiseaseData> getCachedEmergencyDiseases();
 
   String? getJsonString();
 }
@@ -17,8 +17,7 @@ class EmergencyLocalDatasourceImpl implements EmergencyLocalDatasource {
   const EmergencyLocalDatasourceImpl();
 
   @override
-  Future<bool> cacheEmergencyDiseases(
-      List<GetEmergencyDiseasesResponse> data) async {
+  Future<bool> cacheEmergencyDiseases(List<DiseaseData> data) async {
     return await getIt.get<CacheHelper>().saveData(
           key: AppStrings.cachedEmergencyDiseases,
           value: json.encode(data.map((e) => e.toJson()).toList()),
@@ -33,11 +32,11 @@ class EmergencyLocalDatasourceImpl implements EmergencyLocalDatasource {
   }
 
   @override
-  List<GetEmergencyDiseasesResponse> getCachedEmergencyDiseases() {
-    final List<GetEmergencyDiseasesResponse> data = [];
+  List<DiseaseData> getCachedEmergencyDiseases() {
+    final List<DiseaseData> data = [];
 
     for (final element in json.decode(getJsonString()!)) {
-      data.add(GetEmergencyDiseasesResponse.fromJson(element));
+      data.add(DiseaseData.fromJson(element));
     }
 
     return data;
