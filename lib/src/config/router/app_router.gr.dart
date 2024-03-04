@@ -91,6 +91,18 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    MedicalInfoDiseaseDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<MedicalInfoDiseaseDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: MedicalInfoDiseaseDetailsView(
+          key: args.key,
+          diseaseData: args.diseaseData,
+          diseaseType: args.diseaseType,
+        )),
+      );
+    },
     MedicalInfoRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -330,6 +342,50 @@ class MedicalInfoCategoryDiseasesRouteArgs {
   @override
   String toString() {
     return 'MedicalInfoCategoryDiseasesRouteArgs{key: $key, categoryName: $categoryName, diseases: $diseases}';
+  }
+}
+
+/// generated route for
+/// [MedicalInfoDiseaseDetailsView]
+class MedicalInfoDiseaseDetailsRoute
+    extends PageRouteInfo<MedicalInfoDiseaseDetailsRouteArgs> {
+  MedicalInfoDiseaseDetailsRoute({
+    Key? key,
+    required DiseaseData diseaseData,
+    required String diseaseType,
+    List<PageRouteInfo>? children,
+  }) : super(
+          MedicalInfoDiseaseDetailsRoute.name,
+          args: MedicalInfoDiseaseDetailsRouteArgs(
+            key: key,
+            diseaseData: diseaseData,
+            diseaseType: diseaseType,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'MedicalInfoDiseaseDetailsRoute';
+
+  static const PageInfo<MedicalInfoDiseaseDetailsRouteArgs> page =
+      PageInfo<MedicalInfoDiseaseDetailsRouteArgs>(name);
+}
+
+class MedicalInfoDiseaseDetailsRouteArgs {
+  const MedicalInfoDiseaseDetailsRouteArgs({
+    this.key,
+    required this.diseaseData,
+    required this.diseaseType,
+  });
+
+  final Key? key;
+
+  final DiseaseData diseaseData;
+
+  final String diseaseType;
+
+  @override
+  String toString() {
+    return 'MedicalInfoDiseaseDetailsRouteArgs{key: $key, diseaseData: $diseaseData, diseaseType: $diseaseType}';
   }
 }
 

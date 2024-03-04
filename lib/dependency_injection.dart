@@ -2,6 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:icare/src/features/disease_details/data/datasources/medical_info_disease_details_remote_datasource.dart';
+import 'package:icare/src/features/disease_details/data/repositories/medical_info_disease_details_repo.dart';
+import 'package:icare/src/features/disease_details/domain/usecases/get_medical_info_disease_details.dart';
+import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,8 +29,8 @@ import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
-import 'package:icare/src/features/disease_details/data/datasources/emergency_disease/emergency_disease_details_local_datasource.dart';
-import 'package:icare/src/features/disease_details/data/datasources/emergency_disease/emergency_disease_details_remote_datasource.dart';
+import 'package:icare/src/features/disease_details/data/datasources/disease_details_local_datasource.dart';
+import 'package:icare/src/features/disease_details/data/datasources/emergency_disease_details_remote_datasource.dart';
 import 'package:icare/src/features/disease_details/data/repositories/emergency_disease_details_repo.dart';
 import 'package:icare/src/features/disease_details/domain/usecases/get_emergency_disease_details.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/emergency_disease/emergency_disease_details_cubit.dart';
@@ -133,6 +137,13 @@ class DependencyInjection {
     getIt.registerLazySingleton<DiseaseDetailsLocalDatasource>(
       () => const DiseaseDetailsLocalDatasourceImpl(),
     );
+
+    // ========== MedicalInfoDiseaseDetails feature ==========
+    getIt.registerLazySingleton<MedicalInfoDiseaseDetailsRemoteDatasource>(
+      () => MedicalInfoDiseaseDetailsRemoteDatasourceImpl(
+        getIt.get<ApiService>(),
+      ),
+    );
   }
 
   void _setupForRepos() {
@@ -192,6 +203,14 @@ class DependencyInjection {
         getIt.get<DiseaseDetailsLocalDatasource>(),
       ),
     );
+
+    // ========== MedicalInfoDiseaseDetails feature ==========
+    getIt.registerLazySingleton<MedicalInfoDiseaseDetailsRepo>(
+      () => MedicalInfoDiseaseDetailsRepo(
+        getIt.get<MedicalInfoDiseaseDetailsRemoteDatasource>(),
+        getIt.get<DiseaseDetailsLocalDatasource>(),
+      ),
+    );
   }
 
   void _setupForUseCases() {
@@ -242,6 +261,13 @@ class DependencyInjection {
     getIt.registerLazySingleton<GetEmergencyDiseaseDetailsUseCase>(
       () => GetEmergencyDiseaseDetailsUseCase(
           getIt.get<EmergencyDiseaseDetailsRepo>()),
+    );
+
+    // ========== MedicalInfoDiseaseDetails feature ==========
+    getIt.registerLazySingleton<GetMedicalInfoDiseaseDetailsUseCase>(
+      () => GetMedicalInfoDiseaseDetailsUseCase(
+        getIt.get<MedicalInfoDiseaseDetailsRepo>(),
+      ),
     );
   }
 
@@ -297,6 +323,13 @@ class DependencyInjection {
     getIt.registerFactory<EmergencyDiseaseDetailsCubit>(
       () => EmergencyDiseaseDetailsCubit(
         getIt.get<GetEmergencyDiseaseDetailsUseCase>(),
+      ),
+    );
+
+    // ========== MedicalInfoDiseaseDetails feature ==========
+    getIt.registerFactory<MedicalInfoDiseaseDetailsCubit>(
+      () => MedicalInfoDiseaseDetailsCubit(
+        getIt.get<GetMedicalInfoDiseaseDetailsUseCase>(),
       ),
     );
   }
