@@ -7,15 +7,21 @@ class DiseaseInfoSectionItem extends StatelessWidget {
   const DiseaseInfoSectionItem({
     super.key,
     required this.index,
+    required this.title,
+    required this.isActive,
+    required this.onPressed,
   });
 
   final int index;
+  final String title;
+  final bool isActive;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       padding: EdgeInsets.zero,
-      onPressed: () {},
+      onPressed: onPressed,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(50.r)),
       ),
@@ -26,12 +32,14 @@ class DiseaseInfoSectionItem extends StatelessWidget {
         ),
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
         decoration: BoxDecoration(
-          color: AppColors.lightGrey,
+          color: isActive ? AppColors.primaryColor : AppColors.lightGrey,
           borderRadius: BorderRadius.all(Radius.circular(50.r)),
         ),
         child: Text(
-          'initial manangment',
-          style: AppTextStyles.textStyle13Bold(context),
+          title,
+          style: AppTextStyles.textStyle13Bold(context).copyWith(
+            color: isActive ? Colors.white : Colors.black,
+          ),
         ),
       ),
     );

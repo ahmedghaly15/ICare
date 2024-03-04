@@ -1,31 +1,30 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/core/models/disease_data.dart';
+import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/emergency_disease/emergency_disease_details_cubit.dart';
+import 'package:icare/src/features/disease_details/presentation/cubits/emergency_disease/emergency_disease_details_state.dart';
+import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_tabs.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/disease_image.dart';
-import 'package:icare/src/features/disease_details/presentation/widgets/disease_info_section_item.dart';
 
 @RoutePage()
 class EmergencyDiseaseDetailsView extends StatelessWidget
     implements AutoRouteWrapper {
   const EmergencyDiseaseDetailsView({
     super.key,
-    required this.diseaseId,
+    required this.diseaseData,
   });
 
-  final String diseaseId;
+  final DiseaseData diseaseData;
 
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider<EmergencyDiseaseDetailsCubit>(
       create: (_) => getIt.get<EmergencyDiseaseDetailsCubit>()
-        ..getEmergencyDiseaseDetails(diseaseId),
+        ..getEmergencyDiseaseDetails(diseaseData.id),
       child: this,
     );
   }
@@ -36,27 +35,23 @@ class EmergencyDiseaseDetailsView extends StatelessWidget
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            const DiseaseImage(
-              imageUrl:
-                  'https://res.cloudinary.com/dkeeazjre/image/upload/v1703870178/Photos/xidgjcc4eqwu8d3bljuh.jpg',
+            DiseaseImage(
+              diseaseData: diseaseData,
             ),
             MySizedBox.height12,
-            SizedBox(
-              height: SizeConfig.height * 0.06,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                physics: AppConstants.scrollPhysics,
-                itemBuilder: (_, index) => DiseaseInfoSectionItem(index: index),
-                separatorBuilder: (_, __) => MySizedBox.width6,
-                itemCount: 4,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-              child: Text(
-                "fdfdfdfds",
-                style: AppTextStyles.textStyle16Bold(context),
-              ),
+            BlocBuilder<EmergencyDiseaseDetailsCubit,
+                EmergencyDiseaseDetailsState>(
+              builder: (context, state) {
+                if (state is GetEmergencyDiseaseDetailsError) {
+                  return Text('ERROR: ${state.error}');
+                } else if (state is GetEmergencyDiseaseDetailsSuccess) {
+                  return CustomDiseaseDetailsTabs(diseaseDetails: state.data);
+                } else {
+                  return const Center(
+                    child: CustomCircularProgressIndicator(),
+                  );
+                }
+              },
             ),
           ],
         ),
