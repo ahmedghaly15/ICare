@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 
@@ -24,22 +25,26 @@ class CustomDoOrNotTab extends StatelessWidget {
           children: <Widget>[
             Text(
               'Do',
-              style: AppTextStyles.textStyle18Bold(context),
+              style: AppTextStyles.textStyle24Medium(context).copyWith(
+                color: AppColors.primaryColor,
+              ),
             ),
             MySizedBox.height7,
             Text(
               doList.join('\n\n'),
-              style: AppTextStyles.textStyle16Bold(context),
+              style: AppTextStyles.textStyle18Bold(context),
             ),
             MySizedBox.height12,
             Text(
               'Do Not',
-              style: AppTextStyles.textStyle18Bold(context),
+              style: AppTextStyles.textStyle24Medium(context).copyWith(
+                color: AppColors.primaryColor,
+              ),
             ),
             MySizedBox.height7,
             Text(
               notToDoList.join('\n\n'),
-              style: AppTextStyles.textStyle16Bold(context),
+              style: AppTextStyles.textStyle18Bold(context),
             ),
           ],
         ),

@@ -15,7 +15,7 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
       child: FadeInUp(
         child: Text(
           listOfStringData.join('\n\n'),
-          style: AppTextStyles.textStyle16Bold(context),
+          style: AppTextStyles.textStyle18Bold(context),
         ),
       ),
     );

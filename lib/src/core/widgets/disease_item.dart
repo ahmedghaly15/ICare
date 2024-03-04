@@ -8,11 +8,14 @@ import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 class DiseaseItem extends StatelessWidget {
   const DiseaseItem({
     super.key,
-    required this.diseaseData,
+    this.diseaseData,
     required this.onPressed,
+    this.diseaseType,
+    this.diseaseTypeImage,
   });
 
-  final DiseaseData diseaseData;
+  final DiseaseData? diseaseData;
+  final String? diseaseType, diseaseTypeImage;
   final VoidCallback onPressed;
 
   @override
@@ -32,11 +35,11 @@ class DiseaseItem extends StatelessWidget {
           fit: StackFit.expand,
           children: <Widget>[
             Hero(
-              tag: diseaseData.id,
+              tag: diseaseData?.id ?? diseaseType!,
               child: ClipRRect(
                 borderRadius: _diseaseItemBorderRadius(),
                 child: CustomCachedNetworkImage(
-                  imageUrl: diseaseData.diseaseImage,
+                  imageUrl: diseaseTypeImage ?? diseaseData!.diseaseImage,
                 ),
               ),
             ),
@@ -53,7 +56,7 @@ class DiseaseItem extends StatelessWidget {
                 ),
                 padding: EdgeInsets.all(8.0.h),
                 child: Text(
-                  diseaseData.diseaseName,
+                  diseaseType ?? diseaseData!.diseaseName,
                   style: AppTextStyles.textStyle20Bold(context)
                       .copyWith(color: Colors.white),
                   textAlign: TextAlign.center,

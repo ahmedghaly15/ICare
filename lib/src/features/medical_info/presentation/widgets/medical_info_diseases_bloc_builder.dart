@@ -42,7 +42,10 @@ class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
                           child: Container(
                             margin: EdgeInsets.only(bottom: 16.h),
                             child: DiseaseItem(
-                              diseaseData: state.data[index].diseases[index],
+                              // diseaseData: state.data[index].diseases[index],
+                              diseaseType: state.data[index].diseaseType,
+                              diseaseTypeImage:
+                                  state.data[index].diseaseTypeImage,
                               onPressed: () => context.pushRoute(
                                 MedicalInfoCategoryDiseasesRoute(
                                   categoryName: state.data[index].diseaseType,
