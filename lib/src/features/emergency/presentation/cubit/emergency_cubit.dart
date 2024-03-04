@@ -1,16 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/entities/no_params.dart';
-import 'package:icare/src/features/emergency/domain/usecases/get_emergency_disease_details.dart';
 import 'package:icare/src/features/emergency/domain/usecases/get_emergency_diseases.dart';
 import 'package:icare/src/features/emergency/presentation/cubit/emergency_state.dart';
 
 class EmergencyCubit extends Cubit<EmergencyState> {
   final GetEmergencyDiseasesUseCase _getEmergencyDiseasesUseCase;
-  final GetEmergencyDiseaseDetailsUseCase _getEmergencyDiseaseDetailsUseCase;
 
   EmergencyCubit(
     this._getEmergencyDiseasesUseCase,
-    this._getEmergencyDiseaseDetailsUseCase,
   ) : super(const EmergencyState.initial());
 
   void getEmergencyDiseases() async {
@@ -22,21 +19,6 @@ class EmergencyCubit extends Cubit<EmergencyState> {
       success: (data) => emit(EmergencyState.getEmergencyDiseasesSuccess(data)),
       error: (error) => emit(EmergencyState.getEmergencyDiseasesError(
           error.apiErrorModel.error ?? '')),
-    );
-  }
-
-  void getEmergencyDiseaseDetails(String diseaseId) async {
-    emit(const EmergencyState.getEmergencyDiseaseDetailsLoading());
-
-    final result = await _getEmergencyDiseaseDetailsUseCase(diseaseId);
-
-    result.when(
-      success: (data) =>
-          emit(EmergencyState.getEmergencyDiseaseDetailsSuccess(data)),
-      error: (error) => emit(
-        EmergencyState.getEmergencyDiseaseDetailsError(
-            error.apiErrorModel.error ?? ''),
-      ),
     );
   }
 }

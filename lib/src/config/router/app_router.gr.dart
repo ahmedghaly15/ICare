@@ -33,16 +33,20 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
-    DiseaseDetailsRoute.name: (routeData) {
+    EmergencyDiseaseDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<EmergencyDiseaseDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const DiseaseDetailsView(),
+        child: EmergencyDiseaseDetailsView(
+          key: args.key,
+          diseaseDetails: args.diseaseDetails,
+        ),
       );
     },
     EmergencyDiseasesRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const EmergencyDiseasesView(),
+        child: WrappedRoute(child: const EmergencyDiseasesView()),
       );
     },
     EntryRoute.name: (routeData) {
@@ -89,7 +93,7 @@ abstract class _$AppRouter extends RootStackRouter {
     MedicalInfoRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const MedicalInfoView(),
+        child: WrappedRoute(child: const MedicalInfoView()),
       );
     },
     MedicalRoute.name: (routeData) {
@@ -162,17 +166,42 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [DiseaseDetailsView]
-class DiseaseDetailsRoute extends PageRouteInfo<void> {
-  const DiseaseDetailsRoute({List<PageRouteInfo>? children})
-      : super(
-          DiseaseDetailsRoute.name,
+/// [EmergencyDiseaseDetailsView]
+class EmergencyDiseaseDetailsRoute
+    extends PageRouteInfo<EmergencyDiseaseDetailsRouteArgs> {
+  EmergencyDiseaseDetailsRoute({
+    Key? key,
+    required DiseaseDetails diseaseDetails,
+    List<PageRouteInfo>? children,
+  }) : super(
+          EmergencyDiseaseDetailsRoute.name,
+          args: EmergencyDiseaseDetailsRouteArgs(
+            key: key,
+            diseaseDetails: diseaseDetails,
+          ),
           initialChildren: children,
         );
 
-  static const String name = 'DiseaseDetailsRoute';
+  static const String name = 'EmergencyDiseaseDetailsRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<EmergencyDiseaseDetailsRouteArgs> page =
+      PageInfo<EmergencyDiseaseDetailsRouteArgs>(name);
+}
+
+class EmergencyDiseaseDetailsRouteArgs {
+  const EmergencyDiseaseDetailsRouteArgs({
+    this.key,
+    required this.diseaseDetails,
+  });
+
+  final Key? key;
+
+  final DiseaseDetails diseaseDetails;
+
+  @override
+  String toString() {
+    return 'EmergencyDiseaseDetailsRouteArgs{key: $key, diseaseDetails: $diseaseDetails}';
+  }
 }
 
 /// generated route for

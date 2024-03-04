@@ -38,7 +38,12 @@ class EmergencyDiseasesBlocBuilder extends StatelessWidget {
                       diseaseImageUrl: state.data[index].diseaseImage,
                       diseaseName: state.data[index].diseaseName,
                       onPressed: () {
-                        context.pushRoute(const DiseaseDetailsRoute());
+                        // context
+                        //     .read<EmergencyCubit>()
+                        //     .getEmergencyDiseaseDetails(state.data[index].id)
+                        //     .then(
+                        //       (value) => null,
+                        //     );
                       },
                     ),
                   ),

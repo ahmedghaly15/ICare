@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
 import 'package:icare/src/core/models/disease_data.dart';
-import 'package:icare/src/core/models/disease_details.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
@@ -34,30 +33,6 @@ class EmergencyRepo {
 
       return ApiResult.success(
         _emergencyLocalDatasource.getCachedEmergencyDiseases(),
-      );
-    }
-  }
-
-  Future<ApiResult<DiseaseDetails>> getEmergencyDiseaseDetails(
-    String diseaseId,
-  ) async {
-    if (_emergencyLocalDatasource.getJsonString(diseaseId) == null) {
-      debugPrint('GOT NO CACHED EMERGENCY DISEASE DETAILS DATA');
-
-      final data = await _emergencyRemoteDatasource
-          .getEmergencyDiseaseDetails(diseaseId);
-
-      await _emergencyLocalDatasource.cacheEmergencyDiseaseDetails(
-        diseaseId,
-        data,
-      );
-
-      return ApiResult.success(data);
-    } else {
-      debugPrint('GOT CACHED EMERGENCY DISEASE DETAILS DATA');
-
-      return ApiResult.success(
-        _emergencyLocalDatasource.getCachedEmergencyDiseaseDetails(diseaseId),
       );
     }
   }

@@ -8,9 +8,7 @@ import 'package:icare/src/config/themes/app_themes.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/features/emergency/presentation/cubit/emergency_cubit.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
-import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class ICareApp extends StatelessWidget {
@@ -32,12 +30,6 @@ class ICareApp extends StatelessWidget {
           BlocProvider<UserCubit>(
             create: (_) => getIt.get<UserCubit>()..getUserData(),
           ),
-          BlocProvider<MedicalInfoCubit>(
-            create: (_) => getIt.get<MedicalInfoCubit>()..getMedicalInfo(),
-          ),
-          BlocProvider<EmergencyCubit>(
-            create: (_) => getIt.get<EmergencyCubit>()..getEmergencyDiseases(),
-          )
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,

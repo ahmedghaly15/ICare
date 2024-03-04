@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/models/disease_data.dart';
-import 'package:icare/src/core/models/disease_details.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 
 abstract class EmergencyLocalDatasource {
@@ -12,13 +11,6 @@ abstract class EmergencyLocalDatasource {
   Future<bool> cacheEmergencyDiseases(List<DiseaseData> data);
 
   List<DiseaseData> getCachedEmergencyDiseases();
-
-  Future<bool> cacheEmergencyDiseaseDetails(
-    String diseaseName,
-    DiseaseDetails data,
-  );
-
-  DiseaseDetails getCachedEmergencyDiseaseDetails(String diseaseId);
 }
 
 class EmergencyLocalDatasourceImpl implements EmergencyLocalDatasource {
@@ -47,21 +39,5 @@ class EmergencyLocalDatasourceImpl implements EmergencyLocalDatasource {
     }
 
     return data;
-  }
-
-  @override
-  Future<bool> cacheEmergencyDiseaseDetails(
-    String key,
-    DiseaseDetails data,
-  ) async {
-    return await getIt.get<CacheHelper>().saveData(
-          key: key,
-          value: json.encode(data.toJson()),
-        );
-  }
-
-  @override
-  DiseaseDetails getCachedEmergencyDiseaseDetails(String key) {
-    return DiseaseDetails.fromJson(json.decode(getJsonString(key)!));
   }
 }
