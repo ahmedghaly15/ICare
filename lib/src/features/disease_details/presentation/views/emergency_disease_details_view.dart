@@ -1,22 +1,34 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/features/disease_details/data/models/disease_details.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/features/disease_details/presentation/cubits/emergency_disease/emergency_disease_details_cubit.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/disease_image.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/disease_info_section_item.dart';
 
 @RoutePage()
-class EmergencyDiseaseDetailsView extends StatelessWidget {
+class EmergencyDiseaseDetailsView extends StatelessWidget
+    implements AutoRouteWrapper {
   const EmergencyDiseaseDetailsView({
     super.key,
-    required this.diseaseDetails,
+    required this.diseaseId,
   });
 
-  final DiseaseDetails diseaseDetails;
+  final String diseaseId;
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider<EmergencyDiseaseDetailsCubit>(
+      create: (_) => getIt.get<EmergencyDiseaseDetailsCubit>()
+        ..getEmergencyDiseaseDetails(diseaseId),
+      child: this,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +54,7 @@ class EmergencyDiseaseDetailsView extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
               child: Text(
-                diseaseDetails.symptoms.join('\n\n'),
+                "fdfdfdfds",
                 style: AppTextStyles.textStyle16Bold(context),
               ),
             ),

@@ -37,10 +37,11 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<EmergencyDiseaseDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: EmergencyDiseaseDetailsView(
+        child: WrappedRoute(
+            child: EmergencyDiseaseDetailsView(
           key: args.key,
-          diseaseDetails: args.diseaseDetails,
-        ),
+          diseaseId: args.diseaseId,
+        )),
       );
     },
     EmergencyDiseasesRoute.name: (routeData) {
@@ -171,13 +172,13 @@ class EmergencyDiseaseDetailsRoute
     extends PageRouteInfo<EmergencyDiseaseDetailsRouteArgs> {
   EmergencyDiseaseDetailsRoute({
     Key? key,
-    required DiseaseDetails diseaseDetails,
+    required String diseaseId,
     List<PageRouteInfo>? children,
   }) : super(
           EmergencyDiseaseDetailsRoute.name,
           args: EmergencyDiseaseDetailsRouteArgs(
             key: key,
-            diseaseDetails: diseaseDetails,
+            diseaseId: diseaseId,
           ),
           initialChildren: children,
         );
@@ -191,16 +192,16 @@ class EmergencyDiseaseDetailsRoute
 class EmergencyDiseaseDetailsRouteArgs {
   const EmergencyDiseaseDetailsRouteArgs({
     this.key,
-    required this.diseaseDetails,
+    required this.diseaseId,
   });
 
   final Key? key;
 
-  final DiseaseDetails diseaseDetails;
+  final String diseaseId;
 
   @override
   String toString() {
-    return 'EmergencyDiseaseDetailsRouteArgs{key: $key, diseaseDetails: $diseaseDetails}';
+    return 'EmergencyDiseaseDetailsRouteArgs{key: $key, diseaseId: $diseaseId}';
   }
 }
 

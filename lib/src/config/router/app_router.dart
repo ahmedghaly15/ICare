@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/router/routes_names.dart';
 import 'package:icare/src/core/models/disease_data.dart';
-import 'package:icare/src/features/disease_details/data/models/disease_details.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
@@ -77,7 +76,7 @@ class AppRouter extends _$AppRouter {
           transitionsBuilder: TransitionsBuilders.fadeIn,
         ),
         _buildCustomRoute(
-          page: DiseaseDetailsRoute.page,
+          page: EmergencyDiseaseDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.slideBottom,
         ),
       ];
