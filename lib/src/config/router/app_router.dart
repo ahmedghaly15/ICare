@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+
 import 'package:icare/src/config/router/routes_names.dart';
 import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
@@ -9,12 +10,12 @@ import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/baby/presentation/views/baby_view.dart';
 import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/emergency_disease_details_view.dart';
+import 'package:icare/src/features/emergency/presentation/views/emergency_diseases_view.dart';
 import 'package:icare/src/features/entry/presentation/views/entry_view.dart';
 import 'package:icare/src/features/home/home_view.dart';
-import 'package:icare/src/features/emergency/presentation/views/emergency_diseases_view.dart';
+import 'package:icare/src/features/medical/presentation/views/medical_view.dart';
 import 'package:icare/src/features/medical_info/presentation/views/medical_info_category_diseases_view.dart';
 import 'package:icare/src/features/medical_info/presentation/views/medical_info_view.dart';
-import 'package:icare/src/features/medical/presentation/views/medical_view.dart';
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
 

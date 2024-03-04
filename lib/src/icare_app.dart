@@ -2,11 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:icare/app_routes_observer.dart';
+import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_themes.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';

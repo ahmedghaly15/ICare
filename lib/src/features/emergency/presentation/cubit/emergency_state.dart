@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/core/models/disease_data.dart';
-import 'package:icare/src/features/disease_details/data/models/disease_details.dart';
 
 part 'emergency_state.freezed.dart';
 
