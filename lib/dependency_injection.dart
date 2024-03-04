@@ -130,8 +130,8 @@ class DependencyInjection {
       ),
     );
 
-    getIt.registerLazySingleton<EmergencyDiseaseDetailsLocalDatasource>(
-      () => const EmergencyDiseaseDetailsLocalDatasourceImpl(),
+    getIt.registerLazySingleton<DiseaseDetailsLocalDatasource>(
+      () => const DiseaseDetailsLocalDatasourceImpl(),
     );
   }
 
@@ -189,7 +189,7 @@ class DependencyInjection {
     getIt.registerLazySingleton<EmergencyDiseaseDetailsRepo>(
       () => EmergencyDiseaseDetailsRepo(
         getIt.get<EmergencyDiseaseDetailsRemoteDatasource>(),
-        getIt.get<EmergencyDiseaseDetailsLocalDatasource>(),
+        getIt.get<DiseaseDetailsLocalDatasource>(),
       ),
     );
   }

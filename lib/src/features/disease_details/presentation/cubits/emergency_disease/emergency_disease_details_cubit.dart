@@ -9,7 +9,7 @@ class EmergencyDiseaseDetailsCubit extends Cubit<EmergencyDiseaseDetailsState> {
     this._getEmergencyDiseaseDetailsUseCase,
   ) : super(const EmergencyDiseaseDetailsState.initial());
 
-  Future<void> getEmergencyDiseaseDetails(String diseaseId) async {
+  void getEmergencyDiseaseDetails(String diseaseId) async {
     emit(
         const EmergencyDiseaseDetailsState.getEmergencyDiseaseDetailsLoading());
 
