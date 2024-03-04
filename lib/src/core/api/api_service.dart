@@ -26,4 +26,10 @@ abstract class ApiService {
   Future<DiseaseDetails> getEmergencyDiseaseDetails(
     @Path('disease_id') String diseaseId,
   );
+
+  @GET('${EndPoints.baseUrl}{disease_type}')
+  Future<DiseaseDetails> getMedicalInfoDiseaseDetails(
+    @Path('disease_type') String diseaseType,
+    @Query('disease_id') String diseaseId,
+  );
 }
