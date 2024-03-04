@@ -35,9 +35,13 @@ class EmergencyDiseasesBlocBuilder extends StatelessWidget {
                 child: ScaleAnimation(
                   child: FadeInAnimation(
                     child: DiseaseItem(
-                      diseaseImageUrl: state.data[index].diseaseImage,
-                      diseaseName: state.data[index].diseaseName,
+                      diseaseData: state.data[index],
                       onPressed: () {
+                        context.pushRoute(
+                          EmergencyDiseaseDetailsRoute(
+                            diseaseData: state.data[index],
+                          ),
+                        );
                         // context
                         //     .read<EmergencyCubit>()
                         //     .getEmergencyDiseaseDetails(state.data[index].id)

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 
 class DiseaseItem extends StatelessWidget {
   const DiseaseItem({
     super.key,
-    required this.diseaseImageUrl,
-    required this.diseaseName,
+    required this.diseaseData,
     required this.onPressed,
   });
 
-  final String diseaseImageUrl, diseaseName;
+  final DiseaseData diseaseData;
   final VoidCallback onPressed;
 
   @override
@@ -31,10 +31,13 @@ class DiseaseItem extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
-            ClipRRect(
-              borderRadius: _diseaseItemBorderRadius(),
-              child: CustomCachedNetworkImage(
-                imageUrl: diseaseImageUrl,
+            Hero(
+              tag: diseaseData.id,
+              child: ClipRRect(
+                borderRadius: _diseaseItemBorderRadius(),
+                child: CustomCachedNetworkImage(
+                  imageUrl: diseaseData.diseaseImage,
+                ),
               ),
             ),
             Positioned(
@@ -50,7 +53,7 @@ class DiseaseItem extends StatelessWidget {
                 ),
                 padding: EdgeInsets.all(8.0.h),
                 child: Text(
-                  diseaseName,
+                  diseaseData.diseaseName,
                   style: AppTextStyles.textStyle20Bold(context)
                       .copyWith(color: Colors.white),
                   textAlign: TextAlign.center,

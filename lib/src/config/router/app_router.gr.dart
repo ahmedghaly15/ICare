@@ -40,7 +40,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(
             child: EmergencyDiseaseDetailsView(
           key: args.key,
-          diseaseId: args.diseaseId,
+          diseaseData: args.diseaseData,
         )),
       );
     },
@@ -172,13 +172,13 @@ class EmergencyDiseaseDetailsRoute
     extends PageRouteInfo<EmergencyDiseaseDetailsRouteArgs> {
   EmergencyDiseaseDetailsRoute({
     Key? key,
-    required String diseaseId,
+    required DiseaseData diseaseData,
     List<PageRouteInfo>? children,
   }) : super(
           EmergencyDiseaseDetailsRoute.name,
           args: EmergencyDiseaseDetailsRouteArgs(
             key: key,
-            diseaseId: diseaseId,
+            diseaseData: diseaseData,
           ),
           initialChildren: children,
         );
@@ -192,16 +192,16 @@ class EmergencyDiseaseDetailsRoute
 class EmergencyDiseaseDetailsRouteArgs {
   const EmergencyDiseaseDetailsRouteArgs({
     this.key,
-    required this.diseaseId,
+    required this.diseaseData,
   });
 
   final Key? key;
 
-  final String diseaseId;
+  final DiseaseData diseaseData;
 
   @override
   String toString() {
-    return 'EmergencyDiseaseDetailsRouteArgs{key: $key, diseaseId: $diseaseId}';
+    return 'EmergencyDiseaseDetailsRouteArgs{key: $key, diseaseData: $diseaseData}';
   }
 }
 

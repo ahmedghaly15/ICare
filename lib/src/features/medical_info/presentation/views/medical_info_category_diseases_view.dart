@@ -37,8 +37,7 @@ class MedicalInfoCategoryDiseasesView extends StatelessWidget {
                   child: ScaleAnimation(
                     child: FadeInAnimation(
                       child: DiseaseItem(
-                        diseaseImageUrl: diseases[index].diseaseImage,
-                        diseaseName: diseases[index].diseaseName,
+                        diseaseData: diseases[index],
                         onPressed: () {},
                       ),
                     ),
