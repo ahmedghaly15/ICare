@@ -17,6 +17,8 @@ abstract class EmergencyDiseaseDetailsLocalDatasource {
 
 class EmergencyDiseaseDetailsLocalDatasourceImpl
     implements EmergencyDiseaseDetailsLocalDatasource {
+  const EmergencyDiseaseDetailsLocalDatasourceImpl();
+
   @override
   String? getJsonString(String key) {
     return getIt.get<CacheHelper>().getStringData(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/api/api_result.dart';
-import 'package:icare/src/features/disease_details/data/datasources/emergency_details/emergency_disease_details_local_datasource.dart';
-import 'package:icare/src/features/disease_details/data/datasources/emergency_details/emergency_disease_details_remote_datasource.dart';
+import 'package:icare/src/features/disease_details/data/datasources/emergency_disease/emergency_disease_details_local_datasource.dart';
+import 'package:icare/src/features/disease_details/data/datasources/emergency_disease/emergency_disease_details_remote_datasource.dart';
 import 'package:icare/src/features/disease_details/data/models/disease_details.dart';
 
 class EmergencyDiseaseDetailsRepo {
@@ -9,7 +9,9 @@ class EmergencyDiseaseDetailsRepo {
   final EmergencyDiseaseDetailsRemoteDatasource _remoteDatasource;
 
   const EmergencyDiseaseDetailsRepo(
-      this._localDatasource, this._remoteDatasource);
+    this._remoteDatasource,
+    this._localDatasource,
+  );
 
   Future<ApiResult<DiseaseDetails>> getEmergencyDiseaseDetails(
     String diseaseId,

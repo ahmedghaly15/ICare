@@ -11,10 +11,14 @@ import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.da
 import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
+import 'package:icare/src/features/disease_details/data/datasources/emergency_disease/emergency_disease_details_local_datasource.dart';
+import 'package:icare/src/features/disease_details/data/datasources/emergency_disease/emergency_disease_details_remote_datasource.dart';
+import 'package:icare/src/features/disease_details/data/repositories/emergency_disease_details_repo.dart';
+import 'package:icare/src/features/disease_details/domain/usecases/get_emergency_disease_details.dart';
+import 'package:icare/src/features/disease_details/presentation/cubits/emergency_disease/emergency_disease_details_cubit.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_remote_datasource.dart';
 import 'package:icare/src/features/emergency/data/datasources/emergency_local_datasource.dart';
 import 'package:icare/src/features/emergency/data/repositories/emergency_repo.dart';
-import 'package:icare/src/features/emergency/domain/usecases/get_emergency_disease_details.dart';
 import 'package:icare/src/features/emergency/presentation/cubit/emergency_cubit.dart';
 import 'package:icare/src/features/medical/data/datasources/medical_local_datasource.dart';
 import 'package:icare/src/features/medical/data/datasources/medical_remote_datasource.dart';
@@ -118,6 +122,17 @@ class DependencyInjection {
     getIt.registerLazySingleton<UserDataSource>(
       () => const UserDatasourceImpl(),
     );
+
+    // ========== EmergencyDiseaseDetails feature ==========
+    getIt.registerLazySingleton<EmergencyDiseaseDetailsRemoteDatasource>(
+      () => EmergencyDiseaseDetailsRemoteDatasourceImpl(
+        getIt.get<ApiService>(),
+      ),
+    );
+
+    getIt.registerLazySingleton<EmergencyDiseaseDetailsLocalDatasource>(
+      () => const EmergencyDiseaseDetailsLocalDatasourceImpl(),
+    );
   }
 
   void _setupForRepos() {
@@ -169,6 +184,14 @@ class DependencyInjection {
     getIt.registerLazySingleton<UserRepo>(
       () => UserRepo(getIt.get<UserDataSource>()),
     );
+
+    // ========== EmergencyDiseaseDetails feature ==========
+    getIt.registerLazySingleton<EmergencyDiseaseDetailsRepo>(
+      () => EmergencyDiseaseDetailsRepo(
+        getIt.get<EmergencyDiseaseDetailsRemoteDatasource>(),
+        getIt.get<EmergencyDiseaseDetailsLocalDatasource>(),
+      ),
+    );
   }
 
   void _setupForUseCases() {
@@ -205,10 +228,6 @@ class DependencyInjection {
       () => GetEmergencyDiseasesUseCase(getIt.get<EmergencyRepo>()),
     );
 
-    getIt.registerLazySingleton<GetEmergencyDiseaseDetailsUseCase>(
-      () => GetEmergencyDiseaseDetailsUseCase(getIt.get<EmergencyRepo>()),
-    );
-
     // ========== MedicalInfo feature ==========
     getIt.registerLazySingleton<GetMedicalInfoUseCase>(
       () => GetMedicalInfoUseCase(getIt.get<MedicalInfoRepo>()),
@@ -217,6 +236,12 @@ class DependencyInjection {
     // ========== User feature ==========
     getIt.registerLazySingleton<GetUserDataUseCase>(
       () => GetUserDataUseCase(getIt.get<UserRepo>()),
+    );
+
+    // ========== EmergencyDiseaseDetails feature ==========
+    getIt.registerLazySingleton<GetEmergencyDiseaseDetailsUseCase>(
+      () => GetEmergencyDiseaseDetailsUseCase(
+          getIt.get<EmergencyDiseaseDetailsRepo>()),
     );
   }
 
@@ -255,10 +280,7 @@ class DependencyInjection {
 
     // ========== Emergency feature ==========
     getIt.registerFactory<EmergencyCubit>(
-      () => EmergencyCubit(
-        getIt.get<GetEmergencyDiseasesUseCase>(),
-        getIt.get<GetEmergencyDiseaseDetailsUseCase>(),
-      ),
+      () => EmergencyCubit(getIt.get<GetEmergencyDiseasesUseCase>()),
     );
 
     // ========== MedicalInfo feature ==========
@@ -269,6 +291,13 @@ class DependencyInjection {
     // ========== User feature ==========
     getIt.registerFactory<UserCubit>(
       () => UserCubit(getIt.get<GetUserDataUseCase>()),
+    );
+
+    // ========== EmergencyDiseaseDetails feature ==========
+    getIt.registerFactory<EmergencyDiseaseDetailsCubit>(
+      () => EmergencyDiseaseDetailsCubit(
+        getIt.get<GetEmergencyDiseaseDetailsUseCase>(),
+      ),
     );
   }
 
