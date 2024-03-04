@@ -8,7 +8,7 @@ abstract class DiseaseDetailsLocalDatasource {
   String? getJsonString(String key);
 
   Future<bool> cacheDiseaseDetails(
-    String diseaseName,
+    String diseaseId,
     DiseaseDetails data,
   );
 

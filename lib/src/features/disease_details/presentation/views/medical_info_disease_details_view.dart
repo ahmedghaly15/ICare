@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/disease_data.dart';
+import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/disease_details/data/models/get_medical_info_disease_details_params.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_cubit.dart';
+import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_state.dart';
+import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_tabs.dart';
+import 'package:icare/src/features/disease_details/presentation/widgets/disease_image.dart';
 
 @RoutePage()
 class MedicalInfoDiseaseDetailsView extends StatelessWidget
@@ -20,7 +25,7 @@ class MedicalInfoDiseaseDetailsView extends StatelessWidget
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<MedicalInfoDiseaseDetailsCubit>(
       create: (_) => getIt.get<MedicalInfoDiseaseDetailsCubit>()
         ..getMedicalInfoDiseaseDetails(
           params: GetMedicalInfoDiseaseDetailsParams(
@@ -34,10 +39,29 @@ class MedicalInfoDiseaseDetailsView extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: <Widget>[],
+          children: <Widget>[
+            DiseaseImage(
+              diseaseData: diseaseData,
+            ),
+            MySizedBox.height18,
+            BlocBuilder<MedicalInfoDiseaseDetailsCubit,
+                MedicalInfoDiseaseDetailsState>(
+              builder: (_, state) {
+                if (state is GetMedicalInfoDiseaseDetailsError) {
+                  return Text('ERROR: ${state.error}');
+                } else if (state is GetMedicalInfoDiseaseDetailsSuccess) {
+                  return CustomDiseaseDetailsTabs(diseaseDetails: state.data);
+                } else {
+                  return const Center(
+                    child: CustomCircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
+          ],
         ),
       ),
     );

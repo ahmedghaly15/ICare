@@ -15,16 +15,25 @@ class DiseaseImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: SizeConfig.height * 0.35,
+      decoration: BoxDecoration(
+        borderRadius: _imageBorderRadius(),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5.h,
+            blurRadius: 7.r,
+            offset: Offset(0, 3.h),
+          ),
+        ],
+      ),
       child: Stack(
         children: <Widget>[
           Hero(
             tag: diseaseData.id,
             child: ClipRRect(
-              borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(50.r),
-              ),
+              borderRadius: _imageBorderRadius(),
               child: CustomCachedNetworkImage(
                 imageUrl: diseaseData.diseaseImage,
               ),
@@ -40,6 +49,12 @@ class DiseaseImage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  BorderRadius _imageBorderRadius() {
+    return BorderRadius.vertical(
+      bottom: Radius.circular(50.r),
     );
   }
 }

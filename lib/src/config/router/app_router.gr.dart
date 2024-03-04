@@ -86,7 +86,7 @@ abstract class _$AppRouter extends RootStackRouter {
         routeData: routeData,
         child: MedicalInfoCategoryDiseasesView(
           key: args.key,
-          categoryName: args.categoryName,
+          diseaseType: args.diseaseType,
           diseases: args.diseases,
         ),
       );
@@ -307,14 +307,14 @@ class MedicalInfoCategoryDiseasesRoute
     extends PageRouteInfo<MedicalInfoCategoryDiseasesRouteArgs> {
   MedicalInfoCategoryDiseasesRoute({
     Key? key,
-    required String categoryName,
+    required String diseaseType,
     required List<DiseaseData> diseases,
     List<PageRouteInfo>? children,
   }) : super(
           MedicalInfoCategoryDiseasesRoute.name,
           args: MedicalInfoCategoryDiseasesRouteArgs(
             key: key,
-            categoryName: categoryName,
+            diseaseType: diseaseType,
             diseases: diseases,
           ),
           initialChildren: children,
@@ -329,19 +329,19 @@ class MedicalInfoCategoryDiseasesRoute
 class MedicalInfoCategoryDiseasesRouteArgs {
   const MedicalInfoCategoryDiseasesRouteArgs({
     this.key,
-    required this.categoryName,
+    required this.diseaseType,
     required this.diseases,
   });
 
   final Key? key;
 
-  final String categoryName;
+  final String diseaseType;
 
   final List<DiseaseData> diseases;
 
   @override
   String toString() {
-    return 'MedicalInfoCategoryDiseasesRouteArgs{key: $key, categoryName: $categoryName, diseases: $diseases}';
+    return 'MedicalInfoCategoryDiseasesRouteArgs{key: $key, diseaseType: $diseaseType, diseases: $diseases}';
   }
 }
 

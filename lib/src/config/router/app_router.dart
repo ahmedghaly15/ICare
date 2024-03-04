@@ -81,6 +81,10 @@ class AppRouter extends _$AppRouter {
           page: EmergencyDiseaseDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.slideBottom,
         ),
+        _buildCustomRoute(
+          page: MedicalInfoDiseaseDetailsRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        )
       ];
 
   CustomRoute _buildCustomRoute({
