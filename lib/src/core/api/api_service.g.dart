@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.1.8/';
+    baseUrl ??= 'http:/192.168.1.13/';
   }
 
   final Dio _dio;
@@ -34,7 +34,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.8/medical',
+              'http:/192.168.1.13/medical',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -64,7 +64,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.8/Emergency/',
+              'http:/192.168.1.13/Emergency/',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -93,7 +93,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.8/diseases',
+              'http:/192.168.1.13/diseases',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -123,7 +123,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.8/Emergency/${diseaseId}',
+              'http:/192.168.1.13/Emergency/${diseaseId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -153,7 +153,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.8/${diseaseType}',
+              'http:/192.168.1.13/${diseaseType}',
               queryParameters: queryParameters,
               data: _data,
             )

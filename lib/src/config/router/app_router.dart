@@ -9,6 +9,7 @@ import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/baby/presentation/views/baby_view.dart';
 import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
+import 'package:icare/src/features/cry_translator/presentation/views/cry_translator_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/emergency_disease_details_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/medical_info_disease_details_view.dart';
 import 'package:icare/src/features/emergency/presentation/views/emergency_diseases_view.dart';
@@ -84,7 +85,8 @@ class AppRouter extends _$AppRouter {
         _buildCustomRoute(
           page: MedicalInfoDiseaseDetailsRoute.page,
           transitionsBuilder: TransitionsBuilders.slideBottom,
-        )
+        ),
+        _buildCustomRoute(page: CryTranslatorRoute.page),
       ];
 
   CustomRoute _buildCustomRoute({
