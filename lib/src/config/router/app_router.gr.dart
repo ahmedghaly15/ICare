@@ -36,7 +36,7 @@ abstract class _$AppRouter extends RootStackRouter {
     CryTranslatorRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const CryTranslatorView(),
+        child: WrappedRoute(child: const CryTranslatorView()),
       );
     },
     EmergencyDiseaseDetailsRoute.name: (routeData) {
