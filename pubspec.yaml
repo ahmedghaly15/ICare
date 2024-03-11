@@ -58,6 +58,8 @@ dependencies:
   animate_do: ^3.3.4
   # To add staggered animations to your ListView, GridView
   flutter_staggered_animations: ^1.1.1
+  # A flutter plugin for displaying a countdown timer
+  flutter_countdown_timer: ^4.1.0
 
 
 dev_dependencies:

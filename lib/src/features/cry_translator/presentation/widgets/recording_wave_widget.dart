@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/size_config.dart';
 
 class RecordingWaveWidget extends StatefulWidget {
   const RecordingWaveWidget({super.key});
@@ -10,7 +12,7 @@ class RecordingWaveWidget extends StatefulWidget {
 }
 
 class _RecordingWaveWidgetState extends State<RecordingWaveWidget> {
-  final List<double> _heights = [50, 70, 100, 70, 50];
+  final List<double> _heights = [0.05, 0.07, 0.1, 0.07, 0.05];
   Timer? _timer;
 
   @override
@@ -37,17 +39,17 @@ class _RecordingWaveWidgetState extends State<RecordingWaveWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 100.h,
+      height: SizeConfig.height * 0.1,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: _heights.map((height) {
           return AnimatedContainer(
             duration: const Duration(milliseconds: 300),
             width: 20.w,
-            height: height.h,
+            height: SizeConfig.height * height,
             margin: EdgeInsets.only(right: 10.w),
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: AppColors.primaryColor,
               borderRadius: BorderRadius.circular(50.r),
             ),
           );
