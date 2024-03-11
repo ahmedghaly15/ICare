@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/features/cry_translator/presentation/cubit/cry_translator_cubit.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
 
 class CustomCountDownTimer extends StatelessWidget {
   const CustomCountDownTimer({super.key});
@@ -10,8 +10,8 @@ class CustomCountDownTimer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CountdownTimer(
-      controller: context.read<CryTranslatorCubit>().countDownController,
-      onEnd: context.read<CryTranslatorCubit>().onTimerEnd,
+      controller: context.read<BabyCryPredictorCubit>().countDownController,
+      onEnd: context.read<BabyCryPredictorCubit>().onTimerEnd,
       widgetBuilder: (_, time) {
         if (time == null) {
           return Text(

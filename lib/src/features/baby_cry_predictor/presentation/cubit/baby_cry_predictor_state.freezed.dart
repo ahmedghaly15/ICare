@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'cry_translator_state.dart';
+part of 'baby_cry_predictor_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$CryTranslatorState<T> {
+mixin _$BabyCryPredictorState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -40,21 +40,21 @@ mixin _$CryTranslatorState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CryTranslatorInitial<T> value) initial,
+    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CryTranslatorInitial<T> value)? initial,
+    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CryTranslatorInitial<T> value)? initial,
+    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     required TResult orElse(),
@@ -63,17 +63,17 @@ mixin _$CryTranslatorState<T> {
 }
 
 /// @nodoc
-abstract class $CryTranslatorStateCopyWith<T, $Res> {
-  factory $CryTranslatorStateCopyWith(CryTranslatorState<T> value,
-          $Res Function(CryTranslatorState<T>) then) =
-      _$CryTranslatorStateCopyWithImpl<T, $Res, CryTranslatorState<T>>;
+abstract class $BabyCryPredictorStateCopyWith<T, $Res> {
+  factory $BabyCryPredictorStateCopyWith(BabyCryPredictorState<T> value,
+          $Res Function(BabyCryPredictorState<T>) then) =
+      _$BabyCryPredictorStateCopyWithImpl<T, $Res, BabyCryPredictorState<T>>;
 }
 
 /// @nodoc
-class _$CryTranslatorStateCopyWithImpl<T, $Res,
-        $Val extends CryTranslatorState<T>>
-    implements $CryTranslatorStateCopyWith<T, $Res> {
-  _$CryTranslatorStateCopyWithImpl(this._value, this._then);
+class _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        $Val extends BabyCryPredictorState<T>>
+    implements $BabyCryPredictorStateCopyWith<T, $Res> {
+  _$BabyCryPredictorStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -82,38 +82,39 @@ class _$CryTranslatorStateCopyWithImpl<T, $Res,
 }
 
 /// @nodoc
-abstract class _$$CryTranslatorInitialImplCopyWith<T, $Res> {
-  factory _$$CryTranslatorInitialImplCopyWith(
-          _$CryTranslatorInitialImpl<T> value,
-          $Res Function(_$CryTranslatorInitialImpl<T>) then) =
-      __$$CryTranslatorInitialImplCopyWithImpl<T, $Res>;
+abstract class _$$BabyCryPredictorInitialImplCopyWith<T, $Res> {
+  factory _$$BabyCryPredictorInitialImplCopyWith(
+          _$BabyCryPredictorInitialImpl<T> value,
+          $Res Function(_$BabyCryPredictorInitialImpl<T>) then) =
+      __$$BabyCryPredictorInitialImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$CryTranslatorInitialImplCopyWithImpl<T, $Res>
-    extends _$CryTranslatorStateCopyWithImpl<T, $Res,
-        _$CryTranslatorInitialImpl<T>>
-    implements _$$CryTranslatorInitialImplCopyWith<T, $Res> {
-  __$$CryTranslatorInitialImplCopyWithImpl(_$CryTranslatorInitialImpl<T> _value,
-      $Res Function(_$CryTranslatorInitialImpl<T>) _then)
+class __$$BabyCryPredictorInitialImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$BabyCryPredictorInitialImpl<T>>
+    implements _$$BabyCryPredictorInitialImplCopyWith<T, $Res> {
+  __$$BabyCryPredictorInitialImplCopyWithImpl(
+      _$BabyCryPredictorInitialImpl<T> _value,
+      $Res Function(_$BabyCryPredictorInitialImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$CryTranslatorInitialImpl<T> implements _CryTranslatorInitial<T> {
-  const _$CryTranslatorInitialImpl();
+class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
+  const _$BabyCryPredictorInitialImpl();
 
   @override
   String toString() {
-    return 'CryTranslatorState<$T>.initial()';
+    return 'BabyCryPredictorState<$T>.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CryTranslatorInitialImpl<T>);
+            other is _$BabyCryPredictorInitialImpl<T>);
   }
 
   @override
@@ -156,7 +157,7 @@ class _$CryTranslatorInitialImpl<T> implements _CryTranslatorInitial<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CryTranslatorInitial<T> value) initial,
+    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
   }) {
@@ -166,7 +167,7 @@ class _$CryTranslatorInitialImpl<T> implements _CryTranslatorInitial<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CryTranslatorInitial<T> value)? initial,
+    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
   }) {
@@ -176,7 +177,7 @@ class _$CryTranslatorInitialImpl<T> implements _CryTranslatorInitial<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CryTranslatorInitial<T> value)? initial,
+    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     required TResult orElse(),
@@ -188,8 +189,8 @@ class _$CryTranslatorInitialImpl<T> implements _CryTranslatorInitial<T> {
   }
 }
 
-abstract class _CryTranslatorInitial<T> implements CryTranslatorState<T> {
-  const factory _CryTranslatorInitial() = _$CryTranslatorInitialImpl<T>;
+abstract class _BabyCryPredictorInitial<T> implements BabyCryPredictorState<T> {
+  const factory _BabyCryPredictorInitial() = _$BabyCryPredictorInitialImpl<T>;
 }
 
 /// @nodoc
@@ -203,7 +204,7 @@ abstract class _$$ConvertIsRecordingImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$ConvertIsRecordingImplCopyWithImpl<T, $Res>
-    extends _$CryTranslatorStateCopyWithImpl<T, $Res,
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
         _$ConvertIsRecordingImpl<T>>
     implements _$$ConvertIsRecordingImplCopyWith<T, $Res> {
   __$$ConvertIsRecordingImplCopyWithImpl(_$ConvertIsRecordingImpl<T> _value,
@@ -234,7 +235,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
 
   @override
   String toString() {
-    return 'CryTranslatorState<$T>.convertIsRecording(isRecording: $isRecording)';
+    return 'BabyCryPredictorState<$T>.convertIsRecording(isRecording: $isRecording)';
   }
 
   @override
@@ -293,7 +294,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CryTranslatorInitial<T> value) initial,
+    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
   }) {
@@ -303,7 +304,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CryTranslatorInitial<T> value)? initial,
+    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
   }) {
@@ -313,7 +314,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CryTranslatorInitial<T> value)? initial,
+    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     required TResult orElse(),
@@ -325,7 +326,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   }
 }
 
-abstract class _ConvertIsRecording<T> implements CryTranslatorState<T> {
+abstract class _ConvertIsRecording<T> implements BabyCryPredictorState<T> {
   const factory _ConvertIsRecording(final bool isRecording) =
       _$ConvertIsRecordingImpl<T>;
 
@@ -346,7 +347,7 @@ abstract class _$$AssignAudioPathValImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$AssignAudioPathValImplCopyWithImpl<T, $Res>
-    extends _$CryTranslatorStateCopyWithImpl<T, $Res,
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
         _$AssignAudioPathValImpl<T>>
     implements _$$AssignAudioPathValImplCopyWith<T, $Res> {
   __$$AssignAudioPathValImplCopyWithImpl(_$AssignAudioPathValImpl<T> _value,
@@ -377,7 +378,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
 
   @override
   String toString() {
-    return 'CryTranslatorState<$T>.assignAudioPathVal(path: $path)';
+    return 'BabyCryPredictorState<$T>.assignAudioPathVal(path: $path)';
   }
 
   @override
@@ -435,7 +436,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CryTranslatorInitial<T> value) initial,
+    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
   }) {
@@ -445,7 +446,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CryTranslatorInitial<T> value)? initial,
+    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
   }) {
@@ -455,7 +456,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CryTranslatorInitial<T> value)? initial,
+    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     required TResult orElse(),
@@ -467,7 +468,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   }
 }
 
-abstract class _AssignAudioPathVal<T> implements CryTranslatorState<T> {
+abstract class _AssignAudioPathVal<T> implements BabyCryPredictorState<T> {
   const factory _AssignAudioPathVal(final String path) =
       _$AssignAudioPathValImpl<T>;
 

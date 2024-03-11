@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const Auth(),
       );
     },
+    BabyCryPredictorRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const BabyCryPredictorView()),
+      );
+    },
     BabyRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -31,12 +37,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const BottomNavBar(),
-      );
-    },
-    CryTranslatorRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const CryTranslatorView()),
       );
     },
     EmergencyDiseaseDetailsRoute.name: (routeData) {
@@ -157,6 +157,20 @@ class AuthRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [BabyCryPredictorView]
+class BabyCryPredictorRoute extends PageRouteInfo<void> {
+  const BabyCryPredictorRoute({List<PageRouteInfo>? children})
+      : super(
+          BabyCryPredictorRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BabyCryPredictorRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [BabyView]
 class BabyRoute extends PageRouteInfo<void> {
   const BabyRoute({List<PageRouteInfo>? children})
@@ -180,20 +194,6 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BottomNavBarRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [CryTranslatorView]
-class CryTranslatorRoute extends PageRouteInfo<void> {
-  const CryTranslatorRoute({List<PageRouteInfo>? children})
-      : super(
-          CryTranslatorRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'CryTranslatorRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

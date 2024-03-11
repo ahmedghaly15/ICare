@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/features/cry_translator/presentation/cubit/cry_translator_cubit.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
 
 class CustomRecordButton extends StatelessWidget {
   const CustomRecordButton({super.key});
@@ -15,14 +15,15 @@ class CustomRecordButton extends StatelessWidget {
       width: 100.w,
       duration: AppConstants.cryTranslatorAnimationDuration,
       padding: EdgeInsets.all(
-        context.read<CryTranslatorCubit>().isRecording ? 25.h : 15.h,
+        context.read<BabyCryPredictorCubit>().isRecording ? 25.h : 15.h,
       ),
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.circle,
         border: Border.all(
           color: AppColors.primaryColor,
-          width: context.read<CryTranslatorCubit>().isRecording ? 8.sp : 3.sp,
+          width:
+              context.read<BabyCryPredictorCubit>().isRecording ? 8.sp : 3.sp,
         ),
       ),
       child: AnimatedContainer(
@@ -31,20 +32,23 @@ class CustomRecordButton extends StatelessWidget {
         width: 70.h,
         decoration: BoxDecoration(
           color: AppColors.primaryColor,
-          shape: context.read<CryTranslatorCubit>().isRecording
+          shape: context.read<BabyCryPredictorCubit>().isRecording
               ? BoxShape.rectangle
               : BoxShape.circle,
         ),
         child: MaterialButton(
           onPressed: () {
-            if (context.read<CryTranslatorCubit>().isRecording) {
-              context.read<CryTranslatorCubit>().countDownController.dispose();
-              context.read<CryTranslatorCubit>().stopRecording();
+            if (context.read<BabyCryPredictorCubit>().isRecording) {
+              context
+                  .read<BabyCryPredictorCubit>()
+                  .countDownController
+                  .dispose();
+              context.read<BabyCryPredictorCubit>().stopRecording();
             } else {
-              context.read<CryTranslatorCubit>().startTimer();
-              context.read<CryTranslatorCubit>().startRecording();
+              context.read<BabyCryPredictorCubit>().startTimer();
+              context.read<BabyCryPredictorCubit>().startRecording();
             }
-            context.read<CryTranslatorCubit>().convertIsRecording();
+            context.read<BabyCryPredictorCubit>().convertIsRecording();
           },
           shape: const CircleBorder(),
           child: const SizedBox.shrink(),

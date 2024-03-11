@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
         MySizedBox.height27,
         IconButton(
           onPressed: () {
-            context.pushRoute(const CryTranslatorRoute());
+            context.pushRoute(const BabyCryPredictorRoute());
           },
           icon: SvgPicture.asset(
             AppAssets.svgsCryTranslatorIcon,

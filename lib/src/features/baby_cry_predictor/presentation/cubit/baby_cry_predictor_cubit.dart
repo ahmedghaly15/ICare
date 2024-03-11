@@ -6,10 +6,10 @@ import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
 import 'package:record/record.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:icare/src/features/cry_translator/presentation/cubit/cry_translator_state.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
 
-class CryTranslatorCubit extends Cubit<CryTranslatorState> {
-  CryTranslatorCubit() : super(const CryTranslatorState.initial()) {
+class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
+  BabyCryPredictorCubit() : super(const BabyCryPredictorState.initial()) {
     isRecording = false;
     audioRecorder = AudioRecorder();
     audioPlayer = AudioPlayer();
@@ -23,7 +23,7 @@ class CryTranslatorCubit extends Cubit<CryTranslatorState> {
 
   void convertIsRecording() {
     isRecording = !isRecording;
-    emit(CryTranslatorState.convertIsRecording(isRecording));
+    emit(BabyCryPredictorState.convertIsRecording(isRecording));
   }
 
   void startTimer() {
@@ -71,7 +71,7 @@ class CryTranslatorCubit extends Cubit<CryTranslatorState> {
     try {
       String? path = await audioRecorder.stop();
       audioPath = path!;
-      emit(CryTranslatorState.assignAudioPathVal(audioPath!));
+      emit(BabyCryPredictorState.assignAudioPathVal(audioPath!));
       debugPrint('=========>>>>>>>>>>> PATH: $audioPath <<<<<<===========');
     } catch (e) {
       debugPrint('ERROR WHILE STOP RECORDING: $e');

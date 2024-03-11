@@ -5,18 +5,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/features/cry_translator/presentation/cubit/cry_translator_cubit.dart';
-import 'package:icare/src/features/cry_translator/presentation/cubit/cry_translator_state.dart';
-import 'package:icare/src/features/cry_translator/presentation/widgets/custom_count_down_timer.dart';
-import 'package:icare/src/features/cry_translator/presentation/widgets/custom_record_button.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/custom_count_down_timer.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/custom_record_button.dart';
 import 'package:icare/src/features/cry_translator/presentation/widgets/recording_wave_widget.dart';
 
-class CryTranslatorViewBody extends StatelessWidget {
-  const CryTranslatorViewBody({super.key});
+class BabyCryPredictorViewBody extends StatelessWidget {
+  const BabyCryPredictorViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CryTranslatorCubit, CryTranslatorState>(
+    return BlocBuilder<BabyCryPredictorCubit, BabyCryPredictorState>(
       builder: (context, _) {
         return CustomScrollView(
           slivers: <Widget>[
@@ -27,7 +27,7 @@ class CryTranslatorViewBody extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    if (context.read<CryTranslatorCubit>().isRecording) ...[
+                    if (context.read<BabyCryPredictorCubit>().isRecording) ...[
                       const Spacer(),
                       FadeInDown(
                         duration: AppConstants.cryTranslatorAnimationDuration,
@@ -44,18 +44,18 @@ class CryTranslatorViewBody extends StatelessWidget {
                       duration: AppConstants.cryTranslatorAnimationDuration,
                       child: const CustomRecordButton(),
                     ),
-                    if (context.read<CryTranslatorCubit>().isRecording ==
+                    if (context.read<BabyCryPredictorCubit>().isRecording ==
                             false &&
-                        context.read<CryTranslatorCubit>().audioPath !=
+                        context.read<BabyCryPredictorCubit>().audioPath !=
                             null) ...[
                       ElevatedButton(
                         onPressed: () {
-                          context.read<CryTranslatorCubit>().playAudio();
+                          context.read<BabyCryPredictorCubit>().playAudio();
                         },
                         child: const Text('Start playing'),
                       ),
                     ],
-                    if (context.read<CryTranslatorCubit>().isRecording ==
+                    if (context.read<BabyCryPredictorCubit>().isRecording ==
                         false) ...[
                       MySizedBox.height12,
                       FadeInUp(
@@ -67,7 +67,7 @@ class CryTranslatorViewBody extends StatelessWidget {
                         ),
                       )
                     ],
-                    if (context.read<CryTranslatorCubit>().isRecording)
+                    if (context.read<BabyCryPredictorCubit>().isRecording)
                       const Spacer(),
                   ],
                 ),

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
-import 'package:icare/src/features/cry_translator/presentation/cubit/cry_translator_cubit.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
 import 'package:icare/src/features/disease_details/data/datasources/medical_info_disease_details_remote_datasource.dart';
 import 'package:icare/src/features/disease_details/data/repositories/medical_info_disease_details_repo.dart';
 import 'package:icare/src/features/disease_details/domain/usecases/get_medical_info_disease_details.dart';
@@ -335,7 +335,7 @@ class DependencyInjection {
     );
 
     // ========== CryTranslator feature ==========
-    getIt.registerFactory<CryTranslatorCubit>(() => CryTranslatorCubit());
+    getIt.registerFactory<BabyCryPredictorCubit>(() => BabyCryPredictorCubit());
   }
 
   void _setupForConfig() {
