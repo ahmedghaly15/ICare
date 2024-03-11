@@ -39,8 +39,10 @@ class CustomRecordButton extends StatelessWidget {
           onPressed: () {
             if (context.read<CryTranslatorCubit>().isRecording) {
               context.read<CryTranslatorCubit>().countDownController.dispose();
+              context.read<CryTranslatorCubit>().stopRecording();
             } else {
               context.read<CryTranslatorCubit>().startTimer();
+              context.read<CryTranslatorCubit>().startRecording();
             }
             context.read<CryTranslatorCubit>().convertIsRecording();
           },

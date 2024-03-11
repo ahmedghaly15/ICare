@@ -60,6 +60,11 @@ dependencies:
   flutter_staggered_animations: ^1.1.1
   # A flutter plugin for displaying a countdown timer
   flutter_countdown_timer: ^4.1.0
+  # Audio recorder from microphone to file or stream 
+  record: ^5.0.4
+  audioplayers: ^5.2.1
+  path_provider: ^2.1.2
+
 
 
 dev_dependencies:

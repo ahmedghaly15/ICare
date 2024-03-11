@@ -45,6 +45,17 @@ class CryTranslatorViewBody extends StatelessWidget {
                       child: const CustomRecordButton(),
                     ),
                     if (context.read<CryTranslatorCubit>().isRecording ==
+                            false &&
+                        context.read<CryTranslatorCubit>().audioPath !=
+                            null) ...[
+                      ElevatedButton(
+                        onPressed: () {
+                          context.read<CryTranslatorCubit>().playAudio();
+                        },
+                        child: const Text('Start playing'),
+                      ),
+                    ],
+                    if (context.read<CryTranslatorCubit>().isRecording ==
                         false) ...[
                       MySizedBox.height12,
                       FadeInUp(
