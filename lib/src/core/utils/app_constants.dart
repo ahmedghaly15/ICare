@@ -36,4 +36,7 @@ class AppConstants {
 
   static const Duration animationConfigurationDuration =
       Duration(milliseconds: 375);
+
+  static const Duration cryTranslatorAnimationDuration =
+      Duration(milliseconds: 650);
 }
