@@ -18,12 +18,12 @@ class CryTranslatorViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CryTranslatorCubit, CryTranslatorState>(
       builder: (context, _) {
-        return Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          alignment: Alignment.center,
-          child: CustomScrollView(
-            slivers: [
-              SliverFillRemaining(
+        return CustomScrollView(
+          slivers: <Widget>[
+            SliverFillRemaining(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -33,16 +33,13 @@ class CryTranslatorViewBody extends StatelessWidget {
                         duration: AppConstants.cryTranslatorAnimationDuration,
                         child: const CustomCountDownTimer(),
                       ),
-                    ],
-                    if (context.read<CryTranslatorCubit>().isRecording) ...[
                       const Spacer(),
                       FadeInDown(
                         duration: AppConstants.cryTranslatorAnimationDuration,
                         child: const RecordingWaveWidget(),
-                      )
-                    ],
-                    if (context.read<CryTranslatorCubit>().isRecording)
+                      ),
                       const Spacer(),
+                    ],
                     FadeInUp(
                       duration: AppConstants.cryTranslatorAnimationDuration,
                       child: const CustomRecordButton(),
@@ -64,8 +61,8 @@ class CryTranslatorViewBody extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );
