@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:icare/src/core/api/api_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_predictor_datasource.dart';
@@ -9,7 +11,7 @@ class BabyCryPredictorRepo {
   const BabyCryPredictorRepo(this._babyCryPredictorDatasource);
 
   Future<ApiResult<BabyCryPredictorResponse>> babyCryPredictor(
-    String audioPath,
+    File audioPath,
   ) {
     return executeAndHandleErrors<BabyCryPredictorResponse>(
       () async => await _babyCryPredictorDatasource.babyCryPredictor(audioPath),

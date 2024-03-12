@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -18,21 +19,8 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     audioRecorder = AudioRecorder();
   }
 
-  void babyCryPredictor() async {
-    emit(const BabyCryPredictorState.loading());
-
-    final result = await _babyCryPredictorUseCase.call(audioPath!);
-
-    result.when(
-      success: (data) => emit(BabyCryPredictorState.success(data)),
-      error: (error) =>
-          emit(BabyCryPredictorState.error(error.apiErrorModel.error ?? '')),
-    );
-  }
-
   late bool isRecording;
   late CountdownTimerController countDownController;
-
   late AudioRecorder audioRecorder;
 
   void convertIsRecording() {
@@ -48,9 +36,10 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     countDownController.start();
   }
 
-  void onTimerEnd() {
+  void onTimerEnd() async {
     convertIsRecording();
-    stopRecording();
+    await stopRecording();
+    // babyCryPredictor();
   }
 
   String? audioPath;
@@ -86,10 +75,22 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
       String? path = await audioRecorder.stop();
       audioPath = path!;
       emit(BabyCryPredictorState.assignAudioPathVal(audioPath!));
-      debugPrint('=========>>>>>>>>>>> PATH: $audioPath <<<<<<===========');
+      debugPrint('=========>>>>>> PATH: $audioPath <<<<<<===========');
     } catch (e) {
       debugPrint('ERROR WHILE STOP RECORDING: $e');
     }
+  }
+
+  void babyCryPredictor() async {
+    emit(const BabyCryPredictorState.loading());
+
+    final result = await _babyCryPredictorUseCase.call(File(audioPath!));
+
+    result.when(
+      success: (data) => emit(BabyCryPredictorState.success(data)),
+      error: (error) =>
+          emit(BabyCryPredictorState.error(error.apiErrorModel.error ?? '')),
+    );
   }
 
   @override
