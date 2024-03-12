@@ -21,6 +21,9 @@ mixin _$BabyCryPredictorState<T> {
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
     required TResult Function(String path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +31,9 @@ mixin _$BabyCryPredictorState<T> {
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
     TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +41,9 @@ mixin _$BabyCryPredictorState<T> {
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
     TResult Function(String path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +52,9 @@ mixin _$BabyCryPredictorState<T> {
     required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +62,9 @@ mixin _$BabyCryPredictorState<T> {
     TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +72,9 @@ mixin _$BabyCryPredictorState<T> {
     TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +144,9 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
     required TResult Function(String path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
   }) {
     return initial();
   }
@@ -136,6 +157,9 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
     TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
   }) {
     return initial?.call();
   }
@@ -146,6 +170,9 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
     TResult Function(String path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -160,6 +187,9 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
     required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
   }) {
     return initial(this);
   }
@@ -170,6 +200,9 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
     TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
   }) {
     return initial?.call(this);
   }
@@ -180,6 +213,9 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
     TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -263,6 +299,9 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
     required TResult Function(String path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
   }) {
     return convertIsRecording(isRecording);
   }
@@ -273,6 +312,9 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
     TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
   }) {
     return convertIsRecording?.call(isRecording);
   }
@@ -283,6 +325,9 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
     TResult Function(String path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (convertIsRecording != null) {
@@ -297,6 +342,9 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
   }) {
     return convertIsRecording(this);
   }
@@ -307,6 +355,9 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
   }) {
     return convertIsRecording?.call(this);
   }
@@ -317,6 +368,9 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
     required TResult orElse(),
   }) {
     if (convertIsRecording != null) {
@@ -405,6 +459,9 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
     required TResult Function(String path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
   }) {
     return assignAudioPathVal(path);
   }
@@ -415,6 +472,9 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
     TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
   }) {
     return assignAudioPathVal?.call(path);
   }
@@ -425,6 +485,9 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
     TResult Function(String path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (assignAudioPathVal != null) {
@@ -439,6 +502,9 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     required TResult Function(_BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
   }) {
     return assignAudioPathVal(this);
   }
@@ -449,6 +515,9 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
   }) {
     return assignAudioPathVal?.call(this);
   }
@@ -459,6 +528,9 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult Function(_BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
     required TResult orElse(),
   }) {
     if (assignAudioPathVal != null) {
@@ -475,5 +547,459 @@ abstract class _AssignAudioPathVal<T> implements BabyCryPredictorState<T> {
   String get path;
   @JsonKey(ignore: true)
   _$$AssignAudioPathValImplCopyWith<T, _$AssignAudioPathValImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BabyCryPredictorLoadingImplCopyWith<T, $Res> {
+  factory _$$BabyCryPredictorLoadingImplCopyWith(
+          _$BabyCryPredictorLoadingImpl<T> value,
+          $Res Function(_$BabyCryPredictorLoadingImpl<T>) then) =
+      __$$BabyCryPredictorLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$BabyCryPredictorLoadingImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$BabyCryPredictorLoadingImpl<T>>
+    implements _$$BabyCryPredictorLoadingImplCopyWith<T, $Res> {
+  __$$BabyCryPredictorLoadingImplCopyWithImpl(
+      _$BabyCryPredictorLoadingImpl<T> _value,
+      $Res Function(_$BabyCryPredictorLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
+  const _$BabyCryPredictorLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.loading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BabyCryPredictorLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BabyCryPredictorLoading<T> implements BabyCryPredictorState<T> {
+  const factory BabyCryPredictorLoading() = _$BabyCryPredictorLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$BabyCryPredictorSuccessImplCopyWith<T, $Res> {
+  factory _$$BabyCryPredictorSuccessImplCopyWith(
+          _$BabyCryPredictorSuccessImpl<T> value,
+          $Res Function(_$BabyCryPredictorSuccessImpl<T>) then) =
+      __$$BabyCryPredictorSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({BabyCryPredictorResponse data});
+}
+
+/// @nodoc
+class __$$BabyCryPredictorSuccessImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$BabyCryPredictorSuccessImpl<T>>
+    implements _$$BabyCryPredictorSuccessImplCopyWith<T, $Res> {
+  __$$BabyCryPredictorSuccessImplCopyWithImpl(
+      _$BabyCryPredictorSuccessImpl<T> _value,
+      $Res Function(_$BabyCryPredictorSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$BabyCryPredictorSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as BabyCryPredictorResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
+  const _$BabyCryPredictorSuccessImpl(this.data);
+
+  @override
+  final BabyCryPredictorResponse data;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.success(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BabyCryPredictorSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BabyCryPredictorSuccessImplCopyWith<T, _$BabyCryPredictorSuccessImpl<T>>
+      get copyWith => __$$BabyCryPredictorSuccessImplCopyWithImpl<T,
+          _$BabyCryPredictorSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+  }) {
+    return success(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+  }) {
+    return success?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BabyCryPredictorSuccess<T> implements BabyCryPredictorState<T> {
+  const factory BabyCryPredictorSuccess(final BabyCryPredictorResponse data) =
+      _$BabyCryPredictorSuccessImpl<T>;
+
+  BabyCryPredictorResponse get data;
+  @JsonKey(ignore: true)
+  _$$BabyCryPredictorSuccessImplCopyWith<T, _$BabyCryPredictorSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BabyCryPredictorErrorImplCopyWith<T, $Res> {
+  factory _$$BabyCryPredictorErrorImplCopyWith(
+          _$BabyCryPredictorErrorImpl<T> value,
+          $Res Function(_$BabyCryPredictorErrorImpl<T>) then) =
+      __$$BabyCryPredictorErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$BabyCryPredictorErrorImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$BabyCryPredictorErrorImpl<T>>
+    implements _$$BabyCryPredictorErrorImplCopyWith<T, $Res> {
+  __$$BabyCryPredictorErrorImplCopyWithImpl(
+      _$BabyCryPredictorErrorImpl<T> _value,
+      $Res Function(_$BabyCryPredictorErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$BabyCryPredictorErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
+  const _$BabyCryPredictorErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BabyCryPredictorErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BabyCryPredictorErrorImplCopyWith<T, _$BabyCryPredictorErrorImpl<T>>
+      get copyWith => __$$BabyCryPredictorErrorImplCopyWithImpl<T,
+          _$BabyCryPredictorErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BabyCryPredictorError<T> implements BabyCryPredictorState<T> {
+  const factory BabyCryPredictorError(final String error) =
+      _$BabyCryPredictorErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$BabyCryPredictorErrorImplCopyWith<T, _$BabyCryPredictorErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

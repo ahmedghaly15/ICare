@@ -45,17 +45,6 @@ class BabyCryPredictorViewBody extends StatelessWidget {
                       child: const CustomRecordButton(),
                     ),
                     if (context.read<BabyCryPredictorCubit>().isRecording ==
-                            false &&
-                        context.read<BabyCryPredictorCubit>().audioPath !=
-                            null) ...[
-                      ElevatedButton(
-                        onPressed: () {
-                          context.read<BabyCryPredictorCubit>().playAudio();
-                        },
-                        child: const Text('Start playing'),
-                      ),
-                    ],
-                    if (context.read<BabyCryPredictorCubit>().isRecording ==
                         false) ...[
                       MySizedBox.height12,
                       FadeInUp(

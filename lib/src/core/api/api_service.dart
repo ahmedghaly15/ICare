@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import 'package:icare/src/core/api/end_points.dart';
@@ -31,5 +32,11 @@ abstract class ApiService {
   Future<DiseaseDetails> getMedicalInfoDiseaseDetails(
     @Path('disease_type') String diseaseType,
     @Query('disease_id') String diseaseId,
+  );
+
+  @POST(EndPoints.babyCryPredictor)
+  @FormUrlEncoded()
+  Future<BabyCryPredictorResponse> babyCryPredictor(
+    @Field('baby_cry_audio') String babyCryAudio,
   );
 }

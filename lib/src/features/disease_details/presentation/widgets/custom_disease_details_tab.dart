@@ -30,9 +30,11 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
           } else if (item is Map<String, dynamic>) {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: item.entries.map((entry) {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     FadeInUp(
                       child: Text(
