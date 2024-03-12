@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_predictor_datasource.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/repositories/baby_cry_predictor_repo.dart';
+import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
 import 'package:icare/src/features/disease_details/data/datasources/medical_info_disease_details_remote_datasource.dart';
 import 'package:icare/src/features/disease_details/data/repositories/medical_info_disease_details_repo.dart';
@@ -145,6 +148,11 @@ class DependencyInjection {
         getIt.get<ApiService>(),
       ),
     );
+
+    // ========== BabyCryPredictor feature ==========
+    getIt.registerLazySingleton<BabyCryPredictorDatasource>(
+      () => BabyCryPredictorDatasourceImpl(getIt.get<ApiService>()),
+    );
   }
 
   void _setupForRepos() {
@@ -212,6 +220,11 @@ class DependencyInjection {
         getIt.get<DiseaseDetailsLocalDatasource>(),
       ),
     );
+
+    // ========== BabyCryPredictor feature ==========
+    getIt.registerLazySingleton<BabyCryPredictorRepo>(
+      () => BabyCryPredictorRepo(getIt.get<BabyCryPredictorDatasource>()),
+    );
   }
 
   void _setupForUseCases() {
@@ -269,6 +282,11 @@ class DependencyInjection {
       () => GetMedicalInfoDiseaseDetailsUseCase(
         getIt.get<MedicalInfoDiseaseDetailsRepo>(),
       ),
+    );
+
+    // ========== BabyCryPredictor feature ==========
+    getIt.registerLazySingleton<BabyCryPredictorUseCase>(
+      () => BabyCryPredictorUseCase(getIt.get<BabyCryPredictorRepo>()),
     );
   }
 
@@ -334,8 +352,10 @@ class DependencyInjection {
       ),
     );
 
-    // ========== CryTranslator feature ==========
-    getIt.registerFactory<BabyCryPredictorCubit>(() => BabyCryPredictorCubit());
+    // ========== BabyCryPredictor feature ==========
+    getIt.registerFactory<BabyCryPredictorCubit>(
+      () => BabyCryPredictorCubit(getIt.get<BabyCryPredictorUseCase>()),
+    );
   }
 
   void _setupForConfig() {
