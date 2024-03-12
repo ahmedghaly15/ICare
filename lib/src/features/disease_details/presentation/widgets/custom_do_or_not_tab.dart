@@ -12,8 +12,8 @@ class CustomDoOrNotTab extends StatelessWidget {
     required this.notToDoList,
   });
 
-  final List<String> doList;
-  final List<String> notToDoList;
+  final List<dynamic> doList;
+  final List<dynamic> notToDoList;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CustomDoOrNotTab extends StatelessWidget {
           children: <Widget>[
             Text(
               'Do',
-              style: AppTextStyles.textStyle24Medium(context).copyWith(
+              style: AppTextStyles.textStyle25Bold(context).copyWith(
                 color: AppColors.primaryColor,
               ),
             ),
@@ -37,7 +37,7 @@ class CustomDoOrNotTab extends StatelessWidget {
             MySizedBox.height12,
             Text(
               'Do Not',
-              style: AppTextStyles.textStyle24Medium(context).copyWith(
+              style: AppTextStyles.textStyle25Bold(context).copyWith(
                 color: AppColors.primaryColor,
               ),
             ),

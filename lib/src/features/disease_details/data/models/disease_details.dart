@@ -6,11 +6,11 @@ part 'disease_details.g.dart';
 @JsonSerializable()
 class DiseaseDetails {
   @JsonKey(name: AppStrings.symptoms)
-  final List<String> symptoms;
+  final List<dynamic> symptoms;
   @JsonKey(name: AppStrings.redFlags)
-  final List<String> redFlags;
+  final List<dynamic> redFlags;
   @JsonKey(name: AppStrings.initialManagement)
-  final List<String> initialManagement;
+  final List<dynamic> initialManagement;
   @JsonKey(name: AppStrings.doOrNot)
   final DoOrNot doOrNot;
 
@@ -30,9 +30,9 @@ class DiseaseDetails {
 @JsonSerializable()
 class DoOrNot {
   @JsonKey(name: AppStrings.dO)
-  final List<String> dO;
+  final List<dynamic> dO;
   @JsonKey(name: AppStrings.dont)
-  final List<String> doNot;
+  final List<dynamic> doNot;
 
   const DoOrNot({
     required this.dO,

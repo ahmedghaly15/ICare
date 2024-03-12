@@ -9,7 +9,7 @@ import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cr
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/custom_count_down_timer.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/custom_record_button.dart';
-import 'package:icare/src/features/cry_translator/presentation/widgets/recording_wave_widget.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/recording_wave_widget.dart';
 
 class BabyCryPredictorViewBody extends StatelessWidget {
   const BabyCryPredictorViewBody({super.key});
