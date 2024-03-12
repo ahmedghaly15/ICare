@@ -167,17 +167,24 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<BabyCryPredictorResponse> babyCryPredictor(String babyCryAudio) async {
+  Future<BabyCryPredictorResponse> babyCryPredictor(File babyCryAudio) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {'baby_cry_audio': babyCryAudio};
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'baby_cry_audio',
+      MultipartFile.fromFileSync(
+        babyCryAudio.path,
+        filename: babyCryAudio.path.split(Platform.pathSeparator).last,
+      ),
+    ));
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BabyCryPredictorResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
-      contentType: 'application/x-www-form-urlencoded',
+      contentType: 'multipart/form-data',
     )
             .compose(
               _dio.options,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 import 'package:retrofit/retrofit.dart';
@@ -35,8 +37,8 @@ abstract class ApiService {
   );
 
   @POST(EndPoints.babyCryPredictor)
-  @FormUrlEncoded()
+  @MultiPart()
   Future<BabyCryPredictorResponse> babyCryPredictor(
-    @Field('baby_cry_audio') String babyCryAudio,
+    @Part(name: 'baby_cry_audio') File babyCryAudio,
   );
 }
