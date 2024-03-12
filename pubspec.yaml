@@ -62,7 +62,7 @@ dependencies:
   flutter_countdown_timer: ^4.1.0
   # Audio recorder from microphone to file or stream 
   record: ^5.0.4
-  audioplayers: ^5.2.1
+  # Flutter plugin for getting commonly used locations on host platform file systems, such as the temp and app data directories.
   path_provider: ^2.1.2
 
 
