@@ -49,7 +49,7 @@ mixin _$BabyCryPredictorState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
@@ -59,7 +59,7 @@ mixin _$BabyCryPredictorState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
@@ -69,7 +69,7 @@ mixin _$BabyCryPredictorState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
@@ -120,7 +120,7 @@ class __$$BabyCryPredictorInitialImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
+class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
   const _$BabyCryPredictorInitialImpl();
 
   @override
@@ -184,7 +184,7 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
@@ -197,7 +197,7 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
@@ -210,7 +210,7 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
@@ -225,8 +225,8 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
   }
 }
 
-abstract class _BabyCryPredictorInitial<T> implements BabyCryPredictorState<T> {
-  const factory _BabyCryPredictorInitial() = _$BabyCryPredictorInitialImpl<T>;
+abstract class BabyCryPredictorInitial<T> implements BabyCryPredictorState<T> {
+  const factory BabyCryPredictorInitial() = _$BabyCryPredictorInitialImpl<T>;
 }
 
 /// @nodoc
@@ -339,7 +339,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
@@ -352,7 +352,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
@@ -365,7 +365,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
@@ -499,7 +499,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
@@ -512,7 +512,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
@@ -525,7 +525,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
@@ -635,7 +635,7 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
@@ -648,7 +648,7 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
@@ -661,7 +661,7 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
@@ -791,7 +791,7 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
@@ -804,7 +804,7 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
@@ -817,7 +817,7 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
@@ -953,7 +953,7 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
     required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
     required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
@@ -966,7 +966,7 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
     TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
@@ -979,7 +979,7 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
     TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
     TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     TResult Function(BabyCryPredictorLoading<T> value)? loading,

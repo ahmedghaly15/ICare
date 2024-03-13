@@ -5,7 +5,7 @@ part 'baby_cry_predictor_state.freezed.dart';
 
 @freezed
 class BabyCryPredictorState<T> with _$BabyCryPredictorState<T> {
-  const factory BabyCryPredictorState.initial() = _BabyCryPredictorInitial;
+  const factory BabyCryPredictorState.initial() = BabyCryPredictorInitial;
   const factory BabyCryPredictorState.convertIsRecording(bool isRecording) =
       _ConvertIsRecording<T>;
 

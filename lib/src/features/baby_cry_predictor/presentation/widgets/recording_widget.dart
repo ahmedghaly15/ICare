@@ -11,13 +11,13 @@ import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/custo
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/custom_record_button.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/recording_wave_widget.dart';
 
-class BabyCryPredictorViewBody extends StatelessWidget {
-  const BabyCryPredictorViewBody({super.key});
+class RecordingWidget extends StatelessWidget {
+  const RecordingWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BabyCryPredictorCubit, BabyCryPredictorState>(
-      builder: (context, _) {
+      builder: (context, state) {
         return CustomScrollView(
           slivers: <Widget>[
             SliverFillRemaining(
