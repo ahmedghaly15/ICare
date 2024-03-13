@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
+import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:record/record.dart';
 import 'package:path_provider/path_provider.dart';
@@ -16,19 +17,20 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     this._babyCryPredictorUseCase,
   ) : super(const BabyCryPredictorState.initial()) {
     isRecording = false;
-    audioRecorder = AudioRecorder();
+    _audioRecorder = AudioRecorder();
   }
 
   late bool isRecording;
   late CountdownTimerController countDownController;
-  late AudioRecorder audioRecorder;
+  late final AudioRecorder _audioRecorder;
+  String? _audioPath;
 
-  void convertIsRecording() {
+  void _convertIsRecording() {
     isRecording = !isRecording;
     emit(BabyCryPredictorState.convertIsRecording(isRecording));
   }
 
-  void startTimer() {
+  void _startTimer() {
     final endTime =
         DateTime.now().millisecondsSinceEpoch + 1000 * 10; // 10 seconds
     countDownController =
@@ -37,12 +39,10 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   }
 
   void onTimerEnd() async {
-    convertIsRecording();
-    await stopRecording();
-    // babyCryPredictor();
+    _convertIsRecording();
+    await _stopRecording();
+    _babyCryPredictor();
   }
-
-  String? audioPath;
 
   String _generateRandomId() {
     const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -54,48 +54,76 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     ).join();
   }
 
-  Future<void> startRecording() async {
+  Future<void> _startRecording(BuildContext context) async {
     try {
-      if (await audioRecorder.hasPermission()) {
+      if (await _audioRecorder.hasPermission()) {
         debugPrint(
             '=========>>>>>>>>>>>RECORDING!!!!!!!!!!!!!!!<<<<<<===========');
 
         String filePath = await getApplicationDocumentsDirectory()
             .then((value) => '${value.path}/${_generateRandomId()}.wav');
 
-        await audioRecorder.start(const RecordConfig(), path: filePath);
+        await _audioRecorder.start(
+          const RecordConfig(
+            encoder: AudioEncoder.wav,
+          ),
+          path: filePath,
+        );
+      } else {
+        CustomDialog.show(
+          context: context,
+          state: CustomDialogStates.warning,
+          message: 'Permission denied!',
+        );
       }
     } catch (e) {
       debugPrint('ERROR WHILE RECORDING: $e');
     }
   }
 
-  Future<void> stopRecording() async {
+  Future<void> _stopRecording() async {
     try {
-      String? path = await audioRecorder.stop();
-      audioPath = path!;
-      emit(BabyCryPredictorState.assignAudioPathVal(audioPath!));
-      debugPrint('=========>>>>>> PATH: $audioPath <<<<<<===========');
+      String? path = await _audioRecorder.stop();
+      _audioPath = path!;
+      emit(BabyCryPredictorState.assignAudioPathVal(_audioPath!));
+      debugPrint('=========>>>>>> PATH: $_audioPath <<<<<<===========');
     } catch (e) {
       debugPrint('ERROR WHILE STOP RECORDING: $e');
     }
   }
 
-  void babyCryPredictor() async {
+  void _babyCryPredictor() async {
     emit(const BabyCryPredictorState.loading());
 
-    final result = await _babyCryPredictorUseCase.call(File(audioPath!));
+    final result = await _babyCryPredictorUseCase.call(File(_audioPath!));
 
     result.when(
-      success: (data) => emit(BabyCryPredictorState.success(data)),
+      success: (data) {
+        emit(BabyCryPredictorState.success(data));
+
+        _audioPath = null;
+        emit(BabyCryPredictorState.assignAudioPathVal(_audioPath));
+      },
       error: (error) =>
           emit(BabyCryPredictorState.error(error.apiErrorModel.error ?? '')),
     );
   }
 
+  void handleBabyCryPrediction(BuildContext context) async {
+    if (isRecording == false) {
+      _startTimer();
+      _startRecording(context);
+    } else {
+      countDownController.dispose();
+      await _stopRecording();
+      _babyCryPredictor();
+    }
+    _convertIsRecording();
+  }
+
   @override
   Future<void> close() {
-    audioRecorder.dispose();
+    _audioRecorder.dispose();
     return super.close();
   }
 }

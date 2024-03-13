@@ -9,7 +9,7 @@ class BabyCryPredictorState<T> with _$BabyCryPredictorState<T> {
   const factory BabyCryPredictorState.convertIsRecording(bool isRecording) =
       _ConvertIsRecording<T>;
 
-  const factory BabyCryPredictorState.assignAudioPathVal(String path) =
+  const factory BabyCryPredictorState.assignAudioPathVal(String? path) =
       _AssignAudioPathVal<T>;
 
   const factory BabyCryPredictorState.loading() = BabyCryPredictorLoading;

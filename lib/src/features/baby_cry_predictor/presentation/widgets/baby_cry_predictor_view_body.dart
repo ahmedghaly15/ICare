@@ -56,20 +56,6 @@ class BabyCryPredictorViewBody extends StatelessWidget {
                         ),
                       )
                     ],
-                    if (context.read<BabyCryPredictorCubit>().audioPath !=
-                        null) ...[
-                      ElevatedButton(
-                        onPressed: () {
-                          context
-                              .read<BabyCryPredictorCubit>()
-                              .babyCryPredictor();
-                        },
-                        child: Text(
-                          'Predict',
-                          style: AppTextStyles.textStyle25Bold(context),
-                        ),
-                      ),
-                    ],
                     if (context.read<BabyCryPredictorCubit>().isRecording)
                       const Spacer(),
                   ],

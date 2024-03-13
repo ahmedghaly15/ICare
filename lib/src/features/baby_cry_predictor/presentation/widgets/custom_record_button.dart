@@ -37,19 +37,9 @@ class CustomRecordButton extends StatelessWidget {
               : BoxShape.circle,
         ),
         child: MaterialButton(
-          onPressed: () {
-            if (context.read<BabyCryPredictorCubit>().isRecording) {
-              context
-                  .read<BabyCryPredictorCubit>()
-                  .countDownController
-                  .dispose();
-              context.read<BabyCryPredictorCubit>().stopRecording();
-            } else {
-              context.read<BabyCryPredictorCubit>().startTimer();
-              context.read<BabyCryPredictorCubit>().startRecording();
-            }
-            context.read<BabyCryPredictorCubit>().convertIsRecording();
-          },
+          onPressed: () => context
+              .read<BabyCryPredictorCubit>()
+              .handleBabyCryPrediction(context),
           shape: const CircleBorder(),
           child: const SizedBox.shrink(),
         ),

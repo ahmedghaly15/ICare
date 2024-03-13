@@ -20,7 +20,7 @@ mixin _$BabyCryPredictorState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function(String? path) assignAudioPathVal,
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
@@ -30,7 +30,7 @@ mixin _$BabyCryPredictorState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function(String? path)? assignAudioPathVal,
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
@@ -40,7 +40,7 @@ mixin _$BabyCryPredictorState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String path)? assignAudioPathVal,
+    TResult Function(String? path)? assignAudioPathVal,
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
@@ -143,7 +143,7 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function(String? path) assignAudioPathVal,
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
@@ -156,7 +156,7 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function(String? path)? assignAudioPathVal,
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
@@ -169,7 +169,7 @@ class _$BabyCryPredictorInitialImpl<T> implements _BabyCryPredictorInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String path)? assignAudioPathVal,
+    TResult Function(String? path)? assignAudioPathVal,
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
@@ -298,7 +298,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function(String? path) assignAudioPathVal,
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
@@ -311,7 +311,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function(String? path)? assignAudioPathVal,
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
@@ -324,7 +324,7 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String path)? assignAudioPathVal,
+    TResult Function(String? path)? assignAudioPathVal,
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
@@ -396,7 +396,7 @@ abstract class _$$AssignAudioPathValImplCopyWith<T, $Res> {
           $Res Function(_$AssignAudioPathValImpl<T>) then) =
       __$$AssignAudioPathValImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String path});
+  $Res call({String? path});
 }
 
 /// @nodoc
@@ -411,13 +411,13 @@ class __$$AssignAudioPathValImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? path = null,
+    Object? path = freezed,
   }) {
     return _then(_$AssignAudioPathValImpl<T>(
-      null == path
+      freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -428,7 +428,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   const _$AssignAudioPathValImpl(this.path);
 
   @override
-  final String path;
+  final String? path;
 
   @override
   String toString() {
@@ -458,7 +458,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function(String? path) assignAudioPathVal,
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
@@ -471,7 +471,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function(String? path)? assignAudioPathVal,
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
@@ -484,7 +484,7 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String path)? assignAudioPathVal,
+    TResult Function(String? path)? assignAudioPathVal,
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
@@ -541,10 +541,10 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
 }
 
 abstract class _AssignAudioPathVal<T> implements BabyCryPredictorState<T> {
-  const factory _AssignAudioPathVal(final String path) =
+  const factory _AssignAudioPathVal(final String? path) =
       _$AssignAudioPathValImpl<T>;
 
-  String get path;
+  String? get path;
   @JsonKey(ignore: true)
   _$$AssignAudioPathValImplCopyWith<T, _$AssignAudioPathValImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
@@ -594,7 +594,7 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function(String? path) assignAudioPathVal,
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
@@ -607,7 +607,7 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function(String? path)? assignAudioPathVal,
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
@@ -620,7 +620,7 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String path)? assignAudioPathVal,
+    TResult Function(String? path)? assignAudioPathVal,
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
@@ -750,7 +750,7 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function(String? path) assignAudioPathVal,
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
@@ -763,7 +763,7 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function(String? path)? assignAudioPathVal,
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
@@ -776,7 +776,7 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String path)? assignAudioPathVal,
+    TResult Function(String? path)? assignAudioPathVal,
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
@@ -912,7 +912,7 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String path) assignAudioPathVal,
+    required TResult Function(String? path) assignAudioPathVal,
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
@@ -925,7 +925,7 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String path)? assignAudioPathVal,
+    TResult? Function(String? path)? assignAudioPathVal,
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
@@ -938,7 +938,7 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String path)? assignAudioPathVal,
+    TResult Function(String? path)? assignAudioPathVal,
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
