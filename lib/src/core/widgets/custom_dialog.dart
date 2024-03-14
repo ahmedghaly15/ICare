@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/widgets/positined_app_icon.dart';
+import 'package:icare/src/core/widgets/positioned_app_icon.dart';
 
 enum CustomDialogStates { warning, success, error }
 
 class CustomDialog {
-  static void show({
+  static Future show({
     required BuildContext context,
     required CustomDialogStates state,
     required String message,
-  }) {
-    showGeneralDialog(
+  }) async {
+    return await showGeneralDialog(
       context: context,
       barrierDismissible: true,
       barrierLabel: '',

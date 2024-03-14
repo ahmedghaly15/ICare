@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
@@ -56,26 +57,16 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
   Future<void> _startRecording(BuildContext context) async {
     try {
-      if (await _audioRecorder.hasPermission()) {
-        debugPrint(
-            '=========>>>>>>>>>>>RECORDING!!!!!!!!!!!!!!!<<<<<<===========');
-
-        String filePath = await getApplicationDocumentsDirectory()
-            .then((value) => '${value.path}/${_generateRandomId()}.wav');
-
-        await _audioRecorder.start(
-          const RecordConfig(
-            encoder: AudioEncoder.wav,
-          ),
-          path: filePath,
-        );
-      } else {
-        CustomDialog.show(
-          context: context,
-          state: CustomDialogStates.warning,
-          message: 'Permission denied!',
-        );
-      }
+      debugPrint(
+          '=========>>>>>>>>>>>RECORDING!!!!!!!!!!!!!!!<<<<<<===========');
+      String filePath = await getApplicationDocumentsDirectory()
+          .then((value) => '${value.path}/${_generateRandomId()}.wav');
+      await _audioRecorder.start(
+        const RecordConfig(
+          encoder: AudioEncoder.wav,
+        ),
+        path: filePath,
+      );
     } catch (e) {
       debugPrint('ERROR WHILE RECORDING: $e');
     }
@@ -111,14 +102,26 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
   void handleBabyCryPrediction(BuildContext context) async {
     if (isRecording == false) {
-      _startTimer();
-      _startRecording(context);
+      final status = await Permission.microphone.request();
+
+      if (status == PermissionStatus.granted) {
+        _startTimer();
+        _startRecording(context);
+        _convertIsRecording();
+      } else if (status == PermissionStatus.permanentlyDenied) {
+        CustomDialog.show(
+          context: context,
+          state: CustomDialogStates.warning,
+          message:
+              'Microphone access is permanently denied. Please go to Settings and grant permission.',
+        );
+      }
     } else {
       countDownController.dispose();
       await _stopRecording();
       _babyCryPredictor();
+      _convertIsRecording();
     }
-    _convertIsRecording();
   }
 
   @override
