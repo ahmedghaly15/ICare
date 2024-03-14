@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.1.13/';
+    baseUrl ??= 'https://medical-app-u7a7.onrender.com/';
   }
 
   final Dio _dio;
@@ -34,7 +34,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.13/medical',
+              'https://medical-app-u7a7.onrender.com/medical',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -64,7 +64,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.13/Emergency/',
+              'https://medical-app-u7a7.onrender.com/Emergency/',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -93,7 +93,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.13/diseases',
+              'https://medical-app-u7a7.onrender.com/diseases',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -123,7 +123,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.13/Emergency/${diseaseId}',
+              'https://medical-app-u7a7.onrender.com/Emergency/${diseaseId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -153,7 +153,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.13/${diseaseType}',
+              'https://medical-app-u7a7.onrender.com/${diseaseType}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -188,7 +188,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'http://192.168.1.13/baby_cry_predictor/',
+              'https://medical-app-u7a7.onrender.com/baby_cry_predictor/',
               queryParameters: queryParameters,
               data: _data,
             )
