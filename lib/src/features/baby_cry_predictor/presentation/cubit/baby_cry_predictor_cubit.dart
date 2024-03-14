@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -112,8 +113,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
         CustomDialog.show(
           context: context,
           state: CustomDialogStates.warning,
-          message:
-              'Microphone access is permanently denied. Please go to Settings and grant permission.',
+          message: AppStrings.microphonePermissionDenied,
         );
       }
     } else {

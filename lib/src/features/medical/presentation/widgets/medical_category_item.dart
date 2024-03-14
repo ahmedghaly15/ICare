@@ -24,18 +24,18 @@ class MedicalCategoryItem extends StatelessWidget {
         padding: EdgeInsets.zero,
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConstants.radiusVal),
+          borderRadius: BorderRadius.circular(AppConstants.radius25),
         ),
         child: Card(
           elevation: 8.h,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppConstants.radiusVal),
+            borderRadius: BorderRadius.circular(AppConstants.radius25),
           ),
           child: Stack(
             alignment: AlignmentDirectional.topEnd,
             children: <Widget>[
               ClipRRect(
-                borderRadius: BorderRadius.circular(AppConstants.radiusVal),
+                borderRadius: BorderRadius.circular(AppConstants.radius25),
                 child: CustomCachedNetworkImage(
                   imageUrl: medicalCategory.medicalCategoryImage,
                 ),
