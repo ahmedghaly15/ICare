@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/recording_result_widget.dart';
@@ -27,7 +28,8 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
         buildWhen: (_, state) =>
             state is BabyCryPredictorInitial ||
             state is BabyCryPredictorSuccess ||
-            state is BabyCryPredictorError,
+            state is BabyCryPredictorError ||
+            state is BabyCryPredictorLoading,
         builder: (context, state) {
           if (state is BabyCryPredictorInitial) {
             return const RecordingWidget();
@@ -43,7 +45,9 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
               ),
             );
           } else {
-            return const SizedBox.shrink();
+            return const Center(
+              child: CustomCircularProgressIndicator(),
+            );
           }
         },
       ),
