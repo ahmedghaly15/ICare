@@ -41,4 +41,5 @@ class AppConstants {
       Duration(milliseconds: 650);
 
   static const double medicalCategoryItemAspectRatio = 350 / 175;
+  static const double medicalInfoCategoryItemAspectRatio = 1.5;
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerWidget extends StatelessWidget {
@@ -28,7 +29,9 @@ class ShimmerWidget extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           color: Colors.grey,
-          borderRadius: BorderRadius.circular(radius?.r ?? 50.r),
+          borderRadius: BorderRadius.circular(
+            radius?.r ?? AppConstants.radius25.r,
+          ),
         ),
       ),
     );

@@ -19,7 +19,7 @@ class MedicalCategoryLoadingListView extends StatelessWidget {
       itemCount: 4,
       itemBuilder: (_, __) => const AspectRatio(
         aspectRatio: AppConstants.medicalCategoryItemAspectRatio,
-        child: ShimmerWidget(radius: AppConstants.radius25),
+        child: ShimmerWidget(),
       ),
       separatorBuilder: (_, __) => MySizedBox.height20,
     );
