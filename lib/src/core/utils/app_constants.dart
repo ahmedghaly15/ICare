@@ -18,7 +18,7 @@ class AppConstants {
 
   static const double horizontalPaddingVal = 25;
 
-  static double radius25 = 25.0.r;
+  static const double radius25 = 25.0;
 
   static const double authTopMargin = 27.0;
 
@@ -39,4 +39,6 @@ class AppConstants {
 
   static const Duration cryTranslatorAnimationDuration =
       Duration(milliseconds: 650);
+
+  static const double medicalCategoryItemAspectRatio = 350 / 175;
 }

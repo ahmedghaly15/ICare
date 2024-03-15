@@ -50,7 +50,7 @@ class DiseaseItem extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(AppConstants.radius25),
+                    bottom: Radius.circular(AppConstants.radius25.r),
                   ),
                   color: Colors.black.withOpacity(0.5),
                 ),
@@ -70,5 +70,5 @@ class DiseaseItem extends StatelessWidget {
   }
 
   BorderRadius _diseaseItemBorderRadius() =>
-      BorderRadius.circular(AppConstants.radius25);
+      BorderRadius.circular(AppConstants.radius25.r);
 }
