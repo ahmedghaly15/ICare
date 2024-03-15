@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
+import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/recording_result_widget.dart';
@@ -38,11 +38,9 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
               predictionResult: state.data,
             );
           } else if (state is BabyCryPredictorError) {
-            return Center(
-              child: Text(
-                'ERROR: ${state.error}',
-                style: AppTextStyles.textStyle20Bold(context),
-              ),
+            return CustomErrorWidget(
+              error: state.error,
+              tryAgainOnPressed: () => context.popRoute(),
             );
           } else {
             return const Center(

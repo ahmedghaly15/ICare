@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_cubit.dart';
 import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_state.dart';
 import 'package:icare/src/features/medical_info/presentation/widgets/medical_info_categories_loading_sliver_list.dart';
@@ -19,7 +20,11 @@ class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state is GetMedicalInfoError) {
           return SliverToBoxAdapter(
-            child: Text('ERROR: ${state.error}'),
+            child: CustomErrorWidget(
+              error: state.error,
+              tryAgainOnPressed: () =>
+                  context.read<MedicalInfoCubit>().getMedicalInfo(),
+            ),
           );
         } else if (state is GetMedicalInfoSuccess) {
           return SliverPadding(

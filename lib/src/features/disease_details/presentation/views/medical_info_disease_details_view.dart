@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/disease_data.dart';
+import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/disease_details/data/models/get_medical_info_disease_details_params.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_cubit.dart';
@@ -45,7 +46,17 @@ class MedicalInfoDiseaseDetailsView extends StatelessWidget
             MedicalInfoDiseaseDetailsState>(
           builder: (_, state) {
             if (state is GetMedicalInfoDiseaseDetailsError) {
-              return Text('ERROR: ${state.error}');
+              return CustomErrorWidget(
+                error: state.error,
+                tryAgainOnPressed: () => context
+                    .read<MedicalInfoDiseaseDetailsCubit>()
+                    .getMedicalInfoDiseaseDetails(
+                      params: GetMedicalInfoDiseaseDetailsParams(
+                        diseaseId: diseaseData.id,
+                        diseaseType: diseaseType,
+                      ),
+                    ),
+              );
             } else if (state is GetMedicalInfoDiseaseDetailsSuccess) {
               return Column(
                 children: <Widget>[
