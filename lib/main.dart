@@ -7,6 +7,8 @@ import 'package:icare/src/core/firebase/firebase_options.dart';
 import 'package:icare/src/icare_app.dart';
 import 'package:icare/dependency_injection.dart';
 
+// TODO: Build error widget and no internet widget
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

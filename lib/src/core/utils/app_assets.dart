@@ -50,6 +50,14 @@ class AppAssets {
   static const String imagesDarkSplashAndroid12 =
       "assets/images/dark_splash_android_12.png";
 
+  /// Assets for imagesError
+  /// assets/images/error.png
+  static const String imagesError = "assets/images/error.png";
+
+  /// Assets for imagesNoInternet
+  /// assets/images/no_internet.png
+  static const String imagesNoInternet = "assets/images/no_internet.png";
+
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.png
   static const String imagesOnboarding1 = "assets/images/onboarding1.png";

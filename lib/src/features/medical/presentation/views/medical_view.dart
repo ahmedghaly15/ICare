@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_state.dart';
 import 'package:icare/src/features/medical/presentation/widgets/medical_categories_list_view.dart';
@@ -19,7 +20,10 @@ class MedicalView extends StatelessWidget {
           state is GetMedicalError,
       builder: (context, state) {
         if (state is GetMedicalError) {
-          return Center(child: Text('ERROR: ${state.error}'));
+          return CustomErrorWidget(
+            error: state.error,
+            tryAgainOnPressed: () => context.read<MedicalCubit>().getMedical(),
+          );
         } else if (state is GetMedicalSuccess) {
           return MedicalCategoriesListView(medicalCategories: state.data);
         } else {

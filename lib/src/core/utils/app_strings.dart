@@ -46,11 +46,11 @@ class AppStrings {
   static const String onboarding4Title =
       'Funny and Easy Way to Know Your Baby Emotion';
   static const String onboarding4Description =
-      'Access to information by asking AI chatting bot';
+      "Know your baby's emotion just by taking a photo";
   static const String onboarding5Title =
       'Help Your Baby Develop an Accurate Speech';
   static const String onboarding5Description =
-      'Access to information by asking AI chatting bot';
+      'Make sure that your baby speaks well in the right age';
   static const String next = 'Next';
   static const String skip = 'Skip';
   static const String cachedUserId = 'cachedUserId';
@@ -79,4 +79,5 @@ class AppStrings {
   static const String microphonePermissionDenied =
       'Microphone access is permanently denied. Please go to Settings and grant permission.';
   static const String theBabyIs = 'The Baby is: ';
+  static const String tryAgain = 'Try Again';
 }
