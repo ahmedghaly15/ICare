@@ -42,4 +42,8 @@ class AppConstants {
 
   static const double medicalCategoryItemAspectRatio = 350 / 175;
   static const double medicalInfoCategoryItemAspectRatio = 1.5;
+  static BorderRadius get diseaseDetailsImageBorderRadius =>
+      BorderRadius.vertical(
+        bottom: Radius.circular(50.r),
+      );
 }

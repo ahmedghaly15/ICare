@@ -44,11 +44,11 @@ class _EntryViewState extends State<EntryView> {
   }
 
   void _setSystemUIOverlayStyle() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.transparent,
+        // systemNavigationBarColor: Colors.transparent,
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark,
