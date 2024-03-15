@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
@@ -25,7 +26,7 @@ class RecordingResultWidget extends StatelessWidget {
           Expanded(
             flex: 3,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(AppConstants.radius25),
+              borderRadius: BorderRadius.circular(AppConstants.radius25.r),
               child: FadeInDown(
                 child:
                     CustomCachedNetworkImage(imageUrl: predictionResult.photo),

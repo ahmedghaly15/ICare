@@ -19,17 +19,17 @@ class MedicalCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 350 / 175,
+      aspectRatio: AppConstants.medicalCategoryItemAspectRatio,
       child: MaterialButton(
         padding: EdgeInsets.zero,
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConstants.radius25),
+          borderRadius: BorderRadius.circular(AppConstants.radius25.r),
         ),
         child: Card(
           elevation: 8.h,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppConstants.radius25),
+            borderRadius: BorderRadius.circular(AppConstants.radius25.r),
           ),
           child: Stack(
             alignment: AlignmentDirectional.topEnd,
