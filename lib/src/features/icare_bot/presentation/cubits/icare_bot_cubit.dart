@@ -46,12 +46,18 @@ class ICareBotCubit extends Cubit<ICareBotState> {
           message: 'No response from API.',
         );
       } else {
+        final bool isScrolledToBottom = scrollController.position.pixels ==
+            scrollController.position.maxScrollExtent;
+
         // Scroll to the bottom of the chat history
-        scrollController.animateTo(
-          scrollController.position.maxScrollExtent + SizeConfig.height * 0.12,
-          duration: const Duration(milliseconds: 150),
-          curve: Curves.easeOut,
-        );
+        if (!isScrolledToBottom) {
+          scrollController.animateTo(
+            scrollController.position.maxScrollExtent +
+                SizeConfig.height * 0.12,
+            duration: const Duration(milliseconds: 150),
+            curve: Curves.easeOut,
+          );
+        }
 
         textController.clear();
       }
