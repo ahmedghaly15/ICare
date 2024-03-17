@@ -59,7 +59,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   Future<void> _startRecording(BuildContext context) async {
     try {
       debugPrint(
-          '=========>>>>>>>>>>>RECORDING!!!!!!!!!!!!!!!<<<<<<===========');
+          '=========>>>>>>>>>>> RECORDING!!!!!!!!!!!!!!! <<<<<<===========');
       String filePath = await getApplicationDocumentsDirectory()
           .then((value) => '${value.path}/${_generateRandomId()}.wav');
       await _audioRecorder.start(
@@ -107,10 +107,12 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
       if (status == PermissionStatus.granted) {
         _startTimer();
+        // ignore: use_build_context_synchronously
         _startRecording(context);
         _convertIsRecording();
       } else if (status == PermissionStatus.permanentlyDenied) {
         CustomDialog.show(
+          // ignore: use_build_context_synchronously
           context: context,
           state: CustomDialogStates.warning,
           message: AppStrings.microphonePermissionDenied,
