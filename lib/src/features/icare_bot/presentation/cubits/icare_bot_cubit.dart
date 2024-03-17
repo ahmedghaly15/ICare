@@ -63,6 +63,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
       }
     } catch (e) {
       debugPrint('ERROR WHILE SENDING MESSAGE TO GEMINI: $e');
+      textController.clear();
       emit(ICareBotState.error(e.toString()));
     }
   }

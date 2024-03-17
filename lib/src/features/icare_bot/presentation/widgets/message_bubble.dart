@@ -50,6 +50,7 @@ class MessageBubble extends StatelessWidget {
                   ),
                 ],
                 isRepeatingAnimation: false,
+                totalRepeatCount: 0,
               ),
       ),
     );
