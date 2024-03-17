@@ -10,6 +10,7 @@ import 'package:icare/src/features/disease_details/data/datasources/medical_info
 import 'package:icare/src/features/disease_details/data/repositories/medical_info_disease_details_repo.dart';
 import 'package:icare/src/features/disease_details/domain/usecases/get_medical_info_disease_details.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_cubit.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -356,6 +357,9 @@ class DependencyInjection {
     getIt.registerFactory<BabyCryPredictorCubit>(
       () => BabyCryPredictorCubit(getIt.get<BabyCryPredictorUseCase>()),
     );
+
+    // ========== ICareBot feature ==========
+    getIt.registerFactory<ICareBotCubit>(() => ICareBotCubit());
   }
 
   void _setupForConfig() {

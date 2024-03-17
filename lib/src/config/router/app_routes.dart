@@ -59,6 +59,7 @@ List<AutoRoute> get appRoutes {
       transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
     _buildCustomRoute(page: BabyCryPredictorRoute.page),
+    _buildCustomRoute(page: ICareBotRoute.page),
   ];
 }
 

@@ -21,7 +21,7 @@ class MedicalCategoriesListView extends StatelessWidget {
     return FadeInRight(
       child: ListView.separated(
         padding: EdgeInsets.symmetric(
-          horizontal: AppConstants.horizontalPaddingVal.w,
+          horizontal: AppConstants.padding25.w,
           vertical: 40.h,
         ),
         physics: AppConstants.scrollPhysics,

@@ -25,7 +25,7 @@ class MedicalInfoView extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(AppConstants.horizontalPaddingVal.h),
+        padding: EdgeInsets.all(AppConstants.padding25.h),
         child: const CustomScrollView(
           physics: AppConstants.scrollPhysics,
           slivers: <Widget>[

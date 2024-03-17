@@ -96,7 +96,10 @@ class _LoginFormState extends State<LoginForm> {
                 },
                 child: PrimaryButton(
                   text: AppStrings.login,
-                  onPressed: () => _login(context),
+                  onPressed: () {
+                    context.pushRoute(const ICareBotRoute());
+                    // _login(context);
+                  },
                 ),
               ),
             ],

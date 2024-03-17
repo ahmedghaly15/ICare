@@ -11,7 +11,7 @@ class MedicalCategoryLoadingListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       padding: EdgeInsets.symmetric(
-        horizontal: AppConstants.horizontalPaddingVal.w,
+        horizontal: AppConstants.padding25.w,
         vertical: 40.h,
       ),
       physics: AppConstants.scrollPhysics,

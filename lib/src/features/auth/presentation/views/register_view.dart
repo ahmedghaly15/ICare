@@ -47,7 +47,7 @@ class RegisterView extends StatelessWidget implements AutoRouteWrapper {
               ),
             ),
             SliverPadding(
-              padding: EdgeInsets.all(AppConstants.horizontalPaddingVal.h),
+              padding: EdgeInsets.all(AppConstants.padding25.h),
               sliver: const SliverFillRemaining(
                 hasScrollBody: false,
                 child: RegisterForm(),

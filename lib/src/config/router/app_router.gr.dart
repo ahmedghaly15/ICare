@@ -74,6 +74,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeView(),
       );
     },
+    ICareBotRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const ICareBotView()),
+      );
+    },
     LayoutRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -289,6 +295,20 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ICareBotView]
+class ICareBotRoute extends PageRouteInfo<void> {
+  const ICareBotRoute({List<PageRouteInfo>? children})
+      : super(
+          ICareBotRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ICareBotRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
