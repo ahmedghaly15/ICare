@@ -83,4 +83,6 @@ class AppStrings {
   static const String dotEnvFileName = '.env';
   static const String noApiKeyFound =
       'No API key found. Please provide an API Key.';
+  static const String cryPredictor = 'Cry Predictor';
+  static const String icareBot = 'ICare Bot';
 }
