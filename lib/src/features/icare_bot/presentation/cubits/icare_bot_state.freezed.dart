@@ -22,6 +22,7 @@ mixin _$ICareBotState<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String message) error,
+    required TResult Function(String text) setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ICareBotState<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String text)? setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$ICareBotState<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String message)? error,
+    TResult Function(String text)? setNewTextValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$ICareBotState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$ICareBotState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$ICareBotState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +134,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String message) error,
+    required TResult Function(String text) setNewTextValue,
   }) {
     return initial();
   }
@@ -139,6 +146,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String text)? setNewTextValue,
   }) {
     return initial?.call();
   }
@@ -150,6 +158,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String message)? error,
+    TResult Function(String text)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +174,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
   }) {
     return initial(this);
   }
@@ -176,6 +186,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +198,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,6 +254,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String message) error,
+    required TResult Function(String text) setNewTextValue,
   }) {
     return loading();
   }
@@ -253,6 +266,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String text)? setNewTextValue,
   }) {
     return loading?.call();
   }
@@ -264,6 +278,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String message)? error,
+    TResult Function(String text)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -279,6 +294,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
   }) {
     return loading(this);
   }
@@ -290,6 +306,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return loading?.call(this);
   }
@@ -301,6 +318,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -383,6 +401,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String message) error,
+    required TResult Function(String text) setNewTextValue,
   }) {
     return success(data);
   }
@@ -394,6 +413,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String text)? setNewTextValue,
   }) {
     return success?.call(data);
   }
@@ -405,6 +425,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String message)? error,
+    TResult Function(String text)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -420,6 +441,7 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
   }) {
     return success(this);
   }
@@ -431,6 +453,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return success?.call(this);
   }
@@ -442,6 +465,7 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -528,6 +552,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() loading,
     required TResult Function(T data) success,
     required TResult Function(String message) error,
+    required TResult Function(String text) setNewTextValue,
   }) {
     return error(message);
   }
@@ -539,6 +564,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? loading,
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
+    TResult? Function(String text)? setNewTextValue,
   }) {
     return error?.call(message);
   }
@@ -550,6 +576,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? loading,
     TResult Function(T data)? success,
     TResult Function(String message)? error,
+    TResult Function(String text)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -565,6 +592,7 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
   }) {
     return error(this);
   }
@@ -576,6 +604,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return error?.call(this);
   }
@@ -587,6 +616,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -602,5 +632,157 @@ abstract class Error<T> implements ICareBotState<T> {
   String get message;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetNewTextValueImplCopyWith<T, $Res> {
+  factory _$$SetNewTextValueImplCopyWith(_$SetNewTextValueImpl<T> value,
+          $Res Function(_$SetNewTextValueImpl<T>) then) =
+      __$$SetNewTextValueImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String text});
+}
+
+/// @nodoc
+class __$$SetNewTextValueImplCopyWithImpl<T, $Res>
+    extends _$ICareBotStateCopyWithImpl<T, $Res, _$SetNewTextValueImpl<T>>
+    implements _$$SetNewTextValueImplCopyWith<T, $Res> {
+  __$$SetNewTextValueImplCopyWithImpl(_$SetNewTextValueImpl<T> _value,
+      $Res Function(_$SetNewTextValueImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+  }) {
+    return _then(_$SetNewTextValueImpl<T>(
+      null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
+  const _$SetNewTextValueImpl(this.text);
+
+  @override
+  final String text;
+
+  @override
+  String toString() {
+    return 'ICareBotState<$T>.setNewTextValue(text: $text)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetNewTextValueImpl<T> &&
+            (identical(other.text, text) || other.text == text));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, text);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetNewTextValueImplCopyWith<T, _$SetNewTextValueImpl<T>> get copyWith =>
+      __$$SetNewTextValueImplCopyWithImpl<T, _$SetNewTextValueImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String message) error,
+    required TResult Function(String text) setNewTextValue,
+  }) {
+    return setNewTextValue(text);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(String text)? setNewTextValue,
+  }) {
+    return setNewTextValue?.call(text);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String message)? error,
+    TResult Function(String text)? setNewTextValue,
+    required TResult orElse(),
+  }) {
+    if (setNewTextValue != null) {
+      return setNewTextValue(text);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+  }) {
+    return setNewTextValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+  }) {
+    return setNewTextValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    required TResult orElse(),
+  }) {
+    if (setNewTextValue != null) {
+      return setNewTextValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetNewTextValue<T> implements ICareBotState<T> {
+  const factory _SetNewTextValue(final String text) = _$SetNewTextValueImpl<T>;
+
+  String get text;
+  @JsonKey(ignore: true)
+  _$$SetNewTextValueImplCopyWith<T, _$SetNewTextValueImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

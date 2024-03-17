@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
@@ -29,12 +30,12 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   void sendMessage(BuildContext context) async {
     emit(const ICareBotState.loading());
 
+    AuthHelper.keyboardUnfocus(context);
+
     try {
       final GenerateContentResponse response =
           await chat.sendMessage(Content.text(textController.text));
       final String? text = response.text;
-
-      debugPrint('====>>>>>>> $text ');
 
       emit(ICareBotState.success(response.text));
 
@@ -48,14 +49,21 @@ class ICareBotCubit extends Cubit<ICareBotState> {
         // Scroll to the bottom of the chat history
         scrollController.animateTo(
           scrollController.position.maxScrollExtent + SizeConfig.height * 0.12,
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 150),
           curve: Curves.easeOut,
         );
+
+        textController.clear();
       }
     } catch (e) {
       debugPrint('ERROR WHILE SENDING MESSAGE TO GEMINI: $e');
       emit(ICareBotState.error(e.toString()));
     }
+  }
+
+  void setNewTextValue(String text) {
+    textController.text = text;
+    emit(ICareBotState.setNewTextValue(text));
   }
 
   @override
