@@ -41,6 +41,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
 
       if (text == null) {
         CustomDialog.show(
+          // ignore: use_build_context_synchronously
           context: context,
           state: CustomDialogStates.warning,
           message: 'No response from API.',

@@ -103,6 +103,10 @@ class AppAssets {
   /// assets/svgs/baby_icon.svg
   static const String svgsBabyIcon = "assets/svgs/baby_icon.svg";
 
+  /// Assets for svgsChatbotIcon
+  /// assets/svgs/chatbot_icon.svg
+  static const String svgsChatbotIcon = "assets/svgs/chatbot_icon.svg";
+
   /// Assets for svgsCryTranslatorIcon
   /// assets/svgs/cry_translator_icon.svg
   static const String svgsCryTranslatorIcon =
