@@ -14,9 +14,9 @@ class AppConstants {
   static const ScrollPhysics scrollPhysics = BouncingScrollPhysics();
 
   static EdgeInsetsGeometry get horizontalPadding =>
-      EdgeInsets.symmetric(horizontal: horizontalPaddingVal.w);
+      EdgeInsets.symmetric(horizontal: padding25.w);
 
-  static const double horizontalPaddingVal = 25;
+  static const double padding25 = 25;
 
   static const double radius25 = 25.0;
 
@@ -46,4 +46,6 @@ class AppConstants {
       BorderRadius.vertical(
         bottom: Radius.circular(50.r),
       );
+
+  static const double padding16 = 16;
 }

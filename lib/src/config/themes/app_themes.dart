@@ -10,9 +10,12 @@ class AppThemes {
         primaryColor: AppColors.primaryColor,
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
         fontFamily: AppStrings.fontFamily,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.scaffoldBackgroundColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.primaryColor,
           elevation: 0,
+          centerTitle: true,
+          titleTextStyle: AppTextStyles.textStyle25Bold(context)
+              .copyWith(color: Colors.white),
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(

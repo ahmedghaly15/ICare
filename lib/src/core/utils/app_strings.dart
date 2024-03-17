@@ -81,4 +81,6 @@ class AppStrings {
   static const String theBabyIs = 'The Baby is: ';
   static const String tryAgain = 'Try Again';
   static const String dotEnvFileName = '.env';
+  static const String noApiKeyFound =
+      'No API key found. Please provide an API Key.';
 }
