@@ -27,8 +27,12 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: "3.2.3"
-        bundler-cache: false
+        bundler-cache: true  # Enable bundler caching
         working-directory: android
+        
+    - name: Install Gems
+      run: bundle install
+      working-directory: android
         
     - name: Build and Distribute App
       env:
@@ -36,4 +40,5 @@ jobs:
       run: |
         bundle exec fastlane android firebase_distribution
       working-directory: android
+
 
