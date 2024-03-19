@@ -23,10 +23,15 @@ jobs:
       with:
         channel: stable
 
+    - name: Force Add Platform to Bundler Lockfile
+      run: |
+        bundle lock --add-platform x86_64-linux
+      working-directory: android
+
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: "3.2.3"
+        ruby-version: '3.2.3'
         bundler-cache: true
         working-directory: android
         
