@@ -23,6 +23,10 @@ jobs:
       with:
         channel: stable
 
+    - name: Install Dependencies
+      run: bundle install
+      working-directory: android
+
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
