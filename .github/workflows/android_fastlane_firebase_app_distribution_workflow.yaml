@@ -23,6 +23,12 @@ jobs:
       with:
         channel: stable
 
+    - name: Install Bundler and Gems
+      run: |
+        gem install bundler
+        bundle install  # Install gems (if not previously installed)
+      working-directory: android
+
     - name: Force Add Platform to Bundler Lockfile
       run: |
         bundle lock --add-platform x86_64-linux
