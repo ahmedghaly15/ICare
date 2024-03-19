@@ -22,17 +22,6 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: stable
-
-    - name: Setup Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: "3.2.3"
-        bundler-cache: true  # Enable bundler caching
-        working-directory: android
-        
-    - name: Install Gems
-      run: bundle install
-      working-directory: android
         
     - name: Build and Distribute App
       env:
