@@ -11,7 +11,7 @@ class AppThemes {
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
         fontFamily: AppStrings.fontFamily,
         appBarTheme: AppBarTheme(
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: AppColors.scaffoldBackgroundColor,
           elevation: 0,
           centerTitle: true,
           titleTextStyle: AppTextStyles.textStyle25Bold(context)
