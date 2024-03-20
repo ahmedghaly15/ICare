@@ -33,7 +33,7 @@ class StartView extends StatelessWidget {
               padding: EdgeInsets.only(
                 left: 24.w,
                 right: 24.w,
-                bottom: 24.h,
+                bottom: 32.h,
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,

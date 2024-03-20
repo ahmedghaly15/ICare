@@ -62,7 +62,7 @@ class CustomDialog {
                           Align(
                             alignment: Alignment.centerRight,
                             child: TextButton(
-                              onPressed: () => context.popRoute(),
+                              onPressed: () => context.maybePop(),
                               child: Text(
                                 'Done',
                                 style: AppTextStyles.textStyle16Medium(context)

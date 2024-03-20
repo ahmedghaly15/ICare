@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
@@ -12,13 +13,13 @@ class CustomArrowBackButton extends StatelessWidget {
       height: SizeConfig.height * 0.06,
       width: SizeConfig.height * 0.06,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+        borderRadius: BorderRadius.all(Radius.circular(16.0.r)),
         color: const Color(0xffF1F1F1),
         shape: BoxShape.rectangle,
-        border: Border.all(color: Colors.black, width: 1),
+        border: Border.all(color: Colors.black, width: 1.w),
       ),
       child: MaterialButton(
-        onPressed: () => context.popRoute(),
+        onPressed: () => context.maybePop(),
         child: Icon(
           Icons.arrow_back_ios_new,
           color: AppColors.primaryColor,

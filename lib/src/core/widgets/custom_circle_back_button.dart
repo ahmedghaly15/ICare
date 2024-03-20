@@ -26,7 +26,7 @@ class CustomCircleBackButton extends StatelessWidget {
       ),
       child: MaterialButton(
         padding: EdgeInsets.zero,
-        onPressed: () => context.popRoute(),
+        onPressed: () => context.maybePop(),
         shape: const CircleBorder(),
         child: Icon(
           icon,
