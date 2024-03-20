@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ICare Development",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            "args": [
+                "--flavor",
+                "Development",
+                "--target",
+                "lib/main_dev.dart"
+            ]
+        },
+        {
+            "name": "ICare Production",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_prod.dart",
+            "args": [
+                "--flavor",
+                "Production",
+                "--target",
+                "lib/main_prod.dart"
+            ]
+        }
+    ]
+}
