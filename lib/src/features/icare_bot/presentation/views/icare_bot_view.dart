@@ -34,10 +34,7 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
             left: 0,
             right: 0,
             bottom: 0,
-            child: Image.asset(
-              AppAssets.imagesAppLogo,
-              fit: BoxFit.contain,
-            ),
+            child: Image.asset(AppAssets.imagesAppLogo),
           ),
           BlocBuilder<ICareBotCubit, ICareBotState>(
             builder: (context, state) => Stack(

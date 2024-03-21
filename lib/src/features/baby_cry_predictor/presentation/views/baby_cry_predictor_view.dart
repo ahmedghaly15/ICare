@@ -40,7 +40,8 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
           } else if (state is BabyCryPredictorError) {
             return CustomErrorWidget(
               error: state.error,
-              tryAgainOnPressed: () => context.maybePop(),
+              tryAgainOnPressed: () =>
+                  context.read<BabyCryPredictorCubit>().emitInitialState(),
             );
           } else {
             return const Center(

@@ -27,6 +27,10 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   late final AudioRecorder _audioRecorder;
   String? _audioPath;
 
+  void emitInitialState() {
+    emit(const BabyCryPredictorState.initial());
+  }
+
   void _convertIsRecording() {
     isRecording = !isRecording;
     emit(BabyCryPredictorState.convertIsRecording(isRecording));
