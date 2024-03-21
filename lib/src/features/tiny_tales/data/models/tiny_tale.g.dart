@@ -14,7 +14,7 @@ TinyTale $TinyTaleFromJson(Map<String, dynamic> json) => TinyTale(
       time: json['time'] as String?,
       dateTime: json['dateTime'] as Timestamp?,
       tinyTaleImage: json['tinyTaleImage'] as String?,
-      postId: json['postId'] as String?,
+      tinyTaleId: json['tinyTaleId'] as String?,
     );
 
 Map<String, dynamic> $TinyTaleToJson(TinyTale instance) => <String, dynamic>{
@@ -24,5 +24,5 @@ Map<String, dynamic> $TinyTaleToJson(TinyTale instance) => <String, dynamic>{
       'time': instance.time,
       'dateTime': instance.dateTime,
       'tinyTaleImage': instance.tinyTaleImage,
-      'postId': instance.postId,
+      'tinyTaleId': instance.tinyTaleId,
     };

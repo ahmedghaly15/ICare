@@ -7,6 +7,8 @@ import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_param
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
 class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
+  const TinyTalesRemoteDatasourceImpl();
+
   @override
   Future<DocumentReference<Map<String, dynamic>>> createTinyTale(
     CreateTinyTaleParams params,

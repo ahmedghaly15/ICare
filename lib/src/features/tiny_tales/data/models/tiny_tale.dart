@@ -7,16 +7,17 @@ part 'tiny_tale.g.dart';
 @JsonSerializable()
 class TinyTale {
   final ICareUser? user;
-  final String? postId;
+  final String? tinyTaleId;
   final String? time;
   final String? date;
+  // @JsonKey(fromJson: TimestampConverter.fromJson, toJson: TimestampConverter.toJson)
   final Timestamp? dateTime;
   final String? text;
   final String? tinyTaleImage;
 
   const TinyTale({
     this.user,
-    this.postId,
+    this.tinyTaleId,
     this.time,
     this.date,
     this.dateTime,
@@ -28,8 +29,15 @@ class TinyTale {
       $TinyTaleFromJson(json);
 
   Map<String, dynamic> toJson() => $TinyTaleToJson(this);
-
-  DateTime? _dateTimeFromTimestamp(Timestamp? timestamp) {
-    return timestamp?.toDate();
-  }
 }
+
+// class TimestampConverter implements JsonConverter<DateTime, Timestamp> {
+//   const TimestampConverter();
+
+//   @override
+//   DateTime fromJson(Timestamp value) => value?.toDate();
+
+//   @override
+//   Timestamp toJson(DateTime value) =>
+//       value != null ? Timestamp.fromDate(value) : null;
+// }

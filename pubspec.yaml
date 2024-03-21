@@ -74,6 +74,8 @@ dependencies:
   animated_text_kit: ^4.2.2
   # Create diverse designs of chat bubbles
   flutter_chat_bubble: ^2.0.2
+  # 
+  intl: ^0.18.1
 
 
 

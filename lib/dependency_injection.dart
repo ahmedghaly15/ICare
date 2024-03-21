@@ -11,6 +11,12 @@ import 'package:icare/src/features/disease_details/data/repositories/medical_inf
 import 'package:icare/src/features/disease_details/domain/usecases/get_medical_info_disease_details.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
+import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource.dart';
+import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource_impl.dart';
+import 'package:icare/src/features/tiny_tales/data/repositories/tiny_tales_repo_impl.dart';
+import 'package:icare/src/features/tiny_tales/domain/repositories/tiny_tales_repo.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -154,6 +160,10 @@ class DependencyInjection {
     getIt.registerLazySingleton<BabyCryPredictorDatasource>(
       () => BabyCryPredictorDatasourceImpl(getIt.get<ApiService>()),
     );
+
+    // ========== TinyTales feature ==========
+    getIt.registerLazySingleton<TinyTalesRemoteDatasource>(
+        () => const TinyTalesRemoteDatasourceImpl());
   }
 
   void _setupForRepos() {
@@ -226,6 +236,11 @@ class DependencyInjection {
     getIt.registerLazySingleton<BabyCryPredictorRepo>(
       () => BabyCryPredictorRepo(getIt.get<BabyCryPredictorDatasource>()),
     );
+
+    // ========== TinyTales feature ==========
+    getIt.registerLazySingleton<TinyTalesRepo>(
+      () => TinyTalesRepoImpl(getIt.get<TinyTalesRemoteDatasource>()),
+    );
   }
 
   void _setupForUseCases() {
@@ -288,6 +303,11 @@ class DependencyInjection {
     // ========== BabyCryPredictor feature ==========
     getIt.registerLazySingleton<BabyCryPredictorUseCase>(
       () => BabyCryPredictorUseCase(getIt.get<BabyCryPredictorRepo>()),
+    );
+
+    // ========== TinyTales feature ==========
+    getIt.registerLazySingleton<CreateTinyTaleUseCase>(
+      () => CreateTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );
   }
 
@@ -360,6 +380,13 @@ class DependencyInjection {
 
     // ========== ICareBot feature ==========
     getIt.registerFactory<ICareBotCubit>(() => ICareBotCubit());
+
+    // ========== TinyTales feature ==========
+    getIt.registerFactory<TinyTalesCubit>(
+      () => TinyTalesCubit(
+        createTinyTaleUseCase: getIt.get<CreateTinyTaleUseCase>(),
+      ),
+    );
   }
 
   void _setupForConfig() {
@@ -395,7 +422,5 @@ class DependencyInjection {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
     getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
-
-    
   }
 }

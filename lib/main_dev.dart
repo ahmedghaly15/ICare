@@ -9,6 +9,8 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/icare_app.dart';
 import 'package:icare/dependency_injection.dart';
 
+// TODO: I think time and Date attributes in TinyTale model are useless so remove them from it and from CreateTinyTaleParams too
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

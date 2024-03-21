@@ -1,5 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/utils/functions/get_date.dart';
+import 'package:intl/intl.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
@@ -7,6 +10,8 @@ import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/home/presentation/widgets/feature_icon_button.dart';
+import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
 
 @RoutePage()
 class HomeView extends StatelessWidget {
@@ -38,6 +43,13 @@ class HomeView extends StatelessWidget {
         MySizedBox.height20,
         GestureDetector(
           onTap: () {
+            context.read<TinyTalesCubit>().createTinyTale(
+                  CreateTinyTaleParams(
+                    text: 'This is a new tiny tale',
+                    date: getDate(),
+                    time: DateFormat.jm().format(DateTime.now()),
+                  ),
+                );
             // context.pushRoute(const AuthRoute());
             // context
             //     .read<EmergencyCubit>()
