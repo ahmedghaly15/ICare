@@ -77,10 +77,10 @@ packages:
     dependency: "direct main"
     description:
       name: auto_route
-      sha256: f103d0ea81090a8125ed127180e745cd536ed0edf1a3c288b2eb13d0d5220f2e
+      sha256: eb33554581a0a4aa7e6da0f13a44291a55bf71359012f1d9feb41634ff908ff8
       url: "https://pub.dev"
     source: hosted
-    version: "7.9.1"
+    version: "7.9.2"
   auto_route_generator:
     dependency: "direct dev"
     description:
@@ -321,14 +321,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.4.1"
-  email_validator:
-    dependency: "direct main"
-    description:
-      name: email_validator
-      sha256: e9a90f27ab2b915a27d7f9c2a7ddda5dd752d6942616ee83529b686fc086221b
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.17"
   expandable_page_view:
     dependency: "direct main"
     description:
@@ -1081,18 +1073,18 @@ packages:
     dependency: "direct main"
     description:
       name: rive
-      sha256: ae75a6e9cfbf146630bfb1feba97ee582d935508be6b362e4bd197b9c55a6dd3
+      sha256: ec44b6cf7341e21727c4b0e762f4ac82f9a45f7e52df3ebad2d1289a726fbaaf
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.4"
+    version: "0.13.1"
   rive_common:
     dependency: transitive
     description:
       name: rive_common
-      sha256: f4e20d0a99c5040c85624a3eb2b0b6b19e614d93a693c3bb25cf6e7bb2d3d6d3
+      sha256: "0f070bc0e764c570abd8b34d744ef30d1292bd4051f2e0951bbda755875fce6a"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.8"
+    version: "0.3.3"
   rxdart:
     dependency: transitive
     description:
