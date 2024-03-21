@@ -7,7 +7,8 @@ part of 'tiny_tale.dart';
 // **************************************************************************
 
 TinyTale $TinyTaleFromJson(Map<String, dynamic> json) => TinyTale(
-      user: ICareUser.fromJson(json['user'] as Map<String, dynamic>),
+      user: ICareUser.fromJson(json['user'] as Map<String, dynamic>)
+          as ICareUser?,
       text: json['text'] as String?,
       date: json['date'] as String?,
       time: json['time'] as String?,

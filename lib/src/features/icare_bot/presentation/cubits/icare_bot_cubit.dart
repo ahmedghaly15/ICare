@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
@@ -15,7 +16,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   void _initVariables() {
     _model = GenerativeModel(
       model: "gemini-pro",
-      apiKey: dotenv.env['API_KEY']!,
+      apiKey: dotenv.env[AppStrings.apiKey]!,
       safetySettings: <SafetySetting>[
         SafetySetting(HarmCategory.harassment, HarmBlockThreshold.high),
         SafetySetting(HarmCategory.hateSpeech, HarmBlockThreshold.high),
@@ -32,8 +33,8 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   final TextEditingController textController = TextEditingController();
   final ScrollController scrollController = ScrollController();
 
-  final bool hasApiKey =
-      dotenv.env['API_KEY'] != null && dotenv.env['API_KEY']!.isNotEmpty;
+  final bool hasApiKey = dotenv.env[AppStrings.apiKey] != null &&
+      dotenv.env[AppStrings.apiKey]!.isNotEmpty;
 
   void sendMessage(BuildContext context) async {
     emit(const ICareBotState.loading());

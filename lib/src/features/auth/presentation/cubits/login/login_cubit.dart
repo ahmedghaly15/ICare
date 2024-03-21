@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/entities/no_params.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
 import 'package:icare/src/features/auth/data/models/login_request_params.dart';
 import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
@@ -67,7 +68,9 @@ class LoginCubit extends Cubit<LoginState> {
     response.when(
       success: (loginResponse) =>
           emit(LoginState.success(loginResponse.user!.uid)),
-      error: (error) => emit(LoginState.error(error: error.failureMsg ?? '')),
+      error: (error) => emit(
+        LoginState.error(error: error.failureMsg ?? AppStrings.unKnownError),
+      ),
     );
   }
 
@@ -87,8 +90,10 @@ class LoginCubit extends Cubit<LoginState> {
         );
         emit(LoginState.signInWithGoogleSuccess(credential.user!.uid));
       },
-      error: (error) =>
-          emit(LoginState.signInWithGoogleError(error: error.failureMsg ?? '')),
+      error: (error) => emit(
+        LoginState.signInWithGoogleError(
+            error: error.failureMsg ?? AppStrings.unKnownError),
+      ),
     );
   }
 

@@ -28,4 +28,8 @@ class TinyTale {
       $TinyTaleFromJson(json);
 
   Map<String, dynamic> toJson() => $TinyTaleToJson(this);
+
+  DateTime? _dateTimeFromTimestamp(Timestamp? timestamp) {
+    return timestamp?.toDate();
+  }
 }

@@ -81,9 +81,12 @@ class AppStrings {
   static const String theBabyIs = 'The Baby is: ';
   static const String tryAgain = 'Try Again';
   static const String dotEnvFileName = '.env';
+  static const String apiKey = 'API_KEY';
   static const String noApiKeyFound =
       'No API key found. Please provide an API Key.';
   static const String cryPredictor = 'Cry Predictor';
   static const String icareBot = 'ICare Bot';
   static const String tinyTalesCollection = 'TinyTales';
+
+  static const String unKnownError = 'Unknown error';
 }

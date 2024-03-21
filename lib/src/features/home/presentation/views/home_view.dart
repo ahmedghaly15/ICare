@@ -38,7 +38,7 @@ class HomeView extends StatelessWidget {
         MySizedBox.height20,
         GestureDetector(
           onTap: () {
-            context.pushRoute(const AuthRoute());
+            // context.pushRoute(const AuthRoute());
             // context
             //     .read<EmergencyCubit>()
             //     .getEmergencyDiseaseDetails('65e4a4ef8ed0c5d25deaf4f8');
