@@ -34,6 +34,7 @@ class _CustomDiseaseDetailsTabsState extends State<CustomDiseaseDetailsTabs> {
         SizedBox(
           height: SizeConfig.height * 0.06,
           child: ListView.separated(
+            padding: EdgeInsets.zero,
             scrollDirection: Axis.horizontal,
             physics: AppConstants.scrollPhysics,
             itemBuilder: (_, index) => DiseaseInfoSectionItem(

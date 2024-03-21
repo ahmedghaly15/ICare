@@ -14,8 +14,9 @@ class AppThemes {
           backgroundColor: AppColors.scaffoldBackgroundColor,
           elevation: 0,
           centerTitle: true,
-          titleTextStyle: AppTextStyles.textStyle25Bold(context)
-              .copyWith(color: Colors.white),
+          titleTextStyle: AppTextStyles.textStyle30Bold(context).copyWith(
+            color: Colors.black,
+          ),
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(

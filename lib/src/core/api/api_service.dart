@@ -12,7 +12,7 @@ import 'package:icare/src/features/medical_info/data/models/get_medical_info_res
 
 part 'api_service.g.dart';
 
-@RestApi(baseUrl: EndPoints.baseUrl)
+@RestApi(baseUrl: EndPoints.databaseBaseUrl)
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
@@ -30,7 +30,7 @@ abstract class ApiService {
     @Path('disease_id') String diseaseId,
   );
 
-  @GET('${EndPoints.baseUrl}{disease_type}')
+  @GET('${EndPoints.databaseBaseUrl}{disease_type}')
   Future<DiseaseDetails> getMedicalInfoDiseaseDetails(
     @Path('disease_type') String diseaseType,
     @Query('disease_id') String diseaseId,

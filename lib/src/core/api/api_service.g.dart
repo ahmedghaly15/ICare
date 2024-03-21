@@ -13,7 +13,7 @@ class _ApiService implements ApiService {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://medical-app-u7a7.onrender.com/';
+    baseUrl ??= 'https://ahmed-muqawi-medical-app.hf.space/';
   }
 
   final Dio _dio;
@@ -34,7 +34,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://medical-app-u7a7.onrender.com/medical',
+              'https://ahmed-muqawi-medical-app.hf.space/medical',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -64,7 +64,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://medical-app-u7a7.onrender.com/Emergency/',
+              'https://ahmed-muqawi-medical-app.hf.space/Emergency/',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -93,7 +93,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://medical-app-u7a7.onrender.com/diseases',
+              'https://ahmed-muqawi-medical-app.hf.space/diseases',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -123,7 +123,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://medical-app-u7a7.onrender.com/Emergency/${diseaseId}',
+              'https://ahmed-muqawi-medical-app.hf.space/Emergency/${diseaseId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -153,7 +153,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://medical-app-u7a7.onrender.com/${diseaseType}',
+              'https://ahmed-muqawi-medical-app.hf.space/${diseaseType}',
               queryParameters: queryParameters,
               data: _data,
             )

@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
@@ -67,6 +66,7 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
     return AppBar(
       backgroundColor: AppColors.primaryColor,
       title: const Text(AppStrings.icareBot),
+      titleTextStyle: AppTextStyles.textStyle30Bold(context),
       leading: IconButton(
         onPressed: () => context.maybePop(),
         icon: const Icon(

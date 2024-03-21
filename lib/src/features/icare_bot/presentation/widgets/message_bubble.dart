@@ -21,8 +21,8 @@ class MessageBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChatBubble(
       clipper: isUser
-          ? ChatBubbleClipper3(type: BubbleType.sendBubble)
-          : ChatBubbleClipper3(type: BubbleType.receiverBubble),
+          ? ChatBubbleClipper8(type: BubbleType.sendBubble)
+          : ChatBubbleClipper8(type: BubbleType.receiverBubble),
       alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
       backGroundColor: isUser ? AppColors.primaryColor : AppColors.lightGrey2,
       padding: EdgeInsets.symmetric(
