@@ -7,15 +7,17 @@ class CustomCachedNetworkImage extends StatelessWidget {
   const CustomCachedNetworkImage({
     super.key,
     required this.imageUrl,
+    this.fit = BoxFit.cover,
   });
 
   final String imageUrl;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: imageUrl,
-      fit: BoxFit.cover,
+      fit: fit,
       width: double.infinity,
       height: double.infinity,
       errorWidget: (_, __, ___) => Icon(

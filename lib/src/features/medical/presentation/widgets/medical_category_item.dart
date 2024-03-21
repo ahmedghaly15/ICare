@@ -23,19 +23,15 @@ class MedicalCategoryItem extends StatelessWidget {
       child: MaterialButton(
         padding: EdgeInsets.zero,
         onPressed: onPressed,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppConstants.radius25.r),
-        ),
+        shape: _medicalCategoryItemShape(),
         child: Card(
           elevation: 8.h,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppConstants.radius25.r),
-          ),
+          shape: _medicalCategoryItemShape(),
           child: Stack(
             alignment: AlignmentDirectional.topEnd,
             children: <Widget>[
               ClipRRect(
-                borderRadius: BorderRadius.circular(AppConstants.radius25),
+                borderRadius: BorderRadius.circular(AppConstants.radius25.r),
                 child: CustomCachedNetworkImage(
                   imageUrl: medicalCategory.medicalCategoryImage,
                 ),
@@ -60,6 +56,12 @@ class MedicalCategoryItem extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  RoundedRectangleBorder _medicalCategoryItemShape() {
+    return RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(AppConstants.radius25.r),
     );
   }
 }

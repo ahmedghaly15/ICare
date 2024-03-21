@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
 import 'package:icare/src/features/auth/data/models/register_request_params.dart';
@@ -29,6 +30,7 @@ class RegisterDataSourceImpl implements RegisterDataSource {
       name: params.name,
       email: params.email,
       uId: params.uId,
+      profileImage: AppConstants.defaultProfileImage,
     );
 
     await getIt

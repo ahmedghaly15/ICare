@@ -6,12 +6,14 @@ part 'icare_user.g.dart';
 class ICareUser {
   final String? name;
   final String? email;
+  final String? profileImage;
   final String? uId;
 
   const ICareUser({
     this.name,
     this.email,
     this.uId,
+    this.profileImage,
   });
 
   factory ICareUser.fromJson(Map<String, dynamic> json) =>
