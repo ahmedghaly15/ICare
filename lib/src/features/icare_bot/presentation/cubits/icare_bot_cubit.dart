@@ -13,8 +13,16 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   }
 
   void _initVariables() {
-    _model =
-        GenerativeModel(model: "gemini-pro", apiKey: dotenv.env['API_KEY']!);
+    _model = GenerativeModel(
+      model: "gemini-pro",
+      apiKey: dotenv.env['API_KEY']!,
+      safetySettings: <SafetySetting>[
+        SafetySetting(HarmCategory.harassment, HarmBlockThreshold.high),
+        SafetySetting(HarmCategory.hateSpeech, HarmBlockThreshold.high),
+        SafetySetting(HarmCategory.sexuallyExplicit, HarmBlockThreshold.high),
+        SafetySetting(HarmCategory.dangerousContent, HarmBlockThreshold.high),
+      ],
+    );
     chat = _model.startChat();
   }
 
@@ -63,9 +71,12 @@ class ICareBotCubit extends Cubit<ICareBotState> {
         textController.clear();
       }
     } catch (e) {
+      if (e is GenerativeAIException) {
+        emit(ICareBotState.error(e.message));
+      }
+
       debugPrint('ERROR WHILE SENDING MESSAGE TO GEMINI: $e');
       textController.clear();
-      emit(ICareBotState.error(e.toString()));
     }
   }
 

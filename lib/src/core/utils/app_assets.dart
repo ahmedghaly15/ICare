@@ -99,6 +99,10 @@ class AppAssets {
   /// assets/rive/confetti.riv
   static const String riveConfetti = "assets/rive/confetti.riv";
 
+  /// Assets for svgsAppLogo
+  /// assets/svgs/app_logo.svg
+  static const String svgsAppLogo = "assets/svgs/app_logo.svg";
+
   /// Assets for svgsBabyIcon
   /// assets/svgs/baby_icon.svg
   static const String svgsBabyIcon = "assets/svgs/baby_icon.svg";

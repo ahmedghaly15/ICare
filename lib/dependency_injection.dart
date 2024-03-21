@@ -395,5 +395,7 @@ class DependencyInjection {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
     getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+
+    
   }
 }
