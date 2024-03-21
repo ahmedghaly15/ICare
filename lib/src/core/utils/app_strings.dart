@@ -85,4 +85,5 @@ class AppStrings {
       'No API key found. Please provide an API Key.';
   static const String cryPredictor = 'Cry Predictor';
   static const String icareBot = 'ICare Bot';
+  static const String tinyTalesCollection = 'TinyTales';
 }

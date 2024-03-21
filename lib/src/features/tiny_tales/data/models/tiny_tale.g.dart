@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'tiny_tale.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+TinyTale $TinyTaleFromJson(Map<String, dynamic> json) => TinyTale(
+      user: ICareUser.fromJson(json['user'] as Map<String, dynamic>),
+      text: json['text'] as String?,
+      date: json['date'] as String?,
+      time: json['time'] as String?,
+      dateTime: json['dateTime'] as Timestamp?,
+      tinyTaleImage: json['tinyTaleImage'] as String?,
+      postId: json['postId'] as String?,
+    );
+
+Map<String, dynamic> $TinyTaleToJson(TinyTale instance) => <String, dynamic>{
+      'user': instance.user?.toJson(),
+      'text': instance.text,
+      'date': instance.date,
+      'time': instance.time,
+      'dateTime': instance.dateTime,
+      'tinyTaleImage': instance.tinyTaleImage,
+      'postId': instance.postId,
+    };

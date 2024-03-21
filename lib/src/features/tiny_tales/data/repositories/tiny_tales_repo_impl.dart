@@ -1,0 +1,21 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:icare/src/core/firebase/firebase_request_result.dart';
+import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
+import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource.dart';
+import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
+import 'package:icare/src/features/tiny_tales/domain/repositories/tiny_tales_repo.dart';
+
+class TinyTalesRepoImpl implements TinyTalesRepo {
+  final TinyTalesRemoteDatasource _tinyTalesRemoteDatasource;
+
+  const TinyTalesRepoImpl(this._tinyTalesRemoteDatasource);
+
+  @override
+  Future<FirebaseRequestResult<DocumentReference<Map<String, dynamic>>>>
+      createTinyTale(CreateTinyTaleParams params) {
+    return executeAndHandleFirebaseErrors<
+        DocumentReference<Map<String, dynamic>>>(
+      () async => await _tinyTalesRemoteDatasource.createTinyTale(params),
+    );
+  }
+}
