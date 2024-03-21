@@ -19,19 +19,19 @@ mixin _$FirebaseRequestResult<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(FirebaseAuthErrorHandler errorHandler) error,
+    required TResult Function(FirebaseErrorHandler errorHandler) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(FirebaseAuthErrorHandler errorHandler)? error,
+    TResult? Function(FirebaseErrorHandler errorHandler)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(FirebaseAuthErrorHandler errorHandler)? error,
+    TResult Function(FirebaseErrorHandler errorHandler)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -98,7 +98,7 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
     Object? data = freezed,
   }) {
     return _then(_$SuccessImpl<T>(
-      data: freezed == data
+      freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as T,
@@ -109,7 +109,7 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$SuccessImpl<T> implements Success<T> {
-  const _$SuccessImpl({required this.data});
+  const _$SuccessImpl(this.data);
 
   @override
   final T data;
@@ -141,7 +141,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(FirebaseAuthErrorHandler errorHandler) error,
+    required TResult Function(FirebaseErrorHandler errorHandler) error,
   }) {
     return success(data);
   }
@@ -150,7 +150,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(FirebaseAuthErrorHandler errorHandler)? error,
+    TResult? Function(FirebaseErrorHandler errorHandler)? error,
   }) {
     return success?.call(data);
   }
@@ -159,7 +159,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(FirebaseAuthErrorHandler errorHandler)? error,
+    TResult Function(FirebaseErrorHandler errorHandler)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -201,7 +201,7 @@ class _$SuccessImpl<T> implements Success<T> {
 }
 
 abstract class Success<T> implements FirebaseRequestResult<T> {
-  const factory Success({required final T data}) = _$SuccessImpl<T>;
+  const factory Success(final T data) = _$SuccessImpl<T>;
 
   T get data;
   @JsonKey(ignore: true)
@@ -215,7 +215,7 @@ abstract class _$$ErrorImplCopyWith<T, $Res> {
           _$ErrorImpl<T> value, $Res Function(_$ErrorImpl<T>) then) =
       __$$ErrorImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({FirebaseAuthErrorHandler errorHandler});
+  $Res call({FirebaseErrorHandler errorHandler});
 }
 
 /// @nodoc
@@ -232,10 +232,10 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
     Object? errorHandler = null,
   }) {
     return _then(_$ErrorImpl<T>(
-      errorHandler: null == errorHandler
+      null == errorHandler
           ? _value.errorHandler
           : errorHandler // ignore: cast_nullable_to_non_nullable
-              as FirebaseAuthErrorHandler,
+              as FirebaseErrorHandler,
     ));
   }
 }
@@ -243,10 +243,10 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$ErrorImpl<T> implements Error<T> {
-  const _$ErrorImpl({required this.errorHandler});
+  const _$ErrorImpl(this.errorHandler);
 
   @override
-  final FirebaseAuthErrorHandler errorHandler;
+  final FirebaseErrorHandler errorHandler;
 
   @override
   String toString() {
@@ -275,7 +275,7 @@ class _$ErrorImpl<T> implements Error<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T data) success,
-    required TResult Function(FirebaseAuthErrorHandler errorHandler) error,
+    required TResult Function(FirebaseErrorHandler errorHandler) error,
   }) {
     return error(errorHandler);
   }
@@ -284,7 +284,7 @@ class _$ErrorImpl<T> implements Error<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
-    TResult? Function(FirebaseAuthErrorHandler errorHandler)? error,
+    TResult? Function(FirebaseErrorHandler errorHandler)? error,
   }) {
     return error?.call(errorHandler);
   }
@@ -293,7 +293,7 @@ class _$ErrorImpl<T> implements Error<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-    TResult Function(FirebaseAuthErrorHandler errorHandler)? error,
+    TResult Function(FirebaseErrorHandler errorHandler)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -335,10 +335,9 @@ class _$ErrorImpl<T> implements Error<T> {
 }
 
 abstract class Error<T> implements FirebaseRequestResult<T> {
-  const factory Error({required final FirebaseAuthErrorHandler errorHandler}) =
-      _$ErrorImpl<T>;
+  const factory Error(final FirebaseErrorHandler errorHandler) = _$ErrorImpl<T>;
 
-  FirebaseAuthErrorHandler get errorHandler;
+  FirebaseErrorHandler get errorHandler;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<T, _$ErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;

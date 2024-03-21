@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/firebase/firebase_auth_error_handler.dart';
+import 'package:icare/src/core/firebase/firebase_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/network/network_info.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -12,25 +12,21 @@ Future<FirebaseRequestResult<T>> executeAndHandleFirebaseErrors<T>(
     try {
       final response = await function();
 
-      return FirebaseRequestResult<T>.success(data: response);
+      return FirebaseRequestResult<T>.success(response);
     } catch (error) {
-      if (error is FirebaseException) {
+      if (error is FirebaseAuthException) {
         return FirebaseRequestResult.error(
-          errorHandler: FirebaseAuthErrorHandler.handleError(error),
+          FirebaseErrorHandler.handleError(error),
         );
       } else {
         return FirebaseRequestResult.error(
-          errorHandler: FirebaseAuthErrorHandler.handleError(
-            error.toString(),
-          ),
+          FirebaseErrorHandler.handleError(error.toString()),
         );
       }
     }
   } else {
     return FirebaseRequestResult.error(
-      errorHandler: FirebaseAuthErrorHandler.handleError(
-        AppStrings.noInternetConnection,
-      ),
+      FirebaseErrorHandler.handleError(AppStrings.noInternetConnection),
     );
   }
 }

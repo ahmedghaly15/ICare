@@ -1,45 +1,45 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/src/core/errors/failure.dart';
 
-class FirebaseAuthErrorHandler extends Failure {
-  const FirebaseAuthErrorHandler({super.failureMsg});
+class FirebaseErrorHandler extends Failure {
+  const FirebaseErrorHandler({super.failureMsg});
 
-  factory FirebaseAuthErrorHandler.handleError(dynamic error) {
+  factory FirebaseErrorHandler.handleError(dynamic error) {
     if (error is FirebaseException) {
-      return FirebaseAuthErrorHandler.fromCode(error.code);
+      return FirebaseErrorHandler.fromCode(error.code);
     } else {
-      return FirebaseAuthErrorHandler(failureMsg: error);
+      return FirebaseErrorHandler(failureMsg: error);
     }
   }
 
-  factory FirebaseAuthErrorHandler.fromCode(String code) {
+  factory FirebaseErrorHandler.fromCode(String code) {
     switch (code) {
       case FirebaseAuthCodes.userNotFound:
-        return const FirebaseAuthErrorHandler(
+        return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.userNotFound,
         );
       case FirebaseAuthCodes.wrongPassword:
-        return const FirebaseAuthErrorHandler(
+        return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.wrongPassword,
         );
       case FirebaseAuthCodes.weakPassword:
-        return const FirebaseAuthErrorHandler(
+        return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.weakPassword,
         );
       case FirebaseAuthCodes.emailAlreadyInUse:
-        return const FirebaseAuthErrorHandler(
+        return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.emailAlreadyInUse,
         );
       case FirebaseAuthCodes.invalidEmail:
-        return const FirebaseAuthErrorHandler(
+        return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.invalidEmail,
         );
       case FirebaseAuthCodes.invalidCredential:
-        return const FirebaseAuthErrorHandler(
+        return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.invalidCredential,
         );
       default:
-        return const FirebaseAuthErrorHandler(
+        return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.defaultError,
         );
     }
