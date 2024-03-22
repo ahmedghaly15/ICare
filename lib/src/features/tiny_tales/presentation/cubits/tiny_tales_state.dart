@@ -16,4 +16,14 @@ class TinyTalesState<T> with _$TinyTalesState<T> {
   const factory TinyTalesState.unlikeTinyTaleSuccess() = UnlikeTinyTaleSuccess;
   const factory TinyTalesState.unlikeTinyTaleError(String error) =
       UnlikeTinyTaleError;
+  const factory TinyTalesState.deleteTinyTaleLoading() = DeleteTinyTaleLoading;
+  const factory TinyTalesState.deleteTinyTaleSuccess() = DeleteTinyTaleSuccess;
+  const factory TinyTalesState.deleteTinyTaleError(String error) =
+      DeleteTinyTaleError;
+  const factory TinyTalesState.uploadTinyTaleImageLoading() =
+      UploadTinyTaleImageLoading;
+  const factory TinyTalesState.uploadTinyTaleImageSuccess(String imageUrl) =
+      UploadTinyTaleImageSuccess<T>;
+  const factory TinyTalesState.uploadTinyTaleImageError(String error) =
+      UploadTinyTaleImageError;
 }

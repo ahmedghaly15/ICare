@@ -26,6 +26,12 @@ mixin _$TinyTalesState<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,12 @@ mixin _$TinyTalesState<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +62,12 @@ mixin _$TinyTalesState<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,6 +84,17 @@ mixin _$TinyTalesState<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +107,15 @@ mixin _$TinyTalesState<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +128,15 @@ mixin _$TinyTalesState<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,6 +207,12 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return initial();
   }
@@ -175,6 +228,12 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return initial?.call();
   }
@@ -190,6 +249,12 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -212,6 +277,17 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return initial(this);
   }
@@ -227,6 +303,15 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return initial?.call(this);
   }
@@ -242,6 +327,15 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -305,6 +399,12 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return createTinyTaleLoading();
   }
@@ -320,6 +420,12 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return createTinyTaleLoading?.call();
   }
@@ -335,6 +441,12 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleLoading != null) {
@@ -357,6 +469,17 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return createTinyTaleLoading(this);
   }
@@ -372,6 +495,15 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return createTinyTaleLoading?.call(this);
   }
@@ -387,6 +519,15 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleLoading != null) {
@@ -477,6 +618,12 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return createTinyTaleSuccess(data);
   }
@@ -492,6 +639,12 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return createTinyTaleSuccess?.call(data);
   }
@@ -507,6 +660,12 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleSuccess != null) {
@@ -529,6 +688,17 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return createTinyTaleSuccess(this);
   }
@@ -544,6 +714,15 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return createTinyTaleSuccess?.call(this);
   }
@@ -559,6 +738,15 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleSuccess != null) {
@@ -651,6 +839,12 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return createTinyTaleError(error);
   }
@@ -666,6 +860,12 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return createTinyTaleError?.call(error);
   }
@@ -681,6 +881,12 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleError != null) {
@@ -703,6 +909,17 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return createTinyTaleError(this);
   }
@@ -718,6 +935,15 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return createTinyTaleError?.call(this);
   }
@@ -733,6 +959,15 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleError != null) {
@@ -799,6 +1034,12 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess();
   }
@@ -814,6 +1055,12 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess?.call();
   }
@@ -829,6 +1076,12 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -851,6 +1104,17 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess(this);
   }
@@ -866,6 +1130,15 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess?.call(this);
   }
@@ -881,6 +1154,15 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -968,6 +1250,12 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return likeTinyTaleError(error);
   }
@@ -983,6 +1271,12 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return likeTinyTaleError?.call(error);
   }
@@ -998,6 +1292,12 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -1020,6 +1320,17 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return likeTinyTaleError(this);
   }
@@ -1035,6 +1346,15 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return likeTinyTaleError?.call(this);
   }
@@ -1050,6 +1370,15 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -1119,6 +1448,12 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess();
   }
@@ -1134,6 +1469,12 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess?.call();
   }
@@ -1149,6 +1490,12 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1171,6 +1518,17 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess(this);
   }
@@ -1186,6 +1544,15 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess?.call(this);
   }
@@ -1201,6 +1568,15 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1287,6 +1663,12 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function(String error) likeTinyTaleError,
     required TResult Function() unlikeTinyTaleSuccess,
     required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleError(error);
   }
@@ -1302,6 +1684,12 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function(String error)? likeTinyTaleError,
     TResult? Function()? unlikeTinyTaleSuccess,
     TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleError?.call(error);
   }
@@ -1317,6 +1705,12 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function(String error)? likeTinyTaleError,
     TResult Function()? unlikeTinyTaleSuccess,
     TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -1339,6 +1733,17 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function(UnlikeTinyTaleSuccess<T> value)
         unlikeTinyTaleSuccess,
     required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleError(this);
   }
@@ -1354,6 +1759,15 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
   }) {
     return unlikeTinyTaleError?.call(this);
   }
@@ -1369,6 +1783,15 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
     TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
     TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -1385,5 +1808,1256 @@ abstract class UnlikeTinyTaleError<T> implements TinyTalesState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$UnlikeTinyTaleErrorImplCopyWith<T, _$UnlikeTinyTaleErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteTinyTaleLoadingImplCopyWith<T, $Res> {
+  factory _$$DeleteTinyTaleLoadingImplCopyWith(
+          _$DeleteTinyTaleLoadingImpl<T> value,
+          $Res Function(_$DeleteTinyTaleLoadingImpl<T>) then) =
+      __$$DeleteTinyTaleLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteTinyTaleLoadingImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$DeleteTinyTaleLoadingImpl<T>>
+    implements _$$DeleteTinyTaleLoadingImplCopyWith<T, $Res> {
+  __$$DeleteTinyTaleLoadingImplCopyWithImpl(
+      _$DeleteTinyTaleLoadingImpl<T> _value,
+      $Res Function(_$DeleteTinyTaleLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
+  const _$DeleteTinyTaleLoadingImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.deleteTinyTaleLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteTinyTaleLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (deleteTinyTaleLoading != null) {
+      return deleteTinyTaleLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (deleteTinyTaleLoading != null) {
+      return deleteTinyTaleLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteTinyTaleLoading<T> implements TinyTalesState<T> {
+  const factory DeleteTinyTaleLoading() = _$DeleteTinyTaleLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteTinyTaleSuccessImplCopyWith<T, $Res> {
+  factory _$$DeleteTinyTaleSuccessImplCopyWith(
+          _$DeleteTinyTaleSuccessImpl<T> value,
+          $Res Function(_$DeleteTinyTaleSuccessImpl<T>) then) =
+      __$$DeleteTinyTaleSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteTinyTaleSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$DeleteTinyTaleSuccessImpl<T>>
+    implements _$$DeleteTinyTaleSuccessImplCopyWith<T, $Res> {
+  __$$DeleteTinyTaleSuccessImplCopyWithImpl(
+      _$DeleteTinyTaleSuccessImpl<T> _value,
+      $Res Function(_$DeleteTinyTaleSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
+  const _$DeleteTinyTaleSuccessImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.deleteTinyTaleSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteTinyTaleSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (deleteTinyTaleSuccess != null) {
+      return deleteTinyTaleSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (deleteTinyTaleSuccess != null) {
+      return deleteTinyTaleSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteTinyTaleSuccess<T> implements TinyTalesState<T> {
+  const factory DeleteTinyTaleSuccess() = _$DeleteTinyTaleSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteTinyTaleErrorImplCopyWith<T, $Res> {
+  factory _$$DeleteTinyTaleErrorImplCopyWith(_$DeleteTinyTaleErrorImpl<T> value,
+          $Res Function(_$DeleteTinyTaleErrorImpl<T>) then) =
+      __$$DeleteTinyTaleErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$DeleteTinyTaleErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res, _$DeleteTinyTaleErrorImpl<T>>
+    implements _$$DeleteTinyTaleErrorImplCopyWith<T, $Res> {
+  __$$DeleteTinyTaleErrorImplCopyWithImpl(_$DeleteTinyTaleErrorImpl<T> _value,
+      $Res Function(_$DeleteTinyTaleErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$DeleteTinyTaleErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
+  const _$DeleteTinyTaleErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.deleteTinyTaleError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteTinyTaleErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteTinyTaleErrorImplCopyWith<T, _$DeleteTinyTaleErrorImpl<T>>
+      get copyWith => __$$DeleteTinyTaleErrorImplCopyWithImpl<T,
+          _$DeleteTinyTaleErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (deleteTinyTaleError != null) {
+      return deleteTinyTaleError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+  }) {
+    return deleteTinyTaleError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (deleteTinyTaleError != null) {
+      return deleteTinyTaleError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteTinyTaleError<T> implements TinyTalesState<T> {
+  const factory DeleteTinyTaleError(final String error) =
+      _$DeleteTinyTaleErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$DeleteTinyTaleErrorImplCopyWith<T, _$DeleteTinyTaleErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadTinyTaleImageLoadingImplCopyWith<T, $Res> {
+  factory _$$UploadTinyTaleImageLoadingImplCopyWith(
+          _$UploadTinyTaleImageLoadingImpl<T> value,
+          $Res Function(_$UploadTinyTaleImageLoadingImpl<T>) then) =
+      __$$UploadTinyTaleImageLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UploadTinyTaleImageLoadingImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$UploadTinyTaleImageLoadingImpl<T>>
+    implements _$$UploadTinyTaleImageLoadingImplCopyWith<T, $Res> {
+  __$$UploadTinyTaleImageLoadingImplCopyWithImpl(
+      _$UploadTinyTaleImageLoadingImpl<T> _value,
+      $Res Function(_$UploadTinyTaleImageLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UploadTinyTaleImageLoadingImpl<T>
+    implements UploadTinyTaleImageLoading<T> {
+  const _$UploadTinyTaleImageLoadingImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.uploadTinyTaleImageLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadTinyTaleImageLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (uploadTinyTaleImageLoading != null) {
+      return uploadTinyTaleImageLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (uploadTinyTaleImageLoading != null) {
+      return uploadTinyTaleImageLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadTinyTaleImageLoading<T> implements TinyTalesState<T> {
+  const factory UploadTinyTaleImageLoading() =
+      _$UploadTinyTaleImageLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UploadTinyTaleImageSuccessImplCopyWith<T, $Res> {
+  factory _$$UploadTinyTaleImageSuccessImplCopyWith(
+          _$UploadTinyTaleImageSuccessImpl<T> value,
+          $Res Function(_$UploadTinyTaleImageSuccessImpl<T>) then) =
+      __$$UploadTinyTaleImageSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String imageUrl});
+}
+
+/// @nodoc
+class __$$UploadTinyTaleImageSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$UploadTinyTaleImageSuccessImpl<T>>
+    implements _$$UploadTinyTaleImageSuccessImplCopyWith<T, $Res> {
+  __$$UploadTinyTaleImageSuccessImplCopyWithImpl(
+      _$UploadTinyTaleImageSuccessImpl<T> _value,
+      $Res Function(_$UploadTinyTaleImageSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? imageUrl = null,
+  }) {
+    return _then(_$UploadTinyTaleImageSuccessImpl<T>(
+      null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadTinyTaleImageSuccessImpl<T>
+    implements UploadTinyTaleImageSuccess<T> {
+  const _$UploadTinyTaleImageSuccessImpl(this.imageUrl);
+
+  @override
+  final String imageUrl;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.uploadTinyTaleImageSuccess(imageUrl: $imageUrl)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadTinyTaleImageSuccessImpl<T> &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, imageUrl);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadTinyTaleImageSuccessImplCopyWith<T,
+          _$UploadTinyTaleImageSuccessImpl<T>>
+      get copyWith => __$$UploadTinyTaleImageSuccessImplCopyWithImpl<T,
+          _$UploadTinyTaleImageSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageSuccess(imageUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageSuccess?.call(imageUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (uploadTinyTaleImageSuccess != null) {
+      return uploadTinyTaleImageSuccess(imageUrl);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (uploadTinyTaleImageSuccess != null) {
+      return uploadTinyTaleImageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadTinyTaleImageSuccess<T> implements TinyTalesState<T> {
+  const factory UploadTinyTaleImageSuccess(final String imageUrl) =
+      _$UploadTinyTaleImageSuccessImpl<T>;
+
+  String get imageUrl;
+  @JsonKey(ignore: true)
+  _$$UploadTinyTaleImageSuccessImplCopyWith<T,
+          _$UploadTinyTaleImageSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadTinyTaleImageErrorImplCopyWith<T, $Res> {
+  factory _$$UploadTinyTaleImageErrorImplCopyWith(
+          _$UploadTinyTaleImageErrorImpl<T> value,
+          $Res Function(_$UploadTinyTaleImageErrorImpl<T>) then) =
+      __$$UploadTinyTaleImageErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UploadTinyTaleImageErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$UploadTinyTaleImageErrorImpl<T>>
+    implements _$$UploadTinyTaleImageErrorImplCopyWith<T, $Res> {
+  __$$UploadTinyTaleImageErrorImplCopyWithImpl(
+      _$UploadTinyTaleImageErrorImpl<T> _value,
+      $Res Function(_$UploadTinyTaleImageErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UploadTinyTaleImageErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
+  const _$UploadTinyTaleImageErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.uploadTinyTaleImageError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadTinyTaleImageErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadTinyTaleImageErrorImplCopyWith<T, _$UploadTinyTaleImageErrorImpl<T>>
+      get copyWith => __$$UploadTinyTaleImageErrorImplCopyWithImpl<T,
+          _$UploadTinyTaleImageErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (uploadTinyTaleImageError != null) {
+      return uploadTinyTaleImageError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+  }) {
+    return uploadTinyTaleImageError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (uploadTinyTaleImageError != null) {
+      return uploadTinyTaleImageError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadTinyTaleImageError<T> implements TinyTalesState<T> {
+  const factory UploadTinyTaleImageError(final String error) =
+      _$UploadTinyTaleImageErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$UploadTinyTaleImageErrorImplCopyWith<T, _$UploadTinyTaleImageErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
