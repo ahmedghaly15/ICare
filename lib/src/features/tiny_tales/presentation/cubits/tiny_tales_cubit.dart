@@ -2,14 +2,17 @@ import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/unlike_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/upload_tiny_tale_image.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_state.dart';
+import 'package:image_picker/image_picker.dart';
 
 class TinyTalesCubit extends Cubit<TinyTalesState> {
   final CreateTinyTaleUseCase createTinyTaleUseCase;
@@ -17,6 +20,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   final UnLikeTinyTaleUseCase unLikeTinyTaleUseCase;
   final DeleteTinyTaleUseCase deleteTinyTaleUseCase;
   final UploadTinyTaleImageUseCase uploadTinyTaleImageUseCase;
+  final IsTinyTaleLikeByMeUseCase isTinyTaleLikedByMeUseCase;
 
   TinyTalesCubit({
     required this.createTinyTaleUseCase,
@@ -24,6 +28,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.unLikeTinyTaleUseCase,
     required this.deleteTinyTaleUseCase,
     required this.uploadTinyTaleImageUseCase,
+    required this.isTinyTaleLikedByMeUseCase,
   }) : super(const TinyTalesState.initial());
 
   void createTinyTale(CreateTinyTaleParams params) async {
@@ -73,6 +78,21 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
 
   File? tinyTaleImage;
 
+  void pickTinyTaleImage(ImageSource source) async {
+    getIt.get<ImagePicker>().pickImage(source: source).then((pickedImage) {
+      _updateTinyTaleImage(pickedImage);
+    }).catchError((error) {
+      emit(TinyTalesState.pickTinyTaleImageError(error.toString()));
+    });
+  }
+
+  void _updateTinyTaleImage(XFile? pickedImage) {
+    if (pickedImage != null) {
+      tinyTaleImage = File(pickedImage.path);
+      emit(TinyTalesState.pickTinyTaleImageSuccess(tinyTaleImage!));
+    }
+  }
+
   void uploadTinyTaleImage(CreateTinyTaleParams params) async {
     emit(const TinyTalesState.uploadTinyTaleImageLoading());
     final result = await uploadTinyTaleImageUseCase.call(tinyTaleImage);
@@ -103,5 +123,14 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     ).catchError((error) {
       emit(TinyTalesState.uploadTinyTaleImageError(error.toString()));
     });
+  }
+
+  void removeTinyTaleImage() {
+    tinyTaleImage = null;
+    emit(const TinyTalesState.removeTinyTaleImage());
+  }
+
+  Stream<bool> isTinyTaleLikedByMe(String tinyTaleId) {
+    return isTinyTaleLikedByMeUseCase.call(tinyTaleId);
   }
 }

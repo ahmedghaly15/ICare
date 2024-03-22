@@ -52,4 +52,9 @@ class TinyTalesRepoImpl implements TinyTalesRepo {
           await _tinyTalesRemoteDatasource.uploadTinyTaleImage(tinyTaleImage),
     );
   }
+
+  @override
+  Stream<bool> isTinyTaleLikedByMe(String tinyTaleId) {
+    return _tinyTalesRemoteDatasource.isTinyTaleLikedByMe(tinyTaleId);
+  }
 }

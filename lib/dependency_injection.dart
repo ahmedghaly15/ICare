@@ -19,10 +19,12 @@ import 'package:icare/src/features/tiny_tales/data/repositories/tiny_tales_repo_
 import 'package:icare/src/features/tiny_tales/domain/repositories/tiny_tales_repo.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/unlike_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/upload_tiny_tale_image.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -331,6 +333,10 @@ class DependencyInjection {
     getIt.registerLazySingleton<UploadTinyTaleImageUseCase>(
       () => UploadTinyTaleImageUseCase(getIt.get<TinyTalesRepo>()),
     );
+
+    getIt.registerLazySingleton<IsTinyTaleLikeByMeUseCase>(
+      () => IsTinyTaleLikeByMeUseCase(getIt.get<TinyTalesRepo>()),
+    );
   }
 
   void _setupForCubits() {
@@ -411,6 +417,7 @@ class DependencyInjection {
         unLikeTinyTaleUseCase: getIt.get<UnLikeTinyTaleUseCase>(),
         deleteTinyTaleUseCase: getIt.get<DeleteTinyTaleUseCase>(),
         uploadTinyTaleImageUseCase: getIt.get<UploadTinyTaleImageUseCase>(),
+        isTinyTaleLikedByMeUseCase: getIt.get<IsTinyTaleLikeByMeUseCase>(),
       ),
     );
   }
@@ -452,5 +459,7 @@ class DependencyInjection {
     getIt.registerLazySingleton<FirebaseStorage>(
       () => firebase_storage.FirebaseStorage.instance,
     );
+
+    getIt.registerLazySingleton<ImagePicker>(() => ImagePicker());
   }
 }

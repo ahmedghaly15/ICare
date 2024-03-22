@@ -32,6 +32,9 @@ mixin _$TinyTalesState<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +53,9 @@ mixin _$TinyTalesState<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,6 +74,9 @@ mixin _$TinyTalesState<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -95,6 +104,11 @@ mixin _$TinyTalesState<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -116,6 +130,10 @@ mixin _$TinyTalesState<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -137,6 +155,10 @@ mixin _$TinyTalesState<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -213,6 +235,9 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return initial();
   }
@@ -234,6 +259,9 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return initial?.call();
   }
@@ -255,6 +283,9 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -288,6 +319,11 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return initial(this);
   }
@@ -312,6 +348,10 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return initial?.call(this);
   }
@@ -336,6 +376,10 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -405,6 +449,9 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return createTinyTaleLoading();
   }
@@ -426,6 +473,9 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return createTinyTaleLoading?.call();
   }
@@ -447,6 +497,9 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleLoading != null) {
@@ -480,6 +533,11 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return createTinyTaleLoading(this);
   }
@@ -504,6 +562,10 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return createTinyTaleLoading?.call(this);
   }
@@ -528,6 +590,10 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleLoading != null) {
@@ -624,6 +690,9 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return createTinyTaleSuccess(data);
   }
@@ -645,6 +714,9 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return createTinyTaleSuccess?.call(data);
   }
@@ -666,6 +738,9 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleSuccess != null) {
@@ -699,6 +774,11 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return createTinyTaleSuccess(this);
   }
@@ -723,6 +803,10 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return createTinyTaleSuccess?.call(this);
   }
@@ -747,6 +831,10 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleSuccess != null) {
@@ -845,6 +933,9 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return createTinyTaleError(error);
   }
@@ -866,6 +957,9 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return createTinyTaleError?.call(error);
   }
@@ -887,6 +981,9 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleError != null) {
@@ -920,6 +1017,11 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return createTinyTaleError(this);
   }
@@ -944,6 +1046,10 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return createTinyTaleError?.call(this);
   }
@@ -968,6 +1074,10 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (createTinyTaleError != null) {
@@ -1040,6 +1150,9 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess();
   }
@@ -1061,6 +1174,9 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess?.call();
   }
@@ -1082,6 +1198,9 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -1115,6 +1234,11 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess(this);
   }
@@ -1139,6 +1263,10 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return likeTinyTaleSuccess?.call(this);
   }
@@ -1163,6 +1291,10 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -1256,6 +1388,9 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return likeTinyTaleError(error);
   }
@@ -1277,6 +1412,9 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return likeTinyTaleError?.call(error);
   }
@@ -1298,6 +1436,9 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -1331,6 +1472,11 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return likeTinyTaleError(this);
   }
@@ -1355,6 +1501,10 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return likeTinyTaleError?.call(this);
   }
@@ -1379,6 +1529,10 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -1454,6 +1608,9 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess();
   }
@@ -1475,6 +1632,9 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess?.call();
   }
@@ -1496,6 +1656,9 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1529,6 +1692,11 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess(this);
   }
@@ -1553,6 +1721,10 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleSuccess?.call(this);
   }
@@ -1577,6 +1749,10 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1669,6 +1845,9 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleError(error);
   }
@@ -1690,6 +1869,9 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleError?.call(error);
   }
@@ -1711,6 +1893,9 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -1744,6 +1929,11 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleError(this);
   }
@@ -1768,6 +1958,10 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return unlikeTinyTaleError?.call(this);
   }
@@ -1792,6 +1986,10 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -1867,6 +2065,9 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return deleteTinyTaleLoading();
   }
@@ -1888,6 +2089,9 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return deleteTinyTaleLoading?.call();
   }
@@ -1909,6 +2113,9 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -1942,6 +2149,11 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return deleteTinyTaleLoading(this);
   }
@@ -1966,6 +2178,10 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return deleteTinyTaleLoading?.call(this);
   }
@@ -1990,6 +2206,10 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -2059,6 +2279,9 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return deleteTinyTaleSuccess();
   }
@@ -2080,6 +2303,9 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return deleteTinyTaleSuccess?.call();
   }
@@ -2101,6 +2327,9 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -2134,6 +2363,11 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return deleteTinyTaleSuccess(this);
   }
@@ -2158,6 +2392,10 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return deleteTinyTaleSuccess?.call(this);
   }
@@ -2182,6 +2420,10 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -2274,6 +2516,9 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return deleteTinyTaleError(error);
   }
@@ -2295,6 +2540,9 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return deleteTinyTaleError?.call(error);
   }
@@ -2316,6 +2564,9 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -2349,6 +2600,11 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return deleteTinyTaleError(this);
   }
@@ -2373,6 +2629,10 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return deleteTinyTaleError?.call(this);
   }
@@ -2397,6 +2657,10 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -2473,6 +2737,9 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageLoading();
   }
@@ -2494,6 +2761,9 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageLoading?.call();
   }
@@ -2515,6 +2785,9 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageLoading != null) {
@@ -2548,6 +2821,11 @@ class _$UploadTinyTaleImageLoadingImpl<T>
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageLoading(this);
   }
@@ -2572,6 +2850,10 @@ class _$UploadTinyTaleImageLoadingImpl<T>
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageLoading?.call(this);
   }
@@ -2596,6 +2878,10 @@ class _$UploadTinyTaleImageLoadingImpl<T>
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageLoading != null) {
@@ -2695,6 +2981,9 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageSuccess(imageUrl);
   }
@@ -2716,6 +3005,9 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageSuccess?.call(imageUrl);
   }
@@ -2737,6 +3029,9 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageSuccess != null) {
@@ -2770,6 +3065,11 @@ class _$UploadTinyTaleImageSuccessImpl<T>
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageSuccess(this);
   }
@@ -2794,6 +3094,10 @@ class _$UploadTinyTaleImageSuccessImpl<T>
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageSuccess?.call(this);
   }
@@ -2818,6 +3122,10 @@ class _$UploadTinyTaleImageSuccessImpl<T>
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageSuccess != null) {
@@ -2920,6 +3228,9 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     required TResult Function() uploadTinyTaleImageLoading,
     required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
     required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageError(error);
   }
@@ -2941,6 +3252,9 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     TResult? Function()? uploadTinyTaleImageLoading,
     TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageError?.call(error);
   }
@@ -2962,6 +3276,9 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     TResult Function()? uploadTinyTaleImageLoading,
     TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
     TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageError != null) {
@@ -2995,6 +3312,11 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
         uploadTinyTaleImageSuccess,
     required TResult Function(UploadTinyTaleImageError<T> value)
         uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageError(this);
   }
@@ -3019,6 +3341,10 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
         uploadTinyTaleImageSuccess,
     TResult? Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
   }) {
     return uploadTinyTaleImageError?.call(this);
   }
@@ -3043,6 +3369,10 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
         uploadTinyTaleImageSuccess,
     TResult Function(UploadTinyTaleImageError<T> value)?
         uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageError != null) {
@@ -3059,5 +3389,709 @@ abstract class UploadTinyTaleImageError<T> implements TinyTalesState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$UploadTinyTaleImageErrorImplCopyWith<T, _$UploadTinyTaleImageErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveTinyTaleImageImplCopyWith<T, $Res> {
+  factory _$$RemoveTinyTaleImageImplCopyWith(_$RemoveTinyTaleImageImpl<T> value,
+          $Res Function(_$RemoveTinyTaleImageImpl<T>) then) =
+      __$$RemoveTinyTaleImageImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RemoveTinyTaleImageImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res, _$RemoveTinyTaleImageImpl<T>>
+    implements _$$RemoveTinyTaleImageImplCopyWith<T, $Res> {
+  __$$RemoveTinyTaleImageImplCopyWithImpl(_$RemoveTinyTaleImageImpl<T> _value,
+      $Res Function(_$RemoveTinyTaleImageImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RemoveTinyTaleImageImpl<T> implements RemoveTinyTaleImage<T> {
+  const _$RemoveTinyTaleImageImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.removeTinyTaleImage()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveTinyTaleImageImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
+  }) {
+    return removeTinyTaleImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
+  }) {
+    return removeTinyTaleImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (removeTinyTaleImage != null) {
+      return removeTinyTaleImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
+  }) {
+    return removeTinyTaleImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+  }) {
+    return removeTinyTaleImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (removeTinyTaleImage != null) {
+      return removeTinyTaleImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveTinyTaleImage<T> implements TinyTalesState<T> {
+  const factory RemoveTinyTaleImage() = _$RemoveTinyTaleImageImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$PickTinyTaleImageSuccessImplCopyWith<T, $Res> {
+  factory _$$PickTinyTaleImageSuccessImplCopyWith(
+          _$PickTinyTaleImageSuccessImpl<T> value,
+          $Res Function(_$PickTinyTaleImageSuccessImpl<T>) then) =
+      __$$PickTinyTaleImageSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({File tinyTaleImage});
+}
+
+/// @nodoc
+class __$$PickTinyTaleImageSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$PickTinyTaleImageSuccessImpl<T>>
+    implements _$$PickTinyTaleImageSuccessImplCopyWith<T, $Res> {
+  __$$PickTinyTaleImageSuccessImplCopyWithImpl(
+      _$PickTinyTaleImageSuccessImpl<T> _value,
+      $Res Function(_$PickTinyTaleImageSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tinyTaleImage = null,
+  }) {
+    return _then(_$PickTinyTaleImageSuccessImpl<T>(
+      null == tinyTaleImage
+          ? _value.tinyTaleImage
+          : tinyTaleImage // ignore: cast_nullable_to_non_nullable
+              as File,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PickTinyTaleImageSuccessImpl<T> implements PickTinyTaleImageSuccess<T> {
+  const _$PickTinyTaleImageSuccessImpl(this.tinyTaleImage);
+
+  @override
+  final File tinyTaleImage;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.pickTinyTaleImageSuccess(tinyTaleImage: $tinyTaleImage)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PickTinyTaleImageSuccessImpl<T> &&
+            (identical(other.tinyTaleImage, tinyTaleImage) ||
+                other.tinyTaleImage == tinyTaleImage));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, tinyTaleImage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PickTinyTaleImageSuccessImplCopyWith<T, _$PickTinyTaleImageSuccessImpl<T>>
+      get copyWith => __$$PickTinyTaleImageSuccessImplCopyWithImpl<T,
+          _$PickTinyTaleImageSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageSuccess(tinyTaleImage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageSuccess?.call(tinyTaleImage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (pickTinyTaleImageSuccess != null) {
+      return pickTinyTaleImageSuccess(tinyTaleImage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (pickTinyTaleImageSuccess != null) {
+      return pickTinyTaleImageSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PickTinyTaleImageSuccess<T> implements TinyTalesState<T> {
+  const factory PickTinyTaleImageSuccess(final File tinyTaleImage) =
+      _$PickTinyTaleImageSuccessImpl<T>;
+
+  File get tinyTaleImage;
+  @JsonKey(ignore: true)
+  _$$PickTinyTaleImageSuccessImplCopyWith<T, _$PickTinyTaleImageSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PickTinyTaleImageErrorImplCopyWith<T, $Res> {
+  factory _$$PickTinyTaleImageErrorImplCopyWith(
+          _$PickTinyTaleImageErrorImpl<T> value,
+          $Res Function(_$PickTinyTaleImageErrorImpl<T>) then) =
+      __$$PickTinyTaleImageErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$PickTinyTaleImageErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$PickTinyTaleImageErrorImpl<T>>
+    implements _$$PickTinyTaleImageErrorImplCopyWith<T, $Res> {
+  __$$PickTinyTaleImageErrorImplCopyWithImpl(
+      _$PickTinyTaleImageErrorImpl<T> _value,
+      $Res Function(_$PickTinyTaleImageErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$PickTinyTaleImageErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PickTinyTaleImageErrorImpl<T> implements PickTinyTaleImageError<T> {
+  const _$PickTinyTaleImageErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.pickTinyTaleImageError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PickTinyTaleImageErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PickTinyTaleImageErrorImplCopyWith<T, _$PickTinyTaleImageErrorImpl<T>>
+      get copyWith => __$$PickTinyTaleImageErrorImplCopyWithImpl<T,
+          _$PickTinyTaleImageErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (pickTinyTaleImageError != null) {
+      return pickTinyTaleImageError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+  }) {
+    return pickTinyTaleImageError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+    required TResult orElse(),
+  }) {
+    if (pickTinyTaleImageError != null) {
+      return pickTinyTaleImageError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PickTinyTaleImageError<T> implements TinyTalesState<T> {
+  const factory PickTinyTaleImageError(final String error) =
+      _$PickTinyTaleImageErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$PickTinyTaleImageErrorImplCopyWith<T, _$PickTinyTaleImageErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

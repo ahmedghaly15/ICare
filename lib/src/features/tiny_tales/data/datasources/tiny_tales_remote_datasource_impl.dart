@@ -48,20 +48,21 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
       dateTime: DateTime.now().toString(),
     );
 
-    return _accessTinyTalesCollection()
-        .doc(tinyTaleId)
-        .collection(AppStrings.likesCollection)
+    return _accessLikesCollection(tinyTaleId)
         .doc(Helper.uId)
         .set(like.toJson());
   }
 
   @override
   Future<void> unLikeTinyTale(String tinyTaleId) async {
-    return await _accessTinyTalesCollection()
+    return await _accessLikesCollection(tinyTaleId).doc(Helper.uId).delete();
+  }
+
+  CollectionReference<Map<String, dynamic>> _accessLikesCollection(
+      String tinyTaleId) {
+    return _accessTinyTalesCollection()
         .doc(tinyTaleId)
-        .collection(AppStrings.likesCollection)
-        .doc(Helper.uId)
-        .delete();
+        .collection(AppStrings.likesCollection);
   }
 
   @override
@@ -77,5 +78,21 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
         .child(
             '${AppStrings.tinyTalesCollection}/${Uri.file(tinyTaleImage!.path).pathSegments.last}')
         .putFile(tinyTaleImage);
+  }
+
+  @override
+  Stream<bool> isTinyTaleLikedByMe(String tinyTaleId) {
+    return _accessLikesCollection(tinyTaleId).snapshots().map((querySnapshot) {
+      return _mapOnSnapshots(querySnapshot);
+    });
+  }
+
+  bool _mapOnSnapshots(QuerySnapshot<Map<String, dynamic>> querySnapshot) {
+    for (final item in querySnapshot.docs) {
+      if (item.data()['user']['uId'] == Helper.uId) {
+        return true;
+      }
+    }
+    return false;
   }
 }

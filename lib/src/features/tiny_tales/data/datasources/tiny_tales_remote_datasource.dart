@@ -16,4 +16,6 @@ abstract class TinyTalesRemoteDatasource {
   Future<void> deleteTinyTale(String tinyTaleId);
 
   Future<TaskSnapshot> uploadTinyTaleImage(File? tinyTaleImage);
+
+  Stream<bool> isTinyTaleLikedByMe(String tinyTaleId);
 }

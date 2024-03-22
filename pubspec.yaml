@@ -77,6 +77,8 @@ dependencies:
   flutter_chat_bubble: ^2.0.2
   # To deal with dates, times and others
   intl: ^0.18.1
+  # Flutter plugin for selecting images from the Android and iOS image library, and taking new pictures with the camera.
+  image_picker: ^1.0.7
 
 
 

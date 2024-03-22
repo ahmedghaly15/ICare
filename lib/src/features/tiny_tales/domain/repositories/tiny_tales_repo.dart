@@ -13,5 +13,8 @@ abstract class TinyTalesRepo {
   Future<FirebaseRequestResult<void>> unLikeTinyTale(String tinyTaleId);
   Future<FirebaseRequestResult<void>> deleteTinyTale(String tinyTaleId);
   Future<FirebaseRequestResult<TaskSnapshot>> uploadTinyTaleImage(
-      File? tinyTaleImage);
+    File? tinyTaleImage,
+  );
+
+  Stream<bool> isTinyTaleLikedByMe(String tinyTaleId);
 }

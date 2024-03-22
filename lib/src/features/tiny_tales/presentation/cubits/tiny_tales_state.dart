@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'tiny_tales_state.freezed.dart';
@@ -26,4 +28,10 @@ class TinyTalesState<T> with _$TinyTalesState<T> {
       UploadTinyTaleImageSuccess<T>;
   const factory TinyTalesState.uploadTinyTaleImageError(String error) =
       UploadTinyTaleImageError;
+
+  const factory TinyTalesState.removeTinyTaleImage() = RemoveTinyTaleImage;
+  const factory TinyTalesState.pickTinyTaleImageSuccess(File tinyTaleImage) =
+      PickTinyTaleImageSuccess<T>;
+  const factory TinyTalesState.pickTinyTaleImageError(String error) =
+      PickTinyTaleImageError;
 }
