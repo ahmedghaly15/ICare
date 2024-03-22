@@ -89,4 +89,5 @@ class AppStrings {
   static const String tinyTalesCollection = 'TinyTales';
   static const String unKnownError = 'Unknown error';
   static const String likesCollection = 'likes';
+  static const String tinyTaleId = 'tinyTaleId';
 }

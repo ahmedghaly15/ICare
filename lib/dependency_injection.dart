@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_predictor_datasource.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/repositories/baby_cry_predictor_repo.dart';
@@ -434,5 +436,9 @@ class DependencyInjection {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
     getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+
+    getIt.registerLazySingleton<FirebaseStorage>(
+      () => firebase_storage.FirebaseStorage.instance,
+    );
   }
 }
