@@ -87,6 +87,6 @@ class AppStrings {
   static const String cryPredictor = 'Cry Predictor';
   static const String icareBot = 'ICare Bot';
   static const String tinyTalesCollection = 'TinyTales';
-
   static const String unKnownError = 'Unknown error';
+  static const String likesCollection = 'likes';
 }

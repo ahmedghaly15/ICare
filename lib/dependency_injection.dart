@@ -16,6 +16,8 @@ import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote
 import 'package:icare/src/features/tiny_tales/data/repositories/tiny_tales_repo_impl.dart';
 import 'package:icare/src/features/tiny_tales/domain/repositories/tiny_tales_repo.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/unlike_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -309,6 +311,14 @@ class DependencyInjection {
     getIt.registerLazySingleton<CreateTinyTaleUseCase>(
       () => CreateTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );
+
+    getIt.registerLazySingleton<LikeTinyTaleUseCase>(
+      () => LikeTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
+    );
+
+    getIt.registerLazySingleton<UnLikeTinyTaleUseCase>(
+      () => UnLikeTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
+    );
   }
 
   void _setupForCubits() {
@@ -385,6 +395,8 @@ class DependencyInjection {
     getIt.registerFactory<TinyTalesCubit>(
       () => TinyTalesCubit(
         createTinyTaleUseCase: getIt.get<CreateTinyTaleUseCase>(),
+        likeTinyTaleUseCase: getIt.get<LikeTinyTaleUseCase>(),
+        unLikeTinyTaleUseCase: getIt.get<UnLikeTinyTaleUseCase>(),
       ),
     );
   }

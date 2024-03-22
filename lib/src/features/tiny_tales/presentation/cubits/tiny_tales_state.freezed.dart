@@ -19,50 +19,77 @@ mixin _$TinyTalesState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TinyTalesInitial<T> value) initial,
-    required TResult Function(CreateTinyTaleLoading<T> value) loading,
-    required TResult Function(CreateTinyTaleSuccess<T> value) success,
-    required TResult Function(CreateTinyTaleError<T> value) error,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TinyTalesInitial<T> value)? initial,
-    TResult? Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult? Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult? Function(CreateTinyTaleError<T> value)? error,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TinyTalesInitial<T> value)? initial,
-    TResult Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult Function(CreateTinyTaleError<T> value)? error,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,9 +153,13 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
   }) {
     return initial();
   }
@@ -137,9 +168,13 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
   }) {
     return initial?.call();
   }
@@ -148,9 +183,13 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -163,9 +202,16 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TinyTalesInitial<T> value) initial,
-    required TResult Function(CreateTinyTaleLoading<T> value) loading,
-    required TResult Function(CreateTinyTaleSuccess<T> value) success,
-    required TResult Function(CreateTinyTaleError<T> value) error,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
   }) {
     return initial(this);
   }
@@ -174,9 +220,13 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TinyTalesInitial<T> value)? initial,
-    TResult? Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult? Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult? Function(CreateTinyTaleError<T> value)? error,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
   }) {
     return initial?.call(this);
   }
@@ -185,9 +235,13 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TinyTalesInitial<T> value)? initial,
-    TResult Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult Function(CreateTinyTaleError<T> value)? error,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -227,7 +281,7 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
 
   @override
   String toString() {
-    return 'TinyTalesState<$T>.loading()';
+    return 'TinyTalesState<$T>.createTinyTaleLoading()';
   }
 
   @override
@@ -244,35 +298,47 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
   }) {
-    return loading();
+    return createTinyTaleLoading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
   }) {
-    return loading?.call();
+    return createTinyTaleLoading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (createTinyTaleLoading != null) {
+      return createTinyTaleLoading();
     }
     return orElse();
   }
@@ -281,35 +347,50 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TinyTalesInitial<T> value) initial,
-    required TResult Function(CreateTinyTaleLoading<T> value) loading,
-    required TResult Function(CreateTinyTaleSuccess<T> value) success,
-    required TResult Function(CreateTinyTaleError<T> value) error,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
   }) {
-    return loading(this);
+    return createTinyTaleLoading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TinyTalesInitial<T> value)? initial,
-    TResult? Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult? Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult? Function(CreateTinyTaleError<T> value)? error,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
   }) {
-    return loading?.call(this);
+    return createTinyTaleLoading?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TinyTalesInitial<T> value)? initial,
-    TResult Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult Function(CreateTinyTaleError<T> value)? error,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (createTinyTaleLoading != null) {
+      return createTinyTaleLoading(this);
     }
     return orElse();
   }
@@ -363,7 +444,7 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
 
   @override
   String toString() {
-    return 'TinyTalesState<$T>.success(data: $data)';
+    return 'TinyTalesState<$T>.createTinyTaleSuccess(data: $data)';
   }
 
   @override
@@ -389,35 +470,47 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
   }) {
-    return success(data);
+    return createTinyTaleSuccess(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
   }) {
-    return success?.call(data);
+    return createTinyTaleSuccess?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(data);
+    if (createTinyTaleSuccess != null) {
+      return createTinyTaleSuccess(data);
     }
     return orElse();
   }
@@ -426,35 +519,50 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TinyTalesInitial<T> value) initial,
-    required TResult Function(CreateTinyTaleLoading<T> value) loading,
-    required TResult Function(CreateTinyTaleSuccess<T> value) success,
-    required TResult Function(CreateTinyTaleError<T> value) error,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
   }) {
-    return success(this);
+    return createTinyTaleSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TinyTalesInitial<T> value)? initial,
-    TResult? Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult? Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult? Function(CreateTinyTaleError<T> value)? error,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
   }) {
-    return success?.call(this);
+    return createTinyTaleSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TinyTalesInitial<T> value)? initial,
-    TResult Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult Function(CreateTinyTaleError<T> value)? error,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (createTinyTaleSuccess != null) {
+      return createTinyTaleSuccess(this);
     }
     return orElse();
   }
@@ -476,7 +584,7 @@ abstract class _$$CreateTinyTaleErrorImplCopyWith<T, $Res> {
           $Res Function(_$CreateTinyTaleErrorImpl<T>) then) =
       __$$CreateTinyTaleErrorImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String message});
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -490,12 +598,12 @@ class __$$CreateTinyTaleErrorImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = null,
+    Object? error = null,
   }) {
     return _then(_$CreateTinyTaleErrorImpl<T>(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -504,14 +612,14 @@ class __$$CreateTinyTaleErrorImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
-  const _$CreateTinyTaleErrorImpl(this.message);
+  const _$CreateTinyTaleErrorImpl(this.error);
 
   @override
-  final String message;
+  final String error;
 
   @override
   String toString() {
-    return 'TinyTalesState<$T>.error(message: $message)';
+    return 'TinyTalesState<$T>.createTinyTaleError(error: $error)';
   }
 
   @override
@@ -519,11 +627,11 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateTinyTaleErrorImpl<T> &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
@@ -536,35 +644,47 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(T data) success,
-    required TResult Function(String message) error,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
   }) {
-    return error(message);
+    return createTinyTaleError(error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(T data)? success,
-    TResult? Function(String message)? error,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
   }) {
-    return error?.call(message);
+    return createTinyTaleError?.call(error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(T data)? success,
-    TResult Function(String message)? error,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(message);
+    if (createTinyTaleError != null) {
+      return createTinyTaleError(error);
     }
     return orElse();
   }
@@ -573,46 +693,697 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_TinyTalesInitial<T> value) initial,
-    required TResult Function(CreateTinyTaleLoading<T> value) loading,
-    required TResult Function(CreateTinyTaleSuccess<T> value) success,
-    required TResult Function(CreateTinyTaleError<T> value) error,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
   }) {
-    return error(this);
+    return createTinyTaleError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_TinyTalesInitial<T> value)? initial,
-    TResult? Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult? Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult? Function(CreateTinyTaleError<T> value)? error,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
   }) {
-    return error?.call(this);
+    return createTinyTaleError?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_TinyTalesInitial<T> value)? initial,
-    TResult Function(CreateTinyTaleLoading<T> value)? loading,
-    TResult Function(CreateTinyTaleSuccess<T> value)? success,
-    TResult Function(CreateTinyTaleError<T> value)? error,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
     required TResult orElse(),
   }) {
-    if (error != null) {
-      return error(this);
+    if (createTinyTaleError != null) {
+      return createTinyTaleError(this);
     }
     return orElse();
   }
 }
 
 abstract class CreateTinyTaleError<T> implements TinyTalesState<T> {
-  const factory CreateTinyTaleError(final String message) =
+  const factory CreateTinyTaleError(final String error) =
       _$CreateTinyTaleErrorImpl<T>;
 
-  String get message;
+  String get error;
   @JsonKey(ignore: true)
   _$$CreateTinyTaleErrorImplCopyWith<T, _$CreateTinyTaleErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LikeTinyTaleSuccessImplCopyWith<T, $Res> {
+  factory _$$LikeTinyTaleSuccessImplCopyWith(_$LikeTinyTaleSuccessImpl<T> value,
+          $Res Function(_$LikeTinyTaleSuccessImpl<T>) then) =
+      __$$LikeTinyTaleSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LikeTinyTaleSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res, _$LikeTinyTaleSuccessImpl<T>>
+    implements _$$LikeTinyTaleSuccessImplCopyWith<T, $Res> {
+  __$$LikeTinyTaleSuccessImplCopyWithImpl(_$LikeTinyTaleSuccessImpl<T> _value,
+      $Res Function(_$LikeTinyTaleSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
+  const _$LikeTinyTaleSuccessImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.likeTinyTaleSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LikeTinyTaleSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (likeTinyTaleSuccess != null) {
+      return likeTinyTaleSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (likeTinyTaleSuccess != null) {
+      return likeTinyTaleSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikeTinyTaleSuccess<T> implements TinyTalesState<T> {
+  const factory LikeTinyTaleSuccess() = _$LikeTinyTaleSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$LikeTinyTaleErrorImplCopyWith<T, $Res> {
+  factory _$$LikeTinyTaleErrorImplCopyWith(_$LikeTinyTaleErrorImpl<T> value,
+          $Res Function(_$LikeTinyTaleErrorImpl<T>) then) =
+      __$$LikeTinyTaleErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$LikeTinyTaleErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res, _$LikeTinyTaleErrorImpl<T>>
+    implements _$$LikeTinyTaleErrorImplCopyWith<T, $Res> {
+  __$$LikeTinyTaleErrorImplCopyWithImpl(_$LikeTinyTaleErrorImpl<T> _value,
+      $Res Function(_$LikeTinyTaleErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$LikeTinyTaleErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
+  const _$LikeTinyTaleErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.likeTinyTaleError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LikeTinyTaleErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LikeTinyTaleErrorImplCopyWith<T, _$LikeTinyTaleErrorImpl<T>>
+      get copyWith =>
+          __$$LikeTinyTaleErrorImplCopyWithImpl<T, _$LikeTinyTaleErrorImpl<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (likeTinyTaleError != null) {
+      return likeTinyTaleError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+  }) {
+    return likeTinyTaleError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (likeTinyTaleError != null) {
+      return likeTinyTaleError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikeTinyTaleError<T> implements TinyTalesState<T> {
+  const factory LikeTinyTaleError(final String error) =
+      _$LikeTinyTaleErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$LikeTinyTaleErrorImplCopyWith<T, _$LikeTinyTaleErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnlikeTinyTaleSuccessImplCopyWith<T, $Res> {
+  factory _$$UnlikeTinyTaleSuccessImplCopyWith(
+          _$UnlikeTinyTaleSuccessImpl<T> value,
+          $Res Function(_$UnlikeTinyTaleSuccessImpl<T>) then) =
+      __$$UnlikeTinyTaleSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UnlikeTinyTaleSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$UnlikeTinyTaleSuccessImpl<T>>
+    implements _$$UnlikeTinyTaleSuccessImplCopyWith<T, $Res> {
+  __$$UnlikeTinyTaleSuccessImplCopyWithImpl(
+      _$UnlikeTinyTaleSuccessImpl<T> _value,
+      $Res Function(_$UnlikeTinyTaleSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
+  const _$UnlikeTinyTaleSuccessImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.unlikeTinyTaleSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnlikeTinyTaleSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (unlikeTinyTaleSuccess != null) {
+      return unlikeTinyTaleSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (unlikeTinyTaleSuccess != null) {
+      return unlikeTinyTaleSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnlikeTinyTaleSuccess<T> implements TinyTalesState<T> {
+  const factory UnlikeTinyTaleSuccess() = _$UnlikeTinyTaleSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UnlikeTinyTaleErrorImplCopyWith<T, $Res> {
+  factory _$$UnlikeTinyTaleErrorImplCopyWith(_$UnlikeTinyTaleErrorImpl<T> value,
+          $Res Function(_$UnlikeTinyTaleErrorImpl<T>) then) =
+      __$$UnlikeTinyTaleErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UnlikeTinyTaleErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res, _$UnlikeTinyTaleErrorImpl<T>>
+    implements _$$UnlikeTinyTaleErrorImplCopyWith<T, $Res> {
+  __$$UnlikeTinyTaleErrorImplCopyWithImpl(_$UnlikeTinyTaleErrorImpl<T> _value,
+      $Res Function(_$UnlikeTinyTaleErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UnlikeTinyTaleErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
+  const _$UnlikeTinyTaleErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.unlikeTinyTaleError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnlikeTinyTaleErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnlikeTinyTaleErrorImplCopyWith<T, _$UnlikeTinyTaleErrorImpl<T>>
+      get copyWith => __$$UnlikeTinyTaleErrorImplCopyWithImpl<T,
+          _$UnlikeTinyTaleErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (unlikeTinyTaleError != null) {
+      return unlikeTinyTaleError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+  }) {
+    return unlikeTinyTaleError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    required TResult orElse(),
+  }) {
+    if (unlikeTinyTaleError != null) {
+      return unlikeTinyTaleError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnlikeTinyTaleError<T> implements TinyTalesState<T> {
+  const factory UnlikeTinyTaleError(final String error) =
+      _$UnlikeTinyTaleErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$UnlikeTinyTaleErrorImplCopyWith<T, _$UnlikeTinyTaleErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

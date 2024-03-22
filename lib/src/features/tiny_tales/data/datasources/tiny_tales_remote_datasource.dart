@@ -5,4 +5,8 @@ abstract class TinyTalesRemoteDatasource {
   Future<DocumentReference<Map<String, dynamic>>> createTinyTale(
     CreateTinyTaleParams params,
   );
+
+  Future<void> likeTinyTale(String tinyTaleId);
+
+  Future<void> unLikeTinyTale(String tinyTaleId);
 }

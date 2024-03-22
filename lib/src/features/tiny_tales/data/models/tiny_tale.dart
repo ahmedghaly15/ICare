@@ -10,7 +10,6 @@ class TinyTale {
   final String? tinyTaleId;
   final String? time;
   final String? date;
-  // @JsonKey(fromJson: TimestampConverter.fromJson, toJson: TimestampConverter.toJson)
   final Timestamp? dateTime;
   final String? text;
   final String? tinyTaleImage;
@@ -30,14 +29,3 @@ class TinyTale {
 
   Map<String, dynamic> toJson() => $TinyTaleToJson(this);
 }
-
-// class TimestampConverter implements JsonConverter<DateTime, Timestamp> {
-//   const TimestampConverter();
-
-//   @override
-//   DateTime fromJson(Timestamp value) => value?.toDate();
-
-//   @override
-//   Timestamp toJson(DateTime value) =>
-//       value != null ? Timestamp.fromDate(value) : null;
-// }

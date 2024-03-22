@@ -5,4 +5,7 @@ import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_param
 abstract class TinyTalesRepo {
   Future<FirebaseRequestResult<DocumentReference<Map<String, dynamic>>>>
       createTinyTale(CreateTinyTaleParams params);
+
+  Future<FirebaseRequestResult<void>> likeTinyTale(String tinyTaleId);
+  Future<FirebaseRequestResult<void>> unLikeTinyTale(String tinyTaleId);
 }

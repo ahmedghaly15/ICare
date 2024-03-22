@@ -18,4 +18,18 @@ class TinyTalesRepoImpl implements TinyTalesRepo {
       () async => await _tinyTalesRemoteDatasource.createTinyTale(params),
     );
   }
+
+  @override
+  Future<FirebaseRequestResult<void>> likeTinyTale(String tinyTaleId) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _tinyTalesRemoteDatasource.likeTinyTale(tinyTaleId),
+    );
+  }
+
+  @override
+  Future<FirebaseRequestResult<void>> unLikeTinyTale(String tinyTaleId) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _tinyTalesRemoteDatasource.unLikeTinyTale(tinyTaleId),
+    );
+  }
 }
