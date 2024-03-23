@@ -9,6 +9,7 @@ import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_model.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/data/models/tiny_tale_data.dart';
 
 class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   const TinyTalesRemoteDatasourceImpl();
@@ -25,10 +26,12 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   ) async {
     final TinyTale tinyTale = TinyTale(
       user: Helper.currentUser,
-      text: params.text,
-      date: params.date,
-      time: params.time,
-      tinyTaleImage: params.tinyTaleImage,
+      tinyTaleData: TinyTaleData(
+        text: params.text,
+        date: params.date,
+        time: params.time,
+        tinyTaleImage: params.tinyTaleImage,
+      ),
       dateTime: Timestamp.now(),
     );
 

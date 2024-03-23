@@ -86,8 +86,11 @@ class AppStrings {
       'No API key found. Please provide an API Key.';
   static const String cryPredictor = 'Cry Predictor';
   static const String icareBot = 'ICare Bot';
-  static const String tinyTalesCollection = 'TinyTales';
+  static const String tinyTalesCollection = 'TinyTales Collection';
   static const String unKnownError = 'Unknown error';
-  static const String likesCollection = 'likes';
+  static const String likesCollection = 'likes Collection';
   static const String tinyTaleId = 'tinyTaleId';
+  static const String commentsCollection = 'comments Collection';
+  static const String dateTime = 'dateTime';
+  static const String commentId = 'commentId';
 }
