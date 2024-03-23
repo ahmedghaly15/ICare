@@ -15,30 +15,25 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
     return BlocConsumer<ICareBotCubit, ICareBotState>(
       listenWhen: (_, current) => current is Error,
       listener: (_, state) => _handleICareBotState(state, context),
-      builder: (context, state) => Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: 32.h,
-          horizontal: 8.w,
-        ),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: CustomTextFormField(
-                controller: context.read<ICareBotCubit>().textController,
-                contentPadding: EdgeInsets.all(16.h),
-                hintText: 'Ask ICare Bot...',
-                onChanged: (String val) {
-                  context.read<ICareBotCubit>().setNewTextValue(val);
-                },
-              ),
+      builder: (context, state) => Row(
+        children: <Widget>[
+          Expanded(
+            child: CustomTextFormField(
+              controller: context.read<ICareBotCubit>().textController,
+              contentPadding: EdgeInsets.all(16.h),
+              textCapitalization: TextCapitalization.sentences,
+              hintText: 'Ask ICare Bot...',
+              onChanged: (String val) {
+                context.read<ICareBotCubit>().setNewTextValue(val);
+              },
             ),
-            SizedBox.square(dimension: 8.h),
-            CustomSendMessageIconButton(
-              isEnabled:
-                  context.read<ICareBotCubit>().textController.text.isNotEmpty,
-            ),
-          ],
-        ),
+          ),
+          SizedBox.square(dimension: 8.h),
+          CustomSendMessageIconButton(
+            isEnabled:
+                context.read<ICareBotCubit>().textController.text.isNotEmpty,
+          ),
+        ],
       ),
     );
   }

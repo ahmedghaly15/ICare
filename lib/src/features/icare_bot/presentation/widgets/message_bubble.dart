@@ -1,6 +1,6 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
@@ -29,31 +29,29 @@ class MessageBubble extends StatelessWidget {
         vertical: 8.h,
         horizontal: AppConstants.padding16.w,
       ),
-      child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: SizeConfig.width * 0.7),
-        child: isUser
-            ? Text(
-                message,
-                style: AppTextStyles.textStyle16Medium(context).copyWith(
-                  color: Colors.white,
-                ),
-                textAlign: TextAlign.left,
-              )
-            : AnimatedTextKit(
-                animatedTexts: <AnimatedText>[
-                  TypewriterAnimatedText(
-                    message,
-                    textStyle: AppTextStyles.textStyle16Medium(context),
-                    speed: const Duration(milliseconds: 50),
-                    cursor: '\u25CF',
-                    textAlign: TextAlign.left,
-                  ),
-                ],
-                isRepeatingAnimation: false,
-                totalRepeatCount: 0,
-                displayFullTextOnTap: true,
+      child: isUser
+          ? Text(
+              message,
+              style: AppTextStyles.textStyle16Medium(context).copyWith(
+                color: Colors.white,
               ),
-      ),
+              textAlign: TextAlign.left,
+            )
+          : ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: SizeConfig.width * 0.75),
+              child: Markdown(
+                data: message,
+                padding: EdgeInsets.zero,
+                styleSheet: MarkdownStyleSheet(
+                  p: AppTextStyles.textStyle16Medium(context).copyWith(
+                    color: Colors.black,
+                  ),
+                ),
+                selectable: false,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+              ),
+            ),
     );
   }
 }

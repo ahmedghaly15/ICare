@@ -71,14 +71,14 @@ dependencies:
   google_generative_ai: ^0.2.2
   # Easily configure any flutter application with global variables using a `.env` file.
   flutter_dotenv: ^5.1.0
-  # A flutter package project which contains a collection of cool and beautiful text animations.
-  animated_text_kit: ^4.2.2
   # Create diverse designs of chat bubbles
   flutter_chat_bubble: ^2.0.2
   # To deal with dates, times and others
   intl: ^0.18.1
   # Flutter plugin for selecting images from the Android and iOS image library, and taking new pictures with the camera.
   image_picker: ^1.0.7
+  # A Markdown renderer for Flutter
+  flutter_markdown: ^0.6.22
 
 
 

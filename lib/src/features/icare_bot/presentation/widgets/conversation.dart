@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
@@ -18,11 +17,9 @@ class Conversation extends StatelessWidget {
       buildWhen: (_, current) => current is Success,
       builder: (context, state) {
         return ListView.separated(
-          padding: EdgeInsets.only(
-            top: 16.h,
-            bottom: SizeConfig.height * 0.12,
-            right: 4.w,
-            left: 4.w,
+          padding: EdgeInsets.symmetric(
+            horizontal: 4.w,
+            vertical: 16.h,
           ),
           physics: AppConstants.scrollPhysics,
           controller: context.read<ICareBotCubit>().scrollController,

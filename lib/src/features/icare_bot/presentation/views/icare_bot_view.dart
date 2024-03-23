@@ -1,11 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/conversation.dart';
@@ -37,11 +39,10 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
             child: Image.asset(AppAssets.imagesAppLogo),
           ),
           BlocBuilder<ICareBotCubit, ICareBotState>(
-            builder: (context, state) => Stack(
-              alignment: Alignment.bottomCenter,
+            builder: (context, state) => Column(
               children: <Widget>[
                 context.read<ICareBotCubit>().hasApiKey
-                    ? const Conversation()
+                    ? const Expanded(child: Conversation())
                     : Center(
                         child: Text(
                           AppStrings.noApiKeyFound,
@@ -50,7 +51,15 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                const SendMessageTextFieldAndButton(),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 8.w,
+                    right: 8.w,
+                    bottom: SizeConfig.height * 0.05,
+                    top: 8.h,
+                  ),
+                  child: const SendMessageTextFieldAndButton(),
+                ),
               ],
             ),
           ),
