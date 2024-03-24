@@ -6,10 +6,16 @@ import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/features/icare_bot/data/models/ask_icare_bot_params.dart';
+import 'package:icare/src/features/icare_bot/domain/usecases/ask_icare_bot.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
 
 class ICareBotCubit extends Cubit<ICareBotState> {
-  ICareBotCubit() : super(const ICareBotState.initial()) {
+  final AskICareBotUseCase _askICareBotUseCase;
+
+  ICareBotCubit(
+    this._askICareBotUseCase,
+  ) : super(const ICareBotState.initial()) {
     _initVariables();
   }
 
@@ -36,49 +42,58 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   final bool hasApiKey = dotenv.env[AppStrings.apiKey] != null &&
       dotenv.env[AppStrings.apiKey]!.isNotEmpty;
 
-  void sendMessage(BuildContext context) async {
+  void askICareBot(BuildContext context) async {
     emit(const ICareBotState.loading());
 
     _convertSendMessageTextFieldStatus();
 
     AuthHelper.keyboardUnfocus(context);
 
-    try {
-      final GenerateContentResponse response =
-          await chat.sendMessage(Content.text(textController.text));
+    final response = await _askICareBotUseCase(
+      AskICareBotParams(
+        chat: chat,
+        content: Content.text(textController.text),
+      ),
+    );
 
-      if (response.text == null) {
-        CustomDialog.show(
-          // ignore: use_build_context_synchronously
-          context: context,
-          state: CustomDialogStates.warning,
-          message: 'No response from API.',
-        );
-      } else {
+    response.when(
+      success: (response) {
+        _handleAskICareBotSuccess(response, context);
+      },
+      failure: (error) {
         _convertSendMessageTextFieldStatus();
-        emit(ICareBotState.success(response.text));
-        textController.clear();
+        emit(ICareBotState.error(error.failureMsg ?? AppStrings.unKnownError));
+      },
+    );
 
-        final bool isScrolledToBottom = scrollController.position.pixels ==
-            scrollController.position.maxScrollExtent;
+    textController.clear();
+  }
 
-        // Scroll to the bottom of the chat history
-        if (!isScrolledToBottom) {
-          scrollController.animateTo(
-            scrollController.position.maxScrollExtent +
-                SizeConfig.height * 0.12,
-            duration: const Duration(milliseconds: 150),
-            curve: Curves.easeOut,
-          );
-        }
-      }
-    } catch (e) {
-      if (e is GenerativeAIException) {
-        emit(ICareBotState.error(e.message));
-      }
-
-      debugPrint('ERROR WHILE SENDING MESSAGE TO GEMINI: $e');
+  void _handleAskICareBotSuccess(
+      GenerateContentResponse response, BuildContext context) {
+    if (response.text == null) {
+      CustomDialog.show(
+        // ignore: use_build_context_synchronously
+        context: context,
+        state: CustomDialogStates.warning,
+        message: 'No response from API.',
+      );
+    } else {
+      _convertSendMessageTextFieldStatus();
+      emit(ICareBotState.success(response.text));
       textController.clear();
+
+      final bool isScrolledToBottom = scrollController.position.pixels ==
+          scrollController.position.maxScrollExtent;
+
+      // Scroll to the bottom of the chat history
+      if (!isScrolledToBottom) {
+        scrollController.animateTo(
+          scrollController.position.maxScrollExtent + SizeConfig.height * 0.12,
+          duration: const Duration(milliseconds: 150),
+          curve: Curves.easeOut,
+        );
+      }
     }
   }
 
@@ -101,7 +116,6 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   @override
   Future<void> close() {
     _disposeControllers();
-
     return super.close();
   }
 

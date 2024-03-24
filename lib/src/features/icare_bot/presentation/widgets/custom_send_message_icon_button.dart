@@ -35,7 +35,7 @@ class CustomSendMessageIconButton extends StatelessWidget {
             ),
             onPressed: () {
               isEnabled
-                  ? context.read<ICareBotCubit>().sendMessage(context)
+                  ? context.read<ICareBotCubit>().askICareBot(context)
                   : null;
             },
           ),
