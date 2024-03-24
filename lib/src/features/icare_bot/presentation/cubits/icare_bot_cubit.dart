@@ -39,16 +39,15 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   void sendMessage(BuildContext context) async {
     emit(const ICareBotState.loading());
 
+    _convertSendMessageTextFieldStatus();
+
     AuthHelper.keyboardUnfocus(context);
 
     try {
       final GenerateContentResponse response =
           await chat.sendMessage(Content.text(textController.text));
-      final String? text = response.text;
 
-      emit(ICareBotState.success(response.text));
-
-      if (text == null) {
+      if (response.text == null) {
         CustomDialog.show(
           // ignore: use_build_context_synchronously
           context: context,
@@ -56,6 +55,10 @@ class ICareBotCubit extends Cubit<ICareBotState> {
           message: 'No response from API.',
         );
       } else {
+        _convertSendMessageTextFieldStatus();
+        emit(ICareBotState.success(response.text));
+        textController.clear();
+
         final bool isScrolledToBottom = scrollController.position.pixels ==
             scrollController.position.maxScrollExtent;
 
@@ -68,8 +71,6 @@ class ICareBotCubit extends Cubit<ICareBotState> {
             curve: Curves.easeOut,
           );
         }
-
-        textController.clear();
       }
     } catch (e) {
       if (e is GenerativeAIException) {
@@ -79,6 +80,17 @@ class ICareBotCubit extends Cubit<ICareBotState> {
       debugPrint('ERROR WHILE SENDING MESSAGE TO GEMINI: $e');
       textController.clear();
     }
+  }
+
+  bool isSendMessageTextFieldEnabled = true;
+
+  void _convertSendMessageTextFieldStatus() {
+    isSendMessageTextFieldEnabled = !isSendMessageTextFieldEnabled;
+    emit(
+      ICareBotState.convertSendMessageTextFieldStatus(
+        isSendMessageTextFieldEnabled,
+      ),
+    );
   }
 
   void setNewTextValue(String text) {

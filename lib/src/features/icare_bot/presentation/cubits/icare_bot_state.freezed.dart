@@ -23,6 +23,8 @@ mixin _$ICareBotState<T> {
     required TResult Function(T data) success,
     required TResult Function(String message) error,
     required TResult Function(String text) setNewTextValue,
+    required TResult Function(bool isSendMessageTextFieldEnabled)
+        convertSendMessageTextFieldStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +34,8 @@ mixin _$ICareBotState<T> {
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String text)? setNewTextValue,
+    TResult? Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +45,8 @@ mixin _$ICareBotState<T> {
     TResult Function(T data)? success,
     TResult Function(String message)? error,
     TResult Function(String text)? setNewTextValue,
+    TResult Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +57,8 @@ mixin _$ICareBotState<T> {
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
     required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_ConvertSendMessageTextFieldStatus<T> value)
+        convertSendMessageTextFieldStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +68,8 @@ mixin _$ICareBotState<T> {
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
     TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +79,8 @@ mixin _$ICareBotState<T> {
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
     TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +147,8 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     required TResult Function(T data) success,
     required TResult Function(String message) error,
     required TResult Function(String text) setNewTextValue,
+    required TResult Function(bool isSendMessageTextFieldEnabled)
+        convertSendMessageTextFieldStatus,
   }) {
     return initial();
   }
@@ -147,6 +161,8 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String text)? setNewTextValue,
+    TResult? Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
   }) {
     return initial?.call();
   }
@@ -159,6 +175,8 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult Function(T data)? success,
     TResult Function(String message)? error,
     TResult Function(String text)? setNewTextValue,
+    TResult Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -175,6 +193,8 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
     required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_ConvertSendMessageTextFieldStatus<T> value)
+        convertSendMessageTextFieldStatus,
   }) {
     return initial(this);
   }
@@ -187,6 +207,8 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
     TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
   }) {
     return initial?.call(this);
   }
@@ -199,6 +221,8 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
     TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -255,6 +279,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(T data) success,
     required TResult Function(String message) error,
     required TResult Function(String text) setNewTextValue,
+    required TResult Function(bool isSendMessageTextFieldEnabled)
+        convertSendMessageTextFieldStatus,
   }) {
     return loading();
   }
@@ -267,6 +293,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String text)? setNewTextValue,
+    TResult? Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
   }) {
     return loading?.call();
   }
@@ -279,6 +307,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(T data)? success,
     TResult Function(String message)? error,
     TResult Function(String text)? setNewTextValue,
+    TResult Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -295,6 +325,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
     required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_ConvertSendMessageTextFieldStatus<T> value)
+        convertSendMessageTextFieldStatus,
   }) {
     return loading(this);
   }
@@ -307,6 +339,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
     TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
   }) {
     return loading?.call(this);
   }
@@ -319,6 +353,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
     TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -402,6 +438,8 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(T data) success,
     required TResult Function(String message) error,
     required TResult Function(String text) setNewTextValue,
+    required TResult Function(bool isSendMessageTextFieldEnabled)
+        convertSendMessageTextFieldStatus,
   }) {
     return success(data);
   }
@@ -414,6 +452,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String text)? setNewTextValue,
+    TResult? Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
   }) {
     return success?.call(data);
   }
@@ -426,6 +466,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(T data)? success,
     TResult Function(String message)? error,
     TResult Function(String text)? setNewTextValue,
+    TResult Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -442,6 +484,8 @@ class _$SuccessImpl<T> implements Success<T> {
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
     required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_ConvertSendMessageTextFieldStatus<T> value)
+        convertSendMessageTextFieldStatus,
   }) {
     return success(this);
   }
@@ -454,6 +498,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
     TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
   }) {
     return success?.call(this);
   }
@@ -466,6 +512,8 @@ class _$SuccessImpl<T> implements Success<T> {
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
     TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -553,6 +601,8 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(T data) success,
     required TResult Function(String message) error,
     required TResult Function(String text) setNewTextValue,
+    required TResult Function(bool isSendMessageTextFieldEnabled)
+        convertSendMessageTextFieldStatus,
   }) {
     return error(message);
   }
@@ -565,6 +615,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String text)? setNewTextValue,
+    TResult? Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
   }) {
     return error?.call(message);
   }
@@ -577,6 +629,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(T data)? success,
     TResult Function(String message)? error,
     TResult Function(String text)? setNewTextValue,
+    TResult Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -593,6 +647,8 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
     required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_ConvertSendMessageTextFieldStatus<T> value)
+        convertSendMessageTextFieldStatus,
   }) {
     return error(this);
   }
@@ -605,6 +661,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
     TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
   }) {
     return error?.call(this);
   }
@@ -617,6 +675,8 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
     TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -705,6 +765,8 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
     required TResult Function(T data) success,
     required TResult Function(String message) error,
     required TResult Function(String text) setNewTextValue,
+    required TResult Function(bool isSendMessageTextFieldEnabled)
+        convertSendMessageTextFieldStatus,
   }) {
     return setNewTextValue(text);
   }
@@ -717,6 +779,8 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
     TResult? Function(T data)? success,
     TResult? Function(String message)? error,
     TResult? Function(String text)? setNewTextValue,
+    TResult? Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
   }) {
     return setNewTextValue?.call(text);
   }
@@ -729,6 +793,8 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
     TResult Function(T data)? success,
     TResult Function(String message)? error,
     TResult Function(String text)? setNewTextValue,
+    TResult Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -745,6 +811,8 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
     required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_ConvertSendMessageTextFieldStatus<T> value)
+        convertSendMessageTextFieldStatus,
   }) {
     return setNewTextValue(this);
   }
@@ -757,6 +825,8 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
     TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
   }) {
     return setNewTextValue?.call(this);
   }
@@ -769,6 +839,8 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
     TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -785,4 +857,182 @@ abstract class _SetNewTextValue<T> implements ICareBotState<T> {
   @JsonKey(ignore: true)
   _$$SetNewTextValueImplCopyWith<T, _$SetNewTextValueImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConvertSendMessageTextFieldStatusImplCopyWith<T, $Res> {
+  factory _$$ConvertSendMessageTextFieldStatusImplCopyWith(
+          _$ConvertSendMessageTextFieldStatusImpl<T> value,
+          $Res Function(_$ConvertSendMessageTextFieldStatusImpl<T>) then) =
+      __$$ConvertSendMessageTextFieldStatusImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({bool isSendMessageTextFieldEnabled});
+}
+
+/// @nodoc
+class __$$ConvertSendMessageTextFieldStatusImplCopyWithImpl<T, $Res>
+    extends _$ICareBotStateCopyWithImpl<T, $Res,
+        _$ConvertSendMessageTextFieldStatusImpl<T>>
+    implements _$$ConvertSendMessageTextFieldStatusImplCopyWith<T, $Res> {
+  __$$ConvertSendMessageTextFieldStatusImplCopyWithImpl(
+      _$ConvertSendMessageTextFieldStatusImpl<T> _value,
+      $Res Function(_$ConvertSendMessageTextFieldStatusImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isSendMessageTextFieldEnabled = null,
+  }) {
+    return _then(_$ConvertSendMessageTextFieldStatusImpl<T>(
+      null == isSendMessageTextFieldEnabled
+          ? _value.isSendMessageTextFieldEnabled
+          : isSendMessageTextFieldEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConvertSendMessageTextFieldStatusImpl<T>
+    implements _ConvertSendMessageTextFieldStatus<T> {
+  const _$ConvertSendMessageTextFieldStatusImpl(
+      this.isSendMessageTextFieldEnabled);
+
+  @override
+  final bool isSendMessageTextFieldEnabled;
+
+  @override
+  String toString() {
+    return 'ICareBotState<$T>.convertSendMessageTextFieldStatus(isSendMessageTextFieldEnabled: $isSendMessageTextFieldEnabled)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConvertSendMessageTextFieldStatusImpl<T> &&
+            (identical(other.isSendMessageTextFieldEnabled,
+                    isSendMessageTextFieldEnabled) ||
+                other.isSendMessageTextFieldEnabled ==
+                    isSendMessageTextFieldEnabled));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isSendMessageTextFieldEnabled);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConvertSendMessageTextFieldStatusImplCopyWith<T,
+          _$ConvertSendMessageTextFieldStatusImpl<T>>
+      get copyWith => __$$ConvertSendMessageTextFieldStatusImplCopyWithImpl<T,
+          _$ConvertSendMessageTextFieldStatusImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function(String message) error,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(bool isSendMessageTextFieldEnabled)
+        convertSendMessageTextFieldStatus,
+  }) {
+    return convertSendMessageTextFieldStatus(isSendMessageTextFieldEnabled);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function(String message)? error,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
+  }) {
+    return convertSendMessageTextFieldStatus
+        ?.call(isSendMessageTextFieldEnabled);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function(String message)? error,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(bool isSendMessageTextFieldEnabled)?
+        convertSendMessageTextFieldStatus,
+    required TResult orElse(),
+  }) {
+    if (convertSendMessageTextFieldStatus != null) {
+      return convertSendMessageTextFieldStatus(isSendMessageTextFieldEnabled);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Success<T> value) success,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_ConvertSendMessageTextFieldStatus<T> value)
+        convertSendMessageTextFieldStatus,
+  }) {
+    return convertSendMessageTextFieldStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Success<T> value)? success,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
+  }) {
+    return convertSendMessageTextFieldStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Success<T> value)? success,
+    TResult Function(Error<T> value)? error,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_ConvertSendMessageTextFieldStatus<T> value)?
+        convertSendMessageTextFieldStatus,
+    required TResult orElse(),
+  }) {
+    if (convertSendMessageTextFieldStatus != null) {
+      return convertSendMessageTextFieldStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConvertSendMessageTextFieldStatus<T>
+    implements ICareBotState<T> {
+  const factory _ConvertSendMessageTextFieldStatus(
+          final bool isSendMessageTextFieldEnabled) =
+      _$ConvertSendMessageTextFieldStatusImpl<T>;
+
+  bool get isSendMessageTextFieldEnabled;
+  @JsonKey(ignore: true)
+  _$$ConvertSendMessageTextFieldStatusImplCopyWith<T,
+          _$ConvertSendMessageTextFieldStatusImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

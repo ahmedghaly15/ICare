@@ -9,4 +9,6 @@ class ICareBotState<T> with _$ICareBotState<T> {
   const factory ICareBotState.success(T data) = Success<T>;
   const factory ICareBotState.error(String message) = Error;
   const factory ICareBotState.setNewTextValue(String text) = _SetNewTextValue;
+  const factory ICareBotState.convertSendMessageTextFieldStatus(
+      bool isSendMessageTextFieldEnabled) = _ConvertSendMessageTextFieldStatus;
 }

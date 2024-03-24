@@ -18,6 +18,7 @@ class CustomTextFormField extends StatelessWidget {
     this.enableBorderColor,
     this.onSaved,
     this.autofillHints,
+    this.maxLines = 1,
     this.isEmail = false,
     this.enabled,
     this.textAlign,
@@ -54,13 +55,15 @@ class CustomTextFormField extends StatelessWidget {
   final FocusNode? focusNode;
   final void Function()? onEditingComplete;
   final String? Function(String?)? validating;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: enabled ?? true,
       controller: controller,
       focusNode: focusNode,
-      enabled: enabled ?? true,
+      maxLines: maxLines,
       textCapitalization: textCapitalization,
       textAlign: textAlign ?? TextAlign.start,
       keyboardType: keyboardType ?? TextInputType.text,

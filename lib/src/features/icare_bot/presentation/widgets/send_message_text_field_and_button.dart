@@ -19,7 +19,10 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: CustomTextFormField(
+              enabled:
+                  context.read<ICareBotCubit>().isSendMessageTextFieldEnabled,
               controller: context.read<ICareBotCubit>().textController,
+              maxLines: null,
               contentPadding: EdgeInsets.all(16.h),
               textCapitalization: TextCapitalization.sentences,
               hintText: 'Ask ICare Bot...',
