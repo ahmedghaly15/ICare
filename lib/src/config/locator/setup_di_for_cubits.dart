@@ -94,5 +94,10 @@ class SetupDIForCubits {
         isTinyTaleLikedByMeUseCase: getIt.get<IsTinyTaleLikeByMeUseCase>(),
       ),
     );
+
+    // ========== Tips feature ==========
+    getIt.registerFactory<TipsCubit>(
+      () => TipsCubit(getIt.get<GetRandomTipUseCase>()),
+    );
   }
 }

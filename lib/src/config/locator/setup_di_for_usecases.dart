@@ -104,5 +104,10 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<IsTinyTaleLikeByMeUseCase>(
       () => IsTinyTaleLikeByMeUseCase(getIt.get<TinyTalesRepo>()),
     );
+
+    // ========== Tips feature ==========
+    getIt.registerLazySingleton<GetRandomTipUseCase>(
+      () => GetRandomTipUseCase(getIt.get<TipsRepo>()),
+    );
   }
 }

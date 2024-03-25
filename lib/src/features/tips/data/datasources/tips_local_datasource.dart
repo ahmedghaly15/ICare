@@ -11,6 +11,8 @@ abstract class TipsLocalDataSource {
 }
 
 class TipsLocalDataSourceImpl implements TipsLocalDataSource {
+  const TipsLocalDataSourceImpl();
+
   @override
   Future<bool> cacheRandomTip(GetRandomTipResponse randomTip) async {
     return await getIt.get<CacheHelper>().saveData(

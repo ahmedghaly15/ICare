@@ -81,5 +81,13 @@ class SetupDIForRepos {
     getIt.registerLazySingleton<TinyTalesRepo>(
       () => TinyTalesRepoImpl(getIt.get<TinyTalesRemoteDatasource>()),
     );
+
+    // ========== Tips feature ==========
+    getIt.registerLazySingleton<TipsRepo>(
+      () => TipsRepo(
+        getIt.get<TipsRemoteDataSource>(),
+        getIt.get<TipsLocalDataSource>(),
+      ),
+    );
   }
 }

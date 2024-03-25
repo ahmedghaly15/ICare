@@ -8,6 +8,11 @@ import 'package:icare/src/features/icare_bot/domain/usecases/bookmark_icare_bot_
 import 'package:icare/src/features/icare_bot/domain/usecases/delete_bookmark.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/retrieve_icare_bot_bookmarks.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
+import 'package:icare/src/features/tips/data/datasources/tips_local_datasource.dart';
+import 'package:icare/src/features/tips/data/datasources/tips_remote_datasource.dart';
+import 'package:icare/src/features/tips/data/repositories/tips_repo.dart';
+import 'package:icare/src/features/tips/domain/usecases/get_random_tip.dart';
+import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';

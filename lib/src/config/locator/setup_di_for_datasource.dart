@@ -82,6 +82,16 @@ class SetupDIForDatasource {
 
     // ========== TinyTales feature ==========
     getIt.registerLazySingleton<TinyTalesRemoteDatasource>(
-        () => const TinyTalesRemoteDatasourceImpl());
+      () => const TinyTalesRemoteDatasourceImpl(),
+    );
+
+    // ========== Tips feature ==========
+    getIt.registerLazySingleton<TipsRemoteDataSource>(
+      () => TipsRemoteDataSourceImpl(getIt.get<ApiService>()),
+    );
+
+    getIt.registerLazySingleton<TipsLocalDataSource>(
+      () => const TipsLocalDataSourceImpl(),
+    );
   }
 }
