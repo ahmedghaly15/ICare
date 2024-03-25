@@ -73,6 +73,16 @@ class SetupDIForCubits {
       () => ICareBotCubit(getIt.get<AskICareBotUseCase>()),
     );
 
+    getIt.registerFactory<BookmarkCubit>(
+      () => BookmarkCubit(
+        bookmarkICareBotMessageUseCase:
+            getIt.get<BookmarkICareBotMessageUseCase>(),
+        retrieveICareBotBookmarksUseCase:
+            getIt.get<RetrieveICareBotBookmarksUseCase>(),
+        deleteBookmarkUseCase: getIt.get<DeleteBookmarkUseCase>(),
+      ),
+    );
+
     // ========== TinyTales feature ==========
     getIt.registerFactory<TinyTalesCubit>(
       () => TinyTalesCubit(

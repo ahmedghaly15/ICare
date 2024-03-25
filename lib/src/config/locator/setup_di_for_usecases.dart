@@ -68,6 +68,18 @@ class SetupDIForUseCases {
       () => AskICareBotUseCase(getIt.get<ICareBotRepo>()),
     );
 
+    getIt.registerLazySingleton<BookmarkICareBotMessageUseCase>(
+      () => BookmarkICareBotMessageUseCase(getIt.get<ICareBotRepo>()),
+    );
+
+    getIt.registerLazySingleton<RetrieveICareBotBookmarksUseCase>(
+      () => RetrieveICareBotBookmarksUseCase(getIt.get<ICareBotRepo>()),
+    );
+
+    getIt.registerLazySingleton<DeleteBookmarkUseCase>(
+      () => DeleteBookmarkUseCase(getIt.get<ICareBotRepo>()),
+    );
+
     // ========== TinyTales feature ==========
     getIt.registerLazySingleton<CreateTinyTaleUseCase>(
       () => CreateTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
