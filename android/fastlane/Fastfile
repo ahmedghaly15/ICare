@@ -15,10 +15,8 @@ platform :android do
     This is a new release.
     
     Updates:
-      - Update SafetySetting to Gemini.
-      - Update databaseBaseUrl.
-      - Add background image for ICare Bot Screen.
-      - Handle Error Case in Cry Predictor & Make it Build the Initial UI Again.
+      - Add bookmarks to ICareBot
+      - Add daily random tip feature
   """
   )
   end
