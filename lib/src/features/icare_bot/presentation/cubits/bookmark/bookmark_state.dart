@@ -10,6 +10,13 @@ class BookmarkState<T> with _$BookmarkState<T> {
       BookmarkICareBotMessageLoading;
   const factory BookmarkState.bookmarkICareBotMessageSuccess(
       BookmarkICareBotMessageResponse data) = BookmarkICareBotMessageSuccess<T>;
-  const factory BookmarkState.bookmarkICareBotMessageError(String message) =
+  const factory BookmarkState.bookmarkICareBotMessageError(String error) =
       BookmarkICareBotMessageError;
+  const factory BookmarkState.retrieveICareBotBookmarksLoading() =
+      RetrieveICareBotBookmarksLoading;
+  const factory BookmarkState.retrieveICareBotBookmarksSuccess(
+          List<BookmarkICareBotMessageResponse> data) =
+      RetrieveICareBotBookmarksSuccess<T>;
+  const factory BookmarkState.retrieveICareBotBookmarksError(String error) =
+      RetrieveICareBotBookmarksError;
 }

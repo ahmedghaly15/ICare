@@ -9,6 +9,10 @@ abstract class ICareBotRemoteDatasource {
   Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
     BookmarkICareBotMessageParams params,
   );
+
+  Future<List<BookmarkICareBotMessageResponse>> retrieveICareBotBookmarks(
+    String userId,
+  );
 }
 
 class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
@@ -26,5 +30,12 @@ class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
     BookmarkICareBotMessageParams params,
   ) async {
     return await _apiService.bookmarkICareBotMessage(params);
+  }
+
+  @override
+  Future<List<BookmarkICareBotMessageResponse>> retrieveICareBotBookmarks(
+    String userId,
+  ) async {
+    return await _apiService.retrieveICareBotBookmarks(userId);
   }
 }

@@ -13,4 +13,7 @@ abstract class ICareBotRepo {
   Future<ApiResult<BookmarkICareBotMessageResponse>> bookmarkICareBotMessage(
     BookmarkICareBotMessageParams params,
   );
+
+  Future<ApiResult<List<BookmarkICareBotMessageResponse>>>
+      retrieveICareBotBookmarks(String userId);
 }

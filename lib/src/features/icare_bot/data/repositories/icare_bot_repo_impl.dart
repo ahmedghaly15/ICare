@@ -48,4 +48,15 @@ class ICareBotRepoImpl implements ICareBotRepo {
           await _icareBotRemoteDatasource.bookmarkICareBotMessage(params),
     );
   }
+
+  @override
+  Future<ApiResult<List<BookmarkICareBotMessageResponse>>>
+      retrieveICareBotBookmarks(
+    String userId,
+  ) {
+    return executeAndHandleErrors<List<BookmarkICareBotMessageResponse>>(
+      () async =>
+          await _icareBotRemoteDatasource.retrieveICareBotBookmarks(userId),
+    );
+  }
 }
