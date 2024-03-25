@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
+import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import 'package:icare/src/core/api/end_points.dart';
@@ -41,4 +42,7 @@ abstract class ApiService {
   Future<BabyCryPredictorResponse> babyCryPredictor(
     @Part(name: 'baby_cry_audio') File babyCryAudio,
   );
+
+  @GET(EndPoints.getRandomTip)
+  Future<GetRandomTipResponse> getRandomTip();
 }
