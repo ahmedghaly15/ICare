@@ -12,7 +12,7 @@ import 'package:icare/src/features/disease_details/data/datasources/medical_info
 import 'package:icare/src/features/disease_details/data/repositories/medical_info_disease_details_repo.dart';
 import 'package:icare/src/features/disease_details/domain/usecases/get_medical_info_disease_details.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_cubit.dart';
-import 'package:icare/src/features/icare_bot/data/datasources/icare_bot_datasource.dart';
+import 'package:icare/src/features/icare_bot/data/datasources/icare_bot_remote_datasource.dart';
 import 'package:icare/src/features/icare_bot/data/repositories/icare_bot_repo.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/ask_icare_bot.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
@@ -173,8 +173,8 @@ class DependencyInjection {
     );
 
     // ========== ICareBot feature ==========
-    getIt.registerLazySingleton<ICareBotDatasource>(
-      () => const ICareBotDatasourceImpl(),
+    getIt.registerLazySingleton<ICareBotRemoteDatasource>(
+      () => const ICareBotRemoteDatasourceImpl(),
     );
 
     // ========== TinyTales feature ==========
@@ -255,7 +255,7 @@ class DependencyInjection {
 
     // ========== ICareBot feature ==========
     getIt.registerLazySingleton<ICareBotRepo>(
-      () => ICareBotRepo(getIt.get<ICareBotDatasource>()),
+      () => ICareBotRepo(getIt.get<ICareBotRemoteDatasource>()),
     );
 
     // ========== TinyTales feature ==========
