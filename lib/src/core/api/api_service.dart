@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
+import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
+import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -45,4 +47,9 @@ abstract class ApiService {
 
   @GET(EndPoints.getRandomTip)
   Future<GetRandomTipResponse> getRandomTip();
+
+  @POST(EndPoints.bookmarkICareBotMessage)
+  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
+    BookmarkICareBotMessageParams request,
+  );
 }
