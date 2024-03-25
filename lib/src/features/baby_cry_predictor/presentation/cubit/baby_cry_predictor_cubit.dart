@@ -116,7 +116,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
         _startRecording(context);
         _convertIsRecording();
       } else if (status == PermissionStatus.permanentlyDenied) {
-        ICareDialog.show(
+        ShowICareDialog.show(
           // ignore: use_build_context_synchronously
           context: context,
           state: ICareDialogStates.warning,

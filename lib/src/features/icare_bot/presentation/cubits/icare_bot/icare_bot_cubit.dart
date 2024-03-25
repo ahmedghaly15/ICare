@@ -72,7 +72,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   void _handleAskICareBotSuccess(
       GenerateContentResponse response, BuildContext context) {
     if (response.text == null) {
-      ICareDialog.show(
+      ShowICareDialog.show(
         // ignore: use_build_context_synchronously
         context: context,
         state: ICareDialogStates.warning,

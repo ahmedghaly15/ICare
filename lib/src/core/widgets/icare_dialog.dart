@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_animated_dialog.dart';
-import 'package:icare/src/core/widgets/positioned_app_icon.dart';
 
 enum ICareDialogStates { warning, success, error }
 
-class ICareDialog {
+class ShowICareDialog {
   static Future show({
     required BuildContext context,
     required ICareDialogStates state,
@@ -22,59 +22,10 @@ class ICareDialog {
       pageBuilder: (context, _, __) => const SizedBox.shrink(),
       transitionDuration: AppConstants.dialogsTransitionDuration,
       transitionBuilder: (context, animation1, animation2, widget) {
-        return CustomAnimatedDialog(
+        return ICareDialog(
           animation1: animation1,
-          child: Stack(
-            clipBehavior: Clip.none,
-            alignment: AlignmentDirectional.center,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(
-                  right: 16.w,
-                  left: 16.w,
-                  top: 24.h,
-                  bottom: 8.h,
-                ),
-                margin: EdgeInsets.symmetric(horizontal: 24.w),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(24.r)),
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Text(
-                      _chooseDialogTitle(state),
-                      style: AppTextStyles.textStyle18Bold(context),
-                    ),
-                    SizedBox(height: 8.h),
-                    Flexible(
-                      child: Text(
-                        message,
-                        style: AppTextStyles.textStyle15Bold(context),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () => context.maybePop(),
-                        child: Text(
-                          'Done',
-                          style:
-                              AppTextStyles.textStyle16Medium(context).copyWith(
-                            color: AppColors.primaryColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const PositionedAppIcon(),
-            ],
-          ),
+          title: _chooseDialogTitle(state),
+          message: message,
         );
       },
     );
@@ -99,5 +50,55 @@ class ICareDialog {
     }
 
     return title;
+  }
+}
+
+class ICareDialog extends StatelessWidget {
+  const ICareDialog({
+    super.key,
+    required this.animation1,
+    required this.title,
+    required this.message,
+  });
+
+  final Animation<double> animation1;
+  final String title;
+  final String message;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomAnimatedDialog(
+      animation1: animation1,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(
+            title,
+            style: AppTextStyles.textStyle18Bold(context),
+          ),
+          SizedBox(height: 8.h),
+          Flexible(
+            child: Text(
+              message,
+              style: AppTextStyles.textStyle15Bold(context),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          SizedBox(height: 16.h),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () => context.maybePop(),
+              child: Text(
+                AppStrings.done,
+                style: AppTextStyles.textStyle16Medium(context).copyWith(
+                  color: AppColors.primaryColor,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

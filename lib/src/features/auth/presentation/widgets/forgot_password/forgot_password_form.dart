@@ -68,14 +68,14 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
       ForgotPasswordState<dynamic> state, BuildContext context) {
     state.whenOrNull(
       success: () {
-        ICareDialog.show(
+        ShowICareDialog.show(
           context: context,
           state: ICareDialogStates.success,
           message: AppStrings.resetPasswordEmailIsSent,
         );
       },
       error: (error) {
-        ICareDialog.show(
+        ShowICareDialog.show(
           context: context,
           state: ICareDialogStates.error,
           message: error,

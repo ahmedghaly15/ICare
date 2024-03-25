@@ -94,4 +94,5 @@ class AppStrings {
   static const String dateTime = 'dateTime';
   static const String commentId = 'commentId';
   static const String cachedRandomTip = 'cachedRandomTip';
+  static const String done = 'Done';
 }

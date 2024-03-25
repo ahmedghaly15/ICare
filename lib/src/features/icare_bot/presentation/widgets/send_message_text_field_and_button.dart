@@ -46,7 +46,7 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
     BuildContext context,
   ) {
     state.whenOrNull(
-      error: (error) => ICareDialog.show(
+      error: (error) => ShowICareDialog.show(
         context: context,
         state: ICareDialogStates.error,
         message: error,

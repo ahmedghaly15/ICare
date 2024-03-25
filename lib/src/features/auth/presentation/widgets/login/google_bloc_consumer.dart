@@ -56,7 +56,7 @@ class GoogleBlocConsumer extends StatelessWidget {
         navigateToHomeAfterLoginOrRegister(context, data);
       },
       signInWithGoogleError: (error) {
-        ICareDialog.show(
+        ShowICareDialog.show(
           context: context,
           state: ICareDialogStates.error,
           message: error,
