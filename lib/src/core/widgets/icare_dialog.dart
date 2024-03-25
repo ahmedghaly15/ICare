@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_animated_dialog.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 
 enum ICareDialogStates { warning, success, error }
 
@@ -72,11 +72,12 @@ class ICareDialog extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
+          MySizedBox.height8,
           Text(
             title,
             style: AppTextStyles.textStyle18Bold(context),
           ),
-          SizedBox(height: 8.h),
+          MySizedBox.height8,
           Flexible(
             child: Text(
               message,
@@ -84,7 +85,7 @@ class ICareDialog extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: 16.h),
+          MySizedBox.height18,
           Align(
             alignment: Alignment.centerRight,
             child: TextButton(

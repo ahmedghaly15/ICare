@@ -8,16 +8,17 @@ class ShimmerWidget extends StatelessWidget {
     super.key,
     this.height,
     this.width,
-    this.circularRadiusVal,
+    this.circularRadiusVal = AppConstants.radius25,
     this.margin,
     this.padding,
     this.borderRadius,
+    this.shape = BoxShape.rectangle,
   });
 
-  final double? height, width;
-  final double? circularRadiusVal;
+  final double? height, width, circularRadiusVal;
   final BorderRadius? borderRadius;
   final EdgeInsetsGeometry? margin, padding;
+  final BoxShape shape;
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +26,16 @@ class ShimmerWidget extends StatelessWidget {
       baseColor: Colors.grey.shade300,
       highlightColor: Colors.grey.shade100,
       child: Container(
-        height: height?.h,
+        height: height,
         width: width,
         margin: margin,
         padding: padding,
         decoration: BoxDecoration(
           color: Colors.grey,
-          borderRadius: borderRadius ??
-              BorderRadius.circular(
-                circularRadiusVal?.r ?? AppConstants.radius25.r,
-              ),
+          borderRadius: circularRadiusVal == null
+              ? null
+              : borderRadius ?? BorderRadius.circular(circularRadiusVal!.r),
+          shape: shape,
         ),
       ),
     );
