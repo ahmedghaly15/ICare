@@ -27,6 +27,10 @@ mixin _$BookmarkState<T> {
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +44,9 @@ mixin _$BookmarkState<T> {
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +60,9 @@ mixin _$BookmarkState<T> {
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +81,11 @@ mixin _$BookmarkState<T> {
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,6 +103,9 @@ mixin _$BookmarkState<T> {
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -105,6 +123,9 @@ mixin _$BookmarkState<T> {
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -175,6 +196,10 @@ class _$BookmarkInitialImpl<T> implements _BookmarkInitial<T> {
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) {
     return initial();
   }
@@ -191,6 +216,9 @@ class _$BookmarkInitialImpl<T> implements _BookmarkInitial<T> {
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) {
     return initial?.call();
   }
@@ -207,6 +235,9 @@ class _$BookmarkInitialImpl<T> implements _BookmarkInitial<T> {
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -231,6 +262,11 @@ class _$BookmarkInitialImpl<T> implements _BookmarkInitial<T> {
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) {
     return initial(this);
   }
@@ -251,6 +287,9 @@ class _$BookmarkInitialImpl<T> implements _BookmarkInitial<T> {
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) {
     return initial?.call(this);
   }
@@ -271,6 +310,9 @@ class _$BookmarkInitialImpl<T> implements _BookmarkInitial<T> {
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -336,6 +378,10 @@ class _$BookmarkICareBotMessageLoadingImpl<T>
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageLoading();
   }
@@ -352,6 +398,9 @@ class _$BookmarkICareBotMessageLoadingImpl<T>
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageLoading?.call();
   }
@@ -368,6 +417,9 @@ class _$BookmarkICareBotMessageLoadingImpl<T>
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (bookmarkICareBotMessageLoading != null) {
@@ -392,6 +444,11 @@ class _$BookmarkICareBotMessageLoadingImpl<T>
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageLoading(this);
   }
@@ -412,6 +469,9 @@ class _$BookmarkICareBotMessageLoadingImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageLoading?.call(this);
   }
@@ -432,6 +492,9 @@ class _$BookmarkICareBotMessageLoadingImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (bookmarkICareBotMessageLoading != null) {
@@ -525,6 +588,10 @@ class _$BookmarkICareBotMessageSuccessImpl<T>
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageSuccess(data);
   }
@@ -541,6 +608,9 @@ class _$BookmarkICareBotMessageSuccessImpl<T>
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageSuccess?.call(data);
   }
@@ -557,6 +627,9 @@ class _$BookmarkICareBotMessageSuccessImpl<T>
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (bookmarkICareBotMessageSuccess != null) {
@@ -581,6 +654,11 @@ class _$BookmarkICareBotMessageSuccessImpl<T>
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageSuccess(this);
   }
@@ -601,6 +679,9 @@ class _$BookmarkICareBotMessageSuccessImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageSuccess?.call(this);
   }
@@ -621,6 +702,9 @@ class _$BookmarkICareBotMessageSuccessImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (bookmarkICareBotMessageSuccess != null) {
@@ -721,6 +805,10 @@ class _$BookmarkICareBotMessageErrorImpl<T>
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageError(error);
   }
@@ -737,6 +825,9 @@ class _$BookmarkICareBotMessageErrorImpl<T>
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageError?.call(error);
   }
@@ -753,6 +844,9 @@ class _$BookmarkICareBotMessageErrorImpl<T>
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (bookmarkICareBotMessageError != null) {
@@ -777,6 +871,11 @@ class _$BookmarkICareBotMessageErrorImpl<T>
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageError(this);
   }
@@ -797,6 +896,9 @@ class _$BookmarkICareBotMessageErrorImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) {
     return bookmarkICareBotMessageError?.call(this);
   }
@@ -817,6 +919,9 @@ class _$BookmarkICareBotMessageErrorImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (bookmarkICareBotMessageError != null) {
@@ -889,6 +994,10 @@ class _$RetrieveICareBotBookmarksLoadingImpl<T>
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksLoading();
   }
@@ -905,6 +1014,9 @@ class _$RetrieveICareBotBookmarksLoadingImpl<T>
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksLoading?.call();
   }
@@ -921,6 +1033,9 @@ class _$RetrieveICareBotBookmarksLoadingImpl<T>
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (retrieveICareBotBookmarksLoading != null) {
@@ -945,6 +1060,11 @@ class _$RetrieveICareBotBookmarksLoadingImpl<T>
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksLoading(this);
   }
@@ -965,6 +1085,9 @@ class _$RetrieveICareBotBookmarksLoadingImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksLoading?.call(this);
   }
@@ -985,6 +1108,9 @@ class _$RetrieveICareBotBookmarksLoadingImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (retrieveICareBotBookmarksLoading != null) {
@@ -1086,6 +1212,10 @@ class _$RetrieveICareBotBookmarksSuccessImpl<T>
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksSuccess(data);
   }
@@ -1102,6 +1232,9 @@ class _$RetrieveICareBotBookmarksSuccessImpl<T>
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksSuccess?.call(data);
   }
@@ -1118,6 +1251,9 @@ class _$RetrieveICareBotBookmarksSuccessImpl<T>
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (retrieveICareBotBookmarksSuccess != null) {
@@ -1142,6 +1278,11 @@ class _$RetrieveICareBotBookmarksSuccessImpl<T>
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksSuccess(this);
   }
@@ -1162,6 +1303,9 @@ class _$RetrieveICareBotBookmarksSuccessImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksSuccess?.call(this);
   }
@@ -1182,6 +1326,9 @@ class _$RetrieveICareBotBookmarksSuccessImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (retrieveICareBotBookmarksSuccess != null) {
@@ -1282,6 +1429,10 @@ class _$RetrieveICareBotBookmarksErrorImpl<T>
     required TResult Function(List<BookmarkICareBotMessageResponse> data)
         retrieveICareBotBookmarksSuccess,
     required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksError(error);
   }
@@ -1298,6 +1449,9 @@ class _$RetrieveICareBotBookmarksErrorImpl<T>
     TResult? Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksError?.call(error);
   }
@@ -1314,6 +1468,9 @@ class _$RetrieveICareBotBookmarksErrorImpl<T>
     TResult Function(List<BookmarkICareBotMessageResponse> data)?
         retrieveICareBotBookmarksSuccess,
     TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (retrieveICareBotBookmarksError != null) {
@@ -1338,6 +1495,11 @@ class _$RetrieveICareBotBookmarksErrorImpl<T>
         retrieveICareBotBookmarksSuccess,
     required TResult Function(RetrieveICareBotBookmarksError<T> value)
         retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksError(this);
   }
@@ -1358,6 +1520,9 @@ class _$RetrieveICareBotBookmarksErrorImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult? Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
   }) {
     return retrieveICareBotBookmarksError?.call(this);
   }
@@ -1378,6 +1543,9 @@ class _$RetrieveICareBotBookmarksErrorImpl<T>
         retrieveICareBotBookmarksSuccess,
     TResult Function(RetrieveICareBotBookmarksError<T> value)?
         retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
     required TResult orElse(),
   }) {
     if (retrieveICareBotBookmarksError != null) {
@@ -1395,5 +1563,607 @@ abstract class RetrieveICareBotBookmarksError<T> implements BookmarkState<T> {
   @JsonKey(ignore: true)
   _$$RetrieveICareBotBookmarksErrorImplCopyWith<T,
           _$RetrieveICareBotBookmarksErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteBookmarkLoadingImplCopyWith<T, $Res> {
+  factory _$$DeleteBookmarkLoadingImplCopyWith(
+          _$DeleteBookmarkLoadingImpl<T> value,
+          $Res Function(_$DeleteBookmarkLoadingImpl<T>) then) =
+      __$$DeleteBookmarkLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteBookmarkLoadingImplCopyWithImpl<T, $Res>
+    extends _$BookmarkStateCopyWithImpl<T, $Res, _$DeleteBookmarkLoadingImpl<T>>
+    implements _$$DeleteBookmarkLoadingImplCopyWith<T, $Res> {
+  __$$DeleteBookmarkLoadingImplCopyWithImpl(
+      _$DeleteBookmarkLoadingImpl<T> _value,
+      $Res Function(_$DeleteBookmarkLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteBookmarkLoadingImpl<T> implements DeleteBookmarkLoading<T> {
+  const _$DeleteBookmarkLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BookmarkState<$T>.deleteBookmarkLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteBookmarkLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() bookmarkICareBotMessageLoading,
+    required TResult Function(BookmarkICareBotMessageResponse data)
+        bookmarkICareBotMessageSuccess,
+    required TResult Function(String error) bookmarkICareBotMessageError,
+    required TResult Function() retrieveICareBotBookmarksLoading,
+    required TResult Function(List<BookmarkICareBotMessageResponse> data)
+        retrieveICareBotBookmarksSuccess,
+    required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
+  }) {
+    return deleteBookmarkLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? bookmarkICareBotMessageLoading,
+    TResult? Function(BookmarkICareBotMessageResponse data)?
+        bookmarkICareBotMessageSuccess,
+    TResult? Function(String error)? bookmarkICareBotMessageError,
+    TResult? Function()? retrieveICareBotBookmarksLoading,
+    TResult? Function(List<BookmarkICareBotMessageResponse> data)?
+        retrieveICareBotBookmarksSuccess,
+    TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
+  }) {
+    return deleteBookmarkLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? bookmarkICareBotMessageLoading,
+    TResult Function(BookmarkICareBotMessageResponse data)?
+        bookmarkICareBotMessageSuccess,
+    TResult Function(String error)? bookmarkICareBotMessageError,
+    TResult Function()? retrieveICareBotBookmarksLoading,
+    TResult Function(List<BookmarkICareBotMessageResponse> data)?
+        retrieveICareBotBookmarksSuccess,
+    TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmarkLoading != null) {
+      return deleteBookmarkLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_BookmarkInitial<T> value) initial,
+    required TResult Function(BookmarkICareBotMessageLoading<T> value)
+        bookmarkICareBotMessageLoading,
+    required TResult Function(BookmarkICareBotMessageSuccess<T> value)
+        bookmarkICareBotMessageSuccess,
+    required TResult Function(BookmarkICareBotMessageError<T> value)
+        bookmarkICareBotMessageError,
+    required TResult Function(RetrieveICareBotBookmarksLoading<T> value)
+        retrieveICareBotBookmarksLoading,
+    required TResult Function(RetrieveICareBotBookmarksSuccess<T> value)
+        retrieveICareBotBookmarksSuccess,
+    required TResult Function(RetrieveICareBotBookmarksError<T> value)
+        retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
+  }) {
+    return deleteBookmarkLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_BookmarkInitial<T> value)? initial,
+    TResult? Function(BookmarkICareBotMessageLoading<T> value)?
+        bookmarkICareBotMessageLoading,
+    TResult? Function(BookmarkICareBotMessageSuccess<T> value)?
+        bookmarkICareBotMessageSuccess,
+    TResult? Function(BookmarkICareBotMessageError<T> value)?
+        bookmarkICareBotMessageError,
+    TResult? Function(RetrieveICareBotBookmarksLoading<T> value)?
+        retrieveICareBotBookmarksLoading,
+    TResult? Function(RetrieveICareBotBookmarksSuccess<T> value)?
+        retrieveICareBotBookmarksSuccess,
+    TResult? Function(RetrieveICareBotBookmarksError<T> value)?
+        retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
+  }) {
+    return deleteBookmarkLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_BookmarkInitial<T> value)? initial,
+    TResult Function(BookmarkICareBotMessageLoading<T> value)?
+        bookmarkICareBotMessageLoading,
+    TResult Function(BookmarkICareBotMessageSuccess<T> value)?
+        bookmarkICareBotMessageSuccess,
+    TResult Function(BookmarkICareBotMessageError<T> value)?
+        bookmarkICareBotMessageError,
+    TResult Function(RetrieveICareBotBookmarksLoading<T> value)?
+        retrieveICareBotBookmarksLoading,
+    TResult Function(RetrieveICareBotBookmarksSuccess<T> value)?
+        retrieveICareBotBookmarksSuccess,
+    TResult Function(RetrieveICareBotBookmarksError<T> value)?
+        retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmarkLoading != null) {
+      return deleteBookmarkLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteBookmarkLoading<T> implements BookmarkState<T> {
+  const factory DeleteBookmarkLoading() = _$DeleteBookmarkLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteBookmarkSuccessImplCopyWith<T, $Res> {
+  factory _$$DeleteBookmarkSuccessImplCopyWith(
+          _$DeleteBookmarkSuccessImpl<T> value,
+          $Res Function(_$DeleteBookmarkSuccessImpl<T>) then) =
+      __$$DeleteBookmarkSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({DeleteBookmarkResponse data});
+}
+
+/// @nodoc
+class __$$DeleteBookmarkSuccessImplCopyWithImpl<T, $Res>
+    extends _$BookmarkStateCopyWithImpl<T, $Res, _$DeleteBookmarkSuccessImpl<T>>
+    implements _$$DeleteBookmarkSuccessImplCopyWith<T, $Res> {
+  __$$DeleteBookmarkSuccessImplCopyWithImpl(
+      _$DeleteBookmarkSuccessImpl<T> _value,
+      $Res Function(_$DeleteBookmarkSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$DeleteBookmarkSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as DeleteBookmarkResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteBookmarkSuccessImpl<T> implements DeleteBookmarkSuccess<T> {
+  const _$DeleteBookmarkSuccessImpl(this.data);
+
+  @override
+  final DeleteBookmarkResponse data;
+
+  @override
+  String toString() {
+    return 'BookmarkState<$T>.deleteBookmarkSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteBookmarkSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteBookmarkSuccessImplCopyWith<T, _$DeleteBookmarkSuccessImpl<T>>
+      get copyWith => __$$DeleteBookmarkSuccessImplCopyWithImpl<T,
+          _$DeleteBookmarkSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() bookmarkICareBotMessageLoading,
+    required TResult Function(BookmarkICareBotMessageResponse data)
+        bookmarkICareBotMessageSuccess,
+    required TResult Function(String error) bookmarkICareBotMessageError,
+    required TResult Function() retrieveICareBotBookmarksLoading,
+    required TResult Function(List<BookmarkICareBotMessageResponse> data)
+        retrieveICareBotBookmarksSuccess,
+    required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
+  }) {
+    return deleteBookmarkSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? bookmarkICareBotMessageLoading,
+    TResult? Function(BookmarkICareBotMessageResponse data)?
+        bookmarkICareBotMessageSuccess,
+    TResult? Function(String error)? bookmarkICareBotMessageError,
+    TResult? Function()? retrieveICareBotBookmarksLoading,
+    TResult? Function(List<BookmarkICareBotMessageResponse> data)?
+        retrieveICareBotBookmarksSuccess,
+    TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
+  }) {
+    return deleteBookmarkSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? bookmarkICareBotMessageLoading,
+    TResult Function(BookmarkICareBotMessageResponse data)?
+        bookmarkICareBotMessageSuccess,
+    TResult Function(String error)? bookmarkICareBotMessageError,
+    TResult Function()? retrieveICareBotBookmarksLoading,
+    TResult Function(List<BookmarkICareBotMessageResponse> data)?
+        retrieveICareBotBookmarksSuccess,
+    TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmarkSuccess != null) {
+      return deleteBookmarkSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_BookmarkInitial<T> value) initial,
+    required TResult Function(BookmarkICareBotMessageLoading<T> value)
+        bookmarkICareBotMessageLoading,
+    required TResult Function(BookmarkICareBotMessageSuccess<T> value)
+        bookmarkICareBotMessageSuccess,
+    required TResult Function(BookmarkICareBotMessageError<T> value)
+        bookmarkICareBotMessageError,
+    required TResult Function(RetrieveICareBotBookmarksLoading<T> value)
+        retrieveICareBotBookmarksLoading,
+    required TResult Function(RetrieveICareBotBookmarksSuccess<T> value)
+        retrieveICareBotBookmarksSuccess,
+    required TResult Function(RetrieveICareBotBookmarksError<T> value)
+        retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
+  }) {
+    return deleteBookmarkSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_BookmarkInitial<T> value)? initial,
+    TResult? Function(BookmarkICareBotMessageLoading<T> value)?
+        bookmarkICareBotMessageLoading,
+    TResult? Function(BookmarkICareBotMessageSuccess<T> value)?
+        bookmarkICareBotMessageSuccess,
+    TResult? Function(BookmarkICareBotMessageError<T> value)?
+        bookmarkICareBotMessageError,
+    TResult? Function(RetrieveICareBotBookmarksLoading<T> value)?
+        retrieveICareBotBookmarksLoading,
+    TResult? Function(RetrieveICareBotBookmarksSuccess<T> value)?
+        retrieveICareBotBookmarksSuccess,
+    TResult? Function(RetrieveICareBotBookmarksError<T> value)?
+        retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
+  }) {
+    return deleteBookmarkSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_BookmarkInitial<T> value)? initial,
+    TResult Function(BookmarkICareBotMessageLoading<T> value)?
+        bookmarkICareBotMessageLoading,
+    TResult Function(BookmarkICareBotMessageSuccess<T> value)?
+        bookmarkICareBotMessageSuccess,
+    TResult Function(BookmarkICareBotMessageError<T> value)?
+        bookmarkICareBotMessageError,
+    TResult Function(RetrieveICareBotBookmarksLoading<T> value)?
+        retrieveICareBotBookmarksLoading,
+    TResult Function(RetrieveICareBotBookmarksSuccess<T> value)?
+        retrieveICareBotBookmarksSuccess,
+    TResult Function(RetrieveICareBotBookmarksError<T> value)?
+        retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmarkSuccess != null) {
+      return deleteBookmarkSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteBookmarkSuccess<T> implements BookmarkState<T> {
+  const factory DeleteBookmarkSuccess(final DeleteBookmarkResponse data) =
+      _$DeleteBookmarkSuccessImpl<T>;
+
+  DeleteBookmarkResponse get data;
+  @JsonKey(ignore: true)
+  _$$DeleteBookmarkSuccessImplCopyWith<T, _$DeleteBookmarkSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteBookmarkErrorImplCopyWith<T, $Res> {
+  factory _$$DeleteBookmarkErrorImplCopyWith(_$DeleteBookmarkErrorImpl<T> value,
+          $Res Function(_$DeleteBookmarkErrorImpl<T>) then) =
+      __$$DeleteBookmarkErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$DeleteBookmarkErrorImplCopyWithImpl<T, $Res>
+    extends _$BookmarkStateCopyWithImpl<T, $Res, _$DeleteBookmarkErrorImpl<T>>
+    implements _$$DeleteBookmarkErrorImplCopyWith<T, $Res> {
+  __$$DeleteBookmarkErrorImplCopyWithImpl(_$DeleteBookmarkErrorImpl<T> _value,
+      $Res Function(_$DeleteBookmarkErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$DeleteBookmarkErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteBookmarkErrorImpl<T> implements DeleteBookmarkError<T> {
+  const _$DeleteBookmarkErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BookmarkState<$T>.deleteBookmarkError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteBookmarkErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteBookmarkErrorImplCopyWith<T, _$DeleteBookmarkErrorImpl<T>>
+      get copyWith => __$$DeleteBookmarkErrorImplCopyWithImpl<T,
+          _$DeleteBookmarkErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() bookmarkICareBotMessageLoading,
+    required TResult Function(BookmarkICareBotMessageResponse data)
+        bookmarkICareBotMessageSuccess,
+    required TResult Function(String error) bookmarkICareBotMessageError,
+    required TResult Function() retrieveICareBotBookmarksLoading,
+    required TResult Function(List<BookmarkICareBotMessageResponse> data)
+        retrieveICareBotBookmarksSuccess,
+    required TResult Function(String error) retrieveICareBotBookmarksError,
+    required TResult Function() deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkResponse data)
+        deleteBookmarkSuccess,
+    required TResult Function(String error) deleteBookmarkError,
+  }) {
+    return deleteBookmarkError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? bookmarkICareBotMessageLoading,
+    TResult? Function(BookmarkICareBotMessageResponse data)?
+        bookmarkICareBotMessageSuccess,
+    TResult? Function(String error)? bookmarkICareBotMessageError,
+    TResult? Function()? retrieveICareBotBookmarksLoading,
+    TResult? Function(List<BookmarkICareBotMessageResponse> data)?
+        retrieveICareBotBookmarksSuccess,
+    TResult? Function(String error)? retrieveICareBotBookmarksError,
+    TResult? Function()? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult? Function(String error)? deleteBookmarkError,
+  }) {
+    return deleteBookmarkError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? bookmarkICareBotMessageLoading,
+    TResult Function(BookmarkICareBotMessageResponse data)?
+        bookmarkICareBotMessageSuccess,
+    TResult Function(String error)? bookmarkICareBotMessageError,
+    TResult Function()? retrieveICareBotBookmarksLoading,
+    TResult Function(List<BookmarkICareBotMessageResponse> data)?
+        retrieveICareBotBookmarksSuccess,
+    TResult Function(String error)? retrieveICareBotBookmarksError,
+    TResult Function()? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkResponse data)? deleteBookmarkSuccess,
+    TResult Function(String error)? deleteBookmarkError,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmarkError != null) {
+      return deleteBookmarkError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_BookmarkInitial<T> value) initial,
+    required TResult Function(BookmarkICareBotMessageLoading<T> value)
+        bookmarkICareBotMessageLoading,
+    required TResult Function(BookmarkICareBotMessageSuccess<T> value)
+        bookmarkICareBotMessageSuccess,
+    required TResult Function(BookmarkICareBotMessageError<T> value)
+        bookmarkICareBotMessageError,
+    required TResult Function(RetrieveICareBotBookmarksLoading<T> value)
+        retrieveICareBotBookmarksLoading,
+    required TResult Function(RetrieveICareBotBookmarksSuccess<T> value)
+        retrieveICareBotBookmarksSuccess,
+    required TResult Function(RetrieveICareBotBookmarksError<T> value)
+        retrieveICareBotBookmarksError,
+    required TResult Function(DeleteBookmarkLoading<T> value)
+        deleteBookmarkLoading,
+    required TResult Function(DeleteBookmarkSuccess<T> value)
+        deleteBookmarkSuccess,
+    required TResult Function(DeleteBookmarkError<T> value) deleteBookmarkError,
+  }) {
+    return deleteBookmarkError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_BookmarkInitial<T> value)? initial,
+    TResult? Function(BookmarkICareBotMessageLoading<T> value)?
+        bookmarkICareBotMessageLoading,
+    TResult? Function(BookmarkICareBotMessageSuccess<T> value)?
+        bookmarkICareBotMessageSuccess,
+    TResult? Function(BookmarkICareBotMessageError<T> value)?
+        bookmarkICareBotMessageError,
+    TResult? Function(RetrieveICareBotBookmarksLoading<T> value)?
+        retrieveICareBotBookmarksLoading,
+    TResult? Function(RetrieveICareBotBookmarksSuccess<T> value)?
+        retrieveICareBotBookmarksSuccess,
+    TResult? Function(RetrieveICareBotBookmarksError<T> value)?
+        retrieveICareBotBookmarksError,
+    TResult? Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult? Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult? Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
+  }) {
+    return deleteBookmarkError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_BookmarkInitial<T> value)? initial,
+    TResult Function(BookmarkICareBotMessageLoading<T> value)?
+        bookmarkICareBotMessageLoading,
+    TResult Function(BookmarkICareBotMessageSuccess<T> value)?
+        bookmarkICareBotMessageSuccess,
+    TResult Function(BookmarkICareBotMessageError<T> value)?
+        bookmarkICareBotMessageError,
+    TResult Function(RetrieveICareBotBookmarksLoading<T> value)?
+        retrieveICareBotBookmarksLoading,
+    TResult Function(RetrieveICareBotBookmarksSuccess<T> value)?
+        retrieveICareBotBookmarksSuccess,
+    TResult Function(RetrieveICareBotBookmarksError<T> value)?
+        retrieveICareBotBookmarksError,
+    TResult Function(DeleteBookmarkLoading<T> value)? deleteBookmarkLoading,
+    TResult Function(DeleteBookmarkSuccess<T> value)? deleteBookmarkSuccess,
+    TResult Function(DeleteBookmarkError<T> value)? deleteBookmarkError,
+    required TResult orElse(),
+  }) {
+    if (deleteBookmarkError != null) {
+      return deleteBookmarkError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteBookmarkError<T> implements BookmarkState<T> {
+  const factory DeleteBookmarkError(final String error) =
+      _$DeleteBookmarkErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$DeleteBookmarkErrorImplCopyWith<T, _$DeleteBookmarkErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
