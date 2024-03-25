@@ -95,4 +95,8 @@ class AppStrings {
   static const String commentId = 'commentId';
   static const String cachedRandomTip = 'cachedRandomTip';
   static const String done = 'Done';
+  static const String todaysTopicIs = "Today's topic is:";
+  static const String read = 'Read';
+  static const String lastRetrievedCachedRandomTip =
+      'lastRetrievedCachedRandomTip';
 }
