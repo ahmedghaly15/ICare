@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
+import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_pop_menu_button.dart';
 
 class MessageBubble extends StatelessWidget {
   const MessageBubble({
@@ -69,17 +66,7 @@ class MessageBubble extends StatelessWidget {
         ),
         isUser
             ? const SizedBox.shrink()
-            : IconButton(
-                onPressed: () {
-                  context.read<BookmarkCubit>().bookmarkICareBotMessage(
-                        BookmarkICareBotMessageParams(
-                          userId: Helper.uId!,
-                          chatResponse: message,
-                        ),
-                      );
-                },
-                icon: const Icon(Icons.more_horiz),
-              ),
+            : BookmarkPopUpMenuButton(chatResponse: message),
       ],
     );
   }

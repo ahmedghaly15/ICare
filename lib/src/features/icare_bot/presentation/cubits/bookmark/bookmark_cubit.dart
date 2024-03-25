@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
@@ -63,5 +64,9 @@ class BookmarkCubit extends Cubit<BookmarkState> {
         BookmarkState.deleteBookmarkError(error.apiErrorModel.error ?? ''),
       ),
     );
+  }
+
+  Future<void> copyToClipboard(String text) async {
+    return await Clipboard.setData(ClipboardData(text: text));
   }
 }

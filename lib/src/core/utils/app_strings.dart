@@ -100,4 +100,6 @@ class AppStrings {
   static const String lastRetrievedCachedRandomTip =
       'lastRetrievedCachedRandomTip';
   static const String bookmarks = 'Bookmarks';
+  static const String bookmarkMenuButtonVal = 'Bookmark';
+  static const String copyMenuButtonVal = 'Copy';
 }
