@@ -229,17 +229,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage({
-    required String userId,
-    required String chatResponse,
-  }) async {
+  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
+      BookmarkICareBotMessageParams params) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'user_id': userId,
-      r'chat_response': chatResponse,
-    };
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
+    _data.addAll(params.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<BookmarkICareBotMessageResponse>(Options(
       method: 'POST',

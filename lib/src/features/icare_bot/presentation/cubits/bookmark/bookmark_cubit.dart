@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
+import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/bookmark_icare_bot_message.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/delete_bookmark.dart';
@@ -17,6 +18,8 @@ class BookmarkCubit extends Cubit<BookmarkState> {
     required this.deleteBookmarkUseCase,
   }) : super(const BookmarkState.initial());
 
+  BookmarkICareBotMessageResponse? bookmark;
+
   void bookmarkICareBotMessage(
     BookmarkICareBotMessageParams params,
   ) async {
@@ -24,8 +27,10 @@ class BookmarkCubit extends Cubit<BookmarkState> {
     final result = await bookmarkICareBotMessageUseCase(params);
 
     result.when(
-      success: (data) =>
-          emit(BookmarkState.bookmarkICareBotMessageSuccess(data)),
+      success: (data) {
+        bookmark = data;
+        emit(BookmarkState.bookmarkICareBotMessageSuccess(data));
+      },
       error: (error) => emit(
         BookmarkState.bookmarkICareBotMessageError(
             error.apiErrorModel.error ?? ''),
@@ -36,6 +41,7 @@ class BookmarkCubit extends Cubit<BookmarkState> {
   void retrieveICareBotBookmarks(String userId) async {
     emit(const BookmarkState.retrieveICareBotBookmarksLoading());
     final result = await retrieveICareBotBookmarksUseCase(userId);
+
     result.when(
       success: (bookmarks) =>
           emit(BookmarkState.retrieveICareBotBookmarksSuccess(bookmarks)),

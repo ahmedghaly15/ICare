@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BabyView(),
       );
     },
+    BookmarksRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BookmarksView(),
+      );
+    },
     BottomNavBarRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -186,6 +192,20 @@ class BabyRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BabyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BookmarksView]
+class BookmarksRoute extends PageRouteInfo<void> {
+  const BookmarksRoute({List<PageRouteInfo>? children})
+      : super(
+          BookmarksRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BookmarksRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

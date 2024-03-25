@@ -35,5 +35,11 @@ class AppThemes {
           selectedLabelStyle: AppTextStyles.textStyle15Bold(context),
           unselectedLabelStyle: AppTextStyles.textStyle15Bold(context),
         ),
+        iconButtonTheme: IconButtonThemeData(
+          style: IconButton.styleFrom(
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            minimumSize: Size.zero,
+          ),
+        ),
       );
 }

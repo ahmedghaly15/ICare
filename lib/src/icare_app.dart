@@ -9,6 +9,7 @@ import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_themes.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
@@ -38,6 +39,9 @@ class ICareApp extends StatelessWidget {
           ),
           BlocProvider<TipsCubit>(
             create: (_) => getIt.get<TipsCubit>(),
+          ),
+          BlocProvider<BookmarkCubit>(
+            create: (_) => getIt.get<BookmarkCubit>(),
           )
         ],
         child: MaterialApp.router(

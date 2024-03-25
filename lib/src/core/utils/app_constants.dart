@@ -39,4 +39,8 @@ class AppConstants {
   static const String defaultProfileImage =
       'https://cdn.create.vista.com/api/media/small/563147854/stock-vector-mother-and-daughter';
   static const Duration dialogsTransitionDuration = Duration(milliseconds: 200);
+  static EdgeInsets iCareBotConversationsPadding = EdgeInsets.symmetric(
+    horizontal: 4.w,
+    vertical: 16.h,
+  );
 }

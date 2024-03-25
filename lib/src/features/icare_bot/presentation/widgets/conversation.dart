@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -17,10 +16,7 @@ class Conversation extends StatelessWidget {
       buildWhen: (_, current) => current is Success,
       builder: (context, state) {
         return ListView.separated(
-          padding: EdgeInsets.symmetric(
-            horizontal: 4.w,
-            vertical: 16.h,
-          ),
+          padding: AppConstants.iCareBotConversationsPadding,
           physics: AppConstants.scrollPhysics,
           controller: context.read<ICareBotCubit>().scrollController,
           itemCount: context.read<ICareBotCubit>().chat.history.length,

@@ -13,12 +13,14 @@ class ShimmerWidget extends StatelessWidget {
     this.padding,
     this.borderRadius,
     this.shape = BoxShape.rectangle,
+    this.constraints,
   });
 
   final double? height, width, circularRadiusVal;
   final BorderRadius? borderRadius;
   final EdgeInsetsGeometry? margin, padding;
   final BoxShape shape;
+  final BoxConstraints? constraints;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,7 @@ class ShimmerWidget extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
+        constraints: constraints,
         margin: margin,
         padding: padding,
         decoration: BoxDecoration(

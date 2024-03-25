@@ -99,4 +99,5 @@ class AppStrings {
   static const String read = 'Read';
   static const String lastRetrievedCachedRandomTip =
       'lastRetrievedCachedRandomTip';
+  static const String bookmarks = 'Bookmarks';
 }

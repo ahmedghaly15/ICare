@@ -8,6 +8,7 @@ import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_respons
 
 abstract class ICareBotRemoteDatasource {
   Future<GenerateContentResponse> askICareBot(AskICareBotParams params);
+
   Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
     BookmarkICareBotMessageParams params,
   );
@@ -33,10 +34,7 @@ class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
   Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
     BookmarkICareBotMessageParams params,
   ) async {
-    return await _apiService.bookmarkICareBotMessage(
-      userId: params.userId,
-      chatResponse: params.chatResponse,
-    );
+    return await _apiService.bookmarkICareBotMessage(params);
   }
 
   @override
@@ -48,7 +46,8 @@ class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
 
   @override
   Future<DeleteBookmarkResponse> deleteBookmark(
-      DeleteBookmarkParams params) async {
+    DeleteBookmarkParams params,
+  ) async {
     return await _apiService.deleteBookmark(
       userId: params.userId,
       bookmarkId: params.bookmarkId,

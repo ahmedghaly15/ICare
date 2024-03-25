@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/conversation.dart';
@@ -19,7 +22,7 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<ICareBotCubit>(
       create: (_) => getIt.get<ICareBotCubit>(),
       child: this,
     );
@@ -80,6 +83,20 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
           color: Colors.white,
         ),
       ),
+      actions: <Widget>[
+        IconButton(
+          onPressed: () {
+            context
+                .read<BookmarkCubit>()
+                .retrieveICareBotBookmarks(Helper.uId!);
+            context.pushRoute(const BookmarksRoute());
+          },
+          icon: const Icon(
+            Icons.bookmark,
+            color: Colors.white,
+          ),
+        ),
+      ],
     );
   }
 }

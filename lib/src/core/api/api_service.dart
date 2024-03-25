@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
+import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
@@ -49,10 +50,9 @@ abstract class ApiService {
   Future<GetRandomTipResponse> getRandomTip();
 
   @POST(EndPoints.bookmarkICareBotMessage)
-  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage({
-    @Query('user_id') required String userId,
-    @Query('chat_response') required String chatResponse,
-  });
+  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
+    @Body() BookmarkICareBotMessageParams params,
+  );
 
   @GET('${EndPoints.retrieveBookmarks}{user_id}')
   Future<List<BookmarkICareBotMessageResponse>> retrieveICareBotBookmarks(

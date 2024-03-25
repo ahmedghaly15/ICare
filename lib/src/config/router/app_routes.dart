@@ -60,6 +60,7 @@ List<AutoRoute> get appRoutes {
     ),
     _buildCustomRoute(page: BabyCryPredictorRoute.page),
     _buildCustomRoute(page: ICareBotRoute.page),
+    _buildCustomRoute(page: BookmarksRoute.page),
   ];
 }
 
