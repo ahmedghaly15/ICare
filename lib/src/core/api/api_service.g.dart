@@ -137,10 +137,10 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<DiseaseDetails> getMedicalInfoDiseaseDetails(
-    String diseaseType,
-    String diseaseId,
-  ) async {
+  Future<DiseaseDetails> getMedicalInfoDiseaseDetails({
+    required String diseaseType,
+    required String diseaseId,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'disease_id': diseaseId};
     final _headers = <String, dynamic>{};
@@ -229,10 +229,15 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
-      BookmarkICareBotMessageParams request) async {
+  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage({
+    required String userId,
+    required String chatResponse,
+  }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'user_id': userId,
+      r'chat_response': chatResponse,
+    };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -284,6 +289,36 @@ class _ApiService implements ApiService {
         .map((dynamic i) =>
             BookmarkICareBotMessageResponse.fromJson(i as Map<String, dynamic>))
         .toList();
+    return value;
+  }
+
+  @override
+  Future<DeleteBookmarkResponse> deleteBookmark({
+    required String userId,
+    required String bookmarkId,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<DeleteBookmarkResponse>(Options(
+      method: 'DELETE',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://ahmed-muqawi-medical-app.hf.space/Bookmarks/delete/${userId}/${bookmarkId}/',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = DeleteBookmarkResponse.fromJson(_result.data!);
     return value;
   }
 

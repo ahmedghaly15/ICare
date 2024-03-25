@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
-import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
+import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -34,10 +34,10 @@ abstract class ApiService {
   );
 
   @GET('${EndPoints.databaseBaseUrl}{disease_type}')
-  Future<DiseaseDetails> getMedicalInfoDiseaseDetails(
-    @Path('disease_type') String diseaseType,
-    @Query('disease_id') String diseaseId,
-  );
+  Future<DiseaseDetails> getMedicalInfoDiseaseDetails({
+    @Path('disease_type') required String diseaseType,
+    @Query('disease_id') required String diseaseId,
+  });
 
   @POST(EndPoints.babyCryPredictor)
   @MultiPart()
@@ -49,12 +49,19 @@ abstract class ApiService {
   Future<GetRandomTipResponse> getRandomTip();
 
   @POST(EndPoints.bookmarkICareBotMessage)
-  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
-    BookmarkICareBotMessageParams request,
-  );
+  Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage({
+    @Query('user_id') required String userId,
+    @Query('chat_response') required String chatResponse,
+  });
 
   @GET('${EndPoints.retrieveBookmarks}{user_id}')
   Future<List<BookmarkICareBotMessageResponse>> retrieveICareBotBookmarks(
     @Path('user_id') String userId,
   );
+
+  @DELETE('${EndPoints.deleteBookmark}{user_id}/{bookmark_id}/')
+  Future<DeleteBookmarkResponse> deleteBookmark({
+    @Path('user_id') required String userId,
+    @Path('bookmark_id') required String bookmarkId,
+  });
 }

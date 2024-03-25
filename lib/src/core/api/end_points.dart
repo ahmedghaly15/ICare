@@ -12,4 +12,5 @@ class EndPoints {
   static const String bookmarks = '${databaseBaseUrl}Bookmarks/';
   static const String bookmarkICareBotMessage = '${bookmarks}create/';
   static const String retrieveBookmarks = '${bookmarks}retrieve/';
+  static const String deleteBookmark = '${bookmarks}delete/';
 }
