@@ -8,8 +8,8 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/conversation.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/send_message_text_field_and_button.dart';
 

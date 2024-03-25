@@ -1,7 +1,7 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/features/icare_bot/data/models/ask_icare_bot_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/icare_bot_result.dart';
-import 'package:icare/src/features/icare_bot/data/repositories/icare_bot_repo.dart';
+import 'package:icare/src/features/icare_bot/domain/repositories/icare_bot_repo.dart';
 
 abstract class ICareBotUseCase<Type, Params> {
   Future<ICareBotResult<Type>> call(Params params);

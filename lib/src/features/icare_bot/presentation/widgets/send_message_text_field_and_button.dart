@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/custom_send_message_icon_button.dart';
 
 class SendMessageTextFieldAndButton extends StatelessWidget {

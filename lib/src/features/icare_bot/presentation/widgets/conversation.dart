@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/message_bubble.dart';
 
 class Conversation extends StatelessWidget {

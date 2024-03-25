@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_cubit.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
 
 class CustomSendMessageIconButton extends StatelessWidget {
   const CustomSendMessageIconButton({super.key, required this.isEnabled});

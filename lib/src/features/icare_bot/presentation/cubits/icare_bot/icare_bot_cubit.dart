@@ -8,7 +8,7 @@ import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_dialog.dart';
 import 'package:icare/src/features/icare_bot/data/models/ask_icare_bot_params.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/ask_icare_bot.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot_state.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
 
 class ICareBotCubit extends Cubit<ICareBotState> {
   final AskICareBotUseCase _askICareBotUseCase;
