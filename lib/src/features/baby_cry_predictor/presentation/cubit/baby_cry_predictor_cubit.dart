@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
@@ -116,10 +116,10 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
         _startRecording(context);
         _convertIsRecording();
       } else if (status == PermissionStatus.permanentlyDenied) {
-        CustomDialog.show(
+        ICareDialog.show(
           // ignore: use_build_context_synchronously
           context: context,
-          state: CustomDialogStates.warning,
+          state: ICareDialogStates.warning,
           message: AppStrings.microphonePermissionDenied,
         );
       }

@@ -10,7 +10,7 @@ import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/rive_utils.dart';
-import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
@@ -169,9 +169,9 @@ class _LoginFormState extends State<LoginForm> {
         isShowLoading = false;
       });
 
-      CustomDialog.show(
+      ICareDialog.show(
         context: context,
-        state: CustomDialogStates.error,
+        state: ICareDialogStates.error,
         message: error,
       );
     });

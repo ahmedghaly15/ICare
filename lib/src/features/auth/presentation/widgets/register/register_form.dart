@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/app_regex.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
-import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/auth/presentation/widgets/register/password_validations.dart';
 import 'package:rive/rive.dart';
 
@@ -235,9 +235,9 @@ class _RegisterFormState extends State<RegisterForm> {
         isShowLoading = false;
       });
 
-      CustomDialog.show(
+      ICareDialog.show(
         context: context,
-        state: CustomDialogStates.error,
+        state: ICareDialogStates.error,
         message: error,
       );
     });

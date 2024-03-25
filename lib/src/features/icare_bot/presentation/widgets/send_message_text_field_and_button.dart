@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
@@ -46,9 +46,9 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
     BuildContext context,
   ) {
     state.whenOrNull(
-      error: (error) => CustomDialog.show(
+      error: (error) => ICareDialog.show(
         context: context,
-        state: CustomDialogStates.error,
+        state: ICareDialogStates.error,
         message: error,
       ),
     );

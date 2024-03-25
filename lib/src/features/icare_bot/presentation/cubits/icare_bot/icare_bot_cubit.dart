@@ -5,7 +5,7 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/icare_bot/data/models/ask_icare_bot_params.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/ask_icare_bot.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
@@ -72,10 +72,10 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   void _handleAskICareBotSuccess(
       GenerateContentResponse response, BuildContext context) {
     if (response.text == null) {
-      CustomDialog.show(
+      ICareDialog.show(
         // ignore: use_build_context_synchronously
         context: context,
-        state: CustomDialogStates.warning,
+        state: ICareDialogStates.warning,
         message: 'No response from API.',
       );
     } else {

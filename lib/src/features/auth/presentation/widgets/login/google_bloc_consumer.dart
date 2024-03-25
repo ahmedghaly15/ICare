@@ -6,7 +6,7 @@ import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
@@ -56,9 +56,9 @@ class GoogleBlocConsumer extends StatelessWidget {
         navigateToHomeAfterLoginOrRegister(context, data);
       },
       signInWithGoogleError: (error) {
-        CustomDialog.show(
+        ICareDialog.show(
           context: context,
-          state: CustomDialogStates.error,
+          state: ICareDialogStates.error,
           message: error,
         );
       },

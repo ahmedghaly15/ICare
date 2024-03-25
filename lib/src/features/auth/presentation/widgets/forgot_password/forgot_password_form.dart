@@ -4,7 +4,7 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:icare/src/core/widgets/custom_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_state.dart';
@@ -68,16 +68,16 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
       ForgotPasswordState<dynamic> state, BuildContext context) {
     state.whenOrNull(
       success: () {
-        CustomDialog.show(
+        ICareDialog.show(
           context: context,
-          state: CustomDialogStates.success,
+          state: ICareDialogStates.success,
           message: AppStrings.resetPasswordEmailIsSent,
         );
       },
       error: (error) {
-        CustomDialog.show(
+        ICareDialog.show(
           context: context,
-          state: CustomDialogStates.error,
+          state: ICareDialogStates.error,
           message: error,
         );
       },
