@@ -1,0 +1,85 @@
+part of '../../../dependency_injection.dart';
+
+class SetupDIForRepos {
+  static void setup() {
+    // ========== Login feature ==========
+    getIt.registerLazySingleton<LoginRepo>(
+      () => LoginRepo(getIt.get<LoginDataSource>()),
+    );
+
+    // ========== Register feature ==========
+    getIt.registerLazySingleton<RegisterRepo>(
+      () => RegisterRepoImpl(getIt.get<RegisterDataSource>()),
+    );
+
+    // ========== ForgotPassword feature ==========
+    getIt.registerLazySingleton<ForgotPasswordRepo>(
+      () => ForgotPasswordRepo(getIt.get<ForgotPasswordDataSource>()),
+    );
+
+    // ========== Onboarding feature ==========
+    getIt.registerLazySingleton<OnboardingRepo>(
+      () => OnboardingRepo(getIt.get<OnboardingDatasource>()),
+    );
+
+    // ========== Medical feature ==========
+    getIt.registerLazySingleton<MedicalRepo>(
+      () => MedicalRepo(
+        getIt.get<MedicalRemoteDatasource>(),
+        getIt.get<MedicalLocalDatasource>(),
+      ),
+    );
+
+    // ========== Emergency feature ==========
+    getIt.registerLazySingleton<EmergencyRepo>(
+      () => EmergencyRepo(
+        getIt.get<EmergencyRemoteDatasource>(),
+        getIt.get<EmergencyLocalDatasource>(),
+      ),
+    );
+
+    // ========== MedicalInfo feature ==========
+    getIt.registerLazySingleton<MedicalInfoRepo>(
+      () => MedicalInfoRepo(
+        getIt.get<MedicalInfoRemoteDatasource>(),
+        getIt.get<MedicalInfoLocalDatasource>(),
+      ),
+    );
+
+    // ========== User feature ==========
+    getIt.registerLazySingleton<UserRepo>(
+      () => UserRepo(getIt.get<UserDataSource>()),
+    );
+
+    // ========== EmergencyDiseaseDetails feature ==========
+    getIt.registerLazySingleton<EmergencyDiseaseDetailsRepo>(
+      () => EmergencyDiseaseDetailsRepo(
+        getIt.get<EmergencyDiseaseDetailsRemoteDatasource>(),
+        getIt.get<DiseaseDetailsLocalDatasource>(),
+      ),
+    );
+
+    // ========== MedicalInfoDiseaseDetails feature ==========
+    getIt.registerLazySingleton<MedicalInfoDiseaseDetailsRepo>(
+      () => MedicalInfoDiseaseDetailsRepo(
+        getIt.get<MedicalInfoDiseaseDetailsRemoteDatasource>(),
+        getIt.get<DiseaseDetailsLocalDatasource>(),
+      ),
+    );
+
+    // ========== BabyCryPredictor feature ==========
+    getIt.registerLazySingleton<BabyCryPredictorRepo>(
+      () => BabyCryPredictorRepo(getIt.get<BabyCryPredictorDatasource>()),
+    );
+
+    // ========== ICareBot feature ==========
+    getIt.registerLazySingleton<ICareBotRepo>(
+      () => ICareBotRepoImpl(getIt.get<ICareBotRemoteDatasource>()),
+    );
+
+    // ========== TinyTales feature ==========
+    getIt.registerLazySingleton<TinyTalesRepo>(
+      () => TinyTalesRepoImpl(getIt.get<TinyTalesRemoteDatasource>()),
+    );
+  }
+}
