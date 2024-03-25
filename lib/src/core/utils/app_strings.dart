@@ -93,4 +93,5 @@ class AppStrings {
   static const String commentsCollection = 'comments Collection';
   static const String dateTime = 'dateTime';
   static const String commentId = 'commentId';
+  static const String cachedRandomTip = 'cachedRandomTip';
 }
