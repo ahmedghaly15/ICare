@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/entities/no_params.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/medical_info/domain/usecases/get_medical_info.dart';
 import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_state.dart';
 
@@ -19,8 +18,7 @@ class MedicalInfoCubit extends Cubit<MedicalInfoState> {
     result.when(
       success: (data) => emit(MedicalInfoState.getMedicalInfoSuccess(data)),
       error: (error) => emit(
-        MedicalInfoState.getMedicalInfoError(
-            error.apiErrorModel.error ?? AppStrings.unKnownError),
+        MedicalInfoState.getMedicalInfoError(error.apiErrorModel.error ?? ''),
       ),
     );
   }

@@ -101,8 +101,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
         emit(BabyCryPredictorState.assignAudioPathVal(_audioPath));
       },
       error: (error) => emit(
-        BabyCryPredictorState.error(
-            error.apiErrorModel.error ?? AppStrings.unKnownError),
+        BabyCryPredictorState.error(error.apiErrorModel.error ?? ''),
       ),
     );
   }

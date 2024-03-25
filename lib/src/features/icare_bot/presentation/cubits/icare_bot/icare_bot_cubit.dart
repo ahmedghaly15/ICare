@@ -62,7 +62,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
       },
       failure: (error) {
         _convertSendMessageTextFieldStatus();
-        emit(ICareBotState.error(error.failureMsg ?? AppStrings.unKnownError));
+        emit(ICareBotState.error(error.failureMsg ?? ''));
       },
     );
 

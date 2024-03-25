@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/src/core/errors/failure.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 
 class FirebaseErrorHandler extends Failure {
   const FirebaseErrorHandler({super.failureMsg});
@@ -52,7 +53,7 @@ class FirebaseAuthErrorMessages {
   static const String weakPassword = 'Weak password';
   static const String emailAlreadyInUse = 'Email already in use';
   static const String invalidEmail = 'Invalid email';
-  static const String defaultError = 'An error occurred';
+  static const String defaultError = AppStrings.unKnownError;
   static const String invalidCredential =
       'Incorrect login details. Please ensure your email and password are correct.';
 }

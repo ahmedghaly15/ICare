@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
 import 'package:icare/src/features/auth/data/models/register_request_params.dart';
 import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
@@ -98,7 +97,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         emit(RegisterState.success(params.uId));
       },
       error: (error) => emit(
-        RegisterState.error(error: error.failureMsg ?? AppStrings.unKnownError),
+        RegisterState.error(error: error.failureMsg ?? 'Unknown'),
       ),
     );
   }
@@ -124,7 +123,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         );
       },
       error: (error) => emit(
-        RegisterState.error(error: error.failureMsg ?? AppStrings.unKnownError),
+        RegisterState.error(error: error.failureMsg ?? ''),
       ),
     );
   }
