@@ -19,8 +19,8 @@ class MedicalInfoDiseaseDetailsRemoteDatasourceImpl
     required GetMedicalInfoDiseaseDetailsParams params,
   }) async {
     return await _apiService.getMedicalInfoDiseaseDetails(
-      params.diseaseType,
-      params.diseaseId,
+      diseaseType: params.diseaseType,
+      diseaseId: params.diseaseId,
     );
   }
 }

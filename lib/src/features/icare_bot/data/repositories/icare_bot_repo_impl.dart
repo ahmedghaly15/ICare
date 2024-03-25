@@ -8,6 +8,8 @@ import 'package:icare/src/features/icare_bot/data/datasources/icare_bot_remote_d
 import 'package:icare/src/features/icare_bot/data/models/ask_icare_bot_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
+import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
+import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/icare_bot_error_handler.dart';
 import 'package:icare/src/features/icare_bot/data/models/icare_bot_result.dart';
 import 'package:icare/src/features/icare_bot/domain/repositories/icare_bot_repo.dart';
@@ -57,6 +59,15 @@ class ICareBotRepoImpl implements ICareBotRepo {
     return executeAndHandleErrors<List<BookmarkICareBotMessageResponse>>(
       () async =>
           await _icareBotRemoteDatasource.retrieveICareBotBookmarks(userId),
+    );
+  }
+
+  @override
+  Future<ApiResult<DeleteBookmarkResponse>> deleteBookmark(
+    DeleteBookmarkParams params,
+  ) {
+    return executeAndHandleErrors<DeleteBookmarkResponse>(
+      () async => await _icareBotRemoteDatasource.deleteBookmark(params),
     );
   }
 }

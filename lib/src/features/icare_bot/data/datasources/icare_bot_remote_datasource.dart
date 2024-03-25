@@ -3,6 +3,8 @@ import 'package:icare/src/core/api/api_service.dart';
 import 'package:icare/src/features/icare_bot/data/models/ask_icare_bot_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
+import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
+import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
 
 abstract class ICareBotRemoteDatasource {
   Future<GenerateContentResponse> askICareBot(AskICareBotParams params);
@@ -13,6 +15,8 @@ abstract class ICareBotRemoteDatasource {
   Future<List<BookmarkICareBotMessageResponse>> retrieveICareBotBookmarks(
     String userId,
   );
+
+  Future<DeleteBookmarkResponse> deleteBookmark(DeleteBookmarkParams params);
 }
 
 class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
@@ -29,7 +33,10 @@ class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
   Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
     BookmarkICareBotMessageParams params,
   ) async {
-    return await _apiService.bookmarkICareBotMessage(params);
+    return await _apiService.bookmarkICareBotMessage(
+      userId: params.userId,
+      chatResponse: params.chatResponse,
+    );
   }
 
   @override
@@ -37,5 +44,14 @@ class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
     String userId,
   ) async {
     return await _apiService.retrieveICareBotBookmarks(userId);
+  }
+
+  @override
+  Future<DeleteBookmarkResponse> deleteBookmark(
+      DeleteBookmarkParams params) async {
+    return await _apiService.deleteBookmark(
+      userId: params.userId,
+      bookmarkId: params.bookmarkId,
+    );
   }
 }
