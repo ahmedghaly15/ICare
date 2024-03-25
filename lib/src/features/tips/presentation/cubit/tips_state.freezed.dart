@@ -22,6 +22,8 @@ mixin _$TipsState<T> {
     required TResult Function() getRandomTipLoading,
     required TResult Function(T data) getRandomTipSuccess,
     required TResult Function(String error) getRandomTipError,
+    required TResult Function(bool isRandomTipRead) convertIsRandomTipRead,
+    required TResult Function() randomTipDialogIsClosed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$TipsState<T> {
     TResult? Function()? getRandomTipLoading,
     TResult? Function(T data)? getRandomTipSuccess,
     TResult? Function(String error)? getRandomTipError,
+    TResult? Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult? Function()? randomTipDialogIsClosed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$TipsState<T> {
     TResult Function()? getRandomTipLoading,
     TResult Function(T data)? getRandomTipSuccess,
     TResult Function(String error)? getRandomTipError,
+    TResult Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult Function()? randomTipDialogIsClosed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +53,10 @@ mixin _$TipsState<T> {
     required TResult Function(GetRandomTipLoading<T> value) getRandomTipLoading,
     required TResult Function(GetRandomTipSuccess<T> value) getRandomTipSuccess,
     required TResult Function(GetRandomTipError<T> value) getRandomTipError,
+    required TResult Function(ConvertIsRandomTipRead<T> value)
+        convertIsRandomTipRead,
+    required TResult Function(RandomTipDialogIsClosed<T> value)
+        randomTipDialogIsClosed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +65,9 @@ mixin _$TipsState<T> {
     TResult? Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult? Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult? Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult? Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult? Function(RandomTipDialogIsClosed<T> value)?
+        randomTipDialogIsClosed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +76,8 @@ mixin _$TipsState<T> {
     TResult Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult Function(RandomTipDialogIsClosed<T> value)? randomTipDialogIsClosed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,6 +144,8 @@ class _$TipsStateInitialImpl<T> implements _TipsStateInitial<T> {
     required TResult Function() getRandomTipLoading,
     required TResult Function(T data) getRandomTipSuccess,
     required TResult Function(String error) getRandomTipError,
+    required TResult Function(bool isRandomTipRead) convertIsRandomTipRead,
+    required TResult Function() randomTipDialogIsClosed,
   }) {
     return initial();
   }
@@ -140,6 +157,8 @@ class _$TipsStateInitialImpl<T> implements _TipsStateInitial<T> {
     TResult? Function()? getRandomTipLoading,
     TResult? Function(T data)? getRandomTipSuccess,
     TResult? Function(String error)? getRandomTipError,
+    TResult? Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult? Function()? randomTipDialogIsClosed,
   }) {
     return initial?.call();
   }
@@ -151,6 +170,8 @@ class _$TipsStateInitialImpl<T> implements _TipsStateInitial<T> {
     TResult Function()? getRandomTipLoading,
     TResult Function(T data)? getRandomTipSuccess,
     TResult Function(String error)? getRandomTipError,
+    TResult Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult Function()? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -166,6 +187,10 @@ class _$TipsStateInitialImpl<T> implements _TipsStateInitial<T> {
     required TResult Function(GetRandomTipLoading<T> value) getRandomTipLoading,
     required TResult Function(GetRandomTipSuccess<T> value) getRandomTipSuccess,
     required TResult Function(GetRandomTipError<T> value) getRandomTipError,
+    required TResult Function(ConvertIsRandomTipRead<T> value)
+        convertIsRandomTipRead,
+    required TResult Function(RandomTipDialogIsClosed<T> value)
+        randomTipDialogIsClosed,
   }) {
     return initial(this);
   }
@@ -177,6 +202,9 @@ class _$TipsStateInitialImpl<T> implements _TipsStateInitial<T> {
     TResult? Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult? Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult? Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult? Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult? Function(RandomTipDialogIsClosed<T> value)?
+        randomTipDialogIsClosed,
   }) {
     return initial?.call(this);
   }
@@ -188,6 +216,8 @@ class _$TipsStateInitialImpl<T> implements _TipsStateInitial<T> {
     TResult Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult Function(RandomTipDialogIsClosed<T> value)? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -244,6 +274,8 @@ class _$GetRandomTipLoadingImpl<T> implements GetRandomTipLoading<T> {
     required TResult Function() getRandomTipLoading,
     required TResult Function(T data) getRandomTipSuccess,
     required TResult Function(String error) getRandomTipError,
+    required TResult Function(bool isRandomTipRead) convertIsRandomTipRead,
+    required TResult Function() randomTipDialogIsClosed,
   }) {
     return getRandomTipLoading();
   }
@@ -255,6 +287,8 @@ class _$GetRandomTipLoadingImpl<T> implements GetRandomTipLoading<T> {
     TResult? Function()? getRandomTipLoading,
     TResult? Function(T data)? getRandomTipSuccess,
     TResult? Function(String error)? getRandomTipError,
+    TResult? Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult? Function()? randomTipDialogIsClosed,
   }) {
     return getRandomTipLoading?.call();
   }
@@ -266,6 +300,8 @@ class _$GetRandomTipLoadingImpl<T> implements GetRandomTipLoading<T> {
     TResult Function()? getRandomTipLoading,
     TResult Function(T data)? getRandomTipSuccess,
     TResult Function(String error)? getRandomTipError,
+    TResult Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult Function()? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (getRandomTipLoading != null) {
@@ -281,6 +317,10 @@ class _$GetRandomTipLoadingImpl<T> implements GetRandomTipLoading<T> {
     required TResult Function(GetRandomTipLoading<T> value) getRandomTipLoading,
     required TResult Function(GetRandomTipSuccess<T> value) getRandomTipSuccess,
     required TResult Function(GetRandomTipError<T> value) getRandomTipError,
+    required TResult Function(ConvertIsRandomTipRead<T> value)
+        convertIsRandomTipRead,
+    required TResult Function(RandomTipDialogIsClosed<T> value)
+        randomTipDialogIsClosed,
   }) {
     return getRandomTipLoading(this);
   }
@@ -292,6 +332,9 @@ class _$GetRandomTipLoadingImpl<T> implements GetRandomTipLoading<T> {
     TResult? Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult? Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult? Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult? Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult? Function(RandomTipDialogIsClosed<T> value)?
+        randomTipDialogIsClosed,
   }) {
     return getRandomTipLoading?.call(this);
   }
@@ -303,6 +346,8 @@ class _$GetRandomTipLoadingImpl<T> implements GetRandomTipLoading<T> {
     TResult Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult Function(RandomTipDialogIsClosed<T> value)? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (getRandomTipLoading != null) {
@@ -386,6 +431,8 @@ class _$GetRandomTipSuccessImpl<T> implements GetRandomTipSuccess<T> {
     required TResult Function() getRandomTipLoading,
     required TResult Function(T data) getRandomTipSuccess,
     required TResult Function(String error) getRandomTipError,
+    required TResult Function(bool isRandomTipRead) convertIsRandomTipRead,
+    required TResult Function() randomTipDialogIsClosed,
   }) {
     return getRandomTipSuccess(data);
   }
@@ -397,6 +444,8 @@ class _$GetRandomTipSuccessImpl<T> implements GetRandomTipSuccess<T> {
     TResult? Function()? getRandomTipLoading,
     TResult? Function(T data)? getRandomTipSuccess,
     TResult? Function(String error)? getRandomTipError,
+    TResult? Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult? Function()? randomTipDialogIsClosed,
   }) {
     return getRandomTipSuccess?.call(data);
   }
@@ -408,6 +457,8 @@ class _$GetRandomTipSuccessImpl<T> implements GetRandomTipSuccess<T> {
     TResult Function()? getRandomTipLoading,
     TResult Function(T data)? getRandomTipSuccess,
     TResult Function(String error)? getRandomTipError,
+    TResult Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult Function()? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (getRandomTipSuccess != null) {
@@ -423,6 +474,10 @@ class _$GetRandomTipSuccessImpl<T> implements GetRandomTipSuccess<T> {
     required TResult Function(GetRandomTipLoading<T> value) getRandomTipLoading,
     required TResult Function(GetRandomTipSuccess<T> value) getRandomTipSuccess,
     required TResult Function(GetRandomTipError<T> value) getRandomTipError,
+    required TResult Function(ConvertIsRandomTipRead<T> value)
+        convertIsRandomTipRead,
+    required TResult Function(RandomTipDialogIsClosed<T> value)
+        randomTipDialogIsClosed,
   }) {
     return getRandomTipSuccess(this);
   }
@@ -434,6 +489,9 @@ class _$GetRandomTipSuccessImpl<T> implements GetRandomTipSuccess<T> {
     TResult? Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult? Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult? Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult? Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult? Function(RandomTipDialogIsClosed<T> value)?
+        randomTipDialogIsClosed,
   }) {
     return getRandomTipSuccess?.call(this);
   }
@@ -445,6 +503,8 @@ class _$GetRandomTipSuccessImpl<T> implements GetRandomTipSuccess<T> {
     TResult Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult Function(RandomTipDialogIsClosed<T> value)? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (getRandomTipSuccess != null) {
@@ -534,6 +594,8 @@ class _$GetRandomTipErrorImpl<T> implements GetRandomTipError<T> {
     required TResult Function() getRandomTipLoading,
     required TResult Function(T data) getRandomTipSuccess,
     required TResult Function(String error) getRandomTipError,
+    required TResult Function(bool isRandomTipRead) convertIsRandomTipRead,
+    required TResult Function() randomTipDialogIsClosed,
   }) {
     return getRandomTipError(error);
   }
@@ -545,6 +607,8 @@ class _$GetRandomTipErrorImpl<T> implements GetRandomTipError<T> {
     TResult? Function()? getRandomTipLoading,
     TResult? Function(T data)? getRandomTipSuccess,
     TResult? Function(String error)? getRandomTipError,
+    TResult? Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult? Function()? randomTipDialogIsClosed,
   }) {
     return getRandomTipError?.call(error);
   }
@@ -556,6 +620,8 @@ class _$GetRandomTipErrorImpl<T> implements GetRandomTipError<T> {
     TResult Function()? getRandomTipLoading,
     TResult Function(T data)? getRandomTipSuccess,
     TResult Function(String error)? getRandomTipError,
+    TResult Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult Function()? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (getRandomTipError != null) {
@@ -571,6 +637,10 @@ class _$GetRandomTipErrorImpl<T> implements GetRandomTipError<T> {
     required TResult Function(GetRandomTipLoading<T> value) getRandomTipLoading,
     required TResult Function(GetRandomTipSuccess<T> value) getRandomTipSuccess,
     required TResult Function(GetRandomTipError<T> value) getRandomTipError,
+    required TResult Function(ConvertIsRandomTipRead<T> value)
+        convertIsRandomTipRead,
+    required TResult Function(RandomTipDialogIsClosed<T> value)
+        randomTipDialogIsClosed,
   }) {
     return getRandomTipError(this);
   }
@@ -582,6 +652,9 @@ class _$GetRandomTipErrorImpl<T> implements GetRandomTipError<T> {
     TResult? Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult? Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult? Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult? Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult? Function(RandomTipDialogIsClosed<T> value)?
+        randomTipDialogIsClosed,
   }) {
     return getRandomTipError?.call(this);
   }
@@ -593,6 +666,8 @@ class _$GetRandomTipErrorImpl<T> implements GetRandomTipError<T> {
     TResult Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
     TResult Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
     TResult Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult Function(RandomTipDialogIsClosed<T> value)? randomTipDialogIsClosed,
     required TResult orElse(),
   }) {
     if (getRandomTipError != null) {
@@ -610,4 +685,301 @@ abstract class GetRandomTipError<T> implements TipsState<T> {
   @JsonKey(ignore: true)
   _$$GetRandomTipErrorImplCopyWith<T, _$GetRandomTipErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConvertIsRandomTipReadImplCopyWith<T, $Res> {
+  factory _$$ConvertIsRandomTipReadImplCopyWith(
+          _$ConvertIsRandomTipReadImpl<T> value,
+          $Res Function(_$ConvertIsRandomTipReadImpl<T>) then) =
+      __$$ConvertIsRandomTipReadImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({bool isRandomTipRead});
+}
+
+/// @nodoc
+class __$$ConvertIsRandomTipReadImplCopyWithImpl<T, $Res>
+    extends _$TipsStateCopyWithImpl<T, $Res, _$ConvertIsRandomTipReadImpl<T>>
+    implements _$$ConvertIsRandomTipReadImplCopyWith<T, $Res> {
+  __$$ConvertIsRandomTipReadImplCopyWithImpl(
+      _$ConvertIsRandomTipReadImpl<T> _value,
+      $Res Function(_$ConvertIsRandomTipReadImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isRandomTipRead = null,
+  }) {
+    return _then(_$ConvertIsRandomTipReadImpl<T>(
+      null == isRandomTipRead
+          ? _value.isRandomTipRead
+          : isRandomTipRead // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConvertIsRandomTipReadImpl<T> implements ConvertIsRandomTipRead<T> {
+  const _$ConvertIsRandomTipReadImpl(this.isRandomTipRead);
+
+  @override
+  final bool isRandomTipRead;
+
+  @override
+  String toString() {
+    return 'TipsState<$T>.convertIsRandomTipRead(isRandomTipRead: $isRandomTipRead)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConvertIsRandomTipReadImpl<T> &&
+            (identical(other.isRandomTipRead, isRandomTipRead) ||
+                other.isRandomTipRead == isRandomTipRead));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isRandomTipRead);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConvertIsRandomTipReadImplCopyWith<T, _$ConvertIsRandomTipReadImpl<T>>
+      get copyWith => __$$ConvertIsRandomTipReadImplCopyWithImpl<T,
+          _$ConvertIsRandomTipReadImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getRandomTipLoading,
+    required TResult Function(T data) getRandomTipSuccess,
+    required TResult Function(String error) getRandomTipError,
+    required TResult Function(bool isRandomTipRead) convertIsRandomTipRead,
+    required TResult Function() randomTipDialogIsClosed,
+  }) {
+    return convertIsRandomTipRead(isRandomTipRead);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getRandomTipLoading,
+    TResult? Function(T data)? getRandomTipSuccess,
+    TResult? Function(String error)? getRandomTipError,
+    TResult? Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult? Function()? randomTipDialogIsClosed,
+  }) {
+    return convertIsRandomTipRead?.call(isRandomTipRead);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getRandomTipLoading,
+    TResult Function(T data)? getRandomTipSuccess,
+    TResult Function(String error)? getRandomTipError,
+    TResult Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult Function()? randomTipDialogIsClosed,
+    required TResult orElse(),
+  }) {
+    if (convertIsRandomTipRead != null) {
+      return convertIsRandomTipRead(isRandomTipRead);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TipsStateInitial<T> value) initial,
+    required TResult Function(GetRandomTipLoading<T> value) getRandomTipLoading,
+    required TResult Function(GetRandomTipSuccess<T> value) getRandomTipSuccess,
+    required TResult Function(GetRandomTipError<T> value) getRandomTipError,
+    required TResult Function(ConvertIsRandomTipRead<T> value)
+        convertIsRandomTipRead,
+    required TResult Function(RandomTipDialogIsClosed<T> value)
+        randomTipDialogIsClosed,
+  }) {
+    return convertIsRandomTipRead(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TipsStateInitial<T> value)? initial,
+    TResult? Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
+    TResult? Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
+    TResult? Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult? Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult? Function(RandomTipDialogIsClosed<T> value)?
+        randomTipDialogIsClosed,
+  }) {
+    return convertIsRandomTipRead?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TipsStateInitial<T> value)? initial,
+    TResult Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
+    TResult Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
+    TResult Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult Function(RandomTipDialogIsClosed<T> value)? randomTipDialogIsClosed,
+    required TResult orElse(),
+  }) {
+    if (convertIsRandomTipRead != null) {
+      return convertIsRandomTipRead(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConvertIsRandomTipRead<T> implements TipsState<T> {
+  const factory ConvertIsRandomTipRead(final bool isRandomTipRead) =
+      _$ConvertIsRandomTipReadImpl<T>;
+
+  bool get isRandomTipRead;
+  @JsonKey(ignore: true)
+  _$$ConvertIsRandomTipReadImplCopyWith<T, _$ConvertIsRandomTipReadImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RandomTipDialogIsClosedImplCopyWith<T, $Res> {
+  factory _$$RandomTipDialogIsClosedImplCopyWith(
+          _$RandomTipDialogIsClosedImpl<T> value,
+          $Res Function(_$RandomTipDialogIsClosedImpl<T>) then) =
+      __$$RandomTipDialogIsClosedImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RandomTipDialogIsClosedImplCopyWithImpl<T, $Res>
+    extends _$TipsStateCopyWithImpl<T, $Res, _$RandomTipDialogIsClosedImpl<T>>
+    implements _$$RandomTipDialogIsClosedImplCopyWith<T, $Res> {
+  __$$RandomTipDialogIsClosedImplCopyWithImpl(
+      _$RandomTipDialogIsClosedImpl<T> _value,
+      $Res Function(_$RandomTipDialogIsClosedImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RandomTipDialogIsClosedImpl<T> implements RandomTipDialogIsClosed<T> {
+  const _$RandomTipDialogIsClosedImpl();
+
+  @override
+  String toString() {
+    return 'TipsState<$T>.randomTipDialogIsClosed()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RandomTipDialogIsClosedImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getRandomTipLoading,
+    required TResult Function(T data) getRandomTipSuccess,
+    required TResult Function(String error) getRandomTipError,
+    required TResult Function(bool isRandomTipRead) convertIsRandomTipRead,
+    required TResult Function() randomTipDialogIsClosed,
+  }) {
+    return randomTipDialogIsClosed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getRandomTipLoading,
+    TResult? Function(T data)? getRandomTipSuccess,
+    TResult? Function(String error)? getRandomTipError,
+    TResult? Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult? Function()? randomTipDialogIsClosed,
+  }) {
+    return randomTipDialogIsClosed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getRandomTipLoading,
+    TResult Function(T data)? getRandomTipSuccess,
+    TResult Function(String error)? getRandomTipError,
+    TResult Function(bool isRandomTipRead)? convertIsRandomTipRead,
+    TResult Function()? randomTipDialogIsClosed,
+    required TResult orElse(),
+  }) {
+    if (randomTipDialogIsClosed != null) {
+      return randomTipDialogIsClosed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TipsStateInitial<T> value) initial,
+    required TResult Function(GetRandomTipLoading<T> value) getRandomTipLoading,
+    required TResult Function(GetRandomTipSuccess<T> value) getRandomTipSuccess,
+    required TResult Function(GetRandomTipError<T> value) getRandomTipError,
+    required TResult Function(ConvertIsRandomTipRead<T> value)
+        convertIsRandomTipRead,
+    required TResult Function(RandomTipDialogIsClosed<T> value)
+        randomTipDialogIsClosed,
+  }) {
+    return randomTipDialogIsClosed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TipsStateInitial<T> value)? initial,
+    TResult? Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
+    TResult? Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
+    TResult? Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult? Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult? Function(RandomTipDialogIsClosed<T> value)?
+        randomTipDialogIsClosed,
+  }) {
+    return randomTipDialogIsClosed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TipsStateInitial<T> value)? initial,
+    TResult Function(GetRandomTipLoading<T> value)? getRandomTipLoading,
+    TResult Function(GetRandomTipSuccess<T> value)? getRandomTipSuccess,
+    TResult Function(GetRandomTipError<T> value)? getRandomTipError,
+    TResult Function(ConvertIsRandomTipRead<T> value)? convertIsRandomTipRead,
+    TResult Function(RandomTipDialogIsClosed<T> value)? randomTipDialogIsClosed,
+    required TResult orElse(),
+  }) {
+    if (randomTipDialogIsClosed != null) {
+      return randomTipDialogIsClosed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RandomTipDialogIsClosed<T> implements TipsState<T> {
+  const factory RandomTipDialogIsClosed() = _$RandomTipDialogIsClosedImpl<T>;
 }
