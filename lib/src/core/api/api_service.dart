@@ -52,4 +52,9 @@ abstract class ApiService {
   Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
     BookmarkICareBotMessageParams request,
   );
+
+  @GET('${EndPoints.retrieveBookmarks}{user_id}')
+  Future<List<BookmarkICareBotMessageResponse>> retrieveICareBotBookmarks(
+    @Path('user_id') String userId,
+  );
 }
