@@ -1,16 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_state.dart';
-import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_message_bubble.dart';
-import 'package:icare/src/features/icare_bot/presentation/widgets/loading_bookmarks_view.dart';
+import 'package:icare/src/features/icare_bot/presentation/widgets/bookmarks_bloc_consumer.dart';
 
 @RoutePage()
 class BookmarksView extends StatelessWidget {
@@ -27,52 +21,9 @@ class BookmarksView extends StatelessWidget {
               padding: EdgeInsets.only(left: 8.w),
               sliver: const CustomSliverAppBar(title: AppStrings.bookmarks),
             ),
-            BlocConsumer<BookmarkCubit, BookmarkState>(
-              listenWhen: (_, current) =>
-                  current is RetrieveICareBotBookmarksError ||
-                  current is DeleteBookmarkSuccess,
-              listener: (context, state) =>
-                  _handleBookmarkState(state, context),
-              buildWhen: (_, current) =>
-                  current is RetrieveICareBotBookmarksSuccess ||
-                  current is RetrieveICareBotBookmarksLoading,
-              builder: (context, state) {
-                if (state is RetrieveICareBotBookmarksSuccess) {
-                  return SliverPadding(
-                    padding: AppConstants.iCareBotConversationsPadding,
-                    sliver: SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) => BookmarkMessageBubble(
-                          bookmark: state.data[index],
-                        ),
-                        childCount: state.data.length,
-                      ),
-                    ),
-                  );
-                } else {
-                  return SliverPadding(
-                    padding: AppConstants.iCareBotConversationsPadding,
-                    sliver: const LoadingBookmarksView(),
-                  );
-                }
-              },
-            ),
+            const BookmarksBlocConsumer(),
           ],
         ),
-      ),
-    );
-  }
-
-  void _handleBookmarkState(
-      BookmarkState<dynamic> state, BuildContext context) {
-    state.whenOrNull(
-      deleteBookmarkSuccess: (data) {
-        context.read<BookmarkCubit>().retrieveICareBotBookmarks(Helper.uId!);
-      },
-      retrieveICareBotBookmarksError: (error) => ShowICareDialog.show(
-        context: context,
-        state: ICareDialogStates.error,
-        message: error,
       ),
     );
   }
