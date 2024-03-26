@@ -25,32 +25,30 @@ class MessageBubble extends StatelessWidget {
           isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        ChatBubble(
-          clipper: isUser
-              ? ChatBubbleClipper8(type: BubbleType.sendBubble)
-              : ChatBubbleClipper8(type: BubbleType.receiverBubble),
-          alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-          backGroundColor:
-              isUser ? AppColors.primaryColor : AppColors.lightGrey2,
-          padding: EdgeInsets.only(
-            top: 8.h,
-            bottom: isUser ? 8.h : 4.h,
-            left: AppConstants.padding16.w,
-            right: isUser ? AppConstants.padding16.w : 8.w,
-          ),
-          child: isUser
-              ? Text(
-                  message,
-                  style: AppTextStyles.textStyle16Medium(context).copyWith(
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.left,
-                )
-              : ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxWidth: SizeConfig.width * 0.75,
-                  ),
-                  child: Markdown(
+        ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: SizeConfig.width * 0.75),
+          child: ChatBubble(
+            clipper: isUser
+                ? ChatBubbleClipper8(type: BubbleType.sendBubble)
+                : ChatBubbleClipper8(type: BubbleType.receiverBubble),
+            alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
+            backGroundColor:
+                isUser ? AppColors.primaryColor : AppColors.lightGrey2,
+            padding: EdgeInsets.only(
+              top: 8.h,
+              bottom: isUser ? 8.h : 4.h,
+              left: AppConstants.padding16.w,
+              right: isUser ? AppConstants.padding16.w : 8.w,
+            ),
+            child: isUser
+                ? Text(
+                    message,
+                    style: AppTextStyles.textStyle16Medium(context).copyWith(
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.left,
+                  )
+                : Markdown(
                     data: message,
                     padding: EdgeInsets.zero,
                     styleSheet: MarkdownStyleSheet(
@@ -62,7 +60,7 @@ class MessageBubble extends StatelessWidget {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                   ),
-                ),
+          ),
         ),
         isUser
             ? const SizedBox.shrink()
