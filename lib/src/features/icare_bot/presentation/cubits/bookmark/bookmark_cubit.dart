@@ -1,5 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
@@ -68,5 +70,23 @@ class BookmarkCubit extends Cubit<BookmarkState> {
 
   Future<void> copyToClipboard(String text) async {
     return await Clipboard.setData(ClipboardData(text: text));
+  }
+
+  void popUpMenuButtonOnSelected({
+    required String value,
+    required String chatResponse,
+  }) {
+    if (value == AppStrings.bookmarkMenuButtonVal) {
+      bookmarkICareBotMessage(
+        BookmarkICareBotMessageParams(
+          userId: Helper.uId!,
+          chatResponse: chatResponse,
+        ),
+      );
+    }
+
+    if (value == AppStrings.copyMenuButtonVal) {
+      copyToClipboard(chatResponse);
+    }
   }
 }
