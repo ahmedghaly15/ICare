@@ -28,7 +28,6 @@ class ICareApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<MedicalCubit>(
-            // lazy: false,
             create: (_) => getIt.get<MedicalCubit>()..getMedical(),
           ),
           BlocProvider<UserCubit>(
@@ -42,7 +41,7 @@ class ICareApp extends StatelessWidget {
           ),
           BlocProvider<BookmarkCubit>(
             create: (_) => getIt.get<BookmarkCubit>(),
-          )
+          ),
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
