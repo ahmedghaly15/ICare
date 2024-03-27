@@ -108,4 +108,5 @@ class AppStrings {
       'What is the appropriate age for a baby to start speaking?';
   static const String eatingAgeQuestion =
       'At what age can a baby start eating?';
+  static const String noBookmarksSavedYet = 'No bookmarks saved yet.';
 }

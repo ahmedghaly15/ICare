@@ -15,7 +15,7 @@ class AppThemes {
           elevation: 0,
           centerTitle: true,
           titleTextStyle: AppTextStyles.textStyle30Bold(context).copyWith(
-            color: Colors.black,
+            color: AppColors.primaryColor,
           ),
         ),
         textButtonTheme: TextButtonThemeData(
