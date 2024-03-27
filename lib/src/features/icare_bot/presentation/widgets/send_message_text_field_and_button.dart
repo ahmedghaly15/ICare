@@ -22,6 +22,15 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
               enabled:
                   context.read<ICareBotCubit>().isSendMessageTextFieldEnabled,
               controller: context.read<ICareBotCubit>().textController,
+              fillColor: Colors.white,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  offset: Offset(5.w, 4.h),
+                  blurRadius: 20.r,
+                  spreadRadius: 0,
+                  color: Colors.black.withOpacity(0.13),
+                ),
+              ],
               maxLines: null,
               contentPadding: EdgeInsets.all(16.h),
               textCapitalization: TextCapitalization.sentences,
