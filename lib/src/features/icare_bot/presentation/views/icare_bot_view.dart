@@ -9,7 +9,7 @@ import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
-import 'package:icare/src/features/icare_bot/presentation/widgets/conversation_bloc_builder.dart';
+import 'package:icare/src/features/icare_bot/presentation/widgets/conversation_and_send_message_text_field.dart';
 
 @RoutePage()
 class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
@@ -36,7 +36,7 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
             bottom: 0,
             child: Image.asset(AppAssets.imagesAppLogo),
           ),
-          const ConversationBlocBuilder(),
+          const ConversationAndSendMessageTextField(),
         ],
       ),
     );
