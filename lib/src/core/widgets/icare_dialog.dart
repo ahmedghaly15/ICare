@@ -14,6 +14,7 @@ class ShowICareDialog {
     required BuildContext context,
     required ICareDialogStates state,
     required String message,
+    bool isBlurred = true,
   }) async {
     return await showGeneralDialog(
       context: context,
@@ -24,6 +25,7 @@ class ShowICareDialog {
       transitionBuilder: (context, animation1, animation2, widget) {
         return ICareDialog(
           animation1: animation1,
+          isBlurred: isBlurred,
           title: _chooseDialogTitle(state),
           message: message,
         );
@@ -59,16 +61,19 @@ class ICareDialog extends StatelessWidget {
     required this.animation1,
     required this.title,
     required this.message,
+    this.isBlurred = true,
   });
 
   final Animation<double> animation1;
   final String title;
   final String message;
+  final bool isBlurred;
 
   @override
   Widget build(BuildContext context) {
     return CustomAnimatedDialog(
       animation1: animation1,
+      isBlurred: isBlurred,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
