@@ -60,9 +60,7 @@ class ICareBotRepoImpl implements ICareBotRepo {
 
   @override
   Future<ApiResult<List<BookmarkICareBotMessageResponse>>>
-      retrieveICareBotBookmarks(
-    String userId,
-  ) async {
+      retrieveICareBotBookmarks() async {
     if (_icareBotLocalDatasource.bookmarksJson() != null) {
       debugPrint('GOT CACHED BOOKMARKS DATA');
       return ApiResult.success(
@@ -72,7 +70,7 @@ class ICareBotRepoImpl implements ICareBotRepo {
       debugPrint('GOT NO CACHED BOOKMARKS DATA');
       try {
         final bookmarks =
-            await _icareBotRemoteDatasource.retrieveICareBotBookmarks(userId);
+            await _icareBotRemoteDatasource.retrieveICareBotBookmarks();
 
         await _icareBotLocalDatasource.cacheBookmarks(bookmarks);
 

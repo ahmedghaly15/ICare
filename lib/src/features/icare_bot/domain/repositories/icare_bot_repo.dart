@@ -17,7 +17,7 @@ abstract class ICareBotRepo {
   );
 
   Future<ApiResult<List<BookmarkICareBotMessageResponse>>>
-      retrieveICareBotBookmarks(String userId);
+      retrieveICareBotBookmarks();
 
   Future<ApiResult<DeleteBookmarkResponse>> deleteBookmark(
     DeleteBookmarkParams params,

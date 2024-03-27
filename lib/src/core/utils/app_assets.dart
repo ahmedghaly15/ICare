@@ -54,6 +54,10 @@ class AppAssets {
   /// assets/images/error.png
   static const String imagesError = "assets/images/error.png";
 
+  /// Assets for imagesIcareBot
+  /// assets/images/icare_bot.png
+  static const String imagesIcareBot = "assets/images/icare_bot.png";
+
   /// Assets for imagesNoInternet
   /// assets/images/no_internet.png
   static const String imagesNoInternet = "assets/images/no_internet.png";
@@ -98,10 +102,6 @@ class AppAssets {
   /// Assets for riveConfetti
   /// assets/rive/confetti.riv
   static const String riveConfetti = "assets/rive/confetti.riv";
-
-  /// Assets for svgsAppLogo
-  /// assets/svgs/app_logo.svg
-  static const String svgsAppLogo = "assets/svgs/app_logo.svg";
 
   /// Assets for svgsBabyIcon
   /// assets/svgs/baby_icon.svg

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -42,9 +43,9 @@ class BookmarkCubit extends Cubit<BookmarkState> {
     );
   }
 
-  void retrieveICareBotBookmarks(String userId) async {
+  void retrieveICareBotBookmarks() async {
     emit(const BookmarkState.retrieveICareBotBookmarksLoading());
-    final result = await retrieveICareBotBookmarksUseCase(userId);
+    final result = await retrieveICareBotBookmarksUseCase(const NoParams());
 
     result.when(
       success: (bookmarks) =>
@@ -112,7 +113,7 @@ class BookmarkCubit extends Cubit<BookmarkState> {
         debugPrint(
             '=========>>>> CACHED BOOKMARKS DELETED <<<<<<<<<<==========');
 
-        context.read<BookmarkCubit>().retrieveICareBotBookmarks(Helper.uId!);
+        context.read<BookmarkCubit>().retrieveICareBotBookmarks();
       }
     });
   }
