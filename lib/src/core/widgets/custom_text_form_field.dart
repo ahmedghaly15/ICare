@@ -32,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
     this.validating,
     this.fillColor,
     this.boxShadow,
+    this.borderSide,
   });
 
   final TextEditingController? controller;
@@ -60,6 +61,7 @@ class CustomTextFormField extends StatelessWidget {
   final int? maxLines;
   final Color? fillColor;
   final List<BoxShadow>? boxShadow;
+  final BorderSide? borderSide;
 
   @override
   Widget build(BuildContext context) {
@@ -131,10 +133,11 @@ class CustomTextFormField extends StatelessWidget {
   }) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(borderRadius ?? 50.0.r),
-      borderSide: BorderSide(
-        width: 1.w,
-        color: Colors.black.withOpacity(0.13),
-      ),
+      borderSide: borderSide ??
+          BorderSide(
+            width: 1.w,
+            color: Colors.black.withOpacity(0.13),
+          ),
     );
   }
 }

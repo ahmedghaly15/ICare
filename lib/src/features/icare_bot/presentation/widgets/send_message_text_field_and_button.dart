@@ -31,6 +31,7 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
                   color: Colors.black.withOpacity(0.13),
                 ),
               ],
+              borderSide: BorderSide.none,
               maxLines: null,
               contentPadding: EdgeInsets.all(16.h),
               textCapitalization: TextCapitalization.sentences,
