@@ -15,8 +15,9 @@ platform :android do
     This is a new release.
     
     Updates:
-      - Add bookmarks to ICareBot
-      - Add daily random tip feature
+      - Update ICare Bot UI 
+      - Update Bookmarks UI & Handle its all cases
+      - Enable Copy functionality in ICare Bot
   """
   )
   end
