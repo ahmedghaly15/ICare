@@ -4,6 +4,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_pop_menu_button.dart';
@@ -23,43 +24,57 @@ class MessageBubble extends StatelessWidget {
     return Row(
       mainAxisAlignment:
           isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.baseline,
+      textBaseline: TextBaseline.alphabetic,
       children: <Widget>[
-        ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: SizeConfig.width * 0.75),
-          child: ChatBubble(
-            clipper: isUser
-                ? ChatBubbleClipper8(type: BubbleType.sendBubble)
-                : ChatBubbleClipper8(type: BubbleType.receiverBubble),
-            alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-            backGroundColor:
-                isUser ? AppColors.primaryColor : AppColors.lightGrey2,
-            padding: EdgeInsets.only(
-              top: 8.h,
-              bottom: isUser ? 8.h : 4.h,
-              left: AppConstants.padding16.w,
-              right: isUser ? AppConstants.padding16.w : 8.w,
-            ),
-            child: isUser
-                ? Text(
-                    message,
-                    style: AppTextStyles.textStyle16Medium(context).copyWith(
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.left,
-                  )
-                : Markdown(
-                    data: message,
-                    padding: EdgeInsets.zero,
-                    styleSheet: MarkdownStyleSheet(
-                      p: AppTextStyles.textStyle16Medium(context).copyWith(
-                        color: Colors.black,
+        isUser
+            ? const SizedBox.shrink()
+            : Image.asset(
+                AppAssets.imagesIcareBot,
+                height: SizeConfig.height * 0.05,
+                width: SizeConfig.height * 0.05,
+              ),
+        Flexible(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: SizeConfig.width * 0.75),
+            child: ChatBubble(
+              clipper: isUser
+                  ? ChatBubbleClipper8(type: BubbleType.sendBubble)
+                  : ChatBubbleClipper8(type: BubbleType.receiverBubble),
+              alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
+              backGroundColor:
+                  isUser ? AppColors.primaryColor : AppColors.lightGrey2,
+              padding: EdgeInsets.only(
+                top: 8.h,
+                bottom: isUser ? 8.h : 4.h,
+                left: AppConstants.padding16.w,
+                right: isUser ? AppConstants.padding16.w : 8.w,
+              ),
+              margin: EdgeInsets.only(
+                top: isUser ? 0 : 16.h,
+                right: isUser ? 4.w : 0,
+              ),
+              child: isUser
+                  ? Text(
+                      message,
+                      style: AppTextStyles.textStyle16Medium(context).copyWith(
+                        color: Colors.white,
                       ),
+                      textAlign: TextAlign.left,
+                    )
+                  : Markdown(
+                      data: message,
+                      padding: EdgeInsets.zero,
+                      styleSheet: MarkdownStyleSheet(
+                        p: AppTextStyles.textStyle16Medium(context).copyWith(
+                          color: Colors.black,
+                        ),
+                      ),
+                      selectable: false,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                     ),
-                    selectable: false,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                  ),
+            ),
           ),
         ),
         isUser

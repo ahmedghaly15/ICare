@@ -5,7 +5,6 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
@@ -58,9 +57,7 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
       actions: <Widget>[
         IconButton(
           onPressed: () {
-            context
-                .read<BookmarkCubit>()
-                .retrieveICareBotBookmarks(Helper.uId!);
+            context.read<BookmarkCubit>().retrieveICareBotBookmarks();
             context.pushRoute(const BookmarksRoute());
           },
           icon: const Icon(

@@ -23,7 +23,7 @@ class BookmarksBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         if (state is RetrieveICareBotBookmarksSuccess) {
           return SliverPadding(
-            padding: AppConstants.iCareBotConversationsPadding,
+            padding: AppConstants.bookmarksBubblesPadding,
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) => BookmarkMessageBubble(
@@ -35,7 +35,7 @@ class BookmarksBlocConsumer extends StatelessWidget {
           );
         } else {
           return SliverPadding(
-            padding: AppConstants.iCareBotConversationsPadding,
+            padding: AppConstants.bookmarksBubblesPadding,
             sliver: const LoadingBookmarksView(),
           );
         }
