@@ -12,14 +12,14 @@ class ShimmerWidget extends StatelessWidget {
     this.margin,
     this.padding,
     this.borderRadius,
-    this.shape = BoxShape.rectangle,
+    this.shape,
     this.constraints,
   });
 
   final double? height, width, circularRadiusVal;
   final BorderRadius? borderRadius;
   final EdgeInsetsGeometry? margin, padding;
-  final BoxShape shape;
+  final BoxShape? shape;
   final BoxConstraints? constraints;
 
   @override
@@ -35,10 +35,10 @@ class ShimmerWidget extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
           color: Colors.grey,
-          borderRadius: circularRadiusVal == null
-              ? null
-              : borderRadius ?? BorderRadius.circular(circularRadiusVal!.r),
-          shape: shape,
+          borderRadius: shape == null
+              ? borderRadius ?? BorderRadius.circular(circularRadiusVal!.r)
+              : null,
+          shape: shape ?? BoxShape.rectangle,
         ),
       ),
     );
