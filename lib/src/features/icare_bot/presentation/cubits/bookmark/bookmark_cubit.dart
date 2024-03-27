@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/bookmark_icare_bot_message.dart';
@@ -30,11 +32,7 @@ class BookmarkCubit extends Cubit<BookmarkState> {
 
     result.when(
       success: (bookmark) async {
-        // TODO: use this in BookmarkBlocConsumer better
-
-        await getIt
-            .get<CacheHelper>()
-            .removeData(key: AppStrings.cachedBookmarks);
+        await _removeCachedBookmarks();
         emit(BookmarkState.bookmarkICareBotMessageSuccess(bookmark));
       },
       error: (error) => emit(
@@ -91,5 +89,35 @@ class BookmarkCubit extends Cubit<BookmarkState> {
     if (value == AppStrings.copyMenuButtonVal) {
       copyToClipboard(chatResponse);
     }
+  }
+
+  void bookmarkStateListener(
+    BookmarkState<dynamic> state,
+    BuildContext context,
+  ) {
+    state.whenOrNull(
+      deleteBookmarkSuccess: (data) =>
+          _handleDeleteBookmarkSuccessState(context),
+      retrieveICareBotBookmarksError: (error) => ShowICareDialog.show(
+        context: context,
+        state: ICareDialogStates.error,
+        message: error,
+      ),
+    );
+  }
+
+  void _handleDeleteBookmarkSuccessState(BuildContext context) {
+    _removeCachedBookmarks().then((value) {
+      if (value) {
+        debugPrint(
+            '=========>>>> CACHED BOOKMARKS DELETED <<<<<<<<<<==========');
+
+        context.read<BookmarkCubit>().retrieveICareBotBookmarks(Helper.uId!);
+      }
+    });
+  }
+
+  Future<bool> _removeCachedBookmarks() {
+    return getIt.get<CacheHelper>().removeData(key: AppStrings.cachedBookmarks);
   }
 }
