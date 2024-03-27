@@ -10,7 +10,7 @@ abstract class MedicalLocalDatasource {
 
   List<GetMedicalResponse> getCachedMedical();
 
-  String? getJsonString();
+  String? cachedMedicalJson();
 }
 
 class MedicalLocalDatasourceImpl implements MedicalLocalDatasource {
@@ -25,7 +25,7 @@ class MedicalLocalDatasourceImpl implements MedicalLocalDatasource {
   }
 
   @override
-  String? getJsonString() {
+  String? cachedMedicalJson() {
     return getIt
         .get<CacheHelper>()
         .getStringData(key: AppStrings.cachedMedical);
@@ -35,7 +35,7 @@ class MedicalLocalDatasourceImpl implements MedicalLocalDatasource {
   List<GetMedicalResponse> getCachedMedical() {
     final List<GetMedicalResponse> data = [];
 
-    for (final element in json.decode(getJsonString()!)) {
+    for (final element in json.decode(cachedMedicalJson()!)) {
       data.add(GetMedicalResponse.fromJson(element));
     }
 

@@ -15,7 +15,7 @@ class MedicalRepo {
   );
 
   Future<ApiResult<List<GetMedicalResponse>>> getMedical() async {
-    if (_medicalLocalDatasource.getJsonString() == null) {
+    if (_medicalLocalDatasource.cachedMedicalJson() == null) {
       debugPrint('GOT NO CACHED MEDICAL DATA');
 
       try {
