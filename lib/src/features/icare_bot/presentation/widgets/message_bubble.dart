@@ -4,10 +4,10 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_pop_menu_button.dart';
+import 'package:icare/src/features/icare_bot/presentation/widgets/icare_bot_image.dart';
 
 class MessageBubble extends StatelessWidget {
   const MessageBubble({
@@ -27,13 +27,7 @@ class MessageBubble extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.baseline,
       textBaseline: TextBaseline.alphabetic,
       children: <Widget>[
-        isUser
-            ? const SizedBox.shrink()
-            : Image.asset(
-                AppAssets.imagesIcareBot,
-                height: SizeConfig.height * 0.05,
-                width: SizeConfig.height * 0.05,
-              ),
+        isUser ? const SizedBox.shrink() : const ICareBotImage(),
         Flexible(
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: SizeConfig.width * 0.75),
