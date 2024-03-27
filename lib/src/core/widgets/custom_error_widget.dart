@@ -10,11 +10,13 @@ class CustomErrorWidget extends StatelessWidget {
   const CustomErrorWidget({
     super.key,
     required this.error,
-    required this.tryAgainOnPressed,
+    this.tryAgainOnPressed,
+    this.hasTryAgainButton = true,
   });
 
   final String error;
-  final VoidCallback tryAgainOnPressed;
+  final VoidCallback? tryAgainOnPressed;
+  final bool hasTryAgainButton;
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +43,15 @@ class CustomErrorWidget extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const Spacer(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40.w),
-            child: PrimaryButton(
-              onPressed: tryAgainOnPressed,
-              text: AppStrings.tryAgain,
-            ),
-          ),
+          hasTryAgainButton
+              ? Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40.w),
+                  child: PrimaryButton(
+                    onPressed: tryAgainOnPressed,
+                    text: AppStrings.tryAgain,
+                  ),
+                )
+              : const SizedBox.shrink(),
         ],
       ),
     );

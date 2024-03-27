@@ -23,7 +23,7 @@ class PrimaryButton extends StatelessWidget {
   final TextStyle? textStyle;
   final Color? backgroundColor;
   final Color? textColor;
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final bool hasShadow;
 
   @override

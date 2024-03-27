@@ -18,7 +18,7 @@ class RandomTipDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAnimatedDialog(
       animation1: animation1,
-      backgroundColor: AppColors.lightGreys3,
+      backgroundColor: AppColors.lightGrey3,
       child: BlocConsumer<TipsCubit, TipsState>(
         listenWhen: (_, current) => current is RandomTipDialogIsClosed,
         listener: (context, state) {
