@@ -4,9 +4,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
@@ -23,7 +21,8 @@ class GoogleBlocConsumer extends StatelessWidget {
           state is SignInWithGoogleLoading ||
           state is SignInWithGoogleSuccess ||
           state is SignInWithGoogleError,
-      listener: (context, state) => _googleListener(state, context),
+      listener: (context, state) =>
+          context.read<LoginCubit>().googleListener(state, context),
       builder: (context, state) {
         return PrimaryButton(
           backgroundColor: Colors.white,
@@ -45,21 +44,6 @@ class GoogleBlocConsumer extends StatelessWidget {
                   ],
                 ),
           onPressed: () => context.read<LoginCubit>().signInWithGoogle(),
-        );
-      },
-    );
-  }
-
-  void _googleListener(LoginState<dynamic> state, BuildContext context) {
-    state.whenOrNull(
-      signInWithGoogleSuccess: (data) {
-        navigateToHomeAfterLoginOrRegister(context, data);
-      },
-      signInWithGoogleError: (error) {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.error,
-          message: error,
         );
       },
     );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_state.dart';
@@ -14,7 +13,8 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ICareBotCubit, ICareBotState>(
       listenWhen: (_, current) => current is Error,
-      listener: (_, state) => _handleICareBotState(state, context),
+      listener: (_, state) =>
+          context.read<ICareBotCubit>().handleICareBotState(state, context),
       builder: (context, state) => Row(
         children: <Widget>[
           Expanded(
@@ -47,19 +47,6 @@ class SendMessageTextFieldAndButton extends StatelessWidget {
                 context.read<ICareBotCubit>().textController.text.isNotEmpty,
           ),
         ],
-      ),
-    );
-  }
-
-  void _handleICareBotState(
-    ICareBotState<dynamic> state,
-    BuildContext context,
-  ) {
-    state.whenOrNull(
-      error: (error) => ShowICareDialog.show(
-        context: context,
-        state: ICareDialogStates.error,
-        message: error,
       ),
     );
   }

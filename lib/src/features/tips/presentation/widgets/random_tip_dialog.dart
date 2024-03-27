@@ -22,7 +22,7 @@ class RandomTipDialog extends StatelessWidget {
       child: BlocConsumer<TipsCubit, TipsState>(
         listenWhen: (_, current) => current is RandomTipDialogIsClosed,
         listener: (context, state) {
-          _handleTipsState(state, context);
+          context.read<TipsCubit>().handleTipsState(state);
         },
         buildWhen: (_, current) =>
             current is GetRandomTipLoading ||
@@ -42,14 +42,6 @@ class RandomTipDialog extends StatelessWidget {
           }
         },
       ),
-    );
-  }
-
-  void _handleTipsState(TipsState<dynamic> state, BuildContext context) {
-    state.whenOrNull(
-      randomTipDialogIsClosed: () {
-        context.read<TipsCubit>().convertIsRandomTipRead();
-      },
     );
   }
 }

@@ -36,4 +36,12 @@ class TipsCubit extends Cubit<TipsState> {
   void emitRandomTipDialogIsClosed() {
     emit(const TipsState.randomTipDialogIsClosed());
   }
+
+  void handleTipsState(TipsState<dynamic> state) {
+    state.whenOrNull(
+      randomTipDialogIsClosed: () {
+        convertIsRandomTipRead();
+      },
+    );
+  }
 }

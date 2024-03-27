@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/auth/domain/usecases/forgot_password.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_state.dart';
 
@@ -37,6 +39,28 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
       error: (error) => emit(
         ForgotPasswordState.error(error: error.failureMsg ?? ''),
       ),
+    );
+  }
+
+  void forgotPasswordListener(
+    ForgotPasswordState<dynamic> state,
+    BuildContext context,
+  ) {
+    state.whenOrNull(
+      success: () {
+        ShowICareDialog.show(
+          context: context,
+          state: ICareDialogStates.success,
+          message: AppStrings.resetPasswordEmailIsSent,
+        );
+      },
+      error: (error) {
+        ShowICareDialog.show(
+          context: context,
+          state: ICareDialogStates.error,
+          message: error,
+        );
+      },
     );
   }
 }

@@ -128,4 +128,17 @@ class ICareBotCubit extends Cubit<ICareBotState> {
     AppStrings.speakingAgeQuestion,
     AppStrings.eatingAgeQuestion,
   ];
+
+  void handleICareBotState(
+    ICareBotState<dynamic> state,
+    BuildContext context,
+  ) {
+    state.whenOrNull(
+      error: (error) => ShowICareDialog.show(
+        context: context,
+        state: ICareDialogStates.error,
+        message: error,
+      ),
+    );
+  }
 }

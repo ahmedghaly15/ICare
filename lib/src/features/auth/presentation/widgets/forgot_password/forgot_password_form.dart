@@ -4,7 +4,6 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_state.dart';
@@ -37,11 +36,11 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
           ),
           const BottomTextFieldSpacer(),
           BlocConsumer<ForgotPasswordCubit, ForgotPasswordState>(
-            // buildWhen: (context, state) => state is Loading,
             listenWhen: (context, state) =>
                 state is Loading || state is Success || state is Error,
-            listener: (context, state) =>
-                _forgotPasswordListener(state, context),
+            listener: (context, state) => context
+                .read<ForgotPasswordCubit>()
+                .forgotPasswordListener(state, context),
             builder: (context, state) {
               return PrimaryButton(
                 child: state is Loading
@@ -61,26 +60,6 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
           ),
         ],
       ),
-    );
-  }
-
-  void _forgotPasswordListener(
-      ForgotPasswordState<dynamic> state, BuildContext context) {
-    state.whenOrNull(
-      success: () {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.success,
-          message: AppStrings.resetPasswordEmailIsSent,
-        );
-      },
-      error: (error) {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.error,
-          message: error,
-        );
-      },
     );
   }
 
