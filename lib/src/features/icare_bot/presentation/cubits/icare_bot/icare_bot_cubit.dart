@@ -123,4 +123,9 @@ class ICareBotCubit extends Cubit<ICareBotState> {
     textController.dispose();
     scrollController.dispose();
   }
+
+  final List<String> frequentlyAskedQuestions = <String>[
+    AppStrings.speakingAgeQuestion,
+    AppStrings.eatingAgeQuestion,
+  ];
 }

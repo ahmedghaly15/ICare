@@ -52,7 +52,7 @@ mixin _$ICareBotState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(ICareBotInitial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
@@ -63,7 +63,7 @@ mixin _$ICareBotState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(ICareBotInitial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
@@ -74,7 +74,7 @@ mixin _$ICareBotState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(ICareBotInitial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
@@ -122,7 +122,7 @@ class __$$ICareBotInitialImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
+class _$ICareBotInitialImpl<T> implements ICareBotInitial<T> {
   const _$ICareBotInitialImpl();
 
   @override
@@ -188,7 +188,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(ICareBotInitial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
@@ -202,7 +202,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(ICareBotInitial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
@@ -216,7 +216,7 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(ICareBotInitial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
@@ -232,8 +232,8 @@ class _$ICareBotInitialImpl<T> implements _ICareBotInitial<T> {
   }
 }
 
-abstract class _ICareBotInitial<T> implements ICareBotState<T> {
-  const factory _ICareBotInitial() = _$ICareBotInitialImpl<T>;
+abstract class ICareBotInitial<T> implements ICareBotState<T> {
+  const factory ICareBotInitial() = _$ICareBotInitialImpl<T>;
 }
 
 /// @nodoc
@@ -320,7 +320,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(ICareBotInitial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
@@ -334,7 +334,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(ICareBotInitial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
@@ -348,7 +348,7 @@ class _$LoadingImpl<T> implements Loading<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(ICareBotInitial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
@@ -479,7 +479,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(ICareBotInitial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
@@ -493,7 +493,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(ICareBotInitial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
@@ -507,7 +507,7 @@ class _$SuccessImpl<T> implements Success<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(ICareBotInitial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
@@ -642,7 +642,7 @@ class _$ErrorImpl<T> implements Error<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(ICareBotInitial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
@@ -656,7 +656,7 @@ class _$ErrorImpl<T> implements Error<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(ICareBotInitial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
@@ -670,7 +670,7 @@ class _$ErrorImpl<T> implements Error<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(ICareBotInitial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
@@ -806,7 +806,7 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(ICareBotInitial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
@@ -820,7 +820,7 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(ICareBotInitial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
@@ -834,7 +834,7 @@ class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(ICareBotInitial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,
@@ -980,7 +980,7 @@ class _$ConvertSendMessageTextFieldStatusImpl<T>
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ICareBotInitial<T> value) initial,
+    required TResult Function(ICareBotInitial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Success<T> value) success,
     required TResult Function(Error<T> value) error,
@@ -994,7 +994,7 @@ class _$ConvertSendMessageTextFieldStatusImpl<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ICareBotInitial<T> value)? initial,
+    TResult? Function(ICareBotInitial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Success<T> value)? success,
     TResult? Function(Error<T> value)? error,
@@ -1008,7 +1008,7 @@ class _$ConvertSendMessageTextFieldStatusImpl<T>
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ICareBotInitial<T> value)? initial,
+    TResult Function(ICareBotInitial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
     TResult Function(Success<T> value)? success,
     TResult Function(Error<T> value)? error,

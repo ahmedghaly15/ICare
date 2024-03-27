@@ -103,4 +103,9 @@ class AppStrings {
   static const String bookmarkMenuButtonVal = 'Bookmark';
   static const String copyMenuButtonVal = 'Copy';
   static const String cachedBookmarks = 'cachedBookmarks';
+  static const String frequentlyAskedQuestions = 'Most Used Questions';
+  static const String speakingAgeQuestion =
+      'What is the appropriate age for a baby to start speaking?';
+  static const String eatingAgeQuestion =
+      'At what age can a baby start eating?';
 }
