@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:icare/src/features/icare_bot/data/datasources/icare_bot_local_datasource.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/bookmark_icare_bot_message.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/delete_bookmark.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/retrieve_icare_bot_bookmarks.dart';

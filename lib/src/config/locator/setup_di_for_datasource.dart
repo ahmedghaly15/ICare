@@ -80,6 +80,10 @@ class SetupDIForDatasource {
       () => ICareBotRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
 
+    getIt.registerLazySingleton<ICareBotLocalDatasource>(
+      () => const ICareBotLocalDatasourceImpl(),
+    );
+
     // ========== TinyTales feature ==========
     getIt.registerLazySingleton<TinyTalesRemoteDatasource>(
       () => const TinyTalesRemoteDatasourceImpl(),

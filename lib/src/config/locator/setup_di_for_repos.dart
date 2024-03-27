@@ -74,7 +74,10 @@ class SetupDIForRepos {
 
     // ========== ICareBot feature ==========
     getIt.registerLazySingleton<ICareBotRepo>(
-      () => ICareBotRepoImpl(getIt.get<ICareBotRemoteDatasource>()),
+      () => ICareBotRepoImpl(
+        getIt.get<ICareBotRemoteDatasource>(),
+        getIt.get<ICareBotLocalDatasource>(),
+      ),
     );
 
     // ========== TinyTales feature ==========
