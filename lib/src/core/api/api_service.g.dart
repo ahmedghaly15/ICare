@@ -380,7 +380,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<MarkingResponse> marking(
+  Future<MarkLevelOneResponse> markLevelOneExam(
     int id,
     File audio,
   ) async {
@@ -395,8 +395,8 @@ class _ApiService implements ApiService {
         filename: audio.path.split(Platform.pathSeparator).last,
       ),
     ));
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<MarkingResponse>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<MarkLevelOneResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -413,7 +413,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = MarkingResponse.fromJson(_result.data!);
+    final value = MarkLevelOneResponse.fromJson(_result.data!);
     return value;
   }
 
