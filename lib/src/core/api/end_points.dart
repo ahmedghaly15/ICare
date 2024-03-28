@@ -2,7 +2,7 @@ class EndPoints {
   static const String databaseBaseUrl =
       'https://ahmed-muqawi-medical-app.hf.space/';
   static const String babyCryPredictorBaseUrl =
-      'https://baby-cry-predictor.onrender.com/';
+      'https://ahmed-muqawi-baby-cry-predictor.hf.space/';
   static const String medical = '${databaseBaseUrl}medical';
   static const String emergency = '${databaseBaseUrl}Emergency/';
   static const String medicalInfo = '${databaseBaseUrl}diseases';

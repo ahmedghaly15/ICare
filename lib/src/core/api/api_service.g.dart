@@ -188,7 +188,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://baby-cry-predictor.onrender.com/baby_cry_predictor/',
+              'https://ahmed-muqawi-baby-cry-predictor.hf.space/baby_cry_predictor/',
               queryParameters: queryParameters,
               data: _data,
             )
