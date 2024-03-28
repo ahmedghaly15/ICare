@@ -5,6 +5,7 @@ import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predi
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/level_one_exam_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_data.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:retrofit/retrofit.dart';
@@ -68,4 +69,9 @@ abstract class ApiService {
 
   @GET(EndPoints.levelOneTraining)
   Future<List<LevelOneTrainingData>> getLevelOneTrainingData();
+
+  @GET('${EndPoints.levelOneExam}{num_of_completed_sublevels}')
+  Future<List<LevelOneExamResponse>> getLevelOneExam(
+    @Path('num_of_completed_sublevels') int numOfCompletedSublevels,
+  );
 }
