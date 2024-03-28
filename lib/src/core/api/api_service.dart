@@ -7,6 +7,7 @@ import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_mess
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_exam_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_data.dart';
+import 'package:icare/src/features/speech_therapy/data/models/marking_response.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -73,5 +74,12 @@ abstract class ApiService {
   @GET('${EndPoints.levelOneExam}{num_of_completed_sublevels}')
   Future<List<LevelOneExamResponse>> getLevelOneExam(
     @Path('num_of_completed_sublevels') int numOfCompletedSublevels,
+  );
+
+  @POST(EndPoints.marking)
+  @MultiPart()
+  Future<MarkingResponse> marking(
+    @Query('id') int id,
+    @Part(name: 'audio_file') File audio,
   );
 }
