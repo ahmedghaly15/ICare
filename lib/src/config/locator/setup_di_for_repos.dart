@@ -92,5 +92,10 @@ class SetupDIForRepos {
         getIt.get<TipsLocalDataSource>(),
       ),
     );
+
+    // Speech Therapy feature
+    getIt.registerLazySingleton<SpeechTherapyRepo>(
+      () => SpeechTherapyRepoImpl(getIt.get<SpeechTherapyRemoteDatasource>()),
+    );
   }
 }

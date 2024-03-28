@@ -99,5 +99,15 @@ class SetupDIForCubits {
     getIt.registerFactory<TipsCubit>(
       () => TipsCubit(getIt.get<GetRandomTipUseCase>()),
     );
+
+    // Speech Therapy feature
+    getIt.registerFactory<SpeechTherapyCubit>(
+      () => SpeechTherapyCubit(
+        getLevelOneTrainingDataUseCase:
+            getIt.get<GetLevelOneTrainingDataUseCase>(),
+        getLevelOneExamUseCase: getIt.get<GetLevelOneExamUseCase>(),
+        markLevelOneUseCase: getIt.get<MarkLevelOneUseCase>(),
+      ),
+    );
   }
 }
