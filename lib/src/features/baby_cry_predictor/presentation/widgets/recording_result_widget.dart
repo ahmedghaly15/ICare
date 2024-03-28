@@ -7,6 +7,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 
 class RecordingResultWidget extends StatelessWidget {
@@ -24,7 +25,6 @@ class RecordingResultWidget extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Expanded(
-            flex: 3,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(AppConstants.radius25.r),
               child: FadeInDown(
@@ -34,25 +34,34 @@ class RecordingResultWidget extends StatelessWidget {
             ),
           ),
           MySizedBox.height12,
-          Expanded(
-            child: FadeInUp(
-              child: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: AppStrings.theBabyIs,
-                      style: AppTextStyles.textStyle30Bold(context)
-                          .copyWith(color: Colors.black),
+          FadeInUp(
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: AppStrings.theBabyIs,
+                    style: AppTextStyles.textStyle30Bold(context)
+                        .copyWith(color: Colors.black),
+                  ),
+                  TextSpan(
+                    text: predictionResult.feeling,
+                    style: AppTextStyles.textStyle30Bold(context).copyWith(
+                      color: AppColors.primaryColor,
                     ),
-                    TextSpan(
-                      text: predictionResult.feeling,
-                      style: AppTextStyles.textStyle30Bold(context).copyWith(
-                        color: AppColors.primaryColor,
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
+            ),
+          ),
+          MySizedBox.height12,
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 40.w,
+              vertical: 24.h,
+            ),
+            child: PrimaryButton(
+              onPressed: () {},
+              text: 'Done',
             ),
           ),
         ],

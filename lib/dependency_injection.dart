@@ -9,6 +9,13 @@ import 'package:icare/src/features/icare_bot/domain/usecases/bookmark_icare_bot_
 import 'package:icare/src/features/icare_bot/domain/usecases/delete_bookmark.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/retrieve_icare_bot_bookmarks.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
+import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_remote_datasource.dart';
+import 'package:icare/src/features/speech_therapy/data/repositories/speech_therapy_repo_impl.dart';
+import 'package:icare/src/features/speech_therapy/domain/repositories/speech_therapy_repo.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_exam.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/mark_level_one.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubit/speech_therapy_cubit.dart';
 import 'package:icare/src/features/tips/data/datasources/tips_local_datasource.dart';
 import 'package:icare/src/features/tips/data/datasources/tips_remote_datasource.dart';
 import 'package:icare/src/features/tips/data/repositories/tips_repo.dart';
