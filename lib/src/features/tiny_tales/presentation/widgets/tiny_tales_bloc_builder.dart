@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
@@ -20,7 +21,7 @@ class TinyTalesBlocBuilder extends StatelessWidget {
         if (state is GetTinyTalesSuccess) {
           return SliverList(
             delegate: SliverChildBuilderDelegate(
-              (context, index) => const TinyTaleItem(),
+              (context, index) => ElasticIn(child: const TinyTaleItem()),
               childCount: 10,
             ),
           );
