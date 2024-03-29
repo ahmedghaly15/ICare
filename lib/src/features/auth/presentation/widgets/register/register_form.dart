@@ -4,7 +4,6 @@ import 'package:icare/src/core/helpers/app_regex.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/auth/presentation/widgets/register/password_validations.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/core/helpers/auth_helper.dart';
@@ -259,11 +258,7 @@ class _RegisterFormState extends State<RegisterForm> {
     );
     Future.delayed(
       const Duration(seconds: 3),
-      () {
-        context.read<UserCubit>().getUserData().then((value) {
-          navigateToHomeAfterLoginOrRegister(context, data);
-        });
-      },
+      () => navigateToHomeAfterLoginOrRegister(context, data),
     );
   }
 
