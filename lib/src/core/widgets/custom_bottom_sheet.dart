@@ -49,7 +49,7 @@ class CustomImageBottomSheet extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Pick $type Picture",
+                  "Pick a $type Picture",
                   style: AppTextStyles.textStyle18Bold(context),
                   textAlign: TextAlign.center,
                 ),

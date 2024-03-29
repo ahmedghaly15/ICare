@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/like_comment_bookmark_buttons.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_image.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_item_upper_section.dart';
 
@@ -40,6 +41,9 @@ class TinyTaleItem extends StatelessWidget {
           ),
           MySizedBox.height10,
           const TinyTaleItemImage(),
+          // const LikeCommentBookmarkButtons(
+          //   isTinyTaleContainsImage: true,
+          // ),
         ],
       ),
     );

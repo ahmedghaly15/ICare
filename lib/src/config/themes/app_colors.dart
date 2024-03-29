@@ -13,4 +13,5 @@ class AppColors {
   static const Color darkGreen = Color(0xff365437);
   static const Color secondWhiteColor = Color(0xffFCFCFC);
   static Color white80Percent = Colors.white.withOpacity(0.8);
+  static Color black80Percent = Colors.black.withOpacity(0.8);
 }

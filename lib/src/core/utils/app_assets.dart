@@ -3,7 +3,7 @@ class AppAssets {
 
   /// Assets for AppIcon
   /// assets/app_icon.png
-  static const String qppIcon = "assets/app_icon.png";
+  static const String appIcon = "assets/app_icon.png";
 
   /// Assets for fontsInterInterBold
   /// assets/fonts/inter/Inter-Bold.ttf
@@ -114,6 +114,20 @@ class AppAssets {
   /// Assets for svgsBabyIcon
   /// assets/svgs/baby_icon.svg
   static const String svgsBabyIcon = "assets/svgs/baby_icon.svg";
+
+  /// Assets for svgsBlackBookmarkIcon
+  /// assets/svgs/black_bookmark_icon.svg
+  static const String svgsBlackBookmarkIcon =
+      "assets/svgs/black_bookmark_icon.svg";
+
+  /// Assets for svgsBlackCommentIcon
+  /// assets/svgs/black_comment_icon.svg
+  static const String svgsBlackCommentIcon =
+      "assets/svgs/black_comment_icon.svg";
+
+  /// Assets for svgsBlackHeartIcon
+  /// assets/svgs/black_heart_icon.svg
+  static const String svgsBlackHeartIcon = "assets/svgs/black_heart_icon.svg";
 
   /// Assets for svgsBookmarkIcon
   /// assets/svgs/bookmark_icon.svg
