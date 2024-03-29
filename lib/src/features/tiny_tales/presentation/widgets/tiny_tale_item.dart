@@ -14,6 +14,7 @@ class TinyTaleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 20.h),
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(40.r)),
