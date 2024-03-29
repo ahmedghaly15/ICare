@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
 part 'tiny_tales_state.freezed.dart';
 
@@ -34,4 +35,10 @@ class TinyTalesState<T> with _$TinyTalesState<T> {
       PickTinyTaleImageSuccess<T>;
   const factory TinyTalesState.pickTinyTaleImageError(String error) =
       PickTinyTaleImageError;
+
+  const factory TinyTalesState.getTinyTalesLoading() = GetTinyTalesLoading;
+  const factory TinyTalesState.getTinyTalesSuccess(List<TinyTale> data) =
+      GetTinyTalesSuccess<T>;
+  const factory TinyTalesState.getTinyTalesError(String error) =
+      GetTinyTalesError;
 }

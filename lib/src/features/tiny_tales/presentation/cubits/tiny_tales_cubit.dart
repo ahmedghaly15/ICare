@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/unlike_tiny_tale.dart';
@@ -20,6 +22,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   final DeleteTinyTaleUseCase deleteTinyTaleUseCase;
   final UploadTinyTaleImageUseCase uploadTinyTaleImageUseCase;
   final IsTinyTaleLikeByMeUseCase isTinyTaleLikedByMeUseCase;
+  final GetTinyTalesUseCase getTinyTalesUseCase;
 
   TinyTalesCubit({
     required this.createTinyTaleUseCase,
@@ -28,6 +31,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.deleteTinyTaleUseCase,
     required this.uploadTinyTaleImageUseCase,
     required this.isTinyTaleLikedByMeUseCase,
+    required this.getTinyTalesUseCase,
   }) : super(const TinyTalesState.initial());
 
   void createTinyTale(CreateTinyTaleParams params) async {
@@ -38,6 +42,17 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
           emit(TinyTalesState.createTinyTaleSuccess(tinyTaleDocument)),
       error: (error) =>
           emit(TinyTalesState.createTinyTaleError(error.failureMsg ?? '')),
+    );
+  }
+
+  void getTinyTales() async {
+    emit(const TinyTalesState.getTinyTalesLoading());
+    final result = await getTinyTalesUseCase.call(const NoParams());
+    result.when(
+      success: (tinyTales) =>
+          emit(TinyTalesState.getTinyTalesSuccess(tinyTales)),
+      error: (error) =>
+          emit(TinyTalesState.getTinyTalesError(error.failureMsg ?? '')),
     );
   }
 
