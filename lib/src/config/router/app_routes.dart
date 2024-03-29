@@ -61,6 +61,15 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(page: BabyCryPredictorRoute.page),
     _buildCustomRoute(page: ICareBotRoute.page),
     _buildCustomRoute(page: BookmarksRoute.page),
+    AutoRoute(
+      page: CommunityRoute.page,
+      children: <AutoRoute>[
+        _buildCustomRoute(
+          page: ICareCommunityRoute.page,
+          initial: true,
+        ),
+      ],
+    ),
   ];
 }
 

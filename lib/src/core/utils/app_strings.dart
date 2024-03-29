@@ -109,4 +109,5 @@ class AppStrings {
   static const String eatingAgeQuestion =
       'At what age can a baby start eating?';
   static const String noBookmarksSavedYet = 'No bookmarks saved yet.';
+  static const String icareCommunity = 'iCare Community';
 }

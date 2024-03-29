@@ -62,13 +62,13 @@ class HomeView extends StatelessWidget {
               //         time: DateFormat.jm().format(DateTime.now()),
               //       ),
               //     );
-              context.pushRoute(const AuthRoute());
+              context.pushRoute(const CommunityRoute());
               // context
               //     .read<EmergencyCubit>()
               //     .getEmergencyDiseaseDetails('65e4a4ef8ed0c5d25deaf4f8');
             },
             child: Text(
-              'Home View',
+              AppStrings.icareCommunity,
               style: AppTextStyles.textStyle30Bold(context),
             ),
           ),

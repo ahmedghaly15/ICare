@@ -22,6 +22,7 @@ import 'package:icare/src/features/medical_info/presentation/views/medical_info_
 import 'package:icare/src/features/medical_info/presentation/views/medical_info_view.dart';
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
+import 'package:icare/src/features/tiny_tales/presentation/views/icare_community_view.dart';
 
 part 'app_router.gr.dart';
 part 'app_routes.dart';
@@ -43,4 +44,9 @@ class Auth extends AutoRouter {
 @RoutePage(name: RoutesNames.bottomNavBarRoute)
 class BottomNavBar extends AutoRouter {
   const BottomNavBar({super.key});
+}
+
+@RoutePage(name: RoutesNames.icareCommunityRoute)
+class ICareCommunity extends AutoRouter {
+  const ICareCommunity({super.key});
 }
