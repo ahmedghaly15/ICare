@@ -9,6 +9,8 @@ abstract class TinyTalesRemoteDatasource {
     CreateTinyTaleParams params,
   );
 
+  Future<QuerySnapshot<Map<String, dynamic>>> getTinyTales();
+
   Future<void> likeTinyTale(String tinyTaleId);
 
   Future<void> unLikeTinyTale(String tinyTaleId);
