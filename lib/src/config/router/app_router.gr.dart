@@ -45,6 +45,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
+    CreateNewTinyTaleRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const CreateNewTinyTaleView()),
+      );
+    },
     EmergencyDiseaseDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<EmergencyDiseaseDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -232,6 +238,20 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BottomNavBarRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CreateNewTinyTaleView]
+class CreateNewTinyTaleRoute extends PageRouteInfo<void> {
+  const CreateNewTinyTaleRoute({List<PageRouteInfo>? children})
+      : super(
+          CreateNewTinyTaleRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CreateNewTinyTaleRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
