@@ -92,6 +92,7 @@ class SetupDIForCubits {
         deleteTinyTaleUseCase: getIt.get<DeleteTinyTaleUseCase>(),
         uploadTinyTaleImageUseCase: getIt.get<UploadTinyTaleImageUseCase>(),
         isTinyTaleLikedByMeUseCase: getIt.get<IsTinyTaleLikeByMeUseCase>(),
+        getTinyTalesUseCase: getIt.get<GetTinyTalesUseCase>(),
       ),
     );
 
