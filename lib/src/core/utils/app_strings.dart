@@ -90,7 +90,7 @@ class AppStrings {
   static const String unKnownError = 'Unknown error';
   static const String likesCollection = 'likes Collection';
   static const String tinyTaleId = 'tinyTaleId';
-  static const String commentsCollection = 'comments Collection';
+  static const String commentsCollection = 'Comments Collection';
   static const String dateTime = 'dateTime';
   static const String commentId = 'commentId';
   static const String cachedRandomTip = 'cachedRandomTip';
