@@ -45,12 +45,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
-    CreateNewTinyTaleRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const CreateNewTinyTaleView()),
-      );
-    },
     EmergencyDiseaseDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<EmergencyDiseaseDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -151,6 +145,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const MedicalView(),
       );
     },
+    NewTinyTaleRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const NewTinyTaleView()),
+      );
+    },
     OnboardingRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -238,20 +238,6 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BottomNavBarRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [CreateNewTinyTaleView]
-class CreateNewTinyTaleRoute extends PageRouteInfo<void> {
-  const CreateNewTinyTaleRoute({List<PageRouteInfo>? children})
-      : super(
-          CreateNewTinyTaleRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'CreateNewTinyTaleRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -533,6 +519,20 @@ class MedicalRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'MedicalRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [NewTinyTaleView]
+class NewTinyTaleRoute extends PageRouteInfo<void> {
+  const NewTinyTaleRoute({List<PageRouteInfo>? children})
+      : super(
+          NewTinyTaleRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NewTinyTaleRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
