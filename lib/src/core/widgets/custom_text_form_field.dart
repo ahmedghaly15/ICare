@@ -33,6 +33,10 @@ class CustomTextFormField extends StatelessWidget {
     this.fillColor,
     this.boxShadow,
     this.borderSide,
+    this.enableSuggestions = true,
+    this.filled,
+    this.border,
+    this.margin,
   });
 
   final TextEditingController? controller;
@@ -62,15 +66,21 @@ class CustomTextFormField extends StatelessWidget {
   final Color? fillColor;
   final List<BoxShadow>? boxShadow;
   final BorderSide? borderSide;
+  final bool enableSuggestions;
+  final bool? filled;
+  final InputBorder? border;
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       decoration: BoxDecoration(
         boxShadow: boxShadow,
         borderRadius: BorderRadius.circular(borderRadius ?? 50.0.r),
       ),
       child: TextFormField(
+        enableSuggestions: enableSuggestions,
         enabled: enabled ?? true,
         controller: controller,
         focusNode: focusNode,
@@ -88,7 +98,7 @@ class CustomTextFormField extends StatelessWidget {
         style: _customTextFieldTextStyle(context),
         cursorColor: Colors.black,
         decoration: InputDecoration(
-          filled: true,
+          filled: filled ?? true,
           fillColor: fillColor ?? AppColors.secondaryColor,
           errorStyle: AppTextStyles.textStyle13Light(context).copyWith(
             color: Colors.red,
@@ -106,15 +116,19 @@ class CustomTextFormField extends StatelessWidget {
                 bottom: 15.h,
                 left: 35.w,
               ),
-          enabledBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          focusedBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          errorBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          focusedErrorBorder:
-              _buildOutlinedInputBorder(context, borderRadius: borderRadius),
-          border:
+          enabledBorder: _borderIsNone
+              ? border
+              : _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+          focusedBorder: _borderIsNone
+              ? border
+              : _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+          errorBorder: _borderIsNone
+              ? border
+              : _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+          focusedErrorBorder: _borderIsNone
+              ? border
+              : _buildOutlinedInputBorder(context, borderRadius: borderRadius),
+          border: border ??
               _buildOutlinedInputBorder(context, borderRadius: borderRadius),
         ),
         validator: validating,
@@ -122,6 +136,8 @@ class CustomTextFormField extends StatelessWidget {
       ),
     );
   }
+
+  bool get _borderIsNone => border == InputBorder.none;
 
   TextStyle _customTextFieldTextStyle(BuildContext context) {
     return AppTextStyles.textStyle13Light(context);
