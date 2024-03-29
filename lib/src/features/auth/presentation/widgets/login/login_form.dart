@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/config/router/app_router.dart';
@@ -92,7 +93,7 @@ class _LoginFormState extends State<LoginForm> {
                     current is Success ||
                     current is Error,
                 listener: (context, state) {
-                  _handleLoginState(state);
+                  _handleLoginState(state, context);
                 },
                 child: PrimaryButton(
                   text: AppStrings.login,
@@ -125,7 +126,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  void _handleLoginState(LoginState<dynamic> state) {
+  void _handleLoginState(LoginState<dynamic> state, BuildContext context) {
     state.whenOrNull(
       loading: () {
         setState(() {
@@ -134,7 +135,7 @@ class _LoginFormState extends State<LoginForm> {
         });
       },
       success: (data) {
-        _successLoginListener(data);
+        _successLoginListener(data, context);
       },
       error: (error) {
         _errorLoginListener(error);
@@ -142,7 +143,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  void _successLoginListener(String data) {
+  void _successLoginListener(String data, BuildContext context) {
     checkTrigger.fire();
 
     Future.delayed(
@@ -157,7 +158,11 @@ class _LoginFormState extends State<LoginForm> {
     );
     Future.delayed(
       const Duration(seconds: 3),
-      () => navigateToHomeAfterLoginOrRegister(context, data),
+      () {
+        context.read<UserCubit>().getUserData().then((value) {
+          navigateToHomeAfterLoginOrRegister(context, data);
+        });
+      },
     );
   }
 

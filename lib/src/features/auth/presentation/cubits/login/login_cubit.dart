@@ -9,6 +9,7 @@ import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.da
 import 'package:icare/src/features/auth/domain/usecases/login.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_state.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginUseCase loginUseCase;
@@ -108,7 +109,9 @@ class LoginCubit extends Cubit<LoginState> {
   void googleListener(LoginState<dynamic> state, BuildContext context) {
     state.whenOrNull(
       signInWithGoogleSuccess: (data) {
-        navigateToHomeAfterLoginOrRegister(context, data);
+        context.read<UserCubit>().getUserData().then((value) {
+          navigateToHomeAfterLoginOrRegister(context, data);
+        });
       },
       signInWithGoogleError: (error) {
         ShowICareDialog.show(

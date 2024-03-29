@@ -4,6 +4,7 @@ import 'package:icare/src/core/helpers/app_regex.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/auth/presentation/widgets/register/password_validations.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:rive/rive.dart';
 
 import 'package:icare/src/core/helpers/auth_helper.dart';
@@ -178,7 +179,7 @@ class _RegisterFormState extends State<RegisterForm> {
                     current is Loading ||
                     current is Success ||
                     current is Error,
-                listener: (context, state) => _registerListener(state),
+                listener: (context, state) => _registerListener(state, context),
                 child: PrimaryButton(
                   text: AppStrings.register,
                   onPressed: () => _register(context),
@@ -210,7 +211,7 @@ class _RegisterFormState extends State<RegisterForm> {
     );
   }
 
-  Null _registerListener(RegisterState<dynamic> state) {
+  Null _registerListener(RegisterState<dynamic> state, BuildContext context) {
     return state.whenOrNull(
       loading: () {
         setState(() {
@@ -219,7 +220,7 @@ class _RegisterFormState extends State<RegisterForm> {
         });
       },
       success: (data) {
-        _successListener(data);
+        _successListener(data, context);
       },
       error: (error) {
         _errorListener(error);
@@ -243,7 +244,7 @@ class _RegisterFormState extends State<RegisterForm> {
     });
   }
 
-  void _successListener(String data) {
+  void _successListener(String data, BuildContext context) {
     checkTrigger.fire();
 
     Future.delayed(
@@ -258,7 +259,11 @@ class _RegisterFormState extends State<RegisterForm> {
     );
     Future.delayed(
       const Duration(seconds: 3),
-      () => navigateToHomeAfterLoginOrRegister(context, data),
+      () {
+        context.read<UserCubit>().getUserData().then((value) {
+          navigateToHomeAfterLoginOrRegister(context, data);
+        });
+      },
     );
   }
 
