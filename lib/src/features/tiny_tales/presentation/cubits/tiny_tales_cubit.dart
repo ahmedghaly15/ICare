@@ -1,6 +1,8 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:icare/dependency_injection.dart';
@@ -35,9 +37,13 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.uploadTinyTaleImageUseCase,
     required this.isTinyTaleLikedByMeUseCase,
     required this.getTinyTalesUseCase,
-  }) : super(const TinyTalesState.initial());
+  }) : super(const TinyTalesState.initial()) {
+    createNewTinyTaleController = TextEditingController();
+  }
 
-  void createTinyTale(CreateTinyTaleParams params) async {
+  late final TextEditingController createNewTinyTaleController;
+
+  void _createTinyTale(CreateTinyTaleParams params) async {
     emit(const TinyTalesState.createTinyTaleLoading());
     final result = await createTinyTaleUseCase.call(params);
     result.when(
@@ -46,6 +52,12 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
       error: (error) =>
           emit(TinyTalesState.createTinyTaleError(error.failureMsg ?? '')),
     );
+  }
+
+  void Function()? publishNewTinyTale(CreateTinyTaleParams params) {
+    return tinyTaleImage == null && createNewTinyTaleController.text.isEmpty
+        ? null
+        : () => _createTinyTale(params);
   }
 
   void getTinyTales() async {
@@ -103,8 +115,29 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   void _updateTinyTaleImage(XFile? pickedImage) {
     if (pickedImage != null) {
       tinyTaleImage = File(pickedImage.path);
+      _getImageSize();
       emit(TinyTalesState.pickTinyTaleImageSuccess(tinyTaleImage!));
     }
+  }
+
+  Size? imageSize;
+
+  Future<void> _getImageSize() async {
+    final Image image = Image.file(tinyTaleImage!);
+    final Completer<Size> completer = Completer<Size>();
+
+    image.image.resolve(const ImageConfiguration()).addListener(
+      ImageStreamListener((ImageInfo info, bool _) {
+        completer.complete(Size(
+          info.image.width.toDouble(),
+          info.image.height.toDouble(),
+        ));
+      }),
+    );
+
+    imageSize = await completer.future;
+
+    emit(TinyTalesState.getImageSize(imageSize!));
   }
 
   void uploadTinyTaleImage(CreateTinyTaleParams params) async {
@@ -123,7 +156,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
       TaskSnapshot taskSnapshot, CreateTinyTaleParams params) {
     taskSnapshot.ref.getDownloadURL().then(
       (tinyTaleImageUrl) {
-        createTinyTale(CreateTinyTaleParams(
+        _createTinyTale(CreateTinyTaleParams(
           text: params.text,
           date: params.date,
           time: params.time,
@@ -156,5 +189,16 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
         mode: LaunchMode.inAppBrowserView,
       );
     }
+  }
+
+  void setNewTinyTaleText(String text) {
+    createNewTinyTaleController.text = text;
+    emit(TinyTalesState.setNewTextValue(text));
+  }
+
+  @override
+  Future<void> close() {
+    createNewTinyTaleController.dispose();
+    return super.close();
   }
 }

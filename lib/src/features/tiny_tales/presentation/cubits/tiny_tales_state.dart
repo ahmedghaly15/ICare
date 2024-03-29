@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
@@ -41,4 +42,7 @@ class TinyTalesState<T> with _$TinyTalesState<T> {
       GetTinyTalesSuccess<T>;
   const factory TinyTalesState.getTinyTalesError(String error) =
       GetTinyTalesError;
+
+  const factory TinyTalesState.setNewTextValue(String text) = _SetNewTextValue;
+  const factory TinyTalesState.getImageSize(Size imageSize) = _GetImageSize;
 }

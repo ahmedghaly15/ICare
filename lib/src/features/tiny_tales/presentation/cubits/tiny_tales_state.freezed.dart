@@ -38,6 +38,8 @@ mixin _$TinyTalesState<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +64,8 @@ mixin _$TinyTalesState<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -86,6 +90,8 @@ mixin _$TinyTalesState<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +127,8 @@ mixin _$TinyTalesState<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -149,6 +157,8 @@ mixin _$TinyTalesState<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -177,6 +187,8 @@ mixin _$TinyTalesState<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -259,6 +271,8 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return initial();
   }
@@ -286,6 +300,8 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return initial?.call();
   }
@@ -313,6 +329,8 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -354,6 +372,8 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return initial(this);
   }
@@ -385,6 +405,8 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return initial?.call(this);
   }
@@ -416,6 +438,8 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -491,6 +515,8 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return createTinyTaleLoading();
   }
@@ -518,6 +544,8 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return createTinyTaleLoading?.call();
   }
@@ -545,6 +573,8 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (createTinyTaleLoading != null) {
@@ -586,6 +616,8 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return createTinyTaleLoading(this);
   }
@@ -617,6 +649,8 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return createTinyTaleLoading?.call(this);
   }
@@ -648,6 +682,8 @@ class _$CreateTinyTaleLoadingImpl<T> implements CreateTinyTaleLoading<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (createTinyTaleLoading != null) {
@@ -750,6 +786,8 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return createTinyTaleSuccess(data);
   }
@@ -777,6 +815,8 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return createTinyTaleSuccess?.call(data);
   }
@@ -804,6 +844,8 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (createTinyTaleSuccess != null) {
@@ -845,6 +887,8 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return createTinyTaleSuccess(this);
   }
@@ -876,6 +920,8 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return createTinyTaleSuccess?.call(this);
   }
@@ -907,6 +953,8 @@ class _$CreateTinyTaleSuccessImpl<T> implements CreateTinyTaleSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (createTinyTaleSuccess != null) {
@@ -1011,6 +1059,8 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return createTinyTaleError(error);
   }
@@ -1038,6 +1088,8 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return createTinyTaleError?.call(error);
   }
@@ -1065,6 +1117,8 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (createTinyTaleError != null) {
@@ -1106,6 +1160,8 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return createTinyTaleError(this);
   }
@@ -1137,6 +1193,8 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return createTinyTaleError?.call(this);
   }
@@ -1168,6 +1226,8 @@ class _$CreateTinyTaleErrorImpl<T> implements CreateTinyTaleError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (createTinyTaleError != null) {
@@ -1246,6 +1306,8 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return likeTinyTaleSuccess();
   }
@@ -1273,6 +1335,8 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return likeTinyTaleSuccess?.call();
   }
@@ -1300,6 +1364,8 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -1341,6 +1407,8 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return likeTinyTaleSuccess(this);
   }
@@ -1372,6 +1440,8 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return likeTinyTaleSuccess?.call(this);
   }
@@ -1403,6 +1473,8 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -1502,6 +1574,8 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return likeTinyTaleError(error);
   }
@@ -1529,6 +1603,8 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return likeTinyTaleError?.call(error);
   }
@@ -1556,6 +1632,8 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -1597,6 +1675,8 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return likeTinyTaleError(this);
   }
@@ -1628,6 +1708,8 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return likeTinyTaleError?.call(this);
   }
@@ -1659,6 +1741,8 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -1740,6 +1824,8 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return unlikeTinyTaleSuccess();
   }
@@ -1767,6 +1853,8 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return unlikeTinyTaleSuccess?.call();
   }
@@ -1794,6 +1882,8 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1835,6 +1925,8 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return unlikeTinyTaleSuccess(this);
   }
@@ -1866,6 +1958,8 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return unlikeTinyTaleSuccess?.call(this);
   }
@@ -1897,6 +1991,8 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1995,6 +2091,8 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return unlikeTinyTaleError(error);
   }
@@ -2022,6 +2120,8 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return unlikeTinyTaleError?.call(error);
   }
@@ -2049,6 +2149,8 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -2090,6 +2192,8 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return unlikeTinyTaleError(this);
   }
@@ -2121,6 +2225,8 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return unlikeTinyTaleError?.call(this);
   }
@@ -2152,6 +2258,8 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -2233,6 +2341,8 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return deleteTinyTaleLoading();
   }
@@ -2260,6 +2370,8 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return deleteTinyTaleLoading?.call();
   }
@@ -2287,6 +2399,8 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -2328,6 +2442,8 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return deleteTinyTaleLoading(this);
   }
@@ -2359,6 +2475,8 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return deleteTinyTaleLoading?.call(this);
   }
@@ -2390,6 +2508,8 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -2465,6 +2585,8 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return deleteTinyTaleSuccess();
   }
@@ -2492,6 +2614,8 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return deleteTinyTaleSuccess?.call();
   }
@@ -2519,6 +2643,8 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -2560,6 +2686,8 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return deleteTinyTaleSuccess(this);
   }
@@ -2591,6 +2719,8 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return deleteTinyTaleSuccess?.call(this);
   }
@@ -2622,6 +2752,8 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -2720,6 +2852,8 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return deleteTinyTaleError(error);
   }
@@ -2747,6 +2881,8 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return deleteTinyTaleError?.call(error);
   }
@@ -2774,6 +2910,8 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -2815,6 +2953,8 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return deleteTinyTaleError(this);
   }
@@ -2846,6 +2986,8 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return deleteTinyTaleError?.call(this);
   }
@@ -2877,6 +3019,8 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -2959,6 +3103,8 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return uploadTinyTaleImageLoading();
   }
@@ -2986,6 +3132,8 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return uploadTinyTaleImageLoading?.call();
   }
@@ -3013,6 +3161,8 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageLoading != null) {
@@ -3054,6 +3204,8 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return uploadTinyTaleImageLoading(this);
   }
@@ -3085,6 +3237,8 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return uploadTinyTaleImageLoading?.call(this);
   }
@@ -3116,6 +3270,8 @@ class _$UploadTinyTaleImageLoadingImpl<T>
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageLoading != null) {
@@ -3221,6 +3377,8 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return uploadTinyTaleImageSuccess(imageUrl);
   }
@@ -3248,6 +3406,8 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return uploadTinyTaleImageSuccess?.call(imageUrl);
   }
@@ -3275,6 +3435,8 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageSuccess != null) {
@@ -3316,6 +3478,8 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return uploadTinyTaleImageSuccess(this);
   }
@@ -3347,6 +3511,8 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return uploadTinyTaleImageSuccess?.call(this);
   }
@@ -3378,6 +3544,8 @@ class _$UploadTinyTaleImageSuccessImpl<T>
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageSuccess != null) {
@@ -3486,6 +3654,8 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return uploadTinyTaleImageError(error);
   }
@@ -3513,6 +3683,8 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return uploadTinyTaleImageError?.call(error);
   }
@@ -3540,6 +3712,8 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageError != null) {
@@ -3581,6 +3755,8 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return uploadTinyTaleImageError(this);
   }
@@ -3612,6 +3788,8 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return uploadTinyTaleImageError?.call(this);
   }
@@ -3643,6 +3821,8 @@ class _$UploadTinyTaleImageErrorImpl<T> implements UploadTinyTaleImageError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (uploadTinyTaleImageError != null) {
@@ -3721,6 +3901,8 @@ class _$RemoveTinyTaleImageImpl<T> implements RemoveTinyTaleImage<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return removeTinyTaleImage();
   }
@@ -3748,6 +3930,8 @@ class _$RemoveTinyTaleImageImpl<T> implements RemoveTinyTaleImage<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return removeTinyTaleImage?.call();
   }
@@ -3775,6 +3959,8 @@ class _$RemoveTinyTaleImageImpl<T> implements RemoveTinyTaleImage<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (removeTinyTaleImage != null) {
@@ -3816,6 +4002,8 @@ class _$RemoveTinyTaleImageImpl<T> implements RemoveTinyTaleImage<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return removeTinyTaleImage(this);
   }
@@ -3847,6 +4035,8 @@ class _$RemoveTinyTaleImageImpl<T> implements RemoveTinyTaleImage<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return removeTinyTaleImage?.call(this);
   }
@@ -3878,6 +4068,8 @@ class _$RemoveTinyTaleImageImpl<T> implements RemoveTinyTaleImage<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (removeTinyTaleImage != null) {
@@ -3980,6 +4172,8 @@ class _$PickTinyTaleImageSuccessImpl<T> implements PickTinyTaleImageSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return pickTinyTaleImageSuccess(tinyTaleImage);
   }
@@ -4007,6 +4201,8 @@ class _$PickTinyTaleImageSuccessImpl<T> implements PickTinyTaleImageSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return pickTinyTaleImageSuccess?.call(tinyTaleImage);
   }
@@ -4034,6 +4230,8 @@ class _$PickTinyTaleImageSuccessImpl<T> implements PickTinyTaleImageSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (pickTinyTaleImageSuccess != null) {
@@ -4075,6 +4273,8 @@ class _$PickTinyTaleImageSuccessImpl<T> implements PickTinyTaleImageSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return pickTinyTaleImageSuccess(this);
   }
@@ -4106,6 +4306,8 @@ class _$PickTinyTaleImageSuccessImpl<T> implements PickTinyTaleImageSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return pickTinyTaleImageSuccess?.call(this);
   }
@@ -4137,6 +4339,8 @@ class _$PickTinyTaleImageSuccessImpl<T> implements PickTinyTaleImageSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (pickTinyTaleImageSuccess != null) {
@@ -4244,6 +4448,8 @@ class _$PickTinyTaleImageErrorImpl<T> implements PickTinyTaleImageError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return pickTinyTaleImageError(error);
   }
@@ -4271,6 +4477,8 @@ class _$PickTinyTaleImageErrorImpl<T> implements PickTinyTaleImageError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return pickTinyTaleImageError?.call(error);
   }
@@ -4298,6 +4506,8 @@ class _$PickTinyTaleImageErrorImpl<T> implements PickTinyTaleImageError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (pickTinyTaleImageError != null) {
@@ -4339,6 +4549,8 @@ class _$PickTinyTaleImageErrorImpl<T> implements PickTinyTaleImageError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return pickTinyTaleImageError(this);
   }
@@ -4370,6 +4582,8 @@ class _$PickTinyTaleImageErrorImpl<T> implements PickTinyTaleImageError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return pickTinyTaleImageError?.call(this);
   }
@@ -4401,6 +4615,8 @@ class _$PickTinyTaleImageErrorImpl<T> implements PickTinyTaleImageError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (pickTinyTaleImageError != null) {
@@ -4479,6 +4695,8 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return getTinyTalesLoading();
   }
@@ -4506,6 +4724,8 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return getTinyTalesLoading?.call();
   }
@@ -4533,6 +4753,8 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (getTinyTalesLoading != null) {
@@ -4574,6 +4796,8 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return getTinyTalesLoading(this);
   }
@@ -4605,6 +4829,8 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return getTinyTalesLoading?.call(this);
   }
@@ -4636,6 +4862,8 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (getTinyTalesLoading != null) {
@@ -4740,6 +4968,8 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return getTinyTalesSuccess(data);
   }
@@ -4767,6 +4997,8 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return getTinyTalesSuccess?.call(data);
   }
@@ -4794,6 +5026,8 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (getTinyTalesSuccess != null) {
@@ -4835,6 +5069,8 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return getTinyTalesSuccess(this);
   }
@@ -4866,6 +5102,8 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return getTinyTalesSuccess?.call(this);
   }
@@ -4897,6 +5135,8 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (getTinyTalesSuccess != null) {
@@ -5002,6 +5242,8 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
   }) {
     return getTinyTalesError(error);
   }
@@ -5029,6 +5271,8 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
   }) {
     return getTinyTalesError?.call(error);
   }
@@ -5056,6 +5300,8 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
     required TResult orElse(),
   }) {
     if (getTinyTalesError != null) {
@@ -5097,6 +5343,8 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
   }) {
     return getTinyTalesError(this);
   }
@@ -5128,6 +5376,8 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
   }) {
     return getTinyTalesError?.call(this);
   }
@@ -5159,6 +5409,8 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
     required TResult orElse(),
   }) {
     if (getTinyTalesError != null) {
@@ -5176,4 +5428,549 @@ abstract class GetTinyTalesError<T> implements TinyTalesState<T> {
   @JsonKey(ignore: true)
   _$$GetTinyTalesErrorImplCopyWith<T, _$GetTinyTalesErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetNewTextValueImplCopyWith<T, $Res> {
+  factory _$$SetNewTextValueImplCopyWith(_$SetNewTextValueImpl<T> value,
+          $Res Function(_$SetNewTextValueImpl<T>) then) =
+      __$$SetNewTextValueImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String text});
+}
+
+/// @nodoc
+class __$$SetNewTextValueImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res, _$SetNewTextValueImpl<T>>
+    implements _$$SetNewTextValueImplCopyWith<T, $Res> {
+  __$$SetNewTextValueImplCopyWithImpl(_$SetNewTextValueImpl<T> _value,
+      $Res Function(_$SetNewTextValueImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? text = null,
+  }) {
+    return _then(_$SetNewTextValueImpl<T>(
+      null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetNewTextValueImpl<T> implements _SetNewTextValue<T> {
+  const _$SetNewTextValueImpl(this.text);
+
+  @override
+  final String text;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.setNewTextValue(text: $text)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetNewTextValueImpl<T> &&
+            (identical(other.text, text) || other.text == text));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, text);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetNewTextValueImplCopyWith<T, _$SetNewTextValueImpl<T>> get copyWith =>
+      __$$SetNewTextValueImplCopyWithImpl<T, _$SetNewTextValueImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
+  }) {
+    return setNewTextValue(text);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
+  }) {
+    return setNewTextValue?.call(text);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
+    required TResult orElse(),
+  }) {
+    if (setNewTextValue != null) {
+      return setNewTextValue(text);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
+  }) {
+    return setNewTextValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
+  }) {
+    return setNewTextValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
+    required TResult orElse(),
+  }) {
+    if (setNewTextValue != null) {
+      return setNewTextValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetNewTextValue<T> implements TinyTalesState<T> {
+  const factory _SetNewTextValue(final String text) = _$SetNewTextValueImpl<T>;
+
+  String get text;
+  @JsonKey(ignore: true)
+  _$$SetNewTextValueImplCopyWith<T, _$SetNewTextValueImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetImageSizeImplCopyWith<T, $Res> {
+  factory _$$GetImageSizeImplCopyWith(_$GetImageSizeImpl<T> value,
+          $Res Function(_$GetImageSizeImpl<T>) then) =
+      __$$GetImageSizeImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({Size imageSize});
+}
+
+/// @nodoc
+class __$$GetImageSizeImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res, _$GetImageSizeImpl<T>>
+    implements _$$GetImageSizeImplCopyWith<T, $Res> {
+  __$$GetImageSizeImplCopyWithImpl(
+      _$GetImageSizeImpl<T> _value, $Res Function(_$GetImageSizeImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? imageSize = null,
+  }) {
+    return _then(_$GetImageSizeImpl<T>(
+      null == imageSize
+          ? _value.imageSize
+          : imageSize // ignore: cast_nullable_to_non_nullable
+              as Size,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetImageSizeImpl<T> implements _GetImageSize<T> {
+  const _$GetImageSizeImpl(this.imageSize);
+
+  @override
+  final Size imageSize;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.getImageSize(imageSize: $imageSize)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetImageSizeImpl<T> &&
+            (identical(other.imageSize, imageSize) ||
+                other.imageSize == imageSize));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, imageSize);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetImageSizeImplCopyWith<T, _$GetImageSizeImpl<T>> get copyWith =>
+      __$$GetImageSizeImplCopyWithImpl<T, _$GetImageSizeImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() createTinyTaleLoading,
+    required TResult Function(T data) createTinyTaleSuccess,
+    required TResult Function(String error) createTinyTaleError,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() uploadTinyTaleImageLoading,
+    required TResult Function(String imageUrl) uploadTinyTaleImageSuccess,
+    required TResult Function(String error) uploadTinyTaleImageError,
+    required TResult Function() removeTinyTaleImage,
+    required TResult Function(File tinyTaleImage) pickTinyTaleImageSuccess,
+    required TResult Function(String error) pickTinyTaleImageError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function(Size imageSize) getImageSize,
+  }) {
+    return getImageSize(imageSize);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? createTinyTaleLoading,
+    TResult? Function(T data)? createTinyTaleSuccess,
+    TResult? Function(String error)? createTinyTaleError,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? uploadTinyTaleImageLoading,
+    TResult? Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult? Function(String error)? uploadTinyTaleImageError,
+    TResult? Function()? removeTinyTaleImage,
+    TResult? Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult? Function(String error)? pickTinyTaleImageError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function(Size imageSize)? getImageSize,
+  }) {
+    return getImageSize?.call(imageSize);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? createTinyTaleLoading,
+    TResult Function(T data)? createTinyTaleSuccess,
+    TResult Function(String error)? createTinyTaleError,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? uploadTinyTaleImageLoading,
+    TResult Function(String imageUrl)? uploadTinyTaleImageSuccess,
+    TResult Function(String error)? uploadTinyTaleImageError,
+    TResult Function()? removeTinyTaleImage,
+    TResult Function(File tinyTaleImage)? pickTinyTaleImageSuccess,
+    TResult Function(String error)? pickTinyTaleImageError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function(Size imageSize)? getImageSize,
+    required TResult orElse(),
+  }) {
+    if (getImageSize != null) {
+      return getImageSize(imageSize);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(CreateTinyTaleLoading<T> value)
+        createTinyTaleLoading,
+    required TResult Function(CreateTinyTaleSuccess<T> value)
+        createTinyTaleSuccess,
+    required TResult Function(CreateTinyTaleError<T> value) createTinyTaleError,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(UploadTinyTaleImageLoading<T> value)
+        uploadTinyTaleImageLoading,
+    required TResult Function(UploadTinyTaleImageSuccess<T> value)
+        uploadTinyTaleImageSuccess,
+    required TResult Function(UploadTinyTaleImageError<T> value)
+        uploadTinyTaleImageError,
+    required TResult Function(RemoveTinyTaleImage<T> value) removeTinyTaleImage,
+    required TResult Function(PickTinyTaleImageSuccess<T> value)
+        pickTinyTaleImageSuccess,
+    required TResult Function(PickTinyTaleImageError<T> value)
+        pickTinyTaleImageError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(_SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(_GetImageSize<T> value) getImageSize,
+  }) {
+    return getImageSize(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult? Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult? Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult? Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult? Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult? Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult? Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult? Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(_GetImageSize<T> value)? getImageSize,
+  }) {
+    return getImageSize?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(CreateTinyTaleLoading<T> value)? createTinyTaleLoading,
+    TResult Function(CreateTinyTaleSuccess<T> value)? createTinyTaleSuccess,
+    TResult Function(CreateTinyTaleError<T> value)? createTinyTaleError,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(UploadTinyTaleImageLoading<T> value)?
+        uploadTinyTaleImageLoading,
+    TResult Function(UploadTinyTaleImageSuccess<T> value)?
+        uploadTinyTaleImageSuccess,
+    TResult Function(UploadTinyTaleImageError<T> value)?
+        uploadTinyTaleImageError,
+    TResult Function(RemoveTinyTaleImage<T> value)? removeTinyTaleImage,
+    TResult Function(PickTinyTaleImageSuccess<T> value)?
+        pickTinyTaleImageSuccess,
+    TResult Function(PickTinyTaleImageError<T> value)? pickTinyTaleImageError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(_SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(_GetImageSize<T> value)? getImageSize,
+    required TResult orElse(),
+  }) {
+    if (getImageSize != null) {
+      return getImageSize(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetImageSize<T> implements TinyTalesState<T> {
+  const factory _GetImageSize(final Size imageSize) = _$GetImageSizeImpl<T>;
+
+  Size get imageSize;
+  @JsonKey(ignore: true)
+  _$$GetImageSizeImplCopyWith<T, _$GetImageSizeImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
