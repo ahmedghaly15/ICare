@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/new_tiny_tale_view_body.dart';
 
 @RoutePage()
-class CreateNewTinyTaleView extends StatelessWidget
-    implements AutoRouteWrapper {
-  const CreateNewTinyTaleView({super.key});
+class NewTinyTaleView extends StatelessWidget implements AutoRouteWrapper {
+  const NewTinyTaleView({super.key});
 
   @override
   Widget wrappedRoute(BuildContext context) {
@@ -19,6 +19,8 @@ class CreateNewTinyTaleView extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: NewTinyTaleViewBody(),
+    );
   }
 }

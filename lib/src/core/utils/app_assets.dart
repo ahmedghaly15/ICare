@@ -3,7 +3,7 @@ class AppAssets {
 
   /// Assets for AppIcon
   /// assets/app_icon.png
-  static const String appIcon = "assets/app_icon.png";
+  static const String qppIcon = "assets/app_icon.png";
 
   /// Assets for fontsInterInterBold
   /// assets/fonts/inter/Inter-Bold.ttf
@@ -37,9 +37,17 @@ class AppAssets {
   /// assets/icons/google.png
   static const String iconsGoogle = "assets/icons/google.png";
 
+  /// Assets for imagesAddImage
+  /// assets/images/add_image.png
+  static const String imagesAddImage = "assets/images/add_image.png";
+
   /// Assets for imagesAppLogo
   /// assets/images/app_logo.png
   static const String imagesAppLogo = "assets/images/app_logo.png";
+
+  /// Assets for imagesCamera
+  /// assets/images/camera.png
+  static const String imagesCamera = "assets/images/camera.png";
 
   /// Assets for imagesDarkSplash
   /// assets/images/dark_splash.png

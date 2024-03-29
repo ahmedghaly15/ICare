@@ -110,4 +110,8 @@ class AppStrings {
       'At what age can a baby start eating?';
   static const String noBookmarksSavedYet = 'No bookmarks saved yet.';
   static const String icareCommunity = 'ICare Community';
+  static const String newTinyTale = 'New Tiny Tale';
+  static const String tinyTale = 'Tiny Tale';
+  static const String publish = 'Publish';
+  static const String addPhoto = 'Add photo';
 }
