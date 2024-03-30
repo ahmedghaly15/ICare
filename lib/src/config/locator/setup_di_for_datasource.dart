@@ -48,8 +48,8 @@ class SetupDIForDatasource {
     );
 
     // ========== User feature ==========
-    getIt.registerLazySingleton<UserDataSource>(
-      () => const UserDatasourceImpl(),
+    getIt.registerLazySingleton<UserRemoteDataSource>(
+      () => const UserRemoteDatasourceImpl(),
     );
 
     // ========== EmergencyDiseaseDetails feature ==========

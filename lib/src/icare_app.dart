@@ -11,6 +11,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
@@ -20,17 +21,22 @@ class ICareApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
+
     return ScreenUtilInit(
       designSize: const Size(360, 800),
       minTextAdapt: true,
       splitScreenMode: true,
       child: MultiBlocProvider(
         providers: [
+          BlocProvider<UserCubit>(
+            create: (context) => getIt.get<UserCubit>()..getCurrentUser(),
+          ),
+          BlocProvider<TinyTalesCubit>(
+            // lazy: false,
+            create: (_) => getIt.get<TinyTalesCubit>()..getTinyTales(),
+          ),
           BlocProvider<MedicalCubit>(
             create: (_) => getIt.get<MedicalCubit>()..getMedical(),
-          ),
-          BlocProvider<UserCubit>(
-            create: (_) => getIt.get<UserCubit>()..getUserData(),
           ),
           BlocProvider<TipsCubit>(
             create: (_) => getIt.get<TipsCubit>(),

@@ -17,6 +17,7 @@ import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_
 import 'package:icare/src/features/speech_therapy/domain/usecases/mark_level_one.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubit/speech_therapy_cubit.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/new_tiny_tale/new_tiny_tale_cubit.dart';
 import 'package:icare/src/features/tips/data/datasources/tips_local_datasource.dart';
 import 'package:icare/src/features/tips/data/datasources/tips_remote_datasource.dart';
 import 'package:icare/src/features/tips/data/repositories/tips_repo.dart';
@@ -92,8 +93,8 @@ import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/unlike_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/upload_tiny_tale_image.dart';
-import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
-import 'package:icare/src/features/user/data/datasources/user_datasource.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
+import 'package:icare/src/features/user/data/datasources/user_remote_datasource.dart';
 import 'package:icare/src/features/user/data/repositories/user_repo.dart';
 import 'package:icare/src/features/user/domain/usecases/get_user_data.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';

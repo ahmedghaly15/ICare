@@ -86,13 +86,18 @@ class SetupDIForCubits {
     // ========== TinyTales feature ==========
     getIt.registerFactory<TinyTalesCubit>(
       () => TinyTalesCubit(
-        createTinyTaleUseCase: getIt.get<CreateTinyTaleUseCase>(),
         likeTinyTaleUseCase: getIt.get<LikeTinyTaleUseCase>(),
         unLikeTinyTaleUseCase: getIt.get<UnLikeTinyTaleUseCase>(),
         deleteTinyTaleUseCase: getIt.get<DeleteTinyTaleUseCase>(),
-        uploadTinyTaleImageUseCase: getIt.get<UploadTinyTaleImageUseCase>(),
         isTinyTaleLikedByMeUseCase: getIt.get<IsTinyTaleLikeByMeUseCase>(),
         getTinyTalesUseCase: getIt.get<GetTinyTalesUseCase>(),
+      ),
+    );
+
+    getIt.registerFactory<NewTinyTaleCubit>(
+      () => NewTinyTaleCubit(
+        createTinyTaleUseCase: getIt.get<CreateTinyTaleUseCase>(),
+        uploadTinyTaleImageUseCase: getIt.get<UploadTinyTaleImageUseCase>(),
       ),
     );
 
