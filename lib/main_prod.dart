@@ -11,13 +11,13 @@ import 'package:icare/dependency_injection.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await dotenv.load(fileName: AppStrings.dotEnvFileName);
-
-  await DependencyInjection().setup();
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await dotenv.load(fileName: AppStrings.dotEnvFileName);
+
+  await DependencyInjection().setup();
 
   Bloc.observer = MyBlocObserver();
 
