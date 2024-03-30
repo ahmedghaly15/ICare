@@ -68,7 +68,10 @@ List<AutoRoute> get appRoutes {
           page: ICareCommunityRoute.page,
           initial: true,
         ),
-        _buildCustomRoute(page: NewTinyTaleRoute.page),
+        _buildCustomRoute(
+          page: NewTinyTaleRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ],
     ),
   ];
