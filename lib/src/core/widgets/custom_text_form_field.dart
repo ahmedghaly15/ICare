@@ -37,6 +37,8 @@ class CustomTextFormField extends StatelessWidget {
     this.filled,
     this.border,
     this.margin,
+    this.hintStyle,
+    this.style,
   });
 
   final TextEditingController? controller;
@@ -70,6 +72,8 @@ class CustomTextFormField extends StatelessWidget {
   final bool? filled;
   final InputBorder? border;
   final EdgeInsetsGeometry? margin;
+  final TextStyle? hintStyle;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +99,7 @@ class CustomTextFormField extends StatelessWidget {
         autofillHints: autofillHints,
         onFieldSubmitted: onSubmit,
         onChanged: onChanged,
-        style: _customTextFieldTextStyle(context),
+        style: style ?? _customTextFieldTextStyle(context),
         cursorColor: Colors.black,
         decoration: InputDecoration(
           filled: filled ?? true,
@@ -104,7 +108,7 @@ class CustomTextFormField extends StatelessWidget {
             color: Colors.red,
           ),
           hintText: hintText,
-          hintStyle: _customTextFieldTextStyle(context),
+          hintStyle: hintStyle ?? _customTextFieldTextStyle(context),
           errorMaxLines: null,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
