@@ -20,16 +20,16 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
           onPressed: () {},
           icon: SvgPicture.asset(
             isTinyTaleContainsImage
-                ? AppAssets.svgsBlackCommentIcon
-                : AppAssets.svgsCommentIcon,
+                ? AppAssets.svgsCommentIcon
+                : AppAssets.svgsBlackCommentIcon,
           ),
         ),
         Text(
           '10',
           style: AppTextStyles.textStyle18Bold(context).copyWith(
             color: isTinyTaleContainsImage
-                ? AppColors.black80Percent
-                : AppColors.white80Percent,
+                ? AppColors.white80Percent
+                : AppColors.black80Percent,
           ),
         ),
         MySizedBox.width6,
@@ -37,16 +37,16 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
           onPressed: () {},
           icon: SvgPicture.asset(
             isTinyTaleContainsImage
-                ? AppAssets.svgsBlackHeartIcon
-                : AppAssets.svgsHeartIcon,
+                ? AppAssets.svgsHeartIcon
+                : AppAssets.svgsBlackHeartIcon,
           ),
         ),
         Text(
           '122',
           style: AppTextStyles.textStyle18Bold(context).copyWith(
             color: isTinyTaleContainsImage
-                ? AppColors.black80Percent
-                : AppColors.white80Percent,
+                ? AppColors.white80Percent
+                : AppColors.black80Percent,
           ),
         ),
         const Spacer(),
@@ -54,8 +54,8 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
           onPressed: () {},
           icon: SvgPicture.asset(
             isTinyTaleContainsImage
-                ? AppAssets.svgsBlackBookmarkIcon
-                : AppAssets.svgsBookmarkIcon,
+                ? AppAssets.svgsBookmarkIcon
+                : AppAssets.svgsBlackBookmarkIcon,
           ),
         ),
       ],

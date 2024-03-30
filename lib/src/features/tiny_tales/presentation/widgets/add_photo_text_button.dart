@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_bottom_sheet.dart';
-import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/new_tiny_tale/new_tiny_tale_cubit.dart';
+
 import 'package:image_picker/image_picker.dart';
 
 class AddPhotoTextButton extends StatelessWidget {
@@ -16,11 +17,12 @@ class AddPhotoTextButton extends StatelessWidget {
       onPressed: () => ShowCustomImageBottomSheet.show(
         type: AppStrings.tinyTale,
         context: context,
-        onPressedCamera: () => context.read<TinyTalesCubit>().pickTinyTaleImage(
-              ImageSource.camera,
-            ),
+        onPressedCamera: () =>
+            context.read<NewTinyTaleCubit>().pickTinyTaleImage(
+                  ImageSource.camera,
+                ),
         onPressedGallery: () =>
-            context.read<TinyTalesCubit>().pickTinyTaleImage(
+            context.read<NewTinyTaleCubit>().pickTinyTaleImage(
                   ImageSource.gallery,
                 ),
       ),
