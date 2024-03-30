@@ -2,11 +2,13 @@ import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/like_comment_bookmark_buttons.dart';
 
 class TinyTaleItemImage extends StatelessWidget {
-  const TinyTaleItemImage({super.key});
+  const TinyTaleItemImage({super.key, required this.tinyTaleImageUrl});
+
+  final String tinyTaleImageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +18,9 @@ class TinyTaleItemImage extends StatelessWidget {
         children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(30.r),
-            child: Image.network(
-              'https://img.freepik.com/free-photo/grandmother-grandchild-park_1303-9169.jpg?t=st=1711710380~exp=1711713980~hmac=33622b3af69d67b77e8cd708a3114687e18d970310fe7309787c5656b027f1c3&w=1060',
-              fit: BoxFit.cover,
-              height: SizeConfig.height * 0.3,
-              width: double.infinity,
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: CustomCachedNetworkImage(imageUrl: tinyTaleImageUrl),
             ),
           ),
           Positioned(
@@ -44,7 +44,8 @@ class TinyTaleItemImage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     width: double.infinity,
                     color: Colors.transparent,
-                    child: const LikeCommentBookmarkButtons(),
+                    child: const LikeCommentBookmarkButtons(
+                        isTinyTaleContainsImage: true),
                   ),
                 ),
               ),

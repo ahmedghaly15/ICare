@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/tips/presentation/widgets/show_random_tip_dialog.dart';
 import 'package:icare/src/config/router/app_router.dart';
@@ -11,7 +10,6 @@ import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/home/presentation/widgets/feature_icon_button.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 @RoutePage()
 class HomeView extends StatelessWidget {
