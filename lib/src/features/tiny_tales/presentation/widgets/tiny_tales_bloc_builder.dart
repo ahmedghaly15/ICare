@@ -1,11 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
-import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_cubit.dart';
-import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales_state.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_state.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_item.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tales_loading_sliver_list.dart';
 
 class TinyTalesBlocBuilder extends StatelessWidget {
   const TinyTalesBlocBuilder({super.key});
@@ -21,21 +21,23 @@ class TinyTalesBlocBuilder extends StatelessWidget {
         if (state is GetTinyTalesSuccess) {
           return SliverList(
             delegate: SliverChildBuilderDelegate(
-              (context, index) => ElasticIn(child: const TinyTaleItem()),
-              childCount: 10,
+              (context, index) => ElasticIn(
+                child: TinyTaleItem(tinyTale: state.data[index]),
+              ),
+              childCount: state.data.length,
             ),
           );
         } else if (state is GetTinyTalesError) {
           return SliverFillRemaining(
             hasScrollBody: false,
-            child: CustomErrorWidget(error: state.error),
-          );
-        } else {
-          return const SliverFillRemaining(
-            child: Center(
-              child: CustomCircularProgressIndicator(),
+            child: CustomErrorWidget(
+              error: state.error,
+              tryAgainOnPressed: () =>
+                  context.read<TinyTalesCubit>().getTinyTales(),
             ),
           );
+        } else {
+          return const TinyTalesLoadingSliverList();
         }
       },
     );
