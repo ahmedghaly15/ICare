@@ -7,7 +7,6 @@ part of 'tiny_tale_data.dart';
 // **************************************************************************
 
 TinyTaleData _$TinyTaleDataFromJson(Map<String, dynamic> json) => TinyTaleData(
-      tinyTaleId: json['tinyTaleId'] as String?,
       time: json['time'] as String?,
       date: json['date'] as String?,
       text: json['text'] as String?,
@@ -16,7 +15,6 @@ TinyTaleData _$TinyTaleDataFromJson(Map<String, dynamic> json) => TinyTaleData(
 
 Map<String, dynamic> _$TinyTaleDataToJson(TinyTaleData instance) =>
     <String, dynamic>{
-      'tinyTaleId': instance.tinyTaleId,
       'time': instance.time,
       'date': instance.date,
       'text': instance.text,

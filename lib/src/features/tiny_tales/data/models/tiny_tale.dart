@@ -9,11 +9,13 @@ part 'tiny_tale.g.dart';
 class TinyTale {
   final ICareUser? user;
   final TinyTaleData? tinyTaleData;
+  final String? tinyTaleId;
   final Timestamp? dateTime;
 
   const TinyTale({
     this.user,
     this.tinyTaleData,
+    this.tinyTaleId,
     this.dateTime,
   });
 

@@ -9,12 +9,14 @@ part 'comment_model.g.dart';
 class CommentModel {
   final ICareUser? user;
   final CommentData? commentData;
+  final String? commentId;
   final Timestamp? dateTime;
 
   const CommentModel({
     this.user,
     this.commentData,
     this.dateTime,
+    this.commentId,
   });
 
   factory CommentModel.fromJson(Map<String, dynamic> json) =>

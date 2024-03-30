@@ -13,11 +13,13 @@ TinyTale _$TinyTaleFromJson(Map<String, dynamic> json) => TinyTale(
       tinyTaleData: json['tinyTaleData'] == null
           ? null
           : TinyTaleData.fromJson(json['tinyTaleData'] as Map<String, dynamic>),
-      dateTime: json['dateTime'] as Timestamp,
+      tinyTaleId: json['tinyTaleId'] as String?,
+      dateTime: json['dateTime'] as Timestamp?,
     );
 
 Map<String, dynamic> _$TinyTaleToJson(TinyTale instance) => <String, dynamic>{
-      'user': instance.user,
-      'tinyTaleData': instance.tinyTaleData,
-      'dateTime': instance.dateTime
+      'user': instance.user?.toJson(),
+      'tinyTaleData': instance.tinyTaleData?.toJson(),
+      'tinyTaleId': instance.tinyTaleId,
+      'dateTime': instance.dateTime,
     };

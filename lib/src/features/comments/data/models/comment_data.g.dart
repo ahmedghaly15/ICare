@@ -7,11 +7,10 @@ part of 'comment_data.dart';
 // **************************************************************************
 
 CommentData _$CommentDataFromJson(Map<String, dynamic> json) => CommentData(
-      commentImage: json['commentImage'] as Map<String, dynamic>?,
+      commentImage: json['commentImage'] as String?,
       commentText: json['commentText'] as String?,
       time: json['time'] as String?,
       date: json['date'] as String?,
-      commentId: json['commentId'] as String?,
     );
 
 Map<String, dynamic> _$CommentDataToJson(CommentData instance) =>
@@ -20,5 +19,4 @@ Map<String, dynamic> _$CommentDataToJson(CommentData instance) =>
       'commentText': instance.commentText,
       'time': instance.time,
       'date': instance.date,
-      'commentId': instance.commentId,
     };

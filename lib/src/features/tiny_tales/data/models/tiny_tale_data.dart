@@ -4,14 +4,12 @@ part 'tiny_tale_data.g.dart';
 
 @JsonSerializable()
 class TinyTaleData {
-  final String? tinyTaleId;
   final String? time;
   final String? date;
   final String? text;
   final String? tinyTaleImage;
 
   const TinyTaleData({
-    this.tinyTaleId,
     this.time,
     this.date,
     this.text,

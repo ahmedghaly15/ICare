@@ -13,12 +13,14 @@ CommentModel _$CommentModelFromJson(Map<String, dynamic> json) => CommentModel(
       commentData: json['commentData'] == null
           ? null
           : CommentData.fromJson(json['commentData'] as Map<String, dynamic>),
+      commentId: json['commentId'] as String?,
       dateTime: json['dateTime'] as Timestamp?,
     );
 
 Map<String, dynamic> _$CommentModelToJson(CommentModel instance) =>
     <String, dynamic>{
-      'user': instance.user,
-      'commentData': instance.commentData,
+      'user': instance.user?.toJson(),
+      'commentData': instance.commentData?.toJson(),
+      'commentId': instance.commentId,
       'dateTime': instance.dateTime,
     };

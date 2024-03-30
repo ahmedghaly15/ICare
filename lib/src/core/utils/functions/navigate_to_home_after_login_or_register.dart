@@ -16,7 +16,7 @@ void navigateToHomeAfterLoginOrRegister(BuildContext context, String data) {
       .saveData(key: AppStrings.cachedUserId, value: data)
       .then(
     (value) {
-      context.read<UserCubit>().getUserData().then((value) {
+      context.read<UserCubit>().getCurrentUser().then((value) {
         context.router.pushAndPopUntil(
           const BottomNavBarRoute(),
           predicate: (route) => route.settings.name == BottomNavBarRoute.name,
