@@ -147,5 +147,26 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<IsCommentLikedByMeUseCase>(
       () => IsCommentLikedByMeUseCase(getIt.get<CommentsRepo>()),
     );
+    getIt.registerLazySingleton<GetCommentRepliesUseCase>(
+      () => GetCommentRepliesUseCase(getIt.get<CommentRepliesRepo>()),
+    );
+    getIt.registerLazySingleton<DeleteCommentReplyUseCase>(
+      () => DeleteCommentReplyUseCase(getIt.get<CommentRepliesRepo>()),
+    );
+    getIt.registerLazySingleton<LikeCommentReplyUseCase>(
+      () => LikeCommentReplyUseCase(getIt.get<CommentRepliesRepo>()),
+    );
+    getIt.registerLazySingleton<UnLikeCommentReplyUseCase>(
+      () => UnLikeCommentReplyUseCase(getIt.get<CommentRepliesRepo>()),
+    );
+    getIt.registerLazySingleton<IsCommentReplyLikedByMeUseCase>(
+      () => IsCommentReplyLikedByMeUseCase(getIt.get<CommentRepliesRepo>()),
+    );
+    getIt.registerLazySingleton<TypeNewCommentReplyUseCase>(
+      () => TypeNewCommentReplyUseCase(getIt.get<CommentRepliesRepo>()),
+    );
+    getIt.registerLazySingleton<UploadCommentReplyImageUseCase>(
+      () => UploadCommentReplyImageUseCase(getIt.get<CommentRepliesRepo>()),
+    );
   }
 }

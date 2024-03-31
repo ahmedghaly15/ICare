@@ -107,5 +107,8 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<CommentsRemoteDatasource>(
       () => const CommentsRemoteDatasourceImpl(),
     );
+    getIt.registerLazySingleton<CommentRepliesDatasource>(
+      () => CommentRepliesDatasourceImpl(),
+    );
   }
 }

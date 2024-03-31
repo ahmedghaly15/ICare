@@ -102,5 +102,8 @@ class SetupDIForRepos {
     getIt.registerLazySingleton<CommentsRepo>(
       () => CommentsRepoImpl(getIt.get<CommentsRemoteDatasource>()),
     );
+    getIt.registerLazySingleton<CommentRepliesRepo>(
+      () => CommentRepliesRepoImpl(getIt.get<CommentRepliesDatasource>()),
+    );
   }
 }

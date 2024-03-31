@@ -128,5 +128,18 @@ class SetupDIForCubits {
         isCommentLikedByMeUseCase: getIt.get<IsCommentLikedByMeUseCase>(),
       ),
     );
+    getIt.registerFactory<CommentRepliesCubit>(
+      () => CommentRepliesCubit(
+        deleteCommentReplyUseCase: getIt.get<DeleteCommentReplyUseCase>(),
+        likeCommentReplyUseCase: getIt.get<LikeCommentReplyUseCase>(),
+        unlikeCommentReplyUseCase: getIt.get<UnLikeCommentReplyUseCase>(),
+        isCommentReplyLikedByMeUseCase:
+            getIt.get<IsCommentReplyLikedByMeUseCase>(),
+        getCommentRepliesUseCase: getIt.get<GetCommentRepliesUseCase>(),
+        typeNewCommentReplyUseCase: getIt.get<TypeNewCommentReplyUseCase>(),
+        uploadCommentReplyImageUseCase:
+            getIt.get<UploadCommentReplyImageUseCase>(),
+      ),
+    );
   }
 }
