@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +7,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
@@ -29,7 +31,9 @@ class CommentItem extends StatelessWidget {
       textBaseline: TextBaseline.alphabetic,
       children: <Widget>[
         InkWell(
-          onTap: () {},
+          onTap: () {
+            // TODO: navigate to user profile
+          },
           child: CustomCachedNetworkImage(
             imageUrl: comment.user!.profileImage!,
             imageBuilder: (_, image) => CircleAvatar(
@@ -43,6 +47,9 @@ class CommentItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
+              constraints: BoxConstraints(
+                maxWidth: SizeConfig.width * 0.75,
+              ),
               padding: EdgeInsets.symmetric(
                 vertical: 6.h,
                 horizontal: 15.w,
@@ -60,11 +67,25 @@ class CommentItem extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  MySizedBox.height7,
-                  Text(
-                    comment.commentData!.commentText!,
-                    style: AppTextStyles.textStyle16Regular(context),
-                  ),
+                  if (comment.commentData!.commentText != null) ...[
+                    MySizedBox.height7,
+                    Text(
+                      comment.commentData!.commentText!,
+                      style: AppTextStyles.textStyle16Regular(context),
+                    )
+                  ],
+                  if (comment.commentData!.commentImage != null) ...[
+                    MySizedBox.height7,
+                    AspectRatio(
+                      aspectRatio: 1,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15.r),
+                        child: CustomCachedNetworkImage(
+                          imageUrl: comment.commentData!.commentImage!,
+                        ),
+                      ),
+                    )
+                  ],
                   MySizedBox.height12,
                   Text(
                     '${comment.commentData!.date} at ${comment.commentData!.time!}',
@@ -79,31 +100,60 @@ class CommentItem extends StatelessWidget {
               children: <Widget>[
                 MySizedBox.width10,
                 StreamBuilder<bool>(
-                    stream: comment.commentId != null
-                        ? context.read<CommentsCubit>().isCommentLikedByMe(
-                              LikeParams(
-                                tinyTaleId: tinyTaleId,
-                                context: context,
-                                commentId: comment.commentId,
-                              ),
-                            )
-                        : const Stream<bool>.empty(),
-                    builder: (context, snapshot) {
-                      bool isCommentLikedByMe = snapshot.data ?? false;
+                  stream: comment.commentId != null
+                      ? context.read<CommentsCubit>().isCommentLikedByMe(
+                            LikeParams(
+                              tinyTaleId: tinyTaleId,
+                              context: context,
+                              commentId: comment.commentId,
+                            ),
+                          )
+                      : const Stream<bool>.empty(),
+                  builder: (context, snapshot) {
+                    bool isCommentLikedByMe = snapshot.data ?? false;
 
-                      return IconButton(
-                        padding: EdgeInsets.all(6.h),
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          AppAssets.svgsHeartCommentIcon,
-                        ),
-                      );
-                    }),
-                Text(
-                  '12',
-                  style: AppTextStyles.textStyle13Regular(context).copyWith(
-                    color: AppColors.darkGrey,
-                  ),
+                    return IconButton(
+                      padding: EdgeInsets.all(6.h),
+                      onPressed: () {
+                        isCommentLikedByMe
+                            ? context.read<CommentsCubit>().unlikeComment(
+                                  LikeParams(
+                                    tinyTaleId: tinyTaleId,
+                                    context: context,
+                                    commentId: comment.commentId!,
+                                  ),
+                                )
+                            : context.read<CommentsCubit>().likeComment(
+                                  LikeParams(
+                                    tinyTaleId: tinyTaleId,
+                                    context: context,
+                                    commentId: comment.commentId!,
+                                  ),
+                                );
+                      },
+                      icon: SvgPicture.asset(
+                        isCommentLikedByMe
+                            ? AppAssets.svgsRedHeartCommentIcon
+                            : AppAssets.svgsHeartCommentIcon,
+                      ),
+                    );
+                  },
+                ),
+                StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+                  stream: context.read<CommentsCubit>().commentLikesStream(
+                        tinyTaleId,
+                        comment.commentId!,
+                      ),
+                  builder: (context, snapshot) {
+                    int commentLikesCount = snapshot.data?.docs.length ?? 0;
+
+                    return Text(
+                      '$commentLikesCount',
+                      style: AppTextStyles.textStyle13Regular(context).copyWith(
+                        color: AppColors.darkGrey,
+                      ),
+                    );
+                  },
                 ),
                 MySizedBox.width15,
                 TextButton(

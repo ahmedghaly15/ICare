@@ -19,9 +19,7 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
       listenWhen: (_, current) =>
           current is TypeNewCommentError || current is UploadCommentImageError,
       listener: (context, state) {
-        context
-            .read<CommentsCubit>()
-            .handleCommentsState(state, context, tinyTaleId);
+        context.read<CommentsCubit>().handleCommentsState(state, context);
       },
       buildWhen: (_, current) =>
           current is TypeNewCommentLoading ||
@@ -30,7 +28,10 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
           current is UploadCommentImageLoading ||
           current is UploadCommentImageSuccess ||
           current is UploadCommentImageError ||
-          current is SetNewTextValue,
+          current is SetNewTextValue ||
+          current is PickCommentImageSuccess ||
+          current is RemovePickedCommentImage ||
+          current is PickCommentImageError,
       builder: (context, state) {
         if (state is TypeNewCommentLoading ||
             state is UploadCommentImageLoading) {
@@ -38,7 +39,8 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
         }
         return CustomSendMessageIconButton(
           isEnabled:
-              context.read<CommentsCubit>().commentController.text.isNotEmpty,
+              context.read<CommentsCubit>().commentController.text.isNotEmpty ||
+                  context.read<CommentsCubit>().commentImage != null,
           onPressed:
               context.read<CommentsCubit>().newComment(context, tinyTaleId),
         );
