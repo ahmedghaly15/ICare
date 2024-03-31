@@ -1,10 +1,12 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_data.dart';
@@ -54,7 +56,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     result.when(
       success: (result) {
         comments = result;
-        emit(CommentsState.streamCommentsSuccess(result));
+        emit(CommentsState.streamCommentsSuccess(comments));
       },
       error: (error) =>
           emit(CommentsState.streamCommentsError(error.failureMsg ?? '')),
@@ -111,6 +113,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     final result = await typeNewCommentUseCase(params);
     result.when(
       success: (comment) {
+        streamComments(params.tinyTaleId!);
         commentController.clear();
         emit(const CommentsState.typeNewCommentSuccess());
       },
@@ -196,8 +199,22 @@ class CommentsCubit extends Cubit<CommentsState> {
     );
   }
 
-    Stream<bool> isCommentLikedByMe(LikeParams params) {
+  Stream<bool> isCommentLikedByMe(LikeParams params) {
     return isCommentLikedByMeUseCase(params);
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> commentLikesStream(
+    String tinyTaleId,
+    String commentId,
+  ) {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.tinyTalesCollection)
+        .doc(tinyTaleId)
+        .collection(AppStrings.commentsCollection)
+        .doc(commentId)
+        .collection(AppStrings.commentLikesCollection)
+        .snapshots();
   }
 
   void removePickedCommentImage() {
@@ -209,8 +226,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     emit(CommentsState.setNewTextValue(text));
   }
 
-  void handleCommentsState(
-      CommentsState<dynamic> state, BuildContext context, String tinyTaleId) {
+  void handleCommentsState(CommentsState<dynamic> state, BuildContext context) {
     state.whenOrNull(
       typeNewCommentError: (error) {
         ShowICareDialog.show(
@@ -225,9 +241,6 @@ class CommentsCubit extends Cubit<CommentsState> {
           state: ICareDialogStates.error,
           message: error,
         );
-      },
-      typeNewCommentSuccess: () {
-        streamComments(tinyTaleId);
       },
     );
   }
