@@ -18,26 +18,24 @@ class SendMessageTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: CustomTextFormField(
-        enabled: enabled,
-        controller: controller,
-        fillColor: Colors.white,
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            offset: Offset(5.w, 4.h),
-            blurRadius: 20.r,
-            spreadRadius: 0,
-            color: Colors.black.withOpacity(0.13),
-          ),
-        ],
-        borderSide: BorderSide.none,
-        maxLines: null,
-        contentPadding: EdgeInsets.all(16.h),
-        textCapitalization: TextCapitalization.sentences,
-        hintText: hintText,
-        onChanged: onChanged,
-      ),
+    return CustomTextFormField(
+      enabled: enabled,
+      controller: controller,
+      fillColor: Colors.white,
+      boxShadow: <BoxShadow>[
+        BoxShadow(
+          offset: Offset(5.w, 4.h),
+          blurRadius: 20.r,
+          spreadRadius: 0,
+          color: Colors.black.withOpacity(0.13),
+        ),
+      ],
+      borderSide: BorderSide.none,
+      maxLines: null,
+      contentPadding: EdgeInsets.all(16.h),
+      textCapitalization: TextCapitalization.sentences,
+      hintText: hintText,
+      onChanged: onChanged,
     );
   }
 }

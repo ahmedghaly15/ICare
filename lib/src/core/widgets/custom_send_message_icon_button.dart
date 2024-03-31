@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
 
 class CustomSendMessageIconButton extends StatelessWidget {
   const CustomSendMessageIconButton({
     super.key,
     required this.isEnabled,
+    required this.onPressed,
   });
 
   final bool isEnabled;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,7 @@ class CustomSendMessageIconButton extends StatelessWidget {
           Icons.send,
           color: isEnabled ? Colors.white : Colors.white30,
         ),
-        onPressed: () {
-          isEnabled ? context.read<ICareBotCubit>().askICareBot(context) : null;
-        },
+        onPressed: onPressed,
       ),
     );
   }
