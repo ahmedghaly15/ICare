@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/conversation_bloc_builder.dart';
-import 'package:icare/src/features/icare_bot/presentation/widgets/send_message_text_field_and_button.dart';
+import 'package:icare/src/features/icare_bot/presentation/widgets/send_message_field_and_button_bloc_consumer.dart';
 
 class ConversationAndSendMessageTextField extends StatelessWidget {
   const ConversationAndSendMessageTextField({super.key});
@@ -19,7 +19,7 @@ class ConversationAndSendMessageTextField extends StatelessWidget {
             bottom: SizeConfig.height * 0.05,
             top: 8.h,
           ),
-          child: const SendMessageTextFieldAndButton(),
+          child: const SendMessageFieldAndButtonBlocConsumer(),
         ),
       ],
     );

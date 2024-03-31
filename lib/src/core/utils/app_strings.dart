@@ -115,4 +115,5 @@ class AppStrings {
   static const String publish = 'Publish';
   static const String addPhoto = 'Add photo';
   static const String cachedUser = 'cachedUser';
+  static const String comments = 'Comments';
 }

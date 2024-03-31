@@ -72,6 +72,10 @@ List<AutoRoute> get appRoutes {
           page: NewTinyTaleRoute.page,
           transitionsBuilder: TransitionsBuilders.slideBottom,
         ),
+        _buildCustomRoute(
+          page: CommentsRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
       ],
     ),
   ];
