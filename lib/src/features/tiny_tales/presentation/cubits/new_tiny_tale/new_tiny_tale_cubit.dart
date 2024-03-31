@@ -34,8 +34,6 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     final result = await createTinyTaleUseCase.call(params);
     result.when(
       success: (tinyTaleDocument) {
-        // getTinyTales();
-        createNewTinyTaleController.clear();
         emit(NewTinyTaleState.createTinyTaleSuccess(tinyTaleDocument));
       },
       error: (error) {
@@ -144,8 +142,10 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
         AuthHelper.keyboardUnfocus(context);
       },
       createTinyTaleSuccess: (data) {
-        context.read<TinyTalesCubit>().getTinyTales();
-        context.maybePop();
+        createNewTinyTaleController.clear();
+        context.read<TinyTalesCubit>().getTinyTales().then((value) {
+          context.maybePop();
+        });
       },
       createTinyTaleError: (error) {
         ShowICareDialog.show(

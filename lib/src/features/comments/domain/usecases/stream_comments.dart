@@ -1,16 +1,16 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:icare/src/core/usecases/regular_usecase.dart';
+import 'package:icare/src/core/firebase/firebase_request_result.dart';
+import 'package:icare/src/core/usecases/firebase_usecase.dart';
+import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/domain/repositories/comments_repo.dart';
 
 class StreamCommentsUseCase
-    implements
-        RegularUseCase<Stream<QuerySnapshot<Map<String, dynamic>>>, String> {
+    implements FirebaseUseCase<List<CommentModel>, String> {
   final CommentsRepo _commentsRepo;
 
   const StreamCommentsUseCase(this._commentsRepo);
 
   @override
-  Stream<QuerySnapshot<Map<String, dynamic>>> call(String params) {
+  Future<FirebaseRequestResult<List<CommentModel>>> call(String params) async {
     return _commentsRepo.streamComments(params);
   }
 }
