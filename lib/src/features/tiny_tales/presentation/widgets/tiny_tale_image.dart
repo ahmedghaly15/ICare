@@ -6,9 +6,10 @@ import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/like_comment_bookmark_buttons.dart';
 
 class TinyTaleItemImage extends StatelessWidget {
-  const TinyTaleItemImage({super.key, required this.tinyTaleImageUrl});
+  const TinyTaleItemImage(
+      {super.key, required this.tinyTaleImageUrl, required this.tinyTaleId});
 
-  final String tinyTaleImageUrl;
+  final String tinyTaleImageUrl, tinyTaleId;
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +45,10 @@ class TinyTaleItemImage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 20.w),
                     width: double.infinity,
                     color: Colors.transparent,
-                    child: const LikeCommentBookmarkButtons(
-                        isTinyTaleContainsImage: true),
+                    child: LikeCommentBookmarkButtons(
+                      isTinyTaleContainsImage: true,
+                      tinyTaleId: tinyTaleId,
+                    ),
                   ),
                 ),
               ),
