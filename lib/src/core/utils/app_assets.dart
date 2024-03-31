@@ -162,6 +162,11 @@ class AppAssets {
   /// assets/svgs/grey_medical_icon.svg
   static const String svgsGreyMedicalIcon = "assets/svgs/grey_medical_icon.svg";
 
+  /// Assets for svgsHeartCommentIcon
+  /// assets/svgs/heart_comment_icon.svg
+  static const String svgsHeartCommentIcon =
+      "assets/svgs/heart_comment_icon.svg";
+
   /// Assets for svgsHeartIcon
   /// assets/svgs/heart_icon.svg
   static const String svgsHeartIcon = "assets/svgs/heart_icon.svg";
@@ -178,6 +183,11 @@ class AppAssets {
   /// assets/svgs/orange_bookmark_icon.svg
   static const String svgsOrangeBookmarkIcon =
       "assets/svgs/orange_bookmark_icon.svg";
+
+  /// Assets for svgsRedHeartCommentIcon
+  /// assets/svgs/red_heart_comment_icon.svg
+  static const String svgsRedHeartCommentIcon =
+      "assets/svgs/red_heart_comment_icon.svg";
 
   /// Assets for svgsRedHeartIcon
   /// assets/svgs/red_heart_icon.svg

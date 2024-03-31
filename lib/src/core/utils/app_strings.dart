@@ -116,4 +116,6 @@ class AppStrings {
   static const String addPhoto = 'Add photo';
   static const String cachedUser = 'cachedUser';
   static const String comments = 'Comments';
+  static const String writeAComment = 'Write a comment...';
+  static const String writeAReply = 'Write a reply...';
 }
