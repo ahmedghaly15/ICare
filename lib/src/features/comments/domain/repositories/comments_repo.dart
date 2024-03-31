@@ -12,7 +12,8 @@ abstract class CommentsRepo {
   Future<FirebaseRequestResult<DocumentReference<Map<String, dynamic>>>>
       typeNewComment(TypeNewCommentParams typeCommentParams);
 
-  FirebaseRequestResult<List<CommentModel>> streamComments(String tinyTaleId);
+  Future<FirebaseRequestResult<List<CommentModel>>> streamComments(
+      String tinyTaleId);
   Future<FirebaseRequestResult<TaskSnapshot>> uploadCommentImage(
     File? commentImage,
   );

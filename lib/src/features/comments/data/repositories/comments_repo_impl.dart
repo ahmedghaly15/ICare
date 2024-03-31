@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:icare/src/core/firebase/firebase_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/comments/data/datasources/comments_remote_datasource.dart';
@@ -27,25 +26,19 @@ class CommentsRepoImpl implements CommentsRepo {
   }
 
   @override
-  FirebaseRequestResult<List<CommentModel>> streamComments(
+  Future<FirebaseRequestResult<List<CommentModel>>> streamComments(
     String tinyTaleId,
   ) {
-    try {
-      List<CommentModel> comments = <CommentModel>[];
-      _commentsRemoteDatasource.streamComments(tinyTaleId).listen(
-        (event) {
-          comments.clear();
-          for (var comment in event.docs) {
-            comments.add(CommentModel.fromJson(comment.data()));
-          }
-        },
-      );
+    return executeAndHandleFirebaseErrors<List<CommentModel>>(
+      () async {
+        final QuerySnapshot<Map<String, dynamic>> querySnapshot =
+            await _commentsRemoteDatasource.streamComments(tinyTaleId);
 
-      return FirebaseRequestResult.success(comments);
-    } catch (e) {
-      return FirebaseRequestResult.error(
-          FirebaseErrorHandler.handleError(e.toString()));
-    }
+        return querySnapshot.docs
+            .map((doc) => CommentModel.fromJson(doc.data()))
+            .toList();
+      },
+    );
   }
 
   @override

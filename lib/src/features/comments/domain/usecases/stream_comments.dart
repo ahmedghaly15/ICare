@@ -11,6 +11,6 @@ class StreamCommentsUseCase
 
   @override
   Future<FirebaseRequestResult<List<CommentModel>>> call(String params) async {
-    return _commentsRepo.streamComments(params);
+    return await _commentsRepo.streamComments(params);
   }
 }

@@ -52,7 +52,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   Future<QuerySnapshot<Map<String, dynamic>>> getTinyTales() async {
     return await _accessTinyTalesCollection()
         .orderBy(
-          'dateTime',
+          AppStrings.dateTime,
           descending: true,
         )
         .getQuerySnapshot();
@@ -99,17 +99,9 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   @override
   Stream<bool> isTinyTaleLikedByMe(String tinyTaleId) {
-    return _accessLikesCollection(tinyTaleId).snapshots().map((querySnapshot) {
-      return _mapOnSnapshots(querySnapshot);
-    });
-  }
-
-  bool _mapOnSnapshots(QuerySnapshot<Map<String, dynamic>> querySnapshot) {
-    for (final item in querySnapshot.docs) {
-      if (item.data()['user']['uId'] == Helper.uId) {
-        return true;
-      }
-    }
-    return false;
+    return _accessLikesCollection(tinyTaleId)
+        .doc(Helper.uId)
+        .snapshots()
+        .map((snapshot) => snapshot.exists);
   }
 }

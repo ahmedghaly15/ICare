@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/extensions/get_query_snapshot.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/comments/data/datasources/comments_remote_datasource.dart';
@@ -27,12 +28,12 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   }
 
   @override
-  Stream<QuerySnapshot<Map<String, dynamic>>> streamComments(
+  Future<QuerySnapshot<Map<String, dynamic>>> streamComments(
     String tinyTaleId,
   ) {
     return _accessCommentsCollection(tinyTaleId)
         .orderBy(AppStrings.dateTime, descending: false)
-        .snapshots();
+        .getQuerySnapshot();
   }
 
   @override
