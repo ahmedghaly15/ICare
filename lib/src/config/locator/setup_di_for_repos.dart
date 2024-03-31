@@ -93,9 +93,14 @@ class SetupDIForRepos {
       ),
     );
 
-    // Speech Therapy feature
+    // ========== Speech Therapy feature ==========
     getIt.registerLazySingleton<SpeechTherapyRepo>(
       () => SpeechTherapyRepoImpl(getIt.get<SpeechTherapyRemoteDatasource>()),
+    );
+
+    // ========== Comments feature ==========
+    getIt.registerLazySingleton<CommentsRepo>(
+      () => CommentsRepoImpl(getIt.get<CommentsRemoteDatasource>()),
     );
   }
 }

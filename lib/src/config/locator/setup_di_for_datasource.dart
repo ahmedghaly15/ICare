@@ -98,9 +98,14 @@ class SetupDIForDatasource {
       () => const TipsLocalDataSourceImpl(),
     );
 
-    // Speech Therapy feature
+    // ========== Speech Therapy feature ==========
     getIt.registerLazySingleton<SpeechTherapyRemoteDatasource>(
       () => SpeechTherapyRemoteDatasourceImpl(getIt.get<ApiService>()),
+    );
+
+    // ========== Comments feature ==========
+    getIt.registerLazySingleton<CommentsRemoteDatasource>(
+      () => const CommentsRemoteDatasourceImpl(),
     );
   }
 }

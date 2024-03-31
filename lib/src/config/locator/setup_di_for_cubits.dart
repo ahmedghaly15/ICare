@@ -115,5 +115,15 @@ class SetupDIForCubits {
         markLevelOneUseCase: getIt.get<MarkLevelOneUseCase>(),
       ),
     );
+
+    // ========== Comments feature ==========
+    getIt.registerFactory<CommentsCubit>(
+      () => CommentsCubit(
+        streamCommentsUseCase: getIt.get<StreamCommentsUseCase>(),
+        typeNewCommentUseCase: getIt.get<TypeNewCommentUseCase>(),
+        uploadCommentImageUseCase: getIt.get<UploadCommentImageUseCase>(),
+        deleteCommentUseCase: getIt.get<DeleteCommentUseCase>(),
+      ),
+    );
   }
 }

@@ -114,17 +114,29 @@ class SetupDIForUseCases {
       () => GetRandomTipUseCase(getIt.get<TipsRepo>()),
     );
 
-    // Speech Therapy feature
+    // ========== Speech Therapy feature ==========
     getIt.registerLazySingleton<GetLevelOneTrainingDataUseCase>(
       () => GetLevelOneTrainingDataUseCase(getIt.get<SpeechTherapyRepo>()),
     );
-
     getIt.registerLazySingleton<GetLevelOneExamUseCase>(
       () => GetLevelOneExamUseCase(getIt.get<SpeechTherapyRepo>()),
     );
-
     getIt.registerLazySingleton<MarkLevelOneUseCase>(
       () => MarkLevelOneUseCase(getIt.get<SpeechTherapyRepo>()),
+    );
+
+    // ========== Comments feature ==========
+    getIt.registerLazySingleton<StreamCommentsUseCase>(
+      () => StreamCommentsUseCase(getIt.get<CommentsRepo>()),
+    );
+    getIt.registerLazySingleton<TypeNewCommentUseCase>(
+      () => TypeNewCommentUseCase(getIt.get<CommentsRepo>()),
+    );
+    getIt.registerLazySingleton<DeleteCommentUseCase>(
+      () => DeleteCommentUseCase(getIt.get<CommentsRepo>()),
+    );
+    getIt.registerLazySingleton<UploadCommentImageUseCase>(
+      () => UploadCommentImageUseCase(getIt.get<CommentsRepo>()),
     );
   }
 }
