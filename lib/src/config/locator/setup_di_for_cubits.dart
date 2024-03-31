@@ -125,6 +125,7 @@ class SetupDIForCubits {
         deleteCommentUseCase: getIt.get<DeleteCommentUseCase>(),
         likeCommentUseCase: getIt.get<LikeCommentUseCase>(),
         unLikeCommentUseCase: getIt.get<UnLikeCommentUseCase>(),
+        isCommentLikedByMeUseCase: getIt.get<IsCommentLikedByMeUseCase>(),
       ),
     );
   }

@@ -95,4 +95,12 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   Future<void> unLikeComment(LikeParams params) async {
     return await _accessCommentLikesCollection(params).doc(Helper.uId).delete();
   }
+
+  @override
+  Stream<bool> isCommentLikedByMe(LikeParams params) {
+    return _accessCommentLikesCollection(params)
+        .doc(Helper.uId)
+        .snapshots()
+        .map((snapshot) => snapshot.exists);
+  }
 }

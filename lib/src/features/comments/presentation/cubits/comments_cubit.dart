@@ -12,12 +12,14 @@ import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart';
+import 'package:icare/src/features/comments/domain/usecases/is_comment_liked_by_me.dart';
 import 'package:icare/src/features/comments/domain/usecases/like_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/stream_comments.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/unlike_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/upload_comment_image.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments_state.dart';
+import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
@@ -28,6 +30,7 @@ class CommentsCubit extends Cubit<CommentsState> {
   final DeleteCommentUseCase deleteCommentUseCase;
   final LikeCommentUseCase likeCommentUseCase;
   final UnLikeCommentUseCase unLikeCommentUseCase;
+  final IsCommentLikedByMeUseCase isCommentLikedByMeUseCase;
 
   CommentsCubit({
     required this.streamCommentsUseCase,
@@ -36,6 +39,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     required this.deleteCommentUseCase,
     required this.likeCommentUseCase,
     required this.unLikeCommentUseCase,
+    required this.isCommentLikedByMeUseCase,
   }) : super(const CommentsState.initial()) {
     commentController = TextEditingController();
   }
@@ -181,6 +185,10 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   void setNewTextValue(String text) {
     emit(CommentsState.setNewTextValue(text));
+  }
+
+  Stream<bool> isCommentLikedByMe(LikeParams params) {
+    return isCommentLikedByMeUseCase(params);
   }
 
   void handleCommentsState(

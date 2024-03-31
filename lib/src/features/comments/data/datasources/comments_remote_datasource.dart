@@ -15,4 +15,5 @@ abstract class CommentsRemoteDatasource {
   Future<void> deleteComment(DeleteCommentParams params);
   Future<void> likeComment(LikeParams params);
   Future<void> unLikeComment(LikeParams params);
+  Stream<bool> isCommentLikedByMe(LikeParams params);
 }

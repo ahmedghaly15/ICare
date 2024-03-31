@@ -144,5 +144,8 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<UnLikeCommentUseCase>(
       () => UnLikeCommentUseCase(getIt.get<CommentsRepo>()),
     );
+    getIt.registerLazySingleton<IsCommentLikedByMeUseCase>(
+      () => IsCommentLikedByMeUseCase(getIt.get<CommentsRepo>()),
+    );
   }
 }

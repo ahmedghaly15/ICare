@@ -81,4 +81,9 @@ class CommentsRepoImpl implements CommentsRepo {
       () async => await _commentsRemoteDatasource.unLikeComment(params),
     );
   }
+
+  @override
+  Stream<bool> isCommentLikedByMe(LikeParams params) {
+    return _commentsRemoteDatasource.isCommentLikedByMe(params);
+  }
 }
