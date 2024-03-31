@@ -138,5 +138,11 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<UploadCommentImageUseCase>(
       () => UploadCommentImageUseCase(getIt.get<CommentsRepo>()),
     );
+    getIt.registerLazySingleton<LikeCommentUseCase>(
+      () => LikeCommentUseCase(getIt.get<CommentsRepo>()),
+    );
+    getIt.registerLazySingleton<UnLikeCommentUseCase>(
+      () => UnLikeCommentUseCase(getIt.get<CommentsRepo>()),
+    );
   }
 }

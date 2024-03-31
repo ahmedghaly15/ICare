@@ -35,4 +35,9 @@ class CommentsState<T> with _$CommentsState<T> {
   const factory CommentsState.setNewTextValue(String text) = SetNewTextValue;
   const factory CommentsState.removePickedCommentImage() =
       RemovePickedCommentImage;
+  const factory CommentsState.likeCommentSuccess() = LikeCommentSuccess;
+  const factory CommentsState.likeCommentError(String error) = LikeCommentError;
+  const factory CommentsState.unlikeCommentSuccess() = UnlikeCommentSuccess;
+  const factory CommentsState.unlikeCommentError(String error) =
+      UnlikeCommentError;
 }

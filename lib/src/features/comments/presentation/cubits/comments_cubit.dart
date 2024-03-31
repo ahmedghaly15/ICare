@@ -12,8 +12,10 @@ import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart';
+import 'package:icare/src/features/comments/domain/usecases/like_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/stream_comments.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment.dart';
+import 'package:icare/src/features/comments/domain/usecases/unlike_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/upload_comment_image.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments_state.dart';
 import 'package:image_picker/image_picker.dart';
@@ -24,12 +26,16 @@ class CommentsCubit extends Cubit<CommentsState> {
   final TypeNewCommentUseCase typeNewCommentUseCase;
   final UploadCommentImageUseCase uploadCommentImageUseCase;
   final DeleteCommentUseCase deleteCommentUseCase;
+  final LikeCommentUseCase likeCommentUseCase;
+  final UnLikeCommentUseCase unLikeCommentUseCase;
 
   CommentsCubit({
     required this.streamCommentsUseCase,
     required this.typeNewCommentUseCase,
     required this.uploadCommentImageUseCase,
     required this.deleteCommentUseCase,
+    required this.likeCommentUseCase,
+    required this.unLikeCommentUseCase,
   }) : super(const CommentsState.initial()) {
     commentController = TextEditingController();
   }

@@ -5,7 +5,7 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/helpers/app_regex.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/features/tiny_tales/data/models/like_tiny_tale_params.dart';
+import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
@@ -40,7 +40,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     );
   }
 
-  void likeTinyTale(LikeTinyTaleParams params) async {
+  void likeTinyTale(LikeParams params) async {
     final result = await likeTinyTaleUseCase.call(params);
     result.when(
       success: (_) => emit(const TinyTalesState.likeTinyTaleSuccess()),

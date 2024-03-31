@@ -10,6 +10,7 @@ import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/repositories/comments_repo.dart';
+import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 
 class CommentsRepoImpl implements CommentsRepo {
   final CommentsRemoteDatasource _commentsRemoteDatasource;
@@ -64,6 +65,20 @@ class CommentsRepoImpl implements CommentsRepo {
     return executeAndHandleFirebaseErrors<TaskSnapshot>(
       () async =>
           await _commentsRemoteDatasource.uploadCommentImage(commentImage),
+    );
+  }
+
+  @override
+  Future<FirebaseRequestResult<void>> likeComment(LikeParams params) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _commentsRemoteDatasource.likeComment(params),
+    );
+  }
+
+  @override
+  Future<FirebaseRequestResult<void>> unLikeComment(LikeParams params) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _commentsRemoteDatasource.unLikeComment(params),
     );
   }
 }

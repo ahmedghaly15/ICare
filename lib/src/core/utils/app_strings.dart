@@ -119,4 +119,5 @@ class AppStrings {
   static const String writeAComment = 'Write a comment...';
   static const String writeAReply = 'Write a reply...';
   static const String reply = 'Reply';
+  static const String commentLikesCollection = 'Comment Likes Collection';
 }

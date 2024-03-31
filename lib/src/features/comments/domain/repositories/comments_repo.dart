@@ -6,16 +6,18 @@ import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
+import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 
 abstract class CommentsRepo {
   Future<FirebaseRequestResult<DocumentReference<Map<String, dynamic>>>>
       typeNewComment(TypeNewCommentParams typeCommentParams);
 
   FirebaseRequestResult<List<CommentModel>> streamComments(String tinyTaleId);
-
   Future<FirebaseRequestResult<TaskSnapshot>> uploadCommentImage(
     File? commentImage,
   );
 
   Future<FirebaseRequestResult<void>> deleteComment(DeleteCommentParams params);
+  Future<FirebaseRequestResult<void>> likeComment(LikeParams params);
+  Future<FirebaseRequestResult<void>> unLikeComment(LikeParams params);
 }

@@ -36,6 +36,10 @@ mixin _$CommentsState<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +61,10 @@ mixin _$CommentsState<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,6 +86,10 @@ mixin _$CommentsState<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +124,11 @@ mixin _$CommentsState<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -138,6 +155,10 @@ mixin _$CommentsState<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -162,6 +183,10 @@ mixin _$CommentsState<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -241,6 +266,10 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return initial();
   }
@@ -265,6 +294,10 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return initial?.call();
   }
@@ -289,6 +322,10 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -329,6 +366,11 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return initial(this);
   }
@@ -358,6 +400,10 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return initial?.call(this);
   }
@@ -385,6 +431,10 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -457,6 +507,10 @@ class _$StreamCommentsLoadingImpl<T> implements StreamCommentsLoading<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return streamCommentsLoading();
   }
@@ -481,6 +535,10 @@ class _$StreamCommentsLoadingImpl<T> implements StreamCommentsLoading<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return streamCommentsLoading?.call();
   }
@@ -505,6 +563,10 @@ class _$StreamCommentsLoadingImpl<T> implements StreamCommentsLoading<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (streamCommentsLoading != null) {
@@ -545,6 +607,11 @@ class _$StreamCommentsLoadingImpl<T> implements StreamCommentsLoading<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return streamCommentsLoading(this);
   }
@@ -574,6 +641,10 @@ class _$StreamCommentsLoadingImpl<T> implements StreamCommentsLoading<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return streamCommentsLoading?.call(this);
   }
@@ -601,6 +672,10 @@ class _$StreamCommentsLoadingImpl<T> implements StreamCommentsLoading<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (streamCommentsLoading != null) {
@@ -706,6 +781,10 @@ class _$StreamCommentsSuccessImpl<T> implements StreamCommentsSuccess<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return streamCommentsSuccess(comments);
   }
@@ -730,6 +809,10 @@ class _$StreamCommentsSuccessImpl<T> implements StreamCommentsSuccess<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return streamCommentsSuccess?.call(comments);
   }
@@ -754,6 +837,10 @@ class _$StreamCommentsSuccessImpl<T> implements StreamCommentsSuccess<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (streamCommentsSuccess != null) {
@@ -794,6 +881,11 @@ class _$StreamCommentsSuccessImpl<T> implements StreamCommentsSuccess<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return streamCommentsSuccess(this);
   }
@@ -823,6 +915,10 @@ class _$StreamCommentsSuccessImpl<T> implements StreamCommentsSuccess<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return streamCommentsSuccess?.call(this);
   }
@@ -850,6 +946,10 @@ class _$StreamCommentsSuccessImpl<T> implements StreamCommentsSuccess<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (streamCommentsSuccess != null) {
@@ -952,6 +1052,10 @@ class _$StreamCommentsErrorImpl<T> implements StreamCommentsError<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return streamCommentsError(error);
   }
@@ -976,6 +1080,10 @@ class _$StreamCommentsErrorImpl<T> implements StreamCommentsError<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return streamCommentsError?.call(error);
   }
@@ -1000,6 +1108,10 @@ class _$StreamCommentsErrorImpl<T> implements StreamCommentsError<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (streamCommentsError != null) {
@@ -1040,6 +1152,11 @@ class _$StreamCommentsErrorImpl<T> implements StreamCommentsError<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return streamCommentsError(this);
   }
@@ -1069,6 +1186,10 @@ class _$StreamCommentsErrorImpl<T> implements StreamCommentsError<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return streamCommentsError?.call(this);
   }
@@ -1096,6 +1217,10 @@ class _$StreamCommentsErrorImpl<T> implements StreamCommentsError<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (streamCommentsError != null) {
@@ -1174,6 +1299,10 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return typeNewCommentLoading();
   }
@@ -1198,6 +1327,10 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return typeNewCommentLoading?.call();
   }
@@ -1222,6 +1355,10 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (typeNewCommentLoading != null) {
@@ -1262,6 +1399,11 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return typeNewCommentLoading(this);
   }
@@ -1291,6 +1433,10 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return typeNewCommentLoading?.call(this);
   }
@@ -1318,6 +1464,10 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (typeNewCommentLoading != null) {
@@ -1390,6 +1540,10 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return typeNewCommentSuccess();
   }
@@ -1414,6 +1568,10 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return typeNewCommentSuccess?.call();
   }
@@ -1438,6 +1596,10 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (typeNewCommentSuccess != null) {
@@ -1478,6 +1640,11 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return typeNewCommentSuccess(this);
   }
@@ -1507,6 +1674,10 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return typeNewCommentSuccess?.call(this);
   }
@@ -1534,6 +1705,10 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (typeNewCommentSuccess != null) {
@@ -1630,6 +1805,10 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return typeNewCommentError(error);
   }
@@ -1654,6 +1833,10 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return typeNewCommentError?.call(error);
   }
@@ -1678,6 +1861,10 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (typeNewCommentError != null) {
@@ -1718,6 +1905,11 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return typeNewCommentError(this);
   }
@@ -1747,6 +1939,10 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return typeNewCommentError?.call(this);
   }
@@ -1774,6 +1970,10 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (typeNewCommentError != null) {
@@ -1880,6 +2080,10 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return pickCommentImageSuccess(commentImage);
   }
@@ -1904,6 +2108,10 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return pickCommentImageSuccess?.call(commentImage);
   }
@@ -1928,6 +2136,10 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (pickCommentImageSuccess != null) {
@@ -1968,6 +2180,11 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return pickCommentImageSuccess(this);
   }
@@ -1997,6 +2214,10 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return pickCommentImageSuccess?.call(this);
   }
@@ -2024,6 +2245,10 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (pickCommentImageSuccess != null) {
@@ -2128,6 +2353,10 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return pickCommentImageError(error);
   }
@@ -2152,6 +2381,10 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return pickCommentImageError?.call(error);
   }
@@ -2176,6 +2409,10 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (pickCommentImageError != null) {
@@ -2216,6 +2453,11 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return pickCommentImageError(this);
   }
@@ -2245,6 +2487,10 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return pickCommentImageError?.call(this);
   }
@@ -2272,6 +2518,10 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (pickCommentImageError != null) {
@@ -2352,6 +2602,10 @@ class _$UploadCommentImageLoadingImpl<T>
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return uploadCommentImageLoading();
   }
@@ -2376,6 +2630,10 @@ class _$UploadCommentImageLoadingImpl<T>
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return uploadCommentImageLoading?.call();
   }
@@ -2400,6 +2658,10 @@ class _$UploadCommentImageLoadingImpl<T>
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (uploadCommentImageLoading != null) {
@@ -2440,6 +2702,11 @@ class _$UploadCommentImageLoadingImpl<T>
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return uploadCommentImageLoading(this);
   }
@@ -2469,6 +2736,10 @@ class _$UploadCommentImageLoadingImpl<T>
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return uploadCommentImageLoading?.call(this);
   }
@@ -2496,6 +2767,10 @@ class _$UploadCommentImageLoadingImpl<T>
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (uploadCommentImageLoading != null) {
@@ -2599,6 +2874,10 @@ class _$UploadCommentImageSuccessImpl<T>
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return uploadCommentImageSuccess(imageUrl);
   }
@@ -2623,6 +2902,10 @@ class _$UploadCommentImageSuccessImpl<T>
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return uploadCommentImageSuccess?.call(imageUrl);
   }
@@ -2647,6 +2930,10 @@ class _$UploadCommentImageSuccessImpl<T>
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (uploadCommentImageSuccess != null) {
@@ -2687,6 +2974,11 @@ class _$UploadCommentImageSuccessImpl<T>
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return uploadCommentImageSuccess(this);
   }
@@ -2716,6 +3008,10 @@ class _$UploadCommentImageSuccessImpl<T>
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return uploadCommentImageSuccess?.call(this);
   }
@@ -2743,6 +3039,10 @@ class _$UploadCommentImageSuccessImpl<T>
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (uploadCommentImageSuccess != null) {
@@ -2849,6 +3149,10 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return uploadCommentImageError(error);
   }
@@ -2873,6 +3177,10 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return uploadCommentImageError?.call(error);
   }
@@ -2897,6 +3205,10 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (uploadCommentImageError != null) {
@@ -2937,6 +3249,11 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return uploadCommentImageError(this);
   }
@@ -2966,6 +3283,10 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return uploadCommentImageError?.call(this);
   }
@@ -2993,6 +3314,10 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (uploadCommentImageError != null) {
@@ -3070,6 +3395,10 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return deleteCommentLoading();
   }
@@ -3094,6 +3423,10 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return deleteCommentLoading?.call();
   }
@@ -3118,6 +3451,10 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (deleteCommentLoading != null) {
@@ -3158,6 +3495,11 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return deleteCommentLoading(this);
   }
@@ -3187,6 +3529,10 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return deleteCommentLoading?.call(this);
   }
@@ -3214,6 +3560,10 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (deleteCommentLoading != null) {
@@ -3285,6 +3635,10 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return deleteCommentSuccess();
   }
@@ -3309,6 +3663,10 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return deleteCommentSuccess?.call();
   }
@@ -3333,6 +3691,10 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (deleteCommentSuccess != null) {
@@ -3373,6 +3735,11 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return deleteCommentSuccess(this);
   }
@@ -3402,6 +3769,10 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return deleteCommentSuccess?.call(this);
   }
@@ -3429,6 +3800,10 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (deleteCommentSuccess != null) {
@@ -3525,6 +3900,10 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return deleteCommentError(error);
   }
@@ -3549,6 +3928,10 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return deleteCommentError?.call(error);
   }
@@ -3573,6 +3956,10 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (deleteCommentError != null) {
@@ -3613,6 +4000,11 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return deleteCommentError(this);
   }
@@ -3642,6 +4034,10 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return deleteCommentError?.call(this);
   }
@@ -3669,6 +4065,10 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (deleteCommentError != null) {
@@ -3771,6 +4171,10 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return setNewTextValue(text);
   }
@@ -3795,6 +4199,10 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return setNewTextValue?.call(text);
   }
@@ -3819,6 +4227,10 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -3859,6 +4271,11 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return setNewTextValue(this);
   }
@@ -3888,6 +4305,10 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return setNewTextValue?.call(this);
   }
@@ -3915,6 +4336,10 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -3993,6 +4418,10 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
     required TResult Function(String error) deleteCommentError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
   }) {
     return removePickedCommentImage();
   }
@@ -4017,6 +4446,10 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
     TResult? Function(String error)? deleteCommentError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
   }) {
     return removePickedCommentImage?.call();
   }
@@ -4041,6 +4474,10 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
     TResult Function(String error)? deleteCommentError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (removePickedCommentImage != null) {
@@ -4081,6 +4518,11 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemovePickedCommentImage<T> value)
         removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
   }) {
     return removePickedCommentImage(this);
   }
@@ -4110,6 +4552,10 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
   }) {
     return removePickedCommentImage?.call(this);
   }
@@ -4137,6 +4583,10 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemovePickedCommentImage<T> value)?
         removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
     required TResult orElse(),
   }) {
     if (removePickedCommentImage != null) {
@@ -4148,4 +4598,1025 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
 
 abstract class RemovePickedCommentImage<T> implements CommentsState<T> {
   const factory RemovePickedCommentImage() = _$RemovePickedCommentImageImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$LikeCommentSuccessImplCopyWith<T, $Res> {
+  factory _$$LikeCommentSuccessImplCopyWith(_$LikeCommentSuccessImpl<T> value,
+          $Res Function(_$LikeCommentSuccessImpl<T>) then) =
+      __$$LikeCommentSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LikeCommentSuccessImplCopyWithImpl<T, $Res>
+    extends _$CommentsStateCopyWithImpl<T, $Res, _$LikeCommentSuccessImpl<T>>
+    implements _$$LikeCommentSuccessImplCopyWith<T, $Res> {
+  __$$LikeCommentSuccessImplCopyWithImpl(_$LikeCommentSuccessImpl<T> _value,
+      $Res Function(_$LikeCommentSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
+  const _$LikeCommentSuccessImpl();
+
+  @override
+  String toString() {
+    return 'CommentsState<$T>.likeCommentSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LikeCommentSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() streamCommentsLoading,
+    required TResult Function(List<CommentModel> comments)
+        streamCommentsSuccess,
+    required TResult Function(String error) streamCommentsError,
+    required TResult Function() typeNewCommentLoading,
+    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String error) typeNewCommentError,
+    required TResult Function(File commentImage) pickCommentImageSuccess,
+    required TResult Function(String error) pickCommentImageError,
+    required TResult Function() uploadCommentImageLoading,
+    required TResult Function(String imageUrl) uploadCommentImageSuccess,
+    required TResult Function(String error) uploadCommentImageError,
+    required TResult Function() deleteCommentLoading,
+    required TResult Function() deleteCommentSuccess,
+    required TResult Function(String error) deleteCommentError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
+  }) {
+    return likeCommentSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? streamCommentsLoading,
+    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult? Function(String error)? streamCommentsError,
+    TResult? Function()? typeNewCommentLoading,
+    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String error)? typeNewCommentError,
+    TResult? Function(File commentImage)? pickCommentImageSuccess,
+    TResult? Function(String error)? pickCommentImageError,
+    TResult? Function()? uploadCommentImageLoading,
+    TResult? Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult? Function(String error)? uploadCommentImageError,
+    TResult? Function()? deleteCommentLoading,
+    TResult? Function()? deleteCommentSuccess,
+    TResult? Function(String error)? deleteCommentError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
+  }) {
+    return likeCommentSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? streamCommentsLoading,
+    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult Function(String error)? streamCommentsError,
+    TResult Function()? typeNewCommentLoading,
+    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String error)? typeNewCommentError,
+    TResult Function(File commentImage)? pickCommentImageSuccess,
+    TResult Function(String error)? pickCommentImageError,
+    TResult Function()? uploadCommentImageLoading,
+    TResult Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult Function(String error)? uploadCommentImageError,
+    TResult Function()? deleteCommentLoading,
+    TResult Function()? deleteCommentSuccess,
+    TResult Function(String error)? deleteCommentError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (likeCommentSuccess != null) {
+      return likeCommentSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommentsInitial<T> value) initial,
+    required TResult Function(StreamCommentsLoading<T> value)
+        streamCommentsLoading,
+    required TResult Function(StreamCommentsSuccess<T> value)
+        streamCommentsSuccess,
+    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
+    required TResult Function(TypeNewCommentLoading<T> value)
+        typeNewCommentLoading,
+    required TResult Function(TypeNewCommentSuccess<T> value)
+        typeNewCommentSuccess,
+    required TResult Function(TypeNewCommentError<T> value) typeNewCommentError,
+    required TResult Function(PickCommentImageSuccess<T> value)
+        pickCommentImageSuccess,
+    required TResult Function(PickCommentImageError<T> value)
+        pickCommentImageError,
+    required TResult Function(UploadCommentImageLoading<T> value)
+        uploadCommentImageLoading,
+    required TResult Function(UploadCommentImageSuccess<T> value)
+        uploadCommentImageSuccess,
+    required TResult Function(UploadCommentImageError<T> value)
+        uploadCommentImageError,
+    required TResult Function(DeleteCommentLoading<T> value)
+        deleteCommentLoading,
+    required TResult Function(DeleteCommentSuccess<T> value)
+        deleteCommentSuccess,
+    required TResult Function(DeleteCommentError<T> value) deleteCommentError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemovePickedCommentImage<T> value)
+        removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
+  }) {
+    return likeCommentSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommentsInitial<T> value)? initial,
+    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult? Function(PickCommentImageSuccess<T> value)?
+        pickCommentImageSuccess,
+    TResult? Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult? Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult? Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult? Function(UploadCommentImageError<T> value)?
+        uploadCommentImageError,
+    TResult? Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult? Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult? Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
+  }) {
+    return likeCommentSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommentsInitial<T> value)? initial,
+    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult Function(PickCommentImageSuccess<T> value)? pickCommentImageSuccess,
+    TResult Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult Function(UploadCommentImageError<T> value)? uploadCommentImageError,
+    TResult Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (likeCommentSuccess != null) {
+      return likeCommentSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikeCommentSuccess<T> implements CommentsState<T> {
+  const factory LikeCommentSuccess() = _$LikeCommentSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$LikeCommentErrorImplCopyWith<T, $Res> {
+  factory _$$LikeCommentErrorImplCopyWith(_$LikeCommentErrorImpl<T> value,
+          $Res Function(_$LikeCommentErrorImpl<T>) then) =
+      __$$LikeCommentErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$LikeCommentErrorImplCopyWithImpl<T, $Res>
+    extends _$CommentsStateCopyWithImpl<T, $Res, _$LikeCommentErrorImpl<T>>
+    implements _$$LikeCommentErrorImplCopyWith<T, $Res> {
+  __$$LikeCommentErrorImplCopyWithImpl(_$LikeCommentErrorImpl<T> _value,
+      $Res Function(_$LikeCommentErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$LikeCommentErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
+  const _$LikeCommentErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'CommentsState<$T>.likeCommentError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LikeCommentErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LikeCommentErrorImplCopyWith<T, _$LikeCommentErrorImpl<T>> get copyWith =>
+      __$$LikeCommentErrorImplCopyWithImpl<T, _$LikeCommentErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() streamCommentsLoading,
+    required TResult Function(List<CommentModel> comments)
+        streamCommentsSuccess,
+    required TResult Function(String error) streamCommentsError,
+    required TResult Function() typeNewCommentLoading,
+    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String error) typeNewCommentError,
+    required TResult Function(File commentImage) pickCommentImageSuccess,
+    required TResult Function(String error) pickCommentImageError,
+    required TResult Function() uploadCommentImageLoading,
+    required TResult Function(String imageUrl) uploadCommentImageSuccess,
+    required TResult Function(String error) uploadCommentImageError,
+    required TResult Function() deleteCommentLoading,
+    required TResult Function() deleteCommentSuccess,
+    required TResult Function(String error) deleteCommentError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
+  }) {
+    return likeCommentError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? streamCommentsLoading,
+    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult? Function(String error)? streamCommentsError,
+    TResult? Function()? typeNewCommentLoading,
+    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String error)? typeNewCommentError,
+    TResult? Function(File commentImage)? pickCommentImageSuccess,
+    TResult? Function(String error)? pickCommentImageError,
+    TResult? Function()? uploadCommentImageLoading,
+    TResult? Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult? Function(String error)? uploadCommentImageError,
+    TResult? Function()? deleteCommentLoading,
+    TResult? Function()? deleteCommentSuccess,
+    TResult? Function(String error)? deleteCommentError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
+  }) {
+    return likeCommentError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? streamCommentsLoading,
+    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult Function(String error)? streamCommentsError,
+    TResult Function()? typeNewCommentLoading,
+    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String error)? typeNewCommentError,
+    TResult Function(File commentImage)? pickCommentImageSuccess,
+    TResult Function(String error)? pickCommentImageError,
+    TResult Function()? uploadCommentImageLoading,
+    TResult Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult Function(String error)? uploadCommentImageError,
+    TResult Function()? deleteCommentLoading,
+    TResult Function()? deleteCommentSuccess,
+    TResult Function(String error)? deleteCommentError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (likeCommentError != null) {
+      return likeCommentError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommentsInitial<T> value) initial,
+    required TResult Function(StreamCommentsLoading<T> value)
+        streamCommentsLoading,
+    required TResult Function(StreamCommentsSuccess<T> value)
+        streamCommentsSuccess,
+    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
+    required TResult Function(TypeNewCommentLoading<T> value)
+        typeNewCommentLoading,
+    required TResult Function(TypeNewCommentSuccess<T> value)
+        typeNewCommentSuccess,
+    required TResult Function(TypeNewCommentError<T> value) typeNewCommentError,
+    required TResult Function(PickCommentImageSuccess<T> value)
+        pickCommentImageSuccess,
+    required TResult Function(PickCommentImageError<T> value)
+        pickCommentImageError,
+    required TResult Function(UploadCommentImageLoading<T> value)
+        uploadCommentImageLoading,
+    required TResult Function(UploadCommentImageSuccess<T> value)
+        uploadCommentImageSuccess,
+    required TResult Function(UploadCommentImageError<T> value)
+        uploadCommentImageError,
+    required TResult Function(DeleteCommentLoading<T> value)
+        deleteCommentLoading,
+    required TResult Function(DeleteCommentSuccess<T> value)
+        deleteCommentSuccess,
+    required TResult Function(DeleteCommentError<T> value) deleteCommentError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemovePickedCommentImage<T> value)
+        removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
+  }) {
+    return likeCommentError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommentsInitial<T> value)? initial,
+    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult? Function(PickCommentImageSuccess<T> value)?
+        pickCommentImageSuccess,
+    TResult? Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult? Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult? Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult? Function(UploadCommentImageError<T> value)?
+        uploadCommentImageError,
+    TResult? Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult? Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult? Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
+  }) {
+    return likeCommentError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommentsInitial<T> value)? initial,
+    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult Function(PickCommentImageSuccess<T> value)? pickCommentImageSuccess,
+    TResult Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult Function(UploadCommentImageError<T> value)? uploadCommentImageError,
+    TResult Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (likeCommentError != null) {
+      return likeCommentError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikeCommentError<T> implements CommentsState<T> {
+  const factory LikeCommentError(final String error) =
+      _$LikeCommentErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$LikeCommentErrorImplCopyWith<T, _$LikeCommentErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnlikeCommentSuccessImplCopyWith<T, $Res> {
+  factory _$$UnlikeCommentSuccessImplCopyWith(
+          _$UnlikeCommentSuccessImpl<T> value,
+          $Res Function(_$UnlikeCommentSuccessImpl<T>) then) =
+      __$$UnlikeCommentSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UnlikeCommentSuccessImplCopyWithImpl<T, $Res>
+    extends _$CommentsStateCopyWithImpl<T, $Res, _$UnlikeCommentSuccessImpl<T>>
+    implements _$$UnlikeCommentSuccessImplCopyWith<T, $Res> {
+  __$$UnlikeCommentSuccessImplCopyWithImpl(_$UnlikeCommentSuccessImpl<T> _value,
+      $Res Function(_$UnlikeCommentSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
+  const _$UnlikeCommentSuccessImpl();
+
+  @override
+  String toString() {
+    return 'CommentsState<$T>.unlikeCommentSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnlikeCommentSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() streamCommentsLoading,
+    required TResult Function(List<CommentModel> comments)
+        streamCommentsSuccess,
+    required TResult Function(String error) streamCommentsError,
+    required TResult Function() typeNewCommentLoading,
+    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String error) typeNewCommentError,
+    required TResult Function(File commentImage) pickCommentImageSuccess,
+    required TResult Function(String error) pickCommentImageError,
+    required TResult Function() uploadCommentImageLoading,
+    required TResult Function(String imageUrl) uploadCommentImageSuccess,
+    required TResult Function(String error) uploadCommentImageError,
+    required TResult Function() deleteCommentLoading,
+    required TResult Function() deleteCommentSuccess,
+    required TResult Function(String error) deleteCommentError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
+  }) {
+    return unlikeCommentSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? streamCommentsLoading,
+    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult? Function(String error)? streamCommentsError,
+    TResult? Function()? typeNewCommentLoading,
+    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String error)? typeNewCommentError,
+    TResult? Function(File commentImage)? pickCommentImageSuccess,
+    TResult? Function(String error)? pickCommentImageError,
+    TResult? Function()? uploadCommentImageLoading,
+    TResult? Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult? Function(String error)? uploadCommentImageError,
+    TResult? Function()? deleteCommentLoading,
+    TResult? Function()? deleteCommentSuccess,
+    TResult? Function(String error)? deleteCommentError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
+  }) {
+    return unlikeCommentSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? streamCommentsLoading,
+    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult Function(String error)? streamCommentsError,
+    TResult Function()? typeNewCommentLoading,
+    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String error)? typeNewCommentError,
+    TResult Function(File commentImage)? pickCommentImageSuccess,
+    TResult Function(String error)? pickCommentImageError,
+    TResult Function()? uploadCommentImageLoading,
+    TResult Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult Function(String error)? uploadCommentImageError,
+    TResult Function()? deleteCommentLoading,
+    TResult Function()? deleteCommentSuccess,
+    TResult Function(String error)? deleteCommentError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (unlikeCommentSuccess != null) {
+      return unlikeCommentSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommentsInitial<T> value) initial,
+    required TResult Function(StreamCommentsLoading<T> value)
+        streamCommentsLoading,
+    required TResult Function(StreamCommentsSuccess<T> value)
+        streamCommentsSuccess,
+    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
+    required TResult Function(TypeNewCommentLoading<T> value)
+        typeNewCommentLoading,
+    required TResult Function(TypeNewCommentSuccess<T> value)
+        typeNewCommentSuccess,
+    required TResult Function(TypeNewCommentError<T> value) typeNewCommentError,
+    required TResult Function(PickCommentImageSuccess<T> value)
+        pickCommentImageSuccess,
+    required TResult Function(PickCommentImageError<T> value)
+        pickCommentImageError,
+    required TResult Function(UploadCommentImageLoading<T> value)
+        uploadCommentImageLoading,
+    required TResult Function(UploadCommentImageSuccess<T> value)
+        uploadCommentImageSuccess,
+    required TResult Function(UploadCommentImageError<T> value)
+        uploadCommentImageError,
+    required TResult Function(DeleteCommentLoading<T> value)
+        deleteCommentLoading,
+    required TResult Function(DeleteCommentSuccess<T> value)
+        deleteCommentSuccess,
+    required TResult Function(DeleteCommentError<T> value) deleteCommentError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemovePickedCommentImage<T> value)
+        removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
+  }) {
+    return unlikeCommentSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommentsInitial<T> value)? initial,
+    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult? Function(PickCommentImageSuccess<T> value)?
+        pickCommentImageSuccess,
+    TResult? Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult? Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult? Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult? Function(UploadCommentImageError<T> value)?
+        uploadCommentImageError,
+    TResult? Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult? Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult? Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
+  }) {
+    return unlikeCommentSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommentsInitial<T> value)? initial,
+    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult Function(PickCommentImageSuccess<T> value)? pickCommentImageSuccess,
+    TResult Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult Function(UploadCommentImageError<T> value)? uploadCommentImageError,
+    TResult Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (unlikeCommentSuccess != null) {
+      return unlikeCommentSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnlikeCommentSuccess<T> implements CommentsState<T> {
+  const factory UnlikeCommentSuccess() = _$UnlikeCommentSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UnlikeCommentErrorImplCopyWith<T, $Res> {
+  factory _$$UnlikeCommentErrorImplCopyWith(_$UnlikeCommentErrorImpl<T> value,
+          $Res Function(_$UnlikeCommentErrorImpl<T>) then) =
+      __$$UnlikeCommentErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UnlikeCommentErrorImplCopyWithImpl<T, $Res>
+    extends _$CommentsStateCopyWithImpl<T, $Res, _$UnlikeCommentErrorImpl<T>>
+    implements _$$UnlikeCommentErrorImplCopyWith<T, $Res> {
+  __$$UnlikeCommentErrorImplCopyWithImpl(_$UnlikeCommentErrorImpl<T> _value,
+      $Res Function(_$UnlikeCommentErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UnlikeCommentErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
+  const _$UnlikeCommentErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'CommentsState<$T>.unlikeCommentError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnlikeCommentErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnlikeCommentErrorImplCopyWith<T, _$UnlikeCommentErrorImpl<T>>
+      get copyWith => __$$UnlikeCommentErrorImplCopyWithImpl<T,
+          _$UnlikeCommentErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() streamCommentsLoading,
+    required TResult Function(List<CommentModel> comments)
+        streamCommentsSuccess,
+    required TResult Function(String error) streamCommentsError,
+    required TResult Function() typeNewCommentLoading,
+    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String error) typeNewCommentError,
+    required TResult Function(File commentImage) pickCommentImageSuccess,
+    required TResult Function(String error) pickCommentImageError,
+    required TResult Function() uploadCommentImageLoading,
+    required TResult Function(String imageUrl) uploadCommentImageSuccess,
+    required TResult Function(String error) uploadCommentImageError,
+    required TResult Function() deleteCommentLoading,
+    required TResult Function() deleteCommentSuccess,
+    required TResult Function(String error) deleteCommentError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removePickedCommentImage,
+    required TResult Function() likeCommentSuccess,
+    required TResult Function(String error) likeCommentError,
+    required TResult Function() unlikeCommentSuccess,
+    required TResult Function(String error) unlikeCommentError,
+  }) {
+    return unlikeCommentError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? streamCommentsLoading,
+    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult? Function(String error)? streamCommentsError,
+    TResult? Function()? typeNewCommentLoading,
+    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String error)? typeNewCommentError,
+    TResult? Function(File commentImage)? pickCommentImageSuccess,
+    TResult? Function(String error)? pickCommentImageError,
+    TResult? Function()? uploadCommentImageLoading,
+    TResult? Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult? Function(String error)? uploadCommentImageError,
+    TResult? Function()? deleteCommentLoading,
+    TResult? Function()? deleteCommentSuccess,
+    TResult? Function(String error)? deleteCommentError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removePickedCommentImage,
+    TResult? Function()? likeCommentSuccess,
+    TResult? Function(String error)? likeCommentError,
+    TResult? Function()? unlikeCommentSuccess,
+    TResult? Function(String error)? unlikeCommentError,
+  }) {
+    return unlikeCommentError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? streamCommentsLoading,
+    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
+    TResult Function(String error)? streamCommentsError,
+    TResult Function()? typeNewCommentLoading,
+    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String error)? typeNewCommentError,
+    TResult Function(File commentImage)? pickCommentImageSuccess,
+    TResult Function(String error)? pickCommentImageError,
+    TResult Function()? uploadCommentImageLoading,
+    TResult Function(String imageUrl)? uploadCommentImageSuccess,
+    TResult Function(String error)? uploadCommentImageError,
+    TResult Function()? deleteCommentLoading,
+    TResult Function()? deleteCommentSuccess,
+    TResult Function(String error)? deleteCommentError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removePickedCommentImage,
+    TResult Function()? likeCommentSuccess,
+    TResult Function(String error)? likeCommentError,
+    TResult Function()? unlikeCommentSuccess,
+    TResult Function(String error)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (unlikeCommentError != null) {
+      return unlikeCommentError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CommentsInitial<T> value) initial,
+    required TResult Function(StreamCommentsLoading<T> value)
+        streamCommentsLoading,
+    required TResult Function(StreamCommentsSuccess<T> value)
+        streamCommentsSuccess,
+    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
+    required TResult Function(TypeNewCommentLoading<T> value)
+        typeNewCommentLoading,
+    required TResult Function(TypeNewCommentSuccess<T> value)
+        typeNewCommentSuccess,
+    required TResult Function(TypeNewCommentError<T> value) typeNewCommentError,
+    required TResult Function(PickCommentImageSuccess<T> value)
+        pickCommentImageSuccess,
+    required TResult Function(PickCommentImageError<T> value)
+        pickCommentImageError,
+    required TResult Function(UploadCommentImageLoading<T> value)
+        uploadCommentImageLoading,
+    required TResult Function(UploadCommentImageSuccess<T> value)
+        uploadCommentImageSuccess,
+    required TResult Function(UploadCommentImageError<T> value)
+        uploadCommentImageError,
+    required TResult Function(DeleteCommentLoading<T> value)
+        deleteCommentLoading,
+    required TResult Function(DeleteCommentSuccess<T> value)
+        deleteCommentSuccess,
+    required TResult Function(DeleteCommentError<T> value) deleteCommentError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemovePickedCommentImage<T> value)
+        removePickedCommentImage,
+    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
+    required TResult Function(LikeCommentError<T> value) likeCommentError,
+    required TResult Function(UnlikeCommentSuccess<T> value)
+        unlikeCommentSuccess,
+    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
+  }) {
+    return unlikeCommentError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CommentsInitial<T> value)? initial,
+    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult? Function(PickCommentImageSuccess<T> value)?
+        pickCommentImageSuccess,
+    TResult? Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult? Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult? Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult? Function(UploadCommentImageError<T> value)?
+        uploadCommentImageError,
+    TResult? Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult? Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult? Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult? Function(LikeCommentError<T> value)? likeCommentError,
+    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
+  }) {
+    return unlikeCommentError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CommentsInitial<T> value)? initial,
+    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
+    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
+    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
+    TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
+    TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
+    TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
+    TResult Function(PickCommentImageSuccess<T> value)? pickCommentImageSuccess,
+    TResult Function(PickCommentImageError<T> value)? pickCommentImageError,
+    TResult Function(UploadCommentImageLoading<T> value)?
+        uploadCommentImageLoading,
+    TResult Function(UploadCommentImageSuccess<T> value)?
+        uploadCommentImageSuccess,
+    TResult Function(UploadCommentImageError<T> value)? uploadCommentImageError,
+    TResult Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
+    TResult Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
+    TResult Function(DeleteCommentError<T> value)? deleteCommentError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemovePickedCommentImage<T> value)?
+        removePickedCommentImage,
+    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
+    TResult Function(LikeCommentError<T> value)? likeCommentError,
+    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
+    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
+    required TResult orElse(),
+  }) {
+    if (unlikeCommentError != null) {
+      return unlikeCommentError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnlikeCommentError<T> implements CommentsState<T> {
+  const factory UnlikeCommentError(final String error) =
+      _$UnlikeCommentErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$UnlikeCommentErrorImplCopyWith<T, _$UnlikeCommentErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

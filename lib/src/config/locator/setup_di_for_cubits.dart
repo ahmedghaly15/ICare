@@ -123,6 +123,8 @@ class SetupDIForCubits {
         typeNewCommentUseCase: getIt.get<TypeNewCommentUseCase>(),
         uploadCommentImageUseCase: getIt.get<UploadCommentImageUseCase>(),
         deleteCommentUseCase: getIt.get<DeleteCommentUseCase>(),
+        likeCommentUseCase: getIt.get<LikeCommentUseCase>(),
+        unLikeCommentUseCase: getIt.get<UnLikeCommentUseCase>(),
       ),
     );
   }
