@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
@@ -8,14 +9,18 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments_cubit.dart';
+import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 
 class CommentItem extends StatelessWidget {
   const CommentItem({
     super.key,
     required this.comment,
+    required this.tinyTaleId,
   });
 
   final CommentModel comment;
+  final String tinyTaleId;
 
   @override
   Widget build(BuildContext context) {
@@ -73,13 +78,27 @@ class CommentItem extends StatelessWidget {
             Row(
               children: <Widget>[
                 MySizedBox.width10,
-                IconButton(
-                  padding: EdgeInsets.all(6.h),
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    AppAssets.svgsHeartCommentIcon,
-                  ),
-                ),
+                StreamBuilder<bool>(
+                    stream: comment.commentId != null
+                        ? context.read<CommentsCubit>().isCommentLikedByMe(
+                              LikeParams(
+                                tinyTaleId: tinyTaleId,
+                                context: context,
+                                commentId: comment.commentId,
+                              ),
+                            )
+                        : const Stream<bool>.empty(),
+                    builder: (context, snapshot) {
+                      bool isCommentLikedByMe = snapshot.data ?? false;
+
+                      return IconButton(
+                        padding: EdgeInsets.all(6.h),
+                        onPressed: () {},
+                        icon: SvgPicture.asset(
+                          AppAssets.svgsHeartCommentIcon,
+                        ),
+                      );
+                    }),
                 Text(
                   '12',
                   style: AppTextStyles.textStyle13Regular(context).copyWith(

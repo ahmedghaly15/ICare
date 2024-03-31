@@ -9,8 +9,11 @@ import 'package:icare/src/features/comments/data/datasources/comments_remote_dat
 import 'package:icare/src/features/comments/data/repositories/comments_repo_impl.dart';
 import 'package:icare/src/features/comments/domain/repositories/comments_repo.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart';
+import 'package:icare/src/features/comments/domain/usecases/is_comment_liked_by_me.dart';
+import 'package:icare/src/features/comments/domain/usecases/like_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/stream_comments.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment.dart';
+import 'package:icare/src/features/comments/domain/usecases/unlike_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/upload_comment_image.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments_cubit.dart';
 import 'package:icare/src/features/icare_bot/data/datasources/icare_bot_local_datasource.dart';

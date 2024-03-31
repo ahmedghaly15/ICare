@@ -178,6 +178,28 @@ class CommentsCubit extends Cubit<CommentsState> {
     });
   }
 
+  void likeComment(LikeParams params) async {
+    final result = await likeCommentUseCase(params);
+    result.when(
+      success: (_) => emit(const CommentsState.likeCommentSuccess()),
+      error: (error) =>
+          emit(CommentsState.likeCommentError(error.failureMsg ?? '')),
+    );
+  }
+
+  void unlikeComment(LikeParams params) async {
+    final result = await unLikeCommentUseCase(params);
+    result.when(
+      success: (_) => emit(const CommentsState.unlikeCommentSuccess()),
+      error: (error) =>
+          emit(CommentsState.unlikeCommentError(error.failureMsg ?? '')),
+    );
+  }
+
+    Stream<bool> isCommentLikedByMe(LikeParams params) {
+    return isCommentLikedByMeUseCase(params);
+  }
+
   void removePickedCommentImage() {
     commentImage = null;
     emit(const CommentsState.removePickedCommentImage());
@@ -185,10 +207,6 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   void setNewTextValue(String text) {
     emit(CommentsState.setNewTextValue(text));
-  }
-
-  Stream<bool> isCommentLikedByMe(LikeParams params) {
-    return isCommentLikedByMeUseCase(params);
   }
 
   void handleCommentsState(

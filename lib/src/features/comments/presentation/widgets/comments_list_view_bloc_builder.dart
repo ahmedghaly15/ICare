@@ -48,6 +48,7 @@ class CommentsListViewBlocBuilder extends StatelessWidget {
                 horizontal: 9.w,
               ),
               itemBuilder: (_, index) => CommentItem(
+                tinyTaleId: tinyTaleId,
                 comment: context.read<CommentsCubit>().comments[index],
               ),
               itemCount: context.read<CommentsCubit>().comments.length,

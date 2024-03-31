@@ -20,4 +20,5 @@ abstract class CommentsRepo {
   Future<FirebaseRequestResult<void>> deleteComment(DeleteCommentParams params);
   Future<FirebaseRequestResult<void>> likeComment(LikeParams params);
   Future<FirebaseRequestResult<void>> unLikeComment(LikeParams params);
+  Stream<bool> isCommentLikedByMe(LikeParams params);
 }
