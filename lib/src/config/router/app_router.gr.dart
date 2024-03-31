@@ -45,6 +45,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
+    CommentsRoute.name: (routeData) {
+      final args = routeData.argsAs<CommentsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: CommentsView(
+          key: args.key,
+          tinyTaleId: args.tinyTaleId,
+        )),
+      );
+    },
     EmergencyDiseaseDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<EmergencyDiseaseDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -240,6 +251,44 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
   static const String name = 'BottomNavBarRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CommentsView]
+class CommentsRoute extends PageRouteInfo<CommentsRouteArgs> {
+  CommentsRoute({
+    Key? key,
+    required String tinyTaleId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CommentsRoute.name,
+          args: CommentsRouteArgs(
+            key: key,
+            tinyTaleId: tinyTaleId,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CommentsRoute';
+
+  static const PageInfo<CommentsRouteArgs> page =
+      PageInfo<CommentsRouteArgs>(name);
+}
+
+class CommentsRouteArgs {
+  const CommentsRouteArgs({
+    this.key,
+    required this.tinyTaleId,
+  });
+
+  final Key? key;
+
+  final String tinyTaleId;
+
+  @override
+  String toString() {
+    return 'CommentsRouteArgs{key: $key, tinyTaleId: $tinyTaleId}';
+  }
 }
 
 /// generated route for
