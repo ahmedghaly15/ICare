@@ -12,7 +12,7 @@ import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart'
 import 'package:icare/src/features/comments/domain/usecases/stream_comments.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/upload_comment_image.dart';
-import 'package:icare/src/features/comments/presentation/cubit/comments_cubit.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments_cubit.dart';
 import 'package:icare/src/features/icare_bot/data/datasources/icare_bot_local_datasource.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/bookmark_icare_bot_message.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/delete_bookmark.dart';
