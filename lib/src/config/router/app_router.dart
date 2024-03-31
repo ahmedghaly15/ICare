@@ -10,6 +10,8 @@ import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/baby/presentation/views/baby_view.dart';
 import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/views/baby_cry_predictor_view.dart';
+import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
+import 'package:icare/src/features/comments/presentation/views/comment_replies_view.dart';
 import 'package:icare/src/features/comments/presentation/views/comments_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/emergency_disease_details_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/medical_info_disease_details_view.dart';

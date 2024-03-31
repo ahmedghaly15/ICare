@@ -45,6 +45,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
+    CommentRepliesRoute.name: (routeData) {
+      final args = routeData.argsAs<CommentRepliesRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: CommentRepliesView(
+          key: args.key,
+          params: args.params,
+        )),
+      );
+    },
     CommentsRoute.name: (routeData) {
       final args = routeData.argsAs<CommentsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -251,6 +262,44 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
   static const String name = 'BottomNavBarRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CommentRepliesView]
+class CommentRepliesRoute extends PageRouteInfo<CommentRepliesRouteArgs> {
+  CommentRepliesRoute({
+    Key? key,
+    required CommentRepliesViewParams params,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CommentRepliesRoute.name,
+          args: CommentRepliesRouteArgs(
+            key: key,
+            params: params,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CommentRepliesRoute';
+
+  static const PageInfo<CommentRepliesRouteArgs> page =
+      PageInfo<CommentRepliesRouteArgs>(name);
+}
+
+class CommentRepliesRouteArgs {
+  const CommentRepliesRouteArgs({
+    this.key,
+    required this.params,
+  });
+
+  final Key? key;
+
+  final CommentRepliesViewParams params;
+
+  @override
+  String toString() {
+    return 'CommentRepliesRouteArgs{key: $key, params: $params}';
+  }
 }
 
 /// generated route for
