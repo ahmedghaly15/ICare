@@ -14,6 +14,6 @@ LikeModel _$LikeModelFromJson(Map<String, dynamic> json) => LikeModel(
     );
 
 Map<String, dynamic> _$LikeModelToJson(LikeModel instance) => <String, dynamic>{
-      'user': instance.user,
+      'user': instance.user?.toJson(),
       'dateTime': instance.dateTime,
     };

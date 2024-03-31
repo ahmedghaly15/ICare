@@ -64,7 +64,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
       dateTime: DateTime.now().toString(),
     );
 
-    return _accessLikesCollection(params.tinyTaleId)
+    return await _accessLikesCollection(params.tinyTaleId)
         .doc(Helper.uId)
         .set(like.toJson());
   }
