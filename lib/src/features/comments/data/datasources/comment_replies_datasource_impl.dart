@@ -62,12 +62,19 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
       dateTime: DateTime.now().toString(),
     );
 
-    return await _accessCommentRepliesCollection(
+    return await _accessCommentReplyLikesCollection(params)
+        .doc(Helper.uId)
+        .set(like.toJson());
+  }
+
+  CollectionReference<Map<String, dynamic>> _accessCommentReplyLikesCollection(
+      LikeParams params) {
+    return _accessCommentRepliesCollection(
       CommentRepliesViewParams(
         commentId: params.commentId!,
         tinyTaleId: params.tinyTaleId,
       ),
-    ).doc(Helper.uId).set(like.toJson());
+    ).doc(params.commentId).collection(AppStrings.replyLikes);
   }
 
   @override
@@ -94,12 +101,9 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
 
   @override
   Future<void> unLikeCommentReply(LikeParams params) async {
-    return await _accessCommentRepliesCollection(
-      CommentRepliesViewParams(
-        commentId: params.commentId!,
-        tinyTaleId: params.tinyTaleId,
-      ),
-    ).doc(Helper.uId).delete();
+    return await _accessCommentReplyLikesCollection(params)
+        .doc(Helper.uId)
+        .delete();
   }
 
   @override

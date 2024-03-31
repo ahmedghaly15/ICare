@@ -20,7 +20,7 @@ import 'package:icare/src/features/comments/domain/usecases/stream_comments.dart
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/unlike_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/upload_comment_image.dart';
-import 'package:icare/src/features/comments/presentation/cubits/comments_state.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments/comments_state.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
