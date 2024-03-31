@@ -19,7 +19,12 @@ class SendMessageIconButtonBlocBuilder extends StatelessWidget {
         if (state is Loading) {
           return const CustomCircularProgressIndicator();
         }
-        return CustomSendMessageIconButton(isEnabled: isEnabled);
+        return CustomSendMessageIconButton(
+          isEnabled: isEnabled,
+          onPressed: isEnabled
+              ? () => context.read<ICareBotCubit>().askICareBot(context)
+              : null,
+        );
       },
     );
   }

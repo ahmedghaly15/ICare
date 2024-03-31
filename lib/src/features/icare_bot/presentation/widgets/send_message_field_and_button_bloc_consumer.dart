@@ -17,14 +17,16 @@ class SendMessageFieldAndButtonBlocConsumer extends StatelessWidget {
           context.read<ICareBotCubit>().handleICareBotState(state, context),
       builder: (context, state) => Row(
         children: <Widget>[
-          SendMessageTextField(
-            enabled:
-                context.read<ICareBotCubit>().isSendMessageTextFieldEnabled,
-            controller: context.read<ICareBotCubit>().textController,
-            hintText: 'Ask ICare Bot...',
-            onChanged: (String val) {
-              context.read<ICareBotCubit>().setNewTextValue(val);
-            },
+          Expanded(
+            child: SendMessageTextField(
+              enabled:
+                  context.read<ICareBotCubit>().isSendMessageTextFieldEnabled,
+              controller: context.read<ICareBotCubit>().textController,
+              hintText: 'Ask ICare Bot...',
+              onChanged: (String val) {
+                context.read<ICareBotCubit>().setNewTextValue(val);
+              },
+            ),
           ),
           SizedBox.square(dimension: 8.h),
           SendMessageIconButtonBlocBuilder(

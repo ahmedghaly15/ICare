@@ -65,8 +65,6 @@ class ICareBotCubit extends Cubit<ICareBotState> {
         emit(ICareBotState.error(error.failureMsg ?? ''));
       },
     );
-
-    textController.clear();
   }
 
   void _handleAskICareBotSuccess(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/widgets/remove_picked_image_icon_button.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/new_tiny_tale/new_tiny_tale_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/new_tiny_tale/new_tiny_tale_state.dart';
 
@@ -33,23 +33,9 @@ class NewTinyTaleImageBlocBuilder extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                top: 10.h,
-                right: 10.w,
-                child: CircleAvatar(
-                  radius: 15.r,
-                  backgroundColor: AppColors.primaryColor,
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () =>
-                        context.read<NewTinyTaleCubit>().removeTinyTaleImage(),
-                    icon: Icon(
-                      Icons.close,
-                      color: Colors.white,
-                      size: 20.w,
-                    ),
-                  ),
-                ),
+              RemovePickedImageIconButton(
+                onPressed: () =>
+                    context.read<NewTinyTaleCubit>().removeTinyTaleImage(),
               ),
             ],
           );
