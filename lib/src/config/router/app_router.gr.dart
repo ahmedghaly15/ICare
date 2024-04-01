@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BabyView(),
       );
     },
+    BookmarkedTinyTalesRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BookmarkedTinyTalesView(),
+      );
+    },
     BookmarksRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -232,6 +238,20 @@ class BabyRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'BabyRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BookmarkedTinyTalesView]
+class BookmarkedTinyTalesRoute extends PageRouteInfo<void> {
+  const BookmarkedTinyTalesRoute({List<PageRouteInfo>? children})
+      : super(
+          BookmarkedTinyTalesRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BookmarkedTinyTalesRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
