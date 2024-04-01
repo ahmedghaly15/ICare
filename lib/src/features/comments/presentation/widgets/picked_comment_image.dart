@@ -1,12 +1,19 @@
+import 'dart:io';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/remove_picked_image_icon_button.dart';
-import 'package:icare/src/features/comments/presentation/cubits/comments_cubit.dart';
 
 class PickedCommentImage extends StatelessWidget {
-  const PickedCommentImage({super.key});
+  const PickedCommentImage({
+    super.key,
+    required this.image,
+    required this.removeButtonOnPressed,
+  });
+
+  final File image;
+  final VoidCallback removeButtonOnPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -28,14 +35,13 @@ class PickedCommentImage extends StatelessWidget {
                 Radius.circular(8.r),
               ),
               image: DecorationImage(
-                fit: BoxFit.fill,
-                image: FileImage(context.read<CommentsCubit>().commentImage!),
+                fit: BoxFit.cover,
+                image: FileImage(image),
               ),
             ),
           ),
           RemovePickedImageIconButton(
-            onPressed: () =>
-                context.read<CommentsCubit>().removePickedCommentImage(),
+            onPressed: removeButtonOnPressed,
           ),
         ],
       ),
