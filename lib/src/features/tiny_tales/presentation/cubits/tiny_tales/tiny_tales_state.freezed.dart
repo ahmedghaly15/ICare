@@ -29,6 +29,16 @@ mixin _$TinyTalesState<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +54,15 @@ mixin _$TinyTalesState<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +78,15 @@ mixin _$TinyTalesState<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,6 +106,24 @@ mixin _$TinyTalesState<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +139,23 @@ mixin _$TinyTalesState<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,6 +171,20 @@ mixin _$TinyTalesState<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -181,6 +258,16 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return initial();
   }
@@ -199,6 +286,15 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return initial?.call();
   }
@@ -217,6 +313,15 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,6 +347,24 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return initial(this);
   }
@@ -260,6 +383,23 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return initial?.call(this);
   }
@@ -278,6 +418,20 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -341,6 +495,16 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleSuccess();
   }
@@ -359,6 +523,15 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleSuccess?.call();
   }
@@ -377,6 +550,15 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -402,6 +584,24 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleSuccess(this);
   }
@@ -420,6 +620,23 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleSuccess?.call(this);
   }
@@ -438,6 +655,20 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -528,6 +759,16 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleError(error);
   }
@@ -546,6 +787,15 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleError?.call(error);
   }
@@ -564,6 +814,15 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -589,6 +848,24 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleError(this);
   }
@@ -607,6 +884,23 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return likeTinyTaleError?.call(this);
   }
@@ -625,6 +919,20 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -697,6 +1005,16 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleSuccess();
   }
@@ -715,6 +1033,15 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleSuccess?.call();
   }
@@ -733,6 +1060,15 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -758,6 +1094,24 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleSuccess(this);
   }
@@ -776,6 +1130,23 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleSuccess?.call(this);
   }
@@ -794,6 +1165,20 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -883,6 +1268,16 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleError(error);
   }
@@ -901,6 +1296,15 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleError?.call(error);
   }
@@ -919,6 +1323,15 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -944,6 +1357,24 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleError(this);
   }
@@ -962,6 +1393,23 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return unlikeTinyTaleError?.call(this);
   }
@@ -980,6 +1428,20 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -1052,6 +1514,16 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleLoading();
   }
@@ -1070,6 +1542,15 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleLoading?.call();
   }
@@ -1088,6 +1569,15 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -1113,6 +1603,24 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleLoading(this);
   }
@@ -1131,6 +1639,23 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleLoading?.call(this);
   }
@@ -1149,6 +1674,20 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -1215,6 +1754,16 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleSuccess();
   }
@@ -1233,6 +1782,15 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleSuccess?.call();
   }
@@ -1251,6 +1809,15 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -1276,6 +1843,24 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleSuccess(this);
   }
@@ -1294,6 +1879,23 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleSuccess?.call(this);
   }
@@ -1312,6 +1914,20 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -1401,6 +2017,16 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleError(error);
   }
@@ -1419,6 +2045,15 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleError?.call(error);
   }
@@ -1437,6 +2072,15 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -1462,6 +2106,24 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleError(this);
   }
@@ -1480,6 +2142,23 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return deleteTinyTaleError?.call(this);
   }
@@ -1498,6 +2177,20 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -1567,6 +2260,16 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesLoading();
   }
@@ -1585,6 +2288,15 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesLoading?.call();
   }
@@ -1603,6 +2315,15 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (getTinyTalesLoading != null) {
@@ -1628,6 +2349,24 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesLoading(this);
   }
@@ -1646,6 +2385,23 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesLoading?.call(this);
   }
@@ -1664,6 +2420,20 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (getTinyTalesLoading != null) {
@@ -1759,6 +2529,16 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesSuccess(data);
   }
@@ -1777,6 +2557,15 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesSuccess?.call(data);
   }
@@ -1795,6 +2584,15 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (getTinyTalesSuccess != null) {
@@ -1820,6 +2618,24 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesSuccess(this);
   }
@@ -1838,6 +2654,23 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesSuccess?.call(this);
   }
@@ -1856,6 +2689,20 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (getTinyTalesSuccess != null) {
@@ -1952,6 +2799,16 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     required TResult Function() getTinyTalesLoading,
     required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
     required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesError(error);
   }
@@ -1970,6 +2827,15 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult? Function()? getTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesError?.call(error);
   }
@@ -1988,6 +2854,15 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult Function()? getTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
     TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (getTinyTalesError != null) {
@@ -2013,6 +2888,24 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
     required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
     required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesError(this);
   }
@@ -2031,6 +2924,23 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
   }) {
     return getTinyTalesError?.call(this);
   }
@@ -2049,6 +2959,20 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
     TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
     TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
     required TResult orElse(),
   }) {
     if (getTinyTalesError != null) {
@@ -2065,5 +2989,2312 @@ abstract class GetTinyTalesError<T> implements TinyTalesState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$GetTinyTalesErrorImplCopyWith<T, _$GetTinyTalesErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BookmarkTinyTaleLoadingImplCopyWith<T, $Res> {
+  factory _$$BookmarkTinyTaleLoadingImplCopyWith(
+          _$BookmarkTinyTaleLoadingImpl<T> value,
+          $Res Function(_$BookmarkTinyTaleLoadingImpl<T>) then) =
+      __$$BookmarkTinyTaleLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$BookmarkTinyTaleLoadingImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$BookmarkTinyTaleLoadingImpl<T>>
+    implements _$$BookmarkTinyTaleLoadingImplCopyWith<T, $Res> {
+  __$$BookmarkTinyTaleLoadingImplCopyWithImpl(
+      _$BookmarkTinyTaleLoadingImpl<T> _value,
+      $Res Function(_$BookmarkTinyTaleLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BookmarkTinyTaleLoadingImpl<T> implements BookmarkTinyTaleLoading<T> {
+  const _$BookmarkTinyTaleLoadingImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.bookmarkTinyTaleLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BookmarkTinyTaleLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (bookmarkTinyTaleLoading != null) {
+      return bookmarkTinyTaleLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (bookmarkTinyTaleLoading != null) {
+      return bookmarkTinyTaleLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarkTinyTaleLoading<T> implements TinyTalesState<T> {
+  const factory BookmarkTinyTaleLoading() = _$BookmarkTinyTaleLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$BookmarkTinyTaleSuccessImplCopyWith<T, $Res> {
+  factory _$$BookmarkTinyTaleSuccessImplCopyWith(
+          _$BookmarkTinyTaleSuccessImpl<T> value,
+          $Res Function(_$BookmarkTinyTaleSuccessImpl<T>) then) =
+      __$$BookmarkTinyTaleSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$BookmarkTinyTaleSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$BookmarkTinyTaleSuccessImpl<T>>
+    implements _$$BookmarkTinyTaleSuccessImplCopyWith<T, $Res> {
+  __$$BookmarkTinyTaleSuccessImplCopyWithImpl(
+      _$BookmarkTinyTaleSuccessImpl<T> _value,
+      $Res Function(_$BookmarkTinyTaleSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BookmarkTinyTaleSuccessImpl<T> implements BookmarkTinyTaleSuccess<T> {
+  const _$BookmarkTinyTaleSuccessImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.bookmarkTinyTaleSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BookmarkTinyTaleSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (bookmarkTinyTaleSuccess != null) {
+      return bookmarkTinyTaleSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (bookmarkTinyTaleSuccess != null) {
+      return bookmarkTinyTaleSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarkTinyTaleSuccess<T> implements TinyTalesState<T> {
+  const factory BookmarkTinyTaleSuccess() = _$BookmarkTinyTaleSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$BookmarkTinyTaleErrorImplCopyWith<T, $Res> {
+  factory _$$BookmarkTinyTaleErrorImplCopyWith(
+          _$BookmarkTinyTaleErrorImpl<T> value,
+          $Res Function(_$BookmarkTinyTaleErrorImpl<T>) then) =
+      __$$BookmarkTinyTaleErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$BookmarkTinyTaleErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$BookmarkTinyTaleErrorImpl<T>>
+    implements _$$BookmarkTinyTaleErrorImplCopyWith<T, $Res> {
+  __$$BookmarkTinyTaleErrorImplCopyWithImpl(
+      _$BookmarkTinyTaleErrorImpl<T> _value,
+      $Res Function(_$BookmarkTinyTaleErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$BookmarkTinyTaleErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BookmarkTinyTaleErrorImpl<T> implements BookmarkTinyTaleError<T> {
+  const _$BookmarkTinyTaleErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.bookmarkTinyTaleError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BookmarkTinyTaleErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BookmarkTinyTaleErrorImplCopyWith<T, _$BookmarkTinyTaleErrorImpl<T>>
+      get copyWith => __$$BookmarkTinyTaleErrorImplCopyWithImpl<T,
+          _$BookmarkTinyTaleErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (bookmarkTinyTaleError != null) {
+      return bookmarkTinyTaleError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return bookmarkTinyTaleError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (bookmarkTinyTaleError != null) {
+      return bookmarkTinyTaleError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarkTinyTaleError<T> implements TinyTalesState<T> {
+  const factory BookmarkTinyTaleError(final String error) =
+      _$BookmarkTinyTaleErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$BookmarkTinyTaleErrorImplCopyWith<T, _$BookmarkTinyTaleErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UnBookmarkTinyTaleLoadingImplCopyWith<T, $Res> {
+  factory _$$UnBookmarkTinyTaleLoadingImplCopyWith(
+          _$UnBookmarkTinyTaleLoadingImpl<T> value,
+          $Res Function(_$UnBookmarkTinyTaleLoadingImpl<T>) then) =
+      __$$UnBookmarkTinyTaleLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UnBookmarkTinyTaleLoadingImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$UnBookmarkTinyTaleLoadingImpl<T>>
+    implements _$$UnBookmarkTinyTaleLoadingImplCopyWith<T, $Res> {
+  __$$UnBookmarkTinyTaleLoadingImplCopyWithImpl(
+      _$UnBookmarkTinyTaleLoadingImpl<T> _value,
+      $Res Function(_$UnBookmarkTinyTaleLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UnBookmarkTinyTaleLoadingImpl<T>
+    implements UnBookmarkTinyTaleLoading<T> {
+  const _$UnBookmarkTinyTaleLoadingImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.unBookmarkTinyTaleLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnBookmarkTinyTaleLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (unBookmarkTinyTaleLoading != null) {
+      return unBookmarkTinyTaleLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (unBookmarkTinyTaleLoading != null) {
+      return unBookmarkTinyTaleLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnBookmarkTinyTaleLoading<T> implements TinyTalesState<T> {
+  const factory UnBookmarkTinyTaleLoading() =
+      _$UnBookmarkTinyTaleLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UnBookmarkTinyTaleSuccessImplCopyWith<T, $Res> {
+  factory _$$UnBookmarkTinyTaleSuccessImplCopyWith(
+          _$UnBookmarkTinyTaleSuccessImpl<T> value,
+          $Res Function(_$UnBookmarkTinyTaleSuccessImpl<T>) then) =
+      __$$UnBookmarkTinyTaleSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UnBookmarkTinyTaleSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$UnBookmarkTinyTaleSuccessImpl<T>>
+    implements _$$UnBookmarkTinyTaleSuccessImplCopyWith<T, $Res> {
+  __$$UnBookmarkTinyTaleSuccessImplCopyWithImpl(
+      _$UnBookmarkTinyTaleSuccessImpl<T> _value,
+      $Res Function(_$UnBookmarkTinyTaleSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UnBookmarkTinyTaleSuccessImpl<T>
+    implements UnBookmarkTinyTaleSuccess<T> {
+  const _$UnBookmarkTinyTaleSuccessImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.unBookmarkTinyTaleSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnBookmarkTinyTaleSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (unBookmarkTinyTaleSuccess != null) {
+      return unBookmarkTinyTaleSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (unBookmarkTinyTaleSuccess != null) {
+      return unBookmarkTinyTaleSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnBookmarkTinyTaleSuccess<T> implements TinyTalesState<T> {
+  const factory UnBookmarkTinyTaleSuccess() =
+      _$UnBookmarkTinyTaleSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UnBookmarkTinyTaleErrorImplCopyWith<T, $Res> {
+  factory _$$UnBookmarkTinyTaleErrorImplCopyWith(
+          _$UnBookmarkTinyTaleErrorImpl<T> value,
+          $Res Function(_$UnBookmarkTinyTaleErrorImpl<T>) then) =
+      __$$UnBookmarkTinyTaleErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UnBookmarkTinyTaleErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$UnBookmarkTinyTaleErrorImpl<T>>
+    implements _$$UnBookmarkTinyTaleErrorImplCopyWith<T, $Res> {
+  __$$UnBookmarkTinyTaleErrorImplCopyWithImpl(
+      _$UnBookmarkTinyTaleErrorImpl<T> _value,
+      $Res Function(_$UnBookmarkTinyTaleErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UnBookmarkTinyTaleErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UnBookmarkTinyTaleErrorImpl<T> implements UnBookmarkTinyTaleError<T> {
+  const _$UnBookmarkTinyTaleErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.unBookmarkTinyTaleError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UnBookmarkTinyTaleErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UnBookmarkTinyTaleErrorImplCopyWith<T, _$UnBookmarkTinyTaleErrorImpl<T>>
+      get copyWith => __$$UnBookmarkTinyTaleErrorImplCopyWithImpl<T,
+          _$UnBookmarkTinyTaleErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (unBookmarkTinyTaleError != null) {
+      return unBookmarkTinyTaleError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return unBookmarkTinyTaleError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (unBookmarkTinyTaleError != null) {
+      return unBookmarkTinyTaleError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnBookmarkTinyTaleError<T> implements TinyTalesState<T> {
+  const factory UnBookmarkTinyTaleError(final String error) =
+      _$UnBookmarkTinyTaleErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$UnBookmarkTinyTaleErrorImplCopyWith<T, _$UnBookmarkTinyTaleErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetBookmarkedTinyTalesLoadingImplCopyWith<T, $Res> {
+  factory _$$GetBookmarkedTinyTalesLoadingImplCopyWith(
+          _$GetBookmarkedTinyTalesLoadingImpl<T> value,
+          $Res Function(_$GetBookmarkedTinyTalesLoadingImpl<T>) then) =
+      __$$GetBookmarkedTinyTalesLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetBookmarkedTinyTalesLoadingImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$GetBookmarkedTinyTalesLoadingImpl<T>>
+    implements _$$GetBookmarkedTinyTalesLoadingImplCopyWith<T, $Res> {
+  __$$GetBookmarkedTinyTalesLoadingImplCopyWithImpl(
+      _$GetBookmarkedTinyTalesLoadingImpl<T> _value,
+      $Res Function(_$GetBookmarkedTinyTalesLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetBookmarkedTinyTalesLoadingImpl<T>
+    implements GetBookmarkedTinyTalesLoading<T> {
+  const _$GetBookmarkedTinyTalesLoadingImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.getBookmarkedTinyTalesLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBookmarkedTinyTalesLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (getBookmarkedTinyTalesLoading != null) {
+      return getBookmarkedTinyTalesLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (getBookmarkedTinyTalesLoading != null) {
+      return getBookmarkedTinyTalesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBookmarkedTinyTalesLoading<T> implements TinyTalesState<T> {
+  const factory GetBookmarkedTinyTalesLoading() =
+      _$GetBookmarkedTinyTalesLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetBookmarkedTinyTalesSuccessImplCopyWith<T, $Res> {
+  factory _$$GetBookmarkedTinyTalesSuccessImplCopyWith(
+          _$GetBookmarkedTinyTalesSuccessImpl<T> value,
+          $Res Function(_$GetBookmarkedTinyTalesSuccessImpl<T>) then) =
+      __$$GetBookmarkedTinyTalesSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<TinyTale> data});
+}
+
+/// @nodoc
+class __$$GetBookmarkedTinyTalesSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$GetBookmarkedTinyTalesSuccessImpl<T>>
+    implements _$$GetBookmarkedTinyTalesSuccessImplCopyWith<T, $Res> {
+  __$$GetBookmarkedTinyTalesSuccessImplCopyWithImpl(
+      _$GetBookmarkedTinyTalesSuccessImpl<T> _value,
+      $Res Function(_$GetBookmarkedTinyTalesSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GetBookmarkedTinyTalesSuccessImpl<T>(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<TinyTale>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBookmarkedTinyTalesSuccessImpl<T>
+    implements GetBookmarkedTinyTalesSuccess<T> {
+  const _$GetBookmarkedTinyTalesSuccessImpl(final List<TinyTale> data)
+      : _data = data;
+
+  final List<TinyTale> _data;
+  @override
+  List<TinyTale> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.getBookmarkedTinyTalesSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBookmarkedTinyTalesSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBookmarkedTinyTalesSuccessImplCopyWith<T,
+          _$GetBookmarkedTinyTalesSuccessImpl<T>>
+      get copyWith => __$$GetBookmarkedTinyTalesSuccessImplCopyWithImpl<T,
+          _$GetBookmarkedTinyTalesSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (getBookmarkedTinyTalesSuccess != null) {
+      return getBookmarkedTinyTalesSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (getBookmarkedTinyTalesSuccess != null) {
+      return getBookmarkedTinyTalesSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBookmarkedTinyTalesSuccess<T> implements TinyTalesState<T> {
+  const factory GetBookmarkedTinyTalesSuccess(final List<TinyTale> data) =
+      _$GetBookmarkedTinyTalesSuccessImpl<T>;
+
+  List<TinyTale> get data;
+  @JsonKey(ignore: true)
+  _$$GetBookmarkedTinyTalesSuccessImplCopyWith<T,
+          _$GetBookmarkedTinyTalesSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetBookmarkedTinyTalesErrorImplCopyWith<T, $Res> {
+  factory _$$GetBookmarkedTinyTalesErrorImplCopyWith(
+          _$GetBookmarkedTinyTalesErrorImpl<T> value,
+          $Res Function(_$GetBookmarkedTinyTalesErrorImpl<T>) then) =
+      __$$GetBookmarkedTinyTalesErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetBookmarkedTinyTalesErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$GetBookmarkedTinyTalesErrorImpl<T>>
+    implements _$$GetBookmarkedTinyTalesErrorImplCopyWith<T, $Res> {
+  __$$GetBookmarkedTinyTalesErrorImplCopyWithImpl(
+      _$GetBookmarkedTinyTalesErrorImpl<T> _value,
+      $Res Function(_$GetBookmarkedTinyTalesErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetBookmarkedTinyTalesErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBookmarkedTinyTalesErrorImpl<T>
+    implements GetBookmarkedTinyTalesError<T> {
+  const _$GetBookmarkedTinyTalesErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.getBookmarkedTinyTalesError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBookmarkedTinyTalesErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBookmarkedTinyTalesErrorImplCopyWith<T,
+          _$GetBookmarkedTinyTalesErrorImpl<T>>
+      get copyWith => __$$GetBookmarkedTinyTalesErrorImplCopyWithImpl<T,
+          _$GetBookmarkedTinyTalesErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (getBookmarkedTinyTalesError != null) {
+      return getBookmarkedTinyTalesError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+  }) {
+    return getBookmarkedTinyTalesError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    required TResult orElse(),
+  }) {
+    if (getBookmarkedTinyTalesError != null) {
+      return getBookmarkedTinyTalesError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBookmarkedTinyTalesError<T> implements TinyTalesState<T> {
+  const factory GetBookmarkedTinyTalesError(final String error) =
+      _$GetBookmarkedTinyTalesErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetBookmarkedTinyTalesErrorImplCopyWith<T,
+          _$GetBookmarkedTinyTalesErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

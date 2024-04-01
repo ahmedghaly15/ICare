@@ -21,4 +21,22 @@ class TinyTalesState<T> with _$TinyTalesState<T> {
       GetTinyTalesSuccess<T>;
   const factory TinyTalesState.getTinyTalesError(String error) =
       GetTinyTalesError;
+  const factory TinyTalesState.bookmarkTinyTaleLoading() =
+      BookmarkTinyTaleLoading;
+  const factory TinyTalesState.bookmarkTinyTaleSuccess() =
+      BookmarkTinyTaleSuccess;
+  const factory TinyTalesState.bookmarkTinyTaleError(String error) =
+      BookmarkTinyTaleError<T>;
+  const factory TinyTalesState.unBookmarkTinyTaleLoading() =
+      UnBookmarkTinyTaleLoading;
+  const factory TinyTalesState.unBookmarkTinyTaleSuccess() =
+      UnBookmarkTinyTaleSuccess;
+  const factory TinyTalesState.unBookmarkTinyTaleError(String error) =
+      UnBookmarkTinyTaleError<T>;
+  const factory TinyTalesState.getBookmarkedTinyTalesLoading() =
+      GetBookmarkedTinyTalesLoading;
+  const factory TinyTalesState.getBookmarkedTinyTalesSuccess(
+      List<TinyTale> data) = GetBookmarkedTinyTalesSuccess<T>;
+  const factory TinyTalesState.getBookmarkedTinyTalesError(String error) =
+      GetBookmarkedTinyTalesError<T>;
 }
