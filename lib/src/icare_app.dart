@@ -32,7 +32,6 @@ class ICareApp extends StatelessWidget {
             create: (context) => getIt.get<UserCubit>()..getCurrentUser(),
           ),
           BlocProvider<TinyTalesCubit>(
-            // lazy: false,
             create: (_) => getIt.get<TinyTalesCubit>()..getTinyTales(),
           ),
           BlocProvider<MedicalCubit>(

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_state.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/empty_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_item.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tales_loading_sliver_list.dart';
 
@@ -19,14 +20,16 @@ class TinyTalesBlocBuilder extends StatelessWidget {
           current is GetTinyTalesError,
       builder: (context, state) {
         if (state is GetTinyTalesSuccess) {
-          return SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => ElasticIn(
-                child: TinyTaleItem(tinyTale: state.data[index]),
-              ),
-              childCount: state.data.length,
-            ),
-          );
+          return state.data.isNotEmpty
+              ? SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) => ElasticIn(
+                      child: TinyTaleItem(tinyTale: state.data[index]),
+                    ),
+                    childCount: state.data.length,
+                  ),
+                )
+              : const EmptyTinyTales();
         } else if (state is GetTinyTalesError) {
           return SliverFillRemaining(
             hasScrollBody: false,

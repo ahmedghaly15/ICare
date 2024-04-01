@@ -8,7 +8,7 @@ import 'package:icare/src/features/comments/data/models/comment_replies_view_par
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_item_content.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_like_icon_button_stream_builder.dart';
-import 'package:icare/src/features/comments/presentation/widgets/comment_likes_stream_text.dart';
+import 'package:icare/src/features/comments/presentation/widgets/query_snapshot_text_stream_builder.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 
 class CommentReplyItem extends StatelessWidget {

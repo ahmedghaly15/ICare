@@ -179,6 +179,10 @@ class AppAssets {
   /// assets/svgs/medical_icon.svg
   static const String svgsMedicalIcon = "assets/svgs/medical_icon.svg";
 
+  /// Assets for svgsNoTinyTales
+  /// assets/svgs/no_tiny_tales.svg
+  static const String svgsNoTinyTales = "assets/svgs/no_tiny_tales.svg";
+
   /// Assets for svgsOrangeBookmarkIcon
   /// assets/svgs/orange_bookmark_icon.svg
   static const String svgsOrangeBookmarkIcon =
