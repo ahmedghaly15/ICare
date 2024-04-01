@@ -109,6 +109,8 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
       _accessBookmarkedTinyTalesCollection() {
     return getIt
         .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection)
+        .doc(Helper.uId)
         .collection(AppStrings.bookmarkedTinyTalesCollection);
   }
 
@@ -124,5 +126,15 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
     return await _accessBookmarkedTinyTalesCollection()
         .doc(tinyTaleId)
         .delete();
+  }
+
+  @override
+  Future<QuerySnapshot<Map<String, dynamic>>> getBookmarkedTinyTales() async {
+    return await _accessBookmarkedTinyTalesCollection()
+        .orderBy(
+          AppStrings.dateTime,
+          descending: true,
+        )
+        .getQuerySnapshot();
   }
 }

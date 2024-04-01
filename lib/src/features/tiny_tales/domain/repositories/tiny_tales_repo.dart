@@ -25,4 +25,6 @@ abstract class TinyTalesRepo {
   Future<FirebaseRequestResult<void>> bookmarkTinyTale(TinyTale tinyTale);
 
   Future<FirebaseRequestResult<void>> unBookmarkTinyTale(String tinyTaleId);
+
+  Future<FirebaseRequestResult<List<TinyTale>>> getBookmarkedTinyTales();
 }

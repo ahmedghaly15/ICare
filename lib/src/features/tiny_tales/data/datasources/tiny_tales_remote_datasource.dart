@@ -26,4 +26,6 @@ abstract class TinyTalesRemoteDatasource {
   Future<void> bookmarkTinyTale(TinyTale tinyTale);
 
   Future<void> unBookmarkTinyTale(String tinyTaleId);
+
+  Future<QuerySnapshot<Map<String, dynamic>>> getBookmarkedTinyTales();
 }

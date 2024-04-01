@@ -88,4 +88,16 @@ class TinyTalesRepoImpl implements TinyTalesRepo {
           await _tinyTalesRemoteDatasource.unBookmarkTinyTale(tinyTaleId),
     );
   }
+
+  @override
+  Future<FirebaseRequestResult<List<TinyTale>>> getBookmarkedTinyTales() {
+    return executeAndHandleFirebaseErrors(() async {
+      final QuerySnapshot<Map<String, dynamic>> querySnapshot =
+          await _tinyTalesRemoteDatasource.getBookmarkedTinyTales();
+
+      return querySnapshot.docs
+          .map((doc) => TinyTale.fromJson(doc.data()))
+          .toList();
+    });
+  }
 }
