@@ -84,29 +84,32 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<CreateTinyTaleUseCase>(
       () => CreateTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );
-
     getIt.registerLazySingleton<GetTinyTalesUseCase>(
       () => GetTinyTalesUseCase(getIt.get<TinyTalesRepo>()),
     );
-
     getIt.registerLazySingleton<LikeTinyTaleUseCase>(
       () => LikeTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );
-
     getIt.registerLazySingleton<UnLikeTinyTaleUseCase>(
       () => UnLikeTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );
-
     getIt.registerLazySingleton<DeleteTinyTaleUseCase>(
       () => DeleteTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );
-
     getIt.registerLazySingleton<UploadTinyTaleImageUseCase>(
       () => UploadTinyTaleImageUseCase(getIt.get<TinyTalesRepo>()),
     );
-
     getIt.registerLazySingleton<IsTinyTaleLikeByMeUseCase>(
       () => IsTinyTaleLikeByMeUseCase(getIt.get<TinyTalesRepo>()),
+    );
+    getIt.registerLazySingleton<BookmarkTinyTaleUseCase>(
+      () => BookmarkTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
+    );
+    getIt.registerLazySingleton<UnBookmarkTinyTaleUseCase>(
+      () => UnBookmarkTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
+    );
+    getIt.registerLazySingleton<GetBookmarkedTinyTalesUseCase>(
+      () => GetBookmarkedTinyTalesUseCase(getIt.get<TinyTalesRepo>()),
     );
 
     // ========== Tips feature ==========

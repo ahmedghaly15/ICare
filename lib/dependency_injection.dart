@@ -40,7 +40,10 @@ import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/mark_level_one.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubit/speech_therapy_cubit.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/bookmark_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/get_bookmarked_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/un_bookmark_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/new_tiny_tale/new_tiny_tale_cubit.dart';
 import 'package:icare/src/features/tips/data/datasources/tips_local_datasource.dart';
 import 'package:icare/src/features/tips/data/datasources/tips_remote_datasource.dart';
