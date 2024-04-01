@@ -117,7 +117,7 @@ abstract class _$AppRouter extends RootStackRouter {
     ICareCommunityRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ICareCommunityView(),
+        child: WrappedRoute(child: const ICareCommunityView()),
       );
     },
     LayoutRoute.name: (routeData) {

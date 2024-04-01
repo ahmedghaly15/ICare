@@ -4,6 +4,7 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/helpers/app_regex.dart';
+import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
@@ -76,10 +77,21 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> likesStream(String tinyTaleId) {
+    return _accessTinyTaleLikesCollection(tinyTaleId).snapshots();
+  }
+
+  CollectionReference<Map<String, dynamic>> _accessTinyTaleLikesCollection(
+      String tinyTaleId) {
     return _accessTinyTalesCollection()
         .doc(tinyTaleId)
-        .collection(AppStrings.likesCollection)
-        .snapshots();
+        .collection(AppStrings.likesCollection);
+  }
+
+  List<ICareUser> firstThreeLikeTinyTale = <ICareUser>[];
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> streamFirstThreeLikeTinyTale(
+      String tinyTaleId) {
+    return _accessTinyTaleLikesCollection(tinyTaleId).limit(3).snapshots();
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> commentsStream(

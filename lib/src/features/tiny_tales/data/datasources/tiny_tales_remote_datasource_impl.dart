@@ -24,6 +24,13 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
         .collection(AppStrings.tinyTalesCollection);
   }
 
+  CollectionReference<Map<String, dynamic>> _accessLikesCollection(
+      String tinyTaleId) {
+    return _accessTinyTalesCollection()
+        .doc(tinyTaleId)
+        .collection(AppStrings.likesCollection);
+  }
+
   @override
   Future<DocumentReference<Map<String, dynamic>>> createTinyTale(
     CreateTinyTaleParams params,
@@ -73,13 +80,6 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   @override
   Future<void> unLikeTinyTale(String tinyTaleId) async {
     return await _accessLikesCollection(tinyTaleId).doc(Helper.uId).delete();
-  }
-
-  CollectionReference<Map<String, dynamic>> _accessLikesCollection(
-      String tinyTaleId) {
-    return _accessTinyTalesCollection()
-        .doc(tinyTaleId)
-        .collection(AppStrings.likesCollection);
   }
 
   @override
