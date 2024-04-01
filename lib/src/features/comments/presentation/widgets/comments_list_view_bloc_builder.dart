@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/features/comments/presentation/cubits/comments_cubit.dart';
-import 'package:icare/src/features/comments/presentation/cubits/comments_state.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments/comments_state.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_item.dart';
 
 class CommentsListViewBlocBuilder extends StatelessWidget {
@@ -29,10 +29,12 @@ class CommentsListViewBlocBuilder extends StatelessWidget {
           current is UploadCommentImageError,
       builder: (context, state) {
         if (state is StreamCommentsError) {
-          return CustomErrorWidget(
-            error: state.error,
-            tryAgainOnPressed: () =>
-                context.read<CommentsCubit>().streamComments(tinyTaleId),
+          return Expanded(
+            child: CustomErrorWidget(
+              error: state.error,
+              tryAgainOnPressed: () =>
+                  context.read<CommentsCubit>().streamComments(tinyTaleId),
+            ),
           );
         } else if (state is StreamCommentsLoading) {
           return const Expanded(

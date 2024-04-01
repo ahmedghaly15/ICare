@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
-import 'package:icare/src/features/comments/presentation/cubits/comments_cubit.dart';
-import 'package:icare/src/features/comments/presentation/cubits/comments_state.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments/comments_state.dart';
 
 class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
   const TypeNewCommentButtonBlocConsumer({
