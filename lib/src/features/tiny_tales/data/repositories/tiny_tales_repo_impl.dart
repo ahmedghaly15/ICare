@@ -73,4 +73,19 @@ class TinyTalesRepoImpl implements TinyTalesRepo {
   Stream<bool> isTinyTaleLikedByMe(String tinyTaleId) {
     return _tinyTalesRemoteDatasource.isTinyTaleLikedByMe(tinyTaleId);
   }
+
+  @override
+  Future<FirebaseRequestResult<void>> bookmarkTinyTale(TinyTale tinyTale) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _tinyTalesRemoteDatasource.bookmarkTinyTale(tinyTale),
+    );
+  }
+
+  @override
+  Future<FirebaseRequestResult<void>> unBookmarkTinyTale(String tinyTaleId) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async =>
+          await _tinyTalesRemoteDatasource.unBookmarkTinyTale(tinyTaleId),
+    );
+  }
 }

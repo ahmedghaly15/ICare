@@ -104,4 +104,25 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
         .snapshots()
         .map((snapshot) => snapshot.exists);
   }
+
+  CollectionReference<Map<String, dynamic>>
+      _accessBookmarkedTinyTalesCollection() {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.bookmarkedTinyTalesCollection);
+  }
+
+  @override
+  Future<void> bookmarkTinyTale(TinyTale tinyTale) async {
+    return await _accessBookmarkedTinyTalesCollection()
+        .doc(tinyTale.tinyTaleId)
+        .set(tinyTale.toJson());
+  }
+
+  @override
+  Future<void> unBookmarkTinyTale(String tinyTaleId) async {
+    return await _accessBookmarkedTinyTalesCollection()
+        .doc(tinyTaleId)
+        .delete();
+  }
 }

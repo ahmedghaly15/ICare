@@ -21,4 +21,8 @@ abstract class TinyTalesRepo {
   Stream<bool> isTinyTaleLikedByMe(String tinyTaleId);
 
   Future<FirebaseRequestResult<List<TinyTale>>> getTinyTales();
+
+  Future<FirebaseRequestResult<void>> bookmarkTinyTale(TinyTale tinyTale);
+
+  Future<FirebaseRequestResult<void>> unBookmarkTinyTale(String tinyTaleId);
 }
