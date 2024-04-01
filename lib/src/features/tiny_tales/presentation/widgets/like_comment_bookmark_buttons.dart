@@ -9,6 +9,7 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/first_three_like_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_like_button_stream_builder.dart';
 
 class LikeCommentBookmarkButtons extends StatelessWidget {
@@ -70,6 +71,9 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
             );
           },
         ),
+        MySizedBox.width10,
+        FirstThreeLikeTinyTale(tinyTaleId: tinyTaleId),
+        MySizedBox.width10,
         const Spacer(),
         IconButton(
           onPressed: () {},
