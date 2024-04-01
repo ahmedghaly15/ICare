@@ -47,12 +47,10 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
 
   @override
   Stream<bool> isCommentReplyLikedByMe(LikeParams params) {
-    return _accessCommentRepliesCollection(
-      CommentRepliesViewParams(
-        commentId: params.commentId!,
-        tinyTaleId: params.tinyTaleId,
-      ),
-    ).doc(Helper.uId).snapshots().map((snapshot) => snapshot.exists);
+    return _accessCommentReplyLikesCollection(params)
+        .doc(Helper.uId)
+        .snapshots()
+        .map((snapshot) => snapshot.exists);
   }
 
   @override
@@ -68,13 +66,14 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
   }
 
   CollectionReference<Map<String, dynamic>> _accessCommentReplyLikesCollection(
-      LikeParams params) {
+    LikeParams params,
+  ) {
     return _accessCommentRepliesCollection(
       CommentRepliesViewParams(
         commentId: params.commentId!,
         tinyTaleId: params.tinyTaleId,
       ),
-    ).doc(params.commentId).collection(AppStrings.replyLikes);
+    ).doc(params.replyId).collection(AppStrings.replyLikes);
   }
 
   @override
