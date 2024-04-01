@@ -76,6 +76,7 @@ List<AutoRoute> get appRoutes {
           page: CommentsRoute.page,
           transitionsBuilder: TransitionsBuilders.slideBottom,
         ),
+        _buildCustomRoute(page: CommentRepliesRoute.page),
       ],
     ),
   ];
