@@ -9,6 +9,7 @@ import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/bookmark_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/get_bookmarked_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
@@ -25,6 +26,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   final GetTinyTalesUseCase getTinyTalesUseCase;
   final BookmarkTinyTaleUseCase bookmarkTinyTaleUseCase;
   final UnBookmarkTinyTaleUseCase unBookmarkTinyTaleUseCase;
+  final GetBookmarkedTinyTalesUseCase getBookmarkedTinyTalesUseCase;
 
   TinyTalesCubit({
     required this.likeTinyTaleUseCase,
@@ -34,6 +36,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.getTinyTalesUseCase,
     required this.bookmarkTinyTaleUseCase,
     required this.unBookmarkTinyTaleUseCase,
+    required this.getBookmarkedTinyTalesUseCase,
   }) : super(const TinyTalesState.initial());
 
   Future<void> getTinyTales() async {
@@ -142,6 +145,18 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
       success: (_) => emit(const TinyTalesState.unBookmarkTinyTaleSuccess()),
       error: (error) => emit(
         TinyTalesState.unBookmarkTinyTaleError(error.failureMsg ?? ''),
+      ),
+    );
+  }
+
+  void getBookmarkedTinyTales() async {
+    emit(const TinyTalesState.getBookmarkedTinyTalesLoading());
+    final result = await getBookmarkedTinyTalesUseCase.call(const NoParams());
+    result.when(
+      success: (tinyTales) =>
+          emit(TinyTalesState.getBookmarkedTinyTalesSuccess(tinyTales)),
+      error: (error) => emit(
+        TinyTalesState.getBookmarkedTinyTalesError(error.failureMsg ?? ''),
       ),
     );
   }
