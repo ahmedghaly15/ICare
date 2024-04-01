@@ -142,9 +142,10 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     state.whenOrNull(
       createTinyTaleSuccess: (data) {
         createNewTinyTaleController.clear();
-        // context.maybePop();
 
-        context.read<TinyTalesCubit>().getTinyTales();
+        context.read<TinyTalesCubit>().getTinyTales().then((value) {
+          context.maybePop();
+        });
       },
       createTinyTaleError: (error) {
         ShowICareDialog.show(
