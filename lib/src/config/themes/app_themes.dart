@@ -4,6 +4,8 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 
 class AppThemes {
+  AppThemes._();
+
   static ThemeData lightTheme(BuildContext context) => ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,

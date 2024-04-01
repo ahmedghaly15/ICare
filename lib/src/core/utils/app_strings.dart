@@ -122,4 +122,6 @@ class AppStrings {
   static const String commentLikesCollection = 'Comment Likes Collection';
   static const String commentReplies = 'Replies';
   static const String replyLikes = 'Reply Likes';
+  static const String bookmarkedTinyTalesCollection =
+      'Bookmarked TinyTales Collection';
 }

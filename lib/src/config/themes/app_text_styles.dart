@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:icare/src/core/utils/functions/get_responsive_font_size.dart';
 
 class AppTextStyles {
+  AppTextStyles._();
+
   static TextStyle textStyle30Bold(BuildContext context) => TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 30),
         fontWeight: FontWeight.bold,
