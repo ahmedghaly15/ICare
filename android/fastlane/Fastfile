@@ -14,9 +14,11 @@ platform :android do
     release_notes: """
     This is a new release.
     Updates:
-      - Enable Baby Cry Predictor feature ✅
-      - Finish Tiny Tales (Posts) feature: (UI & Logic) ✅
-      - Finish Creating new Tiny Tale (new post) feature (UI & Logic) ✅
+      - Finish Like / Un Like TinyTale (post) feature ✅
+      - Finish Comment TinyTale (post) feature (UI & Logic) ✅
+          - Finish Like / Un Like comment.
+          - Finish Reply comment.
+      - Finish Commment Replies feature (UI & Logic) ✅
   """
   )
   end
