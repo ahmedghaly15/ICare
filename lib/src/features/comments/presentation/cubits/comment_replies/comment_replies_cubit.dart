@@ -5,7 +5,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/get_date.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_data.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
@@ -21,6 +24,7 @@ import 'package:icare/src/features/comments/domain/usecases/upload_comment_reply
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_state.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 
 class CommentRepliesCubit extends Cubit<CommentRepliesState> {
   final GetCommentRepliesUseCase getCommentRepliesUseCase;
@@ -61,12 +65,71 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
     );
   }
 
+  void Function()? newCommentReply(
+    BuildContext context,
+    CommentRepliesViewParams params,
+  ) {
+    return commentReplyImage == null && commentReplyController.text.isEmpty
+        ? null
+        : () {
+            AuthHelper.keyboardUnfocus(context);
+            if (commentReplyImage == null &&
+                commentReplyController.text.isNotEmpty) {
+              _typeNewCommentReply(
+                TypeNewCommentParams(
+                  context: context,
+                  tinyTaleId: params.tinyTaleId,
+                  commentId: params.commentId,
+                  commentData: CommentData(
+                    commentText: commentReplyController.text,
+                    date: getDate(),
+                    time: DateFormat.jm().format(DateTime.now()),
+                  ),
+                ),
+              );
+            } else if (commentReplyImage != null &&
+                commentReplyController.text.isEmpty) {
+              _uploadCommentReplyImage(
+                TypeNewCommentParams(
+                  context: context,
+                  tinyTaleId: params.tinyTaleId,
+                  commentId: params.commentId,
+                  commentData: CommentData(
+                    date: getDate(),
+                    time: DateFormat.jm().format(DateTime.now()),
+                  ),
+                ),
+              );
+            } else if (commentReplyImage != null &&
+                commentReplyController.text.isNotEmpty) {
+              _uploadCommentReplyImage(TypeNewCommentParams(
+                context: context,
+                tinyTaleId: params.tinyTaleId,
+                commentId: params.commentId,
+                commentData: CommentData(
+                  commentText: commentReplyController.text,
+                  date: getDate(),
+                  time: DateFormat.jm().format(DateTime.now()),
+                ),
+              ));
+            }
+          };
+  }
+
   void _typeNewCommentReply(TypeNewCommentParams params) async {
     emit(const CommentRepliesState.typeNewCommentReplyLoading());
     final result = await typeNewCommentReplyUseCase(params);
     result.when(
-      success: (comment) =>
-          emit(const CommentRepliesState.typeNewCommentReplySuccess()),
+      success: (comment) {
+        getCommentReplies(
+          CommentRepliesViewParams(
+            commentId: params.commentId,
+            tinyTaleId: params.tinyTaleId,
+          ),
+        );
+        commentReplyController.clear();
+        emit(const CommentRepliesState.typeNewCommentReplySuccess());
+      },
       error: (error) => emit(
           CommentRepliesState.typeNewCommentReplyError(error.failureMsg ?? '')),
     );
@@ -123,6 +186,7 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
       _typeNewCommentReply(
         TypeNewCommentParams(
           tinyTaleId: params.tinyTaleId,
+          commentId: params.commentId,
           commentData: CommentData(
             commentImage: url,
             commentText: params.commentData?.commentText,
@@ -165,6 +229,7 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
   Stream<QuerySnapshot<Map<String, dynamic>>> commentReplyLikesStream(
     String tinyTaleId,
     String commentId,
+    String replyId,
   ) {
     return getIt
         .get<FirebaseFirestore>()
@@ -172,8 +237,30 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
         .doc(tinyTaleId)
         .collection(AppStrings.commentsCollection)
         .doc(commentId)
+        .collection(AppStrings.commentReplies)
+        .doc(replyId)
         .collection(AppStrings.replyLikes)
         .snapshots();
+  }
+
+  void handleCommentRepliesState(
+      CommentRepliesState<dynamic> state, BuildContext context) {
+    state.whenOrNull(
+      typeNewCommentReplyError: (error) {
+        ShowICareDialog.show(
+          context: context,
+          state: ICareDialogStates.error,
+          message: error,
+        );
+      },
+      uploadCommentReplyImageError: (error) {
+        ShowICareDialog.show(
+          context: context,
+          state: ICareDialogStates.error,
+          message: error,
+        );
+      },
+    );
   }
 
   void setNewTextValue(String text) {

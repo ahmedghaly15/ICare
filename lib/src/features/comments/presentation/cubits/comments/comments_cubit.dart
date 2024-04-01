@@ -203,17 +203,32 @@ class CommentsCubit extends Cubit<CommentsState> {
     return isCommentLikedByMeUseCase(params);
   }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> commentLikesStream(
-    String tinyTaleId,
-    String commentId,
-  ) {
+  CollectionReference<Map<String, dynamic>> _accessCommentsCollection(
+      String tinyTaleId) {
     return getIt
         .get<FirebaseFirestore>()
         .collection(AppStrings.tinyTalesCollection)
         .doc(tinyTaleId)
-        .collection(AppStrings.commentsCollection)
+        .collection(AppStrings.commentsCollection);
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> commentLikesStream(
+    String tinyTaleId,
+    String commentId,
+  ) {
+    return _accessCommentsCollection(tinyTaleId)
         .doc(commentId)
         .collection(AppStrings.commentLikesCollection)
+        .snapshots();
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> commentRepliesStream(
+    String tinyTaleId,
+    String commentId,
+  ) {
+    return _accessCommentsCollection(tinyTaleId)
+        .doc(commentId)
+        .collection(AppStrings.commentReplies)
         .snapshots();
   }
 
