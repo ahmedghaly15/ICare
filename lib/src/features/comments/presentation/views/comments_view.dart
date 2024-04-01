@@ -6,7 +6,7 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
-import 'package:icare/src/features/comments/presentation/cubits/comments_cubit.dart';
+import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comments_list_view_bloc_builder.dart';
 import 'package:icare/src/features/comments/presentation/widgets/type_comment_field_and_buttons.dart';
 

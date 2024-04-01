@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
@@ -40,20 +38,7 @@ class CommentItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              constraints: BoxConstraints(
-                maxWidth: SizeConfig.width * 0.75,
-              ),
-              padding: EdgeInsets.symmetric(
-                vertical: 6.h,
-                horizontal: 15.w,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                color: AppColors.lightGrey2,
-              ),
-              child: CommentItemContent(comment: comment),
-            ),
+            CommentItemContent(comment: comment),
             MySizedBox.height2,
             LikeAndReplyButtons(
               commentId: comment.commentId,
