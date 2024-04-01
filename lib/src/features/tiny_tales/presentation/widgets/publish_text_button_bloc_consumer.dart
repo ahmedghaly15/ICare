@@ -14,9 +14,7 @@ class PublishTextButtonBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<NewTinyTaleCubit, NewTinyTaleState>(
       listenWhen: (_, current) =>
-          current is CreateTinyTaleSuccess ||
-          current is CreateTinyTaleError ||
-          current is CreateTinyTaleLoading,
+          current is CreateTinyTaleSuccess || current is CreateTinyTaleError,
       listener: (context, state) {
         context
             .read<NewTinyTaleCubit>()

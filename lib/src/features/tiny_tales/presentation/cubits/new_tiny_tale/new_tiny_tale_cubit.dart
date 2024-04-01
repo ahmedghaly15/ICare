@@ -46,6 +46,8 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     return tinyTaleImage == null && createNewTinyTaleController.text.isEmpty
         ? null
         : () {
+            AuthHelper.keyboardUnfocus(context);
+
             if (tinyTaleImage == null &&
                 createNewTinyTaleController.text.isNotEmpty) {
               _createTinyTale(CreateTinyTaleParams(
@@ -138,14 +140,11 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     BuildContext context,
   ) {
     state.whenOrNull(
-      createTinyTaleLoading: () {
-        AuthHelper.keyboardUnfocus(context);
-      },
       createTinyTaleSuccess: (data) {
         createNewTinyTaleController.clear();
-        context.read<TinyTalesCubit>().getTinyTales().then((value) {
-          context.maybePop();
-        });
+        // context.maybePop();
+
+        context.read<TinyTalesCubit>().getTinyTales();
       },
       createTinyTaleError: (error) {
         ShowICareDialog.show(
