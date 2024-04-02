@@ -124,4 +124,6 @@ class AppStrings {
   static const String replyLikes = 'Reply Likes';
   static const String bookmarkedTinyTalesCollection =
       'Bookmarked TinyTales Collection';
+
+  static const String delete = 'Delete';
 }
