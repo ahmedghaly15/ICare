@@ -11,6 +11,7 @@ import 'package:icare/src/features/tiny_tales/domain/usecases/bookmark_tiny_tale
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_bookmarked_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_bookmarked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/un_bookmark_tiny_tale.dart';
@@ -27,6 +28,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   final BookmarkTinyTaleUseCase bookmarkTinyTaleUseCase;
   final UnBookmarkTinyTaleUseCase unBookmarkTinyTaleUseCase;
   final GetBookmarkedTinyTalesUseCase getBookmarkedTinyTalesUseCase;
+  final IsTinyTaleBookmarkedByMeUseCase isTinyTaleBookmarkedByMeUseCase;
 
   TinyTalesCubit({
     required this.likeTinyTaleUseCase,
@@ -37,6 +39,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.bookmarkTinyTaleUseCase,
     required this.unBookmarkTinyTaleUseCase,
     required this.getBookmarkedTinyTalesUseCase,
+    required this.isTinyTaleBookmarkedByMeUseCase,
   }) : super(const TinyTalesState.initial());
 
   Future<void> getTinyTales() async {
@@ -149,7 +152,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     );
   }
 
-  void getBookmarkedTinyTales() async {
+  Future<void> getBookmarkedTinyTales() async {
     emit(const TinyTalesState.getBookmarkedTinyTalesLoading());
     final result = await getBookmarkedTinyTalesUseCase.call(const NoParams());
     result.when(
@@ -159,5 +162,9 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
         TinyTalesState.getBookmarkedTinyTalesError(error.failureMsg ?? ''),
       ),
     );
+  }
+
+  Stream<bool> isTinyTaleBookmarkedByMe(String tinyTaleId) {
+    return isTinyTaleBookmarkedByMeUseCase.call(tinyTaleId);
   }
 }

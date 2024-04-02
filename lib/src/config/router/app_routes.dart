@@ -77,9 +77,9 @@ List<AutoRoute> get appRoutes {
           transitionsBuilder: TransitionsBuilders.slideBottom,
         ),
         _buildCustomRoute(page: CommentRepliesRoute.page),
-        _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
       ],
     ),
+    _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
   ];
 }
 

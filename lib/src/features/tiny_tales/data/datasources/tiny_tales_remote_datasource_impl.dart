@@ -137,4 +137,12 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
         )
         .getQuerySnapshot();
   }
+
+  @override
+  Stream<bool> isTinyTaleBookmarkedByMe(String tinyTaleId) {
+    return _accessBookmarkedTinyTalesCollection()
+        .doc(tinyTaleId)
+        .snapshots()
+        .map((snapshot) => snapshot.exists);
+  }
 }

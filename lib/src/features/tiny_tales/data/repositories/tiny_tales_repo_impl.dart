@@ -100,4 +100,9 @@ class TinyTalesRepoImpl implements TinyTalesRepo {
           .toList();
     });
   }
+
+  @override
+  Stream<bool> isTinyTaleBookmarkedByMe(String tinyTaleId) {
+    return _tinyTalesRemoteDatasource.isTinyTaleBookmarkedByMe(tinyTaleId);
+  }
 }
