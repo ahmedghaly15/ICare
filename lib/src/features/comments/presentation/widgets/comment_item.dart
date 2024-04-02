@@ -5,6 +5,7 @@ import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_item_content.dart';
 import 'package:icare/src/features/comments/presentation/widgets/like_and_reply_buttons.dart';
+import 'package:icare/src/features/comments/presentation/widgets/more_icon_button_bloc_listener.dart';
 
 class CommentItem extends StatelessWidget {
   const CommentItem({
@@ -45,6 +46,10 @@ class CommentItem extends StatelessWidget {
               tinyTaleId: tinyTaleId,
             ),
           ],
+        ),
+        MoreIconButtonBlocListener(
+          tinyTaleId: tinyTaleId,
+          commentId: comment.commentId!,
         ),
       ],
     );
