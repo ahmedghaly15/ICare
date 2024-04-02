@@ -185,6 +185,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const OnboardingView()),
       );
     },
+    PeopleWhoLikedRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const PeopleWhoLikedView()),
+      );
+    },
     RegisterRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -665,6 +671,20 @@ class OnboardingRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'OnboardingRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PeopleWhoLikedView]
+class PeopleWhoLikedRoute extends PageRouteInfo<void> {
+  const PeopleWhoLikedRoute({List<PageRouteInfo>? children})
+      : super(
+          PeopleWhoLikedRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PeopleWhoLikedRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
