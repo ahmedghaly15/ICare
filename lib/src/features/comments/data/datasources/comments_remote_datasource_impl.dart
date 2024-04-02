@@ -57,11 +57,73 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
 
   @override
   Future<void> deleteComment(DeleteCommentParams params) async {
-    // final commentLikesQuery
+    _deleteEachCommentRepliesLikes(params);
+
+    _deleteEachCommentReplies(params);
+
+    _deleteEachCommentLikes(params);
 
     return await _accessCommentsCollection(params.tinyTaleId!)
         .doc(params.commentId)
         .delete();
+  }
+
+  void _deleteEachCommentLikes(DeleteCommentParams params) {
+    _accessCommentsCollection(params.tinyTaleId!)
+        .snapshots()
+        .listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference
+            .collection(AppStrings.commentLikesCollection)
+            .snapshots()
+            .listen((event) {
+          for (final doc in event.docs) {
+            doc.reference.delete();
+          }
+        });
+      }
+    });
+  }
+
+  void _deleteEachCommentReplies(DeleteCommentParams params) {
+    _accessCommentsCollection(params.tinyTaleId!)
+        .snapshots()
+        .listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference
+            .collection(AppStrings.commentReplies)
+            .snapshots()
+            .listen((event) {
+          for (final doc in event.docs) {
+            doc.reference.delete();
+          }
+        });
+      }
+    });
+  }
+
+  void _deleteEachCommentRepliesLikes(DeleteCommentParams params) {
+    _accessCommentsCollection(params.tinyTaleId!)
+        .snapshots()
+        .listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference
+            .collection(AppStrings.commentReplies)
+            .snapshots()
+            .listen((event) {
+          for (final doc in event.docs) {
+            doc.reference
+                .collection(AppStrings.replyLikes)
+                .snapshots()
+                .listen((event) {
+              for (final doc in event.docs) {
+                doc.reference.delete();
+              }
+            });
+          }
+        });
+      }
+    });
   }
 
   @override
