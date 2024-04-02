@@ -84,20 +84,92 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   @override
   Future<void> deleteTinyTale(String tinyTaleId) async {
-    final likesQuerySnapshot = await _accessLikesCollection(tinyTaleId).get();
-    for (final doc in likesQuerySnapshot.docs) {
-      await doc.reference.delete();
-    }
+    _deleteTinyTaleLikes(tinyTaleId);
 
-    final commentsQuerySnapshot = await _accessTinyTalesCollection()
-        .doc(tinyTaleId)
-        .collection(AppStrings.commentsCollection)
-        .get();
-    for (final doc in commentsQuerySnapshot.docs) {
-      await doc.reference.delete();
-    }
+    _deleteEachCommentRepliesLikes(tinyTaleId);
+
+    _deleteEachCommentReplies(tinyTaleId);
+
+    _deleteEachCommentLikes(tinyTaleId);
+
+    _deleteTinyTaleComments(tinyTaleId);
 
     await _accessTinyTalesCollection().doc(tinyTaleId).delete();
+  }
+
+  void _deleteTinyTaleComments(String tinyTaleId) {
+    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference.delete();
+      }
+    });
+  }
+
+  void _deleteEachCommentReplies(String tinyTaleId) {
+    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference
+            .collection(AppStrings.commentReplies)
+            .snapshots()
+            .listen((event) {
+          for (final doc in event.docs) {
+            doc.reference.delete();
+          }
+        });
+      }
+    });
+  }
+
+  void _deleteEachCommentRepliesLikes(String tinyTaleId) {
+    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference
+            .collection(AppStrings.commentReplies)
+            .snapshots()
+            .listen((event) {
+          for (final doc in event.docs) {
+            doc.reference
+                .collection(AppStrings.replyLikes)
+                .snapshots()
+                .listen((event) {
+              for (final doc in event.docs) {
+                doc.reference.delete();
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+
+  void _deleteEachCommentLikes(String tinyTaleId) {
+    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference
+            .collection(AppStrings.commentLikesCollection)
+            .snapshots()
+            .listen((event) {
+          for (final doc in event.docs) {
+            doc.reference.delete();
+          }
+        });
+      }
+    });
+  }
+
+  void _deleteTinyTaleLikes(String tinyTaleId) {
+    _accessLikesCollection(tinyTaleId).snapshots().listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference.delete();
+      }
+    });
+  }
+
+  CollectionReference<Map<String, dynamic>> _accessCommentsCollection(
+      String tinyTaleId) {
+    return _accessTinyTalesCollection()
+        .doc(tinyTaleId)
+        .collection(AppStrings.commentsCollection);
   }
 
   @override

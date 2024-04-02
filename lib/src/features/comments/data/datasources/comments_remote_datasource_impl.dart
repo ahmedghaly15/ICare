@@ -57,6 +57,8 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
 
   @override
   Future<void> deleteComment(DeleteCommentParams params) async {
+    // final commentLikesQuery
+
     return await _accessCommentsCollection(params.tinyTaleId!)
         .doc(params.commentId)
         .delete();
