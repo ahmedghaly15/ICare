@@ -53,6 +53,19 @@ class ShowICareDialog {
 
     return title;
   }
+
+  static Future<dynamic> showICareDialogError(
+    BuildContext context,
+    String error, {
+    bool isBlurred = true,
+  }) {
+    return show(
+      context: context,
+      state: ICareDialogStates.error,
+      message: error,
+      isBlurred: isBlurred,
+    );
+  }
 }
 
 class ICareDialog extends StatelessWidget {
