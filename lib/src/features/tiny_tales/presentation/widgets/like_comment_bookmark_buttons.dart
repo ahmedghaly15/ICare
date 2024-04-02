@@ -8,7 +8,9 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/book_mark_icon_button_bloc_listener.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/first_three_like_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_like_button_stream_builder.dart';
 
@@ -16,11 +18,12 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
   const LikeCommentBookmarkButtons({
     super.key,
     this.isTinyTaleContainsImage = false,
-    required this.tinyTaleId,
+    required this.tinyTale,
   });
 
   final bool isTinyTaleContainsImage;
-  final String? tinyTaleId;
+
+  final TinyTale tinyTale;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
       children: <Widget>[
         IconButton(
           onPressed: () {
-            context.pushRoute(CommentsRoute(tinyTaleId: tinyTaleId!));
+            context.pushRoute(CommentsRoute(tinyTaleId: tinyTale.tinyTaleId!));
           },
           icon: SvgPicture.asset(
             isTinyTaleContainsImage
@@ -37,7 +40,9 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
           ),
         ),
         StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-          stream: context.read<TinyTalesCubit>().commentsStream(tinyTaleId!),
+          stream: context
+              .read<TinyTalesCubit>()
+              .commentsStream(tinyTale.tinyTaleId!),
           builder: (context, snapshot) {
             int commentsCount = snapshot.data?.docs.length ?? 0;
 
@@ -53,11 +58,12 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
         ),
         MySizedBox.width6,
         TinyTaleLikeButtonStreamBuilder(
-          tinyTaleId: tinyTaleId,
+          tinyTaleId: tinyTale.tinyTaleId,
           isTinyTaleContainsImage: isTinyTaleContainsImage,
         ),
         StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-          stream: context.read<TinyTalesCubit>().likesStream(tinyTaleId!),
+          stream:
+              context.read<TinyTalesCubit>().likesStream(tinyTale.tinyTaleId!),
           builder: (context, snapshot) {
             int likesCount = snapshot.data?.docs.length ?? 0;
 
@@ -72,16 +78,12 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
           },
         ),
         MySizedBox.width10,
-        FirstThreeLikeTinyTale(tinyTaleId: tinyTaleId),
+        FirstThreeLikeTinyTale(tinyTaleId: tinyTale.tinyTaleId),
         MySizedBox.width10,
         const Spacer(),
-        IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(
-            isTinyTaleContainsImage
-                ? AppAssets.svgsBookmarkIcon
-                : AppAssets.svgsBlackBookmarkIcon,
-          ),
+        BookmarkIconButtonBlocListener(
+          tinyTale: tinyTale,
+          isTinyTaleContainsImage: isTinyTaleContainsImage,
         ),
       ],
     );

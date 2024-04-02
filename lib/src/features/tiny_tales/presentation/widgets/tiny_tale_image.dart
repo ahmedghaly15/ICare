@@ -3,13 +3,18 @@ import 'dart:ui' show ImageFilter;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
+import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/like_comment_bookmark_buttons.dart';
 
 class TinyTaleItemImage extends StatelessWidget {
-  const TinyTaleItemImage(
-      {super.key, required this.tinyTaleImageUrl, required this.tinyTaleId});
+  const TinyTaleItemImage({
+    super.key,
+    required this.tinyTaleImageUrl,
+    required this.tinyTale,
+  });
 
-  final String tinyTaleImageUrl, tinyTaleId;
+  final String tinyTaleImageUrl;
+  final TinyTale tinyTale;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +52,7 @@ class TinyTaleItemImage extends StatelessWidget {
                     color: Colors.transparent,
                     child: LikeCommentBookmarkButtons(
                       isTinyTaleContainsImage: true,
-                      tinyTaleId: tinyTaleId,
+                      tinyTale: tinyTale,
                     ),
                   ),
                 ),
