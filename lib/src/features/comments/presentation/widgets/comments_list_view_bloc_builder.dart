@@ -22,11 +22,7 @@ class CommentsListViewBlocBuilder extends StatelessWidget {
       buildWhen: (_, current) =>
           current is StreamCommentsLoading ||
           current is StreamCommentsSuccess ||
-          current is StreamCommentsError ||
-          current is TypeNewCommentSuccess ||
-          current is TypeNewCommentError ||
-          current is UploadCommentImageSuccess ||
-          current is UploadCommentImageError,
+          current is StreamCommentsError,
       builder: (context, state) {
         if (state is StreamCommentsError) {
           return Expanded(
@@ -36,13 +32,7 @@ class CommentsListViewBlocBuilder extends StatelessWidget {
                   context.read<CommentsCubit>().streamComments(tinyTaleId),
             ),
           );
-        } else if (state is StreamCommentsLoading) {
-          return const Expanded(
-            child: Center(
-              child: CustomCircularProgressIndicator(),
-            ),
-          );
-        } else {
+        } else if (state is StreamCommentsSuccess) {
           return Expanded(
             child: ListView.separated(
               padding: EdgeInsets.symmetric(
@@ -51,10 +41,16 @@ class CommentsListViewBlocBuilder extends StatelessWidget {
               ),
               itemBuilder: (_, index) => CommentItem(
                 tinyTaleId: tinyTaleId,
-                comment: context.read<CommentsCubit>().comments[index],
+                comment: state.comments[index],
               ),
-              itemCount: context.read<CommentsCubit>().comments.length,
+              itemCount: state.comments.length,
               separatorBuilder: (_, __) => MySizedBox.height18,
+            ),
+          );
+        } else {
+          return const Expanded(
+            child: Center(
+              child: CustomCircularProgressIndicator(),
             ),
           );
         }

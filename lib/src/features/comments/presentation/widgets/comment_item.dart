@@ -47,9 +47,11 @@ class CommentItem extends StatelessWidget {
             ),
           ],
         ),
-        MoreIconButtonBlocListener(
-          tinyTaleId: tinyTaleId,
-          commentId: comment.commentId!,
+        Flexible(
+          child: MoreIconButtonBlocListener(
+            tinyTaleId: tinyTaleId,
+            commentId: comment.commentId!,
+          ),
         ),
       ],
     );

@@ -17,9 +17,13 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<CommentsCubit, CommentsState>(
       listenWhen: (_, current) =>
-          current is TypeNewCommentError || current is UploadCommentImageError,
+          current is TypeNewCommentError ||
+          current is UploadCommentImageError ||
+          current is TypeNewCommentSuccess,
       listener: (context, state) {
-        context.read<CommentsCubit>().handleCommentsState(state, context);
+        context
+            .read<CommentsCubit>()
+            .handleCommentsState(state, context, tinyTaleId);
       },
       buildWhen: (_, current) =>
           current is TypeNewCommentLoading ||
