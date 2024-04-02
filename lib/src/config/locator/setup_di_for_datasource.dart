@@ -108,7 +108,12 @@ class SetupDIForDatasource {
       () => const CommentsRemoteDatasourceImpl(),
     );
     getIt.registerLazySingleton<CommentRepliesDatasource>(
-      () => CommentRepliesDatasourceImpl(),
+      () => const CommentRepliesDatasourceImpl(),
+    );
+
+    // ========== PeopleWhoLiked feature ==========
+    getIt.registerLazySingleton<PeopleWhoLikedDatasource>(
+      () => const PeopleWhoLikedDatasourceImpl(),
     );
   }
 }

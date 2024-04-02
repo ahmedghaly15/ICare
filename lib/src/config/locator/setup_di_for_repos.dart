@@ -105,5 +105,10 @@ class SetupDIForRepos {
     getIt.registerLazySingleton<CommentRepliesRepo>(
       () => CommentRepliesRepoImpl(getIt.get<CommentRepliesDatasource>()),
     );
+
+    // ========== PeopleWhoLiked feature ==========
+    getIt.registerLazySingleton<PeopleWhoLikedRepo>(
+      () => PeopleWhoLikedRepo(getIt.get<PeopleWhoLikedDatasource>()),
+    );
   }
 }

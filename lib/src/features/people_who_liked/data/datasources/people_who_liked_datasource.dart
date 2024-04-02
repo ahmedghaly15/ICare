@@ -9,6 +9,8 @@ abstract class PeopleWhoLikedDatasource {
 }
 
 class PeopleWhoLikedDatasourceImpl implements PeopleWhoLikedDatasource {
+  const PeopleWhoLikedDatasourceImpl();
+
   @override
   Future<QuerySnapshot<Map<String, dynamic>>> getPeopleWhoLiked(
       String tinyTaleId) async {

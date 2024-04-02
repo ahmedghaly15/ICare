@@ -147,5 +147,10 @@ class SetupDIForCubits {
             getIt.get<UploadCommentReplyImageUseCase>(),
       ),
     );
+
+    // ========== PeopleWhoLiked feature ==========
+    getIt.registerLazySingleton<PeopleWhoLikedCubit>(
+      () => PeopleWhoLikedCubit(getIt.get<GetPeopleWhoLikedUseCase>()),
+    );
   }
 }

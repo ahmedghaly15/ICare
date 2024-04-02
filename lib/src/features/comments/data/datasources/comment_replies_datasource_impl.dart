@@ -17,6 +17,8 @@ import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
+  const CommentRepliesDatasourceImpl();
+
   CollectionReference<Map<String, dynamic>> _accessCommentRepliesCollection(
       CommentRepliesViewParams params) {
     return getIt

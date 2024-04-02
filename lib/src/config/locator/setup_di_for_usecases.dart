@@ -174,5 +174,10 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<UploadCommentReplyImageUseCase>(
       () => UploadCommentReplyImageUseCase(getIt.get<CommentRepliesRepo>()),
     );
+
+    // ========== PeopleWhoLiked feature ==========
+    getIt.registerLazySingleton<GetPeopleWhoLikedUseCase>(
+      () => GetPeopleWhoLikedUseCase(getIt.get<PeopleWhoLikedRepo>()),
+    );
   }
 }
