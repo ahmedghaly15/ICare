@@ -10,7 +10,6 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_data.dart';
-import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart';
@@ -48,14 +47,11 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   late final TextEditingController commentController;
 
-  List<CommentModel> comments = <CommentModel>[];
-
-  void streamComments(String tinyTaleId) async {
+  Future<void> streamComments(String tinyTaleId) async {
     emit(const CommentsState.streamCommentsLoading());
     final result = await streamCommentsUseCase(tinyTaleId);
     result.when(
-      success: (result) {
-        comments = result;
+      success: (comments) {
         emit(CommentsState.streamCommentsSuccess(comments));
       },
       error: (error) =>
@@ -113,7 +109,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     final result = await typeNewCommentUseCase(params);
     result.when(
       success: (comment) {
-        streamComments(params.tinyTaleId!);
+        // streamComments(params.tinyTaleId!);
         commentController.clear();
         emit(const CommentsState.typeNewCommentSuccess());
       },
@@ -241,8 +237,15 @@ class CommentsCubit extends Cubit<CommentsState> {
     emit(CommentsState.setNewTextValue(text));
   }
 
-  void handleCommentsState(CommentsState<dynamic> state, BuildContext context) {
+  void handleCommentsState(
+    CommentsState<dynamic> state,
+    BuildContext context,
+    String tinyTaleId,
+  ) {
     state.whenOrNull(
+      typeNewCommentSuccess: () {
+        streamComments(tinyTaleId);
+      },
       typeNewCommentError: (error) {
         ShowICareDialog.showICareDialogError(context, error);
       },

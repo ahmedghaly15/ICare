@@ -84,7 +84,20 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   @override
   Future<void> deleteTinyTale(String tinyTaleId) async {
-    return await _accessTinyTalesCollection().doc(tinyTaleId).delete();
+    final likesQuerySnapshot = await _accessLikesCollection(tinyTaleId).get();
+    for (final doc in likesQuerySnapshot.docs) {
+      await doc.reference.delete();
+    }
+
+    final commentsQuerySnapshot = await _accessTinyTalesCollection()
+        .doc(tinyTaleId)
+        .collection(AppStrings.commentsCollection)
+        .get();
+    for (final doc in commentsQuerySnapshot.docs) {
+      await doc.reference.delete();
+    }
+
+    await _accessTinyTalesCollection().doc(tinyTaleId).delete();
   }
 
   @override
