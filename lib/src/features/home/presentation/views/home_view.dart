@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/tips/presentation/widgets/show_random_tip_dialog.dart';
 import 'package:icare/src/config/router/app_router.dart';
@@ -62,7 +63,9 @@ class HomeView extends StatelessWidget {
               //         time: DateFormat.jm().format(DateTime.now()),
               //       ),
               //     );
-              context.pushRoute(const CommunityRoute());
+              context.read<TinyTalesCubit>().getTinyTales().then((value) {
+                context.pushRoute(const CommunityRoute());
+              });
               // context.read<UserCubit>().getUserData();
               // print(Helper.currentUser!.name);
 

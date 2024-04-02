@@ -43,7 +43,7 @@ class BookmarkCubit extends Cubit<BookmarkState> {
     );
   }
 
-  void retrieveICareBotBookmarks() async {
+  Future<void> retrieveICareBotBookmarks() async {
     emit(const BookmarkState.retrieveICareBotBookmarksLoading());
     final result = await retrieveICareBotBookmarksUseCase(const NoParams());
 
