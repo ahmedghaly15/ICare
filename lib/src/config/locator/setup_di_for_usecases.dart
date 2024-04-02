@@ -111,6 +111,9 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetBookmarkedTinyTalesUseCase>(
       () => GetBookmarkedTinyTalesUseCase(getIt.get<TinyTalesRepo>()),
     );
+    getIt.registerLazySingleton<IsTinyTaleBookmarkedByMeUseCase>(
+      () => IsTinyTaleBookmarkedByMeUseCase(getIt.get<TinyTalesRepo>()),
+    );
 
     // ========== Tips feature ==========
     getIt.registerLazySingleton<GetRandomTipUseCase>(

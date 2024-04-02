@@ -95,6 +95,8 @@ class SetupDIForCubits {
         unBookmarkTinyTaleUseCase: getIt.get<UnBookmarkTinyTaleUseCase>(),
         getBookmarkedTinyTalesUseCase:
             getIt.get<GetBookmarkedTinyTalesUseCase>(),
+        isTinyTaleBookmarkedByMeUseCase:
+            getIt.get<IsTinyTaleBookmarkedByMeUseCase>(),
       ),
     );
 
