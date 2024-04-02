@@ -39,6 +39,7 @@ class CustomTextFormField extends StatelessWidget {
     this.margin,
     this.hintStyle,
     this.style,
+    this.autofocus = false,
   });
 
   final TextEditingController? controller;
@@ -74,6 +75,7 @@ class CustomTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final TextStyle? hintStyle;
   final TextStyle? style;
+  final bool autofocus;
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +86,7 @@ class CustomTextFormField extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius ?? 50.0.r),
       ),
       child: TextFormField(
+        autofocus: autofocus,
         enableSuggestions: enableSuggestions,
         enabled: enabled ?? true,
         controller: controller,

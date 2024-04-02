@@ -18,6 +18,7 @@ class NewTinyTaleTextFieldBlocBuilder extends StatelessWidget {
           hintStyle: AppTextStyles.textStyle20Regular(context).copyWith(
             color: Colors.grey,
           ),
+          autofocus: true,
           style: AppTextStyles.textStyle20Regular(context),
           maxLines: null,
           controller:
