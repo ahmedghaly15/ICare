@@ -8,17 +8,18 @@ import 'package:icare/src/features/comments/data/models/comment_replies_view_par
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_item_content.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_like_icon_button_stream_builder.dart';
+import 'package:icare/src/features/comments/presentation/widgets/comment_reply_more_icon_button_bloc_listener.dart';
 import 'package:icare/src/features/comments/presentation/widgets/query_snapshot_text_stream_builder.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 
 class CommentReplyItem extends StatelessWidget {
   const CommentReplyItem({
     super.key,
-    required this.comment,
+    required this.reply,
     required this.params,
   });
 
-  final CommentModel comment;
+  final CommentModel reply;
   final CommentRepliesViewParams params;
 
   @override
@@ -32,7 +33,7 @@ class CommentReplyItem extends StatelessWidget {
             // TODO: navigate to user profile
           },
           child: CustomCachedNetworkImage(
-            imageUrl: comment.user!.profileImage!,
+            imageUrl: reply.user!.profileImage!,
             imageBuilder: (_, image) => CircleAvatar(
               radius: 20.h,
               backgroundImage: image,
@@ -43,13 +44,13 @@ class CommentReplyItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            CommentItemContent(comment: comment),
+            CommentItemContent(comment: reply),
             MySizedBox.height2,
             Row(
               children: <Widget>[
                 MySizedBox.width10,
                 CommentLikeIconButtonStreamBuilder(
-                  stream: comment.commentId != null
+                  stream: reply.commentId != null
                       ? context
                           .read<CommentRepliesCubit>()
                           .isCommentReplyLikedByMe(
@@ -57,7 +58,7 @@ class CommentReplyItem extends StatelessWidget {
                               tinyTaleId: params.tinyTaleId!,
                               context: context,
                               commentId: params.commentId,
-                              replyId: comment.commentId,
+                              replyId: reply.commentId,
                             ),
                           )
                       : const Stream<bool>.empty(),
@@ -67,7 +68,7 @@ class CommentReplyItem extends StatelessWidget {
                             tinyTaleId: params.tinyTaleId!,
                             commentId: params.commentId,
                             context: context,
-                            replyId: comment.commentId,
+                            replyId: reply.commentId,
                           ),
                         );
                   },
@@ -77,7 +78,7 @@ class CommentReplyItem extends StatelessWidget {
                             tinyTaleId: params.tinyTaleId!,
                             commentId: params.commentId,
                             context: context,
-                            replyId: comment.commentId,
+                            replyId: reply.commentId,
                           ),
                         );
                   },
@@ -88,12 +89,18 @@ class CommentReplyItem extends StatelessWidget {
                       .commentReplyLikesStream(
                         params.tinyTaleId!,
                         params.commentId!,
-                        comment.commentId!,
+                        reply.commentId!,
                       ),
                 ),
               ],
             ),
           ],
+        ),
+        Flexible(
+          child: CommentReplyMoreIconButtonBlocListener(
+            params: params,
+            reply: reply,
+          ),
         ),
       ],
     );

@@ -5,8 +5,8 @@ import 'package:icare/src/features/comments/data/models/delete_comment_params.da
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_state.dart';
 
-class MoreIconButtonBlocListener extends StatelessWidget {
-  const MoreIconButtonBlocListener({
+class CommentMoreIconButtonBlocListener extends StatelessWidget {
+  const CommentMoreIconButtonBlocListener({
     super.key,
     required this.tinyTaleId,
     required this.commentId,

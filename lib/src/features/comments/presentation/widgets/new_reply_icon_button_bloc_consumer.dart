@@ -19,11 +19,12 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
     return BlocConsumer<CommentRepliesCubit, CommentRepliesState>(
       listenWhen: (_, current) =>
           current is TypeNewCommentReplyError ||
-          current is UploadCommentReplyImageError,
+          current is UploadCommentReplyImageError ||
+          current is TypeNewCommentReplySuccess,
       listener: (context, state) {
         context
             .read<CommentRepliesCubit>()
-            .handleCommentRepliesState(state, context);
+            .handleCommentRepliesState(state, context, params);
       },
       buildWhen: (_, current) =>
           current is TypeNewCommentReplyLoading ||

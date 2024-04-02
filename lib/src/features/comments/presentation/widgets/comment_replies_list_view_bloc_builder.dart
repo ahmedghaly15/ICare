@@ -23,11 +23,7 @@ class CommentRepliesListViewBlocBuilder extends StatelessWidget {
       buildWhen: (_, current) =>
           current is GetCommentRepliesLoading ||
           current is GetCommentRepliesSuccess ||
-          current is GetCommentRepliesError ||
-          current is TypeNewCommentReplySuccess ||
-          current is TypeNewCommentReplyError ||
-          current is UploadCommentReplyImageSuccess ||
-          current is UploadCommentReplyImageError,
+          current is GetCommentRepliesError,
       builder: (context, state) {
         if (state is GetCommentRepliesError) {
           return Expanded(
@@ -37,13 +33,7 @@ class CommentRepliesListViewBlocBuilder extends StatelessWidget {
                   context.read<CommentRepliesCubit>().getCommentReplies(params),
             ),
           );
-        } else if (state is GetCommentRepliesLoading) {
-          return const Expanded(
-            child: Center(
-              child: CustomCircularProgressIndicator(),
-            ),
-          );
-        } else {
+        } else if (state is GetCommentRepliesSuccess) {
           return Expanded(
             child: ListView.separated(
               padding: EdgeInsets.symmetric(
@@ -52,14 +42,18 @@ class CommentRepliesListViewBlocBuilder extends StatelessWidget {
               ),
               itemBuilder: (_, index) {
                 return CommentReplyItem(
-                  comment:
-                      context.read<CommentRepliesCubit>().commentReplies[index],
+                  reply: state.comments[index],
                   params: params,
                 );
               },
               separatorBuilder: (_, __) => MySizedBox.height18,
-              itemCount:
-                  context.read<CommentRepliesCubit>().commentReplies.length,
+              itemCount: state.comments.length,
+            ),
+          );
+        } else {
+          return const Expanded(
+            child: Center(
+              child: CustomCircularProgressIndicator(),
             ),
           );
         }
