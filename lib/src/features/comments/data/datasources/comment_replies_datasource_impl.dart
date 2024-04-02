@@ -30,12 +30,29 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
 
   @override
   Future<void> deleteCommentReply(DeleteCommentParams params) async {
+    _deleteReplyLikes(params);
+
     return await _accessCommentRepliesCollection(
       CommentRepliesViewParams(
         commentId: params.commentId!,
         tinyTaleId: params.tinyTaleId!,
       ),
     ).doc(params.commentReplyId).delete();
+  }
+
+  void _deleteReplyLikes(DeleteCommentParams params) {
+    _accessCommentRepliesCollection(CommentRepliesViewParams(
+      commentId: params.commentId!,
+      tinyTaleId: params.tinyTaleId!,
+    ))
+        .doc(params.commentReplyId)
+        .collection(AppStrings.replyLikes)
+        .snapshots()
+        .listen((snapshot) {
+      for (final doc in snapshot.docs) {
+        doc.reference.delete();
+      }
+    });
   }
 
   @override

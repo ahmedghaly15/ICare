@@ -10,7 +10,6 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_data.dart';
-import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
@@ -49,15 +48,12 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
 
   late final TextEditingController commentReplyController;
 
-  List<CommentModel> commentReplies = <CommentModel>[];
-
   void getCommentReplies(CommentRepliesViewParams params) async {
     emit(const CommentRepliesState.getCommentRepliesLoading());
 
     final result = await getCommentRepliesUseCase(params);
     result.when(
-      success: (result) {
-        commentReplies = result;
+      success: (commentReplies) {
         emit(CommentRepliesState.getCommentRepliesSuccess(commentReplies));
       },
       error: (error) => emit(
@@ -121,12 +117,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
     final result = await typeNewCommentReplyUseCase(params);
     result.when(
       success: (comment) {
-        getCommentReplies(
-          CommentRepliesViewParams(
-            commentId: params.commentId,
-            tinyTaleId: params.tinyTaleId,
-          ),
-        );
         commentReplyController.clear();
         emit(const CommentRepliesState.typeNewCommentReplySuccess());
       },
@@ -244,10 +234,16 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
   }
 
   void handleCommentRepliesState(
-      CommentRepliesState<dynamic> state, BuildContext context) {
+    CommentRepliesState<dynamic> state,
+    BuildContext context,
+    CommentRepliesViewParams commentRepliesViewParams,
+  ) {
     state.whenOrNull(
       typeNewCommentReplyError: (error) {
         ShowICareDialog.showICareDialogError(context, error);
+      },
+      typeNewCommentReplySuccess: () {
+        getCommentReplies(commentRepliesViewParams);
       },
       uploadCommentReplyImageError: (error) {
         ShowICareDialog.showICareDialogError(context, error);
