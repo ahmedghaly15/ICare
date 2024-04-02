@@ -247,18 +247,10 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
       CommentRepliesState<dynamic> state, BuildContext context) {
     state.whenOrNull(
       typeNewCommentReplyError: (error) {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.error,
-          message: error,
-        );
+        ShowICareDialog.showICareDialogError(context, error);
       },
       uploadCommentReplyImageError: (error) {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.error,
-          message: error,
-        );
+        ShowICareDialog.showICareDialogError(context, error);
       },
     );
   }

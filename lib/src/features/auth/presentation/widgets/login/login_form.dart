@@ -169,11 +169,7 @@ class _LoginFormState extends State<LoginForm> {
         isShowLoading = false;
       });
 
-      ShowICareDialog.show(
-        context: context,
-        state: ICareDialogStates.error,
-        message: error,
-      );
+      ShowICareDialog.showICareDialogError(context, error);
     });
   }
 

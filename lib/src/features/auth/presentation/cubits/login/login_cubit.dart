@@ -111,11 +111,7 @@ class LoginCubit extends Cubit<LoginState> {
         navigateToHomeAfterLoginOrRegister(context, data);
       },
       signInWithGoogleError: (error) {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.error,
-          message: error,
-        );
+        ShowICareDialog.showICareDialogError(context, error);
       },
     );
   }

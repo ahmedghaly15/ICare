@@ -132,11 +132,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
     BuildContext context,
   ) {
     state.whenOrNull(
-      error: (error) => ShowICareDialog.show(
-        context: context,
-        state: ICareDialogStates.error,
-        message: error,
-      ),
+      error: (error) => ShowICareDialog.showICareDialogError(context, error),
     );
   }
 }

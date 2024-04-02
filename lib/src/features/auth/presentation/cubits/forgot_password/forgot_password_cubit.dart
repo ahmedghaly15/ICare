@@ -55,11 +55,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
         );
       },
       error: (error) {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.error,
-          message: error,
-        );
+        ShowICareDialog.showICareDialogError(context, error);
       },
     );
   }

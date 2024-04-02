@@ -235,11 +235,7 @@ class _RegisterFormState extends State<RegisterForm> {
         isShowLoading = false;
       });
 
-      ShowICareDialog.show(
-        context: context,
-        state: ICareDialogStates.error,
-        message: error,
-      );
+      ShowICareDialog.showICareDialogError(context, error);
     });
   }
 

@@ -148,11 +148,7 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
         });
       },
       createTinyTaleError: (error) {
-        ShowICareDialog.show(
-          context: context,
-          state: ICareDialogStates.error,
-          message: error,
-        );
+        ShowICareDialog.showICareDialogError(context, error);
       },
     );
   }
