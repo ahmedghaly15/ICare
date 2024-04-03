@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
 import 'package:icare/src/features/chat/domain/usecases/send_message.dart';
 import 'package:icare/src/features/chat/domain/usecases/stream_messages.dart';
@@ -140,6 +141,25 @@ class ChatCubit extends Cubit<ChatState> {
     }).catchError((error) {
       emit(ChatState.uploadMessageImageError(error.toString()));
     });
+  }
+
+  void handleChatState(
+    ChatState<dynamic> state,
+    BuildContext context,
+    String receiverId,
+  ) {
+    state.whenOrNull(
+      sendMessageSuccess: () {
+        messageController.clear();
+        streamMessages(receiverId);
+      },
+      sendMessageError: (error) {
+        ShowICareDialog.showICareDialogError(context, error);
+      },
+      uploadMessageImageError: (error) {
+        ShowICareDialog.showICareDialogError(context, error);
+      },
+    );
   }
 
   void removePickedMessageImage() {
