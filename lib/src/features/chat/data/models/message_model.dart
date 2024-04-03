@@ -9,12 +9,12 @@ class MessageModel {
   final String? senderId;
   final String? senderName;
   final SendMessageParams? messageData;
-  final Timestamp? dateTime;
+  // final Timestamp? dateTime;
 
   const MessageModel({
     this.senderId,
     this.senderName,
-    this.dateTime,
+    // this.dateTime,
     this.messageData,
   });
 

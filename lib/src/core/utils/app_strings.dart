@@ -126,4 +126,6 @@ class AppStrings {
       'Bookmarked TinyTales Collection';
   static const String delete = 'Delete';
   static const String peopleWhoLiked = 'People who liked';
+  static const String chatsCollection = 'Chats Collection';
+  static const String messagesCollection = 'Messages Collection';
 }
