@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/functions/open_url.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -40,10 +42,11 @@ class CommentItemContent extends StatelessWidget {
           ),
           if (comment.commentData!.commentText != null) ...[
             MySizedBox.height7,
-            Text(
-              comment.commentData!.commentText!,
+            Linkify(
+              text: comment.commentData!.commentText!,
               style: AppTextStyles.textStyle16Regular(context),
-            )
+              onOpen: (link) => openUrl(link),
+            ),
           ],
           if (comment.commentData!.commentImage != null) ...[
             MySizedBox.height7,

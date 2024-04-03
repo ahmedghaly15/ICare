@@ -17,7 +17,6 @@ import 'package:icare/src/features/tiny_tales/domain/usecases/un_bookmark_tiny_t
 import 'package:icare/src/features/tiny_tales/domain/usecases/unlike_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_state.dart';
 
-
 class TinyTalesCubit extends Cubit<TinyTalesState> {
   final LikeTinyTaleUseCase likeTinyTaleUseCase;
   final UnLikeTinyTaleUseCase unLikeTinyTaleUseCase;
@@ -131,8 +130,6 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
         .get<FirebaseFirestore>()
         .collection(AppStrings.tinyTalesCollection);
   }
-
- 
 
   void bookmarkTinyTale(TinyTale tinyTale) async {
     emit(const TinyTalesState.bookmarkTinyTaleLoading());

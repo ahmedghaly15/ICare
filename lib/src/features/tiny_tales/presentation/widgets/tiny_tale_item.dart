@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/functions/open_url.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
-import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/like_comment_bookmark_buttons.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_image.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_item_container.dart';
@@ -28,7 +27,7 @@ class TinyTaleItem extends StatelessWidget {
             Linkify(
               text: tinyTale.tinyTaleData!.text!,
               style: AppTextStyles.textStyle18Regular(context),
-              onOpen: (link) => context.read<TinyTalesCubit>().openUrl(link),
+              onOpen: (link) => openUrl(link),
             )
           ],
           MySizedBox.height10,

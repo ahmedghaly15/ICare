@@ -22,7 +22,6 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
   });
 
   final bool isTinyTaleContainsImage;
-
   final TinyTale tinyTale;
 
   @override
@@ -57,7 +56,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
           },
         ),
         MySizedBox.width6,
-        TinyTaleLikeButtonStreamBuilder(
+        TinyTaleLikeButtonBlocListener(
           tinyTaleId: tinyTale.tinyTaleId,
           isTinyTaleContainsImage: isTinyTaleContainsImage,
         ),
