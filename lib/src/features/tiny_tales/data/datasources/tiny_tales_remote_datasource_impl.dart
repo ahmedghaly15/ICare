@@ -83,6 +83,13 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   }
 
   @override
+  Future<QuerySnapshot<Map<String, dynamic>>> getPeopleWhoLiked(
+    String tinyTaleId,
+  ) async {
+    return await _accessLikesCollection(tinyTaleId).getQuerySnapshot();
+  }
+
+  @override
   Future<void> deleteTinyTale(String tinyTaleId) async {
     _deleteTinyTaleLikes(tinyTaleId);
     _deleteEachCommentRepliesLikes(tinyTaleId);

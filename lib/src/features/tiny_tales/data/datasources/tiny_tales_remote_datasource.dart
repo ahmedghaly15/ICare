@@ -30,4 +30,7 @@ abstract class TinyTalesRemoteDatasource {
   Future<QuerySnapshot<Map<String, dynamic>>> getBookmarkedTinyTales();
 
   Stream<bool> isTinyTaleBookmarkedByMe(String tinyTaleId);
+
+  Future<QuerySnapshot<Map<String, dynamic>>> getPeopleWhoLiked(
+      String tinyTaleId);
 }

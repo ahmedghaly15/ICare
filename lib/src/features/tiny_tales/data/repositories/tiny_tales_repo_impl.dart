@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
+import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource.dart';
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
@@ -49,6 +50,22 @@ class TinyTalesRepoImpl implements TinyTalesRepo {
   Future<FirebaseRequestResult<void>> unLikeTinyTale(String tinyTaleId) {
     return executeAndHandleFirebaseErrors<void>(
       () async => await _tinyTalesRemoteDatasource.unLikeTinyTale(tinyTaleId),
+    );
+  }
+
+  @override
+  Future<FirebaseRequestResult<List<ICareUser>>> getPeopleWhoLiked(
+    String tinyTaleId,
+  ) async {
+    return executeAndHandleFirebaseErrors<List<ICareUser>>(
+      () async {
+        final QuerySnapshot<Map<String, dynamic>> querySnapshot =
+            await _tinyTalesRemoteDatasource.getPeopleWhoLiked(tinyTaleId);
+
+        return querySnapshot.docs
+            .map((doc) => ICareUser.fromJson(doc.data()['user']))
+            .toList();
+      },
     );
   }
 
