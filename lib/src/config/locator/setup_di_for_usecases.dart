@@ -114,6 +114,9 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<IsTinyTaleBookmarkedByMeUseCase>(
       () => IsTinyTaleBookmarkedByMeUseCase(getIt.get<TinyTalesRepo>()),
     );
+    getIt.registerLazySingleton<GetPeopleWhoLikedUseCase>(
+      () => GetPeopleWhoLikedUseCase(getIt.get<TinyTalesRepo>()),
+    );
 
     // ========== Tips feature ==========
     getIt.registerLazySingleton<GetRandomTipUseCase>(
@@ -173,11 +176,6 @@ class SetupDIForUseCases {
     );
     getIt.registerLazySingleton<UploadCommentReplyImageUseCase>(
       () => UploadCommentReplyImageUseCase(getIt.get<CommentRepliesRepo>()),
-    );
-
-    // ========== PeopleWhoLiked feature ==========
-    getIt.registerLazySingleton<GetPeopleWhoLikedUseCase>(
-      () => GetPeopleWhoLikedUseCase(getIt.get<PeopleWhoLikedRepo>()),
     );
   }
 }

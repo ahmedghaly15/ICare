@@ -110,10 +110,5 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<CommentRepliesDatasource>(
       () => const CommentRepliesDatasourceImpl(),
     );
-
-    // ========== PeopleWhoLiked feature ==========
-    getIt.registerLazySingleton<PeopleWhoLikedDatasource>(
-      () => const PeopleWhoLikedDatasourceImpl(),
-    );
   }
 }

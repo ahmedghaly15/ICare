@@ -97,6 +97,7 @@ class SetupDIForCubits {
             getIt.get<GetBookmarkedTinyTalesUseCase>(),
         isTinyTaleBookmarkedByMeUseCase:
             getIt.get<IsTinyTaleBookmarkedByMeUseCase>(),
+        getPeopleWhoLikedUseCase: getIt.get<GetPeopleWhoLikedUseCase>(),
       ),
     );
 
@@ -146,11 +147,6 @@ class SetupDIForCubits {
         uploadCommentReplyImageUseCase:
             getIt.get<UploadCommentReplyImageUseCase>(),
       ),
-    );
-
-    // ========== PeopleWhoLiked feature ==========
-    getIt.registerLazySingleton<PeopleWhoLikedCubit>(
-      () => PeopleWhoLikedCubit(getIt.get<GetPeopleWhoLikedUseCase>()),
     );
   }
 }
