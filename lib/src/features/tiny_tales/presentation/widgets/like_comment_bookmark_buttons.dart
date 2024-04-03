@@ -12,7 +12,7 @@ import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/book_mark_icon_button_bloc_listener.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/first_three_like_tiny_tale.dart';
-import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_like_button_stream_builder.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_like_button_bloc_listener.dart';
 
 class LikeCommentBookmarkButtons extends StatelessWidget {
   const LikeCommentBookmarkButtons({
