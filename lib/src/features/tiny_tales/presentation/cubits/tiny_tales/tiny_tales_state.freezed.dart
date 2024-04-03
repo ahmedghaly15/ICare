@@ -39,6 +39,10 @@ mixin _$TinyTalesState<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +67,9 @@ mixin _$TinyTalesState<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +94,9 @@ mixin _$TinyTalesState<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -124,6 +134,12 @@ mixin _$TinyTalesState<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -156,6 +172,11 @@ mixin _$TinyTalesState<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,6 +206,11 @@ mixin _$TinyTalesState<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -268,6 +294,10 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return initial();
   }
@@ -295,6 +325,9 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return initial?.call();
   }
@@ -322,6 +355,9 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -365,6 +401,12 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return initial(this);
   }
@@ -400,6 +442,11 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return initial?.call(this);
   }
@@ -432,6 +479,11 @@ class _$TinyTalesInitialImpl<T> implements _TinyTalesInitial<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -505,6 +557,10 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return likeTinyTaleSuccess();
   }
@@ -532,6 +588,9 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return likeTinyTaleSuccess?.call();
   }
@@ -559,6 +618,9 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -602,6 +664,12 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return likeTinyTaleSuccess(this);
   }
@@ -637,6 +705,11 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return likeTinyTaleSuccess?.call(this);
   }
@@ -669,6 +742,11 @@ class _$LikeTinyTaleSuccessImpl<T> implements LikeTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleSuccess != null) {
@@ -769,6 +847,10 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return likeTinyTaleError(error);
   }
@@ -796,6 +878,9 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return likeTinyTaleError?.call(error);
   }
@@ -823,6 +908,9 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -866,6 +954,12 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return likeTinyTaleError(this);
   }
@@ -901,6 +995,11 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return likeTinyTaleError?.call(this);
   }
@@ -933,6 +1032,11 @@ class _$LikeTinyTaleErrorImpl<T> implements LikeTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (likeTinyTaleError != null) {
@@ -1015,6 +1119,10 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleSuccess();
   }
@@ -1042,6 +1150,9 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleSuccess?.call();
   }
@@ -1069,6 +1180,9 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1112,6 +1226,12 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleSuccess(this);
   }
@@ -1147,6 +1267,11 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleSuccess?.call(this);
   }
@@ -1179,6 +1304,11 @@ class _$UnlikeTinyTaleSuccessImpl<T> implements UnlikeTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleSuccess != null) {
@@ -1278,6 +1408,10 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleError(error);
   }
@@ -1305,6 +1439,9 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleError?.call(error);
   }
@@ -1332,6 +1469,9 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -1375,6 +1515,12 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleError(this);
   }
@@ -1410,6 +1556,11 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return unlikeTinyTaleError?.call(this);
   }
@@ -1442,6 +1593,11 @@ class _$UnlikeTinyTaleErrorImpl<T> implements UnlikeTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unlikeTinyTaleError != null) {
@@ -1524,6 +1680,10 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleLoading();
   }
@@ -1551,6 +1711,9 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleLoading?.call();
   }
@@ -1578,6 +1741,9 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -1621,6 +1787,12 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleLoading(this);
   }
@@ -1656,6 +1828,11 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleLoading?.call(this);
   }
@@ -1688,6 +1865,11 @@ class _$DeleteTinyTaleLoadingImpl<T> implements DeleteTinyTaleLoading<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleLoading != null) {
@@ -1764,6 +1946,10 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleSuccess();
   }
@@ -1791,6 +1977,9 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleSuccess?.call();
   }
@@ -1818,6 +2007,9 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -1861,6 +2053,12 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleSuccess(this);
   }
@@ -1896,6 +2094,11 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleSuccess?.call(this);
   }
@@ -1928,6 +2131,11 @@ class _$DeleteTinyTaleSuccessImpl<T> implements DeleteTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleSuccess != null) {
@@ -2027,6 +2235,10 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleError(error);
   }
@@ -2054,6 +2266,9 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleError?.call(error);
   }
@@ -2081,6 +2296,9 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -2124,6 +2342,12 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleError(this);
   }
@@ -2159,6 +2383,11 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return deleteTinyTaleError?.call(this);
   }
@@ -2191,6 +2420,11 @@ class _$DeleteTinyTaleErrorImpl<T> implements DeleteTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (deleteTinyTaleError != null) {
@@ -2270,6 +2504,10 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return getTinyTalesLoading();
   }
@@ -2297,6 +2535,9 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return getTinyTalesLoading?.call();
   }
@@ -2324,6 +2565,9 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getTinyTalesLoading != null) {
@@ -2367,6 +2611,12 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return getTinyTalesLoading(this);
   }
@@ -2402,6 +2652,11 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return getTinyTalesLoading?.call(this);
   }
@@ -2434,6 +2689,11 @@ class _$GetTinyTalesLoadingImpl<T> implements GetTinyTalesLoading<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getTinyTalesLoading != null) {
@@ -2539,6 +2799,10 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return getTinyTalesSuccess(data);
   }
@@ -2566,6 +2830,9 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return getTinyTalesSuccess?.call(data);
   }
@@ -2593,6 +2860,9 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getTinyTalesSuccess != null) {
@@ -2636,6 +2906,12 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return getTinyTalesSuccess(this);
   }
@@ -2671,6 +2947,11 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return getTinyTalesSuccess?.call(this);
   }
@@ -2703,6 +2984,11 @@ class _$GetTinyTalesSuccessImpl<T> implements GetTinyTalesSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getTinyTalesSuccess != null) {
@@ -2809,6 +3095,10 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return getTinyTalesError(error);
   }
@@ -2836,6 +3126,9 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return getTinyTalesError?.call(error);
   }
@@ -2863,6 +3156,9 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getTinyTalesError != null) {
@@ -2906,6 +3202,12 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return getTinyTalesError(this);
   }
@@ -2941,6 +3243,11 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return getTinyTalesError?.call(this);
   }
@@ -2973,6 +3280,11 @@ class _$GetTinyTalesErrorImpl<T> implements GetTinyTalesError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getTinyTalesError != null) {
@@ -3055,6 +3367,10 @@ class _$BookmarkTinyTaleLoadingImpl<T> implements BookmarkTinyTaleLoading<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleLoading();
   }
@@ -3082,6 +3398,9 @@ class _$BookmarkTinyTaleLoadingImpl<T> implements BookmarkTinyTaleLoading<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleLoading?.call();
   }
@@ -3109,6 +3428,9 @@ class _$BookmarkTinyTaleLoadingImpl<T> implements BookmarkTinyTaleLoading<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (bookmarkTinyTaleLoading != null) {
@@ -3152,6 +3474,12 @@ class _$BookmarkTinyTaleLoadingImpl<T> implements BookmarkTinyTaleLoading<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleLoading(this);
   }
@@ -3187,6 +3515,11 @@ class _$BookmarkTinyTaleLoadingImpl<T> implements BookmarkTinyTaleLoading<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleLoading?.call(this);
   }
@@ -3219,6 +3552,11 @@ class _$BookmarkTinyTaleLoadingImpl<T> implements BookmarkTinyTaleLoading<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (bookmarkTinyTaleLoading != null) {
@@ -3295,6 +3633,10 @@ class _$BookmarkTinyTaleSuccessImpl<T> implements BookmarkTinyTaleSuccess<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleSuccess();
   }
@@ -3322,6 +3664,9 @@ class _$BookmarkTinyTaleSuccessImpl<T> implements BookmarkTinyTaleSuccess<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleSuccess?.call();
   }
@@ -3349,6 +3694,9 @@ class _$BookmarkTinyTaleSuccessImpl<T> implements BookmarkTinyTaleSuccess<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (bookmarkTinyTaleSuccess != null) {
@@ -3392,6 +3740,12 @@ class _$BookmarkTinyTaleSuccessImpl<T> implements BookmarkTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleSuccess(this);
   }
@@ -3427,6 +3781,11 @@ class _$BookmarkTinyTaleSuccessImpl<T> implements BookmarkTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleSuccess?.call(this);
   }
@@ -3459,6 +3818,11 @@ class _$BookmarkTinyTaleSuccessImpl<T> implements BookmarkTinyTaleSuccess<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (bookmarkTinyTaleSuccess != null) {
@@ -3561,6 +3925,10 @@ class _$BookmarkTinyTaleErrorImpl<T> implements BookmarkTinyTaleError<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleError(error);
   }
@@ -3588,6 +3956,9 @@ class _$BookmarkTinyTaleErrorImpl<T> implements BookmarkTinyTaleError<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleError?.call(error);
   }
@@ -3615,6 +3986,9 @@ class _$BookmarkTinyTaleErrorImpl<T> implements BookmarkTinyTaleError<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (bookmarkTinyTaleError != null) {
@@ -3658,6 +4032,12 @@ class _$BookmarkTinyTaleErrorImpl<T> implements BookmarkTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleError(this);
   }
@@ -3693,6 +4073,11 @@ class _$BookmarkTinyTaleErrorImpl<T> implements BookmarkTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return bookmarkTinyTaleError?.call(this);
   }
@@ -3725,6 +4110,11 @@ class _$BookmarkTinyTaleErrorImpl<T> implements BookmarkTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (bookmarkTinyTaleError != null) {
@@ -3808,6 +4198,10 @@ class _$UnBookmarkTinyTaleLoadingImpl<T>
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleLoading();
   }
@@ -3835,6 +4229,9 @@ class _$UnBookmarkTinyTaleLoadingImpl<T>
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleLoading?.call();
   }
@@ -3862,6 +4259,9 @@ class _$UnBookmarkTinyTaleLoadingImpl<T>
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unBookmarkTinyTaleLoading != null) {
@@ -3905,6 +4305,12 @@ class _$UnBookmarkTinyTaleLoadingImpl<T>
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleLoading(this);
   }
@@ -3940,6 +4346,11 @@ class _$UnBookmarkTinyTaleLoadingImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleLoading?.call(this);
   }
@@ -3972,6 +4383,11 @@ class _$UnBookmarkTinyTaleLoadingImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unBookmarkTinyTaleLoading != null) {
@@ -4050,6 +4466,10 @@ class _$UnBookmarkTinyTaleSuccessImpl<T>
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleSuccess();
   }
@@ -4077,6 +4497,9 @@ class _$UnBookmarkTinyTaleSuccessImpl<T>
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleSuccess?.call();
   }
@@ -4104,6 +4527,9 @@ class _$UnBookmarkTinyTaleSuccessImpl<T>
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unBookmarkTinyTaleSuccess != null) {
@@ -4147,6 +4573,12 @@ class _$UnBookmarkTinyTaleSuccessImpl<T>
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleSuccess(this);
   }
@@ -4182,6 +4614,11 @@ class _$UnBookmarkTinyTaleSuccessImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleSuccess?.call(this);
   }
@@ -4214,6 +4651,11 @@ class _$UnBookmarkTinyTaleSuccessImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unBookmarkTinyTaleSuccess != null) {
@@ -4317,6 +4759,10 @@ class _$UnBookmarkTinyTaleErrorImpl<T> implements UnBookmarkTinyTaleError<T> {
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleError(error);
   }
@@ -4344,6 +4790,9 @@ class _$UnBookmarkTinyTaleErrorImpl<T> implements UnBookmarkTinyTaleError<T> {
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleError?.call(error);
   }
@@ -4371,6 +4820,9 @@ class _$UnBookmarkTinyTaleErrorImpl<T> implements UnBookmarkTinyTaleError<T> {
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unBookmarkTinyTaleError != null) {
@@ -4414,6 +4866,12 @@ class _$UnBookmarkTinyTaleErrorImpl<T> implements UnBookmarkTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleError(this);
   }
@@ -4449,6 +4907,11 @@ class _$UnBookmarkTinyTaleErrorImpl<T> implements UnBookmarkTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return unBookmarkTinyTaleError?.call(this);
   }
@@ -4481,6 +4944,11 @@ class _$UnBookmarkTinyTaleErrorImpl<T> implements UnBookmarkTinyTaleError<T> {
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (unBookmarkTinyTaleError != null) {
@@ -4564,6 +5032,10 @@ class _$GetBookmarkedTinyTalesLoadingImpl<T>
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesLoading();
   }
@@ -4591,6 +5063,9 @@ class _$GetBookmarkedTinyTalesLoadingImpl<T>
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesLoading?.call();
   }
@@ -4618,6 +5093,9 @@ class _$GetBookmarkedTinyTalesLoadingImpl<T>
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getBookmarkedTinyTalesLoading != null) {
@@ -4661,6 +5139,12 @@ class _$GetBookmarkedTinyTalesLoadingImpl<T>
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesLoading(this);
   }
@@ -4696,6 +5180,11 @@ class _$GetBookmarkedTinyTalesLoadingImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesLoading?.call(this);
   }
@@ -4728,6 +5217,11 @@ class _$GetBookmarkedTinyTalesLoadingImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getBookmarkedTinyTalesLoading != null) {
@@ -4840,6 +5334,10 @@ class _$GetBookmarkedTinyTalesSuccessImpl<T>
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesSuccess(data);
   }
@@ -4867,6 +5365,9 @@ class _$GetBookmarkedTinyTalesSuccessImpl<T>
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesSuccess?.call(data);
   }
@@ -4894,6 +5395,9 @@ class _$GetBookmarkedTinyTalesSuccessImpl<T>
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getBookmarkedTinyTalesSuccess != null) {
@@ -4937,6 +5441,12 @@ class _$GetBookmarkedTinyTalesSuccessImpl<T>
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesSuccess(this);
   }
@@ -4972,6 +5482,11 @@ class _$GetBookmarkedTinyTalesSuccessImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesSuccess?.call(this);
   }
@@ -5004,6 +5519,11 @@ class _$GetBookmarkedTinyTalesSuccessImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getBookmarkedTinyTalesSuccess != null) {
@@ -5115,6 +5635,10 @@ class _$GetBookmarkedTinyTalesErrorImpl<T>
     required TResult Function(List<TinyTale> data)
         getBookmarkedTinyTalesSuccess,
     required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesError(error);
   }
@@ -5142,6 +5666,9 @@ class _$GetBookmarkedTinyTalesErrorImpl<T>
     TResult? Function()? getBookmarkedTinyTalesLoading,
     TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesError?.call(error);
   }
@@ -5169,6 +5696,9 @@ class _$GetBookmarkedTinyTalesErrorImpl<T>
     TResult Function()? getBookmarkedTinyTalesLoading,
     TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
     TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getBookmarkedTinyTalesError != null) {
@@ -5212,6 +5742,12 @@ class _$GetBookmarkedTinyTalesErrorImpl<T>
         getBookmarkedTinyTalesSuccess,
     required TResult Function(GetBookmarkedTinyTalesError<T> value)
         getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesError(this);
   }
@@ -5247,6 +5783,11 @@ class _$GetBookmarkedTinyTalesErrorImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult? Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
   }) {
     return getBookmarkedTinyTalesError?.call(this);
   }
@@ -5279,6 +5820,11 @@ class _$GetBookmarkedTinyTalesErrorImpl<T>
         getBookmarkedTinyTalesSuccess,
     TResult Function(GetBookmarkedTinyTalesError<T> value)?
         getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
     required TResult orElse(),
   }) {
     if (getBookmarkedTinyTalesError != null) {
@@ -5296,5 +5842,875 @@ abstract class GetBookmarkedTinyTalesError<T> implements TinyTalesState<T> {
   @JsonKey(ignore: true)
   _$$GetBookmarkedTinyTalesErrorImplCopyWith<T,
           _$GetBookmarkedTinyTalesErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPeopleWhoLikedLoadingImplCopyWith<T, $Res> {
+  factory _$$GetPeopleWhoLikedLoadingImplCopyWith(
+          _$GetPeopleWhoLikedLoadingImpl<T> value,
+          $Res Function(_$GetPeopleWhoLikedLoadingImpl<T>) then) =
+      __$$GetPeopleWhoLikedLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetPeopleWhoLikedLoadingImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$GetPeopleWhoLikedLoadingImpl<T>>
+    implements _$$GetPeopleWhoLikedLoadingImplCopyWith<T, $Res> {
+  __$$GetPeopleWhoLikedLoadingImplCopyWithImpl(
+      _$GetPeopleWhoLikedLoadingImpl<T> _value,
+      $Res Function(_$GetPeopleWhoLikedLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetPeopleWhoLikedLoadingImpl<T> implements GetPeopleWhoLikedLoading<T> {
+  const _$GetPeopleWhoLikedLoadingImpl();
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.getPeopleWhoLikedLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPeopleWhoLikedLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
+    required TResult orElse(),
+  }) {
+    if (getPeopleWhoLikedLoading != null) {
+      return getPeopleWhoLikedLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
+    required TResult orElse(),
+  }) {
+    if (getPeopleWhoLikedLoading != null) {
+      return getPeopleWhoLikedLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPeopleWhoLikedLoading<T> implements TinyTalesState<T> {
+  const factory GetPeopleWhoLikedLoading() = _$GetPeopleWhoLikedLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetPeopleWhoLikedSuccessImplCopyWith<T, $Res> {
+  factory _$$GetPeopleWhoLikedSuccessImplCopyWith(
+          _$GetPeopleWhoLikedSuccessImpl<T> value,
+          $Res Function(_$GetPeopleWhoLikedSuccessImpl<T>) then) =
+      __$$GetPeopleWhoLikedSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<ICareUser> peopleWhoLiked});
+}
+
+/// @nodoc
+class __$$GetPeopleWhoLikedSuccessImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$GetPeopleWhoLikedSuccessImpl<T>>
+    implements _$$GetPeopleWhoLikedSuccessImplCopyWith<T, $Res> {
+  __$$GetPeopleWhoLikedSuccessImplCopyWithImpl(
+      _$GetPeopleWhoLikedSuccessImpl<T> _value,
+      $Res Function(_$GetPeopleWhoLikedSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? peopleWhoLiked = null,
+  }) {
+    return _then(_$GetPeopleWhoLikedSuccessImpl<T>(
+      null == peopleWhoLiked
+          ? _value._peopleWhoLiked
+          : peopleWhoLiked // ignore: cast_nullable_to_non_nullable
+              as List<ICareUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPeopleWhoLikedSuccessImpl<T> implements GetPeopleWhoLikedSuccess<T> {
+  const _$GetPeopleWhoLikedSuccessImpl(final List<ICareUser> peopleWhoLiked)
+      : _peopleWhoLiked = peopleWhoLiked;
+
+  final List<ICareUser> _peopleWhoLiked;
+  @override
+  List<ICareUser> get peopleWhoLiked {
+    if (_peopleWhoLiked is EqualUnmodifiableListView) return _peopleWhoLiked;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_peopleWhoLiked);
+  }
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.getPeopleWhoLikedSuccess(peopleWhoLiked: $peopleWhoLiked)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPeopleWhoLikedSuccessImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other._peopleWhoLiked, _peopleWhoLiked));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_peopleWhoLiked));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPeopleWhoLikedSuccessImplCopyWith<T, _$GetPeopleWhoLikedSuccessImpl<T>>
+      get copyWith => __$$GetPeopleWhoLikedSuccessImplCopyWithImpl<T,
+          _$GetPeopleWhoLikedSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedSuccess(peopleWhoLiked);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedSuccess?.call(peopleWhoLiked);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
+    required TResult orElse(),
+  }) {
+    if (getPeopleWhoLikedSuccess != null) {
+      return getPeopleWhoLikedSuccess(peopleWhoLiked);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
+    required TResult orElse(),
+  }) {
+    if (getPeopleWhoLikedSuccess != null) {
+      return getPeopleWhoLikedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPeopleWhoLikedSuccess<T> implements TinyTalesState<T> {
+  const factory GetPeopleWhoLikedSuccess(final List<ICareUser> peopleWhoLiked) =
+      _$GetPeopleWhoLikedSuccessImpl<T>;
+
+  List<ICareUser> get peopleWhoLiked;
+  @JsonKey(ignore: true)
+  _$$GetPeopleWhoLikedSuccessImplCopyWith<T, _$GetPeopleWhoLikedSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetPeopleWhoLikedErrorImplCopyWith<T, $Res> {
+  factory _$$GetPeopleWhoLikedErrorImplCopyWith(
+          _$GetPeopleWhoLikedErrorImpl<T> value,
+          $Res Function(_$GetPeopleWhoLikedErrorImpl<T>) then) =
+      __$$GetPeopleWhoLikedErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetPeopleWhoLikedErrorImplCopyWithImpl<T, $Res>
+    extends _$TinyTalesStateCopyWithImpl<T, $Res,
+        _$GetPeopleWhoLikedErrorImpl<T>>
+    implements _$$GetPeopleWhoLikedErrorImplCopyWith<T, $Res> {
+  __$$GetPeopleWhoLikedErrorImplCopyWithImpl(
+      _$GetPeopleWhoLikedErrorImpl<T> _value,
+      $Res Function(_$GetPeopleWhoLikedErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetPeopleWhoLikedErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetPeopleWhoLikedErrorImpl<T> implements GetPeopleWhoLikedError<T> {
+  const _$GetPeopleWhoLikedErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'TinyTalesState<$T>.getPeopleWhoLikedError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetPeopleWhoLikedErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetPeopleWhoLikedErrorImplCopyWith<T, _$GetPeopleWhoLikedErrorImpl<T>>
+      get copyWith => __$$GetPeopleWhoLikedErrorImplCopyWithImpl<T,
+          _$GetPeopleWhoLikedErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() likeTinyTaleSuccess,
+    required TResult Function(String error) likeTinyTaleError,
+    required TResult Function() unlikeTinyTaleSuccess,
+    required TResult Function(String error) unlikeTinyTaleError,
+    required TResult Function() deleteTinyTaleLoading,
+    required TResult Function() deleteTinyTaleSuccess,
+    required TResult Function(String error) deleteTinyTaleError,
+    required TResult Function() getTinyTalesLoading,
+    required TResult Function(List<TinyTale> data) getTinyTalesSuccess,
+    required TResult Function(String error) getTinyTalesError,
+    required TResult Function() bookmarkTinyTaleLoading,
+    required TResult Function() bookmarkTinyTaleSuccess,
+    required TResult Function(String error) bookmarkTinyTaleError,
+    required TResult Function() unBookmarkTinyTaleLoading,
+    required TResult Function() unBookmarkTinyTaleSuccess,
+    required TResult Function(String error) unBookmarkTinyTaleError,
+    required TResult Function() getBookmarkedTinyTalesLoading,
+    required TResult Function(List<TinyTale> data)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(String error) getBookmarkedTinyTalesError,
+    required TResult Function() getPeopleWhoLikedLoading,
+    required TResult Function(List<ICareUser> peopleWhoLiked)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(String error) getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? likeTinyTaleSuccess,
+    TResult? Function(String error)? likeTinyTaleError,
+    TResult? Function()? unlikeTinyTaleSuccess,
+    TResult? Function(String error)? unlikeTinyTaleError,
+    TResult? Function()? deleteTinyTaleLoading,
+    TResult? Function()? deleteTinyTaleSuccess,
+    TResult? Function(String error)? deleteTinyTaleError,
+    TResult? Function()? getTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult? Function(String error)? getTinyTalesError,
+    TResult? Function()? bookmarkTinyTaleLoading,
+    TResult? Function()? bookmarkTinyTaleSuccess,
+    TResult? Function(String error)? bookmarkTinyTaleError,
+    TResult? Function()? unBookmarkTinyTaleLoading,
+    TResult? Function()? unBookmarkTinyTaleSuccess,
+    TResult? Function(String error)? unBookmarkTinyTaleError,
+    TResult? Function()? getBookmarkedTinyTalesLoading,
+    TResult? Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult? Function(String error)? getBookmarkedTinyTalesError,
+    TResult? Function()? getPeopleWhoLikedLoading,
+    TResult? Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult? Function(String error)? getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? likeTinyTaleSuccess,
+    TResult Function(String error)? likeTinyTaleError,
+    TResult Function()? unlikeTinyTaleSuccess,
+    TResult Function(String error)? unlikeTinyTaleError,
+    TResult Function()? deleteTinyTaleLoading,
+    TResult Function()? deleteTinyTaleSuccess,
+    TResult Function(String error)? deleteTinyTaleError,
+    TResult Function()? getTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getTinyTalesSuccess,
+    TResult Function(String error)? getTinyTalesError,
+    TResult Function()? bookmarkTinyTaleLoading,
+    TResult Function()? bookmarkTinyTaleSuccess,
+    TResult Function(String error)? bookmarkTinyTaleError,
+    TResult Function()? unBookmarkTinyTaleLoading,
+    TResult Function()? unBookmarkTinyTaleSuccess,
+    TResult Function(String error)? unBookmarkTinyTaleError,
+    TResult Function()? getBookmarkedTinyTalesLoading,
+    TResult Function(List<TinyTale> data)? getBookmarkedTinyTalesSuccess,
+    TResult Function(String error)? getBookmarkedTinyTalesError,
+    TResult Function()? getPeopleWhoLikedLoading,
+    TResult Function(List<ICareUser> peopleWhoLiked)? getPeopleWhoLikedSuccess,
+    TResult Function(String error)? getPeopleWhoLikedError,
+    required TResult orElse(),
+  }) {
+    if (getPeopleWhoLikedError != null) {
+      return getPeopleWhoLikedError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_TinyTalesInitial<T> value) initial,
+    required TResult Function(LikeTinyTaleSuccess<T> value) likeTinyTaleSuccess,
+    required TResult Function(LikeTinyTaleError<T> value) likeTinyTaleError,
+    required TResult Function(UnlikeTinyTaleSuccess<T> value)
+        unlikeTinyTaleSuccess,
+    required TResult Function(UnlikeTinyTaleError<T> value) unlikeTinyTaleError,
+    required TResult Function(DeleteTinyTaleLoading<T> value)
+        deleteTinyTaleLoading,
+    required TResult Function(DeleteTinyTaleSuccess<T> value)
+        deleteTinyTaleSuccess,
+    required TResult Function(DeleteTinyTaleError<T> value) deleteTinyTaleError,
+    required TResult Function(GetTinyTalesLoading<T> value) getTinyTalesLoading,
+    required TResult Function(GetTinyTalesSuccess<T> value) getTinyTalesSuccess,
+    required TResult Function(GetTinyTalesError<T> value) getTinyTalesError,
+    required TResult Function(BookmarkTinyTaleLoading<T> value)
+        bookmarkTinyTaleLoading,
+    required TResult Function(BookmarkTinyTaleSuccess<T> value)
+        bookmarkTinyTaleSuccess,
+    required TResult Function(BookmarkTinyTaleError<T> value)
+        bookmarkTinyTaleError,
+    required TResult Function(UnBookmarkTinyTaleLoading<T> value)
+        unBookmarkTinyTaleLoading,
+    required TResult Function(UnBookmarkTinyTaleSuccess<T> value)
+        unBookmarkTinyTaleSuccess,
+    required TResult Function(UnBookmarkTinyTaleError<T> value)
+        unBookmarkTinyTaleError,
+    required TResult Function(GetBookmarkedTinyTalesLoading<T> value)
+        getBookmarkedTinyTalesLoading,
+    required TResult Function(GetBookmarkedTinyTalesSuccess<T> value)
+        getBookmarkedTinyTalesSuccess,
+    required TResult Function(GetBookmarkedTinyTalesError<T> value)
+        getBookmarkedTinyTalesError,
+    required TResult Function(GetPeopleWhoLikedLoading<T> value)
+        getPeopleWhoLikedLoading,
+    required TResult Function(GetPeopleWhoLikedSuccess<T> value)
+        getPeopleWhoLikedSuccess,
+    required TResult Function(GetPeopleWhoLikedError<T> value)
+        getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_TinyTalesInitial<T> value)? initial,
+    TResult? Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult? Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult? Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult? Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult? Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult? Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult? Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult? Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult? Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult? Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult? Function(BookmarkTinyTaleLoading<T> value)?
+        bookmarkTinyTaleLoading,
+    TResult? Function(BookmarkTinyTaleSuccess<T> value)?
+        bookmarkTinyTaleSuccess,
+    TResult? Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult? Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult? Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult? Function(UnBookmarkTinyTaleError<T> value)?
+        unBookmarkTinyTaleError,
+    TResult? Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult? Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult? Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    TResult? Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult? Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult? Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
+  }) {
+    return getPeopleWhoLikedError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_TinyTalesInitial<T> value)? initial,
+    TResult Function(LikeTinyTaleSuccess<T> value)? likeTinyTaleSuccess,
+    TResult Function(LikeTinyTaleError<T> value)? likeTinyTaleError,
+    TResult Function(UnlikeTinyTaleSuccess<T> value)? unlikeTinyTaleSuccess,
+    TResult Function(UnlikeTinyTaleError<T> value)? unlikeTinyTaleError,
+    TResult Function(DeleteTinyTaleLoading<T> value)? deleteTinyTaleLoading,
+    TResult Function(DeleteTinyTaleSuccess<T> value)? deleteTinyTaleSuccess,
+    TResult Function(DeleteTinyTaleError<T> value)? deleteTinyTaleError,
+    TResult Function(GetTinyTalesLoading<T> value)? getTinyTalesLoading,
+    TResult Function(GetTinyTalesSuccess<T> value)? getTinyTalesSuccess,
+    TResult Function(GetTinyTalesError<T> value)? getTinyTalesError,
+    TResult Function(BookmarkTinyTaleLoading<T> value)? bookmarkTinyTaleLoading,
+    TResult Function(BookmarkTinyTaleSuccess<T> value)? bookmarkTinyTaleSuccess,
+    TResult Function(BookmarkTinyTaleError<T> value)? bookmarkTinyTaleError,
+    TResult Function(UnBookmarkTinyTaleLoading<T> value)?
+        unBookmarkTinyTaleLoading,
+    TResult Function(UnBookmarkTinyTaleSuccess<T> value)?
+        unBookmarkTinyTaleSuccess,
+    TResult Function(UnBookmarkTinyTaleError<T> value)? unBookmarkTinyTaleError,
+    TResult Function(GetBookmarkedTinyTalesLoading<T> value)?
+        getBookmarkedTinyTalesLoading,
+    TResult Function(GetBookmarkedTinyTalesSuccess<T> value)?
+        getBookmarkedTinyTalesSuccess,
+    TResult Function(GetBookmarkedTinyTalesError<T> value)?
+        getBookmarkedTinyTalesError,
+    TResult Function(GetPeopleWhoLikedLoading<T> value)?
+        getPeopleWhoLikedLoading,
+    TResult Function(GetPeopleWhoLikedSuccess<T> value)?
+        getPeopleWhoLikedSuccess,
+    TResult Function(GetPeopleWhoLikedError<T> value)? getPeopleWhoLikedError,
+    required TResult orElse(),
+  }) {
+    if (getPeopleWhoLikedError != null) {
+      return getPeopleWhoLikedError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetPeopleWhoLikedError<T> implements TinyTalesState<T> {
+  const factory GetPeopleWhoLikedError(final String error) =
+      _$GetPeopleWhoLikedErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetPeopleWhoLikedErrorImplCopyWith<T, _$GetPeopleWhoLikedErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

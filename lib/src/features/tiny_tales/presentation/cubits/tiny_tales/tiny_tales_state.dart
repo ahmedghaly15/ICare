@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
 part 'tiny_tales_state.freezed.dart';
@@ -39,4 +40,10 @@ class TinyTalesState<T> with _$TinyTalesState<T> {
       List<TinyTale> data) = GetBookmarkedTinyTalesSuccess<T>;
   const factory TinyTalesState.getBookmarkedTinyTalesError(String error) =
       GetBookmarkedTinyTalesError<T>;
+  const factory TinyTalesState.getPeopleWhoLikedLoading() =
+      GetPeopleWhoLikedLoading;
+  const factory TinyTalesState.getPeopleWhoLikedSuccess(
+      List<ICareUser> peopleWhoLiked) = GetPeopleWhoLikedSuccess<T>;
+  const factory TinyTalesState.getPeopleWhoLikedError(String error) =
+      GetPeopleWhoLikedError<T>;
 }

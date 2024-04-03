@@ -1,15 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/entities/no_params.dart';
-import 'package:icare/src/core/helpers/app_regex.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/bookmark_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_bookmarked_tiny_tales.dart';
+import 'package:icare/src/features/tiny_tales/domain/usecases/get_people_who_liked_usecase.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_bookmarked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
@@ -17,7 +16,7 @@ import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dar
 import 'package:icare/src/features/tiny_tales/domain/usecases/un_bookmark_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/unlike_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_state.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 class TinyTalesCubit extends Cubit<TinyTalesState> {
   final LikeTinyTaleUseCase likeTinyTaleUseCase;
@@ -29,6 +28,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   final UnBookmarkTinyTaleUseCase unBookmarkTinyTaleUseCase;
   final GetBookmarkedTinyTalesUseCase getBookmarkedTinyTalesUseCase;
   final IsTinyTaleBookmarkedByMeUseCase isTinyTaleBookmarkedByMeUseCase;
+  final GetPeopleWhoLikedUseCase getPeopleWhoLikedUseCase;
 
   TinyTalesCubit({
     required this.likeTinyTaleUseCase,
@@ -40,6 +40,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.unBookmarkTinyTaleUseCase,
     required this.getBookmarkedTinyTalesUseCase,
     required this.isTinyTaleBookmarkedByMeUseCase,
+    required this.getPeopleWhoLikedUseCase,
   }) : super(const TinyTalesState.initial());
 
   Future<void> getTinyTales() async {
@@ -70,6 +71,19 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
       error: (error) => emit(
         TinyTalesState.unlikeTinyTaleError(error.failureMsg ?? ''),
       ),
+    );
+  }
+
+  Future<void> getPeopleWhoLiked(String tinyTaleId) async {
+    emit(const TinyTalesState.getPeopleWhoLikedLoading());
+
+    final result = await getPeopleWhoLikedUseCase(tinyTaleId);
+
+    result.when(
+      success: (peopleWhoLiked) =>
+          emit(TinyTalesState.getPeopleWhoLikedSuccess(peopleWhoLiked)),
+      error: (error) =>
+          emit(TinyTalesState.getPeopleWhoLikedError(error.failureMsg ?? '')),
     );
   }
 
@@ -118,16 +132,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
         .collection(AppStrings.tinyTalesCollection);
   }
 
-  void openUrl(LinkableElement link) async {
-    if (AppRegex.isEmailValid(link.text)) {
-      await launchUrl(Uri.parse(link.url));
-    } else {
-      await launchUrl(
-        Uri.parse(link.url),
-        mode: LaunchMode.inAppBrowserView,
-      );
-    }
-  }
+ 
 
   void bookmarkTinyTale(TinyTale tinyTale) async {
     emit(const TinyTalesState.bookmarkTinyTaleLoading());
