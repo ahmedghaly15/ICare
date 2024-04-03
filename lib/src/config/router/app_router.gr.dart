@@ -51,6 +51,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BottomNavBar(),
       );
     },
+    ChatDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<ChatDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: ChatDetailsView(
+          key: args.key,
+          receiver: args.receiver,
+        )),
+      );
+    },
     CommentRepliesRoute.name: (routeData) {
       final args = routeData.argsAs<CommentRepliesRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -292,6 +303,44 @@ class BottomNavBarRoute extends PageRouteInfo<void> {
   static const String name = 'BottomNavBarRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ChatDetailsView]
+class ChatDetailsRoute extends PageRouteInfo<ChatDetailsRouteArgs> {
+  ChatDetailsRoute({
+    Key? key,
+    required ICareUser receiver,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ChatDetailsRoute.name,
+          args: ChatDetailsRouteArgs(
+            key: key,
+            receiver: receiver,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatDetailsRoute';
+
+  static const PageInfo<ChatDetailsRouteArgs> page =
+      PageInfo<ChatDetailsRouteArgs>(name);
+}
+
+class ChatDetailsRouteArgs {
+  const ChatDetailsRouteArgs({
+    this.key,
+    required this.receiver,
+  });
+
+  final Key? key;
+
+  final ICareUser receiver;
+
+  @override
+  String toString() {
+    return 'ChatDetailsRouteArgs{key: $key, receiver: $receiver}';
+  }
 }
 
 /// generated route for
