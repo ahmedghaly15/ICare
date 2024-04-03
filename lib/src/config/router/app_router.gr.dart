@@ -186,9 +186,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     PeopleWhoLikedRoute.name: (routeData) {
+      final args = routeData.argsAs<PeopleWhoLikedRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const PeopleWhoLikedView()),
+        child: PeopleWhoLikedView(
+          key: args.key,
+          tinyTaleId: args.tinyTaleId,
+        ),
       );
     },
     RegisterRoute.name: (routeData) {
@@ -677,16 +681,40 @@ class OnboardingRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [PeopleWhoLikedView]
-class PeopleWhoLikedRoute extends PageRouteInfo<void> {
-  const PeopleWhoLikedRoute({List<PageRouteInfo>? children})
-      : super(
+class PeopleWhoLikedRoute extends PageRouteInfo<PeopleWhoLikedRouteArgs> {
+  PeopleWhoLikedRoute({
+    Key? key,
+    required String tinyTaleId,
+    List<PageRouteInfo>? children,
+  }) : super(
           PeopleWhoLikedRoute.name,
+          args: PeopleWhoLikedRouteArgs(
+            key: key,
+            tinyTaleId: tinyTaleId,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'PeopleWhoLikedRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<PeopleWhoLikedRouteArgs> page =
+      PageInfo<PeopleWhoLikedRouteArgs>(name);
+}
+
+class PeopleWhoLikedRouteArgs {
+  const PeopleWhoLikedRouteArgs({
+    this.key,
+    required this.tinyTaleId,
+  });
+
+  final Key? key;
+
+  final String tinyTaleId;
+
+  @override
+  String toString() {
+    return 'PeopleWhoLikedRouteArgs{key: $key, tinyTaleId: $tinyTaleId}';
+  }
 }
 
 /// generated route for

@@ -20,4 +20,9 @@ class ICareUser {
       _$ICareUserFromJson(json);
 
   Map<String, dynamic> toJson() => _$ICareUserToJson(this);
+
+  @override
+  String toString() {
+    return 'ICareUser{name: $name, email: $email, profileImage: $profileImage, uId: $uId}';
+  }
 }
