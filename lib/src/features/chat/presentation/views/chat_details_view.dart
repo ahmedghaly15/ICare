@@ -6,7 +6,7 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
-import 'package:icare/src/features/chat/presentation/widgets/chat_details_custom_sliver_app_bar.dart';
+import 'package:icare/src/features/chat/presentation/widgets/chat_details_custom_app_bar.dart';
 import 'package:icare/src/features/chat/presentation/widgets/message_field_and_buttons.dart';
 import 'package:icare/src/features/chat/presentation/widgets/messages_stream_builder.dart';
 

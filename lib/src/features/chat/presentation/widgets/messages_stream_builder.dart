@@ -18,9 +18,9 @@ class MessagesStreamBuilder extends StatelessWidget {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: context.read<ChatCubit>().messagesStream(receiverId),
       builder: (context, snapshot) {
-        return context.read<ChatCubit>().messages.isNotEmpty
-            ? Expanded(
-                child: ListView.builder(
+        return Expanded(
+          child: context.read<ChatCubit>().messages.isNotEmpty
+              ? ListView.builder(
                   padding: EdgeInsets.zero,
                   reverse: true,
                   itemCount: context.read<ChatCubit>().messages.length,
@@ -31,9 +31,9 @@ class MessagesStreamBuilder extends StatelessWidget {
                           context.read<ChatCubit>().messages[index].senderId,
                     );
                   },
-                ),
-              )
-            : const SizedBox.shrink();
+                )
+              : const SizedBox.shrink(),
+        );
       },
     );
   }
