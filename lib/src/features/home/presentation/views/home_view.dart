@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/tips/presentation/widgets/show_random_tip_dialog.dart';
@@ -75,6 +76,26 @@ class HomeView extends StatelessWidget {
             },
             child: Text(
               AppStrings.icareCommunity,
+              style: AppTextStyles.textStyle30Bold(context),
+            ),
+          ),
+          MySizedBox.height20,
+          GestureDetector(
+            onTap: () {
+              context.pushRoute(
+                ChatDetailsRoute(
+                  receiver: const ICareUser(
+                    name: 'اللهو الخفي',
+                    profileImage:
+                        'https://www.vetogate.com/Upload/libfiles/491/5/152.jpg',
+                    uId: 't7eO5A1WAnQqHNtPThUCR4p0AWe2',
+                    email: 'test2@gmail.com',
+                  ),
+                ),
+              );
+            },
+            child: Text(
+              'Chat with اللهو الخفي',
               style: AppTextStyles.textStyle30Bold(context),
             ),
           ),

@@ -15,7 +15,8 @@ class NewCommentFieldBlocBuilder extends StatelessWidget {
     return BlocBuilder<CommentsCubit, CommentsState>(
       buildWhen: (_, current) =>
           current is PickCommentImageSuccess ||
-          current is RemovePickedCommentImage,
+          current is RemovePickedCommentImage ||
+          current is SetNewTextValue,
       builder: (context, state) {
         return Expanded(
           child: Column(

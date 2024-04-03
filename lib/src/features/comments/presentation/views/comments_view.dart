@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comments_list_view_bloc_builder.dart';
@@ -42,7 +42,7 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
                   Padding(
                     padding: EdgeInsets.only(
                       right: 8.w,
-                      bottom: SizeConfig.height * 0.05,
+                      bottom: AppConstants.textFieldBottomPadding,
                       top: 8.h,
                     ),
                     child: TypeCommentFieldAndButtons(tinyTaleId: tinyTaleId),

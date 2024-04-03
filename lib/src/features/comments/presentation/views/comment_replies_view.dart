@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/core/widgets/pick_image_icon_button.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
@@ -48,7 +48,7 @@ class CommentRepliesView extends StatelessWidget implements AutoRouteWrapper {
                   Padding(
                     padding: EdgeInsets.only(
                       right: 8.w,
-                      bottom: SizeConfig.height * 0.05,
+                      bottom: AppConstants.textFieldBottomPadding,
                       top: 8.h,
                     ),
                     child: Row(
