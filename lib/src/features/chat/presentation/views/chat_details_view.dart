@@ -8,7 +8,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/chat/presentation/widgets/chat_details_custom_sliver_app_bar.dart';
 import 'package:icare/src/features/chat/presentation/widgets/message_field_and_buttons.dart';
-import 'package:icare/src/features/chat/presentation/widgets/messages_bloc_builder.dart';
+import 'package:icare/src/features/chat/presentation/widgets/messages_stream_builder.dart';
 
 @RoutePage()
 class ChatDetailsView extends StatelessWidget implements AutoRouteWrapper {
@@ -28,36 +28,26 @@ class ChatDetailsView extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            ChatDetailsCustomSliverAppBar(
+        child: Column(
+          children: <Widget>[
+            ChatDetailsCustomAppBar(
               receiverName: receiver.name!,
               receiverProfileImage: receiver.profileImage!,
             ),
-            SliverPadding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              sliver: SliverToBoxAdapter(
-                child: Divider(
-                  color: Colors.black.withOpacity(0.15),
-                ),
+              child: Divider(
+                color: Colors.black.withOpacity(0.15),
               ),
             ),
-            MessagesBlocBuilder(receiverId: receiver.uId!),
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Column(
-                children: <Widget>[
-                  const Spacer(),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      right: 8.w,
-                      bottom: AppConstants.textFieldBottomPadding,
-                      top: 8.h,
-                    ),
-                    child: MessageFieldAndButtons(receiver: receiver),
-                  ),
-                ],
+            MessagesStreamBuilder(receiverId: receiver.uId!),
+            Padding(
+              padding: EdgeInsets.only(
+                right: 8.w,
+                bottom: AppConstants.textFieldBottomPadding,
+                top: 8.h,
               ),
+              child: MessageFieldAndButtons(receiver: receiver),
             ),
           ],
         ),

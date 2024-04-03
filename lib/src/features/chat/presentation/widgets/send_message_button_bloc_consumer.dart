@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
 
@@ -22,11 +23,18 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
           current is SendMessageSuccess ||
           current is UploadMessageImageError,
       listener: (context, state) {
-        context.read<ChatCubit>().handleChatState(
-              state,
-              context,
-              receiver.uId!,
-            );
+        state.whenOrNull(
+          sendMessageSuccess: () {
+            context.read<ChatCubit>().messageController.clear();
+            context.read<ChatCubit>().streamMessages(receiver.uId!);
+          },
+          sendMessageError: (error) {
+            ShowICareDialog.showICareDialogError(context, error);
+          },
+          uploadMessageImageError: (error) {
+            ShowICareDialog.showICareDialogError(context, error);
+          },
+        );
       },
       buildWhen: (_, current) =>
           current is SendMessageLoading ||

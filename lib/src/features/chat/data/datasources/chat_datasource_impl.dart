@@ -59,17 +59,25 @@ class ChatDatasourceImpl implements ChatDatasource {
   Future<DocumentReference<Map<String, dynamic>>> _settingUpSenderChat(
     SettingUpChatParams params,
   ) async {
-    return await _accessMessagesCollection(params.receiverId)
+    final document = await _accessMessagesCollection(params.receiverId)
         .add(params.messageModel.toJson());
+
+    await document.update({'messageId': document.id});
+
+    return document;
   }
 
   Future<DocumentReference<Map<String, dynamic>>> _settingUpReceiverChat(
     SettingUpChatParams params,
   ) async {
-    return await _accessMessagesCollection(
+    final document = await _accessMessagesCollection(
       Helper.uId!,
       senderId: params.receiverId,
     ).add(params.messageModel.toJson());
+
+    await document.update({'messageId': document.id});
+
+    return document;
   }
 
   @override

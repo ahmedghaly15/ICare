@@ -1,12 +1,13 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/features/chat/data/models/message_model.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
 import 'package:icare/src/features/chat/domain/usecases/send_message.dart';
 import 'package:icare/src/features/chat/domain/usecases/stream_messages.dart';
@@ -30,15 +31,24 @@ class ChatCubit extends Cubit<ChatState> {
 
   late final TextEditingController messageController;
 
-  void streamMessages(String receiverId) async {
+  List<MessageModel> messages = <MessageModel>[];
+  void streamMessages(String receiverId) {
     emit(const ChatState.streamMessagesLoading());
-    final result = await streamMessagesUseCase.call(receiverId);
-    result.when(
-      success: (messages) => emit(ChatState.streamMessagesSuccess(messages)),
-      error: (error) =>
-          emit(ChatState.streamMessagesError(error.failureMsg ?? '')),
-    );
+    messagesStream(receiverId).listen((snapshot) {
+      messages.clear();
+
+      for (var element in snapshot.docs) {
+        messages.add(MessageModel.fromJson(element.data()));
+      }
+      emit(ChatState.streamMessagesSuccess(messages));
+    }).onError((error) {
+      emit(ChatState.streamMessagesError(error.toString()));
+    });
   }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> messagesStream(
+          String receiverId) =>
+      streamMessagesUseCase.call(receiverId);
 
   void Function()? newMessage({
     required BuildContext context,
@@ -141,25 +151,6 @@ class ChatCubit extends Cubit<ChatState> {
     }).catchError((error) {
       emit(ChatState.uploadMessageImageError(error.toString()));
     });
-  }
-
-  void handleChatState(
-    ChatState<dynamic> state,
-    BuildContext context,
-    String receiverId,
-  ) {
-    state.whenOrNull(
-      sendMessageSuccess: () {
-        messageController.clear();
-        streamMessages(receiverId);
-      },
-      sendMessageError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
-      },
-      uploadMessageImageError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
-      },
-    );
   }
 
   void removePickedMessageImage() {

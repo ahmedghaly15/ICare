@@ -60,8 +60,8 @@ class CustomMessageBubble extends StatelessWidget {
             MySizedBox.height12,
             Text(
               '${message.messageData!.date} at ${message.messageData!.time!}',
-              style: AppTextStyles.textStyle13Regular(context)
-                  .copyWith(color: Colors.grey.shade400),
+              style: AppTextStyles.textStyle13Regular(context).copyWith(
+                  color: isMe ? AppColors.lightGrey3 : Colors.black38),
             ),
           ],
         ),
