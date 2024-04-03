@@ -108,11 +108,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     emit(const CommentsState.typeNewCommentLoading());
     final result = await typeNewCommentUseCase(params);
     result.when(
-      success: (comment) {
-        // streamComments(params.tinyTaleId!);
-        commentController.clear();
-        emit(const CommentsState.typeNewCommentSuccess());
-      },
+      success: (comment) => emit(const CommentsState.typeNewCommentSuccess()),
       error: (error) =>
           emit(CommentsState.typeNewCommentError(error.failureMsg ?? '')),
     );
@@ -244,6 +240,7 @@ class CommentsCubit extends Cubit<CommentsState> {
   ) {
     state.whenOrNull(
       typeNewCommentSuccess: () {
+        commentController.clear();
         streamComments(tinyTaleId);
       },
       typeNewCommentError: (error) {

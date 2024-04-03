@@ -5,7 +5,7 @@ import 'package:icare/src/features/tiny_tales/presentation/widgets/add_photo_tex
 import 'package:icare/src/features/tiny_tales/presentation/widgets/linear_progress_indicator_bloc_builder.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/new_tiny_tale_image_bloc_builder.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/new_tiny_tale_sliver_app_bar.dart';
-import 'package:icare/src/features/tiny_tales/presentation/widgets/new_tiny_tale_text_field_bloc_builder.dart';
+import 'package:icare/src/features/tiny_tales/presentation/widgets/new_tiny_tale_text_field.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/current_user_name_and_image.dart';
 
 class NewTinyTaleViewBody extends StatelessWidget {
@@ -26,7 +26,7 @@ class NewTinyTaleViewBody extends StatelessWidget {
                   children: <Widget>[
                     LinearProgressIndicatorBlocBuilder(),
                     CurrentUsernameAndImage(),
-                    NewTinyTaleTextFieldBlocBuilder(),
+                    NewTinyTaleTextField(),
                     MySizedBox.height10,
                     NewTinyTaleImageBlocBuilder(),
                   ],

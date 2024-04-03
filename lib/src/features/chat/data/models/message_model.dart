@@ -8,14 +8,16 @@ part 'message_model.g.dart';
 class MessageModel {
   final String? senderId;
   final String? senderName;
+  final String? messageId;
   final SendMessageParams? messageData;
-  // final Timestamp? dateTime;
+  final Timestamp? dateTime;
 
   const MessageModel({
     this.senderId,
     this.senderName,
-    // this.dateTime,
+    this.dateTime,
     this.messageData,
+    this.messageId,
   });
 
   factory MessageModel.fromJson(Map<String, dynamic> json) =>

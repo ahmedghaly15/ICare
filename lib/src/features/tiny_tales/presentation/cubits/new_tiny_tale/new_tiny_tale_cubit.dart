@@ -131,7 +131,6 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
   }
 
   void setNewTinyTaleText(String text) {
-    createNewTinyTaleController.text = text;
     emit(NewTinyTaleState.setNewTextValue(text));
   }
 
