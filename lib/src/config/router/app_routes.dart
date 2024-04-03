@@ -81,6 +81,7 @@ List<AutoRoute> get appRoutes {
       ],
     ),
     _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
+    _buildCustomRoute(page: ChatDetailsRoute.page),
   ];
 }
 

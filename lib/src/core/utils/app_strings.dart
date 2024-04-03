@@ -128,4 +128,5 @@ class AppStrings {
   static const String peopleWhoLiked = 'People who liked';
   static const String chatsCollection = 'Chats Collection';
   static const String messagesCollection = 'Messages Collection';
+  static const String typeAMessage = 'Type a message';
 }
