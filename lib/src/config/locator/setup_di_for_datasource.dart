@@ -110,5 +110,10 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<CommentRepliesDatasource>(
       () => const CommentRepliesDatasourceImpl(),
     );
+
+    // ========== Chat feature ==========
+    getIt.registerLazySingleton<ChatDatasource>(
+      () => const ChatDatasourceImpl(),
+    );
   }
 }

@@ -105,5 +105,10 @@ class SetupDIForRepos {
     getIt.registerLazySingleton<CommentRepliesRepo>(
       () => CommentRepliesRepoImpl(getIt.get<CommentRepliesDatasource>()),
     );
+
+    // ========== Chat feature ==========
+    getIt.registerLazySingleton<ChatRepo>(
+      () => ChatRepo(getIt.get<ChatDatasource>()),
+    );
   }
 }

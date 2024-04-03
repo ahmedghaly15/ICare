@@ -148,5 +148,14 @@ class SetupDIForCubits {
             getIt.get<UploadCommentReplyImageUseCase>(),
       ),
     );
+
+    // ========== Chat feature ==========
+    getIt.registerFactory<ChatCubit>(
+      () => ChatCubit(
+        streamMessagesUseCase: getIt.get<StreamMessagesUseCase>(),
+        sendMessageUseCase: getIt.get<SendMessageUseCase>(),
+        uploadMessageImageUseCase: getIt.get<UploadMessageImageUseCase>(),
+      ),
+    );
   }
 }

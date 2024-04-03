@@ -177,5 +177,16 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<UploadCommentReplyImageUseCase>(
       () => UploadCommentReplyImageUseCase(getIt.get<CommentRepliesRepo>()),
     );
+
+    // ========== Chat feature ==========
+    getIt.registerLazySingleton<StreamMessagesUseCase>(
+      () => StreamMessagesUseCase(getIt.get<ChatRepo>()),
+    );
+    getIt.registerLazySingleton<SendMessageUseCase>(
+      () => SendMessageUseCase(getIt.get<ChatRepo>()),
+    );
+    getIt.registerLazySingleton<UploadMessageImageUseCase>(
+      () => UploadMessageImageUseCase(getIt.get<ChatRepo>()),
+    );
   }
 }
