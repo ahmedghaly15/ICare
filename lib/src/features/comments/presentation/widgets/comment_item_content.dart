@@ -58,7 +58,7 @@ class CommentItemContent extends StatelessWidget {
                   imageUrl: comment.commentData!.commentImage!,
                 ),
               ),
-            )
+            ),
           ],
           MySizedBox.height12,
           Text(
