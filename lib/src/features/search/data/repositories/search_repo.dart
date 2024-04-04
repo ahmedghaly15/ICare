@@ -22,16 +22,13 @@ class SearchRepo {
 
         for (var user in users.docs) {
           if (user['uId'] != Helper.uId) {
-            if (user
-                    .data()['name']
-                    .toString()
-                    .toLowerCase()
-                    .contains(nameOrEmail.toLowerCase()) ||
-                user
-                    .data()['email']
-                    .toString()
-                    .toLowerCase()
-                    .contains(nameOrEmail.toLowerCase())) {
+            final String lowercaseName =
+                user.data()['name'].toString().toLowerCase();
+            final String lowercaseEmail =
+                user.data()['email'].toString().toLowerCase();
+
+            if (lowercaseName.startsWith(nameOrEmail.toLowerCase()) ||
+                lowercaseEmail.startsWith(nameOrEmail.toLowerCase())) {
               searchResult.add(ICareUser.fromJson(user.data()));
             }
           }

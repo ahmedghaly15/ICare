@@ -11,4 +11,6 @@ class SearchState<T> with _$SearchState<T> {
       SearchUsersSuccess<T>;
   const factory SearchState.searchUsersError(String error) =
       SearchUsersError<T>;
+  const factory SearchState.setNewTextValue(String newValue) =
+      SetNewTextValue<T>;
 }

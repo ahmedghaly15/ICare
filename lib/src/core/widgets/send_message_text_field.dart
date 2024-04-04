@@ -5,14 +5,14 @@ import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 class SendMessageTextField extends StatelessWidget {
   const SendMessageTextField({
     super.key,
-    required this.controller,
     required this.hintText,
+    this.controller,
     this.enabled,
     this.onChanged,
   });
 
   final bool? enabled;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String hintText;
   final Function(String)? onChanged;
 

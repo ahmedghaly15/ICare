@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/extensions/get_query_snapshot.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 
 abstract class SearchDatasource {
@@ -15,6 +14,6 @@ class SearchDatasourceImpl implements SearchDatasource {
     return await getIt
         .get<FirebaseFirestore>()
         .collection(AppStrings.usersCollection)
-        .getQuerySnapshot();
+        .get();
   }
 }

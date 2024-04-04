@@ -22,6 +22,7 @@ mixin _$SearchState<T> {
     required TResult Function() searchUsersLoading,
     required TResult Function(List<ICareUser> searchResult) searchUsersSuccess,
     required TResult Function(String error) searchUsersError,
+    required TResult Function(String newValue) setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$SearchState<T> {
     TResult? Function()? searchUsersLoading,
     TResult? Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult? Function(String error)? searchUsersError,
+    TResult? Function(String newValue)? setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$SearchState<T> {
     TResult Function()? searchUsersLoading,
     TResult Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult Function(String error)? searchUsersError,
+    TResult Function(String newValue)? setNewTextValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$SearchState<T> {
     required TResult Function(SearchUsersLoading<T> value) searchUsersLoading,
     required TResult Function(SearchUsersSuccess<T> value) searchUsersSuccess,
     required TResult Function(SearchUsersError<T> value) searchUsersError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$SearchState<T> {
     TResult? Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult? Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult? Function(SearchUsersError<T> value)? searchUsersError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$SearchState<T> {
     TResult Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult Function(SearchUsersError<T> value)? searchUsersError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +134,7 @@ class _$SearchInitialImpl<T> implements SearchInitial<T> {
     required TResult Function() searchUsersLoading,
     required TResult Function(List<ICareUser> searchResult) searchUsersSuccess,
     required TResult Function(String error) searchUsersError,
+    required TResult Function(String newValue) setNewTextValue,
   }) {
     return initial();
   }
@@ -139,6 +146,7 @@ class _$SearchInitialImpl<T> implements SearchInitial<T> {
     TResult? Function()? searchUsersLoading,
     TResult? Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult? Function(String error)? searchUsersError,
+    TResult? Function(String newValue)? setNewTextValue,
   }) {
     return initial?.call();
   }
@@ -150,6 +158,7 @@ class _$SearchInitialImpl<T> implements SearchInitial<T> {
     TResult Function()? searchUsersLoading,
     TResult Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult Function(String error)? searchUsersError,
+    TResult Function(String newValue)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +174,7 @@ class _$SearchInitialImpl<T> implements SearchInitial<T> {
     required TResult Function(SearchUsersLoading<T> value) searchUsersLoading,
     required TResult Function(SearchUsersSuccess<T> value) searchUsersSuccess,
     required TResult Function(SearchUsersError<T> value) searchUsersError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
   }) {
     return initial(this);
   }
@@ -176,6 +186,7 @@ class _$SearchInitialImpl<T> implements SearchInitial<T> {
     TResult? Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult? Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult? Function(SearchUsersError<T> value)? searchUsersError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +198,7 @@ class _$SearchInitialImpl<T> implements SearchInitial<T> {
     TResult Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult Function(SearchUsersError<T> value)? searchUsersError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -243,6 +255,7 @@ class _$SearchUsersLoadingImpl<T> implements SearchUsersLoading<T> {
     required TResult Function() searchUsersLoading,
     required TResult Function(List<ICareUser> searchResult) searchUsersSuccess,
     required TResult Function(String error) searchUsersError,
+    required TResult Function(String newValue) setNewTextValue,
   }) {
     return searchUsersLoading();
   }
@@ -254,6 +267,7 @@ class _$SearchUsersLoadingImpl<T> implements SearchUsersLoading<T> {
     TResult? Function()? searchUsersLoading,
     TResult? Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult? Function(String error)? searchUsersError,
+    TResult? Function(String newValue)? setNewTextValue,
   }) {
     return searchUsersLoading?.call();
   }
@@ -265,6 +279,7 @@ class _$SearchUsersLoadingImpl<T> implements SearchUsersLoading<T> {
     TResult Function()? searchUsersLoading,
     TResult Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult Function(String error)? searchUsersError,
+    TResult Function(String newValue)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (searchUsersLoading != null) {
@@ -280,6 +295,7 @@ class _$SearchUsersLoadingImpl<T> implements SearchUsersLoading<T> {
     required TResult Function(SearchUsersLoading<T> value) searchUsersLoading,
     required TResult Function(SearchUsersSuccess<T> value) searchUsersSuccess,
     required TResult Function(SearchUsersError<T> value) searchUsersError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
   }) {
     return searchUsersLoading(this);
   }
@@ -291,6 +307,7 @@ class _$SearchUsersLoadingImpl<T> implements SearchUsersLoading<T> {
     TResult? Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult? Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult? Function(SearchUsersError<T> value)? searchUsersError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return searchUsersLoading?.call(this);
   }
@@ -302,6 +319,7 @@ class _$SearchUsersLoadingImpl<T> implements SearchUsersLoading<T> {
     TResult Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult Function(SearchUsersError<T> value)? searchUsersError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (searchUsersLoading != null) {
@@ -392,6 +410,7 @@ class _$SearchUsersSuccessImpl<T> implements SearchUsersSuccess<T> {
     required TResult Function() searchUsersLoading,
     required TResult Function(List<ICareUser> searchResult) searchUsersSuccess,
     required TResult Function(String error) searchUsersError,
+    required TResult Function(String newValue) setNewTextValue,
   }) {
     return searchUsersSuccess(searchResult);
   }
@@ -403,6 +422,7 @@ class _$SearchUsersSuccessImpl<T> implements SearchUsersSuccess<T> {
     TResult? Function()? searchUsersLoading,
     TResult? Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult? Function(String error)? searchUsersError,
+    TResult? Function(String newValue)? setNewTextValue,
   }) {
     return searchUsersSuccess?.call(searchResult);
   }
@@ -414,6 +434,7 @@ class _$SearchUsersSuccessImpl<T> implements SearchUsersSuccess<T> {
     TResult Function()? searchUsersLoading,
     TResult Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult Function(String error)? searchUsersError,
+    TResult Function(String newValue)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (searchUsersSuccess != null) {
@@ -429,6 +450,7 @@ class _$SearchUsersSuccessImpl<T> implements SearchUsersSuccess<T> {
     required TResult Function(SearchUsersLoading<T> value) searchUsersLoading,
     required TResult Function(SearchUsersSuccess<T> value) searchUsersSuccess,
     required TResult Function(SearchUsersError<T> value) searchUsersError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
   }) {
     return searchUsersSuccess(this);
   }
@@ -440,6 +462,7 @@ class _$SearchUsersSuccessImpl<T> implements SearchUsersSuccess<T> {
     TResult? Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult? Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult? Function(SearchUsersError<T> value)? searchUsersError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return searchUsersSuccess?.call(this);
   }
@@ -451,6 +474,7 @@ class _$SearchUsersSuccessImpl<T> implements SearchUsersSuccess<T> {
     TResult Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult Function(SearchUsersError<T> value)? searchUsersError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (searchUsersSuccess != null) {
@@ -539,6 +563,7 @@ class _$SearchUsersErrorImpl<T> implements SearchUsersError<T> {
     required TResult Function() searchUsersLoading,
     required TResult Function(List<ICareUser> searchResult) searchUsersSuccess,
     required TResult Function(String error) searchUsersError,
+    required TResult Function(String newValue) setNewTextValue,
   }) {
     return searchUsersError(error);
   }
@@ -550,6 +575,7 @@ class _$SearchUsersErrorImpl<T> implements SearchUsersError<T> {
     TResult? Function()? searchUsersLoading,
     TResult? Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult? Function(String error)? searchUsersError,
+    TResult? Function(String newValue)? setNewTextValue,
   }) {
     return searchUsersError?.call(error);
   }
@@ -561,6 +587,7 @@ class _$SearchUsersErrorImpl<T> implements SearchUsersError<T> {
     TResult Function()? searchUsersLoading,
     TResult Function(List<ICareUser> searchResult)? searchUsersSuccess,
     TResult Function(String error)? searchUsersError,
+    TResult Function(String newValue)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (searchUsersError != null) {
@@ -576,6 +603,7 @@ class _$SearchUsersErrorImpl<T> implements SearchUsersError<T> {
     required TResult Function(SearchUsersLoading<T> value) searchUsersLoading,
     required TResult Function(SearchUsersSuccess<T> value) searchUsersSuccess,
     required TResult Function(SearchUsersError<T> value) searchUsersError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
   }) {
     return searchUsersError(this);
   }
@@ -587,6 +615,7 @@ class _$SearchUsersErrorImpl<T> implements SearchUsersError<T> {
     TResult? Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult? Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult? Function(SearchUsersError<T> value)? searchUsersError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
   }) {
     return searchUsersError?.call(this);
   }
@@ -598,6 +627,7 @@ class _$SearchUsersErrorImpl<T> implements SearchUsersError<T> {
     TResult Function(SearchUsersLoading<T> value)? searchUsersLoading,
     TResult Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
     TResult Function(SearchUsersError<T> value)? searchUsersError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     required TResult orElse(),
   }) {
     if (searchUsersError != null) {
@@ -614,5 +644,159 @@ abstract class SearchUsersError<T> implements SearchState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$SearchUsersErrorImplCopyWith<T, _$SearchUsersErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetNewTextValueImplCopyWith<T, $Res> {
+  factory _$$SetNewTextValueImplCopyWith(_$SetNewTextValueImpl<T> value,
+          $Res Function(_$SetNewTextValueImpl<T>) then) =
+      __$$SetNewTextValueImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String newValue});
+}
+
+/// @nodoc
+class __$$SetNewTextValueImplCopyWithImpl<T, $Res>
+    extends _$SearchStateCopyWithImpl<T, $Res, _$SetNewTextValueImpl<T>>
+    implements _$$SetNewTextValueImplCopyWith<T, $Res> {
+  __$$SetNewTextValueImplCopyWithImpl(_$SetNewTextValueImpl<T> _value,
+      $Res Function(_$SetNewTextValueImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? newValue = null,
+  }) {
+    return _then(_$SetNewTextValueImpl<T>(
+      null == newValue
+          ? _value.newValue
+          : newValue // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
+  const _$SetNewTextValueImpl(this.newValue);
+
+  @override
+  final String newValue;
+
+  @override
+  String toString() {
+    return 'SearchState<$T>.setNewTextValue(newValue: $newValue)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetNewTextValueImpl<T> &&
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, newValue);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetNewTextValueImplCopyWith<T, _$SetNewTextValueImpl<T>> get copyWith =>
+      __$$SetNewTextValueImplCopyWithImpl<T, _$SetNewTextValueImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() searchUsersLoading,
+    required TResult Function(List<ICareUser> searchResult) searchUsersSuccess,
+    required TResult Function(String error) searchUsersError,
+    required TResult Function(String newValue) setNewTextValue,
+  }) {
+    return setNewTextValue(newValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? searchUsersLoading,
+    TResult? Function(List<ICareUser> searchResult)? searchUsersSuccess,
+    TResult? Function(String error)? searchUsersError,
+    TResult? Function(String newValue)? setNewTextValue,
+  }) {
+    return setNewTextValue?.call(newValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? searchUsersLoading,
+    TResult Function(List<ICareUser> searchResult)? searchUsersSuccess,
+    TResult Function(String error)? searchUsersError,
+    TResult Function(String newValue)? setNewTextValue,
+    required TResult orElse(),
+  }) {
+    if (setNewTextValue != null) {
+      return setNewTextValue(newValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SearchInitial<T> value) initial,
+    required TResult Function(SearchUsersLoading<T> value) searchUsersLoading,
+    required TResult Function(SearchUsersSuccess<T> value) searchUsersSuccess,
+    required TResult Function(SearchUsersError<T> value) searchUsersError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+  }) {
+    return setNewTextValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SearchInitial<T> value)? initial,
+    TResult? Function(SearchUsersLoading<T> value)? searchUsersLoading,
+    TResult? Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
+    TResult? Function(SearchUsersError<T> value)? searchUsersError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+  }) {
+    return setNewTextValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SearchInitial<T> value)? initial,
+    TResult Function(SearchUsersLoading<T> value)? searchUsersLoading,
+    TResult Function(SearchUsersSuccess<T> value)? searchUsersSuccess,
+    TResult Function(SearchUsersError<T> value)? searchUsersError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    required TResult orElse(),
+  }) {
+    if (setNewTextValue != null) {
+      return setNewTextValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetNewTextValue<T> implements SearchState<T> {
+  const factory SetNewTextValue(final String newValue) =
+      _$SetNewTextValueImpl<T>;
+
+  String get newValue;
+  @JsonKey(ignore: true)
+  _$$SetNewTextValueImplCopyWith<T, _$SetNewTextValueImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
