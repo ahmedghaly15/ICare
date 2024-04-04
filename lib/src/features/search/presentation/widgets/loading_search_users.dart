@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/features/search/presentation/widgets/shimmer_search_user.dart';
+import 'package:icare/src/features/search/presentation/widgets/loading_search_user_item.dart';
 
-class ShimmerSearchUsers extends StatelessWidget {
-  const ShimmerSearchUsers({super.key});
+class LoadingSearchUsers extends StatelessWidget {
+  const LoadingSearchUsers({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class ShimmerSearchUsers extends StatelessWidget {
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate(
           (context, index) {
-            return const ShimmerSearchUser();
+            return const LoadingSearchUserItem();
           },
           childCount: 8,
         ),
