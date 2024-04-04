@@ -188,5 +188,10 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<UploadMessageImageUseCase>(
       () => UploadMessageImageUseCase(getIt.get<ChatRepo>()),
     );
+
+    // ========== Search feature ==========
+    getIt.registerLazySingleton<SearchUsersUseCase>(
+      () => SearchUsersUseCase(getIt.get<SearchRepo>()),
+    );
   }
 }

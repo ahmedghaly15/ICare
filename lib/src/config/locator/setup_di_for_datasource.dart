@@ -115,5 +115,10 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<ChatDatasource>(
       () => const ChatDatasourceImpl(),
     );
+
+    // ========== Search feature ==========
+    getIt.registerLazySingleton<SearchDatasource>(
+      () => const SearchDatasourceImpl(),
+    );
   }
 }

@@ -110,5 +110,10 @@ class SetupDIForRepos {
     getIt.registerLazySingleton<ChatRepo>(
       () => ChatRepo(getIt.get<ChatDatasource>()),
     );
+
+    // ========== Search feature ==========
+    getIt.registerLazySingleton<SearchRepo>(
+      () => SearchRepo(getIt.get<SearchDatasource>()),
+    );
   }
 }

@@ -157,5 +157,10 @@ class SetupDIForCubits {
         uploadMessageImageUseCase: getIt.get<UploadMessageImageUseCase>(),
       ),
     );
+
+    // ========== Search feature ==========
+    getIt.registerFactory<SearchCubit>(
+      () => SearchCubit(getIt.get<SearchUsersUseCase>()),
+    );
   }
 }
