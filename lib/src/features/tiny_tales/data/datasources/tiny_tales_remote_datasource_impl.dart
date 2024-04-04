@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/extensions/get_query_snapshot.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource.dart';
@@ -62,7 +61,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
           AppStrings.dateTime,
           descending: true,
         )
-        .getQuerySnapshot();
+        .get();
   }
 
   @override
@@ -86,7 +85,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   Future<QuerySnapshot<Map<String, dynamic>>> getPeopleWhoLiked(
     String tinyTaleId,
   ) async {
-    return await _accessLikesCollection(tinyTaleId).getQuerySnapshot();
+    return await _accessLikesCollection(tinyTaleId).get();
   }
 
   @override
@@ -223,7 +222,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
           AppStrings.dateTime,
           descending: true,
         )
-        .getQuerySnapshot();
+        .get();
   }
 
   @override

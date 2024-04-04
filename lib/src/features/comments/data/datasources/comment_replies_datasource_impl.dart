@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/extensions/get_query_snapshot.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/comments/data/datasources/comment_replies_datasource.dart';
@@ -61,7 +60,7 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
   Future<QuerySnapshot<Map<String, dynamic>>> getCommentReplies(
     CommentRepliesViewParams params,
   ) async {
-    return await _accessCommentRepliesCollection(params).getQuerySnapshot();
+    return await _accessCommentRepliesCollection(params).get();
   }
 
   @override
