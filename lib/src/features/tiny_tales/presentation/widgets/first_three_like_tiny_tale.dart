@@ -39,8 +39,13 @@ class FirstThreeLikeTinyTale extends StatelessWidget {
                 from: 30,
                 child: InkWell(
                   onTap: () {
-                    context.pushRoute(
-                        PeopleWhoLikedRoute(tinyTaleId: tinyTaleId!));
+                    context
+                        .read<TinyTalesCubit>()
+                        .getPeopleWhoLiked(tinyTaleId!)
+                        .then((value) {
+                      context.pushRoute(
+                          PeopleWhoLikedRoute(tinyTaleId: tinyTaleId!));
+                    });
                   },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
