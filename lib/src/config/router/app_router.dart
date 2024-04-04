@@ -26,6 +26,7 @@ import 'package:icare/src/features/medical/presentation/views/medical_view.dart'
 import 'package:icare/src/features/medical_info/presentation/views/medical_info_category_diseases_view.dart';
 import 'package:icare/src/features/medical_info/presentation/views/medical_info_view.dart';
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:icare/src/features/search/presentation/views/search_users_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
 import 'package:icare/src/features/tiny_tales/presentation/views/bookmarked_tiny_tales_view.dart';
 import 'package:icare/src/features/tiny_tales/presentation/views/icare_community_view.dart';

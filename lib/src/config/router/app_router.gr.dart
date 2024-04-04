@@ -212,6 +212,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const RegisterView()),
       );
     },
+    SearchUsersRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const SearchUsersView()),
+      );
+    },
     StartRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -776,6 +782,20 @@ class RegisterRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'RegisterRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchUsersView]
+class SearchUsersRoute extends PageRouteInfo<void> {
+  const SearchUsersRoute({List<PageRouteInfo>? children})
+      : super(
+          SearchUsersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchUsersRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

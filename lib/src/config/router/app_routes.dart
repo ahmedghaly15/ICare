@@ -78,9 +78,10 @@ List<AutoRoute> get appRoutes {
         ),
         _buildCustomRoute(page: CommentRepliesRoute.page),
         _buildCustomRoute(page: PeopleWhoLikedRoute.page),
+        _buildCustomRoute(page: SearchUsersRoute.page),
+        _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
       ],
     ),
-    _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
     _buildCustomRoute(page: ChatDetailsRoute.page),
   ];
 }
