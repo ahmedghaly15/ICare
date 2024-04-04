@@ -39,10 +39,12 @@ class ICareCommunityDialog {
               ListTile(
                 title: TextButton.icon(
                   onPressed: () {
-                    context.router
-                        .popAndPush(const BookmarkedTinyTalesRoute())
+                    context
+                        .read<TinyTalesCubit>()
+                        .getBookmarkedTinyTales()
                         .then((value) {
-                      context.read<TinyTalesCubit>().getBookmarkedTinyTales();
+                      context.router
+                          .popAndPush(const BookmarkedTinyTalesRoute());
                     });
                   },
                   icon: const Icon(Icons.bookmark),
