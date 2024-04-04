@@ -17,6 +17,5 @@ class EndPoints {
       'https://ahmed-muqawi-speech-therapy.hf.space/';
   static const String levelOneTraining =
       '${speechTherapyBaseUrl}level1/training/';
-  static const String levelOneExam = '${speechTherapyBaseUrl}level1/exam/';
   static const String marking = '${speechTherapyBaseUrl}marking/';
 }

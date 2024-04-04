@@ -1,20 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'mark_level_one_response.dart';
+part of 'mark_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-MarkLevelOneResponse _$MarkLevelOneResponseFromJson(
-        Map<String, dynamic> json) =>
-    MarkLevelOneResponse(
+MarkResponse _$MarkResponseFromJson(Map<String, dynamic> json) => MarkResponse(
       status: json['status'] as String,
       percent: json['percent'] as int,
     );
 
-Map<String, dynamic> _$MarkLevelOneResponseToJson(
-        MarkLevelOneResponse instance) =>
+Map<String, dynamic> _$MarkResponseToJson(MarkResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'percent': instance.percent,

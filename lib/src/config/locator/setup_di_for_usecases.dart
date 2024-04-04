@@ -127,9 +127,6 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetLevelOneTrainingDataUseCase>(
       () => GetLevelOneTrainingDataUseCase(getIt.get<SpeechTherapyRepo>()),
     );
-    getIt.registerLazySingleton<GetLevelOneExamUseCase>(
-      () => GetLevelOneExamUseCase(getIt.get<SpeechTherapyRepo>()),
-    );
     getIt.registerLazySingleton<MarkLevelOneUseCase>(
       () => MarkLevelOneUseCase(getIt.get<SpeechTherapyRepo>()),
     );

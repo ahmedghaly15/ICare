@@ -319,13 +319,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<LevelOneTrainingData>> getLevelOneTrainingData() async {
+  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<LevelOneTrainingData>>(Options(
+        _setStreamType<List<LevelOneTrainingResponse>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -343,44 +343,13 @@ class _ApiService implements ApiService {
             ))));
     var value = _result.data!
         .map((dynamic i) =>
-            LevelOneTrainingData.fromJson(i as Map<String, dynamic>))
+            LevelOneTrainingResponse.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<List<LevelOneExamResponse>> getLevelOneExam(
-      int numOfCompletedSublevels) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<List<dynamic>>(
-        _setStreamType<List<LevelOneExamResponse>>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              'https://ahmed-muqawi-speech-therapy.hf.space/level1/exam/${numOfCompletedSublevels}',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    var value = _result.data!
-        .map((dynamic i) =>
-            LevelOneExamResponse.fromJson(i as Map<String, dynamic>))
-        .toList();
-    return value;
-  }
-
-  @override
-  Future<MarkLevelOneResponse> markLevelOneExam(
+  Future<MarkResponse> markLevelOneExam(
     int id,
     File audio,
   ) async {
@@ -395,8 +364,8 @@ class _ApiService implements ApiService {
         filename: audio.path.split(Platform.pathSeparator).last,
       ),
     ));
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<MarkLevelOneResponse>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<MarkResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -413,7 +382,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = MarkLevelOneResponse.fromJson(_result.data!);
+    final value = MarkResponse.fromJson(_result.data!);
     return value;
   }
 

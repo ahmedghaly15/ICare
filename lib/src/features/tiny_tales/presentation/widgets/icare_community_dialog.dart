@@ -27,9 +27,7 @@ class ICareCommunityDialog {
               ListTile(
                 title: TextButton.icon(
                   onPressed: () {
-                    context.maybePop().then((value) {
-                      context.pushRoute(const SearchUsersRoute());
-                    });
+                    context.router.popAndPush(const SearchUsersRoute());
                   },
                   icon: const Icon(Icons.search),
                   label: const Text(AppStrings.search),
@@ -41,13 +39,10 @@ class ICareCommunityDialog {
               ListTile(
                 title: TextButton.icon(
                   onPressed: () {
-                    context.maybePop().then((value) {
-                      context
-                          .read<TinyTalesCubit>()
-                          .getBookmarkedTinyTales()
-                          .then((value) {
-                        context.pushRoute(const BookmarkedTinyTalesRoute());
-                      });
+                    context.router
+                        .popAndPush(const BookmarkedTinyTalesRoute())
+                        .then((value) {
+                      context.read<TinyTalesCubit>().getBookmarkedTinyTales();
                     });
                   },
                   icon: const Icon(Icons.bookmark),

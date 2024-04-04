@@ -1,36 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'level_one_training_data.dart';
+part of 'level_one_training_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LevelOneTrainingData _$LevelOneTrainingDataFromJson(
+LevelOneTrainingResponse _$LevelOneTrainingResponseFromJson(
         Map<String, dynamic> json) =>
-    LevelOneTrainingData(
+    LevelOneTrainingResponse(
+      level: json['level'] as int,
       id: json['id'] as int,
-      details: LevelOneTrainingDataDetails.fromJson(
+      details: LevelOneTrainingDetails.fromJson(
           json['details'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$LevelOneTrainingDataToJson(
-        LevelOneTrainingData instance) =>
+Map<String, dynamic> _$LevelOneTrainingResponseToJson(
+        LevelOneTrainingResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'level': instance.level,
       'details': instance.details,
     };
 
-LevelOneTrainingDataDetails _$LevelOneTrainingDataDetailsFromJson(
+LevelOneTrainingDetails _$LevelOneTrainingDetailsFromJson(
         Map<String, dynamic> json) =>
-    LevelOneTrainingDataDetails(
+    LevelOneTrainingDetails(
       animalName: json['animal_name'] as String,
       imageUrl: json['image_url'] as String,
       audioUrl: json['audio_url'] as String,
     );
 
-Map<String, dynamic> _$LevelOneTrainingDataDetailsToJson(
-        LevelOneTrainingDataDetails instance) =>
+Map<String, dynamic> _$LevelOneTrainingDetailsToJson(
+        LevelOneTrainingDetails instance) =>
     <String, dynamic>{
       'animal_name': instance.animalName,
       'image_url': instance.imageUrl,

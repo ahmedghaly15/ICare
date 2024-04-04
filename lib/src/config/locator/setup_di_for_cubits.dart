@@ -118,7 +118,6 @@ class SetupDIForCubits {
       () => SpeechTherapyCubit(
         getLevelOneTrainingDataUseCase:
             getIt.get<GetLevelOneTrainingDataUseCase>(),
-        getLevelOneExamUseCase: getIt.get<GetLevelOneExamUseCase>(),
         markLevelOneUseCase: getIt.get<MarkLevelOneUseCase>(),
       ),
     );

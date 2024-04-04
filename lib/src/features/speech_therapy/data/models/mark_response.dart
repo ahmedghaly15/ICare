@@ -1,0 +1,19 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'mark_response.g.dart';
+
+@JsonSerializable()
+class MarkResponse {
+  final String status;
+  final int percent;
+
+  const MarkResponse({
+    required this.status,
+    required this.percent,
+  });
+
+  factory MarkResponse.fromJson(Map<String, dynamic> json) =>
+      _$MarkResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MarkResponseToJson(this);
+}
