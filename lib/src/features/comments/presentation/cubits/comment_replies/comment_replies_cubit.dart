@@ -73,7 +73,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
                 commentReplyController.text.isNotEmpty) {
               _typeNewCommentReply(
                 TypeNewCommentParams(
-                  context: context,
                   tinyTaleId: params.tinyTaleId,
                   commentId: params.commentId,
                   commentData: CommentData(
@@ -87,7 +86,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
                 commentReplyController.text.isEmpty) {
               _uploadCommentReplyImage(
                 TypeNewCommentParams(
-                  context: context,
                   tinyTaleId: params.tinyTaleId,
                   commentId: params.commentId,
                   commentData: CommentData(
@@ -99,7 +97,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
             } else if (commentReplyImage != null &&
                 commentReplyController.text.isNotEmpty) {
               _uploadCommentReplyImage(TypeNewCommentParams(
-                context: context,
                 tinyTaleId: params.tinyTaleId,
                 commentId: params.commentId,
                 commentData: CommentData(
@@ -183,7 +180,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
             date: params.commentData?.date,
             time: params.commentData?.time,
           ),
-          context: params.context,
         ),
       );
       removePickedCommentReplyImage();

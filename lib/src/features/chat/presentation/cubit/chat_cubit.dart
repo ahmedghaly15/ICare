@@ -64,7 +64,6 @@ class ChatCubit extends Cubit<ChatState> {
                 SendMessageParams(
                   receiverId: receiverId,
                   receiverName: receiverName,
-                  context: context,
                   date: getDate(),
                   time: DateFormat.jm().format(DateTime.now()),
                   messageText: messageController.text,
@@ -74,7 +73,6 @@ class ChatCubit extends Cubit<ChatState> {
               _uploadMessageImage(SendMessageParams(
                 receiverId: receiverId,
                 receiverName: receiverName,
-                context: context,
                 date: getDate(),
                 time: DateFormat.jm().format(DateTime.now()),
               ));
@@ -83,7 +81,6 @@ class ChatCubit extends Cubit<ChatState> {
               _uploadMessageImage(SendMessageParams(
                 receiverId: receiverId,
                 receiverName: receiverName,
-                context: context,
                 date: getDate(),
                 time: DateFormat.jm().format(DateTime.now()),
                 messageText: messageController.text,
@@ -137,7 +134,6 @@ class ChatCubit extends Cubit<ChatState> {
     taskSnapshot.ref.getDownloadURL().then((imageUrl) {
       _sendMessage(
         SendMessageParams(
-          context: params.context,
           receiverId: params.receiverId,
           receiverName: params.receiverName,
           messageText: params.messageText,
