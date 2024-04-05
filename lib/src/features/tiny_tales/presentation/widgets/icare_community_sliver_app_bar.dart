@@ -11,6 +11,7 @@ class ICareCommunitySliverAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomSliverAppBar(
       title: AppStrings.icareCommunity,
+      leading: const SizedBox.shrink(),
       actions: <Widget>[
         IconButton(
           onPressed: () {
