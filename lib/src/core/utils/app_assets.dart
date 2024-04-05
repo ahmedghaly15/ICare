@@ -129,6 +129,20 @@ class AppAssets {
   /// assets/svgs/black_heart_icon.svg
   static const String svgsBlackHeartIcon = "assets/svgs/black_heart_icon.svg";
 
+  /// Assets for svgsBlackHomeIcon
+  /// assets/svgs/black_home_icon.svg
+  static const String svgsBlackHomeIcon = "assets/svgs/black_home_icon.svg";
+
+  /// Assets for svgsBlackIcareCommunityIcon
+  /// assets/svgs/black_icare_community_icon.svg
+  static const String svgsBlackIcareCommunityIcon =
+      "assets/svgs/black_icare_community_icon.svg";
+
+  /// Assets for svgsBlackMedicalIcon
+  /// assets/svgs/black_medical_icon.svg
+  static const String svgsBlackMedicalIcon =
+      "assets/svgs/black_medical_icon.svg";
+
   /// Assets for svgsBookmarkIcon
   /// assets/svgs/bookmark_icon.svg
   static const String svgsBookmarkIcon = "assets/svgs/bookmark_icon.svg";
@@ -155,18 +169,6 @@ class AppAssets {
   /// assets/svgs/empty_bookmarks.svg
   static const String svgsEmptyBookmarks = "assets/svgs/empty_bookmarks.svg";
 
-  /// Assets for svgsGreyBabyIcon
-  /// assets/svgs/grey_baby_icon.svg
-  static const String svgsGreyBabyIcon = "assets/svgs/grey_baby_icon.svg";
-
-  /// Assets for svgsGreyHomeIcon
-  /// assets/svgs/grey_home_icon.svg
-  static const String svgsGreyHomeIcon = "assets/svgs/grey_home_icon.svg";
-
-  /// Assets for svgsGreyMedicalIcon
-  /// assets/svgs/grey_medical_icon.svg
-  static const String svgsGreyMedicalIcon = "assets/svgs/grey_medical_icon.svg";
-
   /// Assets for svgsHeartCommentIcon
   /// assets/svgs/heart_comment_icon.svg
   static const String svgsHeartCommentIcon =
@@ -179,6 +181,11 @@ class AppAssets {
   /// Assets for svgsHomeIcon
   /// assets/svgs/home_icon.svg
   static const String svgsHomeIcon = "assets/svgs/home_icon.svg";
+
+  /// Assets for svgsIcareCommunityIcon
+  /// assets/svgs/icare_community_icon.svg
+  static const String svgsIcareCommunityIcon =
+      "assets/svgs/icare_community_icon.svg";
 
   /// Assets for svgsMedicalIcon
   /// assets/svgs/medical_icon.svg

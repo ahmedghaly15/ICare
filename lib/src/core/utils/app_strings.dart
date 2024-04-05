@@ -56,7 +56,6 @@ class AppStrings {
   static const String cachedUserId = 'cachedUserId';
   static const String home = 'Home';
   static const String medical = 'Medical';
-  static const String baby = 'Baby';
   static const String medicalCategoryName = 'medical_category_name';
   static const String medicalCategoryImage = 'medical_category_image';
   static const String diseaseName = 'disease_name';
@@ -130,4 +129,5 @@ class AppStrings {
   static const String messagesCollection = 'Messages Collection';
   static const String typeAMessage = 'Type a message';
   static const String search = 'Search';
+  static const String community = 'Community';
 }
