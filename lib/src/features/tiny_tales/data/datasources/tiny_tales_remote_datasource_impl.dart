@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -12,7 +11,6 @@ import 'package:icare/src/features/tiny_tales/data/models/like_model.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale_data.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   const TinyTalesRemoteDatasourceImpl();
@@ -35,7 +33,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
     CreateTinyTaleParams params,
   ) async {
     final TinyTale tinyTale = TinyTale(
-      user: params.context.read<UserCubit>().currentUser,
+      user: Helper.currentUser,
       tinyTaleData: TinyTaleData(
         text: params.text,
         date: params.date,
@@ -67,7 +65,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   @override
   Future<void> likeTinyTale(LikeParams params) async {
     final LikeModel like = LikeModel(
-      user: params.context.read<UserCubit>().currentUser,
+      user: Helper.currentUser,
       dateTime: DateTime.now().toString(),
     );
 

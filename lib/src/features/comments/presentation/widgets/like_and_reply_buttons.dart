@@ -33,7 +33,6 @@ class LikeAndReplyButtons extends StatelessWidget {
               ? context.read<CommentsCubit>().isCommentLikedByMe(
                     LikeParams(
                       tinyTaleId: tinyTaleId,
-                      context: context,
                       commentId: commentId,
                     ),
                   )
@@ -42,7 +41,6 @@ class LikeAndReplyButtons extends StatelessWidget {
             context.read<CommentsCubit>().likeComment(
                   LikeParams(
                     tinyTaleId: tinyTaleId,
-                    context: context,
                     commentId: commentId!,
                   ),
                 );
@@ -51,7 +49,6 @@ class LikeAndReplyButtons extends StatelessWidget {
             context.read<CommentsCubit>().unlikeComment(
                   LikeParams(
                     tinyTaleId: tinyTaleId,
-                    context: context,
                     commentId: commentId!,
                   ),
                 );

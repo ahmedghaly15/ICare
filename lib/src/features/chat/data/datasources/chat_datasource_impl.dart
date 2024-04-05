@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -10,7 +9,6 @@ import 'package:icare/src/features/chat/data/datasources/chat_datasource.dart';
 import 'package:icare/src/features/chat/data/models/message_model.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
 import 'package:icare/src/features/chat/data/models/setting_up_chat_params.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class ChatDatasourceImpl implements ChatDatasource {
   const ChatDatasourceImpl();
@@ -41,7 +39,7 @@ class ChatDatasourceImpl implements ChatDatasource {
   Future<void> sendMessage(SendMessageParams params) async {
     final MessageModel message = MessageModel(
       senderId: Helper.uId,
-      senderName: params.context!.read<UserCubit>().currentUser!.name,
+      senderName: Helper.currentUser!.name,
       messageData: params,
       dateTime: Timestamp.now(),
     );

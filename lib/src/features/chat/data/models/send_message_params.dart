@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'send_message_params.g.dart';
@@ -11,11 +10,8 @@ class SendMessageParams {
   final String? date;
   final String? messageText;
   final String? messageImage;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  final BuildContext? context;
 
   const SendMessageParams({
-    this.context,
     this.receiverId,
     this.receiverName,
     this.time,

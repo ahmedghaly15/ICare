@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/features/bottom_nav_bar/presentation/widgets/custom_svg_bottom_nav_bar_icon.dart';
 
 @RoutePage()
 class LayoutView extends StatelessWidget {
@@ -12,37 +12,25 @@ class LayoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: const [HomeRoute(), MedicalRoute(), BabyRoute()],
+      routes: const [HomeRoute(), MedicalRoute(), ICareCommunityRoute()],
       bottomNavigationBuilder: (_, tabsRouter) => BottomNavigationBar(
         currentIndex: tabsRouter.activeIndex,
         onTap: tabsRouter.setActiveIndex,
-        items: const [
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: CustomSvgBottomNavBarIcon(
-              icon: AppAssets.svgsGreyHomeIcon,
-            ),
-            activeIcon: CustomSvgBottomNavBarIcon(
-              icon: AppAssets.svgsHomeIcon,
-            ),
+            icon: SvgPicture.asset(AppAssets.svgsBlackHomeIcon),
+            activeIcon: SvgPicture.asset(AppAssets.svgsHomeIcon),
             label: AppStrings.home,
           ),
           BottomNavigationBarItem(
-            icon: CustomSvgBottomNavBarIcon(
-              icon: AppAssets.svgsGreyMedicalIcon,
-            ),
-            activeIcon: CustomSvgBottomNavBarIcon(
-              icon: AppAssets.svgsMedicalIcon,
-            ),
+            icon: SvgPicture.asset(AppAssets.svgsBlackMedicalIcon),
+            activeIcon: SvgPicture.asset(AppAssets.svgsMedicalIcon),
             label: AppStrings.medical,
           ),
           BottomNavigationBarItem(
-            icon: CustomSvgBottomNavBarIcon(
-              icon: AppAssets.svgsGreyBabyIcon,
-            ),
-            activeIcon: CustomSvgBottomNavBarIcon(
-              icon: AppAssets.svgsBabyIcon,
-            ),
-            label: AppStrings.baby,
+            icon: SvgPicture.asset(AppAssets.svgsBlackIcareCommunityIcon),
+            activeIcon: SvgPicture.asset(AppAssets.svgsIcareCommunityIcon),
+            label: AppStrings.community,
           ),
         ],
       ),

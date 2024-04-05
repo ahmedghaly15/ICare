@@ -43,10 +43,7 @@ class TinyTaleLikeButtonBlocListener extends StatelessWidget {
               isTinyTaleLikedByMe
                   ? context.read<TinyTalesCubit>().unlikeTinyTale(tinyTaleId!)
                   : context.read<TinyTalesCubit>().likeTinyTale(
-                        LikeParams(
-                          tinyTaleId: tinyTaleId!,
-                          context: context,
-                        ),
+                        LikeParams(tinyTaleId: tinyTaleId!),
                       );
             },
             icon: SvgPicture.asset(

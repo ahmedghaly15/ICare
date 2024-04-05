@@ -51,7 +51,6 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
             if (tinyTaleImage == null &&
                 createNewTinyTaleController.text.isNotEmpty) {
               _createTinyTale(CreateTinyTaleParams(
-                context: context,
                 text: createNewTinyTaleController.text,
                 date: getDate(),
                 time: DateFormat.jm().format(DateTime.now()),
@@ -59,14 +58,12 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
             } else if (tinyTaleImage != null &&
                 createNewTinyTaleController.text.isEmpty) {
               _uploadTinyTaleImage(CreateTinyTaleParams(
-                context: context,
                 date: getDate(),
                 time: DateFormat.jm().format(DateTime.now()),
               ));
             } else if (tinyTaleImage != null &&
                 createNewTinyTaleController.text.isNotEmpty) {
               _uploadTinyTaleImage(CreateTinyTaleParams(
-                context: context,
                 text: createNewTinyTaleController.text,
                 date: getDate(),
                 time: DateFormat.jm().format(DateTime.now()),
@@ -110,7 +107,6 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     taskSnapshot.ref.getDownloadURL().then(
       (tinyTaleImageUrl) {
         _createTinyTale(CreateTinyTaleParams(
-          context: params.context,
           text: params.text,
           date: params.date,
           time: params.time,

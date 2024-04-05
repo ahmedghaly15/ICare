@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class CurrentUsernameAndImage extends StatelessWidget {
   const CurrentUsernameAndImage({super.key});
@@ -15,7 +14,7 @@ class CurrentUsernameAndImage extends StatelessWidget {
     return Row(
       children: <Widget>[
         CustomCachedNetworkImage(
-          imageUrl: context.read<UserCubit>().currentUser!.profileImage!,
+          imageUrl: Helper.currentUser!.profileImage!,
           imageBuilder: (_, image) {
             return CircleAvatar(
               backgroundImage: image,
@@ -27,7 +26,7 @@ class CurrentUsernameAndImage extends StatelessWidget {
         MySizedBox.width10,
         Expanded(
           child: Text(
-            context.read<UserCubit>().currentUser!.name!,
+            Helper.currentUser!.name!,
             style: AppTextStyles.textStyle24Medium(context),
           ),
         ),

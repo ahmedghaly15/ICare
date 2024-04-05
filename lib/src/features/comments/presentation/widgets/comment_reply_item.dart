@@ -57,7 +57,6 @@ class CommentReplyItem extends StatelessWidget {
                           .isCommentReplyLikedByMe(
                             LikeParams(
                               tinyTaleId: params.tinyTaleId!,
-                              context: context,
                               commentId: params.commentId,
                               replyId: reply.commentId,
                             ),
@@ -68,7 +67,6 @@ class CommentReplyItem extends StatelessWidget {
                           LikeParams(
                             tinyTaleId: params.tinyTaleId!,
                             commentId: params.commentId,
-                            context: context,
                             replyId: reply.commentId,
                           ),
                         );
@@ -78,7 +76,6 @@ class CommentReplyItem extends StatelessWidget {
                           LikeParams(
                             tinyTaleId: params.tinyTaleId!,
                             commentId: params.commentId,
-                            context: context,
                             replyId: reply.commentId,
                           ),
                         );
