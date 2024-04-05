@@ -51,6 +51,9 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<UserRemoteDataSource>(
       () => const UserRemoteDatasourceImpl(),
     );
+    getIt.registerLazySingleton<UserLocalDatasource>(
+      () => UserLocalDatasourceImpl(),
+    );
 
     // ========== EmergencyDiseaseDetails feature ==========
     getIt.registerLazySingleton<EmergencyDiseaseDetailsRemoteDatasource>(

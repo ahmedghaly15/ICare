@@ -48,7 +48,10 @@ class SetupDIForRepos {
 
     // ========== User feature ==========
     getIt.registerLazySingleton<UserRepo>(
-      () => UserRepo(getIt.get<UserRemoteDataSource>()),
+      () => UserRepo(
+        getIt.get<UserRemoteDataSource>(),
+        getIt.get<UserLocalDatasource>(),
+      ),
     );
 
     // ========== EmergencyDiseaseDetails feature ==========
