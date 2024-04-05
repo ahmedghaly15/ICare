@@ -30,10 +30,8 @@ List<AutoRoute> get appRoutes {
               page: HomeRoute.page,
               initial: true,
             ),
-            AutoRoute(
-              page: MedicalRoute.page,
-            ),
-            AutoRoute(page: BabyRoute.page),
+            AutoRoute(page: MedicalRoute.page),
+            AutoRoute(page: ICareCommunityRoute.page),
           ],
         ),
       ],
@@ -61,27 +59,15 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(page: BabyCryPredictorRoute.page),
     _buildCustomRoute(page: ICareBotRoute.page),
     _buildCustomRoute(page: BookmarksRoute.page),
-    AutoRoute(
-      page: CommunityRoute.page,
-      children: <AutoRoute>[
-        _buildCustomRoute(
-          page: ICareCommunityRoute.page,
-          initial: true,
-        ),
-        _buildCustomRoute(
-          page: NewTinyTaleRoute.page,
-          transitionsBuilder: TransitionsBuilders.slideBottom,
-        ),
-        _buildCustomRoute(
-          page: CommentsRoute.page,
-          transitionsBuilder: TransitionsBuilders.slideBottom,
-        ),
-        _buildCustomRoute(page: CommentRepliesRoute.page),
-        _buildCustomRoute(page: PeopleWhoLikedRoute.page),
-        _buildCustomRoute(page: SearchUsersRoute.page),
-        _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
-      ],
+    _buildCustomRoute(
+      page: NewTinyTaleRoute.page,
+      transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
+    _buildCustomRoute(page: CommentsRoute.page),
+    _buildCustomRoute(page: CommentRepliesRoute.page),
+    _buildCustomRoute(page: PeopleWhoLikedRoute.page),
+    _buildCustomRoute(page: SearchUsersRoute.page),
+    _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
     _buildCustomRoute(page: ChatDetailsRoute.page),
   ];
 }

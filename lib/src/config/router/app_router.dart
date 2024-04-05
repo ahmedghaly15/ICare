@@ -54,8 +54,3 @@ class Auth extends AutoRouter {
 class BottomNavBar extends AutoRouter {
   const BottomNavBar({super.key});
 }
-
-@RoutePage(name: RoutesNames.icareCommunityRoute)
-class ICareCommunity extends AutoRouter {
-  const ICareCommunity({super.key});
-}
