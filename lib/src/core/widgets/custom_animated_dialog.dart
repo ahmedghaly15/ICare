@@ -1,9 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/widgets/positioned_app_icon.dart';
+import 'package:icare/src/core/widgets/icare_dialog_content.dart';
 
 class CustomAnimatedDialog extends StatelessWidget {
   const CustomAnimatedDialog({
@@ -12,12 +10,14 @@ class CustomAnimatedDialog extends StatelessWidget {
     required this.child,
     this.backgroundColor = Colors.white,
     this.isBlurred = true,
+    this.appLogoBoxShadow,
   });
 
   final Animation<double> animation1;
   final Widget child;
   final Color backgroundColor;
   final bool isBlurred;
+  final List<BoxShadow>? appLogoBoxShadow;
 
   @override
   Widget build(BuildContext context) {
@@ -42,55 +42,19 @@ class CustomAnimatedDialog extends StatelessWidget {
                       ),
                       ICareDialogContent(
                         backgroundColor: backgroundColor,
+                        appLogoBoxShadow: appLogoBoxShadow,
                         child: child,
                       ),
                     ],
                   )
                 : ICareDialogContent(
                     backgroundColor: backgroundColor,
+                    appLogoBoxShadow: appLogoBoxShadow,
                     child: child,
                   ),
           ),
         ),
       ),
-    );
-  }
-}
-
-class ICareDialogContent extends StatelessWidget {
-  const ICareDialogContent({
-    super.key,
-    required this.backgroundColor,
-    required this.child,
-  });
-
-  final Color backgroundColor;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      alignment: AlignmentDirectional.center,
-      children: <Widget>[
-        Container(
-          padding: EdgeInsets.only(
-            right: 16.w,
-            left: 16.w,
-            top: 24.h,
-            bottom: 8.h,
-          ),
-          margin: EdgeInsets.symmetric(horizontal: 24.w),
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.all(
-              Radius.circular(AppConstants.radius25.r),
-            ),
-          ),
-          child: child,
-        ),
-        const PositionedAppIcon(),
-      ],
     );
   }
 }

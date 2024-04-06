@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/widgets/custom_animated_dialog.dart';
+import 'package:icare/src/core/widgets/icare_dialog_content.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_state.dart';
 import 'package:icare/src/features/tips/presentation/widgets/loading_random_tip_widget.dart';
@@ -10,15 +10,28 @@ import 'package:icare/src/features/tips/presentation/widgets/tip_and_done_text_b
 import 'package:icare/src/features/tips/presentation/widgets/what_to_say_and_topic.dart';
 
 class RandomTipDialog extends StatelessWidget {
-  const RandomTipDialog({super.key, required this.animation1});
-
-  final Animation<double> animation1;
+  const RandomTipDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CustomAnimatedDialog(
-      animation1: animation1,
-      backgroundColor: AppColors.lightGrey3,
+    return ICareDialogContent(
+      appLogoBoxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.25),
+          offset: const Offset(0, -4),
+          blurRadius: 4,
+          spreadRadius: 0,
+          blurStyle: BlurStyle.outer,
+        ),
+      ],
+      gradient: const LinearGradient(
+        colors: <Color>[
+          AppColors.gradientOrange,
+          Colors.white,
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      ),
       child: BlocConsumer<TipsCubit, TipsState>(
         listenWhen: (_, current) => current is RandomTipDialogIsClosed,
         listener: (context, state) {
