@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/search/presentation/cubit/search_cubit.dart';
 import 'package:icare/src/features/search/presentation/cubit/search_state.dart';
-import 'package:icare/src/features/search/presentation/widgets/search_user_item.dart';
-import 'package:icare/src/features/search/presentation/widgets/loading_search_users.dart';
+import 'package:icare/src/core/widgets/user_item.dart';
+import 'package:icare/src/core/widgets/loading_users_sliver_list.dart';
 
 class SearchUsersBlocBuilder extends StatelessWidget {
   const SearchUsersBlocBuilder({super.key});
@@ -31,8 +31,15 @@ class SearchUsersBlocBuilder extends StatelessWidget {
             ),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
-                (context, index) =>
-                    SearchUserItem(user: state.searchResult[index]),
+                (context, index) => Container(
+                  margin: EdgeInsets.only(bottom: 16.h),
+                  child: UserItem(
+                    user: state.searchResult[index],
+                    onTap: () {
+                      // TODO: navigate to user profile
+                    },
+                  ),
+                ),
                 childCount: state.searchResult.length,
               ),
             ),
@@ -46,7 +53,7 @@ class SearchUsersBlocBuilder extends StatelessWidget {
             ),
           );
         } else {
-          return const LoadingSearchUsers();
+          return const LoadingUsersSliverList();
         }
       },
     );

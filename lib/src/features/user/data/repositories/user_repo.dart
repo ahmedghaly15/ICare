@@ -35,7 +35,11 @@ class UserRepo {
 
   Future<FirebaseRequestResult<List<ICareUser>>> getAllUsers() {
     return executeAndHandleFirebaseErrors<List<ICareUser>>(
-      () async => await _userRemoteDataSource.getAllUsers(),
+      () async {
+        final query = await _userRemoteDataSource.getAllUsers();
+
+        return query.docs.map((doc) => ICareUser.fromJson(doc.data())).toList();
+      },
     );
   }
 }

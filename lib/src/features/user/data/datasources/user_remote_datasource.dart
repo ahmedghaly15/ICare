@@ -6,7 +6,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 
 abstract class UserRemoteDataSource {
   Future<ICareUser> getUserData();
-  Future<List<ICareUser>> getAllUsers();
+  Future<QuerySnapshot<Map<String, dynamic>>> getAllUsers();
 }
 
 class UserRemoteDatasourceImpl implements UserRemoteDataSource {
@@ -27,17 +27,7 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
   }
 
   @override
-  Future<List<ICareUser>> getAllUsers() async {
-    final List<ICareUser> users = <ICareUser>[];
-
-    final QuerySnapshot<Map<String, dynamic>> querySnapshot =
-        await _accessUsersCollection().get();
-
-    for (final DocumentSnapshot<Map<String, dynamic>> documentSnapshot
-        in querySnapshot.docs) {
-      users.add(ICareUser.fromJson(documentSnapshot.data()!));
-    }
-
-    return users;
+  Future<QuerySnapshot<Map<String, dynamic>>> getAllUsers() async {
+    return await _accessUsersCollection().get();
   }
 }
