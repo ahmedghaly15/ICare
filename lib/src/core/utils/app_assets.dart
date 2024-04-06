@@ -49,6 +49,11 @@ class AppAssets {
   /// assets/images/camera.png
   static const String imagesCamera = "assets/images/camera.png";
 
+  /// Assets for imagesCryTranslatorFeature
+  /// assets/images/cry_translator_feature.png
+  static const String imagesCryTranslatorFeature =
+      "assets/images/cry_translator_feature.png";
+
   /// Assets for imagesDarkSplash
   /// assets/images/dark_splash.png
   static const String imagesDarkSplash = "assets/images/dark_splash.png";
@@ -65,6 +70,11 @@ class AppAssets {
   /// Assets for imagesIcareBot
   /// assets/images/icare_bot.png
   static const String imagesIcareBot = "assets/images/icare_bot.png";
+
+  /// Assets for imagesIcareBotFeature
+  /// assets/images/icare_bot_feature.png
+  static const String imagesIcareBotFeature =
+      "assets/images/icare_bot_feature.png";
 
   /// Assets for imagesNoInternet
   /// assets/images/no_internet.png
@@ -89,6 +99,11 @@ class AppAssets {
   /// Assets for imagesOnboarding5
   /// assets/images/onboarding5.png
   static const String imagesOnboarding5 = "assets/images/onboarding5.png";
+
+  /// Assets for imagesSpeechTherapyFeature
+  /// assets/images/speech_therapy_feature.png
+  static const String imagesSpeechTherapyFeature =
+      "assets/images/speech_therapy_feature.png";
 
   /// Assets for imagesSplash
   /// assets/images/splash.png
@@ -125,6 +140,11 @@ class AppAssets {
   static const String svgsBlackCommentIcon =
       "assets/svgs/black_comment_icon.svg";
 
+  /// Assets for svgsBlackCommunityIcon
+  /// assets/svgs/black_community_icon.svg
+  static const String svgsBlackCommunityIcon =
+      "assets/svgs/black_community_icon.svg";
+
   /// Assets for svgsBlackDrawerBookmarkIcon
   /// assets/svgs/black_drawer_bookmark_icon.svg
   static const String svgsBlackDrawerBookmarkIcon =
@@ -138,11 +158,6 @@ class AppAssets {
   /// assets/svgs/black_home_icon.svg
   static const String svgsBlackHomeIcon = "assets/svgs/black_home_icon.svg";
 
-  /// Assets for svgsBlackIcareCommunityIcon
-  /// assets/svgs/black_icare_community_icon.svg
-  static const String svgsBlackIcareCommunityIcon =
-      "assets/svgs/black_icare_community_icon.svg";
-
   /// Assets for svgsBlackMedicalIcon
   /// assets/svgs/black_medical_icon.svg
   static const String svgsBlackMedicalIcon =
@@ -152,6 +167,10 @@ class AppAssets {
   /// assets/svgs/bookmark_icon.svg
   static const String svgsBookmarkIcon = "assets/svgs/bookmark_icon.svg";
 
+  /// Assets for svgsChatIcon
+  /// assets/svgs/chat_icon.svg
+  static const String svgsChatIcon = "assets/svgs/chat_icon.svg";
+
   /// Assets for svgsChatbotIcon
   /// assets/svgs/chatbot_icon.svg
   static const String svgsChatbotIcon = "assets/svgs/chatbot_icon.svg";
@@ -159,6 +178,10 @@ class AppAssets {
   /// Assets for svgsCommentIcon
   /// assets/svgs/comment_icon.svg
   static const String svgsCommentIcon = "assets/svgs/comment_icon.svg";
+
+  /// Assets for svgsCommunityIcon
+  /// assets/svgs/community_icon.svg
+  static const String svgsCommunityIcon = "assets/svgs/community_icon.svg";
 
   /// Assets for svgsCryTranslatorIcon
   /// assets/svgs/cry_translator_icon.svg
@@ -186,11 +209,6 @@ class AppAssets {
   /// Assets for svgsHomeIcon
   /// assets/svgs/home_icon.svg
   static const String svgsHomeIcon = "assets/svgs/home_icon.svg";
-
-  /// Assets for svgsIcareCommunityIcon
-  /// assets/svgs/icare_community_icon.svg
-  static const String svgsIcareCommunityIcon =
-      "assets/svgs/icare_community_icon.svg";
 
   /// Assets for svgsMedicalIcon
   /// assets/svgs/medical_icon.svg

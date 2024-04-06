@@ -132,4 +132,6 @@ class AppStrings {
   static const String search = 'Search';
   static const String community = 'Community';
   static const String icareBotBookmarks = 'ICare Bot Bookmarks';
+  static const String chats = 'Chats';
+  static const String aiAssistedChildCare = 'AI-Assisted Childcare';
 }

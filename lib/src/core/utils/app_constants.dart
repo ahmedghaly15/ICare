@@ -52,12 +52,13 @@ class AppConstants {
     AppStrings.emergency,
     AppStrings.search,
     AppStrings.icareBotBookmarks,
+    AppStrings.chats,
   ];
-
   static const List<String> drawerItemsSvgs = <String>[
     AppAssets.svgsOrangeDrawerBookmarkIcon,
     AppAssets.svgsBlackMedicalIcon,
     AppAssets.svgsOrangeSearchIcon,
     AppAssets.svgsBlackDrawerBookmarkIcon,
+    AppAssets.svgsChatIcon,
   ];
 }
