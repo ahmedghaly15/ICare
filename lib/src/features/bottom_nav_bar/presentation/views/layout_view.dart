@@ -28,8 +28,8 @@ class LayoutView extends StatelessWidget {
             label: AppStrings.medical,
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.svgsBlackIcareCommunityIcon),
-            activeIcon: SvgPicture.asset(AppAssets.svgsIcareCommunityIcon),
+            icon: SvgPicture.asset(AppAssets.svgsBlackCommunityIcon),
+            activeIcon: SvgPicture.asset(AppAssets.svgsCommunityIcon),
             label: AppStrings.community,
           ),
         ],
