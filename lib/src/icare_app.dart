@@ -38,7 +38,7 @@ class ICareApp extends StatelessWidget {
             create: (_) => getIt.get<TinyTalesCubit>()..getTinyTales(),
           ),
           BlocProvider<TipsCubit>(
-            create: (_) => getIt.get<TipsCubit>(),
+            create: (_) => getIt.get<TipsCubit>()..getRandomTip(),
           ),
           BlocProvider<BookmarkCubit>(
             create: (_) => getIt.get<BookmarkCubit>(),

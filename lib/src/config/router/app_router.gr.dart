@@ -27,12 +27,6 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const BabyCryPredictorView()),
       );
     },
-    BabyRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const BabyView(),
-      );
-    },
     BookmarkedTinyTalesRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
