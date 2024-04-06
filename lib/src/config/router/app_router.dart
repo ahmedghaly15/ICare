@@ -11,6 +11,7 @@ import 'package:icare/src/features/auth/presentation/views/register_view.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/views/baby_cry_predictor_view.dart';
 import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
 import 'package:icare/src/features/chat/presentation/views/chat_details_view.dart';
+import 'package:icare/src/features/chat/presentation/views/chats_view.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/views/comment_replies_view.dart';
 import 'package:icare/src/features/comments/presentation/views/comments_view.dart';

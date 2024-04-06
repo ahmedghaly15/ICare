@@ -56,6 +56,12 @@ abstract class _$AppRouter extends RootStackRouter {
         )),
       );
     },
+    ChatsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ChatsView(),
+      );
+    },
     CommentRepliesRoute.name: (routeData) {
       final args = routeData.argsAs<CommentRepliesRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -244,20 +250,6 @@ class BabyCryPredictorRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [BabyView]
-class BabyRoute extends PageRouteInfo<void> {
-  const BabyRoute({List<PageRouteInfo>? children})
-      : super(
-          BabyRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'BabyRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
 /// [BookmarkedTinyTalesView]
 class BookmarkedTinyTalesRoute extends PageRouteInfo<void> {
   const BookmarkedTinyTalesRoute({List<PageRouteInfo>? children})
@@ -335,6 +327,20 @@ class ChatDetailsRouteArgs {
   String toString() {
     return 'ChatDetailsRouteArgs{key: $key, receiver: $receiver}';
   }
+}
+
+/// generated route for
+/// [ChatsView]
+class ChatsRoute extends PageRouteInfo<void> {
+  const ChatsRoute({List<PageRouteInfo>? children})
+      : super(
+          ChatsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
