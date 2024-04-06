@@ -6,6 +6,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 
 abstract class UserRemoteDataSource {
   Future<ICareUser> getUserData();
+  Future<List<ICareUser>> getAllUsers();
 }
 
 class UserRemoteDatasourceImpl implements UserRemoteDataSource {
@@ -13,12 +14,30 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   @override
   Future<ICareUser> getUserData() async {
-    final DocumentSnapshot<Map<String, dynamic>> documentSnapshot = await getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection)
-        .doc(Helper.uId)
-        .get();
+    final DocumentSnapshot<Map<String, dynamic>> documentSnapshot =
+        await _accessUsersCollection().doc(Helper.uId).get();
 
     return ICareUser.fromJson(documentSnapshot.data()!);
+  }
+
+  CollectionReference<Map<String, dynamic>> _accessUsersCollection() {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection);
+  }
+
+  @override
+  Future<List<ICareUser>> getAllUsers() async {
+    final List<ICareUser> users = <ICareUser>[];
+
+    final QuerySnapshot<Map<String, dynamic>> querySnapshot =
+        await _accessUsersCollection().get();
+
+    for (final DocumentSnapshot<Map<String, dynamic>> documentSnapshot
+        in querySnapshot.docs) {
+      users.add(ICareUser.fromJson(documentSnapshot.data()!));
+    }
+
+    return users;
   }
 }

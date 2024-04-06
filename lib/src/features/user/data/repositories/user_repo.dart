@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:icare/src/core/firebase/firebase_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/user/data/datasources/user_local_datasource.dart';
 import 'package:icare/src/features/user/data/datasources/user_remote_datasource.dart';
 
@@ -30,5 +31,11 @@ class UserRepo {
         _userLocalDatasource.getCachedUser(),
       );
     }
+  }
+
+  Future<FirebaseRequestResult<List<ICareUser>>> getAllUsers() {
+    return executeAndHandleFirebaseErrors<List<ICareUser>>(
+      () async => await _userRemoteDataSource.getAllUsers(),
+    );
   }
 }
