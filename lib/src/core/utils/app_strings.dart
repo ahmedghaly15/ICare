@@ -62,6 +62,7 @@ class AppStrings {
   static const String diseaseImage = 'disease_image';
   static const String data = 'data';
   static const String pediatricEmergency = 'Pediatric Emergency';
+  static const String emergency = 'Emergency';
   static const String diseaseType = 'disease_type';
   static const String diseaseTypeImage = 'disease_type_image';
   static const String medicalInfo = 'Medical Information';
@@ -130,4 +131,5 @@ class AppStrings {
   static const String typeAMessage = 'Type a message';
   static const String search = 'Search';
   static const String community = 'Community';
+  static const String icareBotBookmarks = 'ICare Bot Bookmarks';
 }

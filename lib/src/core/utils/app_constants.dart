@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
 class AppConstants {
@@ -45,4 +47,17 @@ class AppConstants {
     vertical: 16.h,
   );
   static double get textFieldBottomPadding => SizeConfig.height * 0.04;
+  static const List<String> drawerItemsTitles = <String>[
+    AppStrings.bookmarks,
+    AppStrings.emergency,
+    AppStrings.search,
+    AppStrings.icareBotBookmarks,
+  ];
+
+  static const List<String> drawerItemsSvgs = <String>[
+    AppAssets.svgsOrangeDrawerBookmarkIcon,
+    AppAssets.svgsBlackMedicalIcon,
+    AppAssets.svgsOrangeSearchIcon,
+    AppAssets.svgsBlackDrawerBookmarkIcon,
+  ];
 }
