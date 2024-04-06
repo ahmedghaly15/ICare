@@ -40,7 +40,7 @@ class ChatDetailsView extends StatelessWidget implements AutoRouteWrapper {
                 color: Colors.black.withOpacity(0.15),
               ),
             ),
-            MessagesStreamBuilder(receiverId: receiver.uId!),
+            MessagesBlocBuilder(receiverId: receiver.uId!),
             Padding(
               padding: EdgeInsets.only(
                 right: 8.w,

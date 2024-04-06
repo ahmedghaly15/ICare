@@ -7,6 +7,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_drawer_item.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class DrawerItems extends StatelessWidget {
   const DrawerItems({super.key});
@@ -46,6 +47,10 @@ class DrawerItems extends StatelessWidget {
       Navigator.pop(context);
       context.pushRoute(const BookmarksRoute());
       context.read<BookmarkCubit>().retrieveICareBotBookmarks();
+    } else if (AppConstants.drawerItemsTitles[index] == AppStrings.chats) {
+      Navigator.pop(context);
+      context.read<UserCubit>().getAllUsers();
+      context.pushRoute(const ChatsRoute());
     }
   }
 }
