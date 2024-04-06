@@ -83,6 +83,8 @@ dependencies:
   flutter_linkify: ^6.0.0
   # Flutter plugin for launching a URL. Supports web, phone, SMS, and email schemes.
   url_launcher: ^6.2.5
+  # Build custom carousel slider with infinite scrolling and multiple items
+  carousel_slider: ^4.2.1
 
 
 
