@@ -14,16 +14,10 @@ platform :android do
     release_notes: """
     This is a new release.
     Updates:
-      - Finish like comment feature ✅
-      - Finish comment reply feature ✅
-      - Finish like comment reply feature ✅
-      - Finish People who liked feature ✅
-      - Finish Real time Chat feature ✅
-      - Finish Bookmark / Un bookmark tiny tale (post) feature ✅
-      - Finish Delete feature, User can delete :
-        - Tiny tale
-        - Comment
-        - Comment Reply
+      - Finish Search users feature (UI & Logic) ✅
+      - Finish Chats UI ✅
+      - Finish Home ✅ 
+      - Finish Bookmarked Tiny Tales feature (UI & Logic) ✅
   """
   )
   end
