@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,23 +31,20 @@ class ChatCubit extends Cubit<ChatState> {
   late final TextEditingController messageController;
 
   List<MessageModel> messages = <MessageModel>[];
-  void streamMessages(String receiverId) {
+  void streamMessages(String receiverId) async {
     emit(const ChatState.streamMessagesLoading());
-    messagesStream(receiverId).listen((snapshot) {
-      messages.clear();
 
-      for (var element in snapshot.docs) {
-        messages.add(MessageModel.fromJson(element.data()));
-      }
-      emit(ChatState.streamMessagesSuccess(messages));
-    }).onError((error) {
-      emit(ChatState.streamMessagesError(error.toString()));
-    });
+    final result = await streamMessagesUseCase.call(receiverId);
+
+    result.when(
+      success: (data) {
+        messages = data;
+        emit(ChatState.streamMessagesSuccess(data));
+      },
+      error: (error) =>
+          emit(ChatState.streamMessagesError(error.failureMsg ?? '')),
+    );
   }
-
-  Stream<QuerySnapshot<Map<String, dynamic>>> messagesStream(
-          String receiverId) =>
-      streamMessagesUseCase.call(receiverId);
 
   void Function()? newMessage({
     required BuildContext context,

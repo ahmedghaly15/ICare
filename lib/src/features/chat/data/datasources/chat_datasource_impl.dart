@@ -27,12 +27,12 @@ class ChatDatasourceImpl implements ChatDatasource {
   }
 
   @override
-  Stream<QuerySnapshot<Map<String, dynamic>>> streamMessages(
+  Future<QuerySnapshot<Map<String, dynamic>>> streamMessages(
     String receiverId,
-  ) {
-    return _accessMessagesCollection(receiverId)
+  ) async {
+    return await _accessMessagesCollection(receiverId)
         .orderBy(AppStrings.dateTime, descending: true)
-        .snapshots();
+        .get();
   }
 
   @override
