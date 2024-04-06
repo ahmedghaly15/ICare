@@ -44,6 +44,9 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetUserDataUseCase>(
       () => GetUserDataUseCase(getIt.get<UserRepo>()),
     );
+    getIt.registerLazySingleton<GetAllUsersUseCase>(
+      () => GetAllUsersUseCase(getIt.get<UserRepo>()),
+    );
 
     // ========== EmergencyDiseaseDetails feature ==========
     getIt.registerLazySingleton<GetEmergencyDiseaseDetailsUseCase>(
@@ -67,15 +70,12 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<AskICareBotUseCase>(
       () => AskICareBotUseCase(getIt.get<ICareBotRepo>()),
     );
-
     getIt.registerLazySingleton<BookmarkICareBotMessageUseCase>(
       () => BookmarkICareBotMessageUseCase(getIt.get<ICareBotRepo>()),
     );
-
     getIt.registerLazySingleton<RetrieveICareBotBookmarksUseCase>(
       () => RetrieveICareBotBookmarksUseCase(getIt.get<ICareBotRepo>()),
     );
-
     getIt.registerLazySingleton<DeleteBookmarkUseCase>(
       () => DeleteBookmarkUseCase(getIt.get<ICareBotRepo>()),
     );

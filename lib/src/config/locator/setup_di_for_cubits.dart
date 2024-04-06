@@ -46,7 +46,10 @@ class SetupDIForCubits {
 
     // ========== User feature ==========
     getIt.registerFactory<UserCubit>(
-      () => UserCubit(getIt.get<GetUserDataUseCase>()),
+      () => UserCubit(
+        getIt.get<GetUserDataUseCase>(),
+        getIt.get<GetAllUsersUseCase>(),
+      ),
     );
 
     // ========== EmergencyDiseaseDetails feature ==========

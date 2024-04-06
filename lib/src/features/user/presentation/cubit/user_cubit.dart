@@ -16,9 +16,7 @@ class UserCubit extends Cubit<UserState> {
 
   Future<void> getUserData() async {
     emit(const UserState.getUserDataLoading());
-
     final remoteUser = await _getUserDataUseCase(const NoParams());
-
     remoteUser.when(
       success: (data) async {
         Helper.currentUser = data;
