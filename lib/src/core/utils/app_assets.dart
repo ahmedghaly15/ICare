@@ -163,6 +163,10 @@ class AppAssets {
   static const String svgsBlackMedicalIcon =
       "assets/svgs/black_medical_icon.svg";
 
+  /// Assets for svgsBlackSearchIcon
+  /// assets/svgs/black_search_icon.svg
+  static const String svgsBlackSearchIcon = "assets/svgs/black_search_icon.svg";
+
   /// Assets for svgsBookmarkIcon
   /// assets/svgs/bookmark_icon.svg
   static const String svgsBookmarkIcon = "assets/svgs/bookmark_icon.svg";
@@ -231,11 +235,6 @@ class AppAssets {
   /// assets/svgs/orange_drawer_bookmark_icon.svg
   static const String svgsOrangeDrawerBookmarkIcon =
       "assets/svgs/orange_drawer_bookmark_icon.svg";
-
-  /// Assets for svgsOrangeSearchIcon
-  /// assets/svgs/orange_search_icon.svg
-  static const String svgsOrangeSearchIcon =
-      "assets/svgs/orange_search_icon.svg";
 
   /// Assets for svgsRedHeartCommentIcon
   /// assets/svgs/red_heart_comment_icon.svg

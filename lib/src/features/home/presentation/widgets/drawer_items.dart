@@ -39,9 +39,6 @@ class DrawerItems extends StatelessWidget {
     } else if (AppConstants.drawerItemsTitles[index] == AppStrings.search) {
       Navigator.pop(context);
       context.pushRoute(const SearchUsersRoute());
-    } else if (AppConstants.drawerItemsTitles[index] == AppStrings.emergency) {
-      Navigator.pop(context);
-      // context.pushRoute(const EmergencyDiseasesRoute());
     } else if (AppConstants.drawerItemsTitles[index] ==
         AppStrings.icareBotBookmarks) {
       Navigator.pop(context);
