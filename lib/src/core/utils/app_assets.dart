@@ -197,6 +197,10 @@ class AppAssets {
   /// assets/svgs/empty_bookmarks.svg
   static const String svgsEmptyBookmarks = "assets/svgs/empty_bookmarks.svg";
 
+  /// Assets for svgsEmptyChats
+  /// assets/svgs/empty_chats.svg
+  static const String svgsEmptyChats = "assets/svgs/empty_chats.svg";
+
   /// Assets for svgsHeartCommentIcon
   /// assets/svgs/heart_comment_icon.svg
   static const String svgsHeartCommentIcon =

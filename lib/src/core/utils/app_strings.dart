@@ -134,4 +134,7 @@ class AppStrings {
   static const String icareBotBookmarks = 'ICare Bot Bookmarks';
   static const String chats = 'Chats';
   static const String aiAssistedChildCare = 'AI-Assisted Childcare';
+  static const String startChatting = 'Start Chatting!';
+  static const String noTinyTalesYet = 'No Tiny Tales yet';
+  static const String noBookmarkedTinyTalesYet = 'No Bookmarked Tiny Tales yet';
 }
