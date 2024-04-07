@@ -48,7 +48,7 @@ class EmergencyDiseaseDetailsView extends StatelessWidget
               return Column(
                 children: <Widget>[
                   DiseaseImage(diseaseData: diseaseData),
-                  MySizedBox.height12,
+                  MySizedBox.height18,
                   CustomDiseaseDetailsTabs(diseaseDetails: state.data),
                 ],
               );
