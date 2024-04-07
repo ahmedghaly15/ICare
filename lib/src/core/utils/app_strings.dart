@@ -73,8 +73,6 @@ class AppStrings {
   static const String redFlags = 'Red_Flags';
   static const String initialManagement = 'Initial_Management';
   static const String doOrNot = 'Do_Or_Not';
-  static const String dO = 'Do';
-  static const String dont = 'Do Not';
   static const String responseItemId = 'ID';
   static const String microphonePermissionDenied =
       'Microphone access is permanently denied. Please go to Settings and grant permission.';
@@ -137,4 +135,9 @@ class AppStrings {
   static const String startChatting = 'Start Chatting!';
   static const String noTinyTalesYet = 'No Tiny Tales yet';
   static const String noBookmarkedTinyTalesYet = 'No Bookmarked Tiny Tales yet';
+  static const String symptomsKeys = 'Symptoms_Keys';
+  static const String redFlagsKeys = 'Red_Flags_Keys';
+  static const String initialManagementKeys = 'Initial_Management_Keys';
+  static const String doKeys = 'Do_Keys';
+  static const String doNotKeys = 'Do_Not_Keys';
 }
