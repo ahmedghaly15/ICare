@@ -1,8 +1,8 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/animated_empty_view.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_state.dart';
@@ -31,13 +31,10 @@ class BookmarkedTinyTalesSliverListBlocBuilder extends StatelessWidget {
                     childCount: state.data.length,
                   ),
                 )
-              : SliverFillRemaining(
-                  child: Center(
-                    child: FadeInDown(
-                      child: SvgPicture.asset(
-                        AppAssets.svgsEmptyBookmarkedTinyTales,
-                      ),
-                    ),
+              : const SliverFillRemaining(
+                  child: AnimatedEmptyView(
+                    svgImage: AppAssets.svgsEmptyBookmarkedTinyTales,
+                    text: AppStrings.noBookmarkedTinyTalesYet,
                   ),
                 );
         } else if (state is GetBookmarkedTinyTalesError) {
