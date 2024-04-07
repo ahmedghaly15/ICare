@@ -43,5 +43,20 @@ class AppThemes {
             minimumSize: Size.zero,
           ),
         ),
+        tabBarTheme: TabBarTheme(
+          indicatorColor: AppColors.primaryColor,
+          indicatorSize: TabBarIndicatorSize.label,
+          dividerHeight: 0,
+          labelStyle: AppTextStyles.textStyle18Bold(context),
+          unselectedLabelColor: Colors.black,
+          labelColor: Colors.black,
+          labelPadding: const EdgeInsets.symmetric(
+            horizontal: 48.0,
+          ),
+          tabAlignment: TabAlignment.center,
+          overlayColor: MaterialStateProperty.all(
+            AppColors.gradientOrange,
+          ),
+        ),
       );
 }

@@ -17,14 +17,12 @@ import 'package:icare/src/features/comments/presentation/views/comment_replies_v
 import 'package:icare/src/features/comments/presentation/views/comments_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/emergency_disease_details_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/medical_info_disease_details_view.dart';
-import 'package:icare/src/features/emergency/presentation/views/emergency_diseases_view.dart';
 import 'package:icare/src/features/entry/presentation/views/entry_view.dart';
 import 'package:icare/src/features/home/presentation/views/home_view.dart';
 import 'package:icare/src/features/icare_bot/presentation/views/bookmarks_view.dart';
 import 'package:icare/src/features/icare_bot/presentation/views/icare_bot_view.dart';
 import 'package:icare/src/features/medical/presentation/views/medical_view.dart';
 import 'package:icare/src/features/medical_info/presentation/views/medical_info_category_diseases_view.dart';
-import 'package:icare/src/features/medical_info/presentation/views/medical_info_view.dart';
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/search/presentation/views/search_users_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';

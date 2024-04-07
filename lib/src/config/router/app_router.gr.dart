@@ -95,12 +95,6 @@ abstract class _$AppRouter extends RootStackRouter {
         )),
       );
     },
-    EmergencyDiseasesRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const EmergencyDiseasesView()),
-      );
-    },
     EntryRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -166,16 +160,10 @@ abstract class _$AppRouter extends RootStackRouter {
         )),
       );
     },
-    MedicalInfoRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const MedicalInfoView()),
-      );
-    },
     MedicalRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const MedicalView(),
+        child: WrappedRoute(child: const MedicalView()),
       );
     },
     NewTinyTaleRoute.name: (routeData) {
@@ -459,20 +447,6 @@ class EmergencyDiseaseDetailsRouteArgs {
 }
 
 /// generated route for
-/// [EmergencyDiseasesView]
-class EmergencyDiseasesRoute extends PageRouteInfo<void> {
-  const EmergencyDiseasesRoute({List<PageRouteInfo>? children})
-      : super(
-          EmergencyDiseasesRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'EmergencyDiseasesRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
 /// [EntryView]
 class EntryRoute extends PageRouteInfo<void> {
   const EntryRoute({List<PageRouteInfo>? children})
@@ -656,20 +630,6 @@ class MedicalInfoDiseaseDetailsRouteArgs {
   String toString() {
     return 'MedicalInfoDiseaseDetailsRouteArgs{key: $key, diseaseData: $diseaseData, diseaseType: $diseaseType}';
   }
-}
-
-/// generated route for
-/// [MedicalInfoView]
-class MedicalInfoRoute extends PageRouteInfo<void> {
-  const MedicalInfoRoute({List<PageRouteInfo>? children})
-      : super(
-          MedicalInfoRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MedicalInfoRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

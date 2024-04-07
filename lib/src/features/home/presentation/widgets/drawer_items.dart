@@ -41,7 +41,7 @@ class DrawerItems extends StatelessWidget {
       context.pushRoute(const SearchUsersRoute());
     } else if (AppConstants.drawerItemsTitles[index] == AppStrings.emergency) {
       Navigator.pop(context);
-      context.pushRoute(const EmergencyDiseasesRoute());
+      // context.pushRoute(const EmergencyDiseasesRoute());
     } else if (AppConstants.drawerItemsTitles[index] ==
         AppStrings.icareBotBookmarks) {
       Navigator.pop(context);

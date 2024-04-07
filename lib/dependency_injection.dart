@@ -95,11 +95,6 @@ import 'package:icare/src/features/icare_bot/domain/usecases/delete_bookmark.dar
 import 'package:icare/src/features/icare_bot/domain/usecases/retrieve_icare_bot_bookmarks.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
-import 'package:icare/src/features/medical/data/datasources/medical_local_datasource.dart';
-import 'package:icare/src/features/medical/data/datasources/medical_remote_datasource.dart';
-import 'package:icare/src/features/medical/data/repositories/medical_repo.dart';
-import 'package:icare/src/features/medical/domain/usecases/get_medical.dart';
-import 'package:icare/src/features/medical/presentation/cubits/medical_cubit.dart';
 import 'package:icare/src/features/medical_info/data/datasources/medical_info_local_datasource.dart';
 import 'package:icare/src/features/medical_info/data/datasources/medical_info_remote_datasource.dart';
 import 'package:icare/src/features/medical_info/data/repositories/medical_info_repo.dart';

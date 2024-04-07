@@ -21,14 +21,6 @@ class SetupDIForDatasource {
       () => const OnboardingDatasourceImpl(),
     );
 
-    // ========== Medical feature ==========
-    getIt.registerLazySingleton<MedicalRemoteDatasource>(
-      () => MedicalRemoteDatasourceImpl(getIt.get<ApiService>()),
-    );
-
-    getIt.registerLazySingleton<MedicalLocalDatasource>(
-        () => const MedicalLocalDatasourceImpl());
-
     // ========== Emergency feature ==========
     getIt.registerLazySingleton<EmergencyRemoteDatasource>(
       () => EmergencyRemoteDatasourceImpl(getIt.get<ApiService>()),
@@ -52,7 +44,7 @@ class SetupDIForDatasource {
       () => const UserRemoteDatasourceImpl(),
     );
     getIt.registerLazySingleton<UserLocalDatasource>(
-      () => UserLocalDatasourceImpl(),
+      () => const UserLocalDatasourceImpl(),
     );
 
     // ========== EmergencyDiseaseDetails feature ==========

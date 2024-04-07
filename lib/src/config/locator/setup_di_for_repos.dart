@@ -22,14 +22,6 @@ class SetupDIForRepos {
       () => OnboardingRepo(getIt.get<OnboardingDatasource>()),
     );
 
-    // ========== Medical feature ==========
-    getIt.registerLazySingleton<MedicalRepo>(
-      () => MedicalRepo(
-        getIt.get<MedicalRemoteDatasource>(),
-        getIt.get<MedicalLocalDatasource>(),
-      ),
-    );
-
     // ========== Emergency feature ==========
     getIt.registerLazySingleton<EmergencyRepo>(
       () => EmergencyRepo(

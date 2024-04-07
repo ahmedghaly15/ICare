@@ -19,7 +19,8 @@ class EmergencyDiseasesBlocBuilder extends StatelessWidget {
           state is GetEmergencyDiseasesError,
       builder: (context, state) {
         if (state is GetEmergencyDiseasesError) {
-          return SliverToBoxAdapter(
+          return SliverFillRemaining(
+            hasScrollBody: false,
             child: CustomErrorWidget(
               error: state.error,
               tryAgainOnPressed: () =>
