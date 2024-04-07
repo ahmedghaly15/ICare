@@ -36,14 +36,6 @@ List<AutoRoute> get appRoutes {
         ),
       ],
     ),
-    // _buildCustomRoute(
-    //   page: EmergencyDiseasesRoute.page,
-    //   transitionsBuilder: TransitionsBuilders.fadeIn,
-    // ),
-    // _buildCustomRoute(
-    //   page: MedicalInfoRoute.page,
-    //   transitionsBuilder: TransitionsBuilders.fadeIn,
-    // ),
     _buildCustomRoute(
       page: MedicalInfoCategoryDiseasesRoute.page,
       transitionsBuilder: TransitionsBuilders.fadeIn,

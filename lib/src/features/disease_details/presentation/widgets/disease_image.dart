@@ -33,10 +33,14 @@ class DiseaseImage extends StatelessWidget {
         children: <Widget>[
           Hero(
             tag: diseaseData.id,
-            child: ClipRRect(
-              borderRadius: AppConstants.diseaseDetailsImageBorderRadius,
-              child: CustomCachedNetworkImage(
-                imageUrl: diseaseData.diseaseImage,
+            child: SizedBox(
+              height: SizeConfig.height * 0.35,
+              width: SizeConfig.width,
+              child: ClipRRect(
+                borderRadius: AppConstants.diseaseDetailsImageBorderRadius,
+                child: CustomCachedNetworkImage(
+                  imageUrl: diseaseData.diseaseImage,
+                ),
               ),
             ),
           ),
