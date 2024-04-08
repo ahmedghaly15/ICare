@@ -44,8 +44,4 @@ class OnboardingCubit extends Cubit<OnboardingState> {
       ),
     );
   }
-
-  void skip(BuildContext context) {
-    _onboardingRepo.skip(context);
-  }
 }

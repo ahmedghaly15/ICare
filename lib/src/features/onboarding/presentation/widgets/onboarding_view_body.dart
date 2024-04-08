@@ -2,8 +2,6 @@ import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
@@ -19,24 +17,6 @@ class OnboardingViewBody extends StatelessWidget {
     return SafeArea(
       child: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.white,
-            elevation: 0,
-            actions: <Widget>[
-              TextButton.icon(
-                style: TextButton.styleFrom(
-                  foregroundColor: AppColors.primaryColor,
-                  textStyle: AppTextStyles.textStyle24Medium(context),
-                ),
-                onPressed: () => context.read<OnboardingCubit>().skip(context),
-                icon: const Text(AppStrings.skip),
-                label: const Icon(
-                  Icons.arrow_right_alt,
-                  color: AppColors.primaryColor,
-                ),
-              ),
-            ],
-          ),
           SliverPadding(
             padding: AppConstants.horizontalPadding,
             sliver: SliverToBoxAdapter(

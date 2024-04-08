@@ -11,10 +11,7 @@ import 'package:icare/src/features/onboarding/data/models/onboarding_item.dart';
 
 abstract class OnboardingDatasource {
   List<OnboardingItem> onboardingItems();
-
   void navigateAmongPages(NavigateAmongPagesParams params);
-
-  void skip(BuildContext context);
 }
 
 class OnboardingDatasourceImpl implements OnboardingDatasource {
@@ -69,16 +66,4 @@ class OnboardingDatasourceImpl implements OnboardingDatasource {
           description: AppStrings.onboarding5Description,
         ),
       ];
-
-  @override
-  void skip(BuildContext context) {
-    getIt
-        .get<CacheHelper>()
-        .saveData(key: AppStrings.cachedOnboarding, value: true)
-        .then((value) {
-      if (value) {
-        context.replaceRoute(const StartRoute());
-      }
-    });
-  }
 }
