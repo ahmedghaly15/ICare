@@ -33,24 +33,14 @@ class AppStrings {
   static const String or = 'Or';
   static const String signInWithGoogle = 'Sign in with Google';
   static const String cachedOnboarding = 'onboarding';
-  static const String onboarding1Title = 'Scheduling All Baby Needs';
-  static const String onboarding1Description =
-      'Get your baby on time and on track scheduling the time of baby eat ,sleep and taking medicine';
-
-  static const String onboarding2Title = 'Understand Your Baby Better';
   static const String onboarding2Description =
-      'Help you to understand the reason why your baby crying';
-  static const String onboarding3Title = 'Easy Access to Useful Information';
-  static const String onboarding3Description =
-      'Access to information by asking AI chatting bot';
-  static const String onboarding4Title =
-      'Funny and Easy Way to Know Your Baby Emotion';
+      "Discover the secret language of your baby's cries. Our intuitive platform helps you understand the reasons behind their tears, offering valuable insights for confident parenting. Decode cries with ease, and nurture your little one with confidence.";
+  static const String onboarding1Description =
+      'Unlock a world of knowledge and convenience with our AI-powered chatbot. Seamlessly access information, ask questions, and receive instant responses. Experience the future of information access today.';
   static const String onboarding4Description =
-      "Know your baby's emotion just by taking a photo";
-  static const String onboarding5Title =
-      'Help Your Baby Develop an Accurate Speech';
-  static const String onboarding5Description =
-      'Make sure that your baby speaks well in the right age';
+      "Connect with fellow mothers facing similar challenges. Share experiences, seek advice, and offer support in a safe and nurturing environment within our app. Join hands with like-minded parents and navigate the journey of motherhood together.";
+  static const String onboarding3Description =
+      "Empower your child's speech development effortlessly. Ensure your little one speaks confidently at the right age. With personalized guidance and exercises, we support their language journey every step of the way.";
   static const String next = 'Next';
   static const String skip = 'Skip';
   static const String cachedUserId = 'cachedUserId';
@@ -137,4 +127,5 @@ class AppStrings {
   static const String startChatting = 'Start Chatting!';
   static const String noTinyTalesYet = 'No Tiny Tales yet';
   static const String noBookmarkedTinyTalesYet = 'No Bookmarked Tiny Tales yet';
+  static const String getStarted = 'Get Started';
 }

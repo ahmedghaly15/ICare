@@ -21,7 +21,7 @@ class AppConstants {
   static const double authTopMargin = 27.0;
   static Duration get onboardingScrollingDuration =>
       const Duration(milliseconds: 300);
-  static Curve get onboardingScrollingCurve => Curves.fastEaseInToSlowEaseOut;
+  static Curve get onboardingScrollingCurve => Curves.easeIn;
   static BoxShadow get primaryBoxShadow => BoxShadow(
         offset: Offset(0.w, 4.h),
         blurRadius: 4.w,

@@ -13,14 +13,8 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     pageController = PageController(initialPage: 0);
   }
 
-  @override
-  Future<void> close() {
-    pageController.dispose();
-    return super.close();
-  }
-
   bool isLastBoarding = false;
-
+  int currentIndex = 0;
   late final PageController pageController;
 
   List<OnboardingItem> onboardingItems() => _onboardingRepo.onboardingItems();
@@ -31,7 +25,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     } else {
       isLastBoarding = false;
     }
-
+    currentIndex = index;
     emit(OnboardingState.pageViewIndexChange(index));
   }
 
@@ -43,5 +37,11 @@ class OnboardingCubit extends Cubit<OnboardingState> {
         isLastBoarding: isLastBoarding,
       ),
     );
+  }
+
+  @override
+  Future<void> close() {
+    pageController.dispose();
+    return super.close();
   }
 }

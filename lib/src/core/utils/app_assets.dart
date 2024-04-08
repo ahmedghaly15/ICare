@@ -63,10 +63,6 @@ class AppAssets {
   static const String imagesDarkSplashAndroid12 =
       "assets/images/dark_splash_android_12.png";
 
-  /// Assets for imagesError
-  /// assets/images/error.png
-  static const String imagesError = "assets/images/error.png";
-
   /// Assets for imagesIcareBot
   /// assets/images/icare_bot.png
   static const String imagesIcareBot = "assets/images/icare_bot.png";
@@ -75,10 +71,6 @@ class AppAssets {
   /// assets/images/icare_bot_feature.png
   static const String imagesIcareBotFeature =
       "assets/images/icare_bot_feature.png";
-
-  /// Assets for imagesNoInternet
-  /// assets/images/no_internet.png
-  static const String imagesNoInternet = "assets/images/no_internet.png";
 
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.png
@@ -95,10 +87,6 @@ class AppAssets {
   /// Assets for imagesOnboarding4
   /// assets/images/onboarding4.png
   static const String imagesOnboarding4 = "assets/images/onboarding4.png";
-
-  /// Assets for imagesOnboarding5
-  /// assets/images/onboarding5.png
-  static const String imagesOnboarding5 = "assets/images/onboarding5.png";
 
   /// Assets for imagesSpeechTherapyFeature
   /// assets/images/speech_therapy_feature.png
@@ -205,6 +193,10 @@ class AppAssets {
   /// assets/svgs/empty_chats.svg
   static const String svgsEmptyChats = "assets/svgs/empty_chats.svg";
 
+  /// Assets for svgsError
+  /// assets/svgs/error.svg
+  static const String svgsError = "assets/svgs/error.svg";
+
   /// Assets for svgsHeartCommentIcon
   /// assets/svgs/heart_comment_icon.svg
   static const String svgsHeartCommentIcon =
@@ -221,6 +213,10 @@ class AppAssets {
   /// Assets for svgsMedicalIcon
   /// assets/svgs/medical_icon.svg
   static const String svgsMedicalIcon = "assets/svgs/medical_icon.svg";
+
+  /// Assets for svgsNoInternet
+  /// assets/svgs/no_internet.svg
+  static const String svgsNoInternet = "assets/svgs/no_internet.svg";
 
   /// Assets for svgsNoTinyTales
   /// assets/svgs/no_tiny_tales.svg

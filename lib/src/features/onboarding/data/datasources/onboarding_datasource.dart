@@ -42,28 +42,19 @@ class OnboardingDatasourceImpl implements OnboardingDatasource {
   List<OnboardingItem> onboardingItems() => const <OnboardingItem>[
         OnboardingItem(
           image: AppAssets.imagesOnboarding1,
-          title: AppStrings.onboarding1Title,
           description: AppStrings.onboarding1Description,
         ),
         OnboardingItem(
           image: AppAssets.imagesOnboarding2,
-          title: AppStrings.onboarding2Title,
           description: AppStrings.onboarding2Description,
         ),
         OnboardingItem(
           image: AppAssets.imagesOnboarding3,
-          title: AppStrings.onboarding3Title,
           description: AppStrings.onboarding3Description,
         ),
         OnboardingItem(
           image: AppAssets.imagesOnboarding4,
-          title: AppStrings.onboarding4Title,
           description: AppStrings.onboarding4Description,
-        ),
-        OnboardingItem(
-          image: AppAssets.imagesOnboarding5,
-          title: AppStrings.onboarding5Title,
-          description: AppStrings.onboarding5Description,
         ),
       ];
 }
