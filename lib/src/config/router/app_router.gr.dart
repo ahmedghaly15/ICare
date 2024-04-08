@@ -110,7 +110,7 @@ abstract class _$AppRouter extends RootStackRouter {
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeView(),
+        child: WrappedRoute(child: const HomeView()),
       );
     },
     ICareBotRoute.name: (routeData) {
