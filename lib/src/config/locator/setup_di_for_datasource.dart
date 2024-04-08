@@ -21,22 +21,12 @@ class SetupDIForDatasource {
       () => const OnboardingDatasourceImpl(),
     );
 
-    // ========== Emergency feature ==========
-    getIt.registerLazySingleton<EmergencyRemoteDatasource>(
-      () => EmergencyRemoteDatasourceImpl(getIt.get<ApiService>()),
+    // ========== Medical feature ==========
+    getIt.registerLazySingleton<MedicalLocalDatasource>(
+      () => const MedicalLocalDatasourceImpl(),
     );
-
-    getIt.registerLazySingleton<EmergencyLocalDatasource>(
-      () => const EmergencyLocalDatasourceImpl(),
-    );
-
-    // ========== MedicalInfo feature ==========
-    getIt.registerLazySingleton<MedicalInfoRemoteDatasource>(
-      () => MedicalInfoRemoteDatasourceImpl(getIt.get<ApiService>()),
-    );
-
-    getIt.registerLazySingleton<MedicalInfoLocalDatasource>(
-      () => const MedicalInfoLocalDatasourceImpl(),
+    getIt.registerLazySingleton<MedicalRemoteDatasource>(
+      () => MedicalRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
 
     // ========== User feature ==========
@@ -53,7 +43,6 @@ class SetupDIForDatasource {
         getIt.get<ApiService>(),
       ),
     );
-
     getIt.registerLazySingleton<DiseaseDetailsLocalDatasource>(
       () => const DiseaseDetailsLocalDatasourceImpl(),
     );
@@ -74,7 +63,6 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<ICareBotRemoteDatasource>(
       () => ICareBotRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
-
     getIt.registerLazySingleton<ICareBotLocalDatasource>(
       () => const ICareBotLocalDatasourceImpl(),
     );
@@ -88,7 +76,6 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<TipsRemoteDataSource>(
       () => TipsRemoteDataSourceImpl(getIt.get<ApiService>()),
     );
-
     getIt.registerLazySingleton<TipsLocalDataSource>(
       () => const TipsLocalDataSourceImpl(),
     );

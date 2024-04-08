@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/features/emergency/presentation/widgets/emergency_diseases_bloc_builder.dart';
+import 'package:icare/src/features/medical/presentation/widgets/emergency_diseases_bloc_builder.dart';
 
 class EmergencyDiseasesTab extends StatelessWidget {
   const EmergencyDiseasesTab({super.key});

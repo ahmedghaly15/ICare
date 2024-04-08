@@ -25,14 +25,12 @@ class SetupDIForUseCases {
       () => ForgotPasswordUseCase(getIt.get<ForgotPasswordRepo>()),
     );
 
-    // ========== Emergency feature ==========
+    // ========== Medical feature ==========
     getIt.registerLazySingleton<GetEmergencyDiseasesUseCase>(
-      () => GetEmergencyDiseasesUseCase(getIt.get<EmergencyRepo>()),
+      () => GetEmergencyDiseasesUseCase(getIt.get<MedicalRepo>()),
     );
-
-    // ========== MedicalInfo feature ==========
     getIt.registerLazySingleton<GetMedicalInfoUseCase>(
-      () => GetMedicalInfoUseCase(getIt.get<MedicalInfoRepo>()),
+      () => GetMedicalInfoUseCase(getIt.get<MedicalRepo>()),
     );
 
     // ========== User feature ==========

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
-import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_cubit.dart';
-import 'package:icare/src/features/medical_info/presentation/cubit/medical_info_state.dart';
-import 'package:icare/src/features/medical_info/presentation/widgets/medical_info_categories_loading_sliver_list.dart';
-import 'package:icare/src/features/medical_info/presentation/widgets/medical_info_categories_sliver_list.dart';
+import 'package:icare/src/features/medical/presentation/cubits/medical_info_cubit.dart';
+import 'package:icare/src/features/medical/presentation/cubits/medical_state.dart';
+import 'package:icare/src/features/medical/presentation/widgets/medical_info_categories_loading_sliver_list.dart';
+import 'package:icare/src/features/medical/presentation/widgets/medical_info_categories_sliver_list.dart';
 
 class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
   const MedicalInfoDiseasesBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MedicalInfoCubit, MedicalInfoState>(
+    return BlocBuilder<MedicalInfoCubit, MedicalState>(
       buildWhen: (_, state) =>
           state is GetMedicalInfoSuccess ||
           state is GetMedicalInfoError ||

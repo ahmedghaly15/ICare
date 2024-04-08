@@ -5,7 +5,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/disease_item.dart';
-import 'package:icare/src/features/medical_info/data/models/get_medical_info_response.dart';
+import 'package:icare/src/features/medical/data/models/get_medical_info_response.dart';
 
 class MedicalInfoCategoriesSliverList extends StatelessWidget {
   const MedicalInfoCategoriesSliverList({

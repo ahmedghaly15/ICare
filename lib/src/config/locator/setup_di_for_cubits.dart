@@ -29,14 +29,12 @@ class SetupDIForCubits {
       () => OnboardingCubit(getIt.get<OnboardingRepo>()),
     );
 
-    // ========== Emergency feature ==========
-    getIt.registerFactory<EmergencyCubit>(
-      () => EmergencyCubit(getIt.get<GetEmergencyDiseasesUseCase>()),
-    );
-
-    // ========== MedicalInfo feature ==========
+    // ========== Medical feature ==========
     getIt.registerFactory<MedicalInfoCubit>(
       () => MedicalInfoCubit(getIt.get<GetMedicalInfoUseCase>()),
+    );
+    getIt.registerFactory<EmergencyCubit>(
+      () => EmergencyCubit(getIt.get<GetEmergencyDiseasesUseCase>()),
     );
 
     // ========== User feature ==========
