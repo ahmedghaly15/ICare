@@ -34,13 +34,13 @@ class AppStrings {
   static const String signInWithGoogle = 'Sign in with Google';
   static const String cachedOnboarding = 'onboarding';
   static const String onboarding2Description =
-      "Discover the secret language of your baby's cries. Our intuitive platform helps you understand the reasons behind their tears, offering valuable insights for confident parenting. Decode cries with ease, and nurture your little one with confidence.";
+      "Discover the secret language of your baby's cries. Helps you understand the reasons behind their tears. Decode cries with ease, and nurture your little one with confidence.";
   static const String onboarding1Description =
-      'Unlock a world of knowledge and convenience with our AI-powered chatbot. Seamlessly access information, ask questions, and receive instant responses. Experience the future of information access today.';
+      'Unlock a world of knowledge and convenience with our AI-powered chatbot. Seamlessly access information, ask questions, and receive instant responses.';
   static const String onboarding4Description =
-      "Connect with fellow mothers facing similar challenges. Share experiences, seek advice, and offer support in a safe and nurturing environment within our app. Join hands with like-minded parents and navigate the journey of motherhood together.";
+      "Connect with fellow mothers facing similar challenges. Share experiences, seek advice, and offer support in a safe and nurturing environment within our app.";
   static const String onboarding3Description =
-      "Empower your child's speech development effortlessly. Ensure your little one speaks confidently at the right age. With personalized guidance and exercises, we support their language journey every step of the way.";
+      "Ensure your little one speaks confidently at the right age. With personalized guidance and exercises, we support their language journey every step of the way.";
   static const String next = 'Next';
   static const String skip = 'Skip';
   static const String cachedUserId = 'cachedUserId';
