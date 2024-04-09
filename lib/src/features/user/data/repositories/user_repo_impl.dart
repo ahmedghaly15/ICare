@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/firebase/firebase_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
@@ -62,18 +61,22 @@ class UserRepoImpl implements UserRepo {
   }
 
   @override
-  Future<FirebaseRequestResult<QuerySnapshot<Map<String, dynamic>>>>
-      getFollowers() {
-    return executeAndHandleFirebaseErrors<QuerySnapshot<Map<String, dynamic>>>(
-      () async => await _userRemoteDataSource.getFollowers(),
+  Future<FirebaseRequestResult<List<ICareUser>>> getFollowers() {
+    return executeAndHandleFirebaseErrors<List<ICareUser>>(
+      () async {
+        final query = await _userRemoteDataSource.getFollowers();
+        return query.docs.map((e) => ICareUser.fromJson(e.data())).toList();
+      },
     );
   }
 
   @override
-  Future<FirebaseRequestResult<QuerySnapshot<Map<String, dynamic>>>>
-      getFollowing() {
-    return executeAndHandleFirebaseErrors<QuerySnapshot<Map<String, dynamic>>>(
-      () async => await _userRemoteDataSource.getFollowing(),
+  Future<FirebaseRequestResult<List<ICareUser>>> getFollowing() {
+    return executeAndHandleFirebaseErrors<List<ICareUser>>(
+      () async {
+        final query = await _userRemoteDataSource.getFollowing();
+        return query.docs.map((e) => ICareUser.fromJson(e.data())).toList();
+      },
     );
   }
 }
