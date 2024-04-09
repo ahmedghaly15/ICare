@@ -40,8 +40,12 @@ class SetupDIForCubits {
     // ========== User feature ==========
     getIt.registerFactory<UserCubit>(
       () => UserCubit(
-        getIt.get<GetUserDataUseCase>(),
-        getIt.get<GetAllUsersUseCase>(),
+        getUserDataUseCase: getIt.get<GetUserDataUseCase>(),
+        getAllUsersUseCase: getIt.get<GetAllUsersUseCase>(),
+        followUseCase: getIt.get<FollowUseCase>(),
+        unFollowUseCase: getIt.get<UnFollowUseCase>(),
+        getFollowersUseCase: getIt.get<GetFollowersUseCase>(),
+        getFollowingUseCase: getIt.get<GetFollowingUseCase>(),
       ),
     );
 

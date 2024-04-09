@@ -27,7 +27,11 @@ import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_bookm
 import 'package:icare/src/features/user/data/datasources/user_local_datasource.dart';
 import 'package:icare/src/features/user/data/repositories/user_repo_impl.dart';
 import 'package:icare/src/features/user/domain/repositories/user_repo.dart';
+import 'package:icare/src/features/user/domain/usecases/follow.dart';
 import 'package:icare/src/features/user/domain/usecases/get_all_users.dart';
+import 'package:icare/src/features/user/domain/usecases/get_followers.dart';
+import 'package:icare/src/features/user/domain/usecases/get_following.dart';
+import 'package:icare/src/features/user/domain/usecases/un_follow.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
