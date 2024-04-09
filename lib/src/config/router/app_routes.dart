@@ -65,6 +65,7 @@ List<AutoRoute> get appRoutes {
       page: ChatsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
+    _buildCustomRoute(page: ProfileRoute.page),
   ];
 }
 

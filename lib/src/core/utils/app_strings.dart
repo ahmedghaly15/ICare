@@ -26,7 +26,6 @@ class AppStrings {
   static const String enterYourPersonalInfo = 'Enter your personal information';
   static const String forgotPasswordDescription =
       "Enter the email associated with your account to reset your password. We'll send you a link to create a new one.";
-
   static const String resetPassword = 'Reset Password';
   static const String resetPasswordEmailIsSent =
       "We've sent a password reset link to your email. Please check your inbox!";
@@ -128,7 +127,12 @@ class AppStrings {
   static const String noTinyTalesYet = 'No Tiny Tales yet';
   static const String noBookmarkedTinyTalesYet = 'No Bookmarked Tiny Tales yet';
   static const String getStarted = 'Get Started';
-  static const String followerCollection = 'Follower Collection';
+  static const String followersCollection = 'Followers Collection';
   static const String followingCollection = 'Following Collection';
   static const String profile = 'Profile';
+  static const String followers = 'Followers';
+  static const String following = 'Following';
+  static const String message = 'Message';
+  static const String photos = 'Photos';
+  static const String liked = 'Liked';
 }

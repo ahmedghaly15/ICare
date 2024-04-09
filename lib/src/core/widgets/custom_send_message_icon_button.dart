@@ -18,7 +18,6 @@ class CustomSendMessageIconButton extends StatelessWidget {
       radius: 20.r,
       backgroundColor: isEnabled ? AppColors.primaryColor : Colors.grey,
       child: IconButton(
-        padding: EdgeInsets.zero,
         style: IconButton.styleFrom(
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: Size.zero,

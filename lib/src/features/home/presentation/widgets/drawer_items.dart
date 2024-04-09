@@ -48,6 +48,9 @@ class DrawerItems extends StatelessWidget {
       Navigator.pop(context);
       context.read<UserCubit>().getAllUsers();
       context.pushRoute(const ChatsRoute());
+    } else if (AppConstants.drawerItemsTitles[index] == AppStrings.profile) {
+      Navigator.pop(context);
+      context.pushRoute(const ProfileRoute());
     }
   }
 }

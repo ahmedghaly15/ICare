@@ -15,6 +15,9 @@ class PrimaryButton extends StatelessWidget {
     this.backgroundColor,
     this.textColor,
     this.hasShadow = true,
+    this.width,
+    this.height,
+    this.padding,
   });
 
   final String? text;
@@ -25,12 +28,15 @@ class PrimaryButton extends StatelessWidget {
   final Color? textColor;
   final void Function()? onPressed;
   final bool hasShadow;
+  final double? width;
+  final double? height;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: 50.0.h,
+      width: width?.w ?? double.infinity,
+      height: height?.h ?? 50.0.h,
       decoration: BoxDecoration(
         color: backgroundColor ?? AppColors.primaryColor,
         borderRadius: BorderRadiusDirectional.circular(borderRadius ?? 50.0.r),
@@ -41,6 +47,7 @@ class PrimaryButton extends StatelessWidget {
             : null,
       ),
       child: MaterialButton(
+        padding: padding,
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius:

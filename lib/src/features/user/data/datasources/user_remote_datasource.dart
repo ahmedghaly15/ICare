@@ -61,7 +61,7 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
       ICareUser user) {
     return _accessUsersCollection()
         .doc(user.uId)
-        .collection(AppStrings.followerCollection);
+        .collection(AppStrings.followersCollection);
   }
 
   @override
