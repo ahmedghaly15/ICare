@@ -36,8 +36,7 @@ class MessageBubble extends StatelessWidget {
                   ? ChatBubbleClipper8(type: BubbleType.sendBubble)
                   : ChatBubbleClipper8(type: BubbleType.receiverBubble),
               alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-              backGroundColor:
-                  isUser ? AppColors.primaryColor : AppColors.lightGrey2,
+              backGroundColor: isUser ? Colors.white : AppColors.primaryColor,
               padding: EdgeInsets.only(
                 top: 8.h,
                 bottom: isUser ? 8.h : 4.h,
