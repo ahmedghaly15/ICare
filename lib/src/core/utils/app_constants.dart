@@ -48,15 +48,17 @@ class AppConstants {
   );
   static double get textFieldBottomPadding => SizeConfig.height * 0.04;
   static const List<String> drawerItemsTitles = <String>[
+    AppStrings.profile,
     AppStrings.bookmarks,
-    AppStrings.search,
     AppStrings.chats,
+    AppStrings.search,
     AppStrings.icareBotBookmarks,
   ];
   static const List<String> drawerItemsSvgs = <String>[
-    AppAssets.svgsOrangeDrawerBookmarkIcon,
-    AppAssets.svgsBlackSearchIcon,
-    AppAssets.svgsChatIcon,
+    AppAssets.svgsOrangeProfileIcon,
     AppAssets.svgsBlackDrawerBookmarkIcon,
+    AppAssets.svgsChatIcon,
+    AppAssets.svgsBlackSearchIcon,
+    AppAssets.svgsOrangeDrawerBookmarkIcon,
   ];
 }

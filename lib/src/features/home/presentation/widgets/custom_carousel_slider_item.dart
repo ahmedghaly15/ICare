@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCarouselSliderItem extends StatelessWidget {
   const CustomCarouselSliderItem({
@@ -14,7 +15,13 @@ class CustomCarouselSliderItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Image.asset(icon),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(25.r),
+        child: Image.asset(
+          icon,
+          fit: BoxFit.cover,
+        ),
+      ),
     );
   }
 }

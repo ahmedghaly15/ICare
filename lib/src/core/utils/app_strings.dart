@@ -130,4 +130,5 @@ class AppStrings {
   static const String getStarted = 'Get Started';
   static const String followerCollection = 'Follower Collection';
   static const String followingCollection = 'Following Collection';
+  static const String profile = 'Profile';
 }

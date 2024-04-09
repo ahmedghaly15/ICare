@@ -32,9 +32,8 @@ class CustomCarouselSlider extends StatelessWidget {
         ),
       ],
       options: CarouselOptions(
-        // height: 250.h,
-        // aspectRatio: 190 / 250,
-        viewportFraction: 0.45,
+        aspectRatio: 1,
+        viewportFraction: 0.55,
         initialPage: 0,
         enableInfiniteScroll: true,
         reverse: false,
@@ -43,7 +42,7 @@ class CustomCarouselSlider extends StatelessWidget {
         autoPlayAnimationDuration: const Duration(milliseconds: 800),
         autoPlayCurve: Curves.fastOutSlowIn,
         enlargeCenterPage: true,
-        enlargeFactor: 0.4,
+        enlargeFactor: 0.3,
         scrollDirection: Axis.horizontal,
       ),
     );

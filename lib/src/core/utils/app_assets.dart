@@ -232,6 +232,11 @@ class AppAssets {
   static const String svgsOrangeDrawerBookmarkIcon =
       "assets/svgs/orange_drawer_bookmark_icon.svg";
 
+  /// Assets for svgsOrangeProfileIcon
+  /// assets/svgs/orange_profile_icon.svg
+  static const String svgsOrangeProfileIcon =
+      "assets/svgs/orange_profile_icon.svg";
+
   /// Assets for svgsRedHeartCommentIcon
   /// assets/svgs/red_heart_comment_icon.svg
   static const String svgsRedHeartCommentIcon =
