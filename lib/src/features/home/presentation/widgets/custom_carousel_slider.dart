@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_carousel_slider_item.dart';
@@ -33,8 +32,8 @@ class CustomCarouselSlider extends StatelessWidget {
         ),
       ],
       options: CarouselOptions(
-        height: 250.h,
-        aspectRatio: 190 / 250,
+        // height: 250.h,
+        // aspectRatio: 190 / 250,
         viewportFraction: 0.45,
         initialPage: 0,
         enableInfiniteScroll: true,

@@ -32,7 +32,7 @@ class SetupDIForRepos {
 
     // ========== User feature ==========
     getIt.registerLazySingleton<UserRepo>(
-      () => UserRepo(
+      () => UserRepoImpl(
         getIt.get<UserRemoteDataSource>(),
         getIt.get<UserLocalDatasource>(),
       ),

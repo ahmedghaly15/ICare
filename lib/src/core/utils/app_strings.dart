@@ -128,4 +128,6 @@ class AppStrings {
   static const String noTinyTalesYet = 'No Tiny Tales yet';
   static const String noBookmarkedTinyTalesYet = 'No Bookmarked Tiny Tales yet';
   static const String getStarted = 'Get Started';
+  static const String followerCollection = 'Follower Collection';
+  static const String followingCollection = 'Following Collection';
 }

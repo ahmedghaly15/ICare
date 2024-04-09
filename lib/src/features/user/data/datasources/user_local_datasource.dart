@@ -9,6 +9,8 @@ abstract class UserLocalDatasource {
   Future<bool> cacheUser(ICareUser user);
   ICareUser getCachedUser();
   String? userJson();
+
+  //TODO: remember to cache following and followers
 }
 
 class UserLocalDatasourceImpl implements UserLocalDatasource {

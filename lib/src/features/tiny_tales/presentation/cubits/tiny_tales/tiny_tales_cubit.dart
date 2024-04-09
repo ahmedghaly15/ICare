@@ -42,6 +42,8 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.getPeopleWhoLikedUseCase,
   }) : super(const TinyTalesState.initial());
 
+  List<TinyTale> tinyTales = <TinyTale>[];
+
   Future<void> getTinyTales() async {
     emit(const TinyTalesState.getTinyTalesLoading());
     final result = await getTinyTalesUseCase.call(const NoParams());
@@ -75,9 +77,7 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
 
   Future<void> getPeopleWhoLiked(String tinyTaleId) async {
     emit(const TinyTalesState.getPeopleWhoLikedLoading());
-
     final result = await getPeopleWhoLikedUseCase(tinyTaleId);
-
     result.when(
       success: (peopleWhoLiked) =>
           emit(TinyTalesState.getPeopleWhoLikedSuccess(peopleWhoLiked)),
@@ -144,7 +144,6 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
 
   void unBookmarkTinyTale(String tinyTaleId) async {
     emit(const TinyTalesState.unBookmarkTinyTaleLoading());
-
     final result = await unBookmarkTinyTaleUseCase.call(tinyTaleId);
     result.when(
       success: (_) => emit(const TinyTalesState.unBookmarkTinyTaleSuccess()),
