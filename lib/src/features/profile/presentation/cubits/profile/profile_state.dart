@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:icare/src/features/tiny_tales/data/models/photo.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
 part 'profile_state.freezed.dart';
@@ -13,9 +12,4 @@ class ProfileState<T> with _$ProfileState<T> {
       GetUserTinyTalesSuccess<T>;
   const factory ProfileState.getUserTinyTalesError(String error) =
       GetUserTinyTalesError<T>;
-  const factory ProfileState.getUserPhotosLoading() = GetUserPhotosLoading;
-  const factory ProfileState.getUserPhotosSuccess(List<Photo> data) =
-      GetUserPhotosSuccess<T>;
-  const factory ProfileState.getUserPhotosError(String error) =
-      GetUserPhotosError<T>;
 }

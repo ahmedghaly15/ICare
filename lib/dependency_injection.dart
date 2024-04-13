@@ -8,7 +8,8 @@ import 'package:icare/src/features/profile/data/datasources/profile_remote_datas
 import 'package:icare/src/features/profile/data/repositories/profile_repo.dart';
 import 'package:icare/src/features/profile/domain/usecases/get_user_photos.dart';
 import 'package:icare/src/features/profile/domain/usecases/get_user_tiny_tales.dart';
-import 'package:icare/src/features/profile/presentation/cubit/profile_cubit.dart';
+import 'package:icare/src/features/profile/presentation/cubits/photos/photos_cubit.dart';
+import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';

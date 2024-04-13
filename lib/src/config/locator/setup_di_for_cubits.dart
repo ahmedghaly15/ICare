@@ -164,10 +164,10 @@ class SetupDIForCubits {
 
     // ========== Profile feature ==========
     getIt.registerFactory<ProfileCubit>(
-      () => ProfileCubit(
-        getIt.get<GetUserTinyTalesUseCase>(),
-        getIt.get<GetUserPhotosUseCase>(),
-      ),
+      () => ProfileCubit(getIt.get<GetUserTinyTalesUseCase>()),
+    );
+    getIt.registerFactory<PhotosCubit>(
+      () => PhotosCubit(getIt.get<GetUserPhotosUseCase>()),
     );
   }
 }

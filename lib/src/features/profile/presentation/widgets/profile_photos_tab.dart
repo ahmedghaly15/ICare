@@ -7,8 +7,8 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/animated_empty_view.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
-import 'package:icare/src/features/profile/presentation/cubit/profile_cubit.dart';
-import 'package:icare/src/features/profile/presentation/cubit/profile_state.dart';
+import 'package:icare/src/features/profile/presentation/cubits/photos/photos_cubit.dart';
+import 'package:icare/src/features/profile/presentation/cubits/photos/photos_state.dart';
 import 'package:icare/src/features/profile/presentation/widgets/loading_profile_photos_tab.dart';
 
 class ProfilePhotosTab extends StatelessWidget {
@@ -16,7 +16,7 @@ class ProfilePhotosTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProfileCubit, ProfileState>(
+    return BlocBuilder<PhotosCubit, PhotosState>(
       buildWhen: (_, current) =>
           current is GetUserPhotosLoading ||
           current is GetUserPhotosSuccess ||
@@ -49,7 +49,7 @@ class ProfilePhotosTab extends StatelessWidget {
           return CustomErrorWidget(
             error: state.error,
             tryAgainOnPressed: () =>
-                context.read<ProfileCubit>().getUserPhotos(),
+                context.read<PhotosCubit>().getUserPhotos(),
           );
         } else {
           return const LoadingProfilePhotosTab();
