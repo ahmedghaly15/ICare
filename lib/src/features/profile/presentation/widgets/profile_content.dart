@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/helper.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/followers_and_following_row.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/profile/presentation/widgets/custom_profile_tab_bar.dart';
 
 class ProfileContent extends StatelessWidget {
@@ -44,13 +42,6 @@ class ProfileContent extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
           ],
-        ),
-        MySizedBox.height12,
-        PrimaryButton(
-          width: 104,
-          height: 30,
-          text: AppStrings.message,
-          onPressed: () {},
         ),
         MySizedBox.height27,
         const Expanded(child: CustomProfileTabBar()),

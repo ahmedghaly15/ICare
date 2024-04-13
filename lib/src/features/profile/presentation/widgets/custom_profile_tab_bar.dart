@@ -16,7 +16,7 @@ class _CustomProfileTabBarState extends State<CustomProfileTabBar>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 3);
+    _tabController = TabController(vsync: this, length: 2);
   }
 
   @override
@@ -34,8 +34,8 @@ class _CustomProfileTabBarState extends State<CustomProfileTabBar>
           tabs: const [
             Tab(text: '${AppStrings.tinyTale}s'),
             Tab(text: AppStrings.photos),
-            Tab(text: AppStrings.liked),
           ],
+          indicatorSize: TabBarIndicatorSize.tab,
           indicatorColor: Colors.white,
           labelColor: Colors.white,
           labelPadding: EdgeInsets.symmetric(horizontal: 24.0.w),
@@ -44,10 +44,12 @@ class _CustomProfileTabBarState extends State<CustomProfileTabBar>
         Expanded(
           child: TabBarView(
             controller: _tabController,
-            children: const [
-              Center(child: Text('Tab 1 content')),
-              Center(child: Text('Tab 2 content')),
-              Center(child: Text('Tab 3 content')),
+            children: [
+              ListView.builder(
+                itemBuilder: (_, index) => const Text('data'),
+                itemCount: 50,
+              ),
+              const Center(child: Text('Tab 2 content')),
             ],
           ),
         ),

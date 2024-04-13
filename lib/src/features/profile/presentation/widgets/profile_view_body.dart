@@ -26,8 +26,8 @@ class ProfileViewBody extends StatelessWidget {
             ),
             gradient: LinearGradient(
               colors: <Color>[
-                AppColors.gradientOrange.withOpacity(0.6),
-                const Color(0xffFFBD5C),
+                AppColors.gradientOrange.withOpacity(0.4),
+                const Color(0xffFFBD5C).withOpacity(0.9),
                 Colors.white,
               ],
               begin: Alignment.topCenter,
