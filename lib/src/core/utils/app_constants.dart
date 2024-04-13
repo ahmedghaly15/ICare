@@ -61,4 +61,8 @@ class AppConstants {
     AppAssets.svgsBlackSearchIcon,
     AppAssets.svgsOrangeDrawerBookmarkIcon,
   ];
+  static EdgeInsets profileTabsPadding = EdgeInsets.symmetric(
+    vertical: 16.h,
+    horizontal: 8.w,
+  );
 }

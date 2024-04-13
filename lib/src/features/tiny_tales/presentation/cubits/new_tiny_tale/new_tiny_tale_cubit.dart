@@ -11,6 +11,7 @@ import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/photo.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
@@ -151,26 +152,29 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
   ) {
     state.whenOrNull(
       createTinyTaleSuccess: (data) {
+        _getTinyTalesAndPop(context);
         createNewTinyTaleController.clear();
-        context.read<TinyTalesCubit>().getTinyTales().then((value) {
-          context.maybePop();
-        });
       },
       createTinyTaleError: (error) {
         ShowICareDialog.showICareDialogError(context, error);
       },
       uploadTinyTaleImageSuccess: (imageUrl) {
         _saveImageUrlInFirebaseFirestore(imageUrl).then((value) {
+          _getTinyTalesAndPop(context);
           createNewTinyTaleController.clear();
-          context.read<TinyTalesCubit>().getTinyTales().then((value) {
-            context.maybePop();
-          });
         });
       },
       uploadTinyTaleImageError: (error) {
         ShowICareDialog.showICareDialogError(context, error);
       },
     );
+  }
+
+  Future<Null> _getTinyTalesAndPop(BuildContext context) {
+    return context.read<TinyTalesCubit>().getTinyTales().then((value) {
+      context.read<ProfileCubit>().getUserTinyTales();
+      context.maybePop();
+    });
   }
 
   @override
