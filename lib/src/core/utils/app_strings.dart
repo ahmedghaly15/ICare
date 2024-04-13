@@ -134,5 +134,4 @@ class AppStrings {
   static const String following = 'Following';
   static const String message = 'Message';
   static const String photos = 'Photos';
-  static const String liked = 'Liked';
 }

@@ -45,7 +45,7 @@ class AppThemes {
         ),
         tabBarTheme: TabBarTheme(
           indicatorColor: AppColors.primaryColor,
-          indicatorSize: TabBarIndicatorSize.tab,
+          indicatorSize: TabBarIndicatorSize.label,
           dividerHeight: 0,
           labelStyle: AppTextStyles.textStyle18Bold(context),
           unselectedLabelColor: Colors.black,

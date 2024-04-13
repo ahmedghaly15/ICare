@@ -42,14 +42,26 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
       ),
       dateTime: Timestamp.now(),
     );
-
     final DocumentReference<Map<String, dynamic>> documentReference =
         await _accessTinyTalesCollection().add(tinyTale.toJson());
-
     await documentReference
+        .update({AppStrings.tinyTaleId: documentReference.id});
+    await _accessUserTinyTalesCollection()
+        .doc(documentReference.id)
+        .set(tinyTale.toJson());
+    await _accessUserTinyTalesCollection()
+        .doc(documentReference.id)
         .update({AppStrings.tinyTaleId: documentReference.id});
 
     return documentReference;
+  }
+
+  CollectionReference<Map<String, dynamic>> _accessUserTinyTalesCollection() {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection)
+        .doc(Helper.uId)
+        .collection(AppStrings.tinyTalesCollection);
   }
 
   @override
@@ -88,80 +100,64 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   @override
   Future<void> deleteTinyTale(String tinyTaleId) async {
-    _deleteTinyTaleLikes(tinyTaleId);
-    _deleteEachCommentRepliesLikes(tinyTaleId);
-    _deleteEachCommentReplies(tinyTaleId);
-    _deleteEachCommentLikes(tinyTaleId);
-    _deleteTinyTaleComments(tinyTaleId);
-
+    await _deleteTinyTaleLikes(tinyTaleId);
+    await _deleteEachCommentRepliesLikes(tinyTaleId);
+    await _deleteEachCommentReplies(tinyTaleId);
+    await _deleteEachCommentLikes(tinyTaleId);
+    await _deleteTinyTaleComments(tinyTaleId);
+    await _accessUserTinyTalesCollection().doc(tinyTaleId).delete();
     await _accessTinyTalesCollection().doc(tinyTaleId).delete();
   }
 
-  void _deleteTinyTaleComments(String tinyTaleId) {
-    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference.delete();
-      }
+  Future<void> _deleteTinyTaleComments(String tinyTaleId) async {
+    final snapshot = await _accessCommentsCollection(tinyTaleId).get();
+    await Future.forEach(snapshot.docs, (doc) async {
+      await doc.reference.delete();
     });
   }
 
-  void _deleteEachCommentReplies(String tinyTaleId) {
-    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference
-            .collection(AppStrings.commentReplies)
-            .snapshots()
-            .listen((event) {
-          for (final doc in event.docs) {
-            doc.reference.delete();
-          }
+  Future<void> _deleteEachCommentReplies(String tinyTaleId) async {
+    final snapshot = await _accessCommentsCollection(tinyTaleId).get();
+    await Future.forEach(snapshot.docs, (doc) async {
+      final repliesSnapshot =
+          await doc.reference.collection(AppStrings.commentReplies).get();
+      await Future.forEach(repliesSnapshot.docs, (replyDoc) async {
+        await replyDoc.reference.delete();
+      });
+    });
+  }
+
+  Future<void> _deleteEachCommentRepliesLikes(String tinyTaleId) async {
+    final snapshot = await _accessCommentsCollection(tinyTaleId).get();
+    await Future.forEach(snapshot.docs, (doc) async {
+      final repliesSnapshot =
+          await doc.reference.collection(AppStrings.commentReplies).get();
+      await Future.forEach(repliesSnapshot.docs, (replyDoc) async {
+        final likesSnapshot =
+            await replyDoc.reference.collection(AppStrings.replyLikes).get();
+        await Future.forEach(likesSnapshot.docs, (likeDoc) async {
+          await likeDoc.reference.delete();
         });
-      }
+      });
     });
   }
 
-  void _deleteEachCommentRepliesLikes(String tinyTaleId) {
-    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference
-            .collection(AppStrings.commentReplies)
-            .snapshots()
-            .listen((event) {
-          for (final doc in event.docs) {
-            doc.reference
-                .collection(AppStrings.replyLikes)
-                .snapshots()
-                .listen((event) {
-              for (final doc in event.docs) {
-                doc.reference.delete();
-              }
-            });
-          }
-        });
-      }
+  Future<void> _deleteEachCommentLikes(String tinyTaleId) async {
+    final snapshot = await _accessCommentsCollection(tinyTaleId).get();
+    await Future.forEach(snapshot.docs, (doc) async {
+      final likesSnapshot = await doc.reference
+          .collection(AppStrings.commentLikesCollection)
+          .get();
+      await Future.forEach(likesSnapshot.docs, (likeDoc) async {
+        await likeDoc.reference.delete();
+      });
     });
   }
 
-  void _deleteEachCommentLikes(String tinyTaleId) {
-    _accessCommentsCollection(tinyTaleId).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference
-            .collection(AppStrings.commentLikesCollection)
-            .snapshots()
-            .listen((event) {
-          for (final doc in event.docs) {
-            doc.reference.delete();
-          }
-        });
-      }
-    });
-  }
-
-  void _deleteTinyTaleLikes(String tinyTaleId) {
-    _accessLikesCollection(tinyTaleId).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference.delete();
-      }
+  Future<void> _deleteTinyTaleLikes(String tinyTaleId) async {
+    final snapshot = await _accessLikesCollection(tinyTaleId).get();
+    await Future.forEach(snapshot.docs, (doc) async {
+      await doc.reference.delete();
     });
   }
 
