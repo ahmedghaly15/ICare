@@ -5,9 +5,9 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/profile/presentation/cubit/profile_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubit/profile_state.dart';
+import 'package:icare/src/features/profile/presentation/widgets/loading_profile_tiny_tales_tab.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/empty_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_item.dart';
-import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tile_item_loading.dart';
 
 class ProfileTinyTalesTab extends StatelessWidget {
   const ProfileTinyTalesTab({super.key});
@@ -38,12 +38,7 @@ class ProfileTinyTalesTab extends StatelessWidget {
                 context.read<ProfileCubit>().getUserTinyTales(),
           );
         } else {
-          return ListView.builder(
-            padding: AppConstants.profileTabsPadding,
-            itemBuilder: (_, index) =>
-                TinyTaleLoadingItem(isTinyTaleWithImage: index % 2 != 0),
-            itemCount: 10,
-          );
+          return const LoadingProfileTinyTalesTab();
         }
       },
     );
