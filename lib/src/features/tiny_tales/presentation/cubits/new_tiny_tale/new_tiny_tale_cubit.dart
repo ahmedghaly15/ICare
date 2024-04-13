@@ -1,14 +1,18 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
+import 'package:icare/src/features/tiny_tales/data/models/photo.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/upload_tiny_tale_image.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/new_tiny_tale/new_tiny_tale_state.dart';
@@ -130,6 +134,17 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     emit(NewTinyTaleState.setNewTextValue(text));
   }
 
+  Future<void> _saveImageUrlInFirebaseFirestore(String imageUrl) async {
+    final Photo photo = Photo(imagePath: imageUrl);
+    final imageQuery = await getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection)
+        .doc(Helper.uId)
+        .collection(AppStrings.photos)
+        .add(photo.toJson());
+    await imageQuery.update({'id': imageQuery.id});
+  }
+
   void handleCreateNewTinyTaleStates(
     NewTinyTaleState<dynamic> state,
     BuildContext context,
@@ -137,12 +152,22 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     state.whenOrNull(
       createTinyTaleSuccess: (data) {
         createNewTinyTaleController.clear();
-
         context.read<TinyTalesCubit>().getTinyTales().then((value) {
           context.maybePop();
         });
       },
       createTinyTaleError: (error) {
+        ShowICareDialog.showICareDialogError(context, error);
+      },
+      uploadTinyTaleImageSuccess: (imageUrl) {
+        _saveImageUrlInFirebaseFirestore(imageUrl).then((value) {
+          createNewTinyTaleController.clear();
+          context.read<TinyTalesCubit>().getTinyTales().then((value) {
+            context.maybePop();
+          });
+        });
+      },
+      uploadTinyTaleImageError: (error) {
         ShowICareDialog.showICareDialogError(context, error);
       },
     );
