@@ -28,8 +28,6 @@ class AppConstants {
         spreadRadius: 0,
         color: Colors.black.withOpacity(0.25),
       );
-  static const Duration animationConfigurationDuration =
-      Duration(milliseconds: 375);
   static const Duration cryTranslatorAnimationDuration =
       Duration(milliseconds: 650);
   static const double medicalCategoryItemAspectRatio = 350 / 175;

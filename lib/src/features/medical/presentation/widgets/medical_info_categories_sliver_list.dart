@@ -1,7 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/disease_item.dart';
@@ -20,25 +20,18 @@ class MedicalInfoCategoriesSliverList extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) {
-          return AnimationConfiguration.staggeredList(
-            position: index,
-            duration: AppConstants.animationConfigurationDuration,
-            child: SlideAnimation(
-              horizontalOffset: 200.w,
-              child: FadeInAnimation(
-                child: AspectRatio(
-                  aspectRatio: AppConstants.medicalInfoCategoryItemAspectRatio,
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 16.h),
-                    child: DiseaseItem(
+          return FadeInRight(
+            child: AspectRatio(
+              aspectRatio: AppConstants.medicalInfoCategoryItemAspectRatio,
+              child: Container(
+                margin: EdgeInsets.only(bottom: 16.h),
+                child: DiseaseItem(
+                  diseaseType: categories[index].diseaseType,
+                  diseaseTypeImage: categories[index].diseaseTypeImage,
+                  onPressed: () => context.pushRoute(
+                    MedicalInfoCategoryDiseasesRoute(
                       diseaseType: categories[index].diseaseType,
-                      diseaseTypeImage: categories[index].diseaseTypeImage,
-                      onPressed: () => context.pushRoute(
-                        MedicalInfoCategoryDiseasesRoute(
-                          diseaseType: categories[index].diseaseType,
-                          diseases: categories[index].diseases,
-                        ),
-                      ),
+                      diseases: categories[index].diseases,
                     ),
                   ),
                 ),

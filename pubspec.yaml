@@ -55,8 +55,6 @@ dependencies:
   cached_network_image: ^3.3.1
   # Beautiful animations inspired on Animate.css, every animation is a customizable widget.
   animate_do: ^3.3.4
-  # To add staggered animations to your ListView, GridView
-  flutter_staggered_animations: ^1.1.1
   # A flutter plugin for displaying a countdown timer
   flutter_countdown_timer: ^4.1.0
   # Audio recorder from microphone to file or stream 
@@ -85,8 +83,6 @@ dependencies:
   url_launcher: ^6.2.5
   # Build custom carousel slider with infinite scrolling and multiple items
   carousel_slider: ^4.2.1
-
-
 
 
 dev_dependencies:

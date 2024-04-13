@@ -1,7 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
@@ -31,20 +31,13 @@ class MedicalInfoCategoryDiseasesView extends StatelessWidget {
             CustomSliverAppBar(title: diseaseType),
             CustomSliverGrid(
               delegate: SliverChildBuilderDelegate(
-                (_, index) => AnimationConfiguration.staggeredGrid(
-                  position: index,
-                  duration: AppConstants.animationConfigurationDuration,
-                  columnCount: diseases.length,
-                  child: ScaleAnimation(
-                    child: FadeInAnimation(
-                      child: DiseaseItem(
+                (_, index) => ZoomIn(
+                  child: DiseaseItem(
+                    diseaseData: diseases[index],
+                    onPressed: () => context.pushRoute(
+                      MedicalInfoDiseaseDetailsRoute(
                         diseaseData: diseases[index],
-                        onPressed: () => context.pushRoute(
-                          MedicalInfoDiseaseDetailsRoute(
-                            diseaseData: diseases[index],
-                            diseaseType: diseaseType,
-                          ),
-                        ),
+                        diseaseType: diseaseType,
                       ),
                     ),
                   ),
