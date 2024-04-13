@@ -30,6 +30,10 @@ class ProfileRemoteDatasourceImpl implements ProfileRemoteDatasource {
     return await _accessUsersCollection()
         .doc(Helper.uId)
         .collection(AppStrings.tinyTalesCollection)
+        .orderBy(
+          AppStrings.dateTime,
+          descending: true,
+        )
         .get();
   }
 }
