@@ -102,5 +102,10 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<SearchDatasource>(
       () => const SearchDatasourceImpl(),
     );
+
+    // ========== Profile feature ==========
+    getIt.registerLazySingleton<ProfileRemoteDatasource>(
+      () => const ProfileRemoteDatasourceImpl(),
+    );
   }
 }
