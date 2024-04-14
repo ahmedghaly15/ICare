@@ -29,7 +29,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   late final GlobalKey<FormState> formKey;
 
   void Function()? updateUser(BuildContext context) {
-    return newProfileImage == null && _isControllerEmpty()
+    return (newProfileImage == null && _isControllerEmpty()) ||
+            _controllersHaveNoChange()
         ? null
         : () {
             AuthHelper.keyboardUnfocus(context);
@@ -74,6 +75,10 @@ class EditProfileCubit extends Cubit<EditProfileState> {
             }
           };
   }
+
+  bool _controllersHaveNoChange() =>
+      (nameController.text == Helper.currentUser!.name &&
+          emailController.text == Helper.currentUser!.email);
 
   bool _isControllerEmpty() =>
       (nameController.text.isEmpty || emailController.text.isEmpty);

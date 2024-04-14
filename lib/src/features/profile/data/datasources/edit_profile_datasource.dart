@@ -31,12 +31,12 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
         .collection(AppStrings.usersCollection)
         .doc(Helper.uId)
         .update(user.toJson());
-    await _updateUserTinyTales();
-    await _updateUserTinyTalesLikes();
-    await _updateUserComments();
-    await _updateUserCommentsLikes();
-    await _updateUserCommentsReplies();
-    await _updateUserCommentsRepliesLikes();
+    await _updateUserTinyTales(user);
+    await _updateUserTinyTalesLikes(user);
+    await _updateUserComments(user);
+    await _updateUserCommentsLikes(user);
+    await _updateUserCommentsReplies(user);
+    await _updateUserCommentsRepliesLikes(user);
   }
 
   @override
@@ -49,33 +49,33 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
         .putFile(newProfileImage);
   }
 
-  Future<void> _updateUserTinyTales() async {
+  Future<void> _updateUserTinyTales(ICareUser user) async {
     final tinyTalesQuery = await _accessTinyTalesCollection().get();
 
     for (final tinyTale in tinyTalesQuery.docs) {
-      if (tinyTale.data()['user']['uId'] == Helper.uId) {
-        return await _accessTinyTalesCollection().doc(tinyTale.id).update(
+      if (tinyTale.data()['user']?['uId'] == Helper.uId) {
+        await _accessTinyTalesCollection().doc(tinyTale.id).update(
           {
-            'user': Helper.currentUser!.toJson(),
+            'user': user.toJson(),
           },
         );
       }
     }
   }
 
-  Future<void> _updateUserTinyTalesLikes() async {
+  Future<void> _updateUserTinyTalesLikes(ICareUser user) async {
     final tinyTalesQuery = await _accessTinyTalesCollection().get();
     for (final tinyTale in tinyTalesQuery.docs) {
       final tinyTaleLikes =
           await _accessTinyTaleLikesCollection(tinyTale.id).get();
 
       for (final like in tinyTaleLikes.docs) {
-        if (like.data()['user']['uId'] == Helper.uId) {
-          return await _accessTinyTaleLikesCollection(tinyTale.id)
+        if (like.id == Helper.uId) {
+          await _accessTinyTaleLikesCollection(tinyTale.id)
               .doc(Helper.uId)
               .update(
             {
-              'user': Helper.currentUser!.toJson(),
+              'user': user.toJson(),
             },
           );
         }
@@ -83,18 +83,16 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     }
   }
 
-  Future<void> _updateUserComments() async {
+  Future<void> _updateUserComments(ICareUser user) async {
     final tinyTalesQuery = await _accessTinyTalesCollection().get();
     for (final tinyTale in tinyTalesQuery.docs) {
       final comments = await _accessCommentsCollection(tinyTale.id).get();
 
       for (final comment in comments.docs) {
-        if (comment.data()['user']['uId'] == Helper.uId) {
-          return await _accessCommentsCollection(tinyTale.id)
-              .doc(comment.id)
-              .update(
+        if (comment.data()['user']?['uId'] == Helper.uId) {
+          await _accessCommentsCollection(tinyTale.id).doc(comment.id).update(
             {
-              'user': Helper.currentUser!.toJson(),
+              'user': user.toJson(),
             },
           );
         }
@@ -102,7 +100,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     }
   }
 
-  Future<void> _updateUserCommentsLikes() async {
+  Future<void> _updateUserCommentsLikes(ICareUser user) async {
     final tinyTalesQuery = await _accessTinyTalesCollection().get();
     for (final tinyTale in tinyTalesQuery.docs) {
       final comments = await _accessCommentsCollection(tinyTale.id).get();
@@ -111,12 +109,12 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
             await _accessCommentLikesCollection(tinyTale.id, comment.id).get();
 
         for (final like in commentLikes.docs) {
-          if (like.data()['user']['uId'] == Helper.uId) {
-            return await _accessCommentLikesCollection(tinyTale.id, comment.id)
+          if (like.id == Helper.uId) {
+            await _accessCommentLikesCollection(tinyTale.id, comment.id)
                 .doc(Helper.uId)
                 .update(
               {
-                'user': Helper.currentUser!.toJson(),
+                'user': user.toJson(),
               },
             );
           }
@@ -125,7 +123,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     }
   }
 
-  Future<void> _updateUserCommentsReplies() async {
+  Future<void> _updateUserCommentsReplies(ICareUser user) async {
     final tinyTalesQuery = await _accessTinyTalesCollection().get();
     for (final tinyTale in tinyTalesQuery.docs) {
       final comments = await _accessCommentsCollection(tinyTale.id).get();
@@ -134,13 +132,12 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
             await _accessCommentRepliesCollection(tinyTale.id, comment.id)
                 .get();
         for (final reply in commentReplies.docs) {
-          if (reply.data()['user']['uId'] == Helper.uId) {
-            return await _accessCommentRepliesCollection(
-                    tinyTale.id, comment.id)
+          if (reply.data()['user']?['uId'] == Helper.uId) {
+            await _accessCommentRepliesCollection(tinyTale.id, comment.id)
                 .doc(reply.id)
                 .update(
               {
-                'user': Helper.currentUser!.toJson(),
+                'user': user.toJson(),
               },
             );
           }
@@ -149,7 +146,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     }
   }
 
-  Future<void> _updateUserCommentsRepliesLikes() async {
+  Future<void> _updateUserCommentsRepliesLikes(ICareUser user) async {
     final tinyTalesQuery = await _accessTinyTalesCollection().get();
     for (final tinyTale in tinyTalesQuery.docs) {
       final comments = await _accessCommentsCollection(tinyTale.id).get();
@@ -164,13 +161,13 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
                       tinyTale.id, comment.id, reply.id)
                   .get();
           for (final like in commentRepliesLikes.docs) {
-            if (like.data()['user']['uId'] == Helper.uId) {
-              return await _accessCommentRepliesLikesCollection(
+            if (like.id == Helper.uId) {
+              await _accessCommentRepliesLikesCollection(
                       tinyTale.id, comment.id, reply.id)
                   .doc(Helper.uId)
                   .update(
                 {
-                  'user': Helper.currentUser!.toJson(),
+                  'user': user.toJson(),
                 },
               );
             }
