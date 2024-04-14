@@ -136,4 +136,7 @@ class AppStrings {
   static const String photos = 'Photos';
   static const String editProfile = 'Edit Profile';
   static const String update = 'Update';
+  static const String follow = 'Follow';
+  static const String unFollow = 'Unfollow';
+  static const String followsYou = 'Follows you';
 }

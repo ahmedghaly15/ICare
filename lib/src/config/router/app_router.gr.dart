@@ -108,15 +108,23 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     FollowersRoute.name: (routeData) {
+      final args = routeData.argsAs<FollowersRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const FollowersView(),
+        child: FollowersView(
+          key: args.key,
+          user: args.user,
+        ),
       );
     },
     FollowingRoute.name: (routeData) {
+      final args = routeData.argsAs<FollowingRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const FollowingView(),
+        child: FollowingView(
+          key: args.key,
+          user: args.user,
+        ),
       );
     },
     ForgotPasswordRoute.name: (routeData) {
@@ -510,30 +518,78 @@ class EntryRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [FollowersView]
-class FollowersRoute extends PageRouteInfo<void> {
-  const FollowersRoute({List<PageRouteInfo>? children})
-      : super(
+class FollowersRoute extends PageRouteInfo<FollowersRouteArgs> {
+  FollowersRoute({
+    Key? key,
+    required ICareUser user,
+    List<PageRouteInfo>? children,
+  }) : super(
           FollowersRoute.name,
+          args: FollowersRouteArgs(
+            key: key,
+            user: user,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'FollowersRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<FollowersRouteArgs> page =
+      PageInfo<FollowersRouteArgs>(name);
+}
+
+class FollowersRouteArgs {
+  const FollowersRouteArgs({
+    this.key,
+    required this.user,
+  });
+
+  final Key? key;
+
+  final ICareUser user;
+
+  @override
+  String toString() {
+    return 'FollowersRouteArgs{key: $key, user: $user}';
+  }
 }
 
 /// generated route for
 /// [FollowingView]
-class FollowingRoute extends PageRouteInfo<void> {
-  const FollowingRoute({List<PageRouteInfo>? children})
-      : super(
+class FollowingRoute extends PageRouteInfo<FollowingRouteArgs> {
+  FollowingRoute({
+    Key? key,
+    required ICareUser user,
+    List<PageRouteInfo>? children,
+  }) : super(
           FollowingRoute.name,
+          args: FollowingRouteArgs(
+            key: key,
+            user: user,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'FollowingRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<FollowingRouteArgs> page =
+      PageInfo<FollowingRouteArgs>(name);
+}
+
+class FollowingRouteArgs {
+  const FollowingRouteArgs({
+    this.key,
+    required this.user,
+  });
+
+  final Key? key;
+
+  final ICareUser user;
+
+  @override
+  String toString() {
+    return 'FollowingRouteArgs{key: $key, user: $user}';
+  }
 }
 
 /// generated route for
