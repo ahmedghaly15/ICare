@@ -7,11 +7,11 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_cubit.dart';
+import 'package:icare/src/features/profile/presentation/widgets/update_button_bloc_consumer.dart';
 
 class EditProfileForm extends StatelessWidget {
   const EditProfileForm({super.key});
@@ -43,16 +43,17 @@ class EditProfileForm extends StatelessWidget {
             textCapitalization: TextCapitalization.words,
             validating: (String? value) =>
                 AuthHelper.validateNameField(value: value),
+            onChanged: (String text) =>
+                context.read<EditProfileCubit>().setNewNameTextValue(text),
           ),
           const BottomTextFieldSpacer(),
           EmailTextFormField(
             emailController: context.read<EditProfileCubit>().emailController,
+            onChanged: (String text) =>
+                context.read<EditProfileCubit>().setNewEmailTextValue(text),
           ),
           MySizedBox.height46,
-          PrimaryButton(
-            onPressed: () {},
-            text: AppStrings.update,
-          ),
+          const UpdateButtonBlocConsumer(),
         ],
       ),
     );

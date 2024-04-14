@@ -11,6 +11,7 @@ class EmailTextFormField extends StatelessWidget {
     this.passwordFocusNode,
     this.hasEditingComplete = true,
     this.onSubmit,
+    this.onChanged,
   });
 
   final TextEditingController emailController;
@@ -18,6 +19,7 @@ class EmailTextFormField extends StatelessWidget {
   final FocusNode? passwordFocusNode;
   final bool hasEditingComplete;
   final Function(String submittedText)? onSubmit;
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class EmailTextFormField extends StatelessWidget {
       validating: (String? value) =>
           AuthHelper.validateEmailField(value: value),
       onSubmit: onSubmit,
+      onChanged: onChanged,
     );
   }
 }

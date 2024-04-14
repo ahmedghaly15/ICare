@@ -5,11 +5,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/profile/data/models/update_user_params.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_user.dart';
 import 'package:icare/src/features/profile/domain/usecases/upload_new_profile_image.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_state.dart';
+import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 
 class EditProfileCubit extends Cubit<EditProfileState> {
@@ -146,6 +152,37 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   void setNewPassTextValue(String text) {
     passwordController.text = text;
     emit(EditProfileState.setNewPassTextValue(text));
+  }
+
+  void handleEditProfileState(
+      EditProfileState<dynamic> state, BuildContext context) {
+    state.whenOrNull(editProfileSuccess: () {
+      _handleSuccessStates(context);
+    }, uploadNewProfileImageSuccess: (imageUrl) {
+      _handleSuccessStates(context);
+    }, editProfileError: (error) {
+      ShowICareDialog.showICareDialogError(context, error);
+    }, uploadNewProfileImageError: (error) {
+      ShowICareDialog.showICareDialogError(context, error);
+    });
+  }
+
+  void _handleSuccessStates(BuildContext context) {
+    getIt.get<CacheHelper>().removeData(key: AppStrings.cachedUser).then(
+      (value) {
+        debugPrint('*********** DELETE CACHED USER ***********');
+        if (value) {
+          context.read<UserCubit>().getUserData().then(
+            (value) {
+              context.read<ProfileCubit>().getUserTinyTales();
+              context.read<TinyTalesCubit>().getTinyTales().then((value) {
+                context.read<TinyTalesCubit>().getBookmarkedTinyTales();
+              });
+            },
+          );
+        }
+      },
+    );
   }
 
   void _initFormAttributes() {

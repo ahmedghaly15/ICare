@@ -37,8 +37,8 @@ class ICareApp extends StatelessWidget {
             create: (_) => getIt.get<BookmarkCubit>(),
           ),
           BlocProvider<ProfileCubit>(
-              create: (context) =>
-                  getIt.get<ProfileCubit>()..getUserTinyTales()),
+            create: (context) => getIt.get<ProfileCubit>()..getUserTinyTales(),
+          ),
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
