@@ -24,7 +24,6 @@ class TinyTaleItemUpperSection extends StatelessWidget {
             onTap: () {
               navigateToUserProfile(
                 context: context,
-                uId: tinyTale.user!.uId!,
                 user: tinyTale.user!,
               );
             },
@@ -44,7 +43,6 @@ class TinyTaleItemUpperSection extends StatelessWidget {
                 onTap: () {
                   navigateToUserProfile(
                     context: context,
-                    uId: tinyTale.user!.uId!,
                     user: tinyTale.user!,
                   );
                 },
