@@ -35,51 +35,41 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   late final GlobalKey<FormState> formKey;
 
   void Function()? updateUser(BuildContext context) {
-    return (newProfileImage == null && _isControllerEmpty()) ||
-            _controllersHaveNoChange()
-        ? null
-        : () {
-            AuthHelper.keyboardUnfocus(context);
-            if (newProfileImage == null &&
-                (nameController.text.isNotEmpty &&
-                    emailController.text.isNotEmpty)) {
-              _updateUser(UpdateUserParams(
-                name: nameController.text,
-                email: emailController.text,
-              ));
-            } else if (newProfileImage == null &&
-                (nameController.text.isNotEmpty &&
-                    emailController.text.isEmpty)) {
-              _updateUser(UpdateUserParams(
-                name: nameController.text,
-              ));
-            } else if (newProfileImage == null &&
-                (nameController.text.isEmpty &&
-                    emailController.text.isNotEmpty)) {
-              _updateUser(UpdateUserParams(
-                email: emailController.text,
-              ));
-            } else if (newProfileImage != null &&
-                (nameController.text.isNotEmpty &&
-                    emailController.text.isNotEmpty)) {
-              _uploadNewProfileImage(UpdateUserParams(
-                name: nameController.text,
-                email: emailController.text,
-              ));
-            } else if (newProfileImage != null &&
-                (nameController.text.isNotEmpty &&
-                    emailController.text.isEmpty)) {
-              _uploadNewProfileImage(UpdateUserParams(
-                name: nameController.text,
-              ));
-            } else if (newProfileImage != null &&
-                (nameController.text.isEmpty &&
-                    emailController.text.isNotEmpty)) {
-              _uploadNewProfileImage(UpdateUserParams(
-                email: emailController.text,
-              ));
-            }
-          };
+    // Only return null if there is no new image and the controllers are empty or have no changes
+    if (newProfileImage == null &&
+        (_isControllerEmpty() || _controllersHaveNoChange())) {
+      return null;
+    } else {
+      return () {
+        AuthHelper.keyboardUnfocus(context);
+
+        if (newProfileImage != null) {
+          // If there's a new image, decide the update based on controller contents
+          _uploadNewProfileImage(UpdateUserParams(
+            name: nameController.text.isNotEmpty ? nameController.text : null,
+            email:
+                emailController.text.isNotEmpty ? emailController.text : null,
+          ));
+        } else {
+          // No new image, update based on controller contents
+          if (nameController.text.isNotEmpty &&
+              emailController.text.isNotEmpty) {
+            _updateUser(UpdateUserParams(
+              name: nameController.text,
+              email: emailController.text,
+            ));
+          } else if (nameController.text.isNotEmpty) {
+            _updateUser(UpdateUserParams(
+              name: nameController.text,
+            ));
+          } else if (emailController.text.isNotEmpty) {
+            _updateUser(UpdateUserParams(
+              email: emailController.text,
+            ));
+          }
+        }
+      };
+    }
   }
 
   bool _controllersHaveNoChange() =>
