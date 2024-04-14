@@ -28,7 +28,8 @@ class UpdateButtonBlocConsumer extends StatelessWidget {
           current is SetNewNameTextValue ||
           current is SetNewEmailTextValue ||
           current is EditProfileSuccess ||
-          current is UploadNewProfileImageSuccess,
+          current is UploadNewProfileImageSuccess ||
+          current is PickNewProfileImageSuccess,
       builder: (context, state) {
         return PrimaryButton(
           backgroundColor:

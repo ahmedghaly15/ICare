@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/auth/presentation/widgets/bottom_text_field_spacer.dart';
 import 'package:icare/src/features/auth/presentation/widgets/custom_text_field_label.dart';
 import 'package:icare/src/features/auth/presentation/widgets/email_text_form_field.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_cubit.dart';
+import 'package:icare/src/features/profile/presentation/widgets/edit_profile_image.dart';
 import 'package:icare/src/features/profile/presentation/widgets/update_button_bloc_consumer.dart';
 
 class EditProfileForm extends StatelessWidget {
@@ -24,15 +22,7 @@ class EditProfileForm extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Center(
-            child: CustomCachedNetworkImage(
-              imageUrl: Helper.currentUser!.profileImage!,
-              imageBuilder: (_, image) => CircleAvatar(
-                radius: 90.r,
-                backgroundImage: image,
-              ),
-            ),
-          ),
+          const Center(child: EditProfileImage()),
           MySizedBox.height55,
           const CustomTextFieldLabel(label: AppStrings.name),
           CustomTextFormField(
