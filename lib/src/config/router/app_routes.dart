@@ -66,6 +66,7 @@ List<AutoRoute> get appRoutes {
       transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
     _buildCustomRoute(page: ProfileRoute.page),
+    _buildCustomRoute(page: EditProfileRoute.page),
   ];
 }
 

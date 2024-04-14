@@ -84,6 +84,12 @@ abstract class _$AppRouter extends RootStackRouter {
         )),
       );
     },
+    EditProfileRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const EditProfileView()),
+      );
+    },
     EmergencyDiseaseDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<EmergencyDiseaseDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -411,6 +417,20 @@ class CommentsRouteArgs {
   String toString() {
     return 'CommentsRouteArgs{key: $key, tinyTaleId: $tinyTaleId}';
   }
+}
+
+/// generated route for
+/// [EditProfileView]
+class EditProfileRoute extends PageRouteInfo<void> {
+  const EditProfileRoute({List<PageRouteInfo>? children})
+      : super(
+          EditProfileRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EditProfileRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
