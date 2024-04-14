@@ -46,22 +46,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
         await _accessTinyTalesCollection().add(tinyTale.toJson());
     await documentReference
         .update({AppStrings.tinyTaleId: documentReference.id});
-    await _accessUserTinyTalesCollection()
-        .doc(documentReference.id)
-        .set(tinyTale.toJson());
-    await _accessUserTinyTalesCollection()
-        .doc(documentReference.id)
-        .update({AppStrings.tinyTaleId: documentReference.id});
-
     return documentReference;
-  }
-
-  CollectionReference<Map<String, dynamic>> _accessUserTinyTalesCollection() {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection)
-        .doc(Helper.uId)
-        .collection(AppStrings.tinyTalesCollection);
   }
 
   @override
@@ -105,7 +90,6 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
     await _deleteEachCommentReplies(tinyTaleId);
     await _deleteEachCommentLikes(tinyTaleId);
     await _deleteTinyTaleComments(tinyTaleId);
-    await _accessUserTinyTalesCollection().doc(tinyTaleId).delete();
     await _accessTinyTalesCollection().doc(tinyTaleId).delete();
   }
 
