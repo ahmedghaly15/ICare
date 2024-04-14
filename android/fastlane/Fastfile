@@ -14,10 +14,9 @@ platform :android do
     release_notes: """
     This is a new release.
     Updates:
-      - Update Medical screen's UI ✅
-      - Update Disesae Details screen's UI ✅
-      - Update Onboarding screen's UI ✅
-      - Solve bugs in ICare Community ✅
+      - Finish Follow/Unfollow Logic ✅
+      - Finish Profile (UI & Logic) ✅
+      - Finish Other Users Profile (UI & Logic) ✅
   """
   )
   end
