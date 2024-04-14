@@ -164,7 +164,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
         if (value) {
           context.read<UserCubit>().getUserData().then(
             (value) {
-              context.read<ProfileCubit>().getUserTinyTales();
+              context.read<ProfileCubit>().getUserTinyTales(Helper.uId!);
               context.read<TinyTalesCubit>().getTinyTales().then((value) {
                 context.read<TinyTalesCubit>().getBookmarkedTinyTales();
               });
