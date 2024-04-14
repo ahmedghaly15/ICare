@@ -35,7 +35,7 @@ class ProfileContent extends StatelessWidget {
           ],
         ),
         MySizedBox.height27,
-        const Expanded(child: CustomProfileTabBar()),
+        Expanded(child: CustomProfileTabBar(uId: Helper.uId!)),
       ],
     );
   }

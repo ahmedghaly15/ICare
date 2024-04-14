@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_delete_pop_up_menu_button.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
@@ -21,7 +22,7 @@ class TinyTaleMoreIconButtonBlocListener extends StatelessWidget {
         state.whenOrNull(
           deleteTinyTaleSuccess: () {
             context.read<TinyTalesCubit>().getTinyTales();
-            context.read<ProfileCubit>().getUserTinyTales();
+            context.read<ProfileCubit>().getUserTinyTales(Helper.uId!);
             context.read<TinyTalesCubit>().unBookmarkTinyTale(tinyTaleId);
           },
         );

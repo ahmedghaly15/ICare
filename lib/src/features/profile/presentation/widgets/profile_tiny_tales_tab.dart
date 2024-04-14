@@ -10,7 +10,9 @@ import 'package:icare/src/features/tiny_tales/presentation/widgets/empty_tiny_ta
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_item.dart';
 
 class ProfileTinyTalesTab extends StatelessWidget {
-  const ProfileTinyTalesTab({super.key});
+  const ProfileTinyTalesTab({super.key, required this.uId});
+
+  final String uId;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class ProfileTinyTalesTab extends StatelessWidget {
           return CustomErrorWidget(
             error: state.error,
             tryAgainOnPressed: () =>
-                context.read<ProfileCubit>().getUserTinyTales(),
+                context.read<ProfileCubit>().getUserTinyTales(uId),
           );
         } else {
           return const LoadingProfileTinyTalesTab();

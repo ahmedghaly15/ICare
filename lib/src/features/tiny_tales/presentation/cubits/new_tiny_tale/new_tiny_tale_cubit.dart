@@ -172,7 +172,7 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
 
   Future<Null> _getTinyTalesAndPop(BuildContext context) {
     return context.read<TinyTalesCubit>().getTinyTales().then((value) {
-      context.read<ProfileCubit>().getUserTinyTales();
+      context.read<ProfileCubit>().getUserTinyTales(Helper.uId!);
       context.maybePop();
     });
   }

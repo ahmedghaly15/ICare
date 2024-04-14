@@ -12,7 +12,9 @@ import 'package:icare/src/features/profile/presentation/cubits/photos/photos_sta
 import 'package:icare/src/features/profile/presentation/widgets/loading_profile_photos_tab.dart';
 
 class ProfilePhotosTab extends StatelessWidget {
-  const ProfilePhotosTab({super.key});
+  const ProfilePhotosTab({super.key, required this.uId});
+
+  final String uId;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +51,7 @@ class ProfilePhotosTab extends StatelessWidget {
           return CustomErrorWidget(
             error: state.error,
             tryAgainOnPressed: () =>
-                context.read<PhotosCubit>().getUserPhotos(),
+                context.read<PhotosCubit>().getUserPhotos(uId),
           );
         } else {
           return const LoadingProfilePhotosTab();

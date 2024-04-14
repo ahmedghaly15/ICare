@@ -5,7 +5,9 @@ import 'package:icare/src/features/profile/presentation/widgets/profile_photos_t
 import 'package:icare/src/features/profile/presentation/widgets/profile_tiny_tales_tab.dart';
 
 class CustomProfileTabBar extends StatefulWidget {
-  const CustomProfileTabBar({super.key});
+  const CustomProfileTabBar({super.key, required this.uId});
+
+  final String uId;
 
   @override
   State<CustomProfileTabBar> createState() => _CustomProfileTabBarState();
@@ -44,14 +46,13 @@ class _CustomProfileTabBarState extends State<CustomProfileTabBar>
         Expanded(
           child: TabBarView(
             controller: _tabController,
-            children: const <Widget>[
-              ProfileTinyTalesTab(),
-              ProfilePhotosTab(),
+            children: <Widget>[
+              ProfileTinyTalesTab(uId: widget.uId),
+              ProfilePhotosTab(uId: widget.uId),
             ],
           ),
         ),
       ],
     );
   }
-
 }
