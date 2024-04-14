@@ -58,5 +58,16 @@ class AppThemes {
             AppColors.gradientOrange,
           ),
         ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(
+              color: AppColors.primaryColor,
+              width: 1,
+            ),
+            backgroundColor: AppColors.primaryColor,
+            textStyle: AppTextStyles.textStyle18Bold(context),
+            foregroundColor: Colors.white,
+          ),
+        ),
       );
 }
