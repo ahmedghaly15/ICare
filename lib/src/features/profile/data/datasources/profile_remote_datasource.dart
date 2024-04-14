@@ -27,8 +27,8 @@ class ProfileRemoteDatasourceImpl implements ProfileRemoteDatasource {
 
   @override
   Future<QuerySnapshot<Map<String, dynamic>>> getUserTinyTales() async {
-    return await _accessUsersCollection()
-        .doc(Helper.uId)
+    return await getIt
+        .get<FirebaseFirestore>()
         .collection(AppStrings.tinyTalesCollection)
         .orderBy(
           AppStrings.dateTime,

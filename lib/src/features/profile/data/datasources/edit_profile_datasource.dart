@@ -10,6 +10,8 @@ abstract class EditProfileDatasource {
 }
 
 class EditProfileDatasourceImpl implements EditProfileDatasource {
+  const EditProfileDatasourceImpl();
+
   @override
   Future<void> updateUser(UpdateUserParams params) async {
     final ICareUser user = ICareUser(

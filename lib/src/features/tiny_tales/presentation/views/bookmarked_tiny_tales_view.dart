@@ -16,27 +16,28 @@ class BookmarkedTinyTalesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: CustomRefreshIndicator(
-        onRefresh: () =>
-            context.read<TinyTalesCubit>().getBookmarkedTinyTales(),
-        child: CustomScrollView(
-          physics: AppConstants.scrollPhysics,
-          slivers: [
-            SliverPadding(
-              padding: EdgeInsets.only(left: 9.w),
-              sliver: const CustomSliverAppBar(title: AppStrings.bookmarks),
-            ),
-            SliverPadding(
-              padding: EdgeInsets.symmetric(
-                vertical: 25.h,
-                horizontal: 10.w,
+      body: SafeArea(
+        child: CustomRefreshIndicator(
+          onRefresh: () =>
+              context.read<TinyTalesCubit>().getBookmarkedTinyTales(),
+          child: CustomScrollView(
+            physics: AppConstants.scrollPhysics,
+            slivers: [
+              SliverPadding(
+                padding: AppConstants.viewAppBarPadding,
+                sliver: const CustomSliverAppBar(title: AppStrings.bookmarks),
               ),
-              sliver: const BookmarkedTinyTalesSliverListBlocBuilder(),
-            ),
-          ],
+              SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  vertical: 25.h,
+                  horizontal: 10.w,
+                ),
+                sliver: const BookmarkedTinyTalesSliverListBlocBuilder(),
+              ),
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }

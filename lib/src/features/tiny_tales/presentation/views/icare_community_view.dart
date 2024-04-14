@@ -25,7 +25,7 @@ class ICareCommunityView extends StatelessWidget {
             physics: AppConstants.scrollPhysics,
             slivers: <Widget>[
               SliverPadding(
-                padding: EdgeInsets.only(left: 9.w),
+                padding: AppConstants.viewAppBarPadding,
                 sliver: const ICareCommunitySliverAppBar(),
               ),
               SliverPadding(

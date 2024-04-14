@@ -31,7 +31,7 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
         child: CustomScrollView(
           slivers: [
             SliverPadding(
-              padding: EdgeInsets.only(left: 9.w),
+              padding: AppConstants.viewAppBarPadding,
               sliver: const CustomSliverAppBar(title: AppStrings.comments),
             ),
             CommentsBlocBuilder(tinyTaleId: tinyTaleId),

@@ -20,7 +20,7 @@ class PeopleWhoLikedView extends StatelessWidget {
           physics: AppConstants.scrollPhysics,
           slivers: [
             SliverPadding(
-              padding: EdgeInsets.only(left: 9.w),
+              padding: AppConstants.viewAppBarPadding,
               sliver:
                   const CustomSliverAppBar(title: AppStrings.peopleWhoLiked),
             ),

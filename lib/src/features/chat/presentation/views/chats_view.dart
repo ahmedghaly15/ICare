@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
@@ -18,7 +17,7 @@ class ChatsView extends StatelessWidget {
           physics: AppConstants.scrollPhysics,
           slivers: [
             SliverPadding(
-              padding: EdgeInsets.only(left: 9.w),
+              padding: AppConstants.viewAppBarPadding,
               sliver: const CustomSliverAppBar(
                 title: AppStrings.chats,
               ),

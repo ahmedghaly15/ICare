@@ -63,4 +63,5 @@ class AppConstants {
     vertical: 16.h,
     horizontal: 8.w,
   );
+  static EdgeInsets viewAppBarPadding = EdgeInsets.only(left: 9.w);
 }
