@@ -18,6 +18,8 @@ import 'package:icare/src/features/comments/presentation/views/comments_view.dar
 import 'package:icare/src/features/disease_details/presentation/views/emergency_disease_details_view.dart';
 import 'package:icare/src/features/disease_details/presentation/views/medical_info_disease_details_view.dart';
 import 'package:icare/src/features/entry/presentation/views/entry_view.dart';
+import 'package:icare/src/features/following_and_followers/presentation/views/followers_view.dart';
+import 'package:icare/src/features/following_and_followers/presentation/views/following_view.dart';
 import 'package:icare/src/features/home/presentation/views/home_view.dart';
 import 'package:icare/src/features/icare_bot/presentation/views/bookmarks_view.dart';
 import 'package:icare/src/features/icare_bot/presentation/views/icare_bot_view.dart';
@@ -26,6 +28,7 @@ import 'package:icare/src/features/medical/presentation/views/medical_info_categ
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/profile/presentation/views/edit_profile_view.dart';
 import 'package:icare/src/features/profile/presentation/views/profile_view.dart';
+import 'package:icare/src/features/profile/presentation/views/user_profile_view.dart';
 import 'package:icare/src/features/search/presentation/views/search_users_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
 import 'package:icare/src/features/tiny_tales/presentation/views/bookmarked_tiny_tales_view.dart';

@@ -107,6 +107,18 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const EntryView(),
       );
     },
+    FollowersRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FollowersView(),
+      );
+    },
+    FollowingRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FollowingView(),
+      );
+    },
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -197,7 +209,7 @@ abstract class _$AppRouter extends RootStackRouter {
     ProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const ProfileView()),
+        child: const ProfileView(),
       );
     },
     RegisterRoute.name: (routeData) {
@@ -216,6 +228,16 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const StartView(),
+      );
+    },
+    UserProfileRoute.name: (routeData) {
+      final args = routeData.argsAs<UserProfileRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: UserProfileView(
+          key: args.key,
+          user: args.user,
+        ),
       );
     },
   };
@@ -482,6 +504,34 @@ class EntryRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'EntryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FollowersView]
+class FollowersRoute extends PageRouteInfo<void> {
+  const FollowersRoute({List<PageRouteInfo>? children})
+      : super(
+          FollowersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FollowersRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FollowingView]
+class FollowingRoute extends PageRouteInfo<void> {
+  const FollowingRoute({List<PageRouteInfo>? children})
+      : super(
+          FollowingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FollowingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -792,4 +842,42 @@ class StartRoute extends PageRouteInfo<void> {
   static const String name = 'StartRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [UserProfileView]
+class UserProfileRoute extends PageRouteInfo<UserProfileRouteArgs> {
+  UserProfileRoute({
+    Key? key,
+    required ICareUser user,
+    List<PageRouteInfo>? children,
+  }) : super(
+          UserProfileRoute.name,
+          args: UserProfileRouteArgs(
+            key: key,
+            user: user,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'UserProfileRoute';
+
+  static const PageInfo<UserProfileRouteArgs> page =
+      PageInfo<UserProfileRouteArgs>(name);
+}
+
+class UserProfileRouteArgs {
+  const UserProfileRouteArgs({
+    this.key,
+    required this.user,
+  });
+
+  final Key? key;
+
+  final ICareUser user;
+
+  @override
+  String toString() {
+    return 'UserProfileRouteArgs{key: $key, user: $user}';
+  }
 }

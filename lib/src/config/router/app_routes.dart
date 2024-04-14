@@ -60,13 +60,16 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(page: PeopleWhoLikedRoute.page),
     _buildCustomRoute(page: SearchUsersRoute.page),
     _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
-    _buildCustomRoute(page: ChatDetailsRoute.page),
     _buildCustomRoute(
-      page: ChatsRoute.page,
+      page: ChatDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
     ),
+    _buildCustomRoute(page: ChatsRoute.page),
     _buildCustomRoute(page: ProfileRoute.page),
     _buildCustomRoute(page: EditProfileRoute.page),
+    _buildCustomRoute(page: UserProfileRoute.page),
+    _buildCustomRoute(page: FollowersRoute.page),
+    _buildCustomRoute(page: FollowingRoute.page),
   ];
 }
 
