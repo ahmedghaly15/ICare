@@ -119,6 +119,7 @@ class RegisterCubit extends Cubit<RegisterState> {
             name: nameController.text.trim(),
             email: emailController.text.trim(),
             uId: credential.user!.uid,
+            password: passwordController.text,
           ),
         );
       },
