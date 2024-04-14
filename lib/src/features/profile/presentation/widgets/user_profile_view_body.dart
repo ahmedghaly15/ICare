@@ -35,8 +35,12 @@ class UserProfileViewBody extends StatelessWidget {
           child: CustomCachedNetworkImage(
             imageUrl: user.profileImage!,
             imageBuilder: (_, image) => CircleAvatar(
-              radius: 60.r,
-              backgroundImage: image,
+              radius: 65.r,
+              backgroundColor: Colors.white,
+              child: CircleAvatar(
+                radius: 60.r,
+                backgroundImage: image,
+              ),
             ),
           ),
         ),

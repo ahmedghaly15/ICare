@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
@@ -20,7 +21,13 @@ class TinyTaleItemUpperSection extends StatelessWidget {
         CustomCachedNetworkImage(
           imageUrl: tinyTale.user!.profileImage!,
           imageBuilder: (_, image) => InkWell(
-            onTap: () {},
+            onTap: () {
+              navigateToUserProfile(
+                context: context,
+                uId: tinyTale.user!.uId!,
+                user: tinyTale.user!,
+              );
+            },
             child: CircleAvatar(
               backgroundColor: AppColors.lightGrey2,
               radius: 20.r,
@@ -34,7 +41,13 @@ class TinyTaleItemUpperSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  navigateToUserProfile(
+                    context: context,
+                    uId: tinyTale.user!.uId!,
+                    user: tinyTale.user!,
+                  );
+                },
                 child: Text(
                   tinyTale.user!.name!,
                   style: AppTextStyles.textStyle20Bold(context),

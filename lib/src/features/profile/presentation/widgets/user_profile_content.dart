@@ -56,6 +56,7 @@ class UserProfileContent extends StatelessWidget {
                   text: 'Follow',
                 ),
               ),
+              MySizedBox.width27,
               Expanded(
                 child: PrimaryButton(
                   height: 32,
