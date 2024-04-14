@@ -169,5 +169,10 @@ class SetupDIForCubits {
     getIt.registerFactory<PhotosCubit>(
       () => PhotosCubit(getIt.get<GetUserPhotosUseCase>()),
     );
+
+    // ========== Edit Profile feature ==========
+    getIt.registerFactory<EditProfileCubit>(
+      () => EditProfileCubit(getIt.get<UpdateUserUseCase>()),
+    );
   }
 }

@@ -107,5 +107,10 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<ProfileRemoteDatasource>(
       () => const ProfileRemoteDatasourceImpl(),
     );
+
+    // ========== Edit Profile feature ==========
+    getIt.registerLazySingleton<EditProfileDatasource>(
+      () => const EditProfileDatasourceImpl(),
+    );
   }
 }
