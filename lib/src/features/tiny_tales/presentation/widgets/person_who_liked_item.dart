@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
@@ -19,7 +20,11 @@ class PersonWhoLikedItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 20.h),
       child: ListTile(
-        onTap: () {},
+        onTap: () {
+          if (person.uId != Helper.uId) {
+            // TODO: navigate to profile page
+          }
+        },
         leading: IntrinsicWidth(
           child: Stack(
             alignment: Alignment.bottomRight,

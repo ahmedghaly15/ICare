@@ -18,7 +18,7 @@ class CustomSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      title: titleWidget ?? Text(title!),
+      title: titleWidget ?? Text(title ?? ''),
       leading: leading ?? const CustomCircleBackButton(),
       actions: actions,
     );

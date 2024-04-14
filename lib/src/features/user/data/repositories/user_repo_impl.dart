@@ -61,20 +61,20 @@ class UserRepoImpl implements UserRepo {
   }
 
   @override
-  Future<FirebaseRequestResult<List<ICareUser>>> getFollowers() {
+  Future<FirebaseRequestResult<List<ICareUser>>> getFollowers(ICareUser user) {
     return executeAndHandleFirebaseErrors<List<ICareUser>>(
       () async {
-        final query = await _userRemoteDataSource.getFollowers();
+        final query = await _userRemoteDataSource.getFollowers(user);
         return query.docs.map((e) => ICareUser.fromJson(e.data())).toList();
       },
     );
   }
 
   @override
-  Future<FirebaseRequestResult<List<ICareUser>>> getFollowing() {
+  Future<FirebaseRequestResult<List<ICareUser>>> getFollowing(ICareUser user) {
     return executeAndHandleFirebaseErrors<List<ICareUser>>(
       () async {
-        final query = await _userRemoteDataSource.getFollowing();
+        final query = await _userRemoteDataSource.getFollowing(user);
         return query.docs.map((e) => ICareUser.fromJson(e.data())).toList();
       },
     );

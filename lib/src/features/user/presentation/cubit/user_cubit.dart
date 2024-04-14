@@ -70,9 +70,9 @@ class UserCubit extends Cubit<UserState> {
     );
   }
 
-  void getFollowers() async {
+  void getFollowers(ICareUser user) async {
     emit(const UserState.getFollowersLoading());
-    final result = await getFollowersUseCase(const NoParams());
+    final result = await getFollowersUseCase(user);
     result.when(
       success: (data) => emit(UserState.getFollowers(data)),
       error: (error) =>
@@ -80,9 +80,9 @@ class UserCubit extends Cubit<UserState> {
     );
   }
 
-  void getFollowing() async {
+  void getFollowing(ICareUser user) async {
     emit(const UserState.getFollowingLoading());
-    final result = await getFollowingUseCase(const NoParams());
+    final result = await getFollowingUseCase(user);
     result.when(
       success: (data) => emit(UserState.getFollowing(data)),
       error: (error) =>

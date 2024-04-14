@@ -7,8 +7,8 @@ import 'package:icare/src/core/utils/app_strings.dart';
 abstract class UserRemoteDataSource {
   Future<ICareUser> getUserData();
   Future<QuerySnapshot<Map<String, dynamic>>> getAllUsers();
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowers();
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowing();
+  Future<QuerySnapshot<Map<String, dynamic>>> getFollowers(ICareUser user);
+  Future<QuerySnapshot<Map<String, dynamic>>> getFollowing(ICareUser user);
   Future<void> follow(ICareUser user);
   Future<void> unFollow(ICareUser user);
 }
@@ -42,36 +42,41 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
   }
 
   Future<void> _addCurrentUserToOthersFollowers(ICareUser user) async {
-    return await _accessFollowersCollection(user)
+    return await _accessFollowersCollection(user.uId!)
         .doc(Helper.uId)
         .set(Helper.currentUser!.toJson());
   }
 
   Future<void> _addUserToFollowing(ICareUser user) async {
-    return await _accessFollowingCollection().doc(user.uId).set(user.toJson());
+    return await _accessFollowingCollection(user.uId!)
+        .doc(user.uId)
+        .set(user.toJson());
   }
 
-  CollectionReference<Map<String, dynamic>> _accessFollowingCollection() {
+  CollectionReference<Map<String, dynamic>> _accessFollowingCollection(
+      String uId) {
     return _accessUsersCollection()
-        .doc(Helper.uId)
+        .doc(uId)
         .collection(AppStrings.followingCollection);
   }
 
   CollectionReference<Map<String, dynamic>> _accessFollowersCollection(
-      ICareUser user) {
+      String uId) {
     return _accessUsersCollection()
-        .doc(user.uId)
+        .doc(uId)
         .collection(AppStrings.followersCollection);
   }
 
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowers() async {
-    return await _accessFollowersCollection(Helper.currentUser!).get();
+  Future<QuerySnapshot<Map<String, dynamic>>> getFollowers(
+      ICareUser user) async {
+    return await _accessFollowersCollection(user.uId!).get();
   }
 
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowing() async {
-    return await _accessFollowingCollection().get();
+  Future<QuerySnapshot<Map<String, dynamic>>> getFollowing(
+      ICareUser user) async {
+    return await _accessFollowingCollection(user.uId!).get();
   }
 
   @override
@@ -81,10 +86,10 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
   }
 
   Future<void> _removeCurrentUserToOthersFollowers(ICareUser user) async {
-    return await _accessFollowersCollection(user).doc(Helper.uId).delete();
+    return await _accessFollowersCollection(user.uId!).doc(Helper.uId).delete();
   }
 
   Future<void> _removeUserToFollowing(ICareUser user) async {
-    return await _accessFollowingCollection().doc(user.uId).delete();
+    return await _accessFollowingCollection(user.uId!).doc(user.uId).delete();
   }
 }

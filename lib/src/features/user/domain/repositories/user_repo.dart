@@ -6,6 +6,6 @@ abstract class UserRepo {
   Future<FirebaseRequestResult<List<ICareUser>>> getAllUsers();
   Future<FirebaseRequestResult<void>> follow(ICareUser user);
   Future<FirebaseRequestResult<void>> unFollow(ICareUser user);
-  Future<FirebaseRequestResult<List<ICareUser>>> getFollowers();
-  Future<FirebaseRequestResult<List<ICareUser>>> getFollowing();
+  Future<FirebaseRequestResult<List<ICareUser>>> getFollowers(ICareUser user);
+  Future<FirebaseRequestResult<List<ICareUser>>> getFollowing(ICareUser user);
 }
