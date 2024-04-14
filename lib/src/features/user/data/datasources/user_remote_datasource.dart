@@ -37,8 +37,9 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   @override
   Future<void> follow(ICareUser user) async {
-    await _addUserToFollowing(user);
-    await _addCurrentUserToOthersFollowers(user);
+    _addCurrentUserToOthersFollowers(user).then((value) {
+      _addUserToFollowing(user);
+    });
   }
 
   Future<void> _addCurrentUserToOthersFollowers(ICareUser user) async {
@@ -48,7 +49,7 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
   }
 
   Future<void> _addUserToFollowing(ICareUser user) async {
-    return await _accessFollowingCollection(user.uId!)
+    return await _accessFollowingCollection(Helper.uId!)
         .doc(user.uId)
         .set(user.toJson());
   }
@@ -81,8 +82,8 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   @override
   Future<void> unFollow(ICareUser user) async {
-    await _removeUserToFollowing(user);
     await _removeCurrentUserToOthersFollowers(user);
+    await _removeUserToFollowing(user);
   }
 
   Future<void> _removeCurrentUserToOthersFollowers(ICareUser user) async {
@@ -90,6 +91,6 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
   }
 
   Future<void> _removeUserToFollowing(ICareUser user) async {
-    return await _accessFollowingCollection(user.uId!).doc(user.uId).delete();
+    return await _accessFollowingCollection(Helper.uId!).doc(user.uId).delete();
   }
 }
