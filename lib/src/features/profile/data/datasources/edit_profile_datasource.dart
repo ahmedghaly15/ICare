@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
@@ -7,6 +10,7 @@ import 'package:icare/src/features/profile/data/models/update_user_params.dart';
 
 abstract class EditProfileDatasource {
   Future<void> updateUser(UpdateUserParams params);
+  Future<TaskSnapshot> uploadNewProfileImage(File? newProfileImage);
 }
 
 class EditProfileDatasourceImpl implements EditProfileDatasource {
@@ -15,11 +19,11 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
   @override
   Future<void> updateUser(UpdateUserParams params) async {
     final ICareUser user = ICareUser(
-      email: params.email,
+      email: params.email ?? Helper.currentUser!.email,
       uId: Helper.uId,
-      name: params.name,
+      name: params.name ?? Helper.currentUser!.name,
       profileImage: params.profileImage ?? Helper.currentUser!.profileImage,
-      password: params.password,
+      password: params.password ?? Helper.currentUser!.password,
     );
     Helper.currentUser = user;
     await getIt
@@ -33,6 +37,16 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     await _updateUserCommentsLikes();
     await _updateUserCommentsReplies();
     await _updateUserCommentsRepliesLikes();
+  }
+
+  @override
+  Future<TaskSnapshot> uploadNewProfileImage(File? newProfileImage) async {
+    return await getIt
+        .get<FirebaseStorage>()
+        .ref()
+        .child(
+            '${AppStrings.usersCollection}/${Uri.file(newProfileImage!.path).pathSegments.last}')
+        .putFile(newProfileImage);
   }
 
   Future<void> _updateUserTinyTales() async {

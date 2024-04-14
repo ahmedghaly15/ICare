@@ -172,7 +172,10 @@ class SetupDIForCubits {
 
     // ========== Edit Profile feature ==========
     getIt.registerFactory<EditProfileCubit>(
-      () => EditProfileCubit(getIt.get<UpdateUserUseCase>()),
+      () => EditProfileCubit(
+        getIt.get<UpdateUserUseCase>(),
+        getIt.get<UploadNewProfileImageUseCase>(),
+      ),
     );
   }
 }
