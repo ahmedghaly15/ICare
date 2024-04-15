@@ -211,5 +211,8 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<UploadNewProfileImageUseCase>(
       () => UploadNewProfileImageUseCase(getIt.get<EditProfileRepo>()),
     );
+    getIt.registerLazySingleton<UpdatePasswordUseCase>(
+      () => UpdatePasswordUseCase(getIt.get<EditProfileRepo>()),
+    );
   }
 }

@@ -175,6 +175,7 @@ class SetupDIForCubits {
       () => EditProfileCubit(
         getIt.get<UpdateUserUseCase>(),
         getIt.get<UploadNewProfileImageUseCase>(),
+        getIt.get<UpdatePasswordUseCase>(),
       ),
     );
   }

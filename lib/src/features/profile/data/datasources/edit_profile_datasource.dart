@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
@@ -11,6 +12,7 @@ import 'package:icare/src/features/profile/data/models/update_user_params.dart';
 abstract class EditProfileDatasource {
   Future<void> updateUser(UpdateUserParams params);
   Future<TaskSnapshot> uploadNewProfileImage(File? newProfileImage);
+  Future<void> updatePassword(String password);
 }
 
 class EditProfileDatasourceImpl implements EditProfileDatasource {
@@ -23,7 +25,6 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       uId: Helper.uId,
       name: params.name ?? Helper.currentUser!.name,
       profileImage: params.profileImage ?? Helper.currentUser!.profileImage,
-      password: params.password ?? Helper.currentUser!.password,
     );
     Helper.currentUser = user;
     await _accessUsersCollection().doc(Helper.uId).update(user.toJson());
@@ -38,10 +39,9 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     await _updateUserInOtherUsersFollowers(user);
   }
 
-  CollectionReference<Map<String, dynamic>> _accessUsersCollection() {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection);
+  @override
+  Future<void> updatePassword(String password) async {
+    await getIt.get<FirebaseAuth>().currentUser!.updatePassword(password);
   }
 
   @override
@@ -52,6 +52,12 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
         .child(
             '${AppStrings.usersCollection}/${Uri.file(newProfileImage!.path).pathSegments.last}')
         .putFile(newProfileImage);
+  }
+
+  CollectionReference<Map<String, dynamic>> _accessUsersCollection() {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection);
   }
 
   Future<void> _updateUserTinyTales(ICareUser user) async {

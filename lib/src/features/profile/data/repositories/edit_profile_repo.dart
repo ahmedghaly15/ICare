@@ -25,4 +25,10 @@ class EditProfileRepo {
           await _editProfileDatasource.uploadNewProfileImage(newProfileImage),
     );
   }
+
+  Future<FirebaseRequestResult<void>> updatePassword(String password) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _editProfileDatasource.updatePassword(password),
+    );
+  }
 }
