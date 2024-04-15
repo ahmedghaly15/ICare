@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/firebase/firebase_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
@@ -14,6 +15,7 @@ Future<FirebaseRequestResult<T>> executeAndHandleFirebaseErrors<T>(
 
       return FirebaseRequestResult<T>.success(response);
     } catch (error) {
+      debugPrint('Firebase error: $error');
       if (error is FirebaseAuthException) {
         return FirebaseRequestResult.error(
           FirebaseErrorHandler.handleError(error),

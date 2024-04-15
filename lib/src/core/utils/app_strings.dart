@@ -139,4 +139,7 @@ class AppStrings {
   static const String follow = 'Follow';
   static const String unFollow = 'Unfollow';
   static const String followsYou = 'Follows you';
+  static const String changePassword = 'Change Password';
+  static const String passwordUpdatedSuccessfully =
+      'Password updated successfully';
 }
