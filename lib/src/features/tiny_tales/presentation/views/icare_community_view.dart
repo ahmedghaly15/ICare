@@ -7,6 +7,7 @@ import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_refresh_indicator.dart';
+import 'package:icare/src/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/icare_community_sliver_app_bar.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tales_bloc_builder.dart';
@@ -50,6 +51,7 @@ class ICareCommunityView extends StatelessWidget {
           child: const Icon(Icons.add, color: Colors.white),
         ),
       ),
+      drawer: const CustomDrawer(),
     );
   }
 }
