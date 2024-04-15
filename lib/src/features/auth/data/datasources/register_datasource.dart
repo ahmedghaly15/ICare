@@ -31,7 +31,6 @@ class RegisterDataSourceImpl implements RegisterDataSource {
       email: params.email,
       uId: params.uId,
       profileImage: AppConstants.defaultProfileImage,
-      password: params.password,
     );
 
     await getIt

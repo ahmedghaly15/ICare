@@ -7,7 +7,6 @@ class ICareUser {
   final String? name;
   final String? email;
   final String? profileImage;
-  final String? password;
   final String? uId;
 
   const ICareUser({
@@ -15,7 +14,6 @@ class ICareUser {
     this.email,
     this.uId,
     this.profileImage,
-    this.password,
   });
 
   factory ICareUser.fromJson(Map<String, dynamic> json) =>
@@ -25,6 +23,6 @@ class ICareUser {
 
   @override
   String toString() {
-    return 'ICareUser{name: $name, email: $email, profileImage: $profileImage, uId: $uId, password: $password}';
+    return 'ICareUser{name: $name, email: $email, profileImage: $profileImage, uId: $uId}';
   }
 }
