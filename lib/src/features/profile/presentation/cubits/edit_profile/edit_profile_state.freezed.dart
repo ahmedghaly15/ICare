@@ -33,6 +33,7 @@ mixin _$EditProfileState<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +53,7 @@ mixin _$EditProfileState<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +73,7 @@ mixin _$EditProfileState<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +102,7 @@ mixin _$EditProfileState<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -123,6 +127,7 @@ mixin _$EditProfileState<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -147,6 +152,7 @@ mixin _$EditProfileState<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -224,6 +230,7 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return initial();
   }
@@ -246,6 +253,7 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return initial?.call();
   }
@@ -268,6 +276,7 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -302,6 +311,7 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return initial(this);
   }
@@ -329,6 +339,7 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return initial?.call(this);
   }
@@ -356,6 +367,7 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -423,6 +435,7 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return editProfileLoading();
   }
@@ -445,6 +458,7 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return editProfileLoading?.call();
   }
@@ -467,6 +481,7 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (editProfileLoading != null) {
@@ -501,6 +516,7 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return editProfileLoading(this);
   }
@@ -528,6 +544,7 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return editProfileLoading?.call(this);
   }
@@ -555,6 +572,7 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (editProfileLoading != null) {
@@ -622,6 +640,7 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return editProfileSuccess();
   }
@@ -644,6 +663,7 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return editProfileSuccess?.call();
   }
@@ -666,6 +686,7 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (editProfileSuccess != null) {
@@ -700,6 +721,7 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return editProfileSuccess(this);
   }
@@ -727,6 +749,7 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return editProfileSuccess?.call(this);
   }
@@ -754,6 +777,7 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (editProfileSuccess != null) {
@@ -847,6 +871,7 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return editProfileError(error);
   }
@@ -869,6 +894,7 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return editProfileError?.call(error);
   }
@@ -891,6 +917,7 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (editProfileError != null) {
@@ -925,6 +952,7 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return editProfileError(this);
   }
@@ -952,6 +980,7 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return editProfileError?.call(this);
   }
@@ -979,6 +1008,7 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (editProfileError != null) {
@@ -1084,6 +1114,7 @@ class _$PickNewProfileImageSuccessImpl<T>
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return pickNewProfileImageSuccess(tinyTaleImage);
   }
@@ -1106,6 +1137,7 @@ class _$PickNewProfileImageSuccessImpl<T>
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return pickNewProfileImageSuccess?.call(tinyTaleImage);
   }
@@ -1128,6 +1160,7 @@ class _$PickNewProfileImageSuccessImpl<T>
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (pickNewProfileImageSuccess != null) {
@@ -1162,6 +1195,7 @@ class _$PickNewProfileImageSuccessImpl<T>
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return pickNewProfileImageSuccess(this);
   }
@@ -1189,6 +1223,7 @@ class _$PickNewProfileImageSuccessImpl<T>
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return pickNewProfileImageSuccess?.call(this);
   }
@@ -1216,6 +1251,7 @@ class _$PickNewProfileImageSuccessImpl<T>
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (pickNewProfileImageSuccess != null) {
@@ -1319,6 +1355,7 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return pickNewProfileImageError(error);
   }
@@ -1341,6 +1378,7 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return pickNewProfileImageError?.call(error);
   }
@@ -1363,6 +1401,7 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (pickNewProfileImageError != null) {
@@ -1397,6 +1436,7 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return pickNewProfileImageError(this);
   }
@@ -1424,6 +1464,7 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return pickNewProfileImageError?.call(this);
   }
@@ -1451,6 +1492,7 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (pickNewProfileImageError != null) {
@@ -1528,6 +1570,7 @@ class _$UploadNewProfileImageLoadingImpl<T>
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return uploadNewProfileImageLoading();
   }
@@ -1550,6 +1593,7 @@ class _$UploadNewProfileImageLoadingImpl<T>
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return uploadNewProfileImageLoading?.call();
   }
@@ -1572,6 +1616,7 @@ class _$UploadNewProfileImageLoadingImpl<T>
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (uploadNewProfileImageLoading != null) {
@@ -1606,6 +1651,7 @@ class _$UploadNewProfileImageLoadingImpl<T>
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return uploadNewProfileImageLoading(this);
   }
@@ -1633,6 +1679,7 @@ class _$UploadNewProfileImageLoadingImpl<T>
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return uploadNewProfileImageLoading?.call(this);
   }
@@ -1660,6 +1707,7 @@ class _$UploadNewProfileImageLoadingImpl<T>
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (uploadNewProfileImageLoading != null) {
@@ -1760,6 +1808,7 @@ class _$UploadNewProfileImageSuccessImpl<T>
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return uploadNewProfileImageSuccess(imageUrl);
   }
@@ -1782,6 +1831,7 @@ class _$UploadNewProfileImageSuccessImpl<T>
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return uploadNewProfileImageSuccess?.call(imageUrl);
   }
@@ -1804,6 +1854,7 @@ class _$UploadNewProfileImageSuccessImpl<T>
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (uploadNewProfileImageSuccess != null) {
@@ -1838,6 +1889,7 @@ class _$UploadNewProfileImageSuccessImpl<T>
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return uploadNewProfileImageSuccess(this);
   }
@@ -1865,6 +1917,7 @@ class _$UploadNewProfileImageSuccessImpl<T>
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return uploadNewProfileImageSuccess?.call(this);
   }
@@ -1892,6 +1945,7 @@ class _$UploadNewProfileImageSuccessImpl<T>
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (uploadNewProfileImageSuccess != null) {
@@ -1997,6 +2051,7 @@ class _$UploadNewProfileImageErrorImpl<T>
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return uploadNewProfileImageError(error);
   }
@@ -2019,6 +2074,7 @@ class _$UploadNewProfileImageErrorImpl<T>
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return uploadNewProfileImageError?.call(error);
   }
@@ -2041,6 +2097,7 @@ class _$UploadNewProfileImageErrorImpl<T>
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (uploadNewProfileImageError != null) {
@@ -2075,6 +2132,7 @@ class _$UploadNewProfileImageErrorImpl<T>
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return uploadNewProfileImageError(this);
   }
@@ -2102,6 +2160,7 @@ class _$UploadNewProfileImageErrorImpl<T>
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return uploadNewProfileImageError?.call(this);
   }
@@ -2129,6 +2188,7 @@ class _$UploadNewProfileImageErrorImpl<T>
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (uploadNewProfileImageError != null) {
@@ -2206,6 +2266,7 @@ class _$UpdatePasswordLoadingImpl<T> implements UpdatePasswordLoading<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return updatePasswordLoading();
   }
@@ -2228,6 +2289,7 @@ class _$UpdatePasswordLoadingImpl<T> implements UpdatePasswordLoading<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return updatePasswordLoading?.call();
   }
@@ -2250,6 +2312,7 @@ class _$UpdatePasswordLoadingImpl<T> implements UpdatePasswordLoading<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (updatePasswordLoading != null) {
@@ -2284,6 +2347,7 @@ class _$UpdatePasswordLoadingImpl<T> implements UpdatePasswordLoading<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return updatePasswordLoading(this);
   }
@@ -2311,6 +2375,7 @@ class _$UpdatePasswordLoadingImpl<T> implements UpdatePasswordLoading<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return updatePasswordLoading?.call(this);
   }
@@ -2338,6 +2403,7 @@ class _$UpdatePasswordLoadingImpl<T> implements UpdatePasswordLoading<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (updatePasswordLoading != null) {
@@ -2408,6 +2474,7 @@ class _$UpdatePasswordSuccessImpl<T> implements UpdatePasswordSuccess<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return updatePasswordSuccess();
   }
@@ -2430,6 +2497,7 @@ class _$UpdatePasswordSuccessImpl<T> implements UpdatePasswordSuccess<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return updatePasswordSuccess?.call();
   }
@@ -2452,6 +2520,7 @@ class _$UpdatePasswordSuccessImpl<T> implements UpdatePasswordSuccess<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (updatePasswordSuccess != null) {
@@ -2486,6 +2555,7 @@ class _$UpdatePasswordSuccessImpl<T> implements UpdatePasswordSuccess<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return updatePasswordSuccess(this);
   }
@@ -2513,6 +2583,7 @@ class _$UpdatePasswordSuccessImpl<T> implements UpdatePasswordSuccess<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return updatePasswordSuccess?.call(this);
   }
@@ -2540,6 +2611,7 @@ class _$UpdatePasswordSuccessImpl<T> implements UpdatePasswordSuccess<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (updatePasswordSuccess != null) {
@@ -2634,6 +2706,7 @@ class _$UpdatePasswordErrorImpl<T> implements UpdatePasswordError<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return updatePasswordError(error);
   }
@@ -2656,6 +2729,7 @@ class _$UpdatePasswordErrorImpl<T> implements UpdatePasswordError<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return updatePasswordError?.call(error);
   }
@@ -2678,6 +2752,7 @@ class _$UpdatePasswordErrorImpl<T> implements UpdatePasswordError<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (updatePasswordError != null) {
@@ -2712,6 +2787,7 @@ class _$UpdatePasswordErrorImpl<T> implements UpdatePasswordError<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return updatePasswordError(this);
   }
@@ -2739,6 +2815,7 @@ class _$UpdatePasswordErrorImpl<T> implements UpdatePasswordError<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return updatePasswordError?.call(this);
   }
@@ -2766,6 +2843,7 @@ class _$UpdatePasswordErrorImpl<T> implements UpdatePasswordError<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (updatePasswordError != null) {
@@ -2866,6 +2944,7 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return setNewNameTextValue(text);
   }
@@ -2888,6 +2967,7 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return setNewNameTextValue?.call(text);
   }
@@ -2910,6 +2990,7 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (setNewNameTextValue != null) {
@@ -2944,6 +3025,7 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return setNewNameTextValue(this);
   }
@@ -2971,6 +3053,7 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return setNewNameTextValue?.call(this);
   }
@@ -2998,6 +3081,7 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (setNewNameTextValue != null) {
@@ -3099,6 +3183,7 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return setNewEmailTextValue(text);
   }
@@ -3121,6 +3206,7 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return setNewEmailTextValue?.call(text);
   }
@@ -3143,6 +3229,7 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (setNewEmailTextValue != null) {
@@ -3177,6 +3264,7 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return setNewEmailTextValue(this);
   }
@@ -3204,6 +3292,7 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return setNewEmailTextValue?.call(this);
   }
@@ -3231,6 +3320,7 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (setNewEmailTextValue != null) {
@@ -3331,6 +3421,7 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
   }) {
     return setNewPassTextValue(text);
   }
@@ -3353,6 +3444,7 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
   }) {
     return setNewPassTextValue?.call(text);
   }
@@ -3375,6 +3467,7 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (setNewPassTextValue != null) {
@@ -3409,6 +3502,7 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
     required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
   }) {
     return setNewPassTextValue(this);
   }
@@ -3436,6 +3530,7 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
   }) {
     return setNewPassTextValue?.call(this);
   }
@@ -3463,6 +3558,7 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
     required TResult orElse(),
   }) {
     if (setNewPassTextValue != null) {
@@ -3479,5 +3575,244 @@ abstract class SetNewPassTextValue<T> implements EditProfileState<T> {
   String get text;
   @JsonKey(ignore: true)
   _$$SetNewPassTextValueImplCopyWith<T, _$SetNewPassTextValueImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangePassVisibilityImplCopyWith<T, $Res> {
+  factory _$$ChangePassVisibilityImplCopyWith(
+          _$ChangePassVisibilityImpl<T> value,
+          $Res Function(_$ChangePassVisibilityImpl<T>) then) =
+      __$$ChangePassVisibilityImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({bool boolean});
+}
+
+/// @nodoc
+class __$$ChangePassVisibilityImplCopyWithImpl<T, $Res>
+    extends _$EditProfileStateCopyWithImpl<T, $Res,
+        _$ChangePassVisibilityImpl<T>>
+    implements _$$ChangePassVisibilityImplCopyWith<T, $Res> {
+  __$$ChangePassVisibilityImplCopyWithImpl(_$ChangePassVisibilityImpl<T> _value,
+      $Res Function(_$ChangePassVisibilityImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? boolean = null,
+  }) {
+    return _then(_$ChangePassVisibilityImpl<T>(
+      null == boolean
+          ? _value.boolean
+          : boolean // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangePassVisibilityImpl<T> implements ChangePassVisibility<T> {
+  const _$ChangePassVisibilityImpl(this.boolean);
+
+  @override
+  final bool boolean;
+
+  @override
+  String toString() {
+    return 'EditProfileState<$T>.convertBoolValue(boolean: $boolean)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangePassVisibilityImpl<T> &&
+            (identical(other.boolean, boolean) || other.boolean == boolean));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, boolean);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangePassVisibilityImplCopyWith<T, _$ChangePassVisibilityImpl<T>>
+      get copyWith => __$$ChangePassVisibilityImplCopyWithImpl<T,
+          _$ChangePassVisibilityImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() editProfileLoading,
+    required TResult Function() editProfileSuccess,
+    required TResult Function(String error) editProfileError,
+    required TResult Function(File tinyTaleImage) pickNewProfileImageSuccess,
+    required TResult Function(String error) pickNewProfileImageError,
+    required TResult Function() uploadNewProfileImageLoading,
+    required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
+    required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
+    required TResult Function(String text) setNewNameTextValue,
+    required TResult Function(String text) setNewEmailTextValue,
+    required TResult Function(String text) setNewPassTextValue,
+    required TResult Function(bool boolean) convertBoolValue,
+  }) {
+    return convertBoolValue(boolean);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? editProfileLoading,
+    TResult? Function()? editProfileSuccess,
+    TResult? Function(String error)? editProfileError,
+    TResult? Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult? Function(String error)? pickNewProfileImageError,
+    TResult? Function()? uploadNewProfileImageLoading,
+    TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
+    TResult? Function(String text)? setNewNameTextValue,
+    TResult? Function(String text)? setNewEmailTextValue,
+    TResult? Function(String text)? setNewPassTextValue,
+    TResult? Function(bool boolean)? convertBoolValue,
+  }) {
+    return convertBoolValue?.call(boolean);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? editProfileLoading,
+    TResult Function()? editProfileSuccess,
+    TResult Function(String error)? editProfileError,
+    TResult Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult Function(String error)? pickNewProfileImageError,
+    TResult Function()? uploadNewProfileImageLoading,
+    TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
+    TResult Function(String text)? setNewNameTextValue,
+    TResult Function(String text)? setNewEmailTextValue,
+    TResult Function(String text)? setNewPassTextValue,
+    TResult Function(bool boolean)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (convertBoolValue != null) {
+      return convertBoolValue(boolean);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditProfileInitial<T> value) initial,
+    required TResult Function(EditProfileLoading<T> value) editProfileLoading,
+    required TResult Function(EditProfileSuccess<T> value) editProfileSuccess,
+    required TResult Function(EditProfileError<T> value) editProfileError,
+    required TResult Function(PickNewProfileImageSuccess<T> value)
+        pickNewProfileImageSuccess,
+    required TResult Function(PickNewProfileImageError<T> value)
+        pickNewProfileImageError,
+    required TResult Function(UploadNewProfileImageLoading<T> value)
+        uploadNewProfileImageLoading,
+    required TResult Function(UploadNewProfileImageSuccess<T> value)
+        uploadNewProfileImageSuccess,
+    required TResult Function(UploadNewProfileImageError<T> value)
+        uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
+    required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
+    required TResult Function(SetNewEmailTextValue<T> value)
+        setNewEmailTextValue,
+    required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+    required TResult Function(ChangePassVisibility<T> value) convertBoolValue,
+  }) {
+    return convertBoolValue(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditProfileInitial<T> value)? initial,
+    TResult? Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult? Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult? Function(EditProfileError<T> value)? editProfileError,
+    TResult? Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult? Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult? Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult? Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult? Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult? Function(ChangePassVisibility<T> value)? convertBoolValue,
+  }) {
+    return convertBoolValue?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditProfileInitial<T> value)? initial,
+    TResult Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult Function(EditProfileError<T> value)? editProfileError,
+    TResult Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    TResult Function(ChangePassVisibility<T> value)? convertBoolValue,
+    required TResult orElse(),
+  }) {
+    if (convertBoolValue != null) {
+      return convertBoolValue(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangePassVisibility<T> implements EditProfileState<T> {
+  const factory ChangePassVisibility(final bool boolean) =
+      _$ChangePassVisibilityImpl<T>;
+
+  bool get boolean;
+  @JsonKey(ignore: true)
+  _$$ChangePassVisibilityImplCopyWith<T, _$ChangePassVisibilityImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

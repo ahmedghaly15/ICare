@@ -33,4 +33,6 @@ class EditProfileState<T> with _$EditProfileState<T> {
       SetNewEmailTextValue<T>;
   const factory EditProfileState.setNewPassTextValue(String text) =
       SetNewPassTextValue<T>;
+  const factory EditProfileState.convertBoolValue(bool boolean) =
+      ChangePassVisibility<T>;
 }

@@ -36,6 +36,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   late final TextEditingController emailController;
   late final TextEditingController passwordController;
   late final GlobalKey<FormState> formKey;
+  late final GlobalKey<FormState> changePassDialogFormKey;
 
   void Function()? updateUser(BuildContext context) {
     // Only return null if there is no new image and the controllers are empty or have no changes
@@ -44,38 +45,46 @@ class EditProfileCubit extends Cubit<EditProfileState> {
       return null;
     } else {
       return () {
-        AuthHelper.keyboardUnfocus(context);
-
-        if (newProfileImage != null) {
-          // If there's a new image, decide the update based on controller contents
-          _uploadNewProfileImage(UpdateUserParams(
-            name: nameController.text.isNotEmpty ? nameController.text : null,
-            email:
-                emailController.text.isNotEmpty ? emailController.text : null,
-          ));
-        } else {
-          // No new image, update based on controller contents
-          if (nameController.text.isNotEmpty &&
-              emailController.text.isNotEmpty) {
-            _updateUser(UpdateUserParams(
-              name: nameController.text,
-              email: emailController.text,
+        if (formKey.currentState!.validate()) {
+          AuthHelper.keyboardUnfocus(context);
+          if (newProfileImage != null) {
+            // If there's a new image, decide the update based on controller contents
+            _uploadNewProfileImage(UpdateUserParams(
+              name: nameController.text.isNotEmpty ? nameController.text : null,
+              email:
+                  emailController.text.isNotEmpty ? emailController.text : null,
             ));
-          } else if (nameController.text.isNotEmpty) {
-            _updateUser(UpdateUserParams(
-              name: nameController.text,
-            ));
-          } else if (emailController.text.isNotEmpty) {
-            _updateUser(UpdateUserParams(
-              email: emailController.text,
-            ));
+          } else {
+            // No new image, update based on controller contents
+            if (nameController.text.isNotEmpty &&
+                emailController.text.isNotEmpty) {
+              _updateUserFirestoreData(UpdateUserParams(
+                name: nameController.text,
+                email: emailController.text,
+              ));
+            } else if (nameController.text.isNotEmpty) {
+              _updateUserFirestoreData(UpdateUserParams(
+                name: nameController.text,
+              ));
+            } else if (emailController.text.isNotEmpty) {
+              _updateUserFirestoreData(UpdateUserParams(
+                email: emailController.text,
+              ));
+            }
           }
         }
       };
     }
   }
 
-  void updatePassword() async {
+  void updatePassword(BuildContext context) {
+    if (changePassDialogFormKey.currentState!.validate()) {
+      AuthHelper.keyboardUnfocus(context);
+      _updatePassword();
+    }
+  }
+
+  void _updatePassword() async {
     emit(const EditProfileState.updatePasswordLoading());
     final result = await _updatePasswordUseCase.call(passwordController.text);
     result.when(
@@ -92,7 +101,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   bool _isControllerEmpty() =>
       (nameController.text.isEmpty || emailController.text.isEmpty);
 
-  Future<void> _updateUser(UpdateUserParams params) async {
+  Future<void> _updateUserFirestoreData(UpdateUserParams params) async {
     emit(const EditProfileState.editProfileLoading());
     final result = await _updateUserUseCase.call(params);
     result.when(
@@ -119,6 +128,12 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     }
   }
 
+  bool isPassVisible = true;
+  void changePasswordVisibility() {
+    isPassVisible = !isPassVisible;
+    emit(EditProfileState.convertBoolValue(isPassVisible));
+  }
+
   void _uploadNewProfileImage(UpdateUserParams params) async {
     emit(const EditProfileState.uploadNewProfileImageLoading());
     final result = await _uploadNewProfileImageUseCase.call(newProfileImage!);
@@ -131,7 +146,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
 
   void _updateUserImage(TaskSnapshot taskSnapshot, UpdateUserParams params) {
     taskSnapshot.ref.getDownloadURL().then((value) {
-      _updateUser(UpdateUserParams(
+      _updateUserFirestoreData(UpdateUserParams(
         name: params.name,
         email: params.email,
         profileImage: value,
@@ -190,6 +205,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
 
   void _initFormAttributes() {
     formKey = GlobalKey<FormState>();
+    changePassDialogFormKey = GlobalKey<FormState>();
     _initControllers();
     _assignValuesToControllers();
   }
