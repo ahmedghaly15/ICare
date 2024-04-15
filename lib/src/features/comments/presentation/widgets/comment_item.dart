@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
@@ -26,7 +27,10 @@ class CommentItem extends StatelessWidget {
       children: <Widget>[
         InkWell(
           onTap: () {
-            // TODO: navigate to user profile
+            navigateToUserProfile(
+              context: context,
+              user: comment.user!,
+            );
           },
           child: CustomCachedNetworkImage(
             imageUrl: comment.user!.profileImage!,

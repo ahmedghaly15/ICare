@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 
 class ChatDetailsCustomAppBar extends StatelessWidget {
   const ChatDetailsCustomAppBar({
     super.key,
-    required this.receiverName,
-    required this.receiverProfileImage,
+    required this.receiver,
   });
 
-  final String receiverName, receiverProfileImage;
+  final ICareUser receiver;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +28,14 @@ class ChatDetailsCustomAppBar extends StatelessWidget {
           ),
         ),
         CustomCachedNetworkImage(
-          imageUrl: receiverProfileImage,
+          imageUrl: receiver.profileImage!,
           imageBuilder: (_, image) {
             return InkWell(
               onTap: () {
-                // TODO: navigate to user profile
+                navigateToUserProfile(
+                  context: context,
+                  user: receiver,
+                );
               },
               child: CircleAvatar(
                 radius: 18.r,
@@ -43,7 +47,7 @@ class ChatDetailsCustomAppBar extends StatelessWidget {
         MySizedBox.width10,
         Expanded(
           child: Text(
-            receiverName,
+            receiver.name!,
             style: AppTextStyles.textStyle20Bold(context).copyWith(
               color: Colors.black,
             ),

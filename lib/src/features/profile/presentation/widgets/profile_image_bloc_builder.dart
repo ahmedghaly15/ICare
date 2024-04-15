@@ -17,8 +17,12 @@ class ProfileImageBlocBuilder extends StatelessWidget {
         return CustomCachedNetworkImage(
           imageUrl: Helper.currentUser!.profileImage!,
           imageBuilder: (_, image) => CircleAvatar(
-            radius: 60.r,
-            backgroundImage: image,
+            backgroundColor: Colors.white,
+            radius: 65.r,
+            child: CircleAvatar(
+              radius: 60.r,
+              backgroundImage: image,
+            ),
           ),
         );
       },

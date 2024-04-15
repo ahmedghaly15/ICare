@@ -45,8 +45,6 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   # Animations built with the Rive editor
   rive: ^0.13.1
-  # Approximate how Flutter app looks and performs on another device.
-  device_preview: ^1.1.0
   # A PageView widget adjusting it's height to currently displayed page
   expandable_page_view: ^1.0.17
   # For splash screen

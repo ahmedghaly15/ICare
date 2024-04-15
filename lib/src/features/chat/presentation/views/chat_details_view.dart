@@ -30,10 +30,7 @@ class ChatDetailsView extends StatelessWidget implements AutoRouteWrapper {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            ChatDetailsCustomAppBar(
-              receiverName: receiver.name!,
-              receiverProfileImage: receiver.profileImage!,
-            ),
+            ChatDetailsCustomAppBar(receiver: receiver),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Divider(

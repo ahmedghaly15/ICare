@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/search/presentation/cubit/search_cubit.dart';
 import 'package:icare/src/features/search/presentation/cubit/search_state.dart';
@@ -36,7 +37,10 @@ class SearchUsersBlocBuilder extends StatelessWidget {
                   child: UserItem(
                     user: state.searchResult[index],
                     onTap: () {
-                      // TODO: navigate to user profile
+                      navigateToUserProfile(
+                context: context,
+                user: state.searchResult[index],
+              );
                     },
                   ),
                 ),

@@ -32,11 +32,13 @@ class MessageBubble extends StatelessWidget {
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: SizeConfig.width * 0.75),
             child: ChatBubble(
+              elevation: isUser ? 0 : 8.h,
               clipper: isUser
                   ? ChatBubbleClipper8(type: BubbleType.sendBubble)
                   : ChatBubbleClipper8(type: BubbleType.receiverBubble),
               alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-              backGroundColor: isUser ? Colors.white : AppColors.primaryColor,
+              backGroundColor:
+                  isUser ? Colors.transparent : AppColors.primaryColor,
               padding: EdgeInsets.only(
                 top: 8.h,
                 bottom: isUser ? 8.h : 4.h,
@@ -50,9 +52,7 @@ class MessageBubble extends StatelessWidget {
               child: isUser
                   ? Text(
                       message,
-                      style: AppTextStyles.textStyle16Medium(context).copyWith(
-                        color: Colors.white,
-                      ),
+                      style: AppTextStyles.textStyle16Medium(context),
                       textAlign: TextAlign.left,
                     )
                   : Markdown(
@@ -60,7 +60,7 @@ class MessageBubble extends StatelessWidget {
                       padding: EdgeInsets.zero,
                       styleSheet: MarkdownStyleSheet(
                         p: AppTextStyles.textStyle16Medium(context).copyWith(
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                       ),
                       selectable: false,

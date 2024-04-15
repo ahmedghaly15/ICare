@@ -10,16 +10,11 @@ import 'package:icare/dependency_injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   await dotenv.load(fileName: AppStrings.dotEnvFileName);
-
   await DependencyInjection().setup();
-
   Bloc.observer = MyBlocObserver();
-
   runApp(const ICareApp());
 }
