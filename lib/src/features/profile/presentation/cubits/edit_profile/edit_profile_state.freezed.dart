@@ -27,6 +27,9 @@ mixin _$EditProfileState<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -43,6 +46,9 @@ mixin _$EditProfileState<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -59,6 +65,9 @@ mixin _$EditProfileState<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -81,6 +90,11 @@ mixin _$EditProfileState<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -103,6 +117,9 @@ mixin _$EditProfileState<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -124,6 +141,9 @@ mixin _$EditProfileState<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -198,6 +218,9 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -217,6 +240,9 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -236,6 +262,9 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -264,6 +293,11 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -289,6 +323,9 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -313,6 +350,9 @@ class _$EditProfileInitialImpl<T> implements _EditProfileInitial<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -377,6 +417,9 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -396,6 +439,9 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -415,6 +461,9 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -443,6 +492,11 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -468,6 +522,9 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -492,6 +549,9 @@ class _$EditProfileLoadingImpl<T> implements EditProfileLoading<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -556,6 +616,9 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -575,6 +638,9 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -594,6 +660,9 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -622,6 +691,11 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -647,6 +721,9 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -671,6 +748,9 @@ class _$EditProfileSuccessImpl<T> implements EditProfileSuccess<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -761,6 +841,9 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -780,6 +863,9 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -799,6 +885,9 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -827,6 +916,11 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -852,6 +946,9 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -876,6 +973,9 @@ class _$EditProfileErrorImpl<T> implements EditProfileError<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -978,6 +1078,9 @@ class _$PickNewProfileImageSuccessImpl<T>
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -997,6 +1100,9 @@ class _$PickNewProfileImageSuccessImpl<T>
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -1016,6 +1122,9 @@ class _$PickNewProfileImageSuccessImpl<T>
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -1044,6 +1153,11 @@ class _$PickNewProfileImageSuccessImpl<T>
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -1069,6 +1183,9 @@ class _$PickNewProfileImageSuccessImpl<T>
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1093,6 +1210,9 @@ class _$PickNewProfileImageSuccessImpl<T>
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1193,6 +1313,9 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -1212,6 +1335,9 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -1231,6 +1357,9 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -1259,6 +1388,11 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -1284,6 +1418,9 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1308,6 +1445,9 @@ class _$PickNewProfileImageErrorImpl<T> implements PickNewProfileImageError<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1382,6 +1522,9 @@ class _$UploadNewProfileImageLoadingImpl<T>
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -1401,6 +1544,9 @@ class _$UploadNewProfileImageLoadingImpl<T>
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -1420,6 +1566,9 @@ class _$UploadNewProfileImageLoadingImpl<T>
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -1448,6 +1597,11 @@ class _$UploadNewProfileImageLoadingImpl<T>
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -1473,6 +1627,9 @@ class _$UploadNewProfileImageLoadingImpl<T>
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1497,6 +1654,9 @@ class _$UploadNewProfileImageLoadingImpl<T>
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1594,6 +1754,9 @@ class _$UploadNewProfileImageSuccessImpl<T>
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -1613,6 +1776,9 @@ class _$UploadNewProfileImageSuccessImpl<T>
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -1632,6 +1798,9 @@ class _$UploadNewProfileImageSuccessImpl<T>
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -1660,6 +1829,11 @@ class _$UploadNewProfileImageSuccessImpl<T>
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -1685,6 +1859,9 @@ class _$UploadNewProfileImageSuccessImpl<T>
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1709,6 +1886,9 @@ class _$UploadNewProfileImageSuccessImpl<T>
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1811,6 +1991,9 @@ class _$UploadNewProfileImageErrorImpl<T>
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -1830,6 +2013,9 @@ class _$UploadNewProfileImageErrorImpl<T>
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -1849,6 +2035,9 @@ class _$UploadNewProfileImageErrorImpl<T>
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -1877,6 +2066,11 @@ class _$UploadNewProfileImageErrorImpl<T>
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -1902,6 +2096,9 @@ class _$UploadNewProfileImageErrorImpl<T>
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1926,6 +2123,9 @@ class _$UploadNewProfileImageErrorImpl<T>
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -1946,6 +2146,642 @@ abstract class UploadNewProfileImageError<T> implements EditProfileState<T> {
   @JsonKey(ignore: true)
   _$$UploadNewProfileImageErrorImplCopyWith<T,
           _$UploadNewProfileImageErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdatePasswordLoadingImplCopyWith<T, $Res> {
+  factory _$$UpdatePasswordLoadingImplCopyWith(
+          _$UpdatePasswordLoadingImpl<T> value,
+          $Res Function(_$UpdatePasswordLoadingImpl<T>) then) =
+      __$$UpdatePasswordLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdatePasswordLoadingImplCopyWithImpl<T, $Res>
+    extends _$EditProfileStateCopyWithImpl<T, $Res,
+        _$UpdatePasswordLoadingImpl<T>>
+    implements _$$UpdatePasswordLoadingImplCopyWith<T, $Res> {
+  __$$UpdatePasswordLoadingImplCopyWithImpl(
+      _$UpdatePasswordLoadingImpl<T> _value,
+      $Res Function(_$UpdatePasswordLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdatePasswordLoadingImpl<T> implements UpdatePasswordLoading<T> {
+  const _$UpdatePasswordLoadingImpl();
+
+  @override
+  String toString() {
+    return 'EditProfileState<$T>.updatePasswordLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePasswordLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() editProfileLoading,
+    required TResult Function() editProfileSuccess,
+    required TResult Function(String error) editProfileError,
+    required TResult Function(File tinyTaleImage) pickNewProfileImageSuccess,
+    required TResult Function(String error) pickNewProfileImageError,
+    required TResult Function() uploadNewProfileImageLoading,
+    required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
+    required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
+    required TResult Function(String text) setNewNameTextValue,
+    required TResult Function(String text) setNewEmailTextValue,
+    required TResult Function(String text) setNewPassTextValue,
+  }) {
+    return updatePasswordLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? editProfileLoading,
+    TResult? Function()? editProfileSuccess,
+    TResult? Function(String error)? editProfileError,
+    TResult? Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult? Function(String error)? pickNewProfileImageError,
+    TResult? Function()? uploadNewProfileImageLoading,
+    TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
+    TResult? Function(String text)? setNewNameTextValue,
+    TResult? Function(String text)? setNewEmailTextValue,
+    TResult? Function(String text)? setNewPassTextValue,
+  }) {
+    return updatePasswordLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? editProfileLoading,
+    TResult Function()? editProfileSuccess,
+    TResult Function(String error)? editProfileError,
+    TResult Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult Function(String error)? pickNewProfileImageError,
+    TResult Function()? uploadNewProfileImageLoading,
+    TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
+    TResult Function(String text)? setNewNameTextValue,
+    TResult Function(String text)? setNewEmailTextValue,
+    TResult Function(String text)? setNewPassTextValue,
+    required TResult orElse(),
+  }) {
+    if (updatePasswordLoading != null) {
+      return updatePasswordLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditProfileInitial<T> value) initial,
+    required TResult Function(EditProfileLoading<T> value) editProfileLoading,
+    required TResult Function(EditProfileSuccess<T> value) editProfileSuccess,
+    required TResult Function(EditProfileError<T> value) editProfileError,
+    required TResult Function(PickNewProfileImageSuccess<T> value)
+        pickNewProfileImageSuccess,
+    required TResult Function(PickNewProfileImageError<T> value)
+        pickNewProfileImageError,
+    required TResult Function(UploadNewProfileImageLoading<T> value)
+        uploadNewProfileImageLoading,
+    required TResult Function(UploadNewProfileImageSuccess<T> value)
+        uploadNewProfileImageSuccess,
+    required TResult Function(UploadNewProfileImageError<T> value)
+        uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
+    required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
+    required TResult Function(SetNewEmailTextValue<T> value)
+        setNewEmailTextValue,
+    required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+  }) {
+    return updatePasswordLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditProfileInitial<T> value)? initial,
+    TResult? Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult? Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult? Function(EditProfileError<T> value)? editProfileError,
+    TResult? Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult? Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult? Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult? Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult? Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+  }) {
+    return updatePasswordLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditProfileInitial<T> value)? initial,
+    TResult Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult Function(EditProfileError<T> value)? editProfileError,
+    TResult Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    required TResult orElse(),
+  }) {
+    if (updatePasswordLoading != null) {
+      return updatePasswordLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdatePasswordLoading<T> implements EditProfileState<T> {
+  const factory UpdatePasswordLoading() = _$UpdatePasswordLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdatePasswordSuccessImplCopyWith<T, $Res> {
+  factory _$$UpdatePasswordSuccessImplCopyWith(
+          _$UpdatePasswordSuccessImpl<T> value,
+          $Res Function(_$UpdatePasswordSuccessImpl<T>) then) =
+      __$$UpdatePasswordSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UpdatePasswordSuccessImplCopyWithImpl<T, $Res>
+    extends _$EditProfileStateCopyWithImpl<T, $Res,
+        _$UpdatePasswordSuccessImpl<T>>
+    implements _$$UpdatePasswordSuccessImplCopyWith<T, $Res> {
+  __$$UpdatePasswordSuccessImplCopyWithImpl(
+      _$UpdatePasswordSuccessImpl<T> _value,
+      $Res Function(_$UpdatePasswordSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdatePasswordSuccessImpl<T> implements UpdatePasswordSuccess<T> {
+  const _$UpdatePasswordSuccessImpl();
+
+  @override
+  String toString() {
+    return 'EditProfileState<$T>.updatePasswordSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePasswordSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() editProfileLoading,
+    required TResult Function() editProfileSuccess,
+    required TResult Function(String error) editProfileError,
+    required TResult Function(File tinyTaleImage) pickNewProfileImageSuccess,
+    required TResult Function(String error) pickNewProfileImageError,
+    required TResult Function() uploadNewProfileImageLoading,
+    required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
+    required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
+    required TResult Function(String text) setNewNameTextValue,
+    required TResult Function(String text) setNewEmailTextValue,
+    required TResult Function(String text) setNewPassTextValue,
+  }) {
+    return updatePasswordSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? editProfileLoading,
+    TResult? Function()? editProfileSuccess,
+    TResult? Function(String error)? editProfileError,
+    TResult? Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult? Function(String error)? pickNewProfileImageError,
+    TResult? Function()? uploadNewProfileImageLoading,
+    TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
+    TResult? Function(String text)? setNewNameTextValue,
+    TResult? Function(String text)? setNewEmailTextValue,
+    TResult? Function(String text)? setNewPassTextValue,
+  }) {
+    return updatePasswordSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? editProfileLoading,
+    TResult Function()? editProfileSuccess,
+    TResult Function(String error)? editProfileError,
+    TResult Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult Function(String error)? pickNewProfileImageError,
+    TResult Function()? uploadNewProfileImageLoading,
+    TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
+    TResult Function(String text)? setNewNameTextValue,
+    TResult Function(String text)? setNewEmailTextValue,
+    TResult Function(String text)? setNewPassTextValue,
+    required TResult orElse(),
+  }) {
+    if (updatePasswordSuccess != null) {
+      return updatePasswordSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditProfileInitial<T> value) initial,
+    required TResult Function(EditProfileLoading<T> value) editProfileLoading,
+    required TResult Function(EditProfileSuccess<T> value) editProfileSuccess,
+    required TResult Function(EditProfileError<T> value) editProfileError,
+    required TResult Function(PickNewProfileImageSuccess<T> value)
+        pickNewProfileImageSuccess,
+    required TResult Function(PickNewProfileImageError<T> value)
+        pickNewProfileImageError,
+    required TResult Function(UploadNewProfileImageLoading<T> value)
+        uploadNewProfileImageLoading,
+    required TResult Function(UploadNewProfileImageSuccess<T> value)
+        uploadNewProfileImageSuccess,
+    required TResult Function(UploadNewProfileImageError<T> value)
+        uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
+    required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
+    required TResult Function(SetNewEmailTextValue<T> value)
+        setNewEmailTextValue,
+    required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+  }) {
+    return updatePasswordSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditProfileInitial<T> value)? initial,
+    TResult? Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult? Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult? Function(EditProfileError<T> value)? editProfileError,
+    TResult? Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult? Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult? Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult? Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult? Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+  }) {
+    return updatePasswordSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditProfileInitial<T> value)? initial,
+    TResult Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult Function(EditProfileError<T> value)? editProfileError,
+    TResult Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    required TResult orElse(),
+  }) {
+    if (updatePasswordSuccess != null) {
+      return updatePasswordSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdatePasswordSuccess<T> implements EditProfileState<T> {
+  const factory UpdatePasswordSuccess() = _$UpdatePasswordSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UpdatePasswordErrorImplCopyWith<T, $Res> {
+  factory _$$UpdatePasswordErrorImplCopyWith(_$UpdatePasswordErrorImpl<T> value,
+          $Res Function(_$UpdatePasswordErrorImpl<T>) then) =
+      __$$UpdatePasswordErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UpdatePasswordErrorImplCopyWithImpl<T, $Res>
+    extends _$EditProfileStateCopyWithImpl<T, $Res,
+        _$UpdatePasswordErrorImpl<T>>
+    implements _$$UpdatePasswordErrorImplCopyWith<T, $Res> {
+  __$$UpdatePasswordErrorImplCopyWithImpl(_$UpdatePasswordErrorImpl<T> _value,
+      $Res Function(_$UpdatePasswordErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UpdatePasswordErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdatePasswordErrorImpl<T> implements UpdatePasswordError<T> {
+  const _$UpdatePasswordErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'EditProfileState<$T>.updatePasswordError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdatePasswordErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdatePasswordErrorImplCopyWith<T, _$UpdatePasswordErrorImpl<T>>
+      get copyWith => __$$UpdatePasswordErrorImplCopyWithImpl<T,
+          _$UpdatePasswordErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() editProfileLoading,
+    required TResult Function() editProfileSuccess,
+    required TResult Function(String error) editProfileError,
+    required TResult Function(File tinyTaleImage) pickNewProfileImageSuccess,
+    required TResult Function(String error) pickNewProfileImageError,
+    required TResult Function() uploadNewProfileImageLoading,
+    required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
+    required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
+    required TResult Function(String text) setNewNameTextValue,
+    required TResult Function(String text) setNewEmailTextValue,
+    required TResult Function(String text) setNewPassTextValue,
+  }) {
+    return updatePasswordError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? editProfileLoading,
+    TResult? Function()? editProfileSuccess,
+    TResult? Function(String error)? editProfileError,
+    TResult? Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult? Function(String error)? pickNewProfileImageError,
+    TResult? Function()? uploadNewProfileImageLoading,
+    TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
+    TResult? Function(String text)? setNewNameTextValue,
+    TResult? Function(String text)? setNewEmailTextValue,
+    TResult? Function(String text)? setNewPassTextValue,
+  }) {
+    return updatePasswordError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? editProfileLoading,
+    TResult Function()? editProfileSuccess,
+    TResult Function(String error)? editProfileError,
+    TResult Function(File tinyTaleImage)? pickNewProfileImageSuccess,
+    TResult Function(String error)? pickNewProfileImageError,
+    TResult Function()? uploadNewProfileImageLoading,
+    TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
+    TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
+    TResult Function(String text)? setNewNameTextValue,
+    TResult Function(String text)? setNewEmailTextValue,
+    TResult Function(String text)? setNewPassTextValue,
+    required TResult orElse(),
+  }) {
+    if (updatePasswordError != null) {
+      return updatePasswordError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditProfileInitial<T> value) initial,
+    required TResult Function(EditProfileLoading<T> value) editProfileLoading,
+    required TResult Function(EditProfileSuccess<T> value) editProfileSuccess,
+    required TResult Function(EditProfileError<T> value) editProfileError,
+    required TResult Function(PickNewProfileImageSuccess<T> value)
+        pickNewProfileImageSuccess,
+    required TResult Function(PickNewProfileImageError<T> value)
+        pickNewProfileImageError,
+    required TResult Function(UploadNewProfileImageLoading<T> value)
+        uploadNewProfileImageLoading,
+    required TResult Function(UploadNewProfileImageSuccess<T> value)
+        uploadNewProfileImageSuccess,
+    required TResult Function(UploadNewProfileImageError<T> value)
+        uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
+    required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
+    required TResult Function(SetNewEmailTextValue<T> value)
+        setNewEmailTextValue,
+    required TResult Function(SetNewPassTextValue<T> value) setNewPassTextValue,
+  }) {
+    return updatePasswordError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditProfileInitial<T> value)? initial,
+    TResult? Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult? Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult? Function(EditProfileError<T> value)? editProfileError,
+    TResult? Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult? Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult? Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult? Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult? Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+  }) {
+    return updatePasswordError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditProfileInitial<T> value)? initial,
+    TResult Function(EditProfileLoading<T> value)? editProfileLoading,
+    TResult Function(EditProfileSuccess<T> value)? editProfileSuccess,
+    TResult Function(EditProfileError<T> value)? editProfileError,
+    TResult Function(PickNewProfileImageSuccess<T> value)?
+        pickNewProfileImageSuccess,
+    TResult Function(PickNewProfileImageError<T> value)?
+        pickNewProfileImageError,
+    TResult Function(UploadNewProfileImageLoading<T> value)?
+        uploadNewProfileImageLoading,
+    TResult Function(UploadNewProfileImageSuccess<T> value)?
+        uploadNewProfileImageSuccess,
+    TResult Function(UploadNewProfileImageError<T> value)?
+        uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
+    TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
+    TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
+    TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
+    required TResult orElse(),
+  }) {
+    if (updatePasswordError != null) {
+      return updatePasswordError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdatePasswordError<T> implements EditProfileState<T> {
+  const factory UpdatePasswordError(final String error) =
+      _$UpdatePasswordErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$UpdatePasswordErrorImplCopyWith<T, _$UpdatePasswordErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2024,6 +2860,9 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -2043,6 +2882,9 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -2062,6 +2904,9 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -2090,6 +2935,11 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -2115,6 +2965,9 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -2139,6 +2992,9 @@ class _$SetNewNameTextValueImpl<T> implements SetNewNameTextValue<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -2237,6 +3093,9 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -2256,6 +3115,9 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -2275,6 +3137,9 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -2303,6 +3168,11 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -2328,6 +3198,9 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -2352,6 +3225,9 @@ class _$SetNewEmailTextValueImpl<T> implements SetNewEmailTextValue<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -2449,6 +3325,9 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     required TResult Function() uploadNewProfileImageLoading,
     required TResult Function(String imageUrl) uploadNewProfileImageSuccess,
     required TResult Function(String error) uploadNewProfileImageError,
+    required TResult Function() updatePasswordLoading,
+    required TResult Function() updatePasswordSuccess,
+    required TResult Function(String error) updatePasswordError,
     required TResult Function(String text) setNewNameTextValue,
     required TResult Function(String text) setNewEmailTextValue,
     required TResult Function(String text) setNewPassTextValue,
@@ -2468,6 +3347,9 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     TResult? Function()? uploadNewProfileImageLoading,
     TResult? Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult? Function(String error)? uploadNewProfileImageError,
+    TResult? Function()? updatePasswordLoading,
+    TResult? Function()? updatePasswordSuccess,
+    TResult? Function(String error)? updatePasswordError,
     TResult? Function(String text)? setNewNameTextValue,
     TResult? Function(String text)? setNewEmailTextValue,
     TResult? Function(String text)? setNewPassTextValue,
@@ -2487,6 +3369,9 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
     TResult Function()? uploadNewProfileImageLoading,
     TResult Function(String imageUrl)? uploadNewProfileImageSuccess,
     TResult Function(String error)? uploadNewProfileImageError,
+    TResult Function()? updatePasswordLoading,
+    TResult Function()? updatePasswordSuccess,
+    TResult Function(String error)? updatePasswordError,
     TResult Function(String text)? setNewNameTextValue,
     TResult Function(String text)? setNewEmailTextValue,
     TResult Function(String text)? setNewPassTextValue,
@@ -2515,6 +3400,11 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
         uploadNewProfileImageSuccess,
     required TResult Function(UploadNewProfileImageError<T> value)
         uploadNewProfileImageError,
+    required TResult Function(UpdatePasswordLoading<T> value)
+        updatePasswordLoading,
+    required TResult Function(UpdatePasswordSuccess<T> value)
+        updatePasswordSuccess,
+    required TResult Function(UpdatePasswordError<T> value) updatePasswordError,
     required TResult Function(SetNewNameTextValue<T> value) setNewNameTextValue,
     required TResult Function(SetNewEmailTextValue<T> value)
         setNewEmailTextValue,
@@ -2540,6 +3430,9 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
         uploadNewProfileImageSuccess,
     TResult? Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult? Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult? Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult? Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult? Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult? Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult? Function(SetNewPassTextValue<T> value)? setNewPassTextValue,
@@ -2564,6 +3457,9 @@ class _$SetNewPassTextValueImpl<T> implements SetNewPassTextValue<T> {
         uploadNewProfileImageSuccess,
     TResult Function(UploadNewProfileImageError<T> value)?
         uploadNewProfileImageError,
+    TResult Function(UpdatePasswordLoading<T> value)? updatePasswordLoading,
+    TResult Function(UpdatePasswordSuccess<T> value)? updatePasswordSuccess,
+    TResult Function(UpdatePasswordError<T> value)? updatePasswordError,
     TResult Function(SetNewNameTextValue<T> value)? setNewNameTextValue,
     TResult Function(SetNewEmailTextValue<T> value)? setNewEmailTextValue,
     TResult Function(SetNewPassTextValue<T> value)? setNewPassTextValue,

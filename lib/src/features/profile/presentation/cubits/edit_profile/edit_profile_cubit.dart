@@ -10,6 +10,7 @@ import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/profile/data/models/update_user_params.dart';
+import 'package:icare/src/features/profile/domain/usecases/update_password.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_user.dart';
 import 'package:icare/src/features/profile/domain/usecases/upload_new_profile_image.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_state.dart';
@@ -21,10 +22,12 @@ import 'package:image_picker/image_picker.dart';
 class EditProfileCubit extends Cubit<EditProfileState> {
   final UpdateUserUseCase _updateUserUseCase;
   final UploadNewProfileImageUseCase _uploadNewProfileImageUseCase;
+  final UpdatePasswordUseCase _updatePasswordUseCase;
 
   EditProfileCubit(
     this._updateUserUseCase,
     this._uploadNewProfileImageUseCase,
+    this._updatePasswordUseCase,
   ) : super(const EditProfileState.initial()) {
     _initFormAttributes();
   }
@@ -70,6 +73,16 @@ class EditProfileCubit extends Cubit<EditProfileState> {
         }
       };
     }
+  }
+
+  void updatePassword() async {
+    emit(const EditProfileState.updatePasswordLoading());
+    final result = await _updatePasswordUseCase.call(passwordController.text);
+    result.when(
+      success: (data) => emit(const EditProfileState.updatePasswordSuccess()),
+      error: (error) =>
+          emit(EditProfileState.updatePasswordError(error.failureMsg ?? '')),
+    );
   }
 
   bool _controllersHaveNoChange() =>

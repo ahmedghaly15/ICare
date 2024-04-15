@@ -21,6 +21,12 @@ class EditProfileState<T> with _$EditProfileState<T> {
       UploadNewProfileImageSuccess<T>;
   const factory EditProfileState.uploadNewProfileImageError(String error) =
       UploadNewProfileImageError<T>;
+  const factory EditProfileState.updatePasswordLoading() =
+      UpdatePasswordLoading;
+  const factory EditProfileState.updatePasswordSuccess() =
+      UpdatePasswordSuccess;
+  const factory EditProfileState.updatePasswordError(String error) =
+      UpdatePasswordError<T>;
   const factory EditProfileState.setNewNameTextValue(String text) =
       SetNewNameTextValue<T>;
   const factory EditProfileState.setNewEmailTextValue(String text) =
