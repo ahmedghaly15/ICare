@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/utils/functions/navigate_to_current_user_profile.dart';
 import 'package:icare/src/features/profile/presentation/cubits/photos/photos_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 
@@ -15,5 +16,7 @@ void navigateToUserProfile({
     context.read<ProfileCubit>().getUserTinyTales(user.uId!);
     context.read<PhotosCubit>().getUserPhotos(user.uId!);
     context.pushRoute(UserProfileRoute(user: user));
+  } else {
+    navigateToCurrentUserProfile(context);
   }
 }

@@ -2,13 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/router/app_router.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/navigate_to_current_user_profile.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_drawer_item.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
-import 'package:icare/src/features/profile/presentation/cubits/photos/photos_cubit.dart';
-import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
@@ -53,9 +51,7 @@ class DrawerItems extends StatelessWidget {
       context.pushRoute(const ChatsRoute());
     } else if (AppConstants.drawerItemsTitles[index] == AppStrings.profile) {
       Navigator.pop(context);
-      context.read<ProfileCubit>().getUserTinyTales(Helper.uId!);
-      context.read<PhotosCubit>().getUserPhotos(Helper.uId!);
-      context.pushRoute(const ProfileRoute());
+      navigateToCurrentUserProfile(context);
     }
   }
 }
