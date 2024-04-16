@@ -13,6 +13,7 @@ import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubits/photos/photos_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubit/speech_therapy_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
@@ -45,6 +46,9 @@ class ICareApp extends StatelessWidget {
           ),
           BlocProvider<ChatCubit>(
             create: (_) => getIt.get<ChatCubit>(),
+          ),
+          BlocProvider<SpeechTherapyCubit>(
+            create: (_) => getIt.get<SpeechTherapyCubit>(),
           ),
         ],
         child: MaterialApp.router(

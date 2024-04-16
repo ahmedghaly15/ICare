@@ -71,6 +71,7 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(page: FollowersRoute.page),
     _buildCustomRoute(page: FollowingRoute.page),
     _buildCustomRoute(page: SpeechTherapyRoute.page),
+    _buildCustomRoute(page: LevelOneRoute.page),
   ];
 }
 

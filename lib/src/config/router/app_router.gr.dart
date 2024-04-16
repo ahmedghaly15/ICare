@@ -156,6 +156,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const LayoutView(),
       );
     },
+    LevelOneRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LevelOneView(),
+      );
+    },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -663,6 +669,20 @@ class LayoutRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LayoutRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LevelOneView]
+class LevelOneRoute extends PageRouteInfo<void> {
+  const LevelOneRoute({List<PageRouteInfo>? children})
+      : super(
+          LevelOneRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LevelOneRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
