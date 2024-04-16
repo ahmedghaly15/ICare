@@ -249,6 +249,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const StartView(),
       );
     },
+    TrainingOnLevelOneAnimalRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TrainingOnLevelOneAnimalView(),
+      );
+    },
     UserProfileRoute.name: (routeData) {
       final args = routeData.argsAs<UserProfileRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -935,6 +941,20 @@ class StartRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'StartRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TrainingOnLevelOneAnimalView]
+class TrainingOnLevelOneAnimalRoute extends PageRouteInfo<void> {
+  const TrainingOnLevelOneAnimalRoute({List<PageRouteInfo>? children})
+      : super(
+          TrainingOnLevelOneAnimalRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TrainingOnLevelOneAnimalRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
