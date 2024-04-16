@@ -40,7 +40,6 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
           current is SendMessageError ||
           current is SendMessageSuccess ||
           current is UploadMessageImageError ||
-          current is UploadMessageImageLoading ||
           current is UploadMessageImageSuccess ||
           current is SetNewTextValue ||
           current is PickMessageImageSuccess ||
@@ -50,15 +49,11 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
         if (state is SendMessageLoading || state is UploadMessageImageLoading) {
           return const CustomCircularProgressIndicator();
         }
-
         return CustomSendMessageIconButton(
           isEnabled:
               context.read<ChatCubit>().messageController.text.isNotEmpty ||
                   context.read<ChatCubit>().messageImage != null,
-          onPressed: context.read<ChatCubit>().newMessage(
-                context: context,
-                receiver: receiver,
-              ),
+          onPressed: context.read<ChatCubit>().newMessage(receiver),
         );
       },
     );

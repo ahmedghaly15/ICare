@@ -21,8 +21,10 @@ class MessagesStreamBuilder extends StatelessWidget {
       stream: context.read<ChatCubit>().messagesStream(receiverId),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(
-            child: CustomCircularProgressIndicator(),
+          return const Expanded(
+            child: Center(
+              child: CustomCircularProgressIndicator(),
+            ),
           );
         }
         final messages = snapshot.data?.docs
