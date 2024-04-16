@@ -17,4 +17,5 @@ class AppColors {
   static Color black80Percent = Colors.black.withOpacity(0.8);
   static const Color darkGrey = Color(0xff5B5B5B);
   static const Color gradientOrange = Color(0xffFFB74D);
+  static const Color deepBrown = Color(0xff4B2F0F);
 }

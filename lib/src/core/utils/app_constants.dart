@@ -64,4 +64,19 @@ class AppConstants {
     horizontal: 8.w,
   );
   static EdgeInsets viewAppBarPadding = EdgeInsets.only(left: 9.w);
+  static const List<String> speechTherapyLevelsImages = <String>[
+    AppAssets.imagesLevel1,
+    AppAssets.imagesLevel2,
+    AppAssets.imagesLevel3,
+  ];
+  static const List<String> speechTherapyLevelsTitles = <String>[
+    AppStrings.levelOne,
+    AppStrings.levelTwo,
+    AppStrings.advancedLevel,
+  ];
+  static const List<String> speechTherapyLevelsDescriptions = <String>[
+    AppStrings.levelOneDescription,
+    AppStrings.levelTwoDescription,
+    AppStrings.advancedLevelDescription,
+  ];
 }

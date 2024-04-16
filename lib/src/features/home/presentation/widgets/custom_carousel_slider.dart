@@ -15,7 +15,7 @@ class CustomCarouselSlider extends StatelessWidget {
         CustomCarouselSliderItem(
           icon: AppAssets.imagesSpeechTherapyFeature,
           onPressed: () {
-            // context.pushRoute(route)
+            context.pushRoute(const SpeechTherapyRoute());
           },
         ),
         CustomCarouselSliderItem(

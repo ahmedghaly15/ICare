@@ -3,7 +3,7 @@ class AppAssets {
 
   /// Assets for AppIcon
   /// assets/app_icon.png
-  static const String appIcon = "assets/app_icon.png";
+  static const String AppIcon = "assets/app_icon.png";
 
   /// Assets for fontsInterInterBold
   /// assets/fonts/inter/Inter-Bold.ttf
@@ -71,6 +71,18 @@ class AppAssets {
   /// assets/images/icare_bot_feature.png
   static const String imagesIcareBotFeature =
       "assets/images/icare_bot_feature.png";
+
+  /// Assets for imagesLevel1
+  /// assets/images/level1.png
+  static const String imagesLevel1 = "assets/images/level1.png";
+
+  /// Assets for imagesLevel2
+  /// assets/images/level2.png
+  static const String imagesLevel2 = "assets/images/level2.png";
+
+  /// Assets for imagesLevel3
+  /// assets/images/level3.png
+  static const String imagesLevel3 = "assets/images/level3.png";
 
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.png
@@ -206,6 +218,10 @@ class AppAssets {
   /// assets/svgs/error.svg
   static const String svgsError = "assets/svgs/error.svg";
 
+  /// Assets for svgsHalfBrownCircle
+  /// assets/svgs/half_brown_circle.svg
+  static const String svgsHalfBrownCircle = "assets/svgs/half_brown_circle.svg";
+
   /// Assets for svgsHeartCommentIcon
   /// assets/svgs/heart_comment_icon.svg
   static const String svgsHeartCommentIcon =
@@ -218,6 +234,10 @@ class AppAssets {
   /// Assets for svgsHomeIcon
   /// assets/svgs/home_icon.svg
   static const String svgsHomeIcon = "assets/svgs/home_icon.svg";
+
+  /// Assets for svgsLevelOne
+  /// assets/svgs/level_one.svg
+  static const String svgsLevelOne = "assets/svgs/level_one.svg";
 
   /// Assets for svgsMedicalIcon
   /// assets/svgs/medical_icon.svg

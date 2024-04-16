@@ -100,7 +100,6 @@ class SetupDIForCubits {
         getPeopleWhoLikedUseCase: getIt.get<GetPeopleWhoLikedUseCase>(),
       ),
     );
-
     getIt.registerFactory<NewTinyTaleCubit>(
       () => NewTinyTaleCubit(
         createTinyTaleUseCase: getIt.get<CreateTinyTaleUseCase>(),

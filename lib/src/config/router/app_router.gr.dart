@@ -231,6 +231,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const SearchUsersView()),
       );
     },
+    SpeechTherapyRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SpeechTherapyView(),
+      );
+    },
     StartRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -881,6 +887,20 @@ class SearchUsersRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SearchUsersRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SpeechTherapyView]
+class SpeechTherapyRoute extends PageRouteInfo<void> {
+  const SpeechTherapyRoute({List<PageRouteInfo>? children})
+      : super(
+          SpeechTherapyRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SpeechTherapyRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
