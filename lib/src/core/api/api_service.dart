@@ -63,8 +63,10 @@ abstract class ApiService {
     @Path('bookmark_id') required String bookmarkId,
   });
 
-  @GET(EndPoints.levelOneTraining)
-  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData();
+  @GET('${EndPoints.levelOneTraining}{user_id}')
+  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(
+    @Path('user_id') String userId,
+  );
 
   @POST(EndPoints.marking)
   @MultiPart()

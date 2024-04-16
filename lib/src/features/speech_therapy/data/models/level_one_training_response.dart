@@ -27,11 +27,13 @@ class LevelOneTrainingDetails {
   final String imageUrl;
   @JsonKey(name: 'audio_url')
   final String audioUrl;
+  final bool available;
 
   const LevelOneTrainingDetails({
     required this.animalName,
     required this.imageUrl,
     required this.audioUrl,
+    required this.available,
   });
 
   factory LevelOneTrainingDetails.fromJson(Map<String, dynamic> json) =>

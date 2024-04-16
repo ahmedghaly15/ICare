@@ -4,7 +4,7 @@ import 'package:icare/src/features/speech_therapy/data/models/mark_level_one_par
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 
 abstract class SpeechTherapyRemoteDatasource {
-  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData();
+  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(String userId);
   Future<MarkResponse> markLevelOneExam(MarkLevelOneParams params);
 }
 
@@ -15,8 +15,9 @@ class SpeechTherapyRemoteDatasourceImpl
   const SpeechTherapyRemoteDatasourceImpl(this._apiService);
 
   @override
-  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData() async {
-    return await _apiService.getLevelOneTrainingData();
+  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(
+      String userId) async {
+    return await _apiService.getLevelOneTrainingData(userId);
   }
 
   @override

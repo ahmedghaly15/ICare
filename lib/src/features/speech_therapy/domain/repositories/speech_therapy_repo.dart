@@ -4,7 +4,8 @@ import 'package:icare/src/features/speech_therapy/data/models/mark_level_one_par
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 
 abstract class SpeechTherapyRepo {
-  Future<ApiResult<List<LevelOneTrainingResponse>>> getLevelOneTrainingData();
+  Future<ApiResult<List<LevelOneTrainingResponse>>> getLevelOneTrainingData(
+      String userId);
 
   Future<ApiResult<MarkResponse>> markLevelOneExam(
     MarkLevelOneParams params,

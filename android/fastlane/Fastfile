@@ -19,6 +19,7 @@ platform :android do
         * Followers, Following are cached now
       - Finish Change password (logic & UI) ✅
       - Handle navigation to other users profiles ✅
+      - Fix Like Bug ✅
   """
   )
   end

@@ -12,10 +12,11 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
   const SpeechTherapyRepoImpl(this._speechTherapyRemoteDatasource);
 
   @override
-  Future<ApiResult<List<LevelOneTrainingResponse>>> getLevelOneTrainingData() {
+  Future<ApiResult<List<LevelOneTrainingResponse>>> getLevelOneTrainingData(
+      String userId) {
     return executeAndHandleErrors<List<LevelOneTrainingResponse>>(
       () async =>
-          await _speechTherapyRemoteDatasource.getLevelOneTrainingData(),
+          await _speechTherapyRemoteDatasource.getLevelOneTrainingData(userId),
     );
   }
 

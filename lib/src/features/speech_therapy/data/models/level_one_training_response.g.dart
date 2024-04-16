@@ -29,6 +29,7 @@ LevelOneTrainingDetails _$LevelOneTrainingDetailsFromJson(
       animalName: json['animal_name'] as String,
       imageUrl: json['image_url'] as String,
       audioUrl: json['audio_url'] as String,
+      available: json['available'] as bool,
     );
 
 Map<String, dynamic> _$LevelOneTrainingDetailsToJson(
@@ -37,4 +38,5 @@ Map<String, dynamic> _$LevelOneTrainingDetailsToJson(
       'animal_name': instance.animalName,
       'image_url': instance.imageUrl,
       'audio_url': instance.audioUrl,
+      'available': instance.available,
     };

@@ -289,7 +289,8 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData() async {
+  Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(
+      String userId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -302,7 +303,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://ahmed-muqawi-speech-therapy.hf.space/level1/training/',
+              'https://ahmed-muqawi-speech-therapy.hf.space/level1/training/${userId}',
               queryParameters: queryParameters,
               data: _data,
             )
