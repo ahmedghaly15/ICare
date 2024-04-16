@@ -1,55 +1,64 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
-import 'package:icare/src/features/chat/data/models/message_model.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
+import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
 import 'package:icare/src/features/chat/domain/usecases/send_message.dart';
-import 'package:icare/src/features/chat/domain/usecases/stream_messages.dart';
 import 'package:icare/src/features/chat/domain/usecases/upload_message_image.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
 class ChatCubit extends Cubit<ChatState> {
-  final StreamMessagesUseCase streamMessagesUseCase;
   final SendMessageUseCase sendMessageUseCase;
   final UploadMessageImageUseCase uploadMessageImageUseCase;
+  final GetChatsUseCase getChatsUseCase;
 
   ChatCubit({
-    required this.streamMessagesUseCase,
     required this.sendMessageUseCase,
     required this.uploadMessageImageUseCase,
+    required this.getChatsUseCase,
   }) : super(const ChatState.initial()) {
     messageController = TextEditingController();
   }
 
   late final TextEditingController messageController;
 
-  List<MessageModel> messages = <MessageModel>[];
-  void streamMessages(String receiverId) async {
-    emit(const ChatState.streamMessagesLoading());
+  Stream<QuerySnapshot<Map<String, dynamic>>> messagesStream(
+      String receiverId) {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection)
+        .doc(Helper.uId)
+        .collection(AppStrings.chatsCollection)
+        .doc(receiverId)
+        .collection(AppStrings.messagesCollection)
+        .orderBy(AppStrings.dateTime, descending: true)
+        .snapshots();
+  }
 
-    final result = await streamMessagesUseCase.call(receiverId);
-
+  void getChats() async {
+    emit(const ChatState.getChatsLoading());
+    final result = await getChatsUseCase.call(const NoParams());
     result.when(
-      success: (data) {
-        messages = data;
-        emit(ChatState.streamMessagesSuccess(data));
-      },
-      error: (error) =>
-          emit(ChatState.streamMessagesError(error.failureMsg ?? '')),
+      success: (data) => emit(ChatState.getChatsSuccess(data)),
+      error: (error) => emit(ChatState.getChatsError(error.failureMsg ?? '')),
     );
   }
 
   void Function()? newMessage({
     required BuildContext context,
-    required String receiverId,
-    required String receiverName,
+    required ICareUser receiver,
   }) {
     return messageImage == null && messageController.text.isEmpty
         ? null
@@ -58,28 +67,25 @@ class ChatCubit extends Cubit<ChatState> {
             if (messageImage == null && messageController.text.isNotEmpty) {
               _sendMessage(
                 SendMessageParams(
-                  receiverId: receiverId,
-                  receiverName: receiverName,
                   date: getDate(),
                   time: DateFormat.jm().format(DateTime.now()),
                   messageText: messageController.text,
+                  receiver: receiver,
                 ),
               );
             } else if (messageImage != null && messageController.text.isEmpty) {
               _uploadMessageImage(SendMessageParams(
-                receiverId: receiverId,
-                receiverName: receiverName,
                 date: getDate(),
                 time: DateFormat.jm().format(DateTime.now()),
+                receiver: receiver,
               ));
             } else if (messageImage != null &&
                 messageController.text.isNotEmpty) {
               _uploadMessageImage(SendMessageParams(
-                receiverId: receiverId,
-                receiverName: receiverName,
                 date: getDate(),
                 time: DateFormat.jm().format(DateTime.now()),
                 messageText: messageController.text,
+                receiver: receiver,
               ));
             }
           };
@@ -87,7 +93,6 @@ class ChatCubit extends Cubit<ChatState> {
 
   void _sendMessage(SendMessageParams params) async {
     emit(const ChatState.sendMessageLoading());
-
     final result = await sendMessageUseCase.call(params);
     result.when(
       success: (_) => emit(const ChatState.sendMessageSuccess()),
@@ -130,8 +135,6 @@ class ChatCubit extends Cubit<ChatState> {
     taskSnapshot.ref.getDownloadURL().then((imageUrl) {
       _sendMessage(
         SendMessageParams(
-          receiverId: params.receiverId,
-          receiverName: params.receiverName,
           messageText: params.messageText,
           date: params.date,
           time: params.time,

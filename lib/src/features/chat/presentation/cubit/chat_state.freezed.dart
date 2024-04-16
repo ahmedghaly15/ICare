@@ -19,10 +19,6 @@ mixin _$ChatState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -33,14 +29,14 @@ mixin _$ChatState<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -51,14 +47,14 @@ mixin _$ChatState<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -69,17 +65,15 @@ mixin _$ChatState<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -95,14 +89,14 @@ mixin _$ChatState<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -117,14 +111,14 @@ mixin _$ChatState<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -137,6 +131,9 @@ mixin _$ChatState<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -199,10 +196,6 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -213,6 +206,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return initial();
   }
@@ -221,9 +217,6 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -234,6 +227,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return initial?.call();
   }
@@ -242,9 +238,6 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -255,6 +248,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -267,11 +263,6 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -287,6 +278,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return initial(this);
   }
@@ -295,9 +289,6 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -312,6 +303,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return initial?.call(this);
   }
@@ -320,9 +314,6 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -335,6 +326,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -346,648 +340,6 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
 
 abstract class _ChatInitial<T> implements ChatState<T> {
   const factory _ChatInitial() = _$ChatInitialImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$StreamMessagesLoadingImplCopyWith<T, $Res> {
-  factory _$$StreamMessagesLoadingImplCopyWith(
-          _$StreamMessagesLoadingImpl<T> value,
-          $Res Function(_$StreamMessagesLoadingImpl<T>) then) =
-      __$$StreamMessagesLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$StreamMessagesLoadingImplCopyWithImpl<T, $Res>
-    extends _$ChatStateCopyWithImpl<T, $Res, _$StreamMessagesLoadingImpl<T>>
-    implements _$$StreamMessagesLoadingImplCopyWith<T, $Res> {
-  __$$StreamMessagesLoadingImplCopyWithImpl(
-      _$StreamMessagesLoadingImpl<T> _value,
-      $Res Function(_$StreamMessagesLoadingImpl<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$StreamMessagesLoadingImpl<T> implements StreamMessagesLoading<T> {
-  const _$StreamMessagesLoadingImpl();
-
-  @override
-  String toString() {
-    return 'ChatState<$T>.streamMessagesLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StreamMessagesLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
-    required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
-    required TResult Function(String error) sendMessageError,
-    required TResult Function(File messageImage) pickMessageImageSuccess,
-    required TResult Function(String error) pickMessageImageError,
-    required TResult Function() uploadMessageImageLoading,
-    required TResult Function(String imageUrl) uploadMessageImageSuccess,
-    required TResult Function(String error) uploadMessageImageError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removeMessageImage,
-  }) {
-    return streamMessagesLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
-    TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
-    TResult? Function(String error)? sendMessageError,
-    TResult? Function(File messageImage)? pickMessageImageSuccess,
-    TResult? Function(String error)? pickMessageImageError,
-    TResult? Function()? uploadMessageImageLoading,
-    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
-    TResult? Function(String error)? uploadMessageImageError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removeMessageImage,
-  }) {
-    return streamMessagesLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
-    TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
-    TResult Function(String error)? sendMessageError,
-    TResult Function(File messageImage)? pickMessageImageSuccess,
-    TResult Function(String error)? pickMessageImageError,
-    TResult Function()? uploadMessageImageLoading,
-    TResult Function(String imageUrl)? uploadMessageImageSuccess,
-    TResult Function(String error)? uploadMessageImageError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removeMessageImage,
-    required TResult orElse(),
-  }) {
-    if (streamMessagesLoading != null) {
-      return streamMessagesLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
-    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
-    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
-    required TResult Function(SendMessageError<T> value) sendMessageError,
-    required TResult Function(PickMessageImageSuccess<T> value)
-        pickMessageImageSuccess,
-    required TResult Function(PickMessageImageError<T> value)
-        pickMessageImageError,
-    required TResult Function(UploadMessageImageLoading<T> value)
-        uploadMessageImageLoading,
-    required TResult Function(UploadMessageImageSuccess<T> value)
-        uploadMessageImageSuccess,
-    required TResult Function(UploadMessageImageError<T> value)
-        uploadMessageImageError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
-  }) {
-    return streamMessagesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
-    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
-    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
-    TResult? Function(SendMessageError<T> value)? sendMessageError,
-    TResult? Function(PickMessageImageSuccess<T> value)?
-        pickMessageImageSuccess,
-    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
-    TResult? Function(UploadMessageImageLoading<T> value)?
-        uploadMessageImageLoading,
-    TResult? Function(UploadMessageImageSuccess<T> value)?
-        uploadMessageImageSuccess,
-    TResult? Function(UploadMessageImageError<T> value)?
-        uploadMessageImageError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
-  }) {
-    return streamMessagesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
-    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
-    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
-    TResult Function(SendMessageError<T> value)? sendMessageError,
-    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
-    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
-    TResult Function(UploadMessageImageLoading<T> value)?
-        uploadMessageImageLoading,
-    TResult Function(UploadMessageImageSuccess<T> value)?
-        uploadMessageImageSuccess,
-    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
-    required TResult orElse(),
-  }) {
-    if (streamMessagesLoading != null) {
-      return streamMessagesLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StreamMessagesLoading<T> implements ChatState<T> {
-  const factory StreamMessagesLoading() = _$StreamMessagesLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$StreamMessagesSuccessImplCopyWith<T, $Res> {
-  factory _$$StreamMessagesSuccessImplCopyWith(
-          _$StreamMessagesSuccessImpl<T> value,
-          $Res Function(_$StreamMessagesSuccessImpl<T>) then) =
-      __$$StreamMessagesSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({List<MessageModel> messages});
-}
-
-/// @nodoc
-class __$$StreamMessagesSuccessImplCopyWithImpl<T, $Res>
-    extends _$ChatStateCopyWithImpl<T, $Res, _$StreamMessagesSuccessImpl<T>>
-    implements _$$StreamMessagesSuccessImplCopyWith<T, $Res> {
-  __$$StreamMessagesSuccessImplCopyWithImpl(
-      _$StreamMessagesSuccessImpl<T> _value,
-      $Res Function(_$StreamMessagesSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? messages = null,
-  }) {
-    return _then(_$StreamMessagesSuccessImpl<T>(
-      null == messages
-          ? _value._messages
-          : messages // ignore: cast_nullable_to_non_nullable
-              as List<MessageModel>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$StreamMessagesSuccessImpl<T> implements StreamMessagesSuccess<T> {
-  const _$StreamMessagesSuccessImpl(final List<MessageModel> messages)
-      : _messages = messages;
-
-  final List<MessageModel> _messages;
-  @override
-  List<MessageModel> get messages {
-    if (_messages is EqualUnmodifiableListView) return _messages;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_messages);
-  }
-
-  @override
-  String toString() {
-    return 'ChatState<$T>.streamMessagesSuccess(messages: $messages)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StreamMessagesSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other._messages, _messages));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_messages));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StreamMessagesSuccessImplCopyWith<T, _$StreamMessagesSuccessImpl<T>>
-      get copyWith => __$$StreamMessagesSuccessImplCopyWithImpl<T,
-          _$StreamMessagesSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
-    required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
-    required TResult Function(String error) sendMessageError,
-    required TResult Function(File messageImage) pickMessageImageSuccess,
-    required TResult Function(String error) pickMessageImageError,
-    required TResult Function() uploadMessageImageLoading,
-    required TResult Function(String imageUrl) uploadMessageImageSuccess,
-    required TResult Function(String error) uploadMessageImageError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removeMessageImage,
-  }) {
-    return streamMessagesSuccess(messages);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
-    TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
-    TResult? Function(String error)? sendMessageError,
-    TResult? Function(File messageImage)? pickMessageImageSuccess,
-    TResult? Function(String error)? pickMessageImageError,
-    TResult? Function()? uploadMessageImageLoading,
-    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
-    TResult? Function(String error)? uploadMessageImageError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removeMessageImage,
-  }) {
-    return streamMessagesSuccess?.call(messages);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
-    TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
-    TResult Function(String error)? sendMessageError,
-    TResult Function(File messageImage)? pickMessageImageSuccess,
-    TResult Function(String error)? pickMessageImageError,
-    TResult Function()? uploadMessageImageLoading,
-    TResult Function(String imageUrl)? uploadMessageImageSuccess,
-    TResult Function(String error)? uploadMessageImageError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removeMessageImage,
-    required TResult orElse(),
-  }) {
-    if (streamMessagesSuccess != null) {
-      return streamMessagesSuccess(messages);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
-    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
-    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
-    required TResult Function(SendMessageError<T> value) sendMessageError,
-    required TResult Function(PickMessageImageSuccess<T> value)
-        pickMessageImageSuccess,
-    required TResult Function(PickMessageImageError<T> value)
-        pickMessageImageError,
-    required TResult Function(UploadMessageImageLoading<T> value)
-        uploadMessageImageLoading,
-    required TResult Function(UploadMessageImageSuccess<T> value)
-        uploadMessageImageSuccess,
-    required TResult Function(UploadMessageImageError<T> value)
-        uploadMessageImageError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
-  }) {
-    return streamMessagesSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
-    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
-    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
-    TResult? Function(SendMessageError<T> value)? sendMessageError,
-    TResult? Function(PickMessageImageSuccess<T> value)?
-        pickMessageImageSuccess,
-    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
-    TResult? Function(UploadMessageImageLoading<T> value)?
-        uploadMessageImageLoading,
-    TResult? Function(UploadMessageImageSuccess<T> value)?
-        uploadMessageImageSuccess,
-    TResult? Function(UploadMessageImageError<T> value)?
-        uploadMessageImageError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
-  }) {
-    return streamMessagesSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
-    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
-    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
-    TResult Function(SendMessageError<T> value)? sendMessageError,
-    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
-    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
-    TResult Function(UploadMessageImageLoading<T> value)?
-        uploadMessageImageLoading,
-    TResult Function(UploadMessageImageSuccess<T> value)?
-        uploadMessageImageSuccess,
-    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
-    required TResult orElse(),
-  }) {
-    if (streamMessagesSuccess != null) {
-      return streamMessagesSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StreamMessagesSuccess<T> implements ChatState<T> {
-  const factory StreamMessagesSuccess(final List<MessageModel> messages) =
-      _$StreamMessagesSuccessImpl<T>;
-
-  List<MessageModel> get messages;
-  @JsonKey(ignore: true)
-  _$$StreamMessagesSuccessImplCopyWith<T, _$StreamMessagesSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$StreamMessagesErrorImplCopyWith<T, $Res> {
-  factory _$$StreamMessagesErrorImplCopyWith(_$StreamMessagesErrorImpl<T> value,
-          $Res Function(_$StreamMessagesErrorImpl<T>) then) =
-      __$$StreamMessagesErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$StreamMessagesErrorImplCopyWithImpl<T, $Res>
-    extends _$ChatStateCopyWithImpl<T, $Res, _$StreamMessagesErrorImpl<T>>
-    implements _$$StreamMessagesErrorImplCopyWith<T, $Res> {
-  __$$StreamMessagesErrorImplCopyWithImpl(_$StreamMessagesErrorImpl<T> _value,
-      $Res Function(_$StreamMessagesErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$StreamMessagesErrorImpl<T>(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$StreamMessagesErrorImpl<T> implements StreamMessagesError<T> {
-  const _$StreamMessagesErrorImpl(this.error);
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'ChatState<$T>.streamMessagesError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StreamMessagesErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StreamMessagesErrorImplCopyWith<T, _$StreamMessagesErrorImpl<T>>
-      get copyWith => __$$StreamMessagesErrorImplCopyWithImpl<T,
-          _$StreamMessagesErrorImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
-    required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
-    required TResult Function(String error) sendMessageError,
-    required TResult Function(File messageImage) pickMessageImageSuccess,
-    required TResult Function(String error) pickMessageImageError,
-    required TResult Function() uploadMessageImageLoading,
-    required TResult Function(String imageUrl) uploadMessageImageSuccess,
-    required TResult Function(String error) uploadMessageImageError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removeMessageImage,
-  }) {
-    return streamMessagesError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
-    TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
-    TResult? Function(String error)? sendMessageError,
-    TResult? Function(File messageImage)? pickMessageImageSuccess,
-    TResult? Function(String error)? pickMessageImageError,
-    TResult? Function()? uploadMessageImageLoading,
-    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
-    TResult? Function(String error)? uploadMessageImageError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removeMessageImage,
-  }) {
-    return streamMessagesError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
-    TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
-    TResult Function(String error)? sendMessageError,
-    TResult Function(File messageImage)? pickMessageImageSuccess,
-    TResult Function(String error)? pickMessageImageError,
-    TResult Function()? uploadMessageImageLoading,
-    TResult Function(String imageUrl)? uploadMessageImageSuccess,
-    TResult Function(String error)? uploadMessageImageError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removeMessageImage,
-    required TResult orElse(),
-  }) {
-    if (streamMessagesError != null) {
-      return streamMessagesError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
-    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
-    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
-    required TResult Function(SendMessageError<T> value) sendMessageError,
-    required TResult Function(PickMessageImageSuccess<T> value)
-        pickMessageImageSuccess,
-    required TResult Function(PickMessageImageError<T> value)
-        pickMessageImageError,
-    required TResult Function(UploadMessageImageLoading<T> value)
-        uploadMessageImageLoading,
-    required TResult Function(UploadMessageImageSuccess<T> value)
-        uploadMessageImageSuccess,
-    required TResult Function(UploadMessageImageError<T> value)
-        uploadMessageImageError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
-  }) {
-    return streamMessagesError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
-    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
-    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
-    TResult? Function(SendMessageError<T> value)? sendMessageError,
-    TResult? Function(PickMessageImageSuccess<T> value)?
-        pickMessageImageSuccess,
-    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
-    TResult? Function(UploadMessageImageLoading<T> value)?
-        uploadMessageImageLoading,
-    TResult? Function(UploadMessageImageSuccess<T> value)?
-        uploadMessageImageSuccess,
-    TResult? Function(UploadMessageImageError<T> value)?
-        uploadMessageImageError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
-  }) {
-    return streamMessagesError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
-    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
-    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
-    TResult Function(SendMessageError<T> value)? sendMessageError,
-    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
-    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
-    TResult Function(UploadMessageImageLoading<T> value)?
-        uploadMessageImageLoading,
-    TResult Function(UploadMessageImageSuccess<T> value)?
-        uploadMessageImageSuccess,
-    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
-    required TResult orElse(),
-  }) {
-    if (streamMessagesError != null) {
-      return streamMessagesError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StreamMessagesError<T> implements ChatState<T> {
-  const factory StreamMessagesError(final String error) =
-      _$StreamMessagesErrorImpl<T>;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$StreamMessagesErrorImplCopyWith<T, _$StreamMessagesErrorImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1030,10 +382,6 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -1044,6 +392,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return sendMessageLoading();
   }
@@ -1052,9 +403,6 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -1065,6 +413,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return sendMessageLoading?.call();
   }
@@ -1073,9 +424,6 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -1086,6 +434,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (sendMessageLoading != null) {
@@ -1098,11 +449,6 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -1118,6 +464,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return sendMessageLoading(this);
   }
@@ -1126,9 +475,6 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -1143,6 +489,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return sendMessageLoading?.call(this);
   }
@@ -1151,9 +500,6 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -1166,6 +512,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (sendMessageLoading != null) {
@@ -1219,10 +568,6 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -1233,6 +578,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return sendMessageSuccess();
   }
@@ -1241,9 +589,6 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -1254,6 +599,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return sendMessageSuccess?.call();
   }
@@ -1262,9 +610,6 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -1275,6 +620,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (sendMessageSuccess != null) {
@@ -1287,11 +635,6 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -1307,6 +650,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return sendMessageSuccess(this);
   }
@@ -1315,9 +661,6 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -1332,6 +675,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return sendMessageSuccess?.call(this);
   }
@@ -1340,9 +686,6 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -1355,6 +698,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (sendMessageSuccess != null) {
@@ -1434,10 +780,6 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -1448,6 +790,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return sendMessageError(error);
   }
@@ -1456,9 +801,6 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -1469,6 +811,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return sendMessageError?.call(error);
   }
@@ -1477,9 +822,6 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -1490,6 +832,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (sendMessageError != null) {
@@ -1502,11 +847,6 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -1522,6 +862,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return sendMessageError(this);
   }
@@ -1530,9 +873,6 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -1547,6 +887,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return sendMessageError?.call(this);
   }
@@ -1555,9 +898,6 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -1570,6 +910,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (sendMessageError != null) {
@@ -1658,10 +1001,6 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -1672,6 +1011,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return pickMessageImageSuccess(messageImage);
   }
@@ -1680,9 +1022,6 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -1693,6 +1032,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return pickMessageImageSuccess?.call(messageImage);
   }
@@ -1701,9 +1043,6 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -1714,6 +1053,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (pickMessageImageSuccess != null) {
@@ -1726,11 +1068,6 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -1746,6 +1083,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return pickMessageImageSuccess(this);
   }
@@ -1754,9 +1094,6 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -1771,6 +1108,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return pickMessageImageSuccess?.call(this);
   }
@@ -1779,9 +1119,6 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -1794,6 +1131,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (pickMessageImageSuccess != null) {
@@ -1881,10 +1221,6 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -1895,6 +1231,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return pickMessageImageError(error);
   }
@@ -1903,9 +1242,6 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -1916,6 +1252,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return pickMessageImageError?.call(error);
   }
@@ -1924,9 +1263,6 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -1937,6 +1273,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (pickMessageImageError != null) {
@@ -1949,11 +1288,6 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -1969,6 +1303,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return pickMessageImageError(this);
   }
@@ -1977,9 +1314,6 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -1994,6 +1328,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return pickMessageImageError?.call(this);
   }
@@ -2002,9 +1339,6 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -2017,6 +1351,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (pickMessageImageError != null) {
@@ -2079,10 +1416,6 @@ class _$UploadMessageImageLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -2093,6 +1426,9 @@ class _$UploadMessageImageLoadingImpl<T>
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return uploadMessageImageLoading();
   }
@@ -2101,9 +1437,6 @@ class _$UploadMessageImageLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -2114,6 +1447,9 @@ class _$UploadMessageImageLoadingImpl<T>
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return uploadMessageImageLoading?.call();
   }
@@ -2122,9 +1458,6 @@ class _$UploadMessageImageLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -2135,6 +1468,9 @@ class _$UploadMessageImageLoadingImpl<T>
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageLoading != null) {
@@ -2147,11 +1483,6 @@ class _$UploadMessageImageLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -2167,6 +1498,9 @@ class _$UploadMessageImageLoadingImpl<T>
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return uploadMessageImageLoading(this);
   }
@@ -2175,9 +1509,6 @@ class _$UploadMessageImageLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -2192,6 +1523,9 @@ class _$UploadMessageImageLoadingImpl<T>
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return uploadMessageImageLoading?.call(this);
   }
@@ -2200,9 +1534,6 @@ class _$UploadMessageImageLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -2215,6 +1546,9 @@ class _$UploadMessageImageLoadingImpl<T>
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageLoading != null) {
@@ -2300,10 +1634,6 @@ class _$UploadMessageImageSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -2314,6 +1644,9 @@ class _$UploadMessageImageSuccessImpl<T>
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return uploadMessageImageSuccess(imageUrl);
   }
@@ -2322,9 +1655,6 @@ class _$UploadMessageImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -2335,6 +1665,9 @@ class _$UploadMessageImageSuccessImpl<T>
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return uploadMessageImageSuccess?.call(imageUrl);
   }
@@ -2343,9 +1676,6 @@ class _$UploadMessageImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -2356,6 +1686,9 @@ class _$UploadMessageImageSuccessImpl<T>
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageSuccess != null) {
@@ -2368,11 +1701,6 @@ class _$UploadMessageImageSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -2388,6 +1716,9 @@ class _$UploadMessageImageSuccessImpl<T>
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return uploadMessageImageSuccess(this);
   }
@@ -2396,9 +1727,6 @@ class _$UploadMessageImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -2413,6 +1741,9 @@ class _$UploadMessageImageSuccessImpl<T>
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return uploadMessageImageSuccess?.call(this);
   }
@@ -2421,9 +1752,6 @@ class _$UploadMessageImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -2436,6 +1764,9 @@ class _$UploadMessageImageSuccessImpl<T>
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageSuccess != null) {
@@ -2524,10 +1855,6 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -2538,6 +1865,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return uploadMessageImageError(error);
   }
@@ -2546,9 +1876,6 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -2559,6 +1886,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return uploadMessageImageError?.call(error);
   }
@@ -2567,9 +1897,6 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -2580,6 +1907,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageError != null) {
@@ -2592,11 +1922,6 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -2612,6 +1937,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return uploadMessageImageError(this);
   }
@@ -2620,9 +1948,6 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -2637,6 +1962,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return uploadMessageImageError?.call(this);
   }
@@ -2645,9 +1973,6 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -2660,6 +1985,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageError != null) {
@@ -2745,10 +2073,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -2759,6 +2083,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return setNewTextValue(text);
   }
@@ -2767,9 +2094,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -2780,6 +2104,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return setNewTextValue?.call(text);
   }
@@ -2788,9 +2115,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -2801,6 +2125,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -2813,11 +2140,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -2833,6 +2155,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return setNewTextValue(this);
   }
@@ -2841,9 +2166,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -2858,6 +2180,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return setNewTextValue?.call(this);
   }
@@ -2866,9 +2191,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -2881,6 +2203,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -2939,10 +2264,6 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamMessagesLoading,
-    required TResult Function(List<MessageModel> messages)
-        streamMessagesSuccess,
-    required TResult Function(String error) streamMessagesError,
     required TResult Function() sendMessageLoading,
     required TResult Function() sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
@@ -2953,6 +2274,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     required TResult Function(String error) uploadMessageImageError,
     required TResult Function(String text) setNewTextValue,
     required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
   }) {
     return removeMessageImage();
   }
@@ -2961,9 +2285,6 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamMessagesLoading,
-    TResult? Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult? Function(String error)? streamMessagesError,
     TResult? Function()? sendMessageLoading,
     TResult? Function()? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
@@ -2974,6 +2295,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     TResult? Function(String error)? uploadMessageImageError,
     TResult? Function(String text)? setNewTextValue,
     TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
   }) {
     return removeMessageImage?.call();
   }
@@ -2982,9 +2306,6 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamMessagesLoading,
-    TResult Function(List<MessageModel> messages)? streamMessagesSuccess,
-    TResult Function(String error)? streamMessagesError,
     TResult Function()? sendMessageLoading,
     TResult Function()? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
@@ -2995,6 +2316,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     TResult Function(String error)? uploadMessageImageError,
     TResult Function(String text)? setNewTextValue,
     TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
     required TResult orElse(),
   }) {
     if (removeMessageImage != null) {
@@ -3007,11 +2331,6 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChatInitial<T> value) initial,
-    required TResult Function(StreamMessagesLoading<T> value)
-        streamMessagesLoading,
-    required TResult Function(StreamMessagesSuccess<T> value)
-        streamMessagesSuccess,
-    required TResult Function(StreamMessagesError<T> value) streamMessagesError,
     required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
     required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
     required TResult Function(SendMessageError<T> value) sendMessageError,
@@ -3027,6 +2346,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
         uploadMessageImageError,
     required TResult Function(SetNewTextValue<T> value) setNewTextValue,
     required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
   }) {
     return removeMessageImage(this);
   }
@@ -3035,9 +2357,6 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChatInitial<T> value)? initial,
-    TResult? Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult? Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult? Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult? Function(SendMessageError<T> value)? sendMessageError,
@@ -3052,6 +2371,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
         uploadMessageImageError,
     TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
   }) {
     return removeMessageImage?.call(this);
   }
@@ -3060,9 +2382,6 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChatInitial<T> value)? initial,
-    TResult Function(StreamMessagesLoading<T> value)? streamMessagesLoading,
-    TResult Function(StreamMessagesSuccess<T> value)? streamMessagesSuccess,
-    TResult Function(StreamMessagesError<T> value)? streamMessagesError,
     TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
     TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
     TResult Function(SendMessageError<T> value)? sendMessageError,
@@ -3075,6 +2394,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
     TResult Function(SetNewTextValue<T> value)? setNewTextValue,
     TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
     required TResult orElse(),
   }) {
     if (removeMessageImage != null) {
@@ -3086,4 +2408,630 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
 
 abstract class RemoveMessageImage<T> implements ChatState<T> {
   const factory RemoveMessageImage() = _$RemoveMessageImageImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetChatsLoadingImplCopyWith<T, $Res> {
+  factory _$$GetChatsLoadingImplCopyWith(_$GetChatsLoadingImpl<T> value,
+          $Res Function(_$GetChatsLoadingImpl<T>) then) =
+      __$$GetChatsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetChatsLoadingImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$GetChatsLoadingImpl<T>>
+    implements _$$GetChatsLoadingImplCopyWith<T, $Res> {
+  __$$GetChatsLoadingImplCopyWithImpl(_$GetChatsLoadingImpl<T> _value,
+      $Res Function(_$GetChatsLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
+  const _$GetChatsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.getChatsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetChatsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendMessageLoading,
+    required TResult Function() sendMessageSuccess,
+    required TResult Function(String error) sendMessageError,
+    required TResult Function(File messageImage) pickMessageImageSuccess,
+    required TResult Function(String error) pickMessageImageError,
+    required TResult Function() uploadMessageImageLoading,
+    required TResult Function(String imageUrl) uploadMessageImageSuccess,
+    required TResult Function(String error) uploadMessageImageError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
+  }) {
+    return getChatsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendMessageLoading,
+    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String error)? sendMessageError,
+    TResult? Function(File messageImage)? pickMessageImageSuccess,
+    TResult? Function(String error)? pickMessageImageError,
+    TResult? Function()? uploadMessageImageLoading,
+    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult? Function(String error)? uploadMessageImageError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
+  }) {
+    return getChatsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendMessageLoading,
+    TResult Function()? sendMessageSuccess,
+    TResult Function(String error)? sendMessageError,
+    TResult Function(File messageImage)? pickMessageImageSuccess,
+    TResult Function(String error)? pickMessageImageError,
+    TResult Function()? uploadMessageImageLoading,
+    TResult Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult Function(String error)? uploadMessageImageError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
+    required TResult orElse(),
+  }) {
+    if (getChatsLoading != null) {
+      return getChatsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChatInitial<T> value) initial,
+    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
+    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
+    required TResult Function(SendMessageError<T> value) sendMessageError,
+    required TResult Function(PickMessageImageSuccess<T> value)
+        pickMessageImageSuccess,
+    required TResult Function(PickMessageImageError<T> value)
+        pickMessageImageError,
+    required TResult Function(UploadMessageImageLoading<T> value)
+        uploadMessageImageLoading,
+    required TResult Function(UploadMessageImageSuccess<T> value)
+        uploadMessageImageSuccess,
+    required TResult Function(UploadMessageImageError<T> value)
+        uploadMessageImageError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
+  }) {
+    return getChatsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChatInitial<T> value)? initial,
+    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult? Function(SendMessageError<T> value)? sendMessageError,
+    TResult? Function(PickMessageImageSuccess<T> value)?
+        pickMessageImageSuccess,
+    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult? Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult? Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult? Function(UploadMessageImageError<T> value)?
+        uploadMessageImageError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
+  }) {
+    return getChatsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChatInitial<T> value)? initial,
+    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult Function(SendMessageError<T> value)? sendMessageError,
+    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
+    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
+    required TResult orElse(),
+  }) {
+    if (getChatsLoading != null) {
+      return getChatsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetChatsLoading<T> implements ChatState<T> {
+  const factory GetChatsLoading() = _$GetChatsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetChatsSuccessImplCopyWith<T, $Res> {
+  factory _$$GetChatsSuccessImplCopyWith(_$GetChatsSuccessImpl<T> value,
+          $Res Function(_$GetChatsSuccessImpl<T>) then) =
+      __$$GetChatsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<ICareUser> users});
+}
+
+/// @nodoc
+class __$$GetChatsSuccessImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$GetChatsSuccessImpl<T>>
+    implements _$$GetChatsSuccessImplCopyWith<T, $Res> {
+  __$$GetChatsSuccessImplCopyWithImpl(_$GetChatsSuccessImpl<T> _value,
+      $Res Function(_$GetChatsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? users = null,
+  }) {
+    return _then(_$GetChatsSuccessImpl<T>(
+      null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<ICareUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
+  const _$GetChatsSuccessImpl(final List<ICareUser> users) : _users = users;
+
+  final List<ICareUser> _users;
+  @override
+  List<ICareUser> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.getChatsSuccess(users: $users)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetChatsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetChatsSuccessImplCopyWith<T, _$GetChatsSuccessImpl<T>> get copyWith =>
+      __$$GetChatsSuccessImplCopyWithImpl<T, _$GetChatsSuccessImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendMessageLoading,
+    required TResult Function() sendMessageSuccess,
+    required TResult Function(String error) sendMessageError,
+    required TResult Function(File messageImage) pickMessageImageSuccess,
+    required TResult Function(String error) pickMessageImageError,
+    required TResult Function() uploadMessageImageLoading,
+    required TResult Function(String imageUrl) uploadMessageImageSuccess,
+    required TResult Function(String error) uploadMessageImageError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
+  }) {
+    return getChatsSuccess(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendMessageLoading,
+    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String error)? sendMessageError,
+    TResult? Function(File messageImage)? pickMessageImageSuccess,
+    TResult? Function(String error)? pickMessageImageError,
+    TResult? Function()? uploadMessageImageLoading,
+    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult? Function(String error)? uploadMessageImageError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
+  }) {
+    return getChatsSuccess?.call(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendMessageLoading,
+    TResult Function()? sendMessageSuccess,
+    TResult Function(String error)? sendMessageError,
+    TResult Function(File messageImage)? pickMessageImageSuccess,
+    TResult Function(String error)? pickMessageImageError,
+    TResult Function()? uploadMessageImageLoading,
+    TResult Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult Function(String error)? uploadMessageImageError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
+    required TResult orElse(),
+  }) {
+    if (getChatsSuccess != null) {
+      return getChatsSuccess(users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChatInitial<T> value) initial,
+    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
+    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
+    required TResult Function(SendMessageError<T> value) sendMessageError,
+    required TResult Function(PickMessageImageSuccess<T> value)
+        pickMessageImageSuccess,
+    required TResult Function(PickMessageImageError<T> value)
+        pickMessageImageError,
+    required TResult Function(UploadMessageImageLoading<T> value)
+        uploadMessageImageLoading,
+    required TResult Function(UploadMessageImageSuccess<T> value)
+        uploadMessageImageSuccess,
+    required TResult Function(UploadMessageImageError<T> value)
+        uploadMessageImageError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
+  }) {
+    return getChatsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChatInitial<T> value)? initial,
+    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult? Function(SendMessageError<T> value)? sendMessageError,
+    TResult? Function(PickMessageImageSuccess<T> value)?
+        pickMessageImageSuccess,
+    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult? Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult? Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult? Function(UploadMessageImageError<T> value)?
+        uploadMessageImageError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
+  }) {
+    return getChatsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChatInitial<T> value)? initial,
+    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult Function(SendMessageError<T> value)? sendMessageError,
+    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
+    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
+    required TResult orElse(),
+  }) {
+    if (getChatsSuccess != null) {
+      return getChatsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetChatsSuccess<T> implements ChatState<T> {
+  const factory GetChatsSuccess(final List<ICareUser> users) =
+      _$GetChatsSuccessImpl<T>;
+
+  List<ICareUser> get users;
+  @JsonKey(ignore: true)
+  _$$GetChatsSuccessImplCopyWith<T, _$GetChatsSuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetChatsErrorImplCopyWith<T, $Res> {
+  factory _$$GetChatsErrorImplCopyWith(_$GetChatsErrorImpl<T> value,
+          $Res Function(_$GetChatsErrorImpl<T>) then) =
+      __$$GetChatsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetChatsErrorImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$GetChatsErrorImpl<T>>
+    implements _$$GetChatsErrorImplCopyWith<T, $Res> {
+  __$$GetChatsErrorImplCopyWithImpl(_$GetChatsErrorImpl<T> _value,
+      $Res Function(_$GetChatsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetChatsErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
+  const _$GetChatsErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.getChatsError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetChatsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetChatsErrorImplCopyWith<T, _$GetChatsErrorImpl<T>> get copyWith =>
+      __$$GetChatsErrorImplCopyWithImpl<T, _$GetChatsErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendMessageLoading,
+    required TResult Function() sendMessageSuccess,
+    required TResult Function(String error) sendMessageError,
+    required TResult Function(File messageImage) pickMessageImageSuccess,
+    required TResult Function(String error) pickMessageImageError,
+    required TResult Function() uploadMessageImageLoading,
+    required TResult Function(String imageUrl) uploadMessageImageSuccess,
+    required TResult Function(String error) uploadMessageImageError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
+  }) {
+    return getChatsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendMessageLoading,
+    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String error)? sendMessageError,
+    TResult? Function(File messageImage)? pickMessageImageSuccess,
+    TResult? Function(String error)? pickMessageImageError,
+    TResult? Function()? uploadMessageImageLoading,
+    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult? Function(String error)? uploadMessageImageError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
+  }) {
+    return getChatsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendMessageLoading,
+    TResult Function()? sendMessageSuccess,
+    TResult Function(String error)? sendMessageError,
+    TResult Function(File messageImage)? pickMessageImageSuccess,
+    TResult Function(String error)? pickMessageImageError,
+    TResult Function()? uploadMessageImageLoading,
+    TResult Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult Function(String error)? uploadMessageImageError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
+    required TResult orElse(),
+  }) {
+    if (getChatsError != null) {
+      return getChatsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChatInitial<T> value) initial,
+    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
+    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
+    required TResult Function(SendMessageError<T> value) sendMessageError,
+    required TResult Function(PickMessageImageSuccess<T> value)
+        pickMessageImageSuccess,
+    required TResult Function(PickMessageImageError<T> value)
+        pickMessageImageError,
+    required TResult Function(UploadMessageImageLoading<T> value)
+        uploadMessageImageLoading,
+    required TResult Function(UploadMessageImageSuccess<T> value)
+        uploadMessageImageSuccess,
+    required TResult Function(UploadMessageImageError<T> value)
+        uploadMessageImageError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
+  }) {
+    return getChatsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChatInitial<T> value)? initial,
+    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult? Function(SendMessageError<T> value)? sendMessageError,
+    TResult? Function(PickMessageImageSuccess<T> value)?
+        pickMessageImageSuccess,
+    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult? Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult? Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult? Function(UploadMessageImageError<T> value)?
+        uploadMessageImageError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
+  }) {
+    return getChatsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChatInitial<T> value)? initial,
+    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult Function(SendMessageError<T> value)? sendMessageError,
+    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
+    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
+    required TResult orElse(),
+  }) {
+    if (getChatsError != null) {
+      return getChatsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetChatsError<T> implements ChatState<T> {
+  const factory GetChatsError(final String error) = _$GetChatsErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetChatsErrorImplCopyWith<T, _$GetChatsErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
