@@ -9,30 +9,27 @@ class AnimatedEmptyView extends StatelessWidget {
     super.key,
     required this.svgImage,
     required this.text,
-    this.child,
   });
 
   final String svgImage, text;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
-    return child ??
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            FadeInDown(
-              child: SvgPicture.asset(svgImage),
-            ),
-            MySizedBox.height25,
-            FadeInUp(
-              child: Text(
-                text,
-                style: AppTextStyles.textStyle20Bold(context),
-              ),
-            ),
-          ],
-        );
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        FadeInDown(
+          child: SvgPicture.asset(svgImage),
+        ),
+        MySizedBox.height25,
+        FadeInUp(
+          child: Text(
+            text,
+            style: AppTextStyles.textStyle20Bold(context),
+          ),
+        ),
+      ],
+    );
   }
 }

@@ -193,6 +193,11 @@ class AppAssets {
   /// assets/svgs/empty_chats.svg
   static const String svgsEmptyChats = "assets/svgs/empty_chats.svg";
 
+  /// Assets for svgsEmptyFollowersOrFollowing
+  /// assets/svgs/empty_followers_or_following.svg
+  static const String svgsEmptyFollowersOrFollowing =
+      "assets/svgs/empty_followers_or_following.svg";
+
   /// Assets for svgsEmptyPhotos
   /// assets/svgs/empty_photos.svg
   static const String svgsEmptyPhotos = "assets/svgs/empty_photos.svg";

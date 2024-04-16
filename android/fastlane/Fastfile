@@ -12,11 +12,13 @@ platform :android do
     android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
     testers: ["ahmedghaly152002@gmail.com", "ahmedmuqawi@gmail.com", "mukhalifa5@gmail.com", "Osamazxzx64@gmail.com", "youmnaelghanam226@gmail.com", "byralmrshdy41@gmail.com", "hebauwk25800@gmail.com", "kareem01095134688@gmail.com", "nadanasr370@gmail.com", "weaam.ai_0482@ai.kfs.edu.eg"].join(","),
     release_notes: """
-    This is a new release.
-    Updates:
-      - Finish Follow/Unfollow Logic ✅
-      - Finish Profile (UI & Logic) ✅
-      - Finish Other Users Profile (UI & Logic) ✅
+    This is a new release. Updates:
+      - Finish Chat feature (Logic & UI) ✅
+        * Chats are cached now
+      - Update Followers, Following feature (Logic & UI) ✅
+        * Followers, Following are cached now
+      - Finish Change password (logic & UI) ✅
+      - Handle navigation to other users profiles ✅
   """
   )
   end

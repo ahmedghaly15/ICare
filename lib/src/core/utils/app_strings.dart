@@ -143,4 +143,10 @@ class AppStrings {
   static const String passwordUpdatedSuccessfully =
       'Password updated successfully';
   static const String cachedChats = 'cachedChats';
+  static const String noFollowersYet = 'No followers yet';
+  static const String noFollowersYetDescription =
+      "Don’t worry, it’s a great day to start connecting! Share your profile with friends or engage with the community to get noticed and grow your network.";
+  static const String notFollowingAnyone = 'Not Following Anyone';
+  static const String notFollowingAnyoneDescription =
+      "It's time to start following people and growing your network.";
 }
