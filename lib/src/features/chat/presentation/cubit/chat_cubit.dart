@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/entities/no_params.dart';
-import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -36,15 +36,20 @@ class ChatCubit extends Cubit<ChatState> {
 
   Stream<QuerySnapshot<Map<String, dynamic>>> messagesStream(
       String receiverId) {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection)
-        .doc(Helper.uId)
-        .collection(AppStrings.chatsCollection)
+    return _accessCurrentUserChatsCollection()
         .doc(receiverId)
         .collection(AppStrings.messagesCollection)
         .orderBy(AppStrings.dateTime, descending: true)
         .snapshots();
+  }
+
+  CollectionReference<Map<String, dynamic>>
+      _accessCurrentUserChatsCollection() {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection)
+        .doc(Helper.uId)
+        .collection(AppStrings.chatsCollection);
   }
 
   void getChats() async {
@@ -56,14 +61,28 @@ class ChatCubit extends Cubit<ChatState> {
     );
   }
 
-  void Function()? newMessage({
-    required BuildContext context,
-    required ICareUser receiver,
-  }) {
+  Future<void> _checkChatExistence(String receiverId) async {
+    final docRef =
+        await _accessCurrentUserChatsCollection().doc(receiverId).get();
+
+    if (!docRef.exists) {
+      getIt
+          .get<CacheHelper>()
+          .removeData(key: AppStrings.cachedChats)
+          .then((value) {
+        if (value) {
+          getChats();
+        }
+      });
+    } else {
+      debugPrint('***** EXISTING CHAT *****');
+    }
+  }
+
+  void Function()? newMessage(ICareUser receiver) {
     return messageImage == null && messageController.text.isEmpty
         ? null
         : () {
-            AuthHelper.keyboardUnfocus(context);
             if (messageImage == null && messageController.text.isNotEmpty) {
               _sendMessage(
                 SendMessageParams(
@@ -92,6 +111,7 @@ class ChatCubit extends Cubit<ChatState> {
   }
 
   void _sendMessage(SendMessageParams params) async {
+    await _checkChatExistence(params.receiver!.uId!);
     emit(const ChatState.sendMessageLoading());
     final result = await sendMessageUseCase.call(params);
     result.when(
@@ -154,6 +174,7 @@ class ChatCubit extends Cubit<ChatState> {
   }
 
   void setNewTextValue(String text) {
+    messageController.text = text;
     emit(ChatState.setNewTextValue(text));
   }
 
