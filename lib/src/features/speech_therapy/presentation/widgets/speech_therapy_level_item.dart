@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 
@@ -26,12 +27,7 @@ class SpeechTherapyLevelItem extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25.r),
           boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 4.h),
-              blurRadius: 4.r,
-              spreadRadius: 0,
-              color: Colors.black.withOpacity(0.25),
-            ),
+            AppConstants.primaryBoxShadow,
           ],
         ),
         child: Stack(
