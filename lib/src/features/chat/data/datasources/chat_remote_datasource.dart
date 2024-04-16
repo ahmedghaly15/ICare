@@ -4,14 +4,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/features/chat/data/datasources/chat_datasource.dart';
 import 'package:icare/src/features/chat/data/models/message_model.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
 import 'package:icare/src/features/chat/data/models/setting_up_chat_params.dart';
 
-class ChatDatasourceImpl implements ChatDatasource {
-  const ChatDatasourceImpl();
+abstract class ChatRemoteDatasource {
+  Future<void> sendMessage(SendMessageParams params);
+  Future<TaskSnapshot> uploadMessageImage(File? messageImage);
+  Future<List<ICareUser>> getChats();
+}
+
+class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
+  const ChatRemoteDatasourceImpl();
 
   CollectionReference<Map<String, dynamic>> _accessMessagesCollection(
     String receiverId, {
@@ -89,7 +95,12 @@ class ChatDatasourceImpl implements ChatDatasource {
   }
 
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getChats() async {
-    return await _accessChatsCollection().get();
+  Future<List<ICareUser>> getChats() async {
+    List<ICareUser> chats = <ICareUser>[];
+    final chatsQuery = await _accessChatsCollection().get();
+    chats.addAll(
+      chatsQuery.docs.map((e) => ICareUser.fromJson(e.data())).toList(),
+    );
+    return chats;
   }
 }
