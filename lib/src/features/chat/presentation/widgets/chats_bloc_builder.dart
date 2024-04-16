@@ -6,22 +6,22 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/animated_empty_view.dart';
 import 'package:icare/src/core/widgets/loading_users_sliver_list.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
 import 'package:icare/src/features/chat/presentation/widgets/chat_item.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
-import 'package:icare/src/features/user/presentation/cubit/user_state.dart';
 
 class ChatsBlocBuilder extends StatelessWidget {
   const ChatsBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UserCubit, UserState>(
+    return BlocBuilder<ChatCubit, ChatState>(
       buildWhen: (_, current) =>
-          current is GetAllUsersLoading ||
-          current is GetAllUsersSuccess ||
-          current is GetAllUsersError,
+          current is GetChatsLoading ||
+          current is GetChatsSuccess ||
+          current is GetChatsError,
       builder: (context, state) {
-        if (state is GetAllUsersSuccess) {
+        if (state is GetChatsSuccess) {
           return state.users.isNotEmpty
               ? SliverPadding(
                   padding: EdgeInsets.symmetric(
@@ -41,11 +41,11 @@ class ChatsBlocBuilder extends StatelessWidget {
                     text: AppStrings.startChatting,
                   ),
                 );
-        } else if (state is GetAllUsersError) {
+        } else if (state is GetChatsError) {
           return SliverFillRemaining(
             child: CustomErrorWidget(
               error: state.error,
-              tryAgainOnPressed: () => context.read<UserCubit>().getAllUsers(),
+              tryAgainOnPressed: () => context.read<ChatCubit>().getChats(),
             ),
           );
         } else {

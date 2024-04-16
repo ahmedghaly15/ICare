@@ -26,7 +26,6 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
         state.whenOrNull(
           sendMessageSuccess: () {
             context.read<ChatCubit>().messageController.clear();
-            context.read<ChatCubit>().streamMessages(receiver.uId!);
           },
           sendMessageError: (error) {
             ShowICareDialog.showICareDialogError(context, error);
@@ -58,8 +57,7 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
                   context.read<ChatCubit>().messageImage != null,
           onPressed: context.read<ChatCubit>().newMessage(
                 context: context,
-                receiverId: receiver.uId!,
-                receiverName: receiver.name!,
+                receiver: receiver,
               ),
         );
       },
