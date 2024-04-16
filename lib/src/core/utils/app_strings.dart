@@ -157,4 +157,5 @@ class AppStrings {
   static const String levelTwoDescription = 'Learn the about geometric forms';
   static const String advancedLevel = 'Advanced Level';
   static const String advancedLevelDescription = 'Learn the Holy Quran';
+  static const String locked = 'Locked';
 }

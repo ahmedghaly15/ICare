@@ -79,4 +79,5 @@ class AppConstants {
     AppStrings.levelTwoDescription,
     AppStrings.advancedLevelDescription,
   ];
+  static double get levelOneItemHeight => SizeConfig.height * 0.2;
 }
