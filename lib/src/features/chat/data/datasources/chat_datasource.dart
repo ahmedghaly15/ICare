@@ -5,11 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
 
 abstract class ChatDatasource {
-  Future<QuerySnapshot<Map<String, dynamic>>> streamMessages(
-    String receiverId,
-  );
-
   Future<void> sendMessage(SendMessageParams params);
-
   Future<TaskSnapshot> uploadMessageImage(File? messageImage);
+  Future<QuerySnapshot<Map<String, dynamic>>> getChats();
 }

@@ -17,22 +17,18 @@ class ChatDatasourceImpl implements ChatDatasource {
     String receiverId, {
     String? senderId,
   }) {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection)
-        .doc(senderId ?? Helper.uId)
-        .collection(AppStrings.chatsCollection)
+    return _accessChatsCollection(senderId: senderId)
         .doc(receiverId)
         .collection(AppStrings.messagesCollection);
   }
 
-  @override
-  Future<QuerySnapshot<Map<String, dynamic>>> streamMessages(
-    String receiverId,
-  ) async {
-    return await _accessMessagesCollection(receiverId)
-        .orderBy(AppStrings.dateTime, descending: true)
-        .get();
+  CollectionReference<Map<String, dynamic>> _accessChatsCollection(
+      {String? senderId}) {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection)
+        .doc(senderId ?? Helper.uId)
+        .collection(AppStrings.chatsCollection);
   }
 
   @override
@@ -45,11 +41,12 @@ class ChatDatasourceImpl implements ChatDatasource {
     );
 
     await _settingUpSenderChat(SettingUpChatParams(
-      receiverId: params.receiverId!,
+      receiverId: params.receiver!.uId!,
       messageModel: message,
+      receiver: params.receiver,
     ));
     await _settingUpReceiverChat(SettingUpChatParams(
-      receiverId: params.receiverId!,
+      receiverId: params.receiver!.uId!,
       messageModel: message,
     ));
   }
@@ -57,24 +54,26 @@ class ChatDatasourceImpl implements ChatDatasource {
   Future<DocumentReference<Map<String, dynamic>>> _settingUpSenderChat(
     SettingUpChatParams params,
   ) async {
+    await _accessChatsCollection()
+        .doc(params.receiverId)
+        .set(params.receiver!.toJson());
     final document = await _accessMessagesCollection(params.receiverId)
         .add(params.messageModel.toJson());
-
     await document.update({'messageId': document.id});
-
     return document;
   }
 
   Future<DocumentReference<Map<String, dynamic>>> _settingUpReceiverChat(
     SettingUpChatParams params,
   ) async {
+    await _accessChatsCollection(senderId: params.receiverId)
+        .doc(Helper.uId)
+        .set(Helper.currentUser!.toJson());
     final document = await _accessMessagesCollection(
       Helper.uId!,
       senderId: params.receiverId,
     ).add(params.messageModel.toJson());
-
     await document.update({'messageId': document.id});
-
     return document;
   }
 
@@ -87,5 +86,10 @@ class ChatDatasourceImpl implements ChatDatasource {
           '${AppStrings.messagesCollection}/${Uri.file(messageImage!.path).pathSegments.last}',
         )
         .putFile(messageImage);
+  }
+
+  @override
+  Future<QuerySnapshot<Map<String, dynamic>>> getChats() async {
+    return await _accessChatsCollection().get();
   }
 }

@@ -151,9 +151,9 @@ class SetupDIForCubits {
     // ========== Chat feature ==========
     getIt.registerFactory<ChatCubit>(
       () => ChatCubit(
-        streamMessagesUseCase: getIt.get<StreamMessagesUseCase>(),
         sendMessageUseCase: getIt.get<SendMessageUseCase>(),
         uploadMessageImageUseCase: getIt.get<UploadMessageImageUseCase>(),
+        getChatsUseCase: getIt.get<GetChatsUseCase>(),
       ),
     );
 

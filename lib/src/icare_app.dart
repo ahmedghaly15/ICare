@@ -9,6 +9,7 @@ import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_themes.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubits/photos/photos_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
@@ -21,7 +22,6 @@ class ICareApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
-
     return ScreenUtilInit(
       designSize: const Size(360, 800),
       minTextAdapt: true,
@@ -42,6 +42,9 @@ class ICareApp extends StatelessWidget {
           ),
           BlocProvider<PhotosCubit>(
             create: (_) => getIt.get<PhotosCubit>(),
+          ),
+          BlocProvider<ChatCubit>(
+            create: (_) => getIt.get<ChatCubit>(),
           ),
         ],
         child: MaterialApp.router(

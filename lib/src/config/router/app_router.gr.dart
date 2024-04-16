@@ -49,11 +49,10 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<ChatDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(
-            child: ChatDetailsView(
+        child: ChatDetailsView(
           key: args.key,
           receiver: args.receiver,
-        )),
+        ),
       );
     },
     ChatsRoute.name: (routeData) {

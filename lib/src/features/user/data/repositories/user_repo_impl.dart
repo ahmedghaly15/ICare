@@ -40,7 +40,6 @@ class UserRepoImpl implements UserRepo {
     return executeAndHandleFirebaseErrors<List<ICareUser>>(
       () async {
         final query = await _userRemoteDataSource.getAllUsers();
-
         return query.docs.map((doc) => ICareUser.fromJson(doc.data())).toList();
       },
     );
