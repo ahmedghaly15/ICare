@@ -95,7 +95,10 @@ class SetupDIForRepos {
 
     // ========== Chat feature ==========
     getIt.registerLazySingleton<ChatRepo>(
-      () => ChatRepo(getIt.get<ChatDatasource>()),
+      () => ChatRepo(
+        getIt.get<ChatRemoteDatasource>(),
+        getIt.get<ChatLocalDatasource>(),
+      ),
     );
 
     // ========== Search feature ==========

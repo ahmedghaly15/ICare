@@ -94,8 +94,11 @@ class SetupDIForDatasource {
     );
 
     // ========== Chat feature ==========
-    getIt.registerLazySingleton<ChatDatasource>(
-      () => const ChatDatasourceImpl(),
+    getIt.registerLazySingleton<ChatRemoteDatasource>(
+      () => const ChatRemoteDatasourceImpl(),
+    );
+    getIt.registerLazySingleton<ChatLocalDatasource>(
+      () => const ChatsLocalDatasourceImpl(),
     );
 
     // ========== Search feature ==========

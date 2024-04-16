@@ -71,9 +71,7 @@ class ICareBotRepoImpl implements ICareBotRepo {
       try {
         final bookmarks =
             await _icareBotRemoteDatasource.retrieveICareBotBookmarks();
-
         await _icareBotLocalDatasource.cacheBookmarks(bookmarks);
-
         return ApiResult.success(bookmarks);
       } catch (error) {
         return ApiResult.error(ErrorHandler.handle(error));

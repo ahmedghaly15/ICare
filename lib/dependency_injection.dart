@@ -35,8 +35,8 @@ import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_
 import 'package:icare/src/features/baby_cry_predictor/data/repositories/baby_cry_predictor_repo.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
-import 'package:icare/src/features/chat/data/datasources/chat_datasource.dart';
-import 'package:icare/src/features/chat/data/datasources/chat_datasource_impl.dart';
+import 'package:icare/src/features/chat/data/datasources/chat_remote_datasource.dart';
+import 'package:icare/src/features/chat/data/datasources/chat_local_datasource.dart';
 import 'package:icare/src/features/chat/data/repositories/chat_repo.dart';
 import 'package:icare/src/features/chat/domain/usecases/send_message.dart';
 import 'package:icare/src/features/chat/domain/usecases/upload_message_image.dart';

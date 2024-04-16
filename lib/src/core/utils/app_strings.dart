@@ -142,4 +142,5 @@ class AppStrings {
   static const String changePassword = 'Change Password';
   static const String passwordUpdatedSuccessfully =
       'Password updated successfully';
+  static const String cachedChats = 'cachedChats';
 }
