@@ -34,6 +34,7 @@ class TrainingOnLevelOneAnimalView extends StatelessWidget
               sliver: const CustomSliverAppBar(title: ''),
             ),
             SliverFillRemaining(
+              hasScrollBody: false,
               child: LevelTrainingItem(data: data),
             ),
           ],
