@@ -5,7 +5,8 @@ part 'mark_response.g.dart';
 @JsonSerializable()
 class MarkResponse {
   final String status;
-  final int percent, next;
+  final double percent;
+  final int next;
 
   const MarkResponse({
     required this.status,

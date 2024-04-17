@@ -8,7 +8,7 @@ part of 'mark_response.dart';
 
 MarkResponse _$MarkResponseFromJson(Map<String, dynamic> json) => MarkResponse(
       status: json['status'] as String,
-      percent: json['percent'] as int,
+      percent: json['percent'] as double,
       next: json['next'] as int,
     );
 
