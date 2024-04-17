@@ -6,19 +6,23 @@ import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_text_button_with_icon.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_state.dart';
-import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/custom_stop_and_mark_audio_button.dart';
 
 class TrainButtonsBlocConsumer extends StatelessWidget {
   const TrainButtonsBlocConsumer({
     super.key,
-    required this.data,
+    required this.id,
+    required this.level,
+    required this.audioUrl,
+    required this.onMarkSuccess,
   });
 
-  final LevelOneTrainingResponse data;
+  final int id, level;
+  final String audioUrl;
+  final void Function(MarkResponse data) onMarkSuccess;
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +36,7 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
             markError: (error) {
               ShowICareDialog.showICareDialogError(context, error);
             },
-            markSuccess: (data) {
-              context
-                  .read<SpeechTherapyCubit>()
-                  .handleLevelOneMarkSuccess(context, data);
-            },
+            markSuccess: onMarkSuccess,
           );
         },
         buildWhen: (_, current) =>
@@ -56,7 +56,7 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
                     onPressed: () {
                       context
                           .read<LevelTrainingCubit>()
-                          .recordAndMark(data.id, data.level, context);
+                          .recordAndMark(id, level, context);
                     },
                     label: const Icon(
                       Icons.mic,
@@ -74,7 +74,7 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
                         onPressed: () {
                           context
                               .read<LevelTrainingCubit>()
-                              .playPauseAudio(data.details.audioUrl);
+                              .playPauseAudio(audioUrl);
                         },
                         label: Icon(
                           context.read<LevelTrainingCubit>().isPlaying
@@ -95,8 +95,8 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
             return const CustomCircularProgressIndicator();
           } else {
             return CustomStopAndMarkAudioButton(
-              id: data.id,
-              level: data.level,
+              id: id,
+              level: level,
             );
           }
         },

@@ -80,4 +80,5 @@ class AppConstants {
     AppStrings.advancedLevelDescription,
   ];
   static double get levelOneItemHeight => SizeConfig.height * 0.2;
+  static const double trainGradientContainerRadius = 50;
 }
