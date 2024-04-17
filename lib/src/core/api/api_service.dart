@@ -7,6 +7,7 @@ import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_mess
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -76,4 +77,10 @@ abstract class ApiService {
     @Query('level') required int level,
     @Part(name: 'audio_file') required File audioFile,
   });
+
+  @POST(EndPoints.score)
+  Future<ScoreResponse> score(
+    @Query('user_id') String userId,
+    @Query('level') int level,
+  );
 }

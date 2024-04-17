@@ -18,4 +18,5 @@ class EndPoints {
   static const String levelOneTraining =
       '${speechTherapyBaseUrl}level1/training/';
   static const String marking = '${speechTherapyBaseUrl}marking/';
+  static const String score = '${speechTherapyBaseUrl}score/';
 }
