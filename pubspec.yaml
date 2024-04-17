@@ -83,8 +83,8 @@ dependencies:
   carousel_slider: ^4.2.1
   # A Flutter plugin to play multiple audio files simultaneously
   audioplayers: ^6.0.0
-  # A UI library for easily adding audio waveforms to your apps, with several customization options.
-  flutter_audio_waveforms: ^1.2.1+8
+  # A highly customizable bar graph(or wave graph) with animation, color, radius, spaces, etc.
+  audio_wave: ^0.1.5
 
 
 dev_dependencies:

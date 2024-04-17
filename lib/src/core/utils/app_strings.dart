@@ -160,4 +160,5 @@ class AppStrings {
   static const String locked = 'Locked';
   static const String tryIt = 'Try it';
   static const String listen = 'Listen';
+  static const String pause = 'Pause';
 }
