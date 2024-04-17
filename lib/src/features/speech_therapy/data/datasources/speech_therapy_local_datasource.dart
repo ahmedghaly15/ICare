@@ -12,6 +12,8 @@ abstract class SpeechTherapyLocalDatasource {
 }
 
 class SpeechTherapyLocalDatasourceImpl implements SpeechTherapyLocalDatasource {
+  const SpeechTherapyLocalDatasourceImpl();
+
   @override
   Future<bool> cacheLevelOneTrainingData(
     List<LevelOneTrainingResponse> data,
