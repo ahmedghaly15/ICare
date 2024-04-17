@@ -324,7 +324,7 @@ class _ApiService implements ApiService {
     required int userId,
     required int id,
     required int level,
-    required File audio,
+    required File audioFile,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
@@ -337,8 +337,8 @@ class _ApiService implements ApiService {
     _data.files.add(MapEntry(
       'audio_file',
       MultipartFile.fromFileSync(
-        audio.path,
-        filename: audio.path.split(Platform.pathSeparator).last,
+        audioFile.path,
+        filename: audioFile.path.split(Platform.pathSeparator).last,
       ),
     ));
     final _result = await _dio

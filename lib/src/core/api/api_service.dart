@@ -71,9 +71,9 @@ abstract class ApiService {
   @POST(EndPoints.marking)
   @MultiPart()
   Future<MarkResponse> mark({
-    @Query('user_id') required int userId,
+    @Query('user_id') required String userId,
     @Query('id') required int id,
     @Query('level') required int level,
-    @Part(name: 'audio_file') required File audio,
+    @Part(name: 'audio_file') required File audioFile,
   });
 }

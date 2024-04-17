@@ -161,4 +161,5 @@ class AppStrings {
   static const String tryIt = 'Try it';
   static const String listen = 'Listen';
   static const String pause = 'Pause';
+  static const String cachedLevelOneTrainingData = 'cachedLevelOneTrainingData';
 }
