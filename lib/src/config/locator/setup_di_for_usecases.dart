@@ -135,6 +135,9 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<MarkUseCase>(
       () => MarkUseCase(getIt.get<SpeechTherapyRepo>()),
     );
+    getIt.registerLazySingleton<ScoreUseCase>(
+      () => ScoreUseCase(getIt.get<SpeechTherapyRepo>()),
+    );
 
     // ========== Comments feature ==========
     getIt.registerLazySingleton<StreamCommentsUseCase>(

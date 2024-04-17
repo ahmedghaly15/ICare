@@ -159,6 +159,9 @@ class SetupDIForCubits {
     getIt.registerFactory<LevelTrainingCubit>(
       () => LevelTrainingCubit(getIt.get<MarkUseCase>()),
     );
+    getIt.registerFactory<ScoreCubit>(
+      () => ScoreCubit(getIt.get<ScoreUseCase>()),
+    );
 
     // ========== Profile feature ==========
     getIt.registerFactory<ProfileCubit>(

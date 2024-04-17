@@ -232,9 +232,14 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     ScoreRoute.name: (routeData) {
+      final args = routeData.argsAs<ScoreRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ScoreView(),
+        child: WrappedRoute(
+            child: ScoreView(
+          key: args.key,
+          level: args.level,
+        )),
       );
     },
     SearchUsersRoute.name: (routeData) {
@@ -916,16 +921,39 @@ class RegisterRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [ScoreView]
-class ScoreRoute extends PageRouteInfo<void> {
-  const ScoreRoute({List<PageRouteInfo>? children})
-      : super(
+class ScoreRoute extends PageRouteInfo<ScoreRouteArgs> {
+  ScoreRoute({
+    Key? key,
+    required int level,
+    List<PageRouteInfo>? children,
+  }) : super(
           ScoreRoute.name,
+          args: ScoreRouteArgs(
+            key: key,
+            level: level,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'ScoreRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<ScoreRouteArgs> page = PageInfo<ScoreRouteArgs>(name);
+}
+
+class ScoreRouteArgs {
+  const ScoreRouteArgs({
+    this.key,
+    required this.level,
+  });
+
+  final Key? key;
+
+  final int level;
+
+  @override
+  String toString() {
+    return 'ScoreRouteArgs{key: $key, level: $level}';
+  }
 }
 
 /// generated route for
