@@ -20,6 +20,8 @@ platform :android do
       - Finish Change password (logic & UI) ✅
       - Handle navigation to other users profiles ✅
       - Fix Like Bug ✅
+      - Finish Level one in Speech Therapy feature (logic & UI) ✅
+      - Finish Score screen in Speech Therapy feature (logic & UI) ✅
   """
   )
   end

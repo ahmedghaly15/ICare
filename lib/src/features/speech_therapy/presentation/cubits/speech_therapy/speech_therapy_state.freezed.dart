@@ -26,6 +26,9 @@ mixin _$SpeechTherapyState<T> {
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +41,9 @@ mixin _$SpeechTherapyState<T> {
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +56,9 @@ mixin _$SpeechTherapyState<T> {
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +77,9 @@ mixin _$SpeechTherapyState<T> {
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,6 +96,9 @@ mixin _$SpeechTherapyState<T> {
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -98,6 +113,9 @@ mixin _$SpeechTherapyState<T> {
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,6 +189,9 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) {
     return initial();
   }
@@ -186,6 +207,9 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) {
     return initial?.call();
   }
@@ -201,6 +225,9 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -225,6 +252,9 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) {
     return initial(this);
   }
@@ -244,6 +274,9 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) {
     return initial?.call(this);
   }
@@ -261,6 +294,9 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -325,6 +361,9 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) {
     return getLevelOneTrainingDataLoading();
   }
@@ -340,6 +379,9 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) {
     return getLevelOneTrainingDataLoading?.call();
   }
@@ -355,6 +397,9 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataLoading != null) {
@@ -379,6 +424,9 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) {
     return getLevelOneTrainingDataLoading(this);
   }
@@ -398,6 +446,9 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) {
     return getLevelOneTrainingDataLoading?.call(this);
   }
@@ -415,6 +466,9 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataLoading != null) {
@@ -516,6 +570,9 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) {
     return getLevelOneTrainingDataSuccess(data);
   }
@@ -531,6 +588,9 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) {
     return getLevelOneTrainingDataSuccess?.call(data);
   }
@@ -546,6 +606,9 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataSuccess != null) {
@@ -570,6 +633,9 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) {
     return getLevelOneTrainingDataSuccess(this);
   }
@@ -589,6 +655,9 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) {
     return getLevelOneTrainingDataSuccess?.call(this);
   }
@@ -606,6 +675,9 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataSuccess != null) {
@@ -706,6 +778,9 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) {
     return getLevelOneTrainingDataError(error);
   }
@@ -721,6 +796,9 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) {
     return getLevelOneTrainingDataError?.call(error);
   }
@@ -736,6 +814,9 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataError != null) {
@@ -760,6 +841,9 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) {
     return getLevelOneTrainingDataError(this);
   }
@@ -779,6 +863,9 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) {
     return getLevelOneTrainingDataError?.call(this);
   }
@@ -796,6 +883,9 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataError != null) {
@@ -867,6 +957,9 @@ class _$MarkLevelOneExamLoadingImpl<T> implements MarkLevelOneExamLoading<T> {
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) {
     return markLevelOneExamLoading();
   }
@@ -882,6 +975,9 @@ class _$MarkLevelOneExamLoadingImpl<T> implements MarkLevelOneExamLoading<T> {
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) {
     return markLevelOneExamLoading?.call();
   }
@@ -897,6 +993,9 @@ class _$MarkLevelOneExamLoadingImpl<T> implements MarkLevelOneExamLoading<T> {
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) {
     if (markLevelOneExamLoading != null) {
@@ -921,6 +1020,9 @@ class _$MarkLevelOneExamLoadingImpl<T> implements MarkLevelOneExamLoading<T> {
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) {
     return markLevelOneExamLoading(this);
   }
@@ -940,6 +1042,9 @@ class _$MarkLevelOneExamLoadingImpl<T> implements MarkLevelOneExamLoading<T> {
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) {
     return markLevelOneExamLoading?.call(this);
   }
@@ -957,6 +1062,9 @@ class _$MarkLevelOneExamLoadingImpl<T> implements MarkLevelOneExamLoading<T> {
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) {
     if (markLevelOneExamLoading != null) {
@@ -1046,6 +1154,9 @@ class _$MarkLevelOneExamSuccessImpl<T> implements MarkLevelOneExamSuccess<T> {
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) {
     return markLevelOneExamSuccess(data);
   }
@@ -1061,6 +1172,9 @@ class _$MarkLevelOneExamSuccessImpl<T> implements MarkLevelOneExamSuccess<T> {
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) {
     return markLevelOneExamSuccess?.call(data);
   }
@@ -1076,6 +1190,9 @@ class _$MarkLevelOneExamSuccessImpl<T> implements MarkLevelOneExamSuccess<T> {
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) {
     if (markLevelOneExamSuccess != null) {
@@ -1100,6 +1217,9 @@ class _$MarkLevelOneExamSuccessImpl<T> implements MarkLevelOneExamSuccess<T> {
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) {
     return markLevelOneExamSuccess(this);
   }
@@ -1119,6 +1239,9 @@ class _$MarkLevelOneExamSuccessImpl<T> implements MarkLevelOneExamSuccess<T> {
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) {
     return markLevelOneExamSuccess?.call(this);
   }
@@ -1136,6 +1259,9 @@ class _$MarkLevelOneExamSuccessImpl<T> implements MarkLevelOneExamSuccess<T> {
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) {
     if (markLevelOneExamSuccess != null) {
@@ -1231,6 +1357,9 @@ class _$MarkLevelOneExamErrorImpl<T> implements MarkLevelOneExamError<T> {
     required TResult Function() markLevelOneExamLoading,
     required TResult Function(MarkResponse data) markLevelOneExamSuccess,
     required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
   }) {
     return markLevelOneExamError(error);
   }
@@ -1246,6 +1375,9 @@ class _$MarkLevelOneExamErrorImpl<T> implements MarkLevelOneExamError<T> {
     TResult? Function()? markLevelOneExamLoading,
     TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
   }) {
     return markLevelOneExamError?.call(error);
   }
@@ -1261,6 +1393,9 @@ class _$MarkLevelOneExamErrorImpl<T> implements MarkLevelOneExamError<T> {
     TResult Function()? markLevelOneExamLoading,
     TResult Function(MarkResponse data)? markLevelOneExamSuccess,
     TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
     required TResult orElse(),
   }) {
     if (markLevelOneExamError != null) {
@@ -1285,6 +1420,9 @@ class _$MarkLevelOneExamErrorImpl<T> implements MarkLevelOneExamError<T> {
         markLevelOneExamSuccess,
     required TResult Function(MarkLevelOneExamError<T> value)
         markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
   }) {
     return markLevelOneExamError(this);
   }
@@ -1304,6 +1442,9 @@ class _$MarkLevelOneExamErrorImpl<T> implements MarkLevelOneExamError<T> {
     TResult? Function(MarkLevelOneExamSuccess<T> value)?
         markLevelOneExamSuccess,
     TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
   }) {
     return markLevelOneExamError?.call(this);
   }
@@ -1321,6 +1462,9 @@ class _$MarkLevelOneExamErrorImpl<T> implements MarkLevelOneExamError<T> {
     TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
     TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
     TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
     required TResult orElse(),
   }) {
     if (markLevelOneExamError != null) {
@@ -1338,4 +1482,571 @@ abstract class MarkLevelOneExamError<T> implements SpeechTherapyState<T> {
   @JsonKey(ignore: true)
   _$$MarkLevelOneExamErrorImplCopyWith<T, _$MarkLevelOneExamErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetScoreLoadingImplCopyWith<T, $Res> {
+  factory _$$GetScoreLoadingImplCopyWith(_$GetScoreLoadingImpl<T> value,
+          $Res Function(_$GetScoreLoadingImpl<T>) then) =
+      __$$GetScoreLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetScoreLoadingImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res, _$GetScoreLoadingImpl<T>>
+    implements _$$GetScoreLoadingImplCopyWith<T, $Res> {
+  __$$GetScoreLoadingImplCopyWithImpl(_$GetScoreLoadingImpl<T> _value,
+      $Res Function(_$GetScoreLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
+  const _$GetScoreLoadingImpl();
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getScoreLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetScoreLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() markLevelOneExamLoading,
+    required TResult Function(MarkResponse data) markLevelOneExamSuccess,
+    required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+  }) {
+    return getScoreLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? markLevelOneExamLoading,
+    TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
+    TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+  }) {
+    return getScoreLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? markLevelOneExamLoading,
+    TResult Function(MarkResponse data)? markLevelOneExamSuccess,
+    TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    required TResult orElse(),
+  }) {
+    if (getScoreLoading != null) {
+      return getScoreLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(MarkLevelOneExamLoading<T> value)
+        markLevelOneExamLoading,
+    required TResult Function(MarkLevelOneExamSuccess<T> value)
+        markLevelOneExamSuccess,
+    required TResult Function(MarkLevelOneExamError<T> value)
+        markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+  }) {
+    return getScoreLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(MarkLevelOneExamLoading<T> value)?
+        markLevelOneExamLoading,
+    TResult? Function(MarkLevelOneExamSuccess<T> value)?
+        markLevelOneExamSuccess,
+    TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+  }) {
+    return getScoreLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
+    TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
+    TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    required TResult orElse(),
+  }) {
+    if (getScoreLoading != null) {
+      return getScoreLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetScoreLoading<T> implements SpeechTherapyState<T> {
+  const factory GetScoreLoading() = _$GetScoreLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetScoreSuccessImplCopyWith<T, $Res> {
+  factory _$$GetScoreSuccessImplCopyWith(_$GetScoreSuccessImpl<T> value,
+          $Res Function(_$GetScoreSuccessImpl<T>) then) =
+      __$$GetScoreSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ScoreResponse data});
+}
+
+/// @nodoc
+class __$$GetScoreSuccessImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res, _$GetScoreSuccessImpl<T>>
+    implements _$$GetScoreSuccessImplCopyWith<T, $Res> {
+  __$$GetScoreSuccessImplCopyWithImpl(_$GetScoreSuccessImpl<T> _value,
+      $Res Function(_$GetScoreSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$GetScoreSuccessImpl<T>(
+      freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as ScoreResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
+  const _$GetScoreSuccessImpl(this.data);
+
+  @override
+  final ScoreResponse data;
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getScoreSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetScoreSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other.data, data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetScoreSuccessImplCopyWith<T, _$GetScoreSuccessImpl<T>> get copyWith =>
+      __$$GetScoreSuccessImplCopyWithImpl<T, _$GetScoreSuccessImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() markLevelOneExamLoading,
+    required TResult Function(MarkResponse data) markLevelOneExamSuccess,
+    required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+  }) {
+    return getScoreSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? markLevelOneExamLoading,
+    TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
+    TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+  }) {
+    return getScoreSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? markLevelOneExamLoading,
+    TResult Function(MarkResponse data)? markLevelOneExamSuccess,
+    TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    required TResult orElse(),
+  }) {
+    if (getScoreSuccess != null) {
+      return getScoreSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(MarkLevelOneExamLoading<T> value)
+        markLevelOneExamLoading,
+    required TResult Function(MarkLevelOneExamSuccess<T> value)
+        markLevelOneExamSuccess,
+    required TResult Function(MarkLevelOneExamError<T> value)
+        markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+  }) {
+    return getScoreSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(MarkLevelOneExamLoading<T> value)?
+        markLevelOneExamLoading,
+    TResult? Function(MarkLevelOneExamSuccess<T> value)?
+        markLevelOneExamSuccess,
+    TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+  }) {
+    return getScoreSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
+    TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
+    TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    required TResult orElse(),
+  }) {
+    if (getScoreSuccess != null) {
+      return getScoreSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetScoreSuccess<T> implements SpeechTherapyState<T> {
+  const factory GetScoreSuccess(final ScoreResponse data) =
+      _$GetScoreSuccessImpl<T>;
+
+  ScoreResponse get data;
+  @JsonKey(ignore: true)
+  _$$GetScoreSuccessImplCopyWith<T, _$GetScoreSuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetScoreErrorImplCopyWith<T, $Res> {
+  factory _$$GetScoreErrorImplCopyWith(_$GetScoreErrorImpl<T> value,
+          $Res Function(_$GetScoreErrorImpl<T>) then) =
+      __$$GetScoreErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetScoreErrorImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res, _$GetScoreErrorImpl<T>>
+    implements _$$GetScoreErrorImplCopyWith<T, $Res> {
+  __$$GetScoreErrorImplCopyWithImpl(_$GetScoreErrorImpl<T> _value,
+      $Res Function(_$GetScoreErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetScoreErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
+  const _$GetScoreErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getScoreError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetScoreErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetScoreErrorImplCopyWith<T, _$GetScoreErrorImpl<T>> get copyWith =>
+      __$$GetScoreErrorImplCopyWithImpl<T, _$GetScoreErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() markLevelOneExamLoading,
+    required TResult Function(MarkResponse data) markLevelOneExamSuccess,
+    required TResult Function(String error) markLevelOneExamError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+  }) {
+    return getScoreError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? markLevelOneExamLoading,
+    TResult? Function(MarkResponse data)? markLevelOneExamSuccess,
+    TResult? Function(String error)? markLevelOneExamError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+  }) {
+    return getScoreError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? markLevelOneExamLoading,
+    TResult Function(MarkResponse data)? markLevelOneExamSuccess,
+    TResult Function(String error)? markLevelOneExamError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    required TResult orElse(),
+  }) {
+    if (getScoreError != null) {
+      return getScoreError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(MarkLevelOneExamLoading<T> value)
+        markLevelOneExamLoading,
+    required TResult Function(MarkLevelOneExamSuccess<T> value)
+        markLevelOneExamSuccess,
+    required TResult Function(MarkLevelOneExamError<T> value)
+        markLevelOneExamError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+  }) {
+    return getScoreError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(MarkLevelOneExamLoading<T> value)?
+        markLevelOneExamLoading,
+    TResult? Function(MarkLevelOneExamSuccess<T> value)?
+        markLevelOneExamSuccess,
+    TResult? Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+  }) {
+    return getScoreError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(MarkLevelOneExamLoading<T> value)? markLevelOneExamLoading,
+    TResult Function(MarkLevelOneExamSuccess<T> value)? markLevelOneExamSuccess,
+    TResult Function(MarkLevelOneExamError<T> value)? markLevelOneExamError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    required TResult orElse(),
+  }) {
+    if (getScoreError != null) {
+      return getScoreError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetScoreError<T> implements SpeechTherapyState<T> {
+  const factory GetScoreError(final String error) = _$GetScoreErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetScoreErrorImplCopyWith<T, _$GetScoreErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
