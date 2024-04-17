@@ -7,18 +7,21 @@ class GradientColorfulContainer extends StatelessWidget {
     super.key,
     required this.child,
     this.radiusVal = 25,
+    this.padding,
   });
 
   final Widget child;
   final double radiusVal;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 15.w,
-        vertical: 18.h,
-      ),
+      padding: padding ??
+          EdgeInsets.symmetric(
+            horizontal: 15.w,
+            vertical: 18.h,
+          ),
       margin: EdgeInsets.symmetric(
         horizontal: 16.w,
         vertical: 18.h,

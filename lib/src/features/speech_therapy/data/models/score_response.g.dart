@@ -17,7 +17,7 @@ ScoreResponse _$ScoreResponseFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ScoreResponseToJson(ScoreResponse instance) =>
     <String, dynamic>{
       'level': instance.level,
-      'sub_levels': instance.subLevels,
+      'sub_levels': instance.subLevels.map((e) => e.toJson()).toList(),
     };
 
 ScoreDetail _$ScoreDetailFromJson(Map<String, dynamic> json) => ScoreDetail(
