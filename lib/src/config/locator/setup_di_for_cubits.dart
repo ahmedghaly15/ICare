@@ -114,11 +114,7 @@ class SetupDIForCubits {
 
     // Speech Therapy feature
     getIt.registerFactory<SpeechTherapyCubit>(
-      () => SpeechTherapyCubit(
-        getLevelOneTrainingDataUseCase:
-            getIt.get<GetLevelOneTrainingDataUseCase>(),
-        markLevelOneUseCase: getIt.get<MarkLevelOneUseCase>(),
-      ),
+      () => SpeechTherapyCubit(getIt.get<GetLevelOneTrainingDataUseCase>()),
     );
 
     // ========== Comments feature ==========
@@ -161,7 +157,7 @@ class SetupDIForCubits {
       () => SearchCubit(getIt.get<SearchUsersUseCase>()),
     );
     getIt.registerFactory<LevelTrainingCubit>(
-      () => LevelTrainingCubit(),
+      () => LevelTrainingCubit(getIt.get<MarkUseCase>()),
     );
 
     // ========== Profile feature ==========

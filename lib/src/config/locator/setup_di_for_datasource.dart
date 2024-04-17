@@ -84,6 +84,9 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<SpeechTherapyRemoteDatasource>(
       () => SpeechTherapyRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
+    getIt.registerLazySingleton<SpeechTherapyLocalDatasource>(
+      () => const SpeechTherapyLocalDatasourceImpl(),
+    );
 
     // ========== Comments feature ==========
     getIt.registerLazySingleton<CommentsRemoteDatasource>(

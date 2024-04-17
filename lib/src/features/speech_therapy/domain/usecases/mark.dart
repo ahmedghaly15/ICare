@@ -4,10 +4,10 @@ import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/domain/repositories/speech_therapy_repo.dart';
 
-class MarkLevelOneUseCase implements BaseUseCase<MarkResponse, MarkParams> {
+class MarkUseCase implements BaseUseCase<MarkResponse, MarkParams> {
   final SpeechTherapyRepo _speechTherapyRepo;
 
-  const MarkLevelOneUseCase(this._speechTherapyRepo);
+  const MarkUseCase(this._speechTherapyRepo);
 
   @override
   Future<ApiResult<MarkResponse>> call(
