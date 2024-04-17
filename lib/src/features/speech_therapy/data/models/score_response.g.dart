@@ -24,7 +24,7 @@ ScoreDetail _$ScoreDetailFromJson(Map<String, dynamic> json) => ScoreDetail(
       subLevelNameAr: json['sub_level_name_ar'] as String?,
       subLevelNameEn: json['sub_level_name_en'] as String?,
       subLevelImageUrl: json['sub_level_image_url'] as String?,
-      subLevelPercent: json['sub_level_percent'] as double,
+      subLevelPercent: (json['sub_level_percent'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$ScoreDetailToJson(ScoreDetail instance) =>

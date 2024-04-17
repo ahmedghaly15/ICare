@@ -81,7 +81,7 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
     });
     getIt
         .get<CacheHelper>()
-        .removeData(key: AppStrings.cachedScoreData)
+        .removeData(key: '${AppStrings.cachedScoreData}level1')
         .then((value) {
       context.read<SpeechTherapyCubit>().getScore(1);
     });

@@ -11,9 +11,9 @@ abstract class SpeechTherapyLocalDatasource {
   Future<bool> cacheLevelOneTrainingData(List<LevelOneTrainingResponse> data);
   String? levelOneTrainingDataJson();
   List<LevelOneTrainingResponse> retrieveCachedLevelOneTrainingData();
-  Future<bool> cacheScoreData(ScoreResponse score);
-  String? cachedScoreDataJson();
-  ScoreResponse retrieveCachedScoreData();
+  Future<bool> cacheScoreData(ScoreResponse score, int level);
+  String? cachedScoreDataJson(int level);
+  ScoreResponse retrieveCachedScoreData(int level);
   Future<bool> cacheLevelTwoTrainingData(List<LevelTwoTrainingResponse> data);
   String? levelTwoTrainingDataJson();
   List<LevelTwoTrainingResponse> retrieveCachedLevelTwoTrainingData();
@@ -49,23 +49,23 @@ class SpeechTherapyLocalDatasourceImpl implements SpeechTherapyLocalDatasource {
   }
 
   @override
-  Future<bool> cacheScoreData(ScoreResponse score) async {
+  Future<bool> cacheScoreData(ScoreResponse score, int level) async {
     return await getIt.get<CacheHelper>().saveData(
-          key: AppStrings.cachedScoreData,
+          key: '${AppStrings.cachedScoreData}level$level',
           value: json.encode(score.toJson()),
         );
   }
 
   @override
-  String? cachedScoreDataJson() {
+  String? cachedScoreDataJson(int level) {
     return getIt
         .get<CacheHelper>()
-        .getStringData(key: AppStrings.cachedScoreData);
+        .getStringData(key: '${AppStrings.cachedScoreData}level$level');
   }
 
   @override
-  ScoreResponse retrieveCachedScoreData() {
-    return ScoreResponse.fromJson(json.decode(cachedScoreDataJson()!));
+  ScoreResponse retrieveCachedScoreData(int level) {
+    return ScoreResponse.fromJson(json.decode(cachedScoreDataJson(level)!));
   }
 
   @override
