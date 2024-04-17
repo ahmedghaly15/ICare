@@ -10,7 +10,7 @@ MarkResponse _$MarkResponseFromJson(Map<String, dynamic> json) => MarkResponse(
       status: json['status'] as String,
       imageUrl: json['image_url'] as String,
       percent: (json['percent'] as num).toDouble(),
-      next: json['next'] as int,
+      next: json['next'] as int?,
     );
 
 Map<String, dynamic> _$MarkResponseToJson(MarkResponse instance) =>

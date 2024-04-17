@@ -11,6 +11,7 @@ class CustomAnimatedDialog extends StatelessWidget {
     this.backgroundColor = Colors.white,
     this.isBlurred = true,
     this.appLogoBoxShadow,
+    this.padding,
   });
 
   final Animation<double> animation1;
@@ -18,6 +19,7 @@ class CustomAnimatedDialog extends StatelessWidget {
   final Color backgroundColor;
   final bool isBlurred;
   final List<BoxShadow>? appLogoBoxShadow;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class CustomAnimatedDialog extends StatelessWidget {
                       ICareDialogContent(
                         backgroundColor: backgroundColor,
                         appLogoBoxShadow: appLogoBoxShadow,
+                        padding: padding,
                         child: child,
                       ),
                     ],
@@ -50,6 +53,7 @@ class CustomAnimatedDialog extends StatelessWidget {
                 : ICareDialogContent(
                     backgroundColor: backgroundColor,
                     appLogoBoxShadow: appLogoBoxShadow,
+                    padding: padding,
                     child: child,
                   ),
           ),

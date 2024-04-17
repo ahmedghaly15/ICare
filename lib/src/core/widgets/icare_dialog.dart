@@ -17,6 +17,7 @@ class ShowICareDialog {
     bool isBlurred = true,
     String anotherTitle = '',
     Widget? child,
+    EdgeInsetsGeometry? padding,
   }) async {
     return await showGeneralDialog(
       context: context,
@@ -29,12 +30,14 @@ class ShowICareDialog {
             ? ICareDialog(
                 animation1: animation1,
                 isBlurred: isBlurred,
+                padding: padding,
                 title: _chooseDialogTitle(state!),
                 message: message,
               )
             : ICareDialog(
                 animation1: animation1,
                 isBlurred: isBlurred,
+                padding: padding,
                 child: child,
               );
       },
@@ -79,6 +82,7 @@ class ICareDialog extends StatelessWidget {
     this.message,
     this.isBlurred = true,
     this.child,
+    this.padding,
   });
 
   final Animation<double> animation1;
@@ -86,12 +90,14 @@ class ICareDialog extends StatelessWidget {
   final String? message;
   final bool isBlurred;
   final Widget? child;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
     return CustomAnimatedDialog(
       animation1: animation1,
       isBlurred: isBlurred,
+      padding: padding,
       child: child ??
           Column(
             mainAxisSize: MainAxisSize.min,

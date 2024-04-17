@@ -8,7 +8,7 @@ class MarkResponse {
   @JsonKey(name: 'image_url')
   final String imageUrl;
   final double percent;
-  final int next;
+  final int? next;
 
   const MarkResponse({
     required this.status,

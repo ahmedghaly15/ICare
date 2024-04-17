@@ -11,6 +11,7 @@ class ICareDialogContent extends StatelessWidget {
     this.boxShadow,
     this.gradient,
     this.appLogoBoxShadow,
+    this.padding,
   });
 
   final Color? backgroundColor;
@@ -18,6 +19,7 @@ class ICareDialogContent extends StatelessWidget {
   final List<BoxShadow>? boxShadow;
   final Gradient? gradient;
   final List<BoxShadow>? appLogoBoxShadow;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +28,13 @@ class ICareDialogContent extends StatelessWidget {
       alignment: AlignmentDirectional.center,
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(
-            right: 16.w,
-            left: 16.w,
-            top: 24.h,
-            bottom: 8.h,
-          ),
+          padding: padding ??
+              EdgeInsets.only(
+                right: 16.w,
+                left: 16.w,
+                top: 24.h,
+                bottom: 8.h,
+              ),
           margin: EdgeInsets.symmetric(horizontal: 24.w),
           decoration: BoxDecoration(
             color: backgroundColor,
