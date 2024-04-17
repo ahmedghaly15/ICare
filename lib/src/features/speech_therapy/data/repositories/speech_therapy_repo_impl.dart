@@ -7,6 +7,8 @@ import 'package:icare/src/features/speech_therapy/data/datasources/speech_therap
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
+import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
 import 'package:icare/src/features/speech_therapy/domain/repositories/speech_therapy_repo.dart';
 
 class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
@@ -48,6 +50,13 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
   ) {
     return executeAndHandleErrors<MarkResponse>(
       () async => await _speechTherapyRemoteDatasource.markLevelOneExam(params),
+    );
+  }
+
+  @override
+  Future<ApiResult<ScoreResponse>> score(ScoreParams params) {
+    return executeAndHandleErrors<ScoreResponse>(
+      () async => await _speechTherapyRemoteDatasource.score(params),
     );
   }
 }
