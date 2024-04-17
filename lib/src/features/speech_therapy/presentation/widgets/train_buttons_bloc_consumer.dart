@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_text_button_with_icon.dart';
@@ -35,14 +33,9 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
               ShowICareDialog.showICareDialogError(context, error);
             },
             markSuccess: (data) {
-              getIt
-                  .get<CacheHelper>()
-                  .removeData(key: AppStrings.cachedLevelOneTrainingData)
-                  .then((value) {
-                if (value) {
-                  context.read<SpeechTherapyCubit>().getLevelOneTrainingData();
-                }
-              });
+              context
+                  .read<SpeechTherapyCubit>()
+                  .handleLevelOneMarkSuccess(context, data);
             },
           );
         },

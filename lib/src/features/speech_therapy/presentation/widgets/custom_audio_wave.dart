@@ -18,6 +18,7 @@ class CustomAudioWave extends StatelessWidget {
       width: width?.w ?? 48.w,
       spacing: 2.5,
       animationLoop: 1000,
+      beatRate: const Duration(milliseconds: 100),
       bars: [
         AudioWaveBar(heightFactor: 0.7, color: Colors.white),
         AudioWaveBar(heightFactor: 1, color: Colors.white),

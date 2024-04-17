@@ -1,9 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/score.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_state.dart';
+import 'package:icare/src/features/speech_therapy/presentation/widgets/mark_success_dialog.dart';
 
 class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
   final GetLevelOneTrainingDataUseCase _getLevelOneTrainingDataUseCase;
@@ -37,5 +44,30 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
       error: (error) => emit(
           SpeechTherapyState.getScoreError(error.apiErrorModel.error ?? '')),
     );
+  }
+
+  void handleLevelOneMarkSuccess(BuildContext context, MarkResponse data) {
+    ShowICareDialog.show(
+      context: context,
+      padding: EdgeInsets.zero,
+      child: MarkSuccessDialog(
+        status: data.status,
+        imageUrl: data.imageUrl,
+      ),
+    );
+    getIt
+        .get<CacheHelper>()
+        .removeData(key: AppStrings.cachedLevelOneTrainingData)
+        .then((value) {
+      if (value) {
+        context.read<SpeechTherapyCubit>().getLevelOneTrainingData();
+      }
+    });
+    getIt
+        .get<CacheHelper>()
+        .removeData(key: AppStrings.cachedScoreData)
+        .then((value) {
+      context.read<SpeechTherapyCubit>().getScore(1);
+    });
   }
 }
