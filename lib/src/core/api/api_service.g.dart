@@ -321,7 +321,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<MarkResponse> mark({
-    required int userId,
+    required String userId,
     required int id,
     required int level,
     required File audioFile,

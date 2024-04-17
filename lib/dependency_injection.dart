@@ -7,6 +7,7 @@ import 'package:get_it/get_it.dart';
 import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_password.dart';
 import 'package:icare/src/features/profile/domain/usecases/upload_new_profile_image.dart';
+import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_local_datasource.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -113,7 +114,7 @@ import 'package:icare/src/features/speech_therapy/data/datasources/speech_therap
 import 'package:icare/src/features/speech_therapy/data/repositories/speech_therapy_repo_impl.dart';
 import 'package:icare/src/features/speech_therapy/domain/repositories/speech_therapy_repo.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
-import 'package:icare/src/features/speech_therapy/domain/usecases/mark_level_one.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/mark.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource.dart';
 import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource_impl.dart';

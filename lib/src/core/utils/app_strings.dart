@@ -162,4 +162,6 @@ class AppStrings {
   static const String listen = 'Listen';
   static const String pause = 'Pause';
   static const String cachedLevelOneTrainingData = 'cachedLevelOneTrainingData';
+  static const String youAreAlmostThere =
+      "You're almost there! Pass the previous tests to unlock this new challenge.";
 }
