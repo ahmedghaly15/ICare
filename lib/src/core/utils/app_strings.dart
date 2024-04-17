@@ -151,10 +151,9 @@ class AppStrings {
       "It's time to start following people and growing your network.";
   static const String speechTherapy = 'Speech Therapy';
   static const String levelOne = 'Level One';
-  static const String levelOneDescription =
-      'Learn the name and the shape of animal';
+  static const String levelOneDescription = 'Learn animal names';
   static const String levelTwo = 'Level Two';
-  static const String levelTwoDescription = 'Learn the about geometric forms';
+  static const String levelTwoDescription = 'Learn geometric forms';
   static const String advancedLevel = 'Advanced Level';
   static const String advancedLevelDescription = 'Learn the Holy Quran';
   static const String locked = 'Locked';

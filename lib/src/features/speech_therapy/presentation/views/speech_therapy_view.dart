@@ -10,8 +10,6 @@ import 'package:icare/src/features/speech_therapy/presentation/widgets/levels_li
 class SpeechTherapyView extends StatelessWidget {
   const SpeechTherapyView({super.key});
 
-  // TODO: remember to build Start, Score buttons in Level One screen
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

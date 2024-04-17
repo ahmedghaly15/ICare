@@ -38,10 +38,7 @@ class SpeechTherapyLevelItem extends StatelessWidget {
               left: 0.w,
               right: SizeConfig.width * 0.25,
               child: Container(
-                padding: EdgeInsets.symmetric(
-                  vertical: 25.h,
-                  horizontal: 8.w,
-                ),
+                padding: EdgeInsets.only(left: 8.w, right: 16.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.horizontal(
                     left: Radius.circular(50.r),
@@ -56,23 +53,26 @@ class SpeechTherapyLevelItem extends StatelessWidget {
                     end: Alignment.centerRight,
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      title,
-                      style: AppTextStyles.textStyle25Bold(context).copyWith(
-                        color: AppColors.deepBrown,
+                child: FittedBox(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        title,
+                        style: AppTextStyles.textStyle25Bold(context).copyWith(
+                          color: AppColors.deepBrown,
+                        ),
                       ),
-                    ),
-                    MySizedBox.height10,
-                    Text(
-                      description,
-                      style: AppTextStyles.textStyle18Regular(context).copyWith(
-                        color: Colors.white,
+                      MySizedBox.height10,
+                      Text(
+                        description,
+                        style:
+                            AppTextStyles.textStyle18Regular(context).copyWith(
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
