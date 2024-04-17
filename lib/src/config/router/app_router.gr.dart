@@ -162,6 +162,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const LevelOneView(),
       );
     },
+    LevelTwoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LevelTwoView(),
+      );
+    },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -704,6 +710,20 @@ class LevelOneRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'LevelOneRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LevelTwoView]
+class LevelTwoRoute extends PageRouteInfo<void> {
+  const LevelTwoRoute({List<PageRouteInfo>? children})
+      : super(
+          LevelTwoRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LevelTwoRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

@@ -74,6 +74,7 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(page: LevelOneRoute.page),
     _buildCustomRoute(page: TrainingOnLevelOneAnimalRoute.page),
     _buildCustomRoute(page: ScoreRoute.page),
+    _buildCustomRoute(page: LevelTwoRoute.page),
   ];
 }
 

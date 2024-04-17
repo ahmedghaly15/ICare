@@ -116,6 +116,7 @@ class SetupDIForCubits {
     getIt.registerFactory<SpeechTherapyCubit>(
       () => SpeechTherapyCubit(
         getIt.get<GetLevelOneTrainingDataUseCase>(),
+        getIt.get<GetLevelTwoTrainingDataUseCase>(),
         getIt.get<ScoreUseCase>(),
       ),
     );

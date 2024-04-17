@@ -32,6 +32,7 @@ import 'package:icare/src/features/profile/presentation/views/user_profile_view.
 import 'package:icare/src/features/search/presentation/views/search_users_view.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/level_one_view.dart';
+import 'package:icare/src/features/speech_therapy/presentation/views/level_two_view.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/score_view.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/speech_therapy_view.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/training_on_level_one_animal_view.dart';
