@@ -62,8 +62,9 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
     );
   }
 
-  void handleLevelOneMarkSuccess(BuildContext context, MarkResponse data) {
-    ShowICareDialog.show(
+  Future<dynamic> _showMarkSuccessDialog(
+      BuildContext context, MarkResponse data) {
+    return ShowICareDialog.show(
       context: context,
       padding: EdgeInsets.zero,
       child: MarkSuccessDialog(
@@ -71,19 +72,41 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
         imageUrl: data.imageUrl,
       ),
     );
+  }
+
+  void handleLevelOneMarkSuccess(BuildContext context, MarkResponse data) {
+    _showMarkSuccessDialog(context, data);
     getIt
         .get<CacheHelper>()
         .removeData(key: AppStrings.cachedLevelOneTrainingData)
         .then((value) {
       if (value) {
-        context.read<SpeechTherapyCubit>().getLevelOneTrainingData();
+        getLevelOneTrainingData();
       }
     });
     getIt
         .get<CacheHelper>()
         .removeData(key: '${AppStrings.cachedScoreData}level1')
         .then((value) {
-      context.read<SpeechTherapyCubit>().getScore(1);
+      getScore(1);
+    });
+  }
+
+  void handleLevelTwoMarkSuccess(BuildContext context, MarkResponse data) {
+    _showMarkSuccessDialog(context, data);
+    getIt
+        .get<CacheHelper>()
+        .removeData(key: AppStrings.cachedLevelTwoTrainingData)
+        .then((value) {
+      if (value) {
+        getLevelTwoTrainingData();
+      }
+    });
+    getIt
+        .get<CacheHelper>()
+        .removeData(key: '${AppStrings.cachedScoreData}level2')
+        .then((value) {
+      getScore(2);
     });
   }
 }
