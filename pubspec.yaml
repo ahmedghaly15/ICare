@@ -81,6 +81,10 @@ dependencies:
   url_launcher: ^6.2.5
   # Build custom carousel slider with infinite scrolling and multiple items
   carousel_slider: ^4.2.1
+  # A Flutter plugin to play multiple audio files simultaneously
+  audioplayers: ^6.0.0
+  # A UI library for easily adding audio waveforms to your apps, with several customization options.
+  flutter_audio_waveforms: ^1.2.1+8
 
 
 dev_dependencies:

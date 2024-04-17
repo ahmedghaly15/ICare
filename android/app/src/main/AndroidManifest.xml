@@ -4,6 +4,9 @@
     <!-- External Storage Permission -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
         android:label="@string/app_name"
         android:name="${applicationName}"
@@ -34,5 +37,8 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <service android:name="com.danielgauci.audioplayer.AudioPlayerService"
+         android:enabled="true"
+         android:exported="false"/>
     </application>
 </manifest>
