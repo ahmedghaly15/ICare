@@ -8,6 +8,7 @@ import 'package:icare/src/core/widgets/custom_text_button_with_icon.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_state.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/gradient_colorful_container.dart';
 
 class LevelTrainingItem extends StatelessWidget {
@@ -54,17 +55,26 @@ class LevelTrainingItem extends StatelessWidget {
               ),
               MySizedBox.width20,
               Expanded(
-                child: CustomTextButtonWithIcon(
-                  onPressed: () {
-                    context
-                        .read<LevelTrainingCubit>()
-                        .playPauseAudio(data.details.audioUrl);
+                child: BlocBuilder<LevelTrainingCubit, LevelTrainingState>(
+                  buildWhen: (_, current) => current is ConvertIsPlayingBool,
+                  builder: (context, state) {
+                    return CustomTextButtonWithIcon(
+                      onPressed: () {
+                        context
+                            .read<LevelTrainingCubit>()
+                            .playPauseAudio(data.details.audioUrl);
+                      },
+                      label: Icon(
+                        context.read<LevelTrainingCubit>().isPlaying
+                            ? Icons.pause
+                            : Icons.play_arrow,
+                        color: Colors.white,
+                      ),
+                      icon: Text(context.read<LevelTrainingCubit>().isPlaying
+                          ? AppStrings.pause
+                          : AppStrings.listen),
+                    );
                   },
-                  label: const Icon(
-                    Icons.play_arrow,
-                    color: Colors.white,
-                  ),
-                  icon: const Text(AppStrings.listen),
                 ),
               ),
             ],
