@@ -8,16 +8,19 @@ import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_two_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/score.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_state.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/mark_success_dialog.dart';
 
 class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
   final GetLevelOneTrainingDataUseCase _getLevelOneTrainingDataUseCase;
+  final GetLevelTwoTrainingDataUseCase _getLevelTwoTrainingDataUseCase;
   final ScoreUseCase _scoreUseCase;
 
   SpeechTherapyCubit(
     this._getLevelOneTrainingDataUseCase,
+    this._getLevelTwoTrainingDataUseCase,
     this._scoreUseCase,
   ) : super(const SpeechTherapyState.initial());
 
@@ -29,6 +32,19 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
           emit(SpeechTherapyState.getLevelOneTrainingDataSuccess(data)),
       error: (error) => emit(
         SpeechTherapyState.getLevelOneTrainingDataError(
+            error.apiErrorModel.error ?? ''),
+      ),
+    );
+  }
+
+  void getLevelTwoTrainingData() async {
+    emit(const SpeechTherapyState.getLevelTwoTrainingDataLoading());
+    final result = await _getLevelTwoTrainingDataUseCase.call(Helper.uId!);
+    result.when(
+      success: (data) =>
+          emit(SpeechTherapyState.getLevelTwoTrainingDataSuccess(data)),
+      error: (error) => emit(
+        SpeechTherapyState.getLevelTwoTrainingDataError(
             error.apiErrorModel.error ?? ''),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
-import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
 
 part 'speech_therapy_state.freezed.dart';
@@ -14,15 +14,15 @@ class SpeechTherapyState<T> with _$SpeechTherapyState<T> {
       List<LevelOneTrainingResponse> data) = GetLevelOneTrainingDataSuccess<T>;
   const factory SpeechTherapyState.getLevelOneTrainingDataError(String error) =
       GetLevelOneTrainingDataError<T>;
-  const factory SpeechTherapyState.markLevelOneExamLoading() =
-      MarkLevelOneExamLoading;
-  const factory SpeechTherapyState.markLevelOneExamSuccess(MarkResponse data) =
-      MarkLevelOneExamSuccess<T>;
-  const factory SpeechTherapyState.markLevelOneExamError(String error) =
-      MarkLevelOneExamError<T>;
   const factory SpeechTherapyState.getScoreLoading() = GetScoreLoading;
   const factory SpeechTherapyState.getScoreSuccess(ScoreResponse data) =
       GetScoreSuccess<T>;
   const factory SpeechTherapyState.getScoreError(String error) =
       GetScoreError<T>;
+  const factory SpeechTherapyState.getLevelTwoTrainingDataLoading() =
+      GetLevelTwoTrainingDataLoading;
+  const factory SpeechTherapyState.getLevelTwoTrainingDataSuccess(
+      List<LevelTwoTrainingResponse> data) = GetLevelTwoTrainingDataSuccess<T>;
+  const factory SpeechTherapyState.getLevelTwoTrainingDataError(String error) =
+      GetLevelTwoTrainingDataError<T>;
 }
