@@ -7,7 +7,6 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
@@ -95,14 +94,14 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
   void handleBabyCryPrediction(BuildContext context) async {
     if (isRecording == false) {
-      final status = await Permission.microphone.request();
+      final status = await _audioRecorder.hasPermission();
 
-      if (status == PermissionStatus.granted) {
+      if (status) {
         _startTimer();
         // ignore: use_build_context_synchronously
         _startRecording(context);
         _convertIsRecording();
-      } else if (status == PermissionStatus.permanentlyDenied) {
+      } else {
         ShowICareDialog.show(
           // ignore: use_build_context_synchronously
           context: context,

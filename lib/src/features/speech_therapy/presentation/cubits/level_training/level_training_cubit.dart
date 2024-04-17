@@ -4,7 +4,9 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/mark.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_state.dart';
@@ -16,10 +18,15 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
 
   LevelTrainingCubit(this._markUseCase)
       : super(const LevelTrainingState.initial()) {
-    _audioPlayer = AudioPlayer();
+    _initAttributes();
     _audioPlayer.onPlayerStateChanged.listen((event) {
       _convertIsPlaying();
     });
+  }
+
+  void _initAttributes() {
+    _audioPlayer = AudioPlayer();
+    _audioRecorder = AudioRecorder();
   }
 
   late final AudioPlayer _audioPlayer;
@@ -44,7 +51,6 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     } else {
       await _audioPlayer.play(UrlSource(url));
     }
-    // _convertIsPlaying();
   }
 
   Future<void> _startRecording(BuildContext context) async {
@@ -75,11 +81,11 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     }
   }
 
-  void emitUserIsTryingNow() {
+  void _emitUserIsTryingNow() {
     emit(const LevelTrainingState.userIsTryingNow());
   }
 
-  void mark(int id, int level) async {
+  void _mark(int id, int level) async {
     emit(const LevelTrainingState.markLoading());
     final result = await _markUseCase.call(MarkParams(
       userId: Helper.uId!,
@@ -88,11 +94,36 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
       level: level,
     ));
     result.when(
-      success: (markResponse) =>
-          emit(LevelTrainingState.markSuccess(markResponse)),
+      success: (markResponse) {
+        emit(LevelTrainingState.markSuccess(markResponse));
+        _audioPath = null;
+        emit(LevelTrainingState.assignAudioPathVal(_audioPath));
+      },
       error: (error) =>
           emit(LevelTrainingState.markError(error.apiErrorModel.error ?? '')),
     );
+  }
+
+  void recordAndMark(int id, int level, BuildContext context) async {
+    if (isRecording == false) {
+      final status = await _audioRecorder.hasPermission();
+      if (status == true) {
+        _emitUserIsTryingNow();
+        // ignore: use_build_context_synchronously
+        await _startRecording(context);
+      } else {
+        ShowICareDialog.show(
+          // ignore: use_build_context_synchronously
+          context: context,
+          state: ICareDialogStates.warning,
+          message: AppStrings.microphonePermissionDenied,
+        );
+      }
+    } else {
+      await _stopRecording();
+      _mark(id, level);
+    }
+    _convertIsRecording();
   }
 
   @override

@@ -28,7 +28,6 @@ class MedicalRepo {
       }
     } else {
       debugPrint('GOT CACHED EMERGENCY DATA');
-
       return ApiResult.success(
         _medicalLocalDatasource.getCachedEmergencyDiseases(),
       );
