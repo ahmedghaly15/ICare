@@ -160,6 +160,9 @@ class SetupDIForCubits {
     getIt.registerFactory<SearchCubit>(
       () => SearchCubit(getIt.get<SearchUsersUseCase>()),
     );
+    getIt.registerFactory<LevelTrainingCubit>(
+      () => LevelTrainingCubit(),
+    );
 
     // ========== Profile feature ==========
     getIt.registerFactory<ProfileCubit>(

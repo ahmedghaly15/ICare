@@ -158,4 +158,6 @@ class AppStrings {
   static const String advancedLevel = 'Advanced Level';
   static const String advancedLevelDescription = 'Learn the Holy Quran';
   static const String locked = 'Locked';
+  static const String tryIt = 'Try it';
+  static const String listen = 'Listen';
 }
