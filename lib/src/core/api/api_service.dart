@@ -78,7 +78,7 @@ abstract class ApiService {
     @Part(name: 'audio_file') required File audioFile,
   });
 
-  @POST(EndPoints.score)
+  @GET(EndPoints.score)
   Future<ScoreResponse> score(
     @Query('user_id') String userId,
     @Query('level') int level,
