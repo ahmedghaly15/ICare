@@ -16,7 +16,6 @@ platform :android do
       - Finish Chat feature (Logic & UI) ✅
         * Chats are cached now
       - Update Followers, Following feature (Logic & UI) ✅
-        * Followers, Following are cached now
       - Finish Change password (logic & UI) ✅
       - Handle navigation to other users profiles ✅
       - Fix Like Bug ✅
