@@ -2,19 +2,15 @@ import 'package:animate_do/animate_do.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
-import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/core/widgets/primary_button.dart';
-import 'package:icare/src/core/widgets/shimmer_widget.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_state.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/blurred_level_one_training_item.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/level_one_training_item.dart';
+import 'package:icare/src/features/speech_therapy/presentation/widgets/level_training_data_loading.dart';
+import 'package:icare/src/features/speech_therapy/presentation/widgets/score_button.dart';
 
 class LevelOneTrainingBlocBuilder extends StatelessWidget {
   const LevelOneTrainingBlocBuilder({super.key});
@@ -62,20 +58,11 @@ class LevelOneTrainingBlocBuilder extends StatelessWidget {
                 ),
               ),
               MySizedBox.height27,
-              Container(
-                padding: EdgeInsets.all(16.h),
-                decoration: BoxDecoration(
-                  color: AppColors.secondaryColor,
-                  borderRadius: BorderRadius.circular(25.r),
-                ),
-                child: PrimaryButton(
-                  text: AppStrings.score,
-                  hasShadow: false,
-                  onPressed: () {
-                    context.read<SpeechTherapyCubit>().getScore(1);
-                    context.pushRoute(ScoreRoute(level: 1));
-                  },
-                ),
+              ScoreButton(
+                onPressed: () {
+                  context.read<SpeechTherapyCubit>().getScore(1);
+                  context.pushRoute(ScoreRoute(level: 1));
+                },
               ),
             ],
           );
@@ -86,14 +73,7 @@ class LevelOneTrainingBlocBuilder extends StatelessWidget {
                 context.read<SpeechTherapyCubit>().getLevelOneTrainingData(),
           );
         } else {
-          return ListView.separated(
-            itemBuilder: (_, __) => ShimmerWidget(
-              height: AppConstants.levelOneItemHeight,
-              width: double.infinity,
-            ),
-            separatorBuilder: (_, __) => MySizedBox.height15,
-            itemCount: 10,
-          );
+          return const LevelTrainingDataLoading();
         }
       },
     );
