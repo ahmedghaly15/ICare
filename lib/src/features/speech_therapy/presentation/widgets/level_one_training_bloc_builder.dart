@@ -46,12 +46,14 @@ class LevelOneTrainingBlocBuilder extends StatelessWidget {
                           ? FadeInDown(
                               from: 50,
                               child: BlurredLevelOneTrainingItem(
-                                  data: state.data[index]),
+                                data: state.data[index],
+                              ),
                             )
                           : FadeInUp(
                               from: 50,
                               child: BlurredLevelOneTrainingItem(
-                                  data: state.data[index]),
+                                data: state.data[index],
+                              ),
                             )),
                   separatorBuilder: (_, __) => MySizedBox.height15,
                   itemCount: state.data.length,
@@ -79,3 +81,6 @@ class LevelOneTrainingBlocBuilder extends StatelessWidget {
     );
   }
 }
+
+
+
