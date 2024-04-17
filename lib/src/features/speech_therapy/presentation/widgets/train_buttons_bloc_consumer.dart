@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_text_button_with_icon.dart';
@@ -9,6 +11,7 @@ import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_state.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/custom_stop_and_mark_audio_button.dart';
 
 class TrainButtonsBlocConsumer extends StatelessWidget {
@@ -24,11 +27,22 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
     return FadeInDown(
       from: 50,
       child: BlocConsumer<LevelTrainingCubit, LevelTrainingState>(
-        listenWhen: (_, current) => current is MarkError,
+        listenWhen: (_, current) =>
+            current is MarkError || current is MarkSuccess,
         listener: (context, state) {
           state.whenOrNull(
             markError: (error) {
               ShowICareDialog.showICareDialogError(context, error);
+            },
+            markSuccess: (data) {
+              getIt
+                  .get<CacheHelper>()
+                  .removeData(key: AppStrings.cachedLevelOneTrainingData)
+                  .then((value) {
+                if (value) {
+                  context.read<SpeechTherapyCubit>().getLevelOneTrainingData();
+                }
+              });
             },
           );
         },
