@@ -5,6 +5,7 @@ import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_local_datasource.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_remote_datasource.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
@@ -26,7 +27,7 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
   ) async {
     if (_speechTherapyLocalDatasource.levelOneTrainingDataJson() == null) {
       debugPrint(
-          '************ GOT NO CACHED Level One Training DATA ************');
+          '************ GOT NO CACHED LEVEL ONE TRAINING DATA ************');
       try {
         final data = await _speechTherapyRemoteDatasource
             .getLevelOneTrainingData(userId);
@@ -37,7 +38,7 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
       }
     } else {
       debugPrint(
-          '************ GOT CACHED Level One Training DATA ************');
+          '************ GOT CACHED LEVEL ONE TRAINING DATA ************');
       return ApiResult.success(
         _speechTherapyLocalDatasource.retrieveCachedLevelOneTrainingData(),
       );
@@ -68,6 +69,30 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
       debugPrint('************ GOT CACHED SCORE DATA ************');
       return ApiResult.success(
         _speechTherapyLocalDatasource.retrieveCachedScoreData(),
+      );
+    }
+  }
+
+  @override
+  Future<ApiResult<List<LevelTwoTrainingResponse>>> getLevelTwoTrainingData(
+    String userId,
+  ) async {
+    if (_speechTherapyLocalDatasource.levelTwoTrainingDataJson() == null) {
+      debugPrint(
+          '************ GOT NO CACHED LEVEL TWO TRAINING DATA ************');
+      try {
+        final data = await _speechTherapyRemoteDatasource
+            .getLevelTwoTrainingData(userId);
+        await _speechTherapyLocalDatasource.cacheLevelTwoTrainingData(data);
+        return ApiResult.success(data);
+      } catch (error) {
+        return ApiResult.error(ErrorHandler.handle(error));
+      }
+    } else {
+      debugPrint(
+          '************ GOT CACHED LEVEL TWO TRAINING DATA ************');
+      return ApiResult.success(
+        _speechTherapyLocalDatasource.retrieveCachedLevelTwoTrainingData(),
       );
     }
   }
