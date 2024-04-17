@@ -24,7 +24,7 @@ class ScoreDetail {
   @JsonKey(name: 'sub_level_image_url')
   final String? subLevelImageUrl;
   @JsonKey(name: 'sub_level_percent')
-  final int subLevelPercent;
+  final double subLevelPercent;
 
   const ScoreDetail({
     required this.subLevelNameAr,
