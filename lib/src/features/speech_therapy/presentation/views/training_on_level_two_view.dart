@@ -50,7 +50,8 @@ class TrainingOnLevelTwoView extends StatelessWidget
                     MySizedBox.height30,
                     const CircularPercentIndicatorBlocBuilder(),
                     SentenceContainerBlocBuilder(
-                        sentence: data.details.sentence),
+                      sentence: data.details.sentence,
+                    ),
                     MySizedBox.height30,
                     TrainButtonsBlocConsumer(
                       id: data.id,

@@ -21,6 +21,7 @@ platform :android do
       - Fix Like Bug ✅
       - Finish Level one in Speech Therapy feature (logic & UI) ✅
       - Finish Score screen in Speech Therapy feature (logic & UI) ✅
+      - Finish Level two in Speech Therapy feature (logic & UI) ✅
   """
   )
   end
