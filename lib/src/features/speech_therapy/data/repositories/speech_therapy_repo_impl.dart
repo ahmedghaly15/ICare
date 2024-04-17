@@ -54,9 +54,21 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
   }
 
   @override
-  Future<ApiResult<ScoreResponse>> score(ScoreParams params) {
-    return executeAndHandleErrors<ScoreResponse>(
-      () async => await _speechTherapyRemoteDatasource.score(params),
-    );
+  Future<ApiResult<ScoreResponse>> score(ScoreParams params) async {
+    if (_speechTherapyLocalDatasource.cachedScoreDataJson() == null) {
+      debugPrint('************ GOT NO CACHED SCORE DATA ************');
+      try {
+        final data = await _speechTherapyRemoteDatasource.score(params);
+        await _speechTherapyLocalDatasource.cacheScoreData(data);
+        return ApiResult.success(data);
+      } catch (error) {
+        return ApiResult.error(ErrorHandler.handle(error));
+      }
+    } else {
+      debugPrint('************ GOT CACHED SCORE DATA ************');
+      return ApiResult.success(
+        _speechTherapyLocalDatasource.retrieveCachedScoreData(),
+      );
+    }
   }
 }

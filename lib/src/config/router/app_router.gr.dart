@@ -235,11 +235,10 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<ScoreRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(
-            child: ScoreView(
+        child: ScoreView(
           key: args.key,
           level: args.level,
-        )),
+        ),
       );
     },
     SearchUsersRoute.name: (routeData) {

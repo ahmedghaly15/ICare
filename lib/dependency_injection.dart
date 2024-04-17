@@ -8,6 +8,7 @@ import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_password.dart';
 import 'package:icare/src/features/profile/domain/usecases/upload_new_profile_image.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_local_datasource.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/score.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
