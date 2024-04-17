@@ -5,8 +5,8 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/shimmer_widget.dart';
-import 'package:icare/src/features/speech_therapy/presentation/cubit/speech_therapy_cubit.dart';
-import 'package:icare/src/features/speech_therapy/presentation/cubit/speech_therapy_state.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_state.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/blurred_level_one_training_item.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/level_one_training_item.dart';
 
@@ -28,32 +28,22 @@ class LevelOneTrainingBlocBuilder extends StatelessWidget {
                 ? (index % 2 == 0
                     ? FadeInDown(
                         from: 50,
-                        child: LevelOneTrainingItem(
-                          data: state.data[index],
-                          onTap: () {},
-                        ),
+                        child: LevelOneTrainingItem(data: state.data[index]),
                       )
                     : FadeInUp(
                         from: 50,
-                        child: LevelOneTrainingItem(
-                          data: state.data[index],
-                          onTap: () {},
-                        ),
+                        child: LevelOneTrainingItem(data: state.data[index]),
                       ))
                 : (index % 2 == 0
                     ? FadeInDown(
                         from: 50,
                         child: BlurredLevelOneTrainingItem(
-                          data: state.data[index],
-                          onTap: () {},
-                        ),
+                            data: state.data[index]),
                       )
                     : FadeInUp(
                         from: 50,
                         child: BlurredLevelOneTrainingItem(
-                          data: state.data[index],
-                          onTap: () {},
-                        ),
+                            data: state.data[index]),
                       )),
             separatorBuilder: (_, __) => MySizedBox.height15,
             itemCount: state.data.length,

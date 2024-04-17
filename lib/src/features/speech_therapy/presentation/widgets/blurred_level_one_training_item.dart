@@ -13,18 +13,16 @@ class BlurredLevelOneTrainingItem extends StatelessWidget {
   const BlurredLevelOneTrainingItem({
     super.key,
     required this.data,
-    required this.onTap,
   });
 
   final LevelOneTrainingResponse data;
-  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.bottomLeft,
       children: <Widget>[
-        LevelOneTrainingItem(data: data, onTap: onTap),
+        LevelOneTrainingItem(data: data),
         IgnorePointer(
           child: ClipRect(
             child: BackdropFilter(

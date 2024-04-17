@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/features/speech_therapy/presentation/cubit/speech_therapy_cubit.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/speech_therapy_level_item.dart';
 
 class LevelsList extends StatelessWidget {

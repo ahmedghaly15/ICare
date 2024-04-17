@@ -6,9 +6,11 @@ class GradientColorfulContainer extends StatelessWidget {
   const GradientColorfulContainer({
     super.key,
     required this.child,
+    this.radiusVal = 25,
   });
 
   final Widget child;
+  final double radiusVal;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class GradientColorfulContainer extends StatelessWidget {
         vertical: 18.h,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25.r),
+        borderRadius: BorderRadius.circular(radiusVal.r),
         gradient: LinearGradient(
           colors: <Color>[
             AppColors.primaryColor,
