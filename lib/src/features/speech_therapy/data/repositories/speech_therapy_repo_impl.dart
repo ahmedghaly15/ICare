@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
+import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_local_datasource.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_remote_datasource.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
@@ -8,16 +11,35 @@ import 'package:icare/src/features/speech_therapy/domain/repositories/speech_the
 
 class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
   final SpeechTherapyRemoteDatasource _speechTherapyRemoteDatasource;
+  final SpeechTherapyLocalDatasource _speechTherapyLocalDatasource;
 
-  const SpeechTherapyRepoImpl(this._speechTherapyRemoteDatasource);
+  const SpeechTherapyRepoImpl(
+    this._speechTherapyRemoteDatasource,
+    this._speechTherapyLocalDatasource,
+  );
 
   @override
   Future<ApiResult<List<LevelOneTrainingResponse>>> getLevelOneTrainingData(
-      String userId) {
-    return executeAndHandleErrors<List<LevelOneTrainingResponse>>(
-      () async =>
-          await _speechTherapyRemoteDatasource.getLevelOneTrainingData(userId),
-    );
+    String userId,
+  ) async {
+    if (_speechTherapyLocalDatasource.levelOneTrainingDataJson() == null) {
+      debugPrint(
+          '************ GOT NO CACHED Level One Training DATA ************');
+      try {
+        final data = await _speechTherapyRemoteDatasource
+            .getLevelOneTrainingData(userId);
+        await _speechTherapyLocalDatasource.cacheLevelOneTrainingData(data);
+        return ApiResult.success(data);
+      } catch (error) {
+        return ApiResult.error(ErrorHandler.handle(error));
+      }
+    } else {
+      debugPrint(
+          '************ GOT CACHED Level One Training DATA ************');
+      return ApiResult.success(
+        _speechTherapyLocalDatasource.retrieveCachedLevelOneTrainingData(),
+      );
+    }
   }
 
   @override

@@ -1,10 +1,10 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -50,22 +50,12 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     _babyCryPredictor();
   }
 
-  String _generateRandomId() {
-    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    final random = Random();
-    return List.generate(
-      10,
-      (index) => chars[random.nextInt(chars.length)],
-      growable: false,
-    ).join();
-  }
-
   Future<void> _startRecording(BuildContext context) async {
     try {
       debugPrint(
           '=========>>>>>>>>>>> RECORDING!!!!!!!!!!!!!!! <<<<<<===========');
       String filePath = await getApplicationDocumentsDirectory()
-          .then((value) => '${value.path}/${_generateRandomId()}.wav');
+          .then((value) => '${value.path}/${generateAudioPathRandomId()}.wav');
       await _audioRecorder.start(
         const RecordConfig(
           encoder: AudioEncoder.wav,

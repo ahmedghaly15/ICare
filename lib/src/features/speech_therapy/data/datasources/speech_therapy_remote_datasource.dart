@@ -16,7 +16,8 @@ class SpeechTherapyRemoteDatasourceImpl
 
   @override
   Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(
-      String userId) async {
+    String userId,
+  ) async {
     return await _apiService.getLevelOneTrainingData(userId);
   }
 
@@ -24,6 +25,11 @@ class SpeechTherapyRemoteDatasourceImpl
   Future<MarkResponse> markLevelOneExam(
     MarkParams params,
   ) async {
-    return await _apiService.markLevelOneExam(params.id, params.audioFile);
+    return await _apiService.mark(
+      userId: params.userId,
+      id: params.id,
+      level: params.level,
+      audioFile: params.audioFile,
+    );
   }
 }

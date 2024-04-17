@@ -5,11 +5,12 @@ part 'mark_response.g.dart';
 @JsonSerializable()
 class MarkResponse {
   final String status;
-  final int percent;
+  final int percent, next;
 
   const MarkResponse({
     required this.status,
     required this.percent,
+    required this.next,
   });
 
   factory MarkResponse.fromJson(Map<String, dynamic> json) =>
