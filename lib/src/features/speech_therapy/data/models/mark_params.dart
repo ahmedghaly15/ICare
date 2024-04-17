@@ -1,12 +1,14 @@
 import 'dart:io';
 
-class MarkLevelOneParams {
+class MarkParams {
   final int id, level;
   final File audioFile;
+  final String userId;
 
-  const MarkLevelOneParams({
+  const MarkParams({
     required this.level,
     required this.id,
     required this.audioFile,
+    required this.userId,
   });
 }

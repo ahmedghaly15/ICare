@@ -20,18 +20,24 @@ mixin _$LevelTrainingState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +46,24 @@ mixin _$LevelTrainingState<T> {
     required TResult Function(LevelTrainingInitial<T> value) initial,
     required TResult Function(ConvertIsPlayingBool<T> value)
         convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LevelTrainingInitial<T> value)? initial,
     TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LevelTrainingInitial<T> value)? initial,
     TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,6 +131,8 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
   }) {
     return initial();
   }
@@ -128,6 +142,8 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
   }) {
     return initial?.call();
   }
@@ -137,6 +153,8 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -151,6 +169,8 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
     required TResult Function(LevelTrainingInitial<T> value) initial,
     required TResult Function(ConvertIsPlayingBool<T> value)
         convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
   }) {
     return initial(this);
   }
@@ -160,6 +180,8 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LevelTrainingInitial<T> value)? initial,
     TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
   }) {
     return initial?.call(this);
   }
@@ -169,6 +191,8 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LevelTrainingInitial<T> value)? initial,
     TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -252,6 +276,8 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
   }) {
     return convertIsPlayingBool(isPlaying);
   }
@@ -261,6 +287,8 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
   }) {
     return convertIsPlayingBool?.call(isPlaying);
   }
@@ -270,6 +298,8 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
     required TResult orElse(),
   }) {
     if (convertIsPlayingBool != null) {
@@ -284,6 +314,8 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
     required TResult Function(LevelTrainingInitial<T> value) initial,
     required TResult Function(ConvertIsPlayingBool<T> value)
         convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
   }) {
     return convertIsPlayingBool(this);
   }
@@ -293,6 +325,8 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LevelTrainingInitial<T> value)? initial,
     TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
   }) {
     return convertIsPlayingBool?.call(this);
   }
@@ -302,6 +336,8 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LevelTrainingInitial<T> value)? initial,
     TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
     required TResult orElse(),
   }) {
     if (convertIsPlayingBool != null) {
@@ -318,5 +354,269 @@ abstract class ConvertIsPlayingBool<T> implements LevelTrainingState<T> {
   bool get isPlaying;
   @JsonKey(ignore: true)
   _$$ConvertIsPlayingBoolImplCopyWith<T, _$ConvertIsPlayingBoolImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserIsTryingNowImplCopyWith<T, $Res> {
+  factory _$$UserIsTryingNowImplCopyWith(_$UserIsTryingNowImpl<T> value,
+          $Res Function(_$UserIsTryingNowImpl<T>) then) =
+      __$$UserIsTryingNowImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UserIsTryingNowImplCopyWithImpl<T, $Res>
+    extends _$LevelTrainingStateCopyWithImpl<T, $Res, _$UserIsTryingNowImpl<T>>
+    implements _$$UserIsTryingNowImplCopyWith<T, $Res> {
+  __$$UserIsTryingNowImplCopyWithImpl(_$UserIsTryingNowImpl<T> _value,
+      $Res Function(_$UserIsTryingNowImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UserIsTryingNowImpl<T> implements UserIsTryingNow<T> {
+  const _$UserIsTryingNowImpl();
+
+  @override
+  String toString() {
+    return 'LevelTrainingState<$T>.userIsTryingNow()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserIsTryingNowImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
+  }) {
+    return userIsTryingNow();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
+  }) {
+    return userIsTryingNow?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
+    required TResult orElse(),
+  }) {
+    if (userIsTryingNow != null) {
+      return userIsTryingNow();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LevelTrainingInitial<T> value) initial,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+  }) {
+    return userIsTryingNow(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LevelTrainingInitial<T> value)? initial,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+  }) {
+    return userIsTryingNow?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LevelTrainingInitial<T> value)? initial,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    required TResult orElse(),
+  }) {
+    if (userIsTryingNow != null) {
+      return userIsTryingNow(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserIsTryingNow<T> implements LevelTrainingState<T> {
+  const factory UserIsTryingNow() = _$UserIsTryingNowImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AssignAudioPathValImplCopyWith<T, $Res> {
+  factory _$$AssignAudioPathValImplCopyWith(_$AssignAudioPathValImpl<T> value,
+          $Res Function(_$AssignAudioPathValImpl<T>) then) =
+      __$$AssignAudioPathValImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String? path});
+}
+
+/// @nodoc
+class __$$AssignAudioPathValImplCopyWithImpl<T, $Res>
+    extends _$LevelTrainingStateCopyWithImpl<T, $Res,
+        _$AssignAudioPathValImpl<T>>
+    implements _$$AssignAudioPathValImplCopyWith<T, $Res> {
+  __$$AssignAudioPathValImplCopyWithImpl(_$AssignAudioPathValImpl<T> _value,
+      $Res Function(_$AssignAudioPathValImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? path = freezed,
+  }) {
+    return _then(_$AssignAudioPathValImpl<T>(
+      freezed == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
+  const _$AssignAudioPathValImpl(this.path);
+
+  @override
+  final String? path;
+
+  @override
+  String toString() {
+    return 'LevelTrainingState<$T>.assignAudioPathVal(path: $path)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssignAudioPathValImpl<T> &&
+            (identical(other.path, path) || other.path == path));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, path);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssignAudioPathValImplCopyWith<T, _$AssignAudioPathValImpl<T>>
+      get copyWith => __$$AssignAudioPathValImplCopyWithImpl<T,
+          _$AssignAudioPathValImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
+  }) {
+    return assignAudioPathVal(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
+  }) {
+    return assignAudioPathVal?.call(path);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
+    required TResult orElse(),
+  }) {
+    if (assignAudioPathVal != null) {
+      return assignAudioPathVal(path);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LevelTrainingInitial<T> value) initial,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+  }) {
+    return assignAudioPathVal(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LevelTrainingInitial<T> value)? initial,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+  }) {
+    return assignAudioPathVal?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LevelTrainingInitial<T> value)? initial,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    required TResult orElse(),
+  }) {
+    if (assignAudioPathVal != null) {
+      return assignAudioPathVal(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AssignAudioPathVal<T> implements LevelTrainingState<T> {
+  const factory _AssignAudioPathVal(final String? path) =
+      _$AssignAudioPathValImpl<T>;
+
+  String? get path;
+  @JsonKey(ignore: true)
+  _$$AssignAudioPathValImplCopyWith<T, _$AssignAudioPathValImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

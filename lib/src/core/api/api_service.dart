@@ -70,8 +70,10 @@ abstract class ApiService {
 
   @POST(EndPoints.marking)
   @MultiPart()
-  Future<MarkResponse> markLevelOneExam(
-    @Query('id') int id,
-    @Part(name: 'audio_file') File audio,
-  );
+  Future<MarkResponse> mark({
+    @Query('user_id') required int userId,
+    @Query('id') required int id,
+    @Query('level') required int level,
+    @Part(name: 'audio_file') required File audio,
+  });
 }

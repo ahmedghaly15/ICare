@@ -90,13 +90,10 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
   void _babyCryPredictor() async {
     emit(const BabyCryPredictorState.loading());
-
     final result = await _babyCryPredictorUseCase.call(File(_audioPath!));
-
     result.when(
       success: (data) {
         emit(BabyCryPredictorState.success(data));
-
         _audioPath = null;
         emit(BabyCryPredictorState.assignAudioPathVal(_audioPath));
       },

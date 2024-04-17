@@ -320,12 +320,18 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<MarkResponse> markLevelOneExam(
-    int id,
-    File audio,
-  ) async {
+  Future<MarkResponse> mark({
+    required int userId,
+    required int id,
+    required int level,
+    required File audio,
+  }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'id': id};
+    final queryParameters = <String, dynamic>{
+      r'user_id': userId,
+      r'id': id,
+      r'level': level,
+    };
     final _headers = <String, dynamic>{};
     final _data = FormData();
     _data.files.add(MapEntry(

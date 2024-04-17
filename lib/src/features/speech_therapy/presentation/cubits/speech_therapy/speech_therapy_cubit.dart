@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/helper.dart';
-import 'package:icare/src/features/speech_therapy/data/models/mark_level_one_params.dart';
+import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/mark_level_one.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_state.dart';
@@ -27,7 +27,7 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
     );
   }
 
-  void markLevelOneExam(MarkLevelOneParams params) async {
+  void markLevelOneExam(MarkParams params) async {
     emit(const SpeechTherapyState.markLevelOneExamLoading());
     final result = await markLevelOneUseCase.call(params);
     result.when(
