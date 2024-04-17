@@ -1,24 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/custom_audio_wave.dart';
 
-class CustomStopAudioButton extends StatelessWidget {
-  const CustomStopAudioButton({
+class CustomStopAndMarkAudioButton extends StatelessWidget {
+  const CustomStopAndMarkAudioButton({
     super.key,
     this.width,
     this.hasShadow,
+    required this.id,
+    required this.level,
   });
 
   final double? width;
   final bool? hasShadow;
+  final int id, level;
 
   @override
   Widget build(BuildContext context) {
     return PrimaryButton(
-      onPressed: () {},
+      onPressed: () {
+        context.read<LevelTrainingCubit>().recordAndMark(id, level, context);
+      },
       hasShadow: hasShadow ?? true,
       width: width ?? SizeConfig.width * 0.45,
       padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 30.w),

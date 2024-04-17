@@ -59,8 +59,6 @@ dependencies:
   record: ^5.0.5
   # Flutter plugin for getting commonly used locations on host platform file systems, such as the temp and app data directories.
   path_provider: ^2.1.2
-  # Permission plugin for Flutter. This plugin provides a cross-platform (iOS, Android) API to request and check permissions.
-  permission_handler: ^11.3.1
   # Provides simple yet beautiful skeleton loaders
   shimmer: ^3.0.0
   # The Google AI Dart SDK enables developers to use Google's state-of-the-art generative AI models (like Gemini).
@@ -85,12 +83,13 @@ dependencies:
   audioplayers: ^6.0.0
   # A highly customizable bar graph(or wave graph) with animation, color, radius, spaces, etc.
   audio_wave: ^0.1.5
+  # Library that allows you to display progress widgets based on percentage
+  percent_indicator: ^4.2.3
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   retrofit_generator: ^8.1.0
   # Automatically generate navigation
   auto_route_generator: ^8.0.0
