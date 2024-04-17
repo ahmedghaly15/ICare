@@ -4,6 +4,7 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
 
 abstract class SpeechTherapyLocalDatasource {
@@ -13,6 +14,9 @@ abstract class SpeechTherapyLocalDatasource {
   Future<bool> cacheScoreData(ScoreResponse score);
   String? cachedScoreDataJson();
   ScoreResponse retrieveCachedScoreData();
+  Future<bool> cacheLevelTwoTrainingData(List<LevelTwoTrainingResponse> data);
+  String? levelTwoTrainingDataJson();
+  List<LevelTwoTrainingResponse> retrieveCachedLevelTwoTrainingData();
 }
 
 class SpeechTherapyLocalDatasourceImpl implements SpeechTherapyLocalDatasource {
@@ -62,5 +66,31 @@ class SpeechTherapyLocalDatasourceImpl implements SpeechTherapyLocalDatasource {
   @override
   ScoreResponse retrieveCachedScoreData() {
     return ScoreResponse.fromJson(json.decode(cachedScoreDataJson()!));
+  }
+
+  @override
+  Future<bool> cacheLevelTwoTrainingData(
+    List<LevelTwoTrainingResponse> data,
+  ) async {
+    return await getIt.get<CacheHelper>().saveData(
+          key: AppStrings.cachedLevelTwoTrainingData,
+          value: json.encode(data.map((e) => e.toJson()).toList()),
+        );
+  }
+
+  @override
+  String? levelTwoTrainingDataJson() {
+    return getIt
+        .get<CacheHelper>()
+        .getStringData(key: AppStrings.cachedLevelTwoTrainingData);
+  }
+
+  @override
+  List<LevelTwoTrainingResponse> retrieveCachedLevelTwoTrainingData() {
+    final List<LevelTwoTrainingResponse> data = <LevelTwoTrainingResponse>[];
+    for (final element in json.decode(levelTwoTrainingDataJson()!)) {
+      data.add(LevelTwoTrainingResponse.fromJson(element));
+    }
+    return data;
   }
 }

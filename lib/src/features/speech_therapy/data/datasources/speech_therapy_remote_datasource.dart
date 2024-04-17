@@ -1,5 +1,6 @@
 import 'package:icare/src/core/api/api_service.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
@@ -9,6 +10,7 @@ abstract class SpeechTherapyRemoteDatasource {
   Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(String userId);
   Future<MarkResponse> markLevelOneExam(MarkParams params);
   Future<ScoreResponse> score(ScoreParams params);
+  Future<List<LevelTwoTrainingResponse>> getLevelTwoTrainingData(String userId);
 }
 
 class SpeechTherapyRemoteDatasourceImpl
@@ -39,5 +41,12 @@ class SpeechTherapyRemoteDatasourceImpl
   @override
   Future<ScoreResponse> score(ScoreParams params) async {
     return await _apiService.score(params.userId, params.level);
+  }
+
+  @override
+  Future<List<LevelTwoTrainingResponse>> getLevelTwoTrainingData(
+    String userId,
+  ) async {
+    return await _apiService.getLevelTwoTrainingData(userId);
   }
 }
