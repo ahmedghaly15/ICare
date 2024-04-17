@@ -15,7 +15,7 @@ class LevelOneTrainingItem extends StatelessWidget {
       available: data.details.available,
       imageUrl: data.details.imageUrl,
       onTap: () {
-        context.pushRoute(TrainingOnLevelOneAnimalRoute(data: data));
+        context.pushRoute(TrainingOnLevelOneRoute(data: data));
       },
     );
   }

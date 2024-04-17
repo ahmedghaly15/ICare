@@ -265,12 +265,23 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const StartView(),
       );
     },
-    TrainingOnLevelOneAnimalRoute.name: (routeData) {
-      final args = routeData.argsAs<TrainingOnLevelOneAnimalRouteArgs>();
+    TrainingOnLevelOneRoute.name: (routeData) {
+      final args = routeData.argsAs<TrainingOnLevelOneRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: WrappedRoute(
-            child: TrainingOnLevelOneAnimalView(
+            child: TrainingOnLevelOneView(
+          key: args.key,
+          data: args.data,
+        )),
+      );
+    },
+    TrainingOnLevelTwoRoute.name: (routeData) {
+      final args = routeData.argsAs<TrainingOnLevelTwoRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: TrainingOnLevelTwoView(
           key: args.key,
           data: args.data,
         )),
@@ -1018,30 +1029,30 @@ class StartRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [TrainingOnLevelOneAnimalView]
-class TrainingOnLevelOneAnimalRoute
-    extends PageRouteInfo<TrainingOnLevelOneAnimalRouteArgs> {
-  TrainingOnLevelOneAnimalRoute({
+/// [TrainingOnLevelOneView]
+class TrainingOnLevelOneRoute
+    extends PageRouteInfo<TrainingOnLevelOneRouteArgs> {
+  TrainingOnLevelOneRoute({
     Key? key,
     required LevelOneTrainingResponse data,
     List<PageRouteInfo>? children,
   }) : super(
-          TrainingOnLevelOneAnimalRoute.name,
-          args: TrainingOnLevelOneAnimalRouteArgs(
+          TrainingOnLevelOneRoute.name,
+          args: TrainingOnLevelOneRouteArgs(
             key: key,
             data: data,
           ),
           initialChildren: children,
         );
 
-  static const String name = 'TrainingOnLevelOneAnimalRoute';
+  static const String name = 'TrainingOnLevelOneRoute';
 
-  static const PageInfo<TrainingOnLevelOneAnimalRouteArgs> page =
-      PageInfo<TrainingOnLevelOneAnimalRouteArgs>(name);
+  static const PageInfo<TrainingOnLevelOneRouteArgs> page =
+      PageInfo<TrainingOnLevelOneRouteArgs>(name);
 }
 
-class TrainingOnLevelOneAnimalRouteArgs {
-  const TrainingOnLevelOneAnimalRouteArgs({
+class TrainingOnLevelOneRouteArgs {
+  const TrainingOnLevelOneRouteArgs({
     this.key,
     required this.data,
   });
@@ -1052,7 +1063,46 @@ class TrainingOnLevelOneAnimalRouteArgs {
 
   @override
   String toString() {
-    return 'TrainingOnLevelOneAnimalRouteArgs{key: $key, data: $data}';
+    return 'TrainingOnLevelOneRouteArgs{key: $key, data: $data}';
+  }
+}
+
+/// generated route for
+/// [TrainingOnLevelTwoView]
+class TrainingOnLevelTwoRoute
+    extends PageRouteInfo<TrainingOnLevelTwoRouteArgs> {
+  TrainingOnLevelTwoRoute({
+    Key? key,
+    required LevelTwoTrainingResponse data,
+    List<PageRouteInfo>? children,
+  }) : super(
+          TrainingOnLevelTwoRoute.name,
+          args: TrainingOnLevelTwoRouteArgs(
+            key: key,
+            data: data,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'TrainingOnLevelTwoRoute';
+
+  static const PageInfo<TrainingOnLevelTwoRouteArgs> page =
+      PageInfo<TrainingOnLevelTwoRouteArgs>(name);
+}
+
+class TrainingOnLevelTwoRouteArgs {
+  const TrainingOnLevelTwoRouteArgs({
+    this.key,
+    required this.data,
+  });
+
+  final Key? key;
+
+  final LevelTwoTrainingResponse data;
+
+  @override
+  String toString() {
+    return 'TrainingOnLevelTwoRouteArgs{key: $key, data: $data}';
   }
 }
 

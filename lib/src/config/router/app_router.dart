@@ -31,11 +31,13 @@ import 'package:icare/src/features/profile/presentation/views/profile_view.dart'
 import 'package:icare/src/features/profile/presentation/views/user_profile_view.dart';
 import 'package:icare/src/features/search/presentation/views/search_users_view.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/level_one_view.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/level_two_view.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/score_view.dart';
 import 'package:icare/src/features/speech_therapy/presentation/views/speech_therapy_view.dart';
-import 'package:icare/src/features/speech_therapy/presentation/views/training_on_level_one_animal_view.dart';
+import 'package:icare/src/features/speech_therapy/presentation/views/training_on_level_one_view.dart';
+import 'package:icare/src/features/speech_therapy/presentation/views/training_on_level_two_view.dart';
 import 'package:icare/src/features/start/presentation/views/start_view.dart';
 import 'package:icare/src/features/tiny_tales/presentation/views/bookmarked_tiny_tales_view.dart';
 import 'package:icare/src/features/tiny_tales/presentation/views/icare_community_view.dart';
