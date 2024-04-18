@@ -100,7 +100,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets:
     - assets/
     - assets/images/
@@ -108,20 +107,27 @@ flutter:
     - assets/icons/
     - assets/svgs/
     - .env
-
   fonts:
     - family: inter
       fonts:
-        - asset: assets/fonts/inter/inter-Light.ttf
+        - asset: assets/fonts/inter/Inter-Light.ttf
           weight: 300
-        - asset: assets/fonts/inter/inter-Regular.ttf
+        - asset: assets/fonts/inter/Inter-Regular.ttf
           weight: 400
-        - asset: assets/fonts/inter/inter-Medium.ttf
+        - asset: assets/fonts/inter/Inter-Medium.ttf
           weight: 500
-        - asset: assets/fonts/inter/inter-SemiBold.ttf
+        - asset: assets/fonts/inter/Inter-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/inter/inter-Bold.ttf
+        - asset: assets/fonts/inter/Inter-Bold.ttf
           weight: 700
+    - family: lateef
+      fonts:
+        - asset: assets/fonts/lateef/Lateef-Regular.ttf
+          weight: 400
+    - family: readex-pro
+      fonts:
+        - asset: assets/fonts/readex-pro/ReadexPro-Regular.ttf
+          weight: 400
 
 flutter_icons:
   android: true

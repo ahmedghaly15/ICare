@@ -14,6 +14,7 @@ platform :android do
     release_notes: """
     This is a new release. Updates:
       - Fix Null Check Bug in NewTinyTale Screen ✅
+      - Fix Send Image Message Bug ✅
   """
   )
   end

@@ -1,6 +1,8 @@
 class AppStrings {
   static const String appTitle = 'ICare';
-  static const String fontFamily = 'inter';
+  static const String interFontFamily = 'inter';
+  static const String readexProFontFamily = 'readex-pro';
+  static const String lateefFontFamily = 'lateef';
   static const String contentType = 'Content-Type';
   static const String applicationJson = 'application/json';
   static const String login = 'Login';

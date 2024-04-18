@@ -11,7 +11,7 @@ class AppThemes {
         brightness: Brightness.light,
         primaryColor: AppColors.primaryColor,
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
-        fontFamily: AppStrings.fontFamily,
+        fontFamily: AppStrings.interFontFamily,
         appBarTheme: AppBarTheme(
           backgroundColor: AppColors.scaffoldBackgroundColor,
           elevation: 0,
