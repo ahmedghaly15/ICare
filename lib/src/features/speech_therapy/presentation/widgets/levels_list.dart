@@ -37,6 +37,9 @@ class LevelsList extends StatelessWidget {
       context.read<SpeechTherapyCubit>().getLevelTwoTrainingData();
       context.pushRoute(const LevelTwoRoute());
     } else if (AppConstants.speechTherapyLevelsTitles[index] ==
-        AppStrings.advancedLevel) {}
+        AppStrings.advancedLevel) {
+      context.read<SpeechTherapyCubit>().getAdvancedLevelTrainingData();
+      context.pushRoute(const AdvancedLevelRoute());
+    }
   }
 }

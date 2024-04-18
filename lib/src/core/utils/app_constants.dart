@@ -12,7 +12,8 @@ class AppConstants {
     Animation<double>,
     Widget,
   )? get transitionsBuilder => TransitionsBuilders.slideLeftWithFade;
-  static int get transitionDuration => 400;
+  static const int transitionDuration = 400;
+  static const int slideTopOrBottomTransitionDuration = 800;
   static const ScrollPhysics scrollPhysics = BouncingScrollPhysics();
   static EdgeInsetsGeometry get horizontalPadding =>
       EdgeInsets.symmetric(horizontal: padding25.w);

@@ -52,7 +52,7 @@ Map<String, dynamic> _$AdvancedLevelTrainingDetailsToJson(
     };
 
 Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
-      ayahNum: json['ayah_num'] as String,
+      ayahNum: json['ayah_num'] as int,
       ayahAr: json['ayah_ar'] as String,
       ayahEn: json['ayah_en'] as String,
       ayahAudioUrl: json['ayah_audio_url'] as String,

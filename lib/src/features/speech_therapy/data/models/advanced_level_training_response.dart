@@ -56,7 +56,7 @@ class AdvancedLevelTrainingDetails {
 @JsonSerializable()
 class Ayah {
   @JsonKey(name: 'ayah_num')
-  final String ayahNum;
+  final int ayahNum;
   @JsonKey(name: 'ayah_ar')
   final String ayahAr;
   @JsonKey(name: 'ayah_en')
