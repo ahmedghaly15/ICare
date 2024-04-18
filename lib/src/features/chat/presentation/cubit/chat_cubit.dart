@@ -159,10 +159,11 @@ class ChatCubit extends Cubit<ChatState> {
           date: params.date,
           time: params.time,
           messageImage: imageUrl,
+          receiver: params.receiver,
         ),
       );
-      removePickedMessageImage();
       emit(ChatState.uploadMessageImageSuccess(imageUrl));
+      removePickedMessageImage();
     }).catchError((error) {
       emit(ChatState.uploadMessageImageError(error.toString()));
     });

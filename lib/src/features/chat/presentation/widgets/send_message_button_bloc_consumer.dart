@@ -40,6 +40,7 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
           current is SendMessageError ||
           current is SendMessageSuccess ||
           current is UploadMessageImageError ||
+          current is UploadMessageImageLoading ||
           current is UploadMessageImageSuccess ||
           current is SetNewTextValue ||
           current is PickMessageImageSuccess ||
