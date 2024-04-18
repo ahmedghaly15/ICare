@@ -169,4 +169,6 @@ class AppStrings {
   static const String cachedScoreData = 'cachedScoreData';
   static const String cachedLevelTwoTrainingData = 'cachedLevelTwoTrainingData';
   static const String whoAmI = 'Who am I?';
+  static const String cachedAdvancedLevelTrainingData =
+      'CachedAdvancedLevelTrainingData';
 }

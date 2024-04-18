@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
@@ -17,6 +18,11 @@ abstract class SpeechTherapyLocalDatasource {
   Future<bool> cacheLevelTwoTrainingData(List<LevelTwoTrainingResponse> data);
   String? levelTwoTrainingDataJson();
   List<LevelTwoTrainingResponse> retrieveCachedLevelTwoTrainingData();
+  Future<bool> cacheAdvancedLevelTrainingData(
+    List<AdvancedLevelTrainingResponse> data,
+  );
+  String? advancedLevelTrainingDataJson();
+  List<AdvancedLevelTrainingResponse> retrieveCachedAdvancedLevelTrainingData();
 }
 
 class SpeechTherapyLocalDatasourceImpl implements SpeechTherapyLocalDatasource {
@@ -90,6 +96,34 @@ class SpeechTherapyLocalDatasourceImpl implements SpeechTherapyLocalDatasource {
     final List<LevelTwoTrainingResponse> data = <LevelTwoTrainingResponse>[];
     for (final element in json.decode(levelTwoTrainingDataJson()!)) {
       data.add(LevelTwoTrainingResponse.fromJson(element));
+    }
+    return data;
+  }
+
+  @override
+  String? advancedLevelTrainingDataJson() {
+    return getIt
+        .get<CacheHelper>()
+        .getStringData(key: AppStrings.cachedAdvancedLevelTrainingData);
+  }
+
+  @override
+  Future<bool> cacheAdvancedLevelTrainingData(
+    List<AdvancedLevelTrainingResponse> data,
+  ) async {
+    return await getIt.get<CacheHelper>().saveData(
+          key: AppStrings.cachedAdvancedLevelTrainingData,
+          value: json.encode(data.map((e) => e.toJson()).toList()),
+        );
+  }
+
+  @override
+  List<AdvancedLevelTrainingResponse>
+      retrieveCachedAdvancedLevelTrainingData() {
+    final List<AdvancedLevelTrainingResponse> data =
+        <AdvancedLevelTrainingResponse>[];
+    for (final element in json.decode(advancedLevelTrainingDataJson()!)) {
+      data.add(AdvancedLevelTrainingResponse.fromJson(element));
     }
     return data;
   }
