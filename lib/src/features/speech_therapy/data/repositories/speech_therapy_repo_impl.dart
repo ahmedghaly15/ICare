@@ -4,6 +4,7 @@ import 'package:icare/src/core/api/api_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_local_datasource.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_remote_datasource.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
@@ -94,6 +95,30 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
           '************ GOT CACHED LEVEL TWO TRAINING DATA ************');
       return ApiResult.success(
         _speechTherapyLocalDatasource.retrieveCachedLevelTwoTrainingData(),
+      );
+    }
+  }
+
+  @override
+  Future<ApiResult<List<AdvancedLevelTrainingResponse>>>
+      getAdvancedLevelTrainingData() async {
+    if (_speechTherapyLocalDatasource.advancedLevelTrainingDataJson() == null) {
+      debugPrint(
+          '************ GOT NO CACHED ADVANCED LEVEL TRAINING DATA ************');
+      try {
+        final data =
+            await _speechTherapyRemoteDatasource.getAdvancedLevelTrainingData();
+        await _speechTherapyLocalDatasource
+            .cacheAdvancedLevelTrainingData(data);
+        return ApiResult.success(data);
+      } catch (error) {
+        return ApiResult.error(ErrorHandler.handle(error));
+      }
+    } else {
+      debugPrint(
+          '************ GOT CACHED ADVANCED LEVEL TRAINING DATA ************');
+      return ApiResult.success(
+        _speechTherapyLocalDatasource.retrieveCachedAdvancedLevelTrainingData(),
       );
     }
   }

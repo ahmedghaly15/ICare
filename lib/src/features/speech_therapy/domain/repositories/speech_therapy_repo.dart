@@ -1,4 +1,5 @@
 import 'package:icare/src/core/api/api_result.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
@@ -17,4 +18,6 @@ abstract class SpeechTherapyRepo {
   Future<ApiResult<List<LevelTwoTrainingResponse>>> getLevelTwoTrainingData(
     String userId,
   );
+  Future<ApiResult<List<AdvancedLevelTrainingResponse>>>
+      getAdvancedLevelTrainingData();
 }
