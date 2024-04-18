@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AdvancedLevelRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AdvancedLevelView(),
+      );
+    },
     AuthRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -298,6 +304,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AdvancedLevelView]
+class AdvancedLevelRoute extends PageRouteInfo<void> {
+  const AdvancedLevelRoute({List<PageRouteInfo>? children})
+      : super(
+          AdvancedLevelRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AdvancedLevelRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
