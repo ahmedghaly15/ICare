@@ -3,7 +3,7 @@ class AppAssets {
 
   /// Assets for AppIcon
   /// assets/app_icon.png
-  static const String AppIcon = "assets/app_icon.png";
+  static const String appIcon = "assets/app_icon.png";
 
   /// Assets for fontsInterInterBold
   /// assets/fonts/inter/Inter-Bold.ttf
@@ -32,6 +32,16 @@ class AppAssets {
   /// Assets for fontsInterOFL
   /// assets/fonts/inter/OFL.txt
   static const String fontsInterOFL = "assets/fonts/inter/OFL.txt";
+
+  /// Assets for fontsLateefLateefRegular
+  /// assets/fonts/lateef/Lateef-Regular.ttf
+  static const String fontsLateefLateefRegular =
+      "assets/fonts/lateef/Lateef-Regular.ttf";
+
+  /// Assets for fontsReadexProReadexProRegular
+  /// assets/fonts/readex-pro/ReadexPro-Regular.ttf
+  static const String fontsReadexProReadexProRegular =
+      "assets/fonts/readex-pro/ReadexPro-Regular.ttf";
 
   /// Assets for iconsGoogle
   /// assets/icons/google.png
@@ -167,6 +177,10 @@ class AppAssets {
   /// assets/svgs/black_search_icon.svg
   static const String svgsBlackSearchIcon = "assets/svgs/black_search_icon.svg";
 
+  /// Assets for svgsBookIcon
+  /// assets/svgs/book_icon.svg
+  static const String svgsBookIcon = "assets/svgs/book_icon.svg";
+
   /// Assets for svgsBookmarkIcon
   /// assets/svgs/bookmark_icon.svg
   static const String svgsBookmarkIcon = "assets/svgs/bookmark_icon.svg";
@@ -218,10 +232,6 @@ class AppAssets {
   /// assets/svgs/error.svg
   static const String svgsError = "assets/svgs/error.svg";
 
-  /// Assets for svgsHalfBrownCircle
-  /// assets/svgs/half_brown_circle.svg
-  static const String svgsHalfBrownCircle = "assets/svgs/half_brown_circle.svg";
-
   /// Assets for svgsHeartCommentIcon
   /// assets/svgs/heart_comment_icon.svg
   static const String svgsHeartCommentIcon =
@@ -235,9 +245,9 @@ class AppAssets {
   /// assets/svgs/home_icon.svg
   static const String svgsHomeIcon = "assets/svgs/home_icon.svg";
 
-  /// Assets for svgsLevelOne
-  /// assets/svgs/level_one.svg
-  static const String svgsLevelOne = "assets/svgs/level_one.svg";
+  /// Assets for svgsMakiyyahIcon
+  /// assets/svgs/makiyyah_icon.svg
+  static const String svgsMakiyyahIcon = "assets/svgs/makiyyah_icon.svg";
 
   /// Assets for svgsMedicalIcon
   /// assets/svgs/medical_icon.svg

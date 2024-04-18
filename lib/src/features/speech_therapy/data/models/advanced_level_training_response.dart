@@ -26,6 +26,8 @@ class AdvancedLevelTrainingDetails {
   final String surahNameEn;
   @JsonKey(name: 'type_ar')
   final String typeAr;
+  @JsonKey(name: 'type_en')
+  final String typeEn;
   @JsonKey(name: 'ayahs_num')
   final int ayahsNum;
   @JsonKey(name: 'bismillah_ar')
@@ -41,6 +43,7 @@ class AdvancedLevelTrainingDetails {
     required this.surahNameAr,
     required this.surahNameEn,
     required this.typeAr,
+    required this.typeEn,
     required this.ayahsNum,
     required this.bismillahAr,
     required this.bismillahAudioUrl,
