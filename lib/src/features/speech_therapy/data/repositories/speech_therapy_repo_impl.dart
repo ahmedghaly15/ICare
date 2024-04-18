@@ -4,6 +4,7 @@ import 'package:icare/src/core/api/api_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_local_datasource.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_remote_datasource.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_marking_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
@@ -47,11 +48,11 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
   }
 
   @override
-  Future<ApiResult<MarkResponse>> markLevelOneExam(
+  Future<ApiResult<MarkResponse>> mark(
     MarkParams params,
   ) {
     return executeAndHandleErrors<MarkResponse>(
-      () async => await _speechTherapyRemoteDatasource.markLevelOneExam(params),
+      () async => await _speechTherapyRemoteDatasource.mark(params),
     );
   }
 
@@ -121,5 +122,15 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
         _speechTherapyLocalDatasource.retrieveCachedAdvancedLevelTrainingData(),
       );
     }
+  }
+
+  @override
+  Future<ApiResult<AdvancedLevelMarkingResponse>> advancedLevelMarking(
+    MarkParams params,
+  ) async {
+    return executeAndHandleErrors<AdvancedLevelMarkingResponse>(
+      () async =>
+          await _speechTherapyRemoteDatasource.advancedLevelMarking(params),
+    );
   }
 }

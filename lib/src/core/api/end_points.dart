@@ -23,4 +23,6 @@ class EndPoints {
       '${speechTherapyBaseUrl}level2/training/';
   static const String advancedLevelTraining =
       '${speechTherapyBaseUrl}advanced/training/';
+  static const String advancedLevelMarking =
+      '${speechTherapyBaseUrl}advanced/marking/';
 }

@@ -5,6 +5,7 @@ import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predi
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_marking_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
@@ -93,4 +94,12 @@ abstract class ApiService {
 
   @GET(EndPoints.advancedLevelTraining)
   Future<List<AdvancedLevelTrainingResponse>> getAdvancedLevelTrainingData();
+
+  @POST(EndPoints.advancedLevelMarking)
+  @MultiPart()
+  Future<AdvancedLevelMarkingResponse> advancedLevelMarking({
+    @Query('user_id') required String userId,
+    @Query('id') required int id,
+    @Part(name: 'audio_file') required File audioFile,
+  });
 }

@@ -458,6 +458,48 @@ class _ApiService implements ApiService {
     return value;
   }
 
+  @override
+  Future<AdvancedLevelMarkingResponse> advancedLevelMarking({
+    required String userId,
+    required int id,
+    required File audioFile,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'user_id': userId,
+      r'id': id,
+    };
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'audio_file',
+      MultipartFile.fromFileSync(
+        audioFile.path,
+        filename: audioFile.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<AdvancedLevelMarkingResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+            .compose(
+              _dio.options,
+              'https://ahmed-muqawi-speech-therapy.hf.space/advanced/marking/',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AdvancedLevelMarkingResponse.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||
