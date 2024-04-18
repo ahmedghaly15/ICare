@@ -30,6 +30,10 @@ mixin _$SpeechTherapyState<T> {
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +50,10 @@ mixin _$SpeechTherapyState<T> {
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +70,10 @@ mixin _$SpeechTherapyState<T> {
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -83,6 +95,12 @@ mixin _$SpeechTherapyState<T> {
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,6 +121,12 @@ mixin _$SpeechTherapyState<T> {
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -123,6 +147,12 @@ mixin _$SpeechTherapyState<T> {
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -200,6 +230,10 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return initial();
   }
@@ -219,6 +253,10 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return initial?.call();
   }
@@ -238,6 +276,10 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -265,6 +307,12 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return initial(this);
   }
@@ -288,6 +336,12 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return initial?.call(this);
   }
@@ -311,6 +365,12 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -379,6 +439,10 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataLoading();
   }
@@ -398,6 +462,10 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataLoading?.call();
   }
@@ -417,6 +485,10 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataLoading != null) {
@@ -444,6 +516,12 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataLoading(this);
   }
@@ -467,6 +545,12 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataLoading?.call(this);
   }
@@ -490,6 +574,12 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataLoading != null) {
@@ -595,6 +685,10 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataSuccess(data);
   }
@@ -614,6 +708,10 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataSuccess?.call(data);
   }
@@ -633,6 +731,10 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataSuccess != null) {
@@ -660,6 +762,12 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataSuccess(this);
   }
@@ -683,6 +791,12 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataSuccess?.call(this);
   }
@@ -706,6 +820,12 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataSuccess != null) {
@@ -810,6 +930,10 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataError(error);
   }
@@ -829,6 +953,10 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataError?.call(error);
   }
@@ -848,6 +976,10 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataError != null) {
@@ -875,6 +1007,12 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataError(this);
   }
@@ -898,6 +1036,12 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelOneTrainingDataError?.call(this);
   }
@@ -921,6 +1065,12 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelOneTrainingDataError != null) {
@@ -992,6 +1142,10 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getScoreLoading();
   }
@@ -1011,6 +1165,10 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getScoreLoading?.call();
   }
@@ -1030,6 +1188,10 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getScoreLoading != null) {
@@ -1057,6 +1219,12 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getScoreLoading(this);
   }
@@ -1080,6 +1248,12 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getScoreLoading?.call(this);
   }
@@ -1103,6 +1277,12 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getScoreLoading != null) {
@@ -1193,6 +1373,10 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getScoreSuccess(data);
   }
@@ -1212,6 +1396,10 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getScoreSuccess?.call(data);
   }
@@ -1231,6 +1419,10 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getScoreSuccess != null) {
@@ -1258,6 +1450,12 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getScoreSuccess(this);
   }
@@ -1281,6 +1479,12 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getScoreSuccess?.call(this);
   }
@@ -1304,6 +1508,12 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getScoreSuccess != null) {
@@ -1400,6 +1610,10 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getScoreError(error);
   }
@@ -1419,6 +1633,10 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getScoreError?.call(error);
   }
@@ -1438,6 +1656,10 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getScoreError != null) {
@@ -1465,6 +1687,12 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getScoreError(this);
   }
@@ -1488,6 +1716,12 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getScoreError?.call(this);
   }
@@ -1511,6 +1745,12 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getScoreError != null) {
@@ -1584,6 +1824,10 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataLoading();
   }
@@ -1603,6 +1847,10 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataLoading?.call();
   }
@@ -1622,6 +1870,10 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelTwoTrainingDataLoading != null) {
@@ -1649,6 +1901,12 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataLoading(this);
   }
@@ -1672,6 +1930,12 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataLoading?.call(this);
   }
@@ -1695,6 +1959,12 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelTwoTrainingDataLoading != null) {
@@ -1800,6 +2070,10 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataSuccess(data);
   }
@@ -1819,6 +2093,10 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataSuccess?.call(data);
   }
@@ -1838,6 +2116,10 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelTwoTrainingDataSuccess != null) {
@@ -1865,6 +2147,12 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataSuccess(this);
   }
@@ -1888,6 +2176,12 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataSuccess?.call(this);
   }
@@ -1911,6 +2205,12 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelTwoTrainingDataSuccess != null) {
@@ -2015,6 +2315,10 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
     required TResult Function(List<LevelTwoTrainingResponse> data)
         getLevelTwoTrainingDataSuccess,
     required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataError(error);
   }
@@ -2034,6 +2338,10 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
     TResult? Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataError?.call(error);
   }
@@ -2053,6 +2361,10 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
     TResult Function(List<LevelTwoTrainingResponse> data)?
         getLevelTwoTrainingDataSuccess,
     TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelTwoTrainingDataError != null) {
@@ -2080,6 +2392,12 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
         getLevelTwoTrainingDataSuccess,
     required TResult Function(GetLevelTwoTrainingDataError<T> value)
         getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataError(this);
   }
@@ -2103,6 +2421,12 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult? Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
   }) {
     return getLevelTwoTrainingDataError?.call(this);
   }
@@ -2126,6 +2450,12 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
         getLevelTwoTrainingDataSuccess,
     TResult Function(GetLevelTwoTrainingDataError<T> value)?
         getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
     required TResult orElse(),
   }) {
     if (getLevelTwoTrainingDataError != null) {
@@ -2144,5 +2474,713 @@ abstract class GetLevelTwoTrainingDataError<T>
   @JsonKey(ignore: true)
   _$$GetLevelTwoTrainingDataErrorImplCopyWith<T,
           _$GetLevelTwoTrainingDataErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAdvancedLevelTrainingDataLoadingImplCopyWith<T, $Res> {
+  factory _$$GetAdvancedLevelTrainingDataLoadingImplCopyWith(
+          _$GetAdvancedLevelTrainingDataLoadingImpl<T> value,
+          $Res Function(_$GetAdvancedLevelTrainingDataLoadingImpl<T>) then) =
+      __$$GetAdvancedLevelTrainingDataLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetAdvancedLevelTrainingDataLoadingImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res,
+        _$GetAdvancedLevelTrainingDataLoadingImpl<T>>
+    implements _$$GetAdvancedLevelTrainingDataLoadingImplCopyWith<T, $Res> {
+  __$$GetAdvancedLevelTrainingDataLoadingImplCopyWithImpl(
+      _$GetAdvancedLevelTrainingDataLoadingImpl<T> _value,
+      $Res Function(_$GetAdvancedLevelTrainingDataLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAdvancedLevelTrainingDataLoadingImpl<T>
+    implements GetAdvancedLevelTrainingDataLoading<T> {
+  const _$GetAdvancedLevelTrainingDataLoadingImpl();
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getAdvancedLevelTrainingDataLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAdvancedLevelTrainingDataLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+    required TResult Function() getLevelTwoTrainingDataLoading,
+    required TResult Function(List<LevelTwoTrainingResponse> data)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+    TResult? Function()? getLevelTwoTrainingDataLoading,
+    TResult? Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    TResult Function()? getLevelTwoTrainingDataLoading,
+    TResult Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getAdvancedLevelTrainingDataLoading != null) {
+      return getAdvancedLevelTrainingDataLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+    required TResult Function(GetLevelTwoTrainingDataLoading<T> value)
+        getLevelTwoTrainingDataLoading,
+    required TResult Function(GetLevelTwoTrainingDataSuccess<T> value)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(GetLevelTwoTrainingDataError<T> value)
+        getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+    TResult? Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult? Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    TResult Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getAdvancedLevelTrainingDataLoading != null) {
+      return getAdvancedLevelTrainingDataLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAdvancedLevelTrainingDataLoading<T>
+    implements SpeechTherapyState<T> {
+  const factory GetAdvancedLevelTrainingDataLoading() =
+      _$GetAdvancedLevelTrainingDataLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetAdvancedLevelTrainingDataSuccessImplCopyWith<T, $Res> {
+  factory _$$GetAdvancedLevelTrainingDataSuccessImplCopyWith(
+          _$GetAdvancedLevelTrainingDataSuccessImpl<T> value,
+          $Res Function(_$GetAdvancedLevelTrainingDataSuccessImpl<T>) then) =
+      __$$GetAdvancedLevelTrainingDataSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<AdvancedLevelTrainingResponse> data});
+}
+
+/// @nodoc
+class __$$GetAdvancedLevelTrainingDataSuccessImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res,
+        _$GetAdvancedLevelTrainingDataSuccessImpl<T>>
+    implements _$$GetAdvancedLevelTrainingDataSuccessImplCopyWith<T, $Res> {
+  __$$GetAdvancedLevelTrainingDataSuccessImplCopyWithImpl(
+      _$GetAdvancedLevelTrainingDataSuccessImpl<T> _value,
+      $Res Function(_$GetAdvancedLevelTrainingDataSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$GetAdvancedLevelTrainingDataSuccessImpl<T>(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<AdvancedLevelTrainingResponse>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAdvancedLevelTrainingDataSuccessImpl<T>
+    implements GetAdvancedLevelTrainingDataSuccess<T> {
+  const _$GetAdvancedLevelTrainingDataSuccessImpl(
+      final List<AdvancedLevelTrainingResponse> data)
+      : _data = data;
+
+  final List<AdvancedLevelTrainingResponse> _data;
+  @override
+  List<AdvancedLevelTrainingResponse> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getAdvancedLevelTrainingDataSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAdvancedLevelTrainingDataSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAdvancedLevelTrainingDataSuccessImplCopyWith<T,
+          _$GetAdvancedLevelTrainingDataSuccessImpl<T>>
+      get copyWith => __$$GetAdvancedLevelTrainingDataSuccessImplCopyWithImpl<T,
+          _$GetAdvancedLevelTrainingDataSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+    required TResult Function() getLevelTwoTrainingDataLoading,
+    required TResult Function(List<LevelTwoTrainingResponse> data)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+    TResult? Function()? getLevelTwoTrainingDataLoading,
+    TResult? Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    TResult Function()? getLevelTwoTrainingDataLoading,
+    TResult Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getAdvancedLevelTrainingDataSuccess != null) {
+      return getAdvancedLevelTrainingDataSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+    required TResult Function(GetLevelTwoTrainingDataLoading<T> value)
+        getLevelTwoTrainingDataLoading,
+    required TResult Function(GetLevelTwoTrainingDataSuccess<T> value)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(GetLevelTwoTrainingDataError<T> value)
+        getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+    TResult? Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult? Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    TResult Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getAdvancedLevelTrainingDataSuccess != null) {
+      return getAdvancedLevelTrainingDataSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAdvancedLevelTrainingDataSuccess<T>
+    implements SpeechTherapyState<T> {
+  const factory GetAdvancedLevelTrainingDataSuccess(
+          final List<AdvancedLevelTrainingResponse> data) =
+      _$GetAdvancedLevelTrainingDataSuccessImpl<T>;
+
+  List<AdvancedLevelTrainingResponse> get data;
+  @JsonKey(ignore: true)
+  _$$GetAdvancedLevelTrainingDataSuccessImplCopyWith<T,
+          _$GetAdvancedLevelTrainingDataSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetAdvancedLevelTrainingDataErrorImplCopyWith<T, $Res> {
+  factory _$$GetAdvancedLevelTrainingDataErrorImplCopyWith(
+          _$GetAdvancedLevelTrainingDataErrorImpl<T> value,
+          $Res Function(_$GetAdvancedLevelTrainingDataErrorImpl<T>) then) =
+      __$$GetAdvancedLevelTrainingDataErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetAdvancedLevelTrainingDataErrorImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res,
+        _$GetAdvancedLevelTrainingDataErrorImpl<T>>
+    implements _$$GetAdvancedLevelTrainingDataErrorImplCopyWith<T, $Res> {
+  __$$GetAdvancedLevelTrainingDataErrorImplCopyWithImpl(
+      _$GetAdvancedLevelTrainingDataErrorImpl<T> _value,
+      $Res Function(_$GetAdvancedLevelTrainingDataErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetAdvancedLevelTrainingDataErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetAdvancedLevelTrainingDataErrorImpl<T>
+    implements GetAdvancedLevelTrainingDataError<T> {
+  const _$GetAdvancedLevelTrainingDataErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getAdvancedLevelTrainingDataError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetAdvancedLevelTrainingDataErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAdvancedLevelTrainingDataErrorImplCopyWith<T,
+          _$GetAdvancedLevelTrainingDataErrorImpl<T>>
+      get copyWith => __$$GetAdvancedLevelTrainingDataErrorImplCopyWithImpl<T,
+          _$GetAdvancedLevelTrainingDataErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+    required TResult Function() getLevelTwoTrainingDataLoading,
+    required TResult Function(List<LevelTwoTrainingResponse> data)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+    TResult? Function()? getLevelTwoTrainingDataLoading,
+    TResult? Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    TResult Function()? getLevelTwoTrainingDataLoading,
+    TResult Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getAdvancedLevelTrainingDataError != null) {
+      return getAdvancedLevelTrainingDataError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+    required TResult Function(GetLevelTwoTrainingDataLoading<T> value)
+        getLevelTwoTrainingDataLoading,
+    required TResult Function(GetLevelTwoTrainingDataSuccess<T> value)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(GetLevelTwoTrainingDataError<T> value)
+        getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+    TResult? Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult? Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getAdvancedLevelTrainingDataError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    TResult Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getAdvancedLevelTrainingDataError != null) {
+      return getAdvancedLevelTrainingDataError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAdvancedLevelTrainingDataError<T>
+    implements SpeechTherapyState<T> {
+  const factory GetAdvancedLevelTrainingDataError(final String error) =
+      _$GetAdvancedLevelTrainingDataErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetAdvancedLevelTrainingDataErrorImplCopyWith<T,
+          _$GetAdvancedLevelTrainingDataErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

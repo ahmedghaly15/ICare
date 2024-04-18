@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/get_advanced_level_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_two_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/score.dart';
@@ -16,11 +18,14 @@ import 'package:icare/src/features/speech_therapy/presentation/widgets/mark_succ
 class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
   final GetLevelOneTrainingDataUseCase _getLevelOneTrainingDataUseCase;
   final GetLevelTwoTrainingDataUseCase _getLevelTwoTrainingDataUseCase;
+  final GetAdvancedLevelTrainingDataUseCase
+      _getAdvancedLevelTrainingDataUseCase;
   final ScoreUseCase _scoreUseCase;
 
   SpeechTherapyCubit(
     this._getLevelOneTrainingDataUseCase,
     this._getLevelTwoTrainingDataUseCase,
+    this._getAdvancedLevelTrainingDataUseCase,
     this._scoreUseCase,
   ) : super(const SpeechTherapyState.initial());
 
@@ -59,6 +64,20 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
       success: (data) => emit(SpeechTherapyState.getScoreSuccess(data)),
       error: (error) => emit(
           SpeechTherapyState.getScoreError(error.apiErrorModel.error ?? '')),
+    );
+  }
+
+  void getAdvancedLevelTrainingData() async {
+    emit(const SpeechTherapyState.getAdvancedLevelTrainingDataLoading());
+    final result =
+        await _getAdvancedLevelTrainingDataUseCase.call(const NoParams());
+    result.when(
+      success: (data) =>
+          emit(SpeechTherapyState.getAdvancedLevelTrainingDataSuccess(data)),
+      error: (error) => emit(
+        SpeechTherapyState.getAdvancedLevelTrainingDataError(
+            error.apiErrorModel.error ?? ''),
+      ),
     );
   }
 

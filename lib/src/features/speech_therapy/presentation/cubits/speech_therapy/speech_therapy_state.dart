@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
@@ -25,4 +26,11 @@ class SpeechTherapyState<T> with _$SpeechTherapyState<T> {
       List<LevelTwoTrainingResponse> data) = GetLevelTwoTrainingDataSuccess<T>;
   const factory SpeechTherapyState.getLevelTwoTrainingDataError(String error) =
       GetLevelTwoTrainingDataError<T>;
+  const factory SpeechTherapyState.getAdvancedLevelTrainingDataLoading() =
+      GetAdvancedLevelTrainingDataLoading;
+  const factory SpeechTherapyState.getAdvancedLevelTrainingDataSuccess(
+          List<AdvancedLevelTrainingResponse> data) =
+      GetAdvancedLevelTrainingDataSuccess<T>;
+  const factory SpeechTherapyState.getAdvancedLevelTrainingDataError(
+      String error) = GetAdvancedLevelTrainingDataError<T>;
 }
