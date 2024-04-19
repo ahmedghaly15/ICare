@@ -6,6 +6,7 @@ import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_marking_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_advanced_level_training_data.dart';
@@ -81,20 +82,27 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
     );
   }
 
-  Future<dynamic> _showMarkSuccessDialog(
-      BuildContext context, MarkResponse data) {
+  Future<dynamic> _showMarkSuccessDialog({
+    required BuildContext context,
+    required String status,
+    required String imageUrl,
+  }) {
     return ShowICareDialog.show(
       context: context,
       padding: EdgeInsets.zero,
       child: MarkSuccessDialog(
-        status: data.status,
-        imageUrl: data.imageUrl,
+        status: status,
+        imageUrl: imageUrl,
       ),
     );
   }
 
   void handleLevelOneMarkSuccess(BuildContext context, MarkResponse data) {
-    _showMarkSuccessDialog(context, data);
+    _showMarkSuccessDialog(
+      context: context,
+      status: data.status,
+      imageUrl: data.imageUrl,
+    );
     getIt
         .get<CacheHelper>()
         .removeData(key: AppStrings.cachedLevelOneTrainingData)
@@ -112,7 +120,11 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
   }
 
   void handleLevelTwoMarkSuccess(BuildContext context, MarkResponse data) {
-    _showMarkSuccessDialog(context, data);
+    _showMarkSuccessDialog(
+      context: context,
+      status: data.status,
+      imageUrl: data.imageUrl,
+    );
     getIt
         .get<CacheHelper>()
         .removeData(key: AppStrings.cachedLevelTwoTrainingData)
@@ -127,5 +139,18 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
         .then((value) {
       getScore(2);
     });
+  }
+
+  void handleAdvancedLevelMarkSuccess(
+    BuildContext context,
+    AdvancedLevelMarkingResponse data,
+  ) {
+    _showMarkSuccessDialog(
+      context: context,
+      status: data.status,
+      imageUrl: data.imageUrl,
+    );
+
+    // TODO: handle advanced level score
   }
 }

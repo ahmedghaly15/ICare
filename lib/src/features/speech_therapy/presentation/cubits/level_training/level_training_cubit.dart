@@ -193,6 +193,13 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     }
   }
 
+  void emitUpdateSelectedAyah() {
+    emit(LevelTrainingState.updateSelectedAyah(selectedAyah!));
+    isAnAdvancedItemSelected = false;
+    emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
+        isAnAdvancedItemSelected));
+  }
+
   void playAndPauseAdvancedLevel(Ayah ayah, BuildContext context) async {
     if (isPlaying) {
       await _audioPlayer.pause();
