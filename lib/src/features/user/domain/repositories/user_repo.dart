@@ -8,4 +8,5 @@ abstract class UserRepo {
   Future<FirebaseRequestResult<void>> unFollow(ICareUser user);
   Future<FirebaseRequestResult<List<ICareUser>>> getFollowers(ICareUser user);
   Future<FirebaseRequestResult<List<ICareUser>>> getFollowing(ICareUser user);
+  Future<FirebaseRequestResult<void>> signOut();
 }

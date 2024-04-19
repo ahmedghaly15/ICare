@@ -78,4 +78,11 @@ class UserRepoImpl implements UserRepo {
       },
     );
   }
+
+  @override
+  Future<FirebaseRequestResult<void>> signOut() {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _userRemoteDataSource.signOut(),
+    );
+  }
 }

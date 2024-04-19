@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -11,6 +13,7 @@ abstract class UserRemoteDataSource {
   Future<QuerySnapshot<Map<String, dynamic>>> getFollowing(ICareUser user);
   Future<void> follow(ICareUser user);
   Future<void> unFollow(ICareUser user);
+  Future<void> signOut();
 }
 
 class UserRemoteDatasourceImpl implements UserRemoteDataSource {
@@ -92,5 +95,13 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   Future<void> _removeUserToFollowing(ICareUser user) async {
     return await _accessFollowingCollection(Helper.uId!).doc(user.uId).delete();
+  }
+
+  @override
+  Future<void> signOut() async {
+    final bool dataIsCleared = await getIt.get<CacheHelper>().clearData();
+    if (dataIsCleared) {
+      await getIt.get<FirebaseAuth>().signOut();
+    }
   }
 }
