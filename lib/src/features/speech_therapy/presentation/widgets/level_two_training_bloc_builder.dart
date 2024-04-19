@@ -33,23 +33,19 @@ class LevelTwoTrainingBlocBuilder extends StatelessWidget {
                     return state.data[index].details.available
                         ? (index % 2 == 0
                             ? FadeInDown(
-                                from: 50,
                                 child: LevelTwoTrainingItem(
                                     data: state.data[index]),
                               )
                             : FadeInUp(
-                                from: 50,
                                 child: LevelTwoTrainingItem(
                                     data: state.data[index]),
                               ))
                         : (index % 2 == 0
                             ? FadeInDown(
-                                from: 50,
                                 child: BlurredLevelTwoTrainingItem(
                                     data: state.data[index]),
                               )
                             : FadeInUp(
-                                from: 50,
                                 child: BlurredLevelTwoTrainingItem(
                                     data: state.data[index]),
                               ));

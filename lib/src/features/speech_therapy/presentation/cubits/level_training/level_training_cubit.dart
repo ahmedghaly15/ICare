@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
+import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
@@ -32,6 +33,7 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
   void _initAttributes() {
     _audioPlayer = AudioPlayer();
     _audioRecorder = AudioRecorder();
+    advancedLevelTrainingScrollController = ScrollController();
   }
 
   late final AudioPlayer _audioPlayer;
@@ -39,6 +41,7 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
   late final AudioRecorder _audioRecorder;
   String? _audioPath;
   bool isRecording = false;
+  late final ScrollController advancedLevelTrainingScrollController;
 
   void _convertIsPlaying() {
     isPlaying = !isPlaying;
@@ -171,25 +174,16 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
   bool isAnAdvancedItemSelected = false;
   Ayah? selectedAyah;
 
-  void updateSelectedAyah(Ayah selectedAyah) {
-    if (this.selectedAyah == null) {
-      this.selectedAyah = selectedAyah;
-      emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
-      isAnAdvancedItemSelected = true;
-      emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
-          isAnAdvancedItemSelected));
-    } else if (this.selectedAyah?.ayahAr != selectedAyah.ayahAr) {
-      this.selectedAyah = selectedAyah;
-      emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
-      isAnAdvancedItemSelected = true;
-      emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
-          isAnAdvancedItemSelected));
-    } else {
-      this.selectedAyah = null;
-      emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
-      isAnAdvancedItemSelected = false;
-      emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
-          isAnAdvancedItemSelected));
+  bool isScrolledToBottom = false;
+
+  Future<void> _scrollToBottom() async {
+    if (!isScrolledToBottom) {
+      await advancedLevelTrainingScrollController.animateTo(
+        advancedLevelTrainingScrollController.position.maxScrollExtent +
+            SizeConfig.height * 0.12,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeOut,
+      );
     }
   }
 
@@ -208,10 +202,66 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     }
   }
 
+  void updateSelectedAyah(Ayah selectedAyah) async {
+    if (this.selectedAyah == null) {
+      _renewSelectedAyah(selectedAyah);
+      _trueIsAdvancedItemSelected();
+      await _scrollToBottomAndTrueIsScrolledToBottom();
+    } else if (this.selectedAyah?.ayahAr != selectedAyah.ayahAr) {
+      _renewSelectedAyah(selectedAyah);
+      _trueIsAdvancedItemSelected();
+      await _scrollToBottomAndTrueIsScrolledToBottom();
+    } else {
+      _nullSelectedAyah(selectedAyah);
+      _falseIsAdvancedItemSelected();
+      _falseIsScrolledToBottom();
+    }
+  }
+
+  void _falseIsScrolledToBottom() {
+    isScrolledToBottom = false;
+    emit(
+        LevelTrainingState.convertIsAnAdvancedItemSelected(isScrolledToBottom));
+  }
+
+  void _falseIsAdvancedItemSelected() {
+    isAnAdvancedItemSelected = false;
+    emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
+        isAnAdvancedItemSelected));
+  }
+
+  void _nullSelectedAyah(Ayah selectedAyah) {
+    this.selectedAyah = null;
+    emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
+  }
+
+  Future<void> _scrollToBottomAndTrueIsScrolledToBottom() async {
+    await _scrollToBottom();
+    isScrolledToBottom = true;
+    emit(
+        LevelTrainingState.convertIsAnAdvancedItemSelected(isScrolledToBottom));
+  }
+
+  void _trueIsAdvancedItemSelected() {
+    isAnAdvancedItemSelected = true;
+    emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
+        isAnAdvancedItemSelected));
+  }
+
+  void _renewSelectedAyah(Ayah selectedAyah) {
+    this.selectedAyah = selectedAyah;
+    emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
+  }
+
   @override
   Future<void> close() {
+    _disposeAttributes();
+    return super.close();
+  }
+
+  void _disposeAttributes() {
     _audioPlayer.dispose();
     _audioRecorder.dispose();
-    return super.close();
+    advancedLevelTrainingScrollController.dispose();
   }
 }

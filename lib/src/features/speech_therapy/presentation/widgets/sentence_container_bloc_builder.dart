@@ -6,6 +6,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_state.dart';
@@ -32,7 +33,9 @@ class SentenceContainerBlocBuilder extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(15.h),
               decoration: BoxDecoration(
-                color: AppColors.secondWhiteColor,
+                color: isDarkModeActive(context)
+                    ? AppColors.scaffoldDarkModeBackgroundColor
+                    : AppColors.secondWhiteColor,
                 boxShadow: [
                   AppConstants.primaryBoxShadow,
                 ],
@@ -43,13 +46,13 @@ class SentenceContainerBlocBuilder extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     sentence,
-                    style: AppTextStyles.textStyle24Medium,
+                    style: AppTextStyles.textStyle20Regular,
                     textAlign: TextAlign.center,
                   ),
                   MySizedBox.height15,
                   Text(
                     AppStrings.whoAmI,
-                    style: AppTextStyles.textStyle25Bold,
+                    style: AppTextStyles.textStyle20Bold,
                   ),
                 ],
               ),

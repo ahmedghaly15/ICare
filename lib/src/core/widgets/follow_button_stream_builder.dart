@@ -28,7 +28,7 @@ class FollowButtonStreamBuilder extends StatelessWidget {
               width: 1.w,
             ),
             backgroundColor: isFollowed ? Colors.white : AppColors.primaryColor,
-            textStyle: AppTextStyles.textStyle18Bold,
+            textStyle: AppTextStyles.textStyle15Bold,
             foregroundColor: isFollowed ? AppColors.primaryColor : Colors.white,
           ),
           onPressed: () => isFollowed

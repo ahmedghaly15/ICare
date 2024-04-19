@@ -21,7 +21,7 @@ class SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: AppConstants.surahItemDecoration,
+      decoration: AppConstants.surahItemDecoration(context),
       child: MaterialButton(
         onPressed: () {
           context.pushRoute(AdvancedLevelTrainingRoute(data: data));

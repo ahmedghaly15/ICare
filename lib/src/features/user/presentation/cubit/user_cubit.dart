@@ -105,14 +105,14 @@ class UserCubit extends Cubit<UserState> {
     });
   }
 
-  Stream<bool> userIsInFollowers() {
+  Stream<bool> userIsInFollowers(String userId) {
     return _accessUsersCollection()
         .doc(Helper.uId!)
         .collection(AppStrings.followersCollection)
         .snapshots()
         .map((querySnapshot) {
       for (var item in querySnapshot.docs) {
-        if (item.data()['uId'] == Helper.uId) {
+        if (item.data()['uId'] == userId) {
           return true;
         }
       }

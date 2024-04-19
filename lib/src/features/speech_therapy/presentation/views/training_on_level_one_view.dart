@@ -36,7 +36,7 @@ class TrainingOnLevelOneView extends StatelessWidget
           slivers: [
             SliverPadding(
               padding: AppConstants.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(title: ''),
+              sliver: const CustomSliverAppBar(),
             ),
             SliverFillRemaining(
               hasScrollBody: false,

@@ -36,21 +36,21 @@ class FollowerUserItem extends StatelessWidget {
       ),
       title: Row(
         children: <Widget>[
-          Text(
-            user.name!,
-            style: AppTextStyles.textStyle20Bold,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+          Expanded(
+            child: Text(
+              user.name!,
+              style: AppTextStyles.textStyle14Medium,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
           MySizedBox.width6,
-          const FollowsYouStreamBuilder(),
+          Expanded(child: FollowsYouStreamBuilder(userId: user.uId!)),
         ],
       ),
       subtitle: Text(
         user.email!,
-        style: AppTextStyles.textStyle16Regular.copyWith(
-          color: Colors.grey,
-        ),
+        style: AppTextStyles.textStyle12Regular.copyWith(color: Colors.grey),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),

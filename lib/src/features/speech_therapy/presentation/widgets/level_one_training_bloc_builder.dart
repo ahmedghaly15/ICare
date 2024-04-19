@@ -33,24 +33,20 @@ class LevelOneTrainingBlocBuilder extends StatelessWidget {
                           .data[index].details.available
                       ? (index % 2 == 0
                           ? FadeInDown(
-                              from: 50,
                               child:
                                   LevelOneTrainingItem(data: state.data[index]),
                             )
                           : FadeInUp(
-                              from: 50,
                               child:
                                   LevelOneTrainingItem(data: state.data[index]),
                             ))
                       : (index % 2 == 0
                           ? FadeInDown(
-                              from: 50,
                               child: BlurredLevelOneTrainingItem(
                                 data: state.data[index],
                               ),
                             )
                           : FadeInUp(
-                              from: 50,
                               child: BlurredLevelOneTrainingItem(
                                 data: state.data[index],
                               ),
@@ -81,6 +77,3 @@ class LevelOneTrainingBlocBuilder extends StatelessWidget {
     );
   }
 }
-
-
-

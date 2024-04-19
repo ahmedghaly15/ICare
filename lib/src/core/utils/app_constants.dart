@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
 class AppConstants {
@@ -82,16 +84,19 @@ class AppConstants {
   ];
   static double get levelOneItemHeight => SizeConfig.height * 0.2;
   static const double trainGradientContainerRadius = 50;
-  static final BoxDecoration surahItemDecoration = BoxDecoration(
-    borderRadius: BorderRadius.circular(50.r),
-    color: Colors.white,
-    boxShadow: <BoxShadow>[
-      BoxShadow(
-        offset: Offset(0, 2.h),
-        blurRadius: 12.r,
-        spreadRadius: 0,
-        color: Colors.black.withOpacity(0.08),
-      ),
-    ],
-  );
+  static BoxDecoration surahItemDecoration(BuildContext context) =>
+      BoxDecoration(
+        borderRadius: BorderRadius.circular(50.r),
+        color: isDarkModeActive(context)
+            ? AppColors.scaffoldDarkModeBackgroundColor
+            : Colors.white,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            offset: Offset(0, 2.h),
+            blurRadius: 12.r,
+            spreadRadius: 0,
+            color: Colors.black.withOpacity(0.08),
+          ),
+        ],
+      );
 }

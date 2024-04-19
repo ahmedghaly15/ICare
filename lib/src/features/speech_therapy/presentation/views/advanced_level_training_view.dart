@@ -34,6 +34,9 @@ class AdvancedLevelTrainingView extends StatelessWidget
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
+          controller: context
+              .read<LevelTrainingCubit>()
+              .advancedLevelTrainingScrollController,
           slivers: [
             SliverPadding(
               padding: AppConstants.viewAppBarPadding,

@@ -22,9 +22,11 @@ class CustomDiseaseDetailsContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(25.r)),
-        boxShadow: [
-          AppConstants.primaryBoxShadow,
-        ],
+        boxShadow: isDarkModeActive(context)
+            ? [
+                AppConstants.primaryBoxShadow,
+              ]
+            : null,
         gradient: LinearGradient(
           colors: isDarkModeActive(context)
               ? <Color>[

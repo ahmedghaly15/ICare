@@ -6,9 +6,9 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/core/widgets/shimmer_widget.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_state.dart';
+import 'package:icare/src/features/speech_therapy/presentation/widgets/advanced_level_items_list_loading.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/custom_circular_percent_indicator.dart';
 
 class AdvancedLevelScoresListBlocBuilder extends StatelessWidget {
@@ -27,7 +27,7 @@ class AdvancedLevelScoresListBlocBuilder extends StatelessWidget {
             padding: EdgeInsets.zero,
             itemBuilder: (context, index) {
               return Container(
-                decoration: AppConstants.surahItemDecoration,
+                decoration: AppConstants.surahItemDecoration(context),
                 padding: EdgeInsets.symmetric(
                   vertical: 10.h,
                   horizontal: 20.w,
@@ -63,15 +63,7 @@ class AdvancedLevelScoresListBlocBuilder extends StatelessWidget {
                 context.read<SpeechTherapyCubit>().getScore(3),
           );
         } else {
-          return ListView.separated(
-            itemBuilder: (_, __) => ShimmerWidget(
-              height: 75.h,
-              width: double.infinity,
-              circularRadiusVal: 50,
-            ),
-            separatorBuilder: (_, __) => MySizedBox.height15,
-            itemCount: 10,
-          );
+          return AdvancedLevelItemsListLoading();
         }
       },
     );
