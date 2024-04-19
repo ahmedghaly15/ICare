@@ -21,7 +21,7 @@ class CustomDeletePopupMenuButton extends StatelessWidget {
           value: AppStrings.delete,
           child: Text(
             AppStrings.delete,
-            style: AppTextStyles.textStyle15Bold,
+            style: AppTextStyles.textStyle10Regular,
           ),
         )
       ],

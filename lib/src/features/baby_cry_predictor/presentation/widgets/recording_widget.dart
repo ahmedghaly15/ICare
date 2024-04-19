@@ -49,8 +49,8 @@ class RecordingWidget extends StatelessWidget {
                       FadeInUp(
                         duration: AppConstants.cryTranslatorAnimationDuration,
                         child: Text(
-                          'Please ensure your recording does not exceed 10 seconds.',
-                          style: AppTextStyles.textStyle20Bold,
+                          'Please ensure your recording\ndoes not exceed 10 seconds.',
+                          style: AppTextStyles.textStyle13Bold,
                           textAlign: TextAlign.center,
                         ),
                       )

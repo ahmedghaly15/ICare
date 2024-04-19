@@ -22,7 +22,7 @@ class RandomTipErrorDialog extends StatelessWidget {
         MySizedBox.height8,
         Text(
           error,
-          style: AppTextStyles.textStyle18Bold,
+          style: AppTextStyles.textStyle16Bold,
           textAlign: TextAlign.center,
         ),
         Align(
@@ -31,7 +31,7 @@ class RandomTipErrorDialog extends StatelessWidget {
             onPressed: () => context.maybePop(),
             child: Text(
               AppStrings.done,
-              style: AppTextStyles.textStyle16Medium.copyWith(
+              style: AppTextStyles.textStyle14Medium.copyWith(
                 color: AppColors.primaryColor,
               ),
             ),

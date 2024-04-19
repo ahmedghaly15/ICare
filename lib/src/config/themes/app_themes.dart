@@ -16,7 +16,7 @@ class AppThemes {
           backgroundColor: AppColors.scaffoldBackgroundColor,
           elevation: 0,
           centerTitle: true,
-          titleTextStyle: AppTextStyles.textStyle30Bold.copyWith(
+          titleTextStyle: AppTextStyles.textStyle20Bold.copyWith(
             color: AppColors.primaryColor,
           ),
         ),
@@ -34,8 +34,8 @@ class AppThemes {
           elevation: 0,
           selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: Colors.black,
-          selectedLabelStyle: AppTextStyles.textStyle15Bold,
-          unselectedLabelStyle: AppTextStyles.textStyle15Bold,
+          selectedLabelStyle: AppTextStyles.textStyle10Bold,
+          unselectedLabelStyle: AppTextStyles.textStyle10Bold,
         ),
         iconButtonTheme: IconButtonThemeData(
           style: IconButton.styleFrom(
@@ -47,7 +47,7 @@ class AppThemes {
           indicatorColor: AppColors.primaryColor,
           indicatorSize: TabBarIndicatorSize.label,
           dividerHeight: 0,
-          labelStyle: AppTextStyles.textStyle18Bold,
+          labelStyle: AppTextStyles.textStyle13Bold,
           unselectedLabelColor: Colors.black,
           labelColor: Colors.black,
           labelPadding: const EdgeInsets.symmetric(
@@ -81,7 +81,7 @@ class AppThemes {
           backgroundColor: AppColors.scaffoldDarkModeBackgroundColor,
           elevation: 0,
           centerTitle: true,
-          titleTextStyle: AppTextStyles.textStyle30Bold.copyWith(
+          titleTextStyle: AppTextStyles.textStyle20Bold.copyWith(
             color: AppColors.primaryColor,
           ),
         ),
@@ -99,10 +99,10 @@ class AppThemes {
           elevation: 0,
           selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: Colors.white,
-          selectedLabelStyle: AppTextStyles.textStyle15Bold.copyWith(
+          selectedLabelStyle: AppTextStyles.textStyle10Bold.copyWith(
             color: Colors.white,
           ),
-          unselectedLabelStyle: AppTextStyles.textStyle15Bold.copyWith(
+          unselectedLabelStyle: AppTextStyles.textStyle10Bold.copyWith(
             color: Colors.white,
           ),
         ),
@@ -116,7 +116,7 @@ class AppThemes {
           indicatorColor: AppColors.primaryColor,
           indicatorSize: TabBarIndicatorSize.label,
           dividerHeight: 0,
-          labelStyle: AppTextStyles.textStyle18Bold,
+          labelStyle: AppTextStyles.textStyle13Bold,
           unselectedLabelColor: Colors.white,
           labelColor: Colors.white,
           labelPadding: const EdgeInsets.symmetric(

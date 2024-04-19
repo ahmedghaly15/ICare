@@ -48,13 +48,15 @@ class CustomDrawerItem extends StatelessWidget {
           children: <Widget>[
             SvgPicture.asset(icon),
             MySizedBox.width27,
-            Text(
-              title,
-              style: AppTextStyles.textStyle18Bold.copyWith(
-                color: isEvenIndex ? AppColors.gradientOrange : Colors.black,
+            Expanded(
+              child: Text(
+                title,
+                style: AppTextStyles.textStyle13Bold.copyWith(
+                  color: isEvenIndex ? AppColors.gradientOrange : Colors.black,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),

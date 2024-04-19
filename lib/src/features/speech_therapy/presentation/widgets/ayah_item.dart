@@ -89,7 +89,7 @@ class AyahItem extends StatelessWidget {
                           MySizedBox.height12,
                           Text(
                             ayah.ayahEn,
-                            style: AppTextStyles.textStyle18Regular,
+                            style: AppTextStyles.textStyle13Regular,
                           ),
                         ],
                       ),

@@ -42,13 +42,13 @@ class UserItem extends StatelessWidget {
               children: <Widget>[
                 Text(
                   user.name!,
-                  style: AppTextStyles.textStyle18Bold,
+                  style: AppTextStyles.textStyle14Medium,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
                   user.email!,
-                  style: AppTextStyles.textStyle14Medium
+                  style: AppTextStyles.textStyle12Regular
                       .copyWith(color: Colors.grey),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,

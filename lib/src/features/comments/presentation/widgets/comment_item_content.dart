@@ -36,7 +36,7 @@ class CommentItemContent extends StatelessWidget {
         children: <Widget>[
           Text(
             comment.user!.name!,
-            style: AppTextStyles.textStyle18Bold,
+            style: AppTextStyles.textStyle15Bold,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -44,7 +44,7 @@ class CommentItemContent extends StatelessWidget {
             MySizedBox.height7,
             Linkify(
               text: comment.commentData!.commentText!,
-              style: AppTextStyles.textStyle16Regular,
+              style: AppTextStyles.textStyle14Regular,
               onOpen: (link) => openUrl(link),
             ),
           ],
@@ -63,7 +63,7 @@ class CommentItemContent extends StatelessWidget {
           MySizedBox.height12,
           Text(
             '${comment.commentData!.date} at ${comment.commentData!.time!}',
-            style: AppTextStyles.textStyle13Regular
+            style: AppTextStyles.textStyle10Regular
                 .copyWith(color: Colors.grey.shade400),
           ),
         ],

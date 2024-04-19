@@ -24,7 +24,7 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
             if (item is String) {
               return Text(
                 '$item\n',
-                style: AppTextStyles.textStyle18Bold,
+                style: AppTextStyles.textStyle13Bold,
               );
             } else if (item is Map<String, dynamic>) {
               return Column(
@@ -38,7 +38,7 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                       CustomTitleContainer(
                         child: Text(
                           entry.key,
-                          style: AppTextStyles.textStyle25Bold,
+                          style: AppTextStyles.textStyle16Bold,
                         ),
                       ),
                       ListView.builder(
@@ -50,7 +50,7 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                           return Markdown(
                             data: '${(entry.value as List<dynamic>)[index]}\n',
                             styleSheet: MarkdownStyleSheet(
-                              p: AppTextStyles.textStyle18Bold,
+                              p: AppTextStyles.textStyle13Bold,
                             ),
                             padding: EdgeInsets.zero,
                             selectable: false,

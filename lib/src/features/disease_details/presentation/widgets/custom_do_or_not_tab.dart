@@ -28,25 +28,25 @@ class CustomDoOrNotTab extends StatelessWidget {
               CustomTitleContainer(
                 child: Text(
                   AppStrings.dO,
-                  style: AppTextStyles.textStyle25Bold,
+                  style: AppTextStyles.textStyle16Bold,
                 ),
               ),
               MySizedBox.height7,
               Text(
                 doList.join('\n\n'),
-                style: AppTextStyles.textStyle18Bold,
+                style: AppTextStyles.textStyle13Bold,
               ),
               MySizedBox.height12,
               CustomTitleContainer(
                 child: Text(
                   'Do Not',
-                  style: AppTextStyles.textStyle25Bold,
+                  style: AppTextStyles.textStyle16Bold,
                 ),
               ),
               MySizedBox.height7,
               Text(
                 notToDoList.join('\n\n'),
-                style: AppTextStyles.textStyle18Bold,
+                style: AppTextStyles.textStyle13Bold,
               ),
             ],
           ),

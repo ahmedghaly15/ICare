@@ -57,7 +57,7 @@ class DiseaseItem extends StatelessWidget {
                 padding: EdgeInsets.all(8.0.h),
                 child: Text(
                   diseaseType ?? diseaseData!.diseaseName,
-                  style: AppTextStyles.textStyle20Bold
+                  style: AppTextStyles.textStyle13Bold
                       .copyWith(color: Colors.white),
                   textAlign: TextAlign.center,
                 ),

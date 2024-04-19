@@ -48,14 +48,14 @@ class TinyTaleItemUpperSection extends StatelessWidget {
                 },
                 child: Text(
                   tinyTale.user!.name!,
-                  style: AppTextStyles.textStyle20Bold,
+                  style: AppTextStyles.textStyle15Bold,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
               Text(
                 '${tinyTale.tinyTaleData!.date} at ${tinyTale.tinyTaleData!.time}',
-                style: AppTextStyles.textStyle16Medium.copyWith(
+                style: AppTextStyles.textStyle10Regular.copyWith(
                   color: Colors.grey,
                 ),
               ),

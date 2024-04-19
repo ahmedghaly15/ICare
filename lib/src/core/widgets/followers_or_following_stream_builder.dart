@@ -28,14 +28,14 @@ class FollowersOrFollowingStreamBuilder extends StatelessWidget {
 
               return Text(
                 '$streamCount',
-                style: AppTextStyles.textStyle18Regular,
+                style: AppTextStyles.textStyle13Regular,
               );
             },
           ),
           MySizedBox.height5,
           Text(
             title,
-            style: AppTextStyles.textStyle18Regular,
+            style: AppTextStyles.textStyle13Regular,
           ),
         ],
       ),

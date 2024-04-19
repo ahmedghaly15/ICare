@@ -32,7 +32,7 @@ class CustomTextButtonWithIcon extends StatelessWidget {
       style: style ??
           TextButton.styleFrom(
             backgroundColor: backgroundColor ?? AppColors.primaryColor,
-            textStyle: textStyle ?? AppTextStyles.textStyle25Bold,
+            textStyle: textStyle ?? AppTextStyles.textStyle20Bold,
             foregroundColor: foregroundColor ?? Colors.white,
             padding: padding ??
                 EdgeInsets.symmetric(

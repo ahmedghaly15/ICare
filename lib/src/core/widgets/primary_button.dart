@@ -54,12 +54,14 @@ class PrimaryButton extends StatelessWidget {
               BorderRadiusDirectional.circular(borderRadius ?? 50.0.r),
         ),
         child: child ??
-            Text(
-              text!,
-              style: textStyle ??
-                  AppTextStyles.textStyle24Medium.copyWith(
-                    color: textColor ?? Colors.white,
-                  ),
+            FittedBox(
+              child: Text(
+                text!,
+                style: textStyle ??
+                    AppTextStyles.textStyle20Bold.copyWith(
+                      color: textColor ?? Colors.white,
+                    ),
+              ),
             ),
       ),
     );

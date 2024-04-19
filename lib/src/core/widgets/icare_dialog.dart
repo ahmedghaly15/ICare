@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -105,13 +104,13 @@ class ICareDialog extends StatelessWidget {
               MySizedBox.height8,
               Text(
                 title!,
-                style: AppTextStyles.textStyle18Bold,
+                style: AppTextStyles.textStyle16Bold,
               ),
               MySizedBox.height8,
               Flexible(
                 child: Text(
                   message!,
-                  style: AppTextStyles.textStyle15Bold,
+                  style: AppTextStyles.textStyle13Bold,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -120,12 +119,7 @@ class ICareDialog extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () => context.maybePop(),
-                  child: Text(
-                    AppStrings.done,
-                    style: AppTextStyles.textStyle16Medium.copyWith(
-                      color: AppColors.primaryColor,
-                    ),
-                  ),
+                  child: const Text(AppStrings.done),
                 ),
               ),
             ],

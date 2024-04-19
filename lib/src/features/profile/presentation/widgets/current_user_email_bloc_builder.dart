@@ -15,7 +15,7 @@ class CurrentUserEmailBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return Text(
           Helper.currentUser!.email!,
-          style: AppTextStyles.textStyle16Regular,
+          style: AppTextStyles.textStyle12Regular,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         );

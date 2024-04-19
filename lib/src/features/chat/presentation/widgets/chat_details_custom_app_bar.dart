@@ -48,7 +48,7 @@ class ChatDetailsCustomAppBar extends StatelessWidget {
         Expanded(
           child: Text(
             receiver.name!,
-            style: AppTextStyles.textStyle20Bold.copyWith(
+            style: AppTextStyles.textStyle16Bold.copyWith(
               color: Colors.black,
             ),
             maxLines: 1,

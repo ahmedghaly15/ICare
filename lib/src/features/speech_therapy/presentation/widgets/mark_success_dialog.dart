@@ -32,7 +32,7 @@ class MarkSuccessDialog extends StatelessWidget {
               child: Text(
                 status,
                 style:
-                    AppTextStyles.textStyle18Bold.copyWith(color: Colors.white),
+                    AppTextStyles.textStyle13Bold.copyWith(color: Colors.white),
                 textAlign: TextAlign.center,
               ),
             ),

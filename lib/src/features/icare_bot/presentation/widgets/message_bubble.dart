@@ -52,14 +52,14 @@ class MessageBubble extends StatelessWidget {
               child: isUser
                   ? Text(
                       message,
-                      style: AppTextStyles.textStyle16Medium,
+                      style: AppTextStyles.textStyle13Regular,
                       textAlign: TextAlign.left,
                     )
                   : Markdown(
                       data: message,
                       padding: EdgeInsets.zero,
                       styleSheet: MarkdownStyleSheet(
-                        p: AppTextStyles.textStyle16Medium.copyWith(
+                        p: AppTextStyles.textStyle13Regular.copyWith(
                           color: Colors.white,
                         ),
                       ),

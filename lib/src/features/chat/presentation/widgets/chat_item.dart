@@ -18,7 +18,6 @@ class ChatItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 16.h),
-      // height: 120.h,
       child: Column(
         children: <Widget>[
           UserItem(

@@ -46,7 +46,7 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
     return AppBar(
       backgroundColor: AppColors.primaryColor,
       title: const Text(AppStrings.icareBot),
-      titleTextStyle: AppTextStyles.textStyle30Bold,
+      titleTextStyle: AppTextStyles.textStyle20Bold,
       leading: IconButton(
         onPressed: () => context.maybePop(),
         icon: const Icon(

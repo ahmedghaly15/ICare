@@ -69,6 +69,11 @@ class AppTextStyles {
         fontWeight: FontWeight.bold,
       );
 
+  static TextStyle get textStyle14Regular => TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w400,
+      );
+
   static TextStyle get textStyle14Medium => TextStyle(
         fontSize: 14.sp,
         fontWeight: FontWeight.w500,
@@ -87,5 +92,19 @@ class AppTextStyles {
   static TextStyle get textStyle13Light => TextStyle(
         fontSize: 13.sp,
         fontWeight: FontWeight.w300,
+      );
+
+  static TextStyle get textStyle12Regular => TextStyle(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w400,
+      );
+
+  static TextStyle get textStyle10Bold => TextStyle(
+        fontSize: 10.sp,
+        fontWeight: FontWeight.bold,
+      );
+  static TextStyle get textStyle10Regular => TextStyle(
+        fontSize: 10.sp,
+        fontWeight: FontWeight.bold,
       );
 }

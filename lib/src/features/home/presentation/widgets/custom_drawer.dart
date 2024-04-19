@@ -34,6 +34,19 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           const SliverToBoxAdapter(child: DrawerItems()),
+          SliverFillRemaining(
+            child: Column(
+              children: <Widget>[
+                const Spacer(),
+                Switch(
+                  value: true,
+                  onChanged: (_) {},
+                  activeColor: AppColors.primaryColor,
+                  activeTrackColor: Colors.white,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

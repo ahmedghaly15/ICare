@@ -20,7 +20,10 @@ class FrequentlyAskedQuestion extends StatelessWidget {
         context.read<ICareBotCubit>().setNewTextValue(question);
       },
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.all(8.h),
+        padding: EdgeInsets.symmetric(
+          vertical: 8.h,
+          horizontal: 16.w,
+        ),
         backgroundColor: AppColors.lightGrey3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30.r)),
@@ -30,7 +33,7 @@ class FrequentlyAskedQuestion extends StatelessWidget {
       ),
       child: Text(
         question,
-        style: AppTextStyles.textStyle14Medium.copyWith(color: Colors.black),
+        style: AppTextStyles.textStyle12Regular.copyWith(color: Colors.black),
       ),
     );
   }

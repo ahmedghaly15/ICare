@@ -37,7 +37,7 @@ class DiseaseInfoSectionItem extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: AppTextStyles.textStyle13Bold.copyWith(
+          style: AppTextStyles.textStyle10Bold.copyWith(
             color: isActive ? Colors.white : Colors.black,
           ),
         ),

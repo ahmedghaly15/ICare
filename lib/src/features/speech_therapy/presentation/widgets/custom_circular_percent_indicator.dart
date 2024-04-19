@@ -26,7 +26,7 @@ class CustomCircularPercentIndicator extends StatelessWidget {
       fillColor: Colors.transparent,
       center: Text(
         '$percent %',
-        style: AppTextStyles.textStyle20Bold.copyWith(
+        style: AppTextStyles.textStyle13Bold.copyWith(
           color: AppColors.primaryColor,
         ),
       ),

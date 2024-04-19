@@ -21,7 +21,7 @@ class CustomCountDownTimer extends StatelessWidget {
         }
         return Text(
           '${time.min ?? '00'}:${time.sec.toString().padLeft(2, '0')}',
-          style: AppTextStyles.textStyle20Bold,
+          style: AppTextStyles.textStyle16Bold,
         );
       },
     );

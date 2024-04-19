@@ -64,11 +64,10 @@ class AdvancedLevelScoresListBlocBuilder extends StatelessWidget {
           );
         } else {
           return ListView.separated(
-            itemBuilder: (_, __) => const AspectRatio(
-              aspectRatio: 330 / 75,
-              child: ShimmerWidget(
-                circularRadiusVal: 50,
-              ),
+            itemBuilder: (_, __) => ShimmerWidget(
+              height: 75.h,
+              width: double.infinity,
+              circularRadiusVal: 50,
             ),
             separatorBuilder: (_, __) => MySizedBox.height15,
             itemCount: 10,

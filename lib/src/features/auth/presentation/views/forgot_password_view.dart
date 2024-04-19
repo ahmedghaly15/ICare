@@ -34,7 +34,7 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
               sliver: SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
                       alignment: AlignmentDirectional.centerStart,
@@ -50,8 +50,7 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
                     ),
                     Text(
                       AppStrings.forgotPasswordDescription,
-                      style: AppTextStyles.textStyle15Bold,
-                      textAlign: TextAlign.center,
+                      style: AppTextStyles.textStyle14Medium,
                     ),
                     MySizedBox.height55,
                     const ForgotPasswordForm(),
