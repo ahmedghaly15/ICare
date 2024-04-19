@@ -25,17 +25,18 @@ class RecordingResultWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(AppConstants.padding25),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(AppConstants.radius25.r),
-              child: FadeInDown(
-                child:
-                    CustomCachedNetworkImage(imageUrl: predictionResult.photo),
+          FadeInDown(
+            child: CustomCachedNetworkImage(
+              imageUrl: predictionResult.photo,
+              imageBuilder: (_, image) => CircleAvatar(
+                radius: 150.r,
+                backgroundImage: image,
               ),
             ),
           ),
-          MySizedBox.height12,
+          MySizedBox.height30,
           FadeInUp(
             child: RichText(
               text: TextSpan(

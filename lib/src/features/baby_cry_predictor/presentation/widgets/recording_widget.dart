@@ -23,7 +23,6 @@ class RecordingWidget extends StatelessWidget {
             SliverFillRemaining(
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
