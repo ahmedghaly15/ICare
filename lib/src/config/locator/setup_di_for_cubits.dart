@@ -49,6 +49,7 @@ class SetupDIForCubits {
         unFollowUseCase: getIt.get<UnFollowUseCase>(),
         getFollowersUseCase: getIt.get<GetFollowersUseCase>(),
         getFollowingUseCase: getIt.get<GetFollowingUseCase>(),
+        signOutUseCase: getIt.get<SignOutUseCase>(),
       ),
     );
 

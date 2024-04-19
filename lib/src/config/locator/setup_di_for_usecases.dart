@@ -52,6 +52,9 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetFollowingUseCase>(
       () => GetFollowingUseCase(getIt.get<UserRepo>()),
     );
+    getIt.registerLazySingleton<SignOutUseCase>(
+      () => SignOutUseCase(getIt.get<UserRepo>()),
+    );
 
     // ========== EmergencyDiseaseDetails feature ==========
     getIt.registerLazySingleton<GetEmergencyDiseaseDetailsUseCase>(
