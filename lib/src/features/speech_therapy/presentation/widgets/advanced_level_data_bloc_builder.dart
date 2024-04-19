@@ -32,13 +32,11 @@ class AdvancedLevelDataBlocBuilder extends StatelessWidget {
                     return index % 2 == 0
                         ? SlideInRight(
                             from: 250.w,
-                            child: SurahItem(
-                                surahDetails: state.data[index].details),
+                            child: SurahItem(data: state.data[index]),
                           )
                         : SlideInLeft(
                             from: 250.w,
-                            child: SurahItem(
-                                surahDetails: state.data[index].details),
+                            child: SurahItem(data: state.data[index]),
                           );
                   },
                   separatorBuilder: (_, __) => MySizedBox.height25,

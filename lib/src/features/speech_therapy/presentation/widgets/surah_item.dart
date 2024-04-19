@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -10,10 +12,10 @@ import 'package:icare/src/features/speech_therapy/presentation/widgets/surah_inf
 class SurahItem extends StatelessWidget {
   const SurahItem({
     super.key,
-    required this.surahDetails,
+    required this.data,
   });
 
-  final AdvancedLevelTrainingDetails surahDetails;
+  final AdvancedLevelTrainingResponse data;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,9 @@ class SurahItem extends StatelessWidget {
         ],
       ),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () {
+          context.pushRoute(AdvancedLevelTrainingRoute(data: data));
+        },
         padding: EdgeInsets.symmetric(
           vertical: 24.h,
           horizontal: 16.w,
@@ -45,26 +49,26 @@ class SurahItem extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(surahDetails.surahNameEn,
+                Text(data.details.surahNameEn,
                     style: AppTextStyles.textStyle18Bold(context)),
                 MySizedBox.height12,
                 Row(
                   children: <Widget>[
                     SurahInfoContainer(
                       icon: AppAssets.svgsMakiyyahIcon,
-                      label: surahDetails.typeEn,
+                      label: data.details.typeEn,
                     ),
                     MySizedBox.width15,
                     SurahInfoContainer(
                       icon: AppAssets.svgsBookIcon,
-                      label: '${surahDetails.ayahsNum} Ayat',
+                      label: '${data.details.ayahsNum} Ayat',
                     ),
                   ],
                 ),
               ],
             ),
             Text(
-              surahDetails.surahNameAr,
+              data.details.surahNameAr,
               style: AppTextStyles.textStyle20Bold(context).copyWith(
                 fontFamily: AppStrings.readexProFontFamily,
               ),
