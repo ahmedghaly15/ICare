@@ -8,7 +8,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
-import 'package:icare/src/features/speech_therapy/presentation/widgets/advanced_level_try_listen_buttons_bloc_builder.dart';
+import 'package:icare/src/features/speech_therapy/presentation/widgets/advanced_level_try_listen_buttons_bloc_consumer.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/ayah_item.dart';
 
 @RoutePage()
@@ -52,7 +52,7 @@ class AdvancedLevelTrainingView extends StatelessWidget
                 ),
               ),
             ),
-            AdvancedLevelTryListenButtonsBlocBuilder(id: data.id),
+            AdvancedLevelTryListenButtonsBlocConsumer(id: data.id),
           ],
         ),
       ),
