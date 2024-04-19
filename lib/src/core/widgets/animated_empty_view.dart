@@ -26,7 +26,7 @@ class AnimatedEmptyView extends StatelessWidget {
         FadeInUp(
           child: Text(
             text,
-            style: AppTextStyles.textStyle20Bold(context),
+            style: AppTextStyles.textStyle20Bold,
           ),
         ),
       ],

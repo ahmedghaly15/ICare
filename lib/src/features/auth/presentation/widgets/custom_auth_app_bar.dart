@@ -31,7 +31,7 @@ class CustomAuthAppBar extends StatelessWidget {
               ),
               Text(
                 AppStrings.appTitle,
-                style: AppTextStyles.textStyle30Bold(context).copyWith(
+                style: AppTextStyles.textStyle30Bold.copyWith(
                   color: AppColors.primaryColor,
                 ),
               ),

@@ -17,7 +17,7 @@ class Or extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 22.w),
           child: Text(
             AppStrings.or,
-            style: AppTextStyles.textStyle16Medium(context).copyWith(
+            style: AppTextStyles.textStyle16Medium.copyWith(
               color: AppColors.greyColor,
             ),
           ),

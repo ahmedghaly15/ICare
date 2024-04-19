@@ -20,7 +20,7 @@ class FollowsYouStreamBuilder extends StatelessWidget {
                 color: Colors.black26,
                 child: Text(
                   AppStrings.followsYou,
-                  style: AppTextStyles.textStyle13Regular(context).copyWith(
+                  style: AppTextStyles.textStyle13Regular.copyWith(
                     color: Colors.white,
                   ),
                 ),

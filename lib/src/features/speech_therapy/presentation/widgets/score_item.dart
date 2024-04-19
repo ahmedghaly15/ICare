@@ -38,7 +38,7 @@ class ScoreItem extends StatelessWidget {
             MySizedBox.height20,
             Text(
               '${scoreDetail.subLevelPercent}%',
-              style: AppTextStyles.textStyle25Bold(context)
+              style: AppTextStyles.textStyle25Bold
                   .copyWith(color: AppColors.brown),
             ),
           ],

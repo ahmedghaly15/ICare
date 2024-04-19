@@ -65,7 +65,7 @@ class LikeAndReplyButtons extends StatelessWidget {
           style: TextButton.styleFrom(
             padding: EdgeInsets.all(6.h),
             foregroundColor: AppColors.darkGrey,
-            textStyle: AppTextStyles.textStyle13Bold(context),
+            textStyle: AppTextStyles.textStyle13Bold,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             minimumSize: Size.zero,
           ),

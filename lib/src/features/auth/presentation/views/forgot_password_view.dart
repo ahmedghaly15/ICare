@@ -46,11 +46,11 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
                     const Spacer(),
                     Text(
                       AppStrings.forgotPassword,
-                      style: AppTextStyles.textStyle25Bold(context),
+                      style: AppTextStyles.textStyle25Bold,
                     ),
                     Text(
                       AppStrings.forgotPasswordDescription,
-                      style: AppTextStyles.textStyle15Bold(context),
+                      style: AppTextStyles.textStyle15Bold,
                       textAlign: TextAlign.center,
                     ),
                     MySizedBox.height55,

@@ -62,8 +62,7 @@ class AdvancedLevelTryListenButtonsBlocConsumer extends StatelessWidget {
                         state is UpdateSelectedAyah)
                       TryItAndListenButtons(
                         padding: EdgeInsets.symmetric(vertical: 4.h),
-                        textStyle:
-                            AppTextStyles.textStyle18Bold(context).copyWith(
+                        textStyle: AppTextStyles.textStyle18Bold.copyWith(
                           color: Colors.white,
                         ),
                         audioUrl: context

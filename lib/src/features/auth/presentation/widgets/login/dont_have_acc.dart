@@ -15,13 +15,13 @@ class DontHavAcc extends StatelessWidget {
       children: <Widget>[
         Text(
           AppStrings.dontHavAcc,
-          style: AppTextStyles.textStyle16Light(context),
+          style: AppTextStyles.textStyle16Light,
         ),
         TextButton(
           onPressed: () => context.pushRoute(const RegisterRoute()),
           child: Text(
             AppStrings.registerHere,
-            style: AppTextStyles.textStyle16Bold(context).copyWith(
+            style: AppTextStyles.textStyle16Bold.copyWith(
               color: AppColors.primaryColor,
             ),
           ),

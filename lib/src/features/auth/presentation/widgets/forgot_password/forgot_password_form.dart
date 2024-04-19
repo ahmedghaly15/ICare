@@ -49,8 +49,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                       )
                     : Text(
                         AppStrings.resetPassword,
-                        style:
-                            AppTextStyles.textStyle24Medium(context).copyWith(
+                        style: AppTextStyles.textStyle24Medium.copyWith(
                           color: Colors.white,
                         ),
                       ),

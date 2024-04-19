@@ -16,11 +16,11 @@ class QuerySnapshotTextStreamBuilder extends StatelessWidget {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: stream,
       builder: (context, snapshot) {
-        int commentLikesCount = snapshot.data?.docs.length ?? 0;
+        int count = snapshot.data?.docs.length ?? 0;
 
         return Text(
-          '$commentLikesCount',
-          style: AppTextStyles.textStyle13Regular(context).copyWith(
+          '$count',
+          style: AppTextStyles.textStyle13Regular.copyWith(
             color: AppColors.darkGrey,
           ),
         );

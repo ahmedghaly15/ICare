@@ -38,7 +38,7 @@ class PageViewItem extends StatelessWidget {
             children: <Widget>[
               Text(
                 pageInfo.description,
-                style: AppTextStyles.textStyle16Bold(context).copyWith(
+                style: AppTextStyles.textStyle16Bold.copyWith(
                   color: Colors.white,
                 ),
               ),

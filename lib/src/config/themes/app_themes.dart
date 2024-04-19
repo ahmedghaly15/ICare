@@ -6,7 +6,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 class AppThemes {
   AppThemes._();
 
-  static ThemeData lightTheme(BuildContext context) => ThemeData(
+  static ThemeData get lightTheme => ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
         primaryColor: AppColors.primaryColor,
@@ -16,13 +16,13 @@ class AppThemes {
           backgroundColor: AppColors.scaffoldBackgroundColor,
           elevation: 0,
           centerTitle: true,
-          titleTextStyle: AppTextStyles.textStyle30Bold(context).copyWith(
+          titleTextStyle: AppTextStyles.textStyle30Bold.copyWith(
             color: AppColors.primaryColor,
           ),
         ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
-            textStyle: AppTextStyles.textStyle13Bold(context),
+            textStyle: AppTextStyles.textStyle13Bold,
             foregroundColor: AppColors.primaryColor,
           ),
         ),
@@ -34,8 +34,8 @@ class AppThemes {
           elevation: 0,
           selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: Colors.black,
-          selectedLabelStyle: AppTextStyles.textStyle15Bold(context),
-          unselectedLabelStyle: AppTextStyles.textStyle15Bold(context),
+          selectedLabelStyle: AppTextStyles.textStyle15Bold,
+          unselectedLabelStyle: AppTextStyles.textStyle15Bold,
         ),
         iconButtonTheme: IconButtonThemeData(
           style: IconButton.styleFrom(
@@ -47,7 +47,7 @@ class AppThemes {
           indicatorColor: AppColors.primaryColor,
           indicatorSize: TabBarIndicatorSize.label,
           dividerHeight: 0,
-          labelStyle: AppTextStyles.textStyle18Bold(context),
+          labelStyle: AppTextStyles.textStyle18Bold,
           unselectedLabelColor: Colors.black,
           labelColor: Colors.black,
           labelPadding: const EdgeInsets.symmetric(
@@ -65,9 +65,11 @@ class AppThemes {
               width: 1,
             ),
             backgroundColor: AppColors.primaryColor,
-            textStyle: AppTextStyles.textStyle18Bold(context),
+            textStyle: AppTextStyles.textStyle18Bold,
             foregroundColor: Colors.white,
           ),
         ),
       );
+
+  static ThemeData get darkTheme => ThemeData();
 }

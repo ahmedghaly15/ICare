@@ -80,8 +80,7 @@ class AyahItem extends StatelessWidget {
                         children: <Widget>[
                           Text(
                             ayah.ayahAr,
-                            style: AppTextStyles.textStyle24Regular(context)
-                                .copyWith(
+                            style: AppTextStyles.textStyle24Regular.copyWith(
                               color: AppColors.primaryColor,
                               fontFamily: AppStrings.lateefFontFamily,
                             ),
@@ -90,7 +89,7 @@ class AyahItem extends StatelessWidget {
                           MySizedBox.height12,
                           Text(
                             ayah.ayahEn,
-                            style: AppTextStyles.textStyle18Regular(context),
+                            style: AppTextStyles.textStyle18Regular,
                           ),
                         ],
                       ),

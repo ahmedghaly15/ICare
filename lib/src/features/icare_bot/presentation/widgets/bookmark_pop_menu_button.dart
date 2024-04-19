@@ -36,7 +36,7 @@ class BookmarkPopUpMenuButton extends StatelessWidget {
       value: titleAndVal,
       child: Text(
         titleAndVal,
-        style: AppTextStyles.textStyle15Bold(context),
+        style: AppTextStyles.textStyle15Bold,
       ),
     );
   }

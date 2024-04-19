@@ -53,7 +53,7 @@ class PersonWhoLikedItem extends StatelessWidget {
         ),
         title: Text(
           person.name!,
-          style: AppTextStyles.textStyle18Bold(context),
+          style: AppTextStyles.textStyle18Bold,
         ),
       ),
     );

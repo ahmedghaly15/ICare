@@ -40,11 +40,11 @@ class AdvancedLevelScoresListBlocBuilder extends StatelessWidget {
                     ),
                     Text(
                       state.data.subLevels[index].subLevelNameEn!,
-                      style: AppTextStyles.textStyle18Bold(context),
+                      style: AppTextStyles.textStyle18Bold,
                     ),
                     Text(
                       state.data.subLevels[index].subLevelNameAr!,
-                      style: AppTextStyles.textStyle20Bold(context).copyWith(
+                      style: AppTextStyles.textStyle20Bold.copyWith(
                         fontFamily: AppStrings.readexProFontFamily,
                       ),
                       textDirection: TextDirection.rtl,

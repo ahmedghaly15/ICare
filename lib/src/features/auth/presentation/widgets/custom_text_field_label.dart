@@ -16,7 +16,7 @@ class CustomTextFieldLabel extends StatelessWidget {
       margin: EdgeInsets.only(left: 35.w, bottom: 7.h),
       child: Text(
         label,
-        style: AppTextStyles.textStyle16Bold(context),
+        style: AppTextStyles.textStyle16Bold,
       ),
     );
   }

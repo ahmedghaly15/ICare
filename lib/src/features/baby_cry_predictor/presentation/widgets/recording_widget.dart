@@ -50,7 +50,7 @@ class RecordingWidget extends StatelessWidget {
                         duration: AppConstants.cryTranslatorAnimationDuration,
                         child: Text(
                           'Please ensure your recording does not exceed 10 seconds.',
-                          style: AppTextStyles.textStyle20Bold(context),
+                          style: AppTextStyles.textStyle20Bold,
                           textAlign: TextAlign.center,
                         ),
                       )

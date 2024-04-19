@@ -13,7 +13,7 @@ class AuthMediumSizeTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppTextStyles.textStyle20Bold(context),
+      style: AppTextStyles.textStyle20Bold,
     );
   }
 }

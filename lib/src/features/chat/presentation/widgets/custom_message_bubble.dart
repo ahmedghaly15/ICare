@@ -38,7 +38,7 @@ class CustomMessageBubble extends StatelessWidget {
             if (message.messageData!.messageText != null)
               Linkify(
                 text: message.messageData!.messageText!,
-                style: AppTextStyles.textStyle16Bold(context).copyWith(
+                style: AppTextStyles.textStyle16Bold.copyWith(
                   color: isMe ? Colors.white : Colors.black,
                 ),
                 maxLines: null,
@@ -60,7 +60,7 @@ class CustomMessageBubble extends StatelessWidget {
             MySizedBox.height12,
             Text(
               '${message.messageData!.date} at ${message.messageData!.time!}',
-              style: AppTextStyles.textStyle13Regular(context).copyWith(
+              style: AppTextStyles.textStyle13Regular.copyWith(
                   color: isMe ? AppColors.lightGrey3 : Colors.black38),
             ),
           ],

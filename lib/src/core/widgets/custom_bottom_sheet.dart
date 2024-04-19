@@ -50,7 +50,7 @@ class CustomImageBottomSheet extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "Pick a $type Picture",
-                  style: AppTextStyles.textStyle18Bold(context),
+                  style: AppTextStyles.textStyle18Bold,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 10.h),

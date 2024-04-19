@@ -23,7 +23,7 @@ class UpdatePasswordFormDialog extends StatelessWidget {
           MySizedBox.height8,
           Text(
             AppStrings.changePassword,
-            style: AppTextStyles.textStyle18Bold(context),
+            style: AppTextStyles.textStyle18Bold,
           ),
           MySizedBox.height8,
           const BottomTextFieldSpacer(),

@@ -43,13 +43,13 @@ class SentenceContainerBlocBuilder extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     sentence,
-                    style: AppTextStyles.textStyle24Medium(context),
+                    style: AppTextStyles.textStyle24Medium,
                     textAlign: TextAlign.center,
                   ),
                   MySizedBox.height15,
                   Text(
                     AppStrings.whoAmI,
-                    style: AppTextStyles.textStyle25Bold(context),
+                    style: AppTextStyles.textStyle25Bold,
                   ),
                 ],
               ),

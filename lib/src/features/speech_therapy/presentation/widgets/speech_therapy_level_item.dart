@@ -59,15 +59,14 @@ class SpeechTherapyLevelItem extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         title,
-                        style: AppTextStyles.textStyle25Bold(context).copyWith(
+                        style: AppTextStyles.textStyle25Bold.copyWith(
                           color: AppColors.deepBrown,
                         ),
                       ),
                       MySizedBox.height10,
                       Text(
                         description,
-                        style:
-                            AppTextStyles.textStyle18Regular(context).copyWith(
+                        style: AppTextStyles.textStyle18Regular.copyWith(
                           color: Colors.white,
                         ),
                       ),

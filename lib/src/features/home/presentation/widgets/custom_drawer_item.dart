@@ -50,7 +50,7 @@ class CustomDrawerItem extends StatelessWidget {
             MySizedBox.width27,
             Text(
               title,
-              style: AppTextStyles.textStyle18Bold(context).copyWith(
+              style: AppTextStyles.textStyle18Bold.copyWith(
                 color: isEvenIndex ? AppColors.gradientOrange : Colors.black,
               ),
               maxLines: 1,

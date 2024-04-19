@@ -32,7 +32,7 @@ class ICareCommunityDialog {
                   icon: const Icon(Icons.search),
                   label: const Text(AppStrings.search),
                   style: TextButton.styleFrom(
-                    textStyle: AppTextStyles.textStyle18Bold(context),
+                    textStyle: AppTextStyles.textStyle18Bold,
                   ),
                 ),
               ),
@@ -45,7 +45,7 @@ class ICareCommunityDialog {
                   icon: const Icon(Icons.bookmark),
                   label: const Text(AppStrings.bookmarks),
                   style: TextButton.styleFrom(
-                    textStyle: AppTextStyles.textStyle18Bold(context),
+                    textStyle: AppTextStyles.textStyle18Bold,
                   ),
                 ),
               ),

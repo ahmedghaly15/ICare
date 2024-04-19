@@ -47,7 +47,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
 
             return Text(
               '$commentsCount',
-              style: AppTextStyles.textStyle18Bold(context).copyWith(
+              style: AppTextStyles.textStyle18Bold.copyWith(
                 color: isTinyTaleContainsImage
                     ? AppColors.white80Percent
                     : AppColors.black80Percent,
@@ -68,7 +68,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
 
             return Text(
               '$likesCount',
-              style: AppTextStyles.textStyle18Bold(context).copyWith(
+              style: AppTextStyles.textStyle18Bold.copyWith(
                 color: isTinyTaleContainsImage
                     ? AppColors.white80Percent
                     : AppColors.black80Percent,

@@ -13,7 +13,7 @@ class AuthSmallSizeDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       description,
-      style: AppTextStyles.textStyle13Light(context),
+      style: AppTextStyles.textStyle13Light,
     );
   }
 }

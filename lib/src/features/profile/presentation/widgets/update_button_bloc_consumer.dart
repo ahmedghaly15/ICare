@@ -44,7 +44,7 @@ class UpdateButtonBlocConsumer extends StatelessWidget {
                 )
               : Text(
                   AppStrings.update,
-                  style: AppTextStyles.textStyle24Medium(context).copyWith(
+                  style: AppTextStyles.textStyle24Medium.copyWith(
                     color: Colors.white,
                   ),
                 ),

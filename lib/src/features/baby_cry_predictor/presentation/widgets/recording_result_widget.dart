@@ -43,12 +43,12 @@ class RecordingResultWidget extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: AppStrings.theBabyIs,
-                    style: AppTextStyles.textStyle30Bold(context)
+                    style: AppTextStyles.textStyle30Bold
                         .copyWith(color: Colors.black),
                   ),
                   TextSpan(
                     text: predictionResult.feeling,
-                    style: AppTextStyles.textStyle30Bold(context).copyWith(
+                    style: AppTextStyles.textStyle30Bold.copyWith(
                       color: AppColors.primaryColor,
                     ),
                   )

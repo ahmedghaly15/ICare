@@ -37,7 +37,7 @@ class GoogleBlocConsumer extends StatelessWidget {
                     MySizedBox.width15,
                     Text(
                       AppStrings.signInWithGoogle,
-                      style: AppTextStyles.textStyle16Regular(context).copyWith(
+                      style: AppTextStyles.textStyle16Regular.copyWith(
                         color: AppColors.greyColor,
                       ),
                     ),

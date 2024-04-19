@@ -30,8 +30,7 @@ class FrequentlyAskedQuestion extends StatelessWidget {
       ),
       child: Text(
         question,
-        style: AppTextStyles.textStyle14Medium(context)
-            .copyWith(color: Colors.black),
+        style: AppTextStyles.textStyle14Medium.copyWith(color: Colors.black),
       ),
     );
   }

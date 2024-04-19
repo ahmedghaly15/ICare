@@ -28,7 +28,7 @@ class SurahInfoContainer extends StatelessWidget {
           MySizedBox.width6,
           Text(
             label,
-            style: AppTextStyles.textStyle13Regular(context).copyWith(
+            style: AppTextStyles.textStyle13Regular.copyWith(
               color: Colors.white,
             ),
           ),

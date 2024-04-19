@@ -26,7 +26,7 @@ class UserProfileContent extends StatelessWidget {
         MySizedBox.height10,
         Text(
           user.name!,
-          style: AppTextStyles.textStyle25Bold(context),
+          style: AppTextStyles.textStyle25Bold,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -41,7 +41,7 @@ class UserProfileContent extends StatelessWidget {
             MySizedBox.width10,
             Text(
               user.email!,
-              style: AppTextStyles.textStyle16Regular(context),
+              style: AppTextStyles.textStyle16Regular,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

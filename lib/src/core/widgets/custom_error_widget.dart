@@ -39,7 +39,7 @@ class CustomErrorWidget extends StatelessWidget {
           const Spacer(),
           Text(
             error,
-            style: AppTextStyles.textStyle20Bold(context),
+            style: AppTextStyles.textStyle20Bold,
             textAlign: TextAlign.center,
           ),
           const Spacer(),

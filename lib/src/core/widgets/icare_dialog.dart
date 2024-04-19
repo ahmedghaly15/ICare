@@ -105,13 +105,13 @@ class ICareDialog extends StatelessWidget {
               MySizedBox.height8,
               Text(
                 title!,
-                style: AppTextStyles.textStyle18Bold(context),
+                style: AppTextStyles.textStyle18Bold,
               ),
               MySizedBox.height8,
               Flexible(
                 child: Text(
                   message!,
-                  style: AppTextStyles.textStyle15Bold(context),
+                  style: AppTextStyles.textStyle15Bold,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -122,7 +122,7 @@ class ICareDialog extends StatelessWidget {
                   onPressed: () => context.maybePop(),
                   child: Text(
                     AppStrings.done,
-                    style: AppTextStyles.textStyle16Medium(context).copyWith(
+                    style: AppTextStyles.textStyle16Medium.copyWith(
                       color: AppColors.primaryColor,
                     ),
                   ),

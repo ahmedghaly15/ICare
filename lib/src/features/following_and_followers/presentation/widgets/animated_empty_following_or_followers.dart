@@ -31,14 +31,14 @@ class AnimatedEmptyFollowingOrFollowers extends StatelessWidget {
           FadeInUp(
             child: Text(
               title,
-              style: AppTextStyles.textStyle30Bold(context),
+              style: AppTextStyles.textStyle30Bold,
             ),
           ),
           MySizedBox.height5,
           FadeInUp(
             child: Text(
               description,
-              style: AppTextStyles.textStyle16Regular(context),
+              style: AppTextStyles.textStyle16Regular,
             ),
           ),
         ],

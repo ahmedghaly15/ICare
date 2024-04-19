@@ -19,11 +19,11 @@ class NewTinyTaleTextField extends StatelessWidget {
       builder: (context, state) {
         if (state is GetUserDataSuccess) {
           return CustomTextFormField(
-            hintStyle: AppTextStyles.textStyle20Regular(context).copyWith(
+            hintStyle: AppTextStyles.textStyle20Regular.copyWith(
               color: Colors.grey,
             ),
             autofocus: true,
-            style: AppTextStyles.textStyle20Regular(context),
+            style: AppTextStyles.textStyle20Regular,
             maxLines: null,
             controller:
                 context.read<NewTinyTaleCubit>().createNewTinyTaleController,

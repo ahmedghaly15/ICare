@@ -38,7 +38,7 @@ class FollowerUserItem extends StatelessWidget {
         children: <Widget>[
           Text(
             user.name!,
-            style: AppTextStyles.textStyle20Bold(context),
+            style: AppTextStyles.textStyle20Bold,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -48,7 +48,7 @@ class FollowerUserItem extends StatelessWidget {
       ),
       subtitle: Text(
         user.email!,
-        style: AppTextStyles.textStyle16Regular(context).copyWith(
+        style: AppTextStyles.textStyle16Regular.copyWith(
           color: Colors.grey,
         ),
         maxLines: 1,

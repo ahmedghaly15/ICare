@@ -36,13 +36,13 @@ class CustomHomeDrawerHeader extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       Helper.currentUser!.name!,
-                      style: AppTextStyles.textStyle16Bold(context),
+                      style: AppTextStyles.textStyle16Bold,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       Helper.currentUser!.email!,
-                      style: AppTextStyles.textStyle14Medium(context),
+                      style: AppTextStyles.textStyle14Medium,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),

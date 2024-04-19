@@ -69,7 +69,7 @@ Widget _validationRow(BuildContext context, String text, bool hasValidated) {
       MySizedBox.width6,
       Text(
         text,
-        style: AppTextStyles.textStyle13Regular(context).copyWith(
+        style: AppTextStyles.textStyle13Regular.copyWith(
           decoration: hasValidated ? TextDecoration.lineThrough : null,
           decorationColor: AppColors.primaryColor,
           decorationThickness: 2,

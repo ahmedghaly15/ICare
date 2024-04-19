@@ -57,7 +57,7 @@ class PrimaryButton extends StatelessWidget {
             Text(
               text!,
               style: textStyle ??
-                  AppTextStyles.textStyle24Medium(context).copyWith(
+                  AppTextStyles.textStyle24Medium.copyWith(
                     color: textColor ?? Colors.white,
                   ),
             ),

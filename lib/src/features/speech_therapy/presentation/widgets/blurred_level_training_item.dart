@@ -59,7 +59,7 @@ class BlurredLevelTrainingItem extends StatelessWidget {
               MySizedBox.width10,
               Text(
                 AppStrings.locked,
-                style: AppTextStyles.textStyle20Bold(context).copyWith(
+                style: AppTextStyles.textStyle20Bold.copyWith(
                   color: Colors.white,
                 ),
               ),

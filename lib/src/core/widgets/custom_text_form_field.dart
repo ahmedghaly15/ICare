@@ -107,7 +107,7 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           filled: filled ?? true,
           fillColor: fillColor ?? AppColors.secondaryColor,
-          errorStyle: AppTextStyles.textStyle13Light(context).copyWith(
+          errorStyle: AppTextStyles.textStyle13Light.copyWith(
             color: Colors.red,
           ),
           hintText: hintText,
@@ -147,7 +147,7 @@ class CustomTextFormField extends StatelessWidget {
   bool get _borderIsNone => border == InputBorder.none;
 
   TextStyle _customTextFieldTextStyle(BuildContext context) {
-    return AppTextStyles.textStyle13Light(context);
+    return AppTextStyles.textStyle13Light;
   }
 
   OutlineInputBorder _buildOutlinedInputBorder(

@@ -41,7 +41,7 @@ class SurahItem extends StatelessWidget {
               children: <Widget>[
                 Text(
                   data.details.surahNameEn,
-                  style: AppTextStyles.textStyle18Bold(context),
+                  style: AppTextStyles.textStyle18Bold,
                 ),
                 MySizedBox.height12,
                 Row(
@@ -61,7 +61,7 @@ class SurahItem extends StatelessWidget {
             ),
             Text(
               data.details.surahNameAr,
-              style: AppTextStyles.textStyle20Bold(context).copyWith(
+              style: AppTextStyles.textStyle20Bold.copyWith(
                 fontFamily: AppStrings.readexProFontFamily,
               ),
               textDirection: TextDirection.rtl,

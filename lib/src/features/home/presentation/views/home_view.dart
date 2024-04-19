@@ -46,7 +46,7 @@ class HomeView extends StatelessWidget implements AutoRouteWrapper {
               sliver: SliverToBoxAdapter(
                 child: Text(
                   AppStrings.aiAssistedChildCare,
-                  style: AppTextStyles.textStyle25Bold(context).copyWith(
+                  style: AppTextStyles.textStyle25Bold.copyWith(
                     color: AppColors.primaryColor,
                   ),
                 ),

@@ -21,7 +21,7 @@ class FrequentlyAskedQuestions extends StatelessWidget {
           MySizedBox.height18,
           Text(
             AppStrings.frequentlyAskedQuestions,
-            style: AppTextStyles.textStyle20Bold(context),
+            style: AppTextStyles.textStyle20Bold,
           ),
           MySizedBox.height18,
           Expanded(
