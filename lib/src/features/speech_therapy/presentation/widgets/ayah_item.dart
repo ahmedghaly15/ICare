@@ -82,18 +82,24 @@ class AyahItem extends StatelessWidget {
                       ),
                       child: Column(
                         children: <Widget>[
-                          Text(
-                            ayah.ayahAr,
-                            style: AppTextStyles.textStyle24Regular.copyWith(
-                              color: AppColors.primaryColor,
-                              fontFamily: AppStrings.lateefFontFamily,
+                          Align(
+                            alignment: AlignmentDirectional.centerEnd,
+                            child: Text(
+                              ayah.ayahAr,
+                              style: AppTextStyles.textStyle24Regular.copyWith(
+                                color: AppColors.primaryColor,
+                                fontFamily: AppStrings.lateefFontFamily,
+                              ),
+                              textDirection: TextDirection.rtl,
                             ),
-                            textDirection: TextDirection.rtl,
                           ),
                           MySizedBox.height12,
-                          Text(
-                            ayah.ayahEn,
-                            style: AppTextStyles.textStyle13Regular,
+                          Align(
+                            alignment: AlignmentDirectional.centerStart,
+                            child: Text(
+                              ayah.ayahEn,
+                              style: AppTextStyles.textStyle13Regular,
+                            ),
                           ),
                         ],
                       ),

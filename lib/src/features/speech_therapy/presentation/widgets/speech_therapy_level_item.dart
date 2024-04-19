@@ -20,15 +20,19 @@ class SpeechTherapyLevelItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        margin: EdgeInsets.only(bottom: 20.h),
-        decoration: BoxDecoration(
+    return Container(
+      margin: EdgeInsets.only(bottom: 20.h),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.r),
+        boxShadow: [
+          AppConstants.primaryBoxShadow,
+        ],
+      ),
+      child: MaterialButton(
+        padding: EdgeInsets.zero,
+        onPressed: onTap,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25.r),
-          boxShadow: [
-            AppConstants.primaryBoxShadow,
-          ],
         ),
         child: Stack(
           children: <Widget>[

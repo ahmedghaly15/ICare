@@ -46,11 +46,8 @@ class AdvancedLevelTrainingView extends StatelessWidget
               padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
               sliver: SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  (context, index) => index % 2 == 0
-                      ? ElasticInRight(
-                          child: AyahItem(ayah: data.details.fullSurah[index]))
-                      : ElasticInLeft(
-                          child: AyahItem(ayah: data.details.fullSurah[index])),
+                  (context, index) => ZoomIn(
+                      child: AyahItem(ayah: data.details.fullSurah[index])),
                   childCount: data.details.fullSurah.length,
                 ),
               ),

@@ -6,6 +6,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 
@@ -26,7 +27,9 @@ class WhatToSayAndTopic extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(8.h),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: isDarkModeActive(context)
+                    ? AppColors.scaffoldDarkModeBackgroundColor
+                    : Colors.white,
                 borderRadius: BorderRadius.all(
                   Radius.circular(AppConstants.radius25.r),
                 ),
