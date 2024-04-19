@@ -17,6 +17,8 @@ class CustomCircularPercentIndicator extends StatelessWidget {
     return CircularPercentIndicator(
       radius: 50.r,
       percent: percent / 100,
+      lineWidth: 8.w,
+      circularStrokeCap: CircularStrokeCap.round,
       progressColor: AppColors.primaryColor,
       backgroundColor: Colors.transparent,
       animation: true,

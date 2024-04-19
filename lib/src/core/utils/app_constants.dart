@@ -82,4 +82,16 @@ class AppConstants {
   ];
   static double get levelOneItemHeight => SizeConfig.height * 0.2;
   static const double trainGradientContainerRadius = 50;
+  static final BoxDecoration surahItemDecoration = BoxDecoration(
+    borderRadius: BorderRadius.circular(50.r),
+    color: Colors.white,
+    boxShadow: <BoxShadow>[
+      BoxShadow(
+        offset: Offset(0, 2.h),
+        blurRadius: 12.r,
+        spreadRadius: 0,
+        color: Colors.black.withOpacity(0.08),
+      ),
+    ],
+  );
 }
