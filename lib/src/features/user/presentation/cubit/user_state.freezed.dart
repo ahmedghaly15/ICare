@@ -35,6 +35,8 @@ mixin _$UserState<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +58,8 @@ mixin _$UserState<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +81,8 @@ mixin _$UserState<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +105,8 @@ mixin _$UserState<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -120,6 +128,8 @@ mixin _$UserState<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -141,6 +151,8 @@ mixin _$UserState<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -219,6 +231,8 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return initial();
   }
@@ -243,6 +257,8 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return initial?.call();
   }
@@ -267,6 +283,8 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -295,6 +313,8 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return initial(this);
   }
@@ -319,6 +339,8 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return initial?.call(this);
   }
@@ -343,6 +365,8 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -412,6 +436,8 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getUserDataLoading();
   }
@@ -436,6 +462,8 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getUserDataLoading?.call();
   }
@@ -460,6 +488,8 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getUserDataLoading != null) {
@@ -488,6 +518,8 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getUserDataLoading(this);
   }
@@ -512,6 +544,8 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getUserDataLoading?.call(this);
   }
@@ -536,6 +570,8 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getUserDataLoading != null) {
@@ -631,6 +667,8 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getUserData(user);
   }
@@ -655,6 +693,8 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getUserData?.call(user);
   }
@@ -679,6 +719,8 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getUserData != null) {
@@ -707,6 +749,8 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getUserData(this);
   }
@@ -731,6 +775,8 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getUserData?.call(this);
   }
@@ -755,6 +801,8 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getUserData != null) {
@@ -856,6 +904,8 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getUserDataError(error);
   }
@@ -880,6 +930,8 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getUserDataError?.call(error);
   }
@@ -904,6 +956,8 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getUserDataError != null) {
@@ -932,6 +986,8 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getUserDataError(this);
   }
@@ -956,6 +1012,8 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getUserDataError?.call(this);
   }
@@ -980,6 +1038,8 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getUserDataError != null) {
@@ -1055,6 +1115,8 @@ class _$GetAllUsersLoadingImpl<T> implements GetAllUsersLoading<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getAllUsersLoading();
   }
@@ -1079,6 +1141,8 @@ class _$GetAllUsersLoadingImpl<T> implements GetAllUsersLoading<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getAllUsersLoading?.call();
   }
@@ -1103,6 +1167,8 @@ class _$GetAllUsersLoadingImpl<T> implements GetAllUsersLoading<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getAllUsersLoading != null) {
@@ -1131,6 +1197,8 @@ class _$GetAllUsersLoadingImpl<T> implements GetAllUsersLoading<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getAllUsersLoading(this);
   }
@@ -1155,6 +1223,8 @@ class _$GetAllUsersLoadingImpl<T> implements GetAllUsersLoading<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getAllUsersLoading?.call(this);
   }
@@ -1179,6 +1249,8 @@ class _$GetAllUsersLoadingImpl<T> implements GetAllUsersLoading<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getAllUsersLoading != null) {
@@ -1280,6 +1352,8 @@ class _$GetAllUsersSuccessImpl<T> implements GetAllUsersSuccess<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getAllUsers(users);
   }
@@ -1304,6 +1378,8 @@ class _$GetAllUsersSuccessImpl<T> implements GetAllUsersSuccess<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getAllUsers?.call(users);
   }
@@ -1328,6 +1404,8 @@ class _$GetAllUsersSuccessImpl<T> implements GetAllUsersSuccess<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getAllUsers != null) {
@@ -1356,6 +1434,8 @@ class _$GetAllUsersSuccessImpl<T> implements GetAllUsersSuccess<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getAllUsers(this);
   }
@@ -1380,6 +1460,8 @@ class _$GetAllUsersSuccessImpl<T> implements GetAllUsersSuccess<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getAllUsers?.call(this);
   }
@@ -1404,6 +1486,8 @@ class _$GetAllUsersSuccessImpl<T> implements GetAllUsersSuccess<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getAllUsers != null) {
@@ -1505,6 +1589,8 @@ class _$GetAllUsersErrorImpl<T> implements GetAllUsersError<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getAllUsersError(error);
   }
@@ -1529,6 +1615,8 @@ class _$GetAllUsersErrorImpl<T> implements GetAllUsersError<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getAllUsersError?.call(error);
   }
@@ -1553,6 +1641,8 @@ class _$GetAllUsersErrorImpl<T> implements GetAllUsersError<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getAllUsersError != null) {
@@ -1581,6 +1671,8 @@ class _$GetAllUsersErrorImpl<T> implements GetAllUsersError<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getAllUsersError(this);
   }
@@ -1605,6 +1697,8 @@ class _$GetAllUsersErrorImpl<T> implements GetAllUsersError<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getAllUsersError?.call(this);
   }
@@ -1629,6 +1723,8 @@ class _$GetAllUsersErrorImpl<T> implements GetAllUsersError<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getAllUsersError != null) {
@@ -1704,6 +1800,8 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getFollowingLoading();
   }
@@ -1728,6 +1826,8 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getFollowingLoading?.call();
   }
@@ -1752,6 +1852,8 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowingLoading != null) {
@@ -1780,6 +1882,8 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getFollowingLoading(this);
   }
@@ -1804,6 +1908,8 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getFollowingLoading?.call(this);
   }
@@ -1828,6 +1934,8 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowingLoading != null) {
@@ -1929,6 +2037,8 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getFollowing(users);
   }
@@ -1953,6 +2063,8 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getFollowing?.call(users);
   }
@@ -1977,6 +2089,8 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowing != null) {
@@ -2005,6 +2119,8 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getFollowing(this);
   }
@@ -2029,6 +2145,8 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getFollowing?.call(this);
   }
@@ -2053,6 +2171,8 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowing != null) {
@@ -2155,6 +2275,8 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getFollowingError(error);
   }
@@ -2179,6 +2301,8 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getFollowingError?.call(error);
   }
@@ -2203,6 +2327,8 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowingError != null) {
@@ -2231,6 +2357,8 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getFollowingError(this);
   }
@@ -2255,6 +2383,8 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getFollowingError?.call(this);
   }
@@ -2279,6 +2409,8 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowingError != null) {
@@ -2354,6 +2486,8 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getFollowersLoading();
   }
@@ -2378,6 +2512,8 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getFollowersLoading?.call();
   }
@@ -2402,6 +2538,8 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowersLoading != null) {
@@ -2430,6 +2568,8 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getFollowersLoading(this);
   }
@@ -2454,6 +2594,8 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getFollowersLoading?.call(this);
   }
@@ -2478,6 +2620,8 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowersLoading != null) {
@@ -2579,6 +2723,8 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getFollowers(users);
   }
@@ -2603,6 +2749,8 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getFollowers?.call(users);
   }
@@ -2627,6 +2775,8 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowers != null) {
@@ -2655,6 +2805,8 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getFollowers(this);
   }
@@ -2679,6 +2831,8 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getFollowers?.call(this);
   }
@@ -2703,6 +2857,8 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowers != null) {
@@ -2805,6 +2961,8 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return getFollowersError(error);
   }
@@ -2829,6 +2987,8 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return getFollowersError?.call(error);
   }
@@ -2853,6 +3013,8 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowersError != null) {
@@ -2881,6 +3043,8 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return getFollowersError(this);
   }
@@ -2905,6 +3069,8 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return getFollowersError?.call(this);
   }
@@ -2929,6 +3095,8 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (getFollowersError != null) {
@@ -3003,6 +3171,8 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return followSuccess();
   }
@@ -3027,6 +3197,8 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return followSuccess?.call();
   }
@@ -3051,6 +3223,8 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (followSuccess != null) {
@@ -3079,6 +3253,8 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return followSuccess(this);
   }
@@ -3103,6 +3279,8 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return followSuccess?.call(this);
   }
@@ -3127,6 +3305,8 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (followSuccess != null) {
@@ -3222,6 +3402,8 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return followError(error);
   }
@@ -3246,6 +3428,8 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return followError?.call(error);
   }
@@ -3270,6 +3454,8 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (followError != null) {
@@ -3298,6 +3484,8 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return followError(this);
   }
@@ -3322,6 +3510,8 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return followError?.call(this);
   }
@@ -3346,6 +3536,8 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (followError != null) {
@@ -3419,6 +3611,8 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return unFollowSuccess();
   }
@@ -3443,6 +3637,8 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return unFollowSuccess?.call();
   }
@@ -3467,6 +3663,8 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (unFollowSuccess != null) {
@@ -3495,6 +3693,8 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return unFollowSuccess(this);
   }
@@ -3519,6 +3719,8 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return unFollowSuccess?.call(this);
   }
@@ -3543,6 +3745,8 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (unFollowSuccess != null) {
@@ -3638,6 +3842,8 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     required TResult Function(String error) followError,
     required TResult Function() unFollowSuccess,
     required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
   }) {
     return unFollowError(error);
   }
@@ -3662,6 +3868,8 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult? Function(String error)? followError,
     TResult? Function()? unFollowSuccess,
     TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
   }) {
     return unFollowError?.call(error);
   }
@@ -3686,6 +3894,8 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult Function(String error)? followError,
     TResult Function()? unFollowSuccess,
     TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
     required TResult orElse(),
   }) {
     if (unFollowError != null) {
@@ -3714,6 +3924,8 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     required TResult Function(FollowError<T> value) followError,
     required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
     required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
   }) {
     return unFollowError(this);
   }
@@ -3738,6 +3950,8 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult? Function(FollowError<T> value)? followError,
     TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
   }) {
     return unFollowError?.call(this);
   }
@@ -3762,6 +3976,8 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult Function(FollowError<T> value)? followError,
     TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
     TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
     required TResult orElse(),
   }) {
     if (unFollowError != null) {
@@ -3777,5 +3993,445 @@ abstract class UnFollowError<T> implements UserState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$UnFollowErrorImplCopyWith<T, _$UnFollowErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SignOutSuccessImplCopyWith<T, $Res> {
+  factory _$$SignOutSuccessImplCopyWith(_$SignOutSuccessImpl<T> value,
+          $Res Function(_$SignOutSuccessImpl<T>) then) =
+      __$$SignOutSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SignOutSuccessImplCopyWithImpl<T, $Res>
+    extends _$UserStateCopyWithImpl<T, $Res, _$SignOutSuccessImpl<T>>
+    implements _$$SignOutSuccessImplCopyWith<T, $Res> {
+  __$$SignOutSuccessImplCopyWithImpl(_$SignOutSuccessImpl<T> _value,
+      $Res Function(_$SignOutSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SignOutSuccessImpl<T> implements SignOutSuccess<T> {
+  const _$SignOutSuccessImpl();
+
+  @override
+  String toString() {
+    return 'UserState<$T>.signOutSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SignOutSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function(ICareUser user) getUserData,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() getAllUsersLoading,
+    required TResult Function(List<ICareUser> users) getAllUsers,
+    required TResult Function(String error) getAllUsersError,
+    required TResult Function() getFollowingLoading,
+    required TResult Function(List<ICareUser> users) getFollowing,
+    required TResult Function(String error) getFollowingError,
+    required TResult Function() getFollowersLoading,
+    required TResult Function(List<ICareUser> users) getFollowers,
+    required TResult Function(String error) getFollowersError,
+    required TResult Function() followSuccess,
+    required TResult Function(String error) followError,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
+  }) {
+    return signOutSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function(ICareUser user)? getUserData,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? getAllUsersLoading,
+    TResult? Function(List<ICareUser> users)? getAllUsers,
+    TResult? Function(String error)? getAllUsersError,
+    TResult? Function()? getFollowingLoading,
+    TResult? Function(List<ICareUser> users)? getFollowing,
+    TResult? Function(String error)? getFollowingError,
+    TResult? Function()? getFollowersLoading,
+    TResult? Function(List<ICareUser> users)? getFollowers,
+    TResult? Function(String error)? getFollowersError,
+    TResult? Function()? followSuccess,
+    TResult? Function(String error)? followError,
+    TResult? Function()? unFollowSuccess,
+    TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
+  }) {
+    return signOutSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function(ICareUser user)? getUserData,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? getAllUsersLoading,
+    TResult Function(List<ICareUser> users)? getAllUsers,
+    TResult Function(String error)? getAllUsersError,
+    TResult Function()? getFollowingLoading,
+    TResult Function(List<ICareUser> users)? getFollowing,
+    TResult Function(String error)? getFollowingError,
+    TResult Function()? getFollowersLoading,
+    TResult Function(List<ICareUser> users)? getFollowers,
+    TResult Function(String error)? getFollowersError,
+    TResult Function()? followSuccess,
+    TResult Function(String error)? followError,
+    TResult Function()? unFollowSuccess,
+    TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
+    required TResult orElse(),
+  }) {
+    if (signOutSuccess != null) {
+      return signOutSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserInitial<T> value) initial,
+    required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccess<T> value) getUserData,
+    required TResult Function(GetUserDataError<T> value) getUserDataError,
+    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
+    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
+    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
+    required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
+    required TResult Function(GetFollowingSuccess<T> value) getFollowing,
+    required TResult Function(GetFollowingError<T> value) getFollowingError,
+    required TResult Function(GetFollowersLoading<T> value) getFollowersLoading,
+    required TResult Function(GetFollowersSuccess<T> value) getFollowers,
+    required TResult Function(GetFollowersError<T> value) getFollowersError,
+    required TResult Function(FollowSuccess<T> value) followSuccess,
+    required TResult Function(FollowError<T> value) followError,
+    required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
+    required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
+  }) {
+    return signOutSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserInitial<T> value)? initial,
+    TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccess<T> value)? getUserData,
+    TResult? Function(GetUserDataError<T> value)? getUserDataError,
+    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
+    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
+    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
+    TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
+    TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
+    TResult? Function(GetFollowingError<T> value)? getFollowingError,
+    TResult? Function(GetFollowersLoading<T> value)? getFollowersLoading,
+    TResult? Function(GetFollowersSuccess<T> value)? getFollowers,
+    TResult? Function(GetFollowersError<T> value)? getFollowersError,
+    TResult? Function(FollowSuccess<T> value)? followSuccess,
+    TResult? Function(FollowError<T> value)? followError,
+    TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
+    TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
+  }) {
+    return signOutSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserInitial<T> value)? initial,
+    TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccess<T> value)? getUserData,
+    TResult Function(GetUserDataError<T> value)? getUserDataError,
+    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
+    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
+    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
+    TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
+    TResult Function(GetFollowingSuccess<T> value)? getFollowing,
+    TResult Function(GetFollowingError<T> value)? getFollowingError,
+    TResult Function(GetFollowersLoading<T> value)? getFollowersLoading,
+    TResult Function(GetFollowersSuccess<T> value)? getFollowers,
+    TResult Function(GetFollowersError<T> value)? getFollowersError,
+    TResult Function(FollowSuccess<T> value)? followSuccess,
+    TResult Function(FollowError<T> value)? followError,
+    TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
+    TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
+    required TResult orElse(),
+  }) {
+    if (signOutSuccess != null) {
+      return signOutSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutSuccess<T> implements UserState<T> {
+  const factory SignOutSuccess() = _$SignOutSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SignOutErrorImplCopyWith<T, $Res> {
+  factory _$$SignOutErrorImplCopyWith(_$SignOutErrorImpl<T> value,
+          $Res Function(_$SignOutErrorImpl<T>) then) =
+      __$$SignOutErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$SignOutErrorImplCopyWithImpl<T, $Res>
+    extends _$UserStateCopyWithImpl<T, $Res, _$SignOutErrorImpl<T>>
+    implements _$$SignOutErrorImplCopyWith<T, $Res> {
+  __$$SignOutErrorImplCopyWithImpl(
+      _$SignOutErrorImpl<T> _value, $Res Function(_$SignOutErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$SignOutErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SignOutErrorImpl<T> implements SignOutError<T> {
+  const _$SignOutErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'UserState<$T>.signOutError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignOutErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SignOutErrorImplCopyWith<T, _$SignOutErrorImpl<T>> get copyWith =>
+      __$$SignOutErrorImplCopyWithImpl<T, _$SignOutErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getUserDataLoading,
+    required TResult Function(ICareUser user) getUserData,
+    required TResult Function(String error) getUserDataError,
+    required TResult Function() getAllUsersLoading,
+    required TResult Function(List<ICareUser> users) getAllUsers,
+    required TResult Function(String error) getAllUsersError,
+    required TResult Function() getFollowingLoading,
+    required TResult Function(List<ICareUser> users) getFollowing,
+    required TResult Function(String error) getFollowingError,
+    required TResult Function() getFollowersLoading,
+    required TResult Function(List<ICareUser> users) getFollowers,
+    required TResult Function(String error) getFollowersError,
+    required TResult Function() followSuccess,
+    required TResult Function(String error) followError,
+    required TResult Function() unFollowSuccess,
+    required TResult Function(String error) unFollowError,
+    required TResult Function() signOutSuccess,
+    required TResult Function(String error) signOutError,
+  }) {
+    return signOutError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getUserDataLoading,
+    TResult? Function(ICareUser user)? getUserData,
+    TResult? Function(String error)? getUserDataError,
+    TResult? Function()? getAllUsersLoading,
+    TResult? Function(List<ICareUser> users)? getAllUsers,
+    TResult? Function(String error)? getAllUsersError,
+    TResult? Function()? getFollowingLoading,
+    TResult? Function(List<ICareUser> users)? getFollowing,
+    TResult? Function(String error)? getFollowingError,
+    TResult? Function()? getFollowersLoading,
+    TResult? Function(List<ICareUser> users)? getFollowers,
+    TResult? Function(String error)? getFollowersError,
+    TResult? Function()? followSuccess,
+    TResult? Function(String error)? followError,
+    TResult? Function()? unFollowSuccess,
+    TResult? Function(String error)? unFollowError,
+    TResult? Function()? signOutSuccess,
+    TResult? Function(String error)? signOutError,
+  }) {
+    return signOutError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getUserDataLoading,
+    TResult Function(ICareUser user)? getUserData,
+    TResult Function(String error)? getUserDataError,
+    TResult Function()? getAllUsersLoading,
+    TResult Function(List<ICareUser> users)? getAllUsers,
+    TResult Function(String error)? getAllUsersError,
+    TResult Function()? getFollowingLoading,
+    TResult Function(List<ICareUser> users)? getFollowing,
+    TResult Function(String error)? getFollowingError,
+    TResult Function()? getFollowersLoading,
+    TResult Function(List<ICareUser> users)? getFollowers,
+    TResult Function(String error)? getFollowersError,
+    TResult Function()? followSuccess,
+    TResult Function(String error)? followError,
+    TResult Function()? unFollowSuccess,
+    TResult Function(String error)? unFollowError,
+    TResult Function()? signOutSuccess,
+    TResult Function(String error)? signOutError,
+    required TResult orElse(),
+  }) {
+    if (signOutError != null) {
+      return signOutError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserInitial<T> value) initial,
+    required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
+    required TResult Function(GetUserDataSuccess<T> value) getUserData,
+    required TResult Function(GetUserDataError<T> value) getUserDataError,
+    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
+    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
+    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
+    required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
+    required TResult Function(GetFollowingSuccess<T> value) getFollowing,
+    required TResult Function(GetFollowingError<T> value) getFollowingError,
+    required TResult Function(GetFollowersLoading<T> value) getFollowersLoading,
+    required TResult Function(GetFollowersSuccess<T> value) getFollowers,
+    required TResult Function(GetFollowersError<T> value) getFollowersError,
+    required TResult Function(FollowSuccess<T> value) followSuccess,
+    required TResult Function(FollowError<T> value) followError,
+    required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
+    required TResult Function(UnFollowError<T> value) unFollowError,
+    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
+    required TResult Function(SignOutError<T> value) signOutError,
+  }) {
+    return signOutError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserInitial<T> value)? initial,
+    TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
+    TResult? Function(GetUserDataSuccess<T> value)? getUserData,
+    TResult? Function(GetUserDataError<T> value)? getUserDataError,
+    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
+    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
+    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
+    TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
+    TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
+    TResult? Function(GetFollowingError<T> value)? getFollowingError,
+    TResult? Function(GetFollowersLoading<T> value)? getFollowersLoading,
+    TResult? Function(GetFollowersSuccess<T> value)? getFollowers,
+    TResult? Function(GetFollowersError<T> value)? getFollowersError,
+    TResult? Function(FollowSuccess<T> value)? followSuccess,
+    TResult? Function(FollowError<T> value)? followError,
+    TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
+    TResult? Function(UnFollowError<T> value)? unFollowError,
+    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult? Function(SignOutError<T> value)? signOutError,
+  }) {
+    return signOutError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserInitial<T> value)? initial,
+    TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
+    TResult Function(GetUserDataSuccess<T> value)? getUserData,
+    TResult Function(GetUserDataError<T> value)? getUserDataError,
+    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
+    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
+    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
+    TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
+    TResult Function(GetFollowingSuccess<T> value)? getFollowing,
+    TResult Function(GetFollowingError<T> value)? getFollowingError,
+    TResult Function(GetFollowersLoading<T> value)? getFollowersLoading,
+    TResult Function(GetFollowersSuccess<T> value)? getFollowers,
+    TResult Function(GetFollowersError<T> value)? getFollowersError,
+    TResult Function(FollowSuccess<T> value)? followSuccess,
+    TResult Function(FollowError<T> value)? followError,
+    TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
+    TResult Function(UnFollowError<T> value)? unFollowError,
+    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
+    TResult Function(SignOutError<T> value)? signOutError,
+    required TResult orElse(),
+  }) {
+    if (signOutError != null) {
+      return signOutError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignOutError<T> implements UserState<T> {
+  const factory SignOutError(final String error) = _$SignOutErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$SignOutErrorImplCopyWith<T, _$SignOutErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

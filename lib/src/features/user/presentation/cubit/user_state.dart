@@ -27,4 +27,6 @@ class UserState<T> with _$UserState<T> {
   const factory UserState.followError(String error) = FollowError<T>;
   const factory UserState.unFollowSuccess() = UnFollowSuccess;
   const factory UserState.unFollowError(String error) = UnFollowError<T>;
+  const factory UserState.signOutSuccess() = SignOutSuccess;
+  const factory UserState.signOutError(String error) = SignOutError<T>;
 }

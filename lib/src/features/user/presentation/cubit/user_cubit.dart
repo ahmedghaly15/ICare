@@ -10,6 +10,7 @@ import 'package:icare/src/features/user/domain/usecases/get_all_users.dart';
 import 'package:icare/src/features/user/domain/usecases/get_followers.dart';
 import 'package:icare/src/features/user/domain/usecases/get_following.dart';
 import 'package:icare/src/features/user/domain/usecases/get_user_data.dart';
+import 'package:icare/src/features/user/domain/usecases/sign_out.dart';
 import 'package:icare/src/features/user/domain/usecases/un_follow.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_state.dart';
 
@@ -20,6 +21,7 @@ class UserCubit extends Cubit<UserState> {
   final UnFollowUseCase unFollowUseCase;
   final GetFollowersUseCase getFollowersUseCase;
   final GetFollowingUseCase getFollowingUseCase;
+  final SignOutUseCase signOutUseCase;
 
   UserCubit({
     required this.getUserDataUseCase,
@@ -28,6 +30,7 @@ class UserCubit extends Cubit<UserState> {
     required this.unFollowUseCase,
     required this.getFollowersUseCase,
     required this.getFollowingUseCase,
+    required this.signOutUseCase,
   }) : super(const UserState.initial());
 
   Future<void> getUserData() async {
@@ -118,6 +121,14 @@ class UserCubit extends Cubit<UserState> {
       }
       return false;
     });
+  }
+
+  void signOut() async {
+    final result = await signOutUseCase(const NoParams());
+    result.when(
+      success: (_) => emit(const UserState.signOutSuccess()),
+      error: (error) => emit(UserState.signOutError(error.failureMsg ?? '')),
+    );
   }
 
   CollectionReference<Map<String, dynamic>> _accessUsersCollection() {
