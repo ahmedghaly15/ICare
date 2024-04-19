@@ -15,6 +15,17 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AdvancedLevelTrainingRoute.name: (routeData) {
+      final args = routeData.argsAs<AdvancedLevelTrainingRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: AdvancedLevelTrainingView(
+          key: args.key,
+          data: args.data,
+        )),
+      );
+    },
     AdvancedLevelRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -304,6 +315,45 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AdvancedLevelTrainingView]
+class AdvancedLevelTrainingRoute
+    extends PageRouteInfo<AdvancedLevelTrainingRouteArgs> {
+  AdvancedLevelTrainingRoute({
+    Key? key,
+    required AdvancedLevelTrainingResponse data,
+    List<PageRouteInfo>? children,
+  }) : super(
+          AdvancedLevelTrainingRoute.name,
+          args: AdvancedLevelTrainingRouteArgs(
+            key: key,
+            data: data,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'AdvancedLevelTrainingRoute';
+
+  static const PageInfo<AdvancedLevelTrainingRouteArgs> page =
+      PageInfo<AdvancedLevelTrainingRouteArgs>(name);
+}
+
+class AdvancedLevelTrainingRouteArgs {
+  const AdvancedLevelTrainingRouteArgs({
+    this.key,
+    required this.data,
+  });
+
+  final Key? key;
+
+  final AdvancedLevelTrainingResponse data;
+
+  @override
+  String toString() {
+    return 'AdvancedLevelTrainingRouteArgs{key: $key, data: $data}';
+  }
 }
 
 /// generated route for

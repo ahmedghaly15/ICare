@@ -93,6 +93,7 @@ List<AutoRoute> get appRoutes {
       transitionsBuilder: TransitionsBuilders.slideTop,
       durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
     ),
+    _buildCustomRoute(page: AdvancedLevelTrainingRoute.page),
   ];
 }
 
