@@ -59,8 +59,11 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
             return const CustomCircularProgressIndicator();
           } else {
             return CustomStopAndMarkAudioButton(
-              id: id,
-              level: level,
+              onPressed: () {
+                context
+                    .read<LevelTrainingCubit>()
+                    .recordAndMark(id, level, context);
+              },
             );
           }
         },
