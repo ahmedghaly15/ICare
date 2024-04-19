@@ -26,6 +26,13 @@ mixin _$LevelTrainingState<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +45,13 @@ mixin _$LevelTrainingState<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +64,13 @@ mixin _$LevelTrainingState<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -65,6 +86,15 @@ mixin _$LevelTrainingState<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,6 +107,15 @@ mixin _$LevelTrainingState<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,6 +128,15 @@ mixin _$LevelTrainingState<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,6 +210,13 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return initial();
   }
@@ -177,6 +232,13 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return initial?.call();
   }
@@ -192,6 +254,13 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -213,6 +282,15 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return initial(this);
   }
@@ -228,6 +306,15 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return initial?.call(this);
   }
@@ -243,6 +330,15 @@ class _$LevelTrainingInitialImpl<T> implements LevelTrainingInitial<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -332,6 +428,13 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return convertIsPlayingBool(isPlaying);
   }
@@ -347,6 +450,13 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return convertIsPlayingBool?.call(isPlaying);
   }
@@ -362,6 +472,13 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (convertIsPlayingBool != null) {
@@ -383,6 +500,15 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return convertIsPlayingBool(this);
   }
@@ -398,6 +524,15 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return convertIsPlayingBool?.call(this);
   }
@@ -413,6 +548,15 @@ class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (convertIsPlayingBool != null) {
@@ -478,6 +622,13 @@ class _$UserIsTryingNowImpl<T> implements UserIsTryingNow<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return userIsTryingNow();
   }
@@ -493,6 +644,13 @@ class _$UserIsTryingNowImpl<T> implements UserIsTryingNow<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return userIsTryingNow?.call();
   }
@@ -508,6 +666,13 @@ class _$UserIsTryingNowImpl<T> implements UserIsTryingNow<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (userIsTryingNow != null) {
@@ -529,6 +694,15 @@ class _$UserIsTryingNowImpl<T> implements UserIsTryingNow<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return userIsTryingNow(this);
   }
@@ -544,6 +718,15 @@ class _$UserIsTryingNowImpl<T> implements UserIsTryingNow<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return userIsTryingNow?.call(this);
   }
@@ -559,6 +742,15 @@ class _$UserIsTryingNowImpl<T> implements UserIsTryingNow<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (userIsTryingNow != null) {
@@ -646,6 +838,13 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return assignAudioPathVal(path);
   }
@@ -661,6 +860,13 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return assignAudioPathVal?.call(path);
   }
@@ -676,6 +882,13 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (assignAudioPathVal != null) {
@@ -697,6 +910,15 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return assignAudioPathVal(this);
   }
@@ -712,6 +934,15 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return assignAudioPathVal?.call(this);
   }
@@ -727,6 +958,15 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (assignAudioPathVal != null) {
@@ -823,6 +1063,13 @@ class _$ConvertIsRecordingBoolImpl<T> implements ConvertIsRecordingBool<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return convertIsRecordingBool(isRecording);
   }
@@ -838,6 +1085,13 @@ class _$ConvertIsRecordingBoolImpl<T> implements ConvertIsRecordingBool<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return convertIsRecordingBool?.call(isRecording);
   }
@@ -853,6 +1107,13 @@ class _$ConvertIsRecordingBoolImpl<T> implements ConvertIsRecordingBool<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (convertIsRecordingBool != null) {
@@ -874,6 +1135,15 @@ class _$ConvertIsRecordingBoolImpl<T> implements ConvertIsRecordingBool<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return convertIsRecordingBool(this);
   }
@@ -889,6 +1159,15 @@ class _$ConvertIsRecordingBoolImpl<T> implements ConvertIsRecordingBool<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return convertIsRecordingBool?.call(this);
   }
@@ -904,6 +1183,15 @@ class _$ConvertIsRecordingBoolImpl<T> implements ConvertIsRecordingBool<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (convertIsRecordingBool != null) {
@@ -969,6 +1257,13 @@ class _$MarkLoadingImpl<T> implements MarkLoading<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return markLoading();
   }
@@ -984,6 +1279,13 @@ class _$MarkLoadingImpl<T> implements MarkLoading<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return markLoading?.call();
   }
@@ -999,6 +1301,13 @@ class _$MarkLoadingImpl<T> implements MarkLoading<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (markLoading != null) {
@@ -1020,6 +1329,15 @@ class _$MarkLoadingImpl<T> implements MarkLoading<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return markLoading(this);
   }
@@ -1035,6 +1353,15 @@ class _$MarkLoadingImpl<T> implements MarkLoading<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return markLoading?.call(this);
   }
@@ -1050,6 +1377,15 @@ class _$MarkLoadingImpl<T> implements MarkLoading<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (markLoading != null) {
@@ -1136,6 +1472,13 @@ class _$MarkSuccessImpl<T> implements MarkSuccess<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return markSuccess(data);
   }
@@ -1151,6 +1494,13 @@ class _$MarkSuccessImpl<T> implements MarkSuccess<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return markSuccess?.call(data);
   }
@@ -1166,6 +1516,13 @@ class _$MarkSuccessImpl<T> implements MarkSuccess<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (markSuccess != null) {
@@ -1187,6 +1544,15 @@ class _$MarkSuccessImpl<T> implements MarkSuccess<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return markSuccess(this);
   }
@@ -1202,6 +1568,15 @@ class _$MarkSuccessImpl<T> implements MarkSuccess<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return markSuccess?.call(this);
   }
@@ -1217,6 +1592,15 @@ class _$MarkSuccessImpl<T> implements MarkSuccess<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (markSuccess != null) {
@@ -1307,6 +1691,13 @@ class _$MarkErrorImpl<T> implements MarkError<T> {
     required TResult Function() markLoading,
     required TResult Function(MarkResponse data) markSuccess,
     required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
   }) {
     return markError(error);
   }
@@ -1322,6 +1713,13 @@ class _$MarkErrorImpl<T> implements MarkError<T> {
     TResult? Function()? markLoading,
     TResult? Function(MarkResponse data)? markSuccess,
     TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
   }) {
     return markError?.call(error);
   }
@@ -1337,6 +1735,13 @@ class _$MarkErrorImpl<T> implements MarkError<T> {
     TResult Function()? markLoading,
     TResult Function(MarkResponse data)? markSuccess,
     TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (markError != null) {
@@ -1358,6 +1763,15 @@ class _$MarkErrorImpl<T> implements MarkError<T> {
     required TResult Function(MarkLoading<T> value) markLoading,
     required TResult Function(MarkSuccess<T> value) markSuccess,
     required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
   }) {
     return markError(this);
   }
@@ -1373,6 +1787,15 @@ class _$MarkErrorImpl<T> implements MarkError<T> {
     TResult? Function(MarkLoading<T> value)? markLoading,
     TResult? Function(MarkSuccess<T> value)? markSuccess,
     TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
   }) {
     return markError?.call(this);
   }
@@ -1388,6 +1811,15 @@ class _$MarkErrorImpl<T> implements MarkError<T> {
     TResult Function(MarkLoading<T> value)? markLoading,
     TResult Function(MarkSuccess<T> value)? markSuccess,
     TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
     required TResult orElse(),
   }) {
     if (markError != null) {
@@ -1404,4 +1836,1107 @@ abstract class MarkError<T> implements LevelTrainingState<T> {
   @JsonKey(ignore: true)
   _$$MarkErrorImplCopyWith<T, _$MarkErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AdvancedLevelMarkingLoadingImplCopyWith<T, $Res> {
+  factory _$$AdvancedLevelMarkingLoadingImplCopyWith(
+          _$AdvancedLevelMarkingLoadingImpl<T> value,
+          $Res Function(_$AdvancedLevelMarkingLoadingImpl<T>) then) =
+      __$$AdvancedLevelMarkingLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AdvancedLevelMarkingLoadingImplCopyWithImpl<T, $Res>
+    extends _$LevelTrainingStateCopyWithImpl<T, $Res,
+        _$AdvancedLevelMarkingLoadingImpl<T>>
+    implements _$$AdvancedLevelMarkingLoadingImplCopyWith<T, $Res> {
+  __$$AdvancedLevelMarkingLoadingImplCopyWithImpl(
+      _$AdvancedLevelMarkingLoadingImpl<T> _value,
+      $Res Function(_$AdvancedLevelMarkingLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AdvancedLevelMarkingLoadingImpl<T>
+    implements AdvancedLevelMarkingLoading<T> {
+  const _$AdvancedLevelMarkingLoadingImpl();
+
+  @override
+  String toString() {
+    return 'LevelTrainingState<$T>.advancedLevelMarkingLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AdvancedLevelMarkingLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function(bool isRecording) convertIsRecordingBool,
+    required TResult Function() markLoading,
+    required TResult Function(MarkResponse data) markSuccess,
+    required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function(bool isRecording)? convertIsRecordingBool,
+    TResult? Function()? markLoading,
+    TResult? Function(MarkResponse data)? markSuccess,
+    TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function(bool isRecording)? convertIsRecordingBool,
+    TResult Function()? markLoading,
+    TResult Function(MarkResponse data)? markSuccess,
+    TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (advancedLevelMarkingLoading != null) {
+      return advancedLevelMarkingLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LevelTrainingInitial<T> value) initial,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(ConvertIsRecordingBool<T> value)
+        convertIsRecordingBool,
+    required TResult Function(MarkLoading<T> value) markLoading,
+    required TResult Function(MarkSuccess<T> value) markSuccess,
+    required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LevelTrainingInitial<T> value)? initial,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult? Function(MarkLoading<T> value)? markLoading,
+    TResult? Function(MarkSuccess<T> value)? markSuccess,
+    TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LevelTrainingInitial<T> value)? initial,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult Function(MarkLoading<T> value)? markLoading,
+    TResult Function(MarkSuccess<T> value)? markSuccess,
+    TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (advancedLevelMarkingLoading != null) {
+      return advancedLevelMarkingLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AdvancedLevelMarkingLoading<T> implements LevelTrainingState<T> {
+  const factory AdvancedLevelMarkingLoading() =
+      _$AdvancedLevelMarkingLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AdvancedLevelMarkingSuccessImplCopyWith<T, $Res> {
+  factory _$$AdvancedLevelMarkingSuccessImplCopyWith(
+          _$AdvancedLevelMarkingSuccessImpl<T> value,
+          $Res Function(_$AdvancedLevelMarkingSuccessImpl<T>) then) =
+      __$$AdvancedLevelMarkingSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({AdvancedLevelMarkingResponse data});
+}
+
+/// @nodoc
+class __$$AdvancedLevelMarkingSuccessImplCopyWithImpl<T, $Res>
+    extends _$LevelTrainingStateCopyWithImpl<T, $Res,
+        _$AdvancedLevelMarkingSuccessImpl<T>>
+    implements _$$AdvancedLevelMarkingSuccessImplCopyWith<T, $Res> {
+  __$$AdvancedLevelMarkingSuccessImplCopyWithImpl(
+      _$AdvancedLevelMarkingSuccessImpl<T> _value,
+      $Res Function(_$AdvancedLevelMarkingSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AdvancedLevelMarkingSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as AdvancedLevelMarkingResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AdvancedLevelMarkingSuccessImpl<T>
+    implements AdvancedLevelMarkingSuccess<T> {
+  const _$AdvancedLevelMarkingSuccessImpl(this.data);
+
+  @override
+  final AdvancedLevelMarkingResponse data;
+
+  @override
+  String toString() {
+    return 'LevelTrainingState<$T>.advancedLevelMarkingSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AdvancedLevelMarkingSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AdvancedLevelMarkingSuccessImplCopyWith<T,
+          _$AdvancedLevelMarkingSuccessImpl<T>>
+      get copyWith => __$$AdvancedLevelMarkingSuccessImplCopyWithImpl<T,
+          _$AdvancedLevelMarkingSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function(bool isRecording) convertIsRecordingBool,
+    required TResult Function() markLoading,
+    required TResult Function(MarkResponse data) markSuccess,
+    required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function(bool isRecording)? convertIsRecordingBool,
+    TResult? Function()? markLoading,
+    TResult? Function(MarkResponse data)? markSuccess,
+    TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function(bool isRecording)? convertIsRecordingBool,
+    TResult Function()? markLoading,
+    TResult Function(MarkResponse data)? markSuccess,
+    TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (advancedLevelMarkingSuccess != null) {
+      return advancedLevelMarkingSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LevelTrainingInitial<T> value) initial,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(ConvertIsRecordingBool<T> value)
+        convertIsRecordingBool,
+    required TResult Function(MarkLoading<T> value) markLoading,
+    required TResult Function(MarkSuccess<T> value) markSuccess,
+    required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LevelTrainingInitial<T> value)? initial,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult? Function(MarkLoading<T> value)? markLoading,
+    TResult? Function(MarkSuccess<T> value)? markSuccess,
+    TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LevelTrainingInitial<T> value)? initial,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult Function(MarkLoading<T> value)? markLoading,
+    TResult Function(MarkSuccess<T> value)? markSuccess,
+    TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (advancedLevelMarkingSuccess != null) {
+      return advancedLevelMarkingSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AdvancedLevelMarkingSuccess<T> implements LevelTrainingState<T> {
+  const factory AdvancedLevelMarkingSuccess(
+          final AdvancedLevelMarkingResponse data) =
+      _$AdvancedLevelMarkingSuccessImpl<T>;
+
+  AdvancedLevelMarkingResponse get data;
+  @JsonKey(ignore: true)
+  _$$AdvancedLevelMarkingSuccessImplCopyWith<T,
+          _$AdvancedLevelMarkingSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AdvancedLevelMarkingErrorImplCopyWith<T, $Res> {
+  factory _$$AdvancedLevelMarkingErrorImplCopyWith(
+          _$AdvancedLevelMarkingErrorImpl<T> value,
+          $Res Function(_$AdvancedLevelMarkingErrorImpl<T>) then) =
+      __$$AdvancedLevelMarkingErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AdvancedLevelMarkingErrorImplCopyWithImpl<T, $Res>
+    extends _$LevelTrainingStateCopyWithImpl<T, $Res,
+        _$AdvancedLevelMarkingErrorImpl<T>>
+    implements _$$AdvancedLevelMarkingErrorImplCopyWith<T, $Res> {
+  __$$AdvancedLevelMarkingErrorImplCopyWithImpl(
+      _$AdvancedLevelMarkingErrorImpl<T> _value,
+      $Res Function(_$AdvancedLevelMarkingErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AdvancedLevelMarkingErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AdvancedLevelMarkingErrorImpl<T>
+    implements AdvancedLevelMarkingError<T> {
+  const _$AdvancedLevelMarkingErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'LevelTrainingState<$T>.advancedLevelMarkingError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AdvancedLevelMarkingErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AdvancedLevelMarkingErrorImplCopyWith<T,
+          _$AdvancedLevelMarkingErrorImpl<T>>
+      get copyWith => __$$AdvancedLevelMarkingErrorImplCopyWithImpl<T,
+          _$AdvancedLevelMarkingErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function(bool isRecording) convertIsRecordingBool,
+    required TResult Function() markLoading,
+    required TResult Function(MarkResponse data) markSuccess,
+    required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function(bool isRecording)? convertIsRecordingBool,
+    TResult? Function()? markLoading,
+    TResult? Function(MarkResponse data)? markSuccess,
+    TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function(bool isRecording)? convertIsRecordingBool,
+    TResult Function()? markLoading,
+    TResult Function(MarkResponse data)? markSuccess,
+    TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (advancedLevelMarkingError != null) {
+      return advancedLevelMarkingError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LevelTrainingInitial<T> value) initial,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(ConvertIsRecordingBool<T> value)
+        convertIsRecordingBool,
+    required TResult Function(MarkLoading<T> value) markLoading,
+    required TResult Function(MarkSuccess<T> value) markSuccess,
+    required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LevelTrainingInitial<T> value)? initial,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult? Function(MarkLoading<T> value)? markLoading,
+    TResult? Function(MarkSuccess<T> value)? markSuccess,
+    TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+  }) {
+    return advancedLevelMarkingError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LevelTrainingInitial<T> value)? initial,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult Function(MarkLoading<T> value)? markLoading,
+    TResult Function(MarkSuccess<T> value)? markSuccess,
+    TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (advancedLevelMarkingError != null) {
+      return advancedLevelMarkingError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AdvancedLevelMarkingError<T> implements LevelTrainingState<T> {
+  const factory AdvancedLevelMarkingError(final String error) =
+      _$AdvancedLevelMarkingErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$AdvancedLevelMarkingErrorImplCopyWith<T,
+          _$AdvancedLevelMarkingErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConvertIsAnAdvancedItemSelectedImplCopyWith<T, $Res> {
+  factory _$$ConvertIsAnAdvancedItemSelectedImplCopyWith(
+          _$ConvertIsAnAdvancedItemSelectedImpl<T> value,
+          $Res Function(_$ConvertIsAnAdvancedItemSelectedImpl<T>) then) =
+      __$$ConvertIsAnAdvancedItemSelectedImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({bool isAnAdvancedItemSelected});
+}
+
+/// @nodoc
+class __$$ConvertIsAnAdvancedItemSelectedImplCopyWithImpl<T, $Res>
+    extends _$LevelTrainingStateCopyWithImpl<T, $Res,
+        _$ConvertIsAnAdvancedItemSelectedImpl<T>>
+    implements _$$ConvertIsAnAdvancedItemSelectedImplCopyWith<T, $Res> {
+  __$$ConvertIsAnAdvancedItemSelectedImplCopyWithImpl(
+      _$ConvertIsAnAdvancedItemSelectedImpl<T> _value,
+      $Res Function(_$ConvertIsAnAdvancedItemSelectedImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isAnAdvancedItemSelected = null,
+  }) {
+    return _then(_$ConvertIsAnAdvancedItemSelectedImpl<T>(
+      null == isAnAdvancedItemSelected
+          ? _value.isAnAdvancedItemSelected
+          : isAnAdvancedItemSelected // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConvertIsAnAdvancedItemSelectedImpl<T>
+    implements ConvertIsAnAdvancedItemSelected<T> {
+  const _$ConvertIsAnAdvancedItemSelectedImpl(this.isAnAdvancedItemSelected);
+
+  @override
+  final bool isAnAdvancedItemSelected;
+
+  @override
+  String toString() {
+    return 'LevelTrainingState<$T>.convertIsAnAdvancedItemSelected(isAnAdvancedItemSelected: $isAnAdvancedItemSelected)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConvertIsAnAdvancedItemSelectedImpl<T> &&
+            (identical(
+                    other.isAnAdvancedItemSelected, isAnAdvancedItemSelected) ||
+                other.isAnAdvancedItemSelected == isAnAdvancedItemSelected));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isAnAdvancedItemSelected);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConvertIsAnAdvancedItemSelectedImplCopyWith<T,
+          _$ConvertIsAnAdvancedItemSelectedImpl<T>>
+      get copyWith => __$$ConvertIsAnAdvancedItemSelectedImplCopyWithImpl<T,
+          _$ConvertIsAnAdvancedItemSelectedImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function(bool isRecording) convertIsRecordingBool,
+    required TResult Function() markLoading,
+    required TResult Function(MarkResponse data) markSuccess,
+    required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
+  }) {
+    return convertIsAnAdvancedItemSelected(isAnAdvancedItemSelected);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function(bool isRecording)? convertIsRecordingBool,
+    TResult? Function()? markLoading,
+    TResult? Function(MarkResponse data)? markSuccess,
+    TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
+  }) {
+    return convertIsAnAdvancedItemSelected?.call(isAnAdvancedItemSelected);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function(bool isRecording)? convertIsRecordingBool,
+    TResult Function()? markLoading,
+    TResult Function(MarkResponse data)? markSuccess,
+    TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (convertIsAnAdvancedItemSelected != null) {
+      return convertIsAnAdvancedItemSelected(isAnAdvancedItemSelected);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LevelTrainingInitial<T> value) initial,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(ConvertIsRecordingBool<T> value)
+        convertIsRecordingBool,
+    required TResult Function(MarkLoading<T> value) markLoading,
+    required TResult Function(MarkSuccess<T> value) markSuccess,
+    required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
+  }) {
+    return convertIsAnAdvancedItemSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LevelTrainingInitial<T> value)? initial,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult? Function(MarkLoading<T> value)? markLoading,
+    TResult? Function(MarkSuccess<T> value)? markSuccess,
+    TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+  }) {
+    return convertIsAnAdvancedItemSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LevelTrainingInitial<T> value)? initial,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult Function(MarkLoading<T> value)? markLoading,
+    TResult Function(MarkSuccess<T> value)? markSuccess,
+    TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (convertIsAnAdvancedItemSelected != null) {
+      return convertIsAnAdvancedItemSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConvertIsAnAdvancedItemSelected<T>
+    implements LevelTrainingState<T> {
+  const factory ConvertIsAnAdvancedItemSelected(
+          final bool isAnAdvancedItemSelected) =
+      _$ConvertIsAnAdvancedItemSelectedImpl<T>;
+
+  bool get isAnAdvancedItemSelected;
+  @JsonKey(ignore: true)
+  _$$ConvertIsAnAdvancedItemSelectedImplCopyWith<T,
+          _$ConvertIsAnAdvancedItemSelectedImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSelectedAyahImplCopyWith<T, $Res> {
+  factory _$$UpdateSelectedAyahImplCopyWith(_$UpdateSelectedAyahImpl<T> value,
+          $Res Function(_$UpdateSelectedAyahImpl<T>) then) =
+      __$$UpdateSelectedAyahImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({Ayah selectedAyah});
+}
+
+/// @nodoc
+class __$$UpdateSelectedAyahImplCopyWithImpl<T, $Res>
+    extends _$LevelTrainingStateCopyWithImpl<T, $Res,
+        _$UpdateSelectedAyahImpl<T>>
+    implements _$$UpdateSelectedAyahImplCopyWith<T, $Res> {
+  __$$UpdateSelectedAyahImplCopyWithImpl(_$UpdateSelectedAyahImpl<T> _value,
+      $Res Function(_$UpdateSelectedAyahImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedAyah = null,
+  }) {
+    return _then(_$UpdateSelectedAyahImpl<T>(
+      null == selectedAyah
+          ? _value.selectedAyah
+          : selectedAyah // ignore: cast_nullable_to_non_nullable
+              as Ayah,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSelectedAyahImpl<T> implements UpdateSelectedAyah<T> {
+  const _$UpdateSelectedAyahImpl(this.selectedAyah);
+
+  @override
+  final Ayah selectedAyah;
+
+  @override
+  String toString() {
+    return 'LevelTrainingState<$T>.updateSelectedAyah(selectedAyah: $selectedAyah)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSelectedAyahImpl<T> &&
+            (identical(other.selectedAyah, selectedAyah) ||
+                other.selectedAyah == selectedAyah));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedAyah);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSelectedAyahImplCopyWith<T, _$UpdateSelectedAyahImpl<T>>
+      get copyWith => __$$UpdateSelectedAyahImplCopyWithImpl<T,
+          _$UpdateSelectedAyahImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() userIsTryingNow,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function(bool isRecording) convertIsRecordingBool,
+    required TResult Function() markLoading,
+    required TResult Function(MarkResponse data) markSuccess,
+    required TResult Function(String error) markError,
+    required TResult Function() advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingResponse data)
+        advancedLevelMarkingSuccess,
+    required TResult Function(String error) advancedLevelMarkingError,
+    required TResult Function(bool isAnAdvancedItemSelected)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(Ayah selectedAyah) updateSelectedAyah,
+  }) {
+    return updateSelectedAyah(selectedAyah);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? userIsTryingNow,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function(bool isRecording)? convertIsRecordingBool,
+    TResult? Function()? markLoading,
+    TResult? Function(MarkResponse data)? markSuccess,
+    TResult? Function(String error)? markError,
+    TResult? Function()? advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(String error)? advancedLevelMarkingError,
+    TResult? Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(Ayah selectedAyah)? updateSelectedAyah,
+  }) {
+    return updateSelectedAyah?.call(selectedAyah);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? userIsTryingNow,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function(bool isRecording)? convertIsRecordingBool,
+    TResult Function()? markLoading,
+    TResult Function(MarkResponse data)? markSuccess,
+    TResult Function(String error)? markError,
+    TResult Function()? advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingResponse data)?
+        advancedLevelMarkingSuccess,
+    TResult Function(String error)? advancedLevelMarkingError,
+    TResult Function(bool isAnAdvancedItemSelected)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(Ayah selectedAyah)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedAyah != null) {
+      return updateSelectedAyah(selectedAyah);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LevelTrainingInitial<T> value) initial,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(UserIsTryingNow<T> value) userIsTryingNow,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(ConvertIsRecordingBool<T> value)
+        convertIsRecordingBool,
+    required TResult Function(MarkLoading<T> value) markLoading,
+    required TResult Function(MarkSuccess<T> value) markSuccess,
+    required TResult Function(MarkError<T> value) markError,
+    required TResult Function(AdvancedLevelMarkingLoading<T> value)
+        advancedLevelMarkingLoading,
+    required TResult Function(AdvancedLevelMarkingSuccess<T> value)
+        advancedLevelMarkingSuccess,
+    required TResult Function(AdvancedLevelMarkingError<T> value)
+        advancedLevelMarkingError,
+    required TResult Function(ConvertIsAnAdvancedItemSelected<T> value)
+        convertIsAnAdvancedItemSelected,
+    required TResult Function(UpdateSelectedAyah<T> value) updateSelectedAyah,
+  }) {
+    return updateSelectedAyah(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LevelTrainingInitial<T> value)? initial,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult? Function(MarkLoading<T> value)? markLoading,
+    TResult? Function(MarkSuccess<T> value)? markSuccess,
+    TResult? Function(MarkError<T> value)? markError,
+    TResult? Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult? Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult? Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult? Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult? Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+  }) {
+    return updateSelectedAyah?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LevelTrainingInitial<T> value)? initial,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(UserIsTryingNow<T> value)? userIsTryingNow,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(ConvertIsRecordingBool<T> value)? convertIsRecordingBool,
+    TResult Function(MarkLoading<T> value)? markLoading,
+    TResult Function(MarkSuccess<T> value)? markSuccess,
+    TResult Function(MarkError<T> value)? markError,
+    TResult Function(AdvancedLevelMarkingLoading<T> value)?
+        advancedLevelMarkingLoading,
+    TResult Function(AdvancedLevelMarkingSuccess<T> value)?
+        advancedLevelMarkingSuccess,
+    TResult Function(AdvancedLevelMarkingError<T> value)?
+        advancedLevelMarkingError,
+    TResult Function(ConvertIsAnAdvancedItemSelected<T> value)?
+        convertIsAnAdvancedItemSelected,
+    TResult Function(UpdateSelectedAyah<T> value)? updateSelectedAyah,
+    required TResult orElse(),
+  }) {
+    if (updateSelectedAyah != null) {
+      return updateSelectedAyah(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateSelectedAyah<T> implements LevelTrainingState<T> {
+  const factory UpdateSelectedAyah(final Ayah selectedAyah) =
+      _$UpdateSelectedAyahImpl<T>;
+
+  Ayah get selectedAyah;
+  @JsonKey(ignore: true)
+  _$$UpdateSelectedAyahImplCopyWith<T, _$UpdateSelectedAyahImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -144,6 +144,9 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetAdvancedLevelTrainingDataUseCase>(
       () => GetAdvancedLevelTrainingDataUseCase(getIt.get<SpeechTherapyRepo>()),
     );
+    getIt.registerLazySingleton<AdvancedLevelMarkingUseCase>(
+      () => AdvancedLevelMarkingUseCase(getIt.get<SpeechTherapyRepo>()),
+    );
 
     // ========== Comments feature ==========
     getIt.registerLazySingleton<StreamCommentsUseCase>(

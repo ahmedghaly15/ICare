@@ -122,7 +122,10 @@ class SetupDIForCubits {
       ),
     );
     getIt.registerFactory<LevelTrainingCubit>(
-      () => LevelTrainingCubit(getIt.get<MarkUseCase>()),
+      () => LevelTrainingCubit(
+        getIt.get<MarkUseCase>(),
+        getIt.get<AdvancedLevelMarkingUseCase>(),
+      ),
     );
 
     // ========== Comments feature ==========

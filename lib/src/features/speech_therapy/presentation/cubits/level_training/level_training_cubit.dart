@@ -7,7 +7,9 @@ import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/advanced_level_marking.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/mark.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_state.dart';
 import 'package:path_provider/path_provider.dart';
@@ -15,9 +17,12 @@ import 'package:record/record.dart';
 
 class LevelTrainingCubit extends Cubit<LevelTrainingState> {
   final MarkUseCase _markUseCase;
+  final AdvancedLevelMarkingUseCase _advancedLevelMarkingUseCase;
 
-  LevelTrainingCubit(this._markUseCase)
-      : super(const LevelTrainingState.initial()) {
+  LevelTrainingCubit(
+    this._markUseCase,
+    this._advancedLevelMarkingUseCase,
+  ) : super(const LevelTrainingState.initial()) {
     _initAttributes();
     _audioPlayer.onPlayerStateChanged.listen((event) {
       _convertIsPlaying();
@@ -124,6 +129,76 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
       _mark(id, level);
     }
     _convertIsRecording();
+  }
+
+  void _advancedLevelMarking(int id) async {
+    emit(const LevelTrainingState.advancedLevelMarkingLoading());
+    final result = await _advancedLevelMarkingUseCase.call(
+        MarkParams(userId: Helper.uId!, id: id, audioFile: File(_audioPath!)));
+    result.when(
+      success: (data) {
+        emit(LevelTrainingState.advancedLevelMarkingSuccess(data));
+        _audioPath = null;
+        emit(LevelTrainingState.assignAudioPathVal(_audioPath));
+      },
+      error: (error) => emit(LevelTrainingState.advancedLevelMarkingError(
+          error.apiErrorModel.error ?? '')),
+    );
+  }
+
+  void recordAndMarkAdvancedLevel(int id, BuildContext context) async {
+    if (isRecording == false) {
+      final status = await _audioRecorder.hasPermission();
+      if (status == true) {
+        _emitUserIsTryingNow();
+        // ignore: use_build_context_synchronously
+        await _startRecording(context);
+      } else {
+        ShowICareDialog.show(
+          // ignore: use_build_context_synchronously
+          context: context,
+          state: ICareDialogStates.warning,
+          message: AppStrings.microphonePermissionDenied,
+        );
+      }
+    } else {
+      await _stopRecording();
+      _advancedLevelMarking(id);
+    }
+    _convertIsRecording();
+  }
+
+  bool isAnAdvancedItemSelected = false;
+  Ayah? selectedAyah;
+
+  void updateSelectedAyah(Ayah selectedAyah) {
+    if (this.selectedAyah == null) {
+      this.selectedAyah = selectedAyah;
+      emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
+      isAnAdvancedItemSelected = true;
+      emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
+          isAnAdvancedItemSelected));
+    } else if (this.selectedAyah?.ayahAr != selectedAyah.ayahAr) {
+      this.selectedAyah = selectedAyah;
+      emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
+      isAnAdvancedItemSelected = true;
+      emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
+          isAnAdvancedItemSelected));
+    } else {
+      this.selectedAyah = null;
+      emit(LevelTrainingState.updateSelectedAyah(selectedAyah));
+      isAnAdvancedItemSelected = false;
+      emit(LevelTrainingState.convertIsAnAdvancedItemSelected(
+          isAnAdvancedItemSelected));
+    }
+  }
+
+  void playAndPauseAdvancedLevel(Ayah ayah, BuildContext context) async {
+    if (isPlaying) {
+      await _audioPlayer.pause();
+    } else {
+      await _audioPlayer.play(UrlSource(ayah.ayahAudioUrl));
+    }
   }
 
   @override
