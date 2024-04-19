@@ -15,6 +15,7 @@ platform :android do
     This is a new release. Updates:
       - Fix Null Check Bug in NewTinyTale Screen ✅
       - Fix Send Image Message Bug ✅
+      - Finish Advanced Level (UI & Logic) ✅
   """
   )
   end

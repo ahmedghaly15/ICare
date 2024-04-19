@@ -94,6 +94,7 @@ List<AutoRoute> get appRoutes {
       durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
     ),
     _buildCustomRoute(page: AdvancedLevelTrainingRoute.page),
+    _buildCustomRoute(page: AdvancedLevelScoreRoute.page),
   ];
 }
 

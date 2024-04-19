@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AdvancedLevelScoreRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AdvancedLevelScoreView(),
+      );
+    },
     AdvancedLevelTrainingRoute.name: (routeData) {
       final args = routeData.argsAs<AdvancedLevelTrainingRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -315,6 +321,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AdvancedLevelScoreView]
+class AdvancedLevelScoreRoute extends PageRouteInfo<void> {
+  const AdvancedLevelScoreRoute({List<PageRouteInfo>? children})
+      : super(
+          AdvancedLevelScoreRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AdvancedLevelScoreRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
