@@ -23,7 +23,7 @@ class CustomTextButtonWithIcon extends StatelessWidget {
   final Color? backgroundColor, foregroundColor;
   final VoidCallback onPressed;
   final ButtonStyle? style;
-  final EdgeInsets? padding;
+  final EdgeInsetsGeometry? padding;
   final double? radiusVal;
 
   @override
