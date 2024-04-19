@@ -41,8 +41,6 @@ dependencies:
   internet_connection_checker: ^1.0.0+1
   # A flutter plugin for adapting screen and font size.Guaranteed to look good on different models
   flutter_screenutil: ^5.9.0
-  # Updating app's launcher icon.
-  flutter_launcher_icons: ^0.13.1
   # Animations built with the Rive editor
   rive: ^0.13.1
   # A PageView widget adjusting it's height to currently displayed page
@@ -90,6 +88,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # Updating app's launcher icon.
+  flutter_launcher_icons: ^0.13.1
+  # Code generator (mainly used with Cubit & retrofit)
   retrofit_generator: ^8.1.0
   # Automatically generate navigation
   auto_route_generator: ^8.0.0
@@ -129,7 +130,7 @@ flutter:
         - asset: assets/fonts/readex-pro/ReadexPro-Regular.ttf
           weight: 400
 
-flutter_icons:
+flutter_launcher_icons:
   android: true
   ios: true
   image_path: "assets/app_icon.png"

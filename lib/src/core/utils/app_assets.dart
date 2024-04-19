@@ -5,44 +5,6 @@ class AppAssets {
   /// assets/app_icon.png
   static const String appIcon = "assets/app_icon.png";
 
-  /// Assets for fontsInterInterBold
-  /// assets/fonts/inter/Inter-Bold.ttf
-  static const String fontsInterInterBold = "assets/fonts/inter/Inter-Bold.ttf";
-
-  /// Assets for fontsInterInterLight
-  /// assets/fonts/inter/Inter-Light.ttf
-  static const String fontsInterInterLight =
-      "assets/fonts/inter/Inter-Light.ttf";
-
-  /// Assets for fontsInterInterMedium
-  /// assets/fonts/inter/Inter-Medium.ttf
-  static const String fontsInterInterMedium =
-      "assets/fonts/inter/Inter-Medium.ttf";
-
-  /// Assets for fontsInterInterRegular
-  /// assets/fonts/inter/Inter-Regular.ttf
-  static const String fontsInterInterRegular =
-      "assets/fonts/inter/Inter-Regular.ttf";
-
-  /// Assets for fontsInterInterSemiBold
-  /// assets/fonts/inter/Inter-SemiBold.ttf
-  static const String fontsInterInterSemiBold =
-      "assets/fonts/inter/Inter-SemiBold.ttf";
-
-  /// Assets for fontsInterOFL
-  /// assets/fonts/inter/OFL.txt
-  static const String fontsInterOFL = "assets/fonts/inter/OFL.txt";
-
-  /// Assets for fontsLateefLateefRegular
-  /// assets/fonts/lateef/Lateef-Regular.ttf
-  static const String fontsLateefLateefRegular =
-      "assets/fonts/lateef/Lateef-Regular.ttf";
-
-  /// Assets for fontsReadexProReadexProRegular
-  /// assets/fonts/readex-pro/ReadexPro-Regular.ttf
-  static const String fontsReadexProReadexProRegular =
-      "assets/fonts/readex-pro/ReadexPro-Regular.ttf";
-
   /// Assets for iconsGoogle
   /// assets/icons/google.png
   static const String iconsGoogle = "assets/icons/google.png";
