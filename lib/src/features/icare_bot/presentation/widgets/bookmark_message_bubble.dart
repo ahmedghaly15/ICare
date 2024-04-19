@@ -7,6 +7,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
@@ -28,7 +29,9 @@ class BookmarkMessageBubble extends StatelessWidget {
         ChatBubble(
           clipper: ChatBubbleClipper8(type: BubbleType.receiverBubble),
           alignment: Alignment.centerLeft,
-          backGroundColor: AppColors.lightGrey2,
+          backGroundColor: isDarkModeActive(context)
+              ? AppColors.lightBlue
+              : AppColors.lightGrey2,
           padding: EdgeInsets.only(
             top: 8.h,
             bottom: 4.h,
@@ -44,9 +47,7 @@ class BookmarkMessageBubble extends StatelessWidget {
                   data: bookmark.chatResponse,
                   padding: EdgeInsets.zero,
                   styleSheet: MarkdownStyleSheet(
-                    p: AppTextStyles.textStyle13Regular.copyWith(
-                      color: Colors.black,
-                    ),
+                    p: AppTextStyles.textStyle13Regular,
                   ),
                   selectable: false,
                   shrinkWrap: true,

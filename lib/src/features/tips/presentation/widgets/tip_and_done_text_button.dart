@@ -21,7 +21,9 @@ class TipAndDoneTextButton extends StatelessWidget {
           from: 30,
           child: Text(
             context.read<TipsCubit>().randomTip!.info,
-            style: AppTextStyles.textStyle14Medium,
+            style: AppTextStyles.textStyle14Medium.copyWith(
+              color: Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
         ),

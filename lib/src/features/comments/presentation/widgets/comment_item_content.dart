@@ -3,6 +3,7 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/functions/open_url.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
@@ -29,7 +30,9 @@ class CommentItemContent extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.r),
-        color: AppColors.lightGrey2,
+        color: isDarkModeActive(context)
+            ? AppColors.lightBlue
+            : AppColors.lightGrey2,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,8 +66,9 @@ class CommentItemContent extends StatelessWidget {
           MySizedBox.height12,
           Text(
             '${comment.commentData!.date} at ${comment.commentData!.time!}',
-            style: AppTextStyles.textStyle10Regular
-                .copyWith(color: Colors.grey.shade400),
+            style: AppTextStyles.textStyle10Regular.copyWith(
+              color: isDarkModeActive(context) ? Colors.white54 : Colors.grey,
+            ),
           ),
         ],
       ),

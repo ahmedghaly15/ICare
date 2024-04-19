@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 
 class QuerySnapshotTextStreamBuilder extends StatelessWidget {
   const QuerySnapshotTextStreamBuilder({
@@ -21,7 +22,8 @@ class QuerySnapshotTextStreamBuilder extends StatelessWidget {
         return Text(
           '$count',
           style: AppTextStyles.textStyle13Regular.copyWith(
-            color: AppColors.darkGrey,
+            color:
+                isDarkModeActive(context) ? Colors.white54 : AppColors.darkGrey,
           ),
         );
       },

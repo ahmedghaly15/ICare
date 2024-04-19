@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_divider.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_home_drawer_header.dart';
 import 'package:icare/src/features/home/presentation/widgets/drawer_items.dart';
+import 'package:icare/src/features/home/presentation/widgets/switch_theme_and_sign_out_buttons.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -13,7 +15,9 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: SizeConfig.width * 0.7,
-      color: Colors.white,
+      color: isDarkModeActive(context)
+          ? AppColors.scaffoldDarkModeBackgroundColor
+          : Colors.white,
       padding: EdgeInsets.only(
         left: 14.w,
         right: 14.w,
@@ -34,18 +38,8 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           const SliverToBoxAdapter(child: DrawerItems()),
-          SliverFillRemaining(
-            child: Column(
-              children: <Widget>[
-                const Spacer(),
-                Switch(
-                  value: true,
-                  onChanged: (_) {},
-                  activeColor: AppColors.primaryColor,
-                  activeTrackColor: Colors.white,
-                ),
-              ],
-            ),
+          const SliverFillRemaining(
+            child: SwitchThemeAndSignOutButtons(),
           ),
         ],
       ),

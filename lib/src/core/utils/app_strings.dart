@@ -172,4 +172,5 @@ class AppStrings {
   static const String cachedAdvancedLevelTrainingData =
       'CachedAdvancedLevelTrainingData';
   static const String cachedTheme = 'CachedTheme';
+  static const String darkMode = 'Dark mode';
 }

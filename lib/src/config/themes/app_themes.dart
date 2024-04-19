@@ -124,7 +124,7 @@ class AppThemes {
           ),
           tabAlignment: TabAlignment.center,
           overlayColor: MaterialStateProperty.all(
-            AppColors.gradientOrange,
+            AppColors.lightBlue,
           ),
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(

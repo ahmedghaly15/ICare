@@ -45,7 +45,9 @@ class WhatToSayAndTopic extends StatelessWidget {
           from: 30,
           child: Text(
             AppStrings.todaysTopicIs,
-            style: AppTextStyles.textStyle14Medium,
+            style: AppTextStyles.textStyle14Medium.copyWith(
+              color: Colors.black,
+            ),
           ),
         ),
         MySizedBox.height25,
@@ -53,7 +55,9 @@ class WhatToSayAndTopic extends StatelessWidget {
           from: 30,
           child: Text(
             context.read<TipsCubit>().randomTip!.topic,
-            style: AppTextStyles.textStyle18Bold,
+            style: AppTextStyles.textStyle18Bold.copyWith(
+              color: Colors.black,
+            ),
           ),
         ),
         Align(

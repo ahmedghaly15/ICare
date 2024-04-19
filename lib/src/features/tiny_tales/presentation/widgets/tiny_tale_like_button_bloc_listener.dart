@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_state.dart';
@@ -49,9 +50,11 @@ class TinyTaleLikeButtonBlocListener extends StatelessWidget {
             icon: SvgPicture.asset(
               isTinyTaleLikedByMe
                   ? AppAssets.svgsRedHeartIcon
-                  : (isTinyTaleContainsImage
+                  : (isDarkModeActive(context)
                       ? AppAssets.svgsHeartIcon
-                      : AppAssets.svgsBlackHeartIcon),
+                      : (isTinyTaleContainsImage
+                          ? AppAssets.svgsHeartIcon
+                          : AppAssets.svgsBlackHeartIcon)),
             ),
           );
         },

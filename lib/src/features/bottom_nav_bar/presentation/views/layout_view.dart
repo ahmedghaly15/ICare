@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 
 @RoutePage()
 class LayoutView extends StatelessWidget {
@@ -18,17 +19,23 @@ class LayoutView extends StatelessWidget {
         onTap: tabsRouter.setActiveIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.svgsBlackHomeIcon),
+            icon: SvgPicture.asset(isDarkModeActive(context)
+                ? AppAssets.svgsWhiteHomeIcon
+                : AppAssets.svgsBlackHomeIcon),
             activeIcon: SvgPicture.asset(AppAssets.svgsHomeIcon),
             label: AppStrings.home,
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.svgsBlackMedicalIcon),
+            icon: SvgPicture.asset(isDarkModeActive(context)
+                ? AppAssets.svgsWhiteMedicalIcon
+                : AppAssets.svgsBlackMedicalIcon),
             activeIcon: SvgPicture.asset(AppAssets.svgsMedicalIcon),
             label: AppStrings.medical,
           ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(AppAssets.svgsBlackCommunityIcon),
+            icon: SvgPicture.asset(isDarkModeActive(context)
+                ? AppAssets.svgsWhiteCommunityIcon
+                : AppAssets.svgsBlackCommunityIcon),
             activeIcon: SvgPicture.asset(AppAssets.svgsCommunityIcon),
             label: AppStrings.community,
           ),

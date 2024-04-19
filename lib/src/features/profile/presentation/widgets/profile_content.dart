@@ -24,10 +24,7 @@ class ProfileContent extends StatelessWidget {
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(
-              Icons.email,
-              color: Colors.black,
-            ),
+            Icon(Icons.email),
             MySizedBox.width10,
             CurrentUserEmailBlocBuilder(),
           ],

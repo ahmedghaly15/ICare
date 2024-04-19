@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/icare_dialog_content.dart';
 
 class CustomAnimatedDialog extends StatelessWidget {
@@ -43,7 +45,9 @@ class CustomAnimatedDialog extends StatelessWidget {
                         ),
                       ),
                       ICareDialogContent(
-                        backgroundColor: backgroundColor,
+                        backgroundColor: isDarkModeActive(context)
+                            ? AppColors.scaffoldDarkModeBackgroundColor
+                            : backgroundColor,
                         appLogoBoxShadow: appLogoBoxShadow,
                         padding: padding,
                         child: child,
@@ -51,7 +55,9 @@ class CustomAnimatedDialog extends StatelessWidget {
                     ],
                   )
                 : ICareDialogContent(
-                    backgroundColor: backgroundColor,
+                    backgroundColor: isDarkModeActive(context)
+                        ? AppColors.scaffoldDarkModeBackgroundColor
+                        : backgroundColor,
                     appLogoBoxShadow: appLogoBoxShadow,
                     padding: padding,
                     child: child,

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -56,7 +57,8 @@ class TinyTaleItemUpperSection extends StatelessWidget {
               Text(
                 '${tinyTale.tinyTaleData!.date} at ${tinyTale.tinyTaleData!.time}',
                 style: AppTextStyles.textStyle10Regular.copyWith(
-                  color: Colors.grey,
+                  color:
+                      isDarkModeActive(context) ? Colors.white54 : Colors.grey,
                 ),
               ),
             ],

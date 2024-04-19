@@ -7,6 +7,7 @@ import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
@@ -33,9 +34,11 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
             context.pushRoute(CommentsRoute(tinyTaleId: tinyTale.tinyTaleId!));
           },
           icon: SvgPicture.asset(
-            isTinyTaleContainsImage
+            isDarkModeActive(context)
                 ? AppAssets.svgsCommentIcon
-                : AppAssets.svgsBlackCommentIcon,
+                : (isTinyTaleContainsImage
+                    ? AppAssets.svgsCommentIcon
+                    : AppAssets.svgsBlackCommentIcon),
           ),
         ),
         StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
@@ -48,9 +51,11 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
             return Text(
               '$commentsCount',
               style: AppTextStyles.textStyle13Bold.copyWith(
-                color: isTinyTaleContainsImage
+                color: isDarkModeActive(context)
                     ? AppColors.white80Percent
-                    : AppColors.black80Percent,
+                    : (isTinyTaleContainsImage
+                        ? AppColors.white80Percent
+                        : AppColors.black80Percent),
               ),
             );
           },
@@ -69,9 +74,11 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
             return Text(
               '$likesCount',
               style: AppTextStyles.textStyle13Bold.copyWith(
-                color: isTinyTaleContainsImage
+                color: isDarkModeActive(context)
                     ? AppColors.white80Percent
-                    : AppColors.black80Percent,
+                    : (isTinyTaleContainsImage
+                        ? AppColors.white80Percent
+                        : AppColors.black80Percent),
               ),
             );
           },
