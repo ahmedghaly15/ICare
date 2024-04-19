@@ -35,7 +35,7 @@ class CurrentUsernameAndImage extends StatelessWidget {
               Expanded(
                 child: Text(
                   Helper.currentUser!.name!,
-                  style: AppTextStyles.textStyle25Bold,
+                  style: AppTextStyles.textStyle16Bold,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

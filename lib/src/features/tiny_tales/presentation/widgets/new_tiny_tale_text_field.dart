@@ -19,7 +19,7 @@ class NewTinyTaleTextField extends StatelessWidget {
       builder: (context, state) {
         if (state is GetUserDataSuccess) {
           return CustomTextFormField(
-            hintStyle: AppTextStyles.textStyle20Regular.copyWith(
+            hintStyle: AppTextStyles.textStyle16Regular.copyWith(
               color: Colors.grey,
             ),
             autofocus: true,

@@ -50,9 +50,9 @@ class PublishTextButtonBlocConsumer extends StatelessWidget {
             textStyle: MaterialStateProperty.resolveWith<TextStyle>(
               (Set<MaterialState> states) {
                 if (states.contains(MaterialState.disabled)) {
-                  return AppTextStyles.textStyle20Regular;
+                  return AppTextStyles.textStyle16Regular;
                 }
-                return AppTextStyles.textStyle20Bold;
+                return AppTextStyles.textStyle16Bold;
               },
             ),
           ),

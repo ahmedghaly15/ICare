@@ -151,7 +151,7 @@ class CustomTextFormField extends StatelessWidget {
   bool get _borderIsNone => border == InputBorder.none;
 
   TextStyle _customTextFieldTextStyle(BuildContext context) {
-    return AppTextStyles.textStyle13Light;
+    return AppTextStyles.textStyle10Regular;
   }
 
   OutlineInputBorder _buildOutlinedInputBorder(
