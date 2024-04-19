@@ -2,6 +2,9 @@ part of '../../../dependency_injection.dart';
 
 class SetupDIForCubits {
   static void setup() {
+    // ========== Themes feature ==========
+    getIt.registerFactory<ThemesCubit>(() => ThemesCubit());
+
     // ========== Login feature ==========
     getIt.registerFactory<LoginCubit>(
       () => LoginCubit(

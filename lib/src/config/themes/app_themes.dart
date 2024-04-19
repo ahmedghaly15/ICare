@@ -71,5 +71,72 @@ class AppThemes {
         ),
       );
 
-  static ThemeData get darkTheme => ThemeData();
+  static ThemeData get darkTheme => ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        primaryColor: AppColors.primaryColor,
+        scaffoldBackgroundColor: AppColors.scaffoldDarkModeBackgroundColor,
+        fontFamily: AppStrings.interFontFamily,
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.scaffoldDarkModeBackgroundColor,
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: AppTextStyles.textStyle30Bold.copyWith(
+            color: AppColors.primaryColor,
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            textStyle: AppTextStyles.textStyle13Bold,
+            foregroundColor: AppColors.primaryColor,
+          ),
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: AppColors.scaffoldDarkModeBackgroundColor,
+          elevation: 0,
+          selectedItemColor: AppColors.primaryColor,
+          unselectedItemColor: Colors.white,
+          selectedLabelStyle: AppTextStyles.textStyle15Bold.copyWith(
+            color: Colors.white,
+          ),
+          unselectedLabelStyle: AppTextStyles.textStyle15Bold.copyWith(
+            color: Colors.white,
+          ),
+        ),
+        iconButtonTheme: IconButtonThemeData(
+          style: IconButton.styleFrom(
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            minimumSize: Size.zero,
+          ),
+        ),
+        tabBarTheme: TabBarTheme(
+          indicatorColor: AppColors.primaryColor,
+          indicatorSize: TabBarIndicatorSize.label,
+          dividerHeight: 0,
+          labelStyle: AppTextStyles.textStyle18Bold,
+          unselectedLabelColor: Colors.white,
+          labelColor: Colors.white,
+          labelPadding: const EdgeInsets.symmetric(
+            horizontal: 48.0,
+          ),
+          tabAlignment: TabAlignment.center,
+          overlayColor: MaterialStateProperty.all(
+            AppColors.gradientOrange,
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(
+              color: AppColors.primaryColor,
+              width: 1,
+            ),
+            backgroundColor: AppColors.primaryColor,
+            textStyle: AppTextStyles.textStyle18Bold,
+            foregroundColor: Colors.white,
+          ),
+        ),
+      );
 }
