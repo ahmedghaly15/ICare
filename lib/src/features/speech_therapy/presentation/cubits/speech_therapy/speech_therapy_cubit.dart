@@ -150,7 +150,11 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
       status: data.status,
       imageUrl: data.imageUrl,
     );
-
-    // TODO: handle advanced level score
+    getIt
+        .get<CacheHelper>()
+        .removeData(key: '${AppStrings.cachedScoreData}level3')
+        .then((value) {
+      getScore(3);
+    });
   }
 }

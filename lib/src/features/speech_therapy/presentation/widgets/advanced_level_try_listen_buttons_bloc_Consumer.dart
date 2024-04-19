@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,71 +50,74 @@ class AdvancedLevelTryListenButtonsBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         if (context.read<LevelTrainingCubit>().selectedAyah != null) {
           return SliverPadding(
-            padding: EdgeInsets.only(
-              bottom: 32.h,
-              right: 16.w,
-              left: 16.w,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             sliver: SliverFillRemaining(
               hasScrollBody: false,
-              child: Column(
-                children: <Widget>[
-                  const Spacer(),
-                  if (state is AdvancedLevelMarkingError ||
-                      state is UpdateSelectedAyah)
-                    TryItAndListenButtons(
-                      padding: EdgeInsets.symmetric(vertical: 4.h),
-                      textStyle:
-                          AppTextStyles.textStyle18Bold(context).copyWith(
-                        color: Colors.white,
+              child: FadeInDown(
+                from: 50,
+                child: Column(
+                  children: <Widget>[
+                    const Spacer(),
+                    if (state is AdvancedLevelMarkingError ||
+                        state is UpdateSelectedAyah)
+                      TryItAndListenButtons(
+                        padding: EdgeInsets.symmetric(vertical: 4.h),
+                        textStyle:
+                            AppTextStyles.textStyle18Bold(context).copyWith(
+                          color: Colors.white,
+                        ),
+                        audioUrl: context
+                            .read<LevelTrainingCubit>()
+                            .selectedAyah!
+                            .ayahAudioUrl,
+                        tryItOnPressed: () {
+                          context
+                              .read<LevelTrainingCubit>()
+                              .recordAndMarkAdvancedLevel(id, context);
+                        },
+                        listenOnPressed: () => context
+                            .read<LevelTrainingCubit>()
+                            .playAndPauseAdvancedLevel(
+                                context
+                                    .read<LevelTrainingCubit>()
+                                    .selectedAyah!,
+                                context),
                       ),
-                      audioUrl: context
-                          .read<LevelTrainingCubit>()
-                          .selectedAyah!
-                          .ayahAudioUrl,
-                      tryItOnPressed: () {
-                        context
-                            .read<LevelTrainingCubit>()
-                            .recordAndMarkAdvancedLevel(id, context);
-                      },
-                      listenOnPressed: () => context
-                          .read<LevelTrainingCubit>()
-                          .playAndPauseAdvancedLevel(
-                              context.read<LevelTrainingCubit>().selectedAyah!,
-                              context),
-                    ),
-                  if (state is AdvancedLevelMarkingLoading)
-                    const CustomCircularProgressIndicator(),
-                  if (state is UserIsTryingNow)
-                    CustomStopAndMarkAudioButton(
-                      onPressed: () {
-                        context
-                            .read<LevelTrainingCubit>()
-                            .recordAndMarkAdvancedLevel(id, context);
-                      },
-                    ),
-                  if (state is AdvancedLevelMarkingSuccess)
-                    Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: PrimaryButton(
-                            onPressed: () {
-                              context
-                                  .read<LevelTrainingCubit>()
-                                  .emitUpdateSelectedAyah();
-                            },
-                            text: AppStrings.tryAgain,
-                            hasShadow: false,
+                    if (state is AdvancedLevelMarkingLoading)
+                      const CustomCircularProgressIndicator(),
+                    if (state is UserIsTryingNow)
+                      CustomStopAndMarkAudioButton(
+                        onPressed: () {
+                          context
+                              .read<LevelTrainingCubit>()
+                              .recordAndMarkAdvancedLevel(id, context);
+                        },
+                      ),
+                    if (state is AdvancedLevelMarkingSuccess)
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: PrimaryButton(
+                              onPressed: () {
+                                context
+                                    .read<LevelTrainingCubit>()
+                                    .emitUpdateSelectedAyah();
+                              },
+                              text: AppStrings.tryAgain,
+                              hasShadow: false,
+                            ),
                           ),
-                        ),
-                        MySizedBox.width27,
-                        Expanded(
-                          child: CustomCircularPercentIndicator(
-                              percent: state.data.percent),
-                        ),
-                      ],
-                    ),
-                ],
+                          MySizedBox.width27,
+                          Expanded(
+                            child: CustomCircularPercentIndicator(
+                              percent: state.data.percent,
+                            ),
+                          ),
+                        ],
+                      ),
+                    MySizedBox.height46,
+                  ],
+                ),
               ),
             ),
           );
