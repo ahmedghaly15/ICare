@@ -16,6 +16,7 @@ platform :android do
       - Handle Dark mode in SpeechTherapy feature's screens ✅
       - Control scrolling in Advanced Level ✅
       - Update Advanced Level UI ✅
+      - Finish Log out use case (UI & Logic) ✅
   """
   )
   end
