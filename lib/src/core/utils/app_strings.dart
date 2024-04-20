@@ -177,4 +177,5 @@ class AppStrings {
   static const String cancel = 'Cancel';
   static const String sureToLogoutQuestion =
       'Are you sure that you would like to log out?';
+  static const String cryTranslator = 'Cry Translator';
 }

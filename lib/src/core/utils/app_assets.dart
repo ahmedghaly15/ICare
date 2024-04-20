@@ -155,11 +155,6 @@ class AppAssets {
   static const String svgsBlackCommunityIcon =
       "assets/svgs/black_community_icon.svg";
 
-  /// Assets for svgsBlackDrawerBookmarkIcon
-  /// assets/svgs/black_drawer_bookmark_icon.svg
-  static const String svgsBlackDrawerBookmarkIcon =
-      "assets/svgs/black_drawer_bookmark_icon.svg";
-
   /// Assets for svgsBlackHeartIcon
   /// assets/svgs/black_heart_icon.svg
   static const String svgsBlackHeartIcon = "assets/svgs/black_heart_icon.svg";
@@ -173,10 +168,6 @@ class AppAssets {
   static const String svgsBlackMedicalIcon =
       "assets/svgs/black_medical_icon.svg";
 
-  /// Assets for svgsBlackSearchIcon
-  /// assets/svgs/black_search_icon.svg
-  static const String svgsBlackSearchIcon = "assets/svgs/black_search_icon.svg";
-
   /// Assets for svgsBookIcon
   /// assets/svgs/book_icon.svg
   static const String svgsBookIcon = "assets/svgs/book_icon.svg";
@@ -184,10 +175,6 @@ class AppAssets {
   /// Assets for svgsBookmarkIcon
   /// assets/svgs/bookmark_icon.svg
   static const String svgsBookmarkIcon = "assets/svgs/bookmark_icon.svg";
-
-  /// Assets for svgsChatIcon
-  /// assets/svgs/chat_icon.svg
-  static const String svgsChatIcon = "assets/svgs/chat_icon.svg";
 
   /// Assets for svgsChatbotIcon
   /// assets/svgs/chatbot_icon.svg
@@ -205,6 +192,16 @@ class AppAssets {
   /// assets/svgs/cry_translator_icon.svg
   static const String svgsCryTranslatorIcon =
       "assets/svgs/cry_translator_icon.svg";
+
+  /// Assets for svgsCryTranslatorWave
+  /// assets/svgs/cry_translator_wave.svg
+  static const String svgsCryTranslatorWave =
+      "assets/svgs/cry_translator_wave.svg";
+
+  /// Assets for svgsDarkCryTranslatorWave
+  /// assets/svgs/dark_cry_translator_wave.svg
+  static const String svgsDarkCryTranslatorWave =
+      "assets/svgs/dark_cry_translator_wave.svg";
 
   /// Assets for svgsEmptyBookmarkedTinyTales
   /// assets/svgs/empty_bookmarked_tiny_tales.svg
@@ -265,16 +262,6 @@ class AppAssets {
   /// assets/svgs/orange_bookmark_icon.svg
   static const String svgsOrangeBookmarkIcon =
       "assets/svgs/orange_bookmark_icon.svg";
-
-  /// Assets for svgsOrangeDrawerBookmarkIcon
-  /// assets/svgs/orange_drawer_bookmark_icon.svg
-  static const String svgsOrangeDrawerBookmarkIcon =
-      "assets/svgs/orange_drawer_bookmark_icon.svg";
-
-  /// Assets for svgsOrangeProfileIcon
-  /// assets/svgs/orange_profile_icon.svg
-  static const String svgsOrangeProfileIcon =
-      "assets/svgs/orange_profile_icon.svg";
 
   /// Assets for svgsRedHeartCommentIcon
   /// assets/svgs/red_heart_comment_icon.svg
