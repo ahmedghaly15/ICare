@@ -31,7 +31,7 @@ class CustomDiseaseDetailsContainer extends StatelessWidget {
           colors: isDarkModeActive(context)
               ? <Color>[
                   AppColors.darkOrange,
-                  const Color(0xff4D300F),
+                  AppColors.deepBrown,
                 ]
               : <Color>[
                   AppColors.gradientOrange.withOpacity(0.2),

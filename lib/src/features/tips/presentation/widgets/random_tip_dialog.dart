@@ -27,11 +27,16 @@ class RandomTipDialog extends StatelessWidget {
           blurStyle: BlurStyle.outer,
         ),
       ],
-      gradient: const LinearGradient(
-        colors: <Color>[
-          AppColors.gradientOrange,
-          Colors.white,
-        ],
+      gradient: LinearGradient(
+        colors: isDarkModeActive(context)
+            ? <Color>[
+                AppColors.darkOrange,
+                AppColors.deepBrown,
+              ]
+            : <Color>[
+                AppColors.gradientOrange,
+                Colors.white,
+              ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ),

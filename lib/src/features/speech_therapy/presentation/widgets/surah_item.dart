@@ -34,31 +34,34 @@ class SurahItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(50.r),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  data.details.surahNameEn,
-                  style: AppTextStyles.textStyle18Bold,
-                ),
-                MySizedBox.height12,
-                Row(
-                  children: <Widget>[
-                    SurahInfoContainer(
-                      icon: AppAssets.svgsMakiyyahIcon,
-                      label: data.details.typeEn,
-                    ),
-                    MySizedBox.width15,
-                    SurahInfoContainer(
-                      icon: AppAssets.svgsBookIcon,
-                      label: '${data.details.ayahsNum} Ayat',
-                    ),
-                  ],
-                ),
-              ],
+            Expanded(
+              // flex: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    data.details.surahNameEn,
+                    style: AppTextStyles.textStyle18Bold,
+                  ),
+                  MySizedBox.height12,
+                  Row(
+                    children: <Widget>[
+                      SurahInfoContainer(
+                        icon: AppAssets.svgsMakiyyahIcon,
+                        label: data.details.typeEn,
+                      ),
+                      MySizedBox.width15,
+                      SurahInfoContainer(
+                        icon: AppAssets.svgsBookIcon,
+                        label: '${data.details.ayahsNum} Ayat',
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
+            MySizedBox.width10,
             Text(
               data.details.surahNameAr,
               style: AppTextStyles.textStyle20Bold.copyWith(
