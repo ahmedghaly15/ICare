@@ -229,6 +229,10 @@ class AppAssets {
   /// assets/svgs/error.svg
   static const String svgsError = "assets/svgs/error.svg";
 
+  /// Assets for svgsGoogleIcon
+  /// assets/svgs/google-icon.svg
+  static const String svgsGoogleIcon = "assets/svgs/google-icon.svg";
+
   /// Assets for svgsHeartCommentIcon
   /// assets/svgs/heart_comment_icon.svg
   static const String svgsHeartCommentIcon =

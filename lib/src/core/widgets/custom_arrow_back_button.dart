@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
 class CustomArrowBackButton extends StatelessWidget {
@@ -14,9 +15,14 @@ class CustomArrowBackButton extends StatelessWidget {
       width: SizeConfig.height * 0.06,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(16.0.r)),
-        color: const Color(0xffF1F1F1),
+        color: isDarkModeActive(context)
+            ? AppColors.scaffoldDarkModeBackgroundColor
+            : AppColors.lightGrey2,
         shape: BoxShape.rectangle,
-        border: Border.all(color: Colors.black, width: 1.w),
+        border: Border.all(
+          color: isDarkModeActive(context) ? Colors.white : Colors.black,
+          width: 1.w,
+        ),
       ),
       child: MaterialButton(
         onPressed: () => context.maybePop(),

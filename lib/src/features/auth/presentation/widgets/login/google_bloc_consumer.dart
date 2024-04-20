@@ -4,6 +4,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
@@ -25,20 +26,23 @@ class GoogleBlocConsumer extends StatelessWidget {
           context.read<LoginCubit>().googleListener(state, context),
       builder: (context, state) {
         return PrimaryButton(
-          backgroundColor: Colors.white,
+          backgroundColor:
+              isDarkModeActive(context) ? AppColors.lightBlue : Colors.white,
           child: state is SignInWithGoogleLoading
               ? const CustomCircularProgressIndicator()
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     const CustomSocialIconButton(
-                      icon: AppAssets.iconsGoogle,
+                      icon: AppAssets.svgsGoogleIcon,
                     ),
                     MySizedBox.width15,
                     Text(
                       AppStrings.signInWithGoogle,
                       style: AppTextStyles.textStyle16Regular.copyWith(
-                        color: AppColors.greyColor,
+                        color: isDarkModeActive(context)
+                            ? Colors.white
+                            : Colors.black,
                       ),
                     ),
                   ],
