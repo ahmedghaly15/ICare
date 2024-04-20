@@ -99,9 +99,9 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   @override
   Future<void> signOut() async {
-    final bool dataIsCleared = await getIt.get<CacheHelper>().clearData();
-    if (dataIsCleared) {
-      await getIt.get<FirebaseAuth>().signOut();
-    }
+    await getIt
+        .get<CacheHelper>()
+        .clearPreferencesExceptOne(AppStrings.cachedOnboarding, 'bool');
+    await getIt.get<FirebaseAuth>().signOut();
   }
 }
