@@ -173,4 +173,8 @@ class AppStrings {
       'CachedAdvancedLevelTrainingData';
   static const String cachedTheme = 'CachedTheme';
   static const String darkMode = 'Dark mode';
+  static const String logOut = 'Log out';
+  static const String cancel = 'Cancel';
+  static const String sureToLogoutQuestion =
+      'Are you sure that you would like to log out?';
 }

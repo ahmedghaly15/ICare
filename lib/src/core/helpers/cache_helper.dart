@@ -35,4 +35,28 @@ class CacheHelper {
   Future<bool> clearData() async {
     return await _sharedPreferences.clear();
   }
+
+  Future<void> clearPreferencesExceptOne(
+    String keepKey,
+    String cachedValType,
+  ) async {
+    dynamic preservedValue;
+    switch (cachedValType) {
+      case 'String':
+        preservedValue = getStringData(key: keepKey);
+        break;
+      case 'bool':
+        preservedValue = getBoolData(key: keepKey);
+        break;
+      case 'int':
+        preservedValue = getIntData(key: keepKey);
+        break;
+    }
+    // Clear all keys
+    await clearData();
+    // Restore the preserved value
+    if (preservedValue != null) {
+      await saveData(key: keepKey, value: preservedValue);
+    }
+  }
 }

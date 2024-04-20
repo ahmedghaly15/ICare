@@ -18,6 +18,7 @@ class PrimaryButton extends StatelessWidget {
     this.width,
     this.height,
     this.padding,
+    this.border,
   });
 
   final String? text;
@@ -31,6 +32,7 @@ class PrimaryButton extends StatelessWidget {
   final double? width;
   final double? height;
   final EdgeInsetsGeometry? padding;
+  final BoxBorder? border;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,7 @@ class PrimaryButton extends StatelessWidget {
                 AppConstants.primaryBoxShadow,
               ]
             : null,
+        border: border,
       ),
       child: MaterialButton(
         padding: padding,
