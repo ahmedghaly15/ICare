@@ -55,12 +55,12 @@ class AppConstants {
     AppStrings.search,
     AppStrings.icareBotBookmarks,
   ];
-  static const List<String> drawerItemsSvgs = <String>[
-    AppAssets.svgsOrangeProfileIcon,
-    AppAssets.svgsBlackDrawerBookmarkIcon,
-    AppAssets.svgsChatIcon,
-    AppAssets.svgsBlackSearchIcon,
-    AppAssets.svgsOrangeDrawerBookmarkIcon,
+  static const List<IconData> drawerItemsSvgs = <IconData>[
+    Icons.person,
+    Icons.bookmark,
+    Icons.forum,
+    Icons.search,
+    Icons.bookmark,
   ];
   static EdgeInsets profileTabsPadding = EdgeInsets.symmetric(
     vertical: 16.h,

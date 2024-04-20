@@ -7,6 +7,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/conversation_and_send_message_text_field.dart';
@@ -44,7 +45,9 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
 
   AppBar _buildICareBotViewAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.primaryColor,
+      backgroundColor: isDarkModeActive(context)
+          ? AppColors.darkOrange
+          : AppColors.primaryColor,
       title: const Text(AppStrings.icareBot),
       titleTextStyle: AppTextStyles.textStyle20Bold,
       leading: IconButton(

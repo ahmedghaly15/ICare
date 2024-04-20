@@ -63,7 +63,7 @@ class AdvancedLevelScoresListBlocBuilder extends StatelessWidget {
                 context.read<SpeechTherapyCubit>().getScore(3),
           );
         } else {
-          return AdvancedLevelItemsListLoading();
+          return const AdvancedLevelItemsListLoading();
         }
       },
     );

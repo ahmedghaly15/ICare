@@ -16,6 +16,7 @@ class DrawerItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: List.generate(
         AppConstants.drawerItemsTitles.length,
@@ -23,7 +24,6 @@ class DrawerItems extends StatelessWidget {
           onPressed: () {
             _handleDrawerItemsOnPressed(index, context);
           },
-          isEvenIndex: index % 2 == 0,
           icon: AppConstants.drawerItemsSvgs[index],
           title: AppConstants.drawerItemsTitles[index],
         ),

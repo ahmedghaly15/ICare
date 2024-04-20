@@ -24,10 +24,13 @@ class CustomSendMessageIconButton extends StatelessWidget {
         style: IconButton.styleFrom(
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: Size.zero,
+          padding: EdgeInsets.zero,
         ),
-        icon: Icon(
-          Icons.send,
-          color: isEnabled ? Colors.white : Colors.white30,
+        icon: Center(
+          child: Icon(
+            Icons.send,
+            color: isEnabled ? Colors.white : Colors.white30,
+          ),
         ),
         onPressed: onPressed,
       ),
