@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/features/medical/presentation/widgets/medical_info_diseases_bloc_builder.dart';
 
@@ -8,13 +7,10 @@ class MedicalInfoTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       physics: AppConstants.scrollPhysics,
       slivers: <Widget>[
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          sliver: const MedicalInfoDiseasesBlocBuilder(),
-        ),
+        MedicalInfoDiseasesBlocBuilder(),
       ],
     );
   }

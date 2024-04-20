@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_info_cubit.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_state.dart';
+import 'package:icare/src/features/medical/presentation/widgets/medical_info_categories_carousel_slider.dart';
 import 'package:icare/src/features/medical/presentation/widgets/medical_info_categories_loading_sliver_list.dart';
-import 'package:icare/src/features/medical/presentation/widgets/medical_info_categories_sliver_list.dart';
 
 class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
   const MedicalInfoDiseasesBlocBuilder({super.key});
@@ -19,7 +19,8 @@ class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
           state is GetMedicalInfoLoading,
       builder: (context, state) {
         if (state is GetMedicalInfoError) {
-          return SliverToBoxAdapter(
+          return SliverFillRemaining(
+            hasScrollBody: false,
             child: CustomErrorWidget(
               error: state.error,
               tryAgainOnPressed: () =>
@@ -27,9 +28,9 @@ class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
             ),
           );
         } else if (state is GetMedicalInfoSuccess) {
-          return SliverPadding(
-            padding: EdgeInsets.symmetric(vertical: 16.h),
-            sliver: MedicalInfoCategoriesSliverList(categories: state.data),
+          return SliverFillRemaining(
+            hasScrollBody: false,
+            child: MedicalInfoCategoriesCarouselSlider(categories: state.data),
           );
         } else {
           return SliverPadding(
