@@ -10,27 +10,15 @@ abstract class TinyTalesRemoteDatasource {
   Future<DocumentReference<Map<String, dynamic>>> createTinyTale(
     CreateTinyTaleParams params,
   );
-
-  Future<QuerySnapshot<Map<String, dynamic>>> getTinyTales();
-
   Future<void> likeTinyTale(LikeParams params);
-
   Future<void> unLikeTinyTale(String tinyTaleId);
-
   Future<void> deleteTinyTale(String tinyTaleId);
-
   Future<TaskSnapshot> uploadTinyTaleImage(File? tinyTaleImage);
-
   Stream<bool> isTinyTaleLikedByMe(String tinyTaleId);
-
   Future<void> bookmarkTinyTale(TinyTale tinyTale);
-
   Future<void> unBookmarkTinyTale(String tinyTaleId);
-
   Future<QuerySnapshot<Map<String, dynamic>>> getBookmarkedTinyTales();
-
   Stream<bool> isTinyTaleBookmarkedByMe(String tinyTaleId);
-
   Future<QuerySnapshot<Map<String, dynamic>>> getPeopleWhoLiked(
       String tinyTaleId);
 }

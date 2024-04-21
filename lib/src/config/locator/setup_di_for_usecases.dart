@@ -92,9 +92,6 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<CreateTinyTaleUseCase>(
       () => CreateTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );
-    getIt.registerLazySingleton<GetTinyTalesUseCase>(
-      () => GetTinyTalesUseCase(getIt.get<TinyTalesRepo>()),
-    );
     getIt.registerLazySingleton<LikeTinyTaleUseCase>(
       () => LikeTinyTaleUseCase(getIt.get<TinyTalesRepo>()),
     );

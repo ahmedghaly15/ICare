@@ -17,11 +17,6 @@ class TinyTalesState<T> with _$TinyTalesState<T> {
   const factory TinyTalesState.deleteTinyTaleSuccess() = DeleteTinyTaleSuccess;
   const factory TinyTalesState.deleteTinyTaleError(String error) =
       DeleteTinyTaleError;
-  const factory TinyTalesState.getTinyTalesLoading() = GetTinyTalesLoading;
-  const factory TinyTalesState.getTinyTalesSuccess(List<TinyTale> data) =
-      GetTinyTalesSuccess<T>;
-  const factory TinyTalesState.getTinyTalesError(String error) =
-      GetTinyTalesError;
   const factory TinyTalesState.bookmarkTinyTaleLoading() =
       BookmarkTinyTaleLoading;
   const factory TinyTalesState.bookmarkTinyTaleSuccess() =

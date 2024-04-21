@@ -9,7 +9,6 @@ import 'package:icare/src/features/tiny_tales/domain/usecases/bookmark_tiny_tale
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_bookmarked_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_people_who_liked_usecase.dart';
-import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_bookmarked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';
@@ -22,7 +21,6 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   final UnLikeTinyTaleUseCase unLikeTinyTaleUseCase;
   final DeleteTinyTaleUseCase deleteTinyTaleUseCase;
   final IsTinyTaleLikeByMeUseCase isTinyTaleLikedByMeUseCase;
-  final GetTinyTalesUseCase getTinyTalesUseCase;
   final BookmarkTinyTaleUseCase bookmarkTinyTaleUseCase;
   final UnBookmarkTinyTaleUseCase unBookmarkTinyTaleUseCase;
   final GetBookmarkedTinyTalesUseCase getBookmarkedTinyTalesUseCase;
@@ -34,7 +32,6 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.unLikeTinyTaleUseCase,
     required this.deleteTinyTaleUseCase,
     required this.isTinyTaleLikedByMeUseCase,
-    required this.getTinyTalesUseCase,
     required this.bookmarkTinyTaleUseCase,
     required this.unBookmarkTinyTaleUseCase,
     required this.getBookmarkedTinyTalesUseCase,
@@ -42,17 +39,15 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
     required this.getPeopleWhoLikedUseCase,
   }) : super(const TinyTalesState.initial());
 
-  List<TinyTale> tinyTales = <TinyTale>[];
-
-  Future<void> getTinyTales() async {
-    emit(const TinyTalesState.getTinyTalesLoading());
-    final result = await getTinyTalesUseCase.call(const NoParams());
-    result.when(
-      success: (tinyTales) =>
-          emit(TinyTalesState.getTinyTalesSuccess(tinyTales)),
-      error: (error) =>
-          emit(TinyTalesState.getTinyTalesError(error.failureMsg ?? '')),
-    );
+  Stream<QuerySnapshot<Map<String, dynamic>>> streamTinyTales() {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.tinyTalesCollection)
+        .orderBy(
+          AppStrings.dateTime,
+          descending: true,
+        )
+        .snapshots();
   }
 
   void likeTinyTale(LikeParams params) async {

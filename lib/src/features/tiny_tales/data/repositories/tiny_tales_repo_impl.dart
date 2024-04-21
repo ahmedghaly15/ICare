@@ -26,20 +26,6 @@ class TinyTalesRepoImpl implements TinyTalesRepo {
   }
 
   @override
-  Future<FirebaseRequestResult<List<TinyTale>>> getTinyTales() {
-    return executeAndHandleFirebaseErrors<List<TinyTale>>(
-      () async {
-        final QuerySnapshot<Map<String, dynamic>> querySnapshot =
-            await _tinyTalesRemoteDatasource.getTinyTales();
-
-        return querySnapshot.docs
-            .map((doc) => TinyTale.fromJson(doc.data()))
-            .toList();
-      },
-    );
-  }
-
-  @override
   Future<FirebaseRequestResult<void>> likeTinyTale(LikeParams params) {
     return executeAndHandleFirebaseErrors<void>(
       () async => await _tinyTalesRemoteDatasource.likeTinyTale(params),

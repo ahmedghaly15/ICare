@@ -1,11 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:icare/dependency_injection.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/profile/presentation/widgets/loading_profile_tiny_tales_tab.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/empty_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tale_item.dart';
 
@@ -17,14 +17,7 @@ class ProfileTinyTalesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-      stream: getIt
-          .get<FirebaseFirestore>()
-          .collection(AppStrings.tinyTalesCollection)
-          .orderBy(
-            AppStrings.dateTime,
-            descending: true,
-          )
-          .snapshots(),
+      stream: context.read<TinyTalesCubit>().streamTinyTales(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const LoadingProfileTinyTalesTab();

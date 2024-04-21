@@ -19,7 +19,6 @@ class TinyTaleMoreIconButtonBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           deleteTinyTaleSuccess: () {
-            context.read<TinyTalesCubit>().getTinyTales();
             context.read<TinyTalesCubit>().unBookmarkTinyTale(tinyTaleId);
           },
         );

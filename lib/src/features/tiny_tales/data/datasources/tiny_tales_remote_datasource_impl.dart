@@ -50,16 +50,6 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   }
 
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getTinyTales() async {
-    return await _accessTinyTalesCollection()
-        .orderBy(
-          AppStrings.dateTime,
-          descending: true,
-        )
-        .get();
-  }
-
-  @override
   Future<void> likeTinyTale(LikeParams params) async {
     final LikeModel like = LikeModel(
       user: Helper.currentUser,

@@ -16,6 +16,10 @@ platform :android do
       - Update ICareBot feature's UI in Dark mode ✅
       - Update Cry Translator feature's UI ✅
       - Update MedicalInfo tab UI ✅
+      - Update Random Tip Dialog UI ✅
+      - Update Drawer UI ✅
+      - Fix Bugs where current user's data is shown ✅
+      - Handle Disabling Try Button when user is listening ✅
   """
   )
   end

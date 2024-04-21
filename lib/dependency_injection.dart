@@ -125,7 +125,6 @@ import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.d
 import 'package:icare/src/features/tiny_tales/domain/usecases/delete_tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_bookmarked_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/get_people_who_liked_usecase.dart';
-import 'package:icare/src/features/tiny_tales/domain/usecases/get_tiny_tales.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_bookmarked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/is_tiny_tale_liked_by_me.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/like_tiny_tale.dart';

@@ -27,7 +27,7 @@ class NewTinyTaleTextField extends StatelessWidget {
             color: Colors.grey,
           ),
           autofocus: true,
-          style: AppTextStyles.textStyle20Regular,
+          style: AppTextStyles.textStyle16Regular,
           maxLines: null,
           controller:
               context.read<NewTinyTaleCubit>().createNewTinyTaleController,
