@@ -97,30 +97,18 @@ class UserCubit extends Cubit<UserState> {
     return _accessUsersCollection()
         .doc(Helper.uId!)
         .collection(AppStrings.followingCollection)
+        .doc(uId)
         .snapshots()
-        .map((querySnapshot) {
-      for (var item in querySnapshot.docs) {
-        if (item.data()['uId'] == uId) {
-          return true;
-        }
-      }
-      return false;
-    });
+        .map((doc) => doc.exists);
   }
 
   Stream<bool> userIsInFollowers(String userId) {
     return _accessUsersCollection()
         .doc(Helper.uId!)
         .collection(AppStrings.followersCollection)
+        .doc(userId)
         .snapshots()
-        .map((querySnapshot) {
-      for (var item in querySnapshot.docs) {
-        if (item.data()['uId'] == userId) {
-          return true;
-        }
-      }
-      return false;
-    });
+        .map((querySnapshot) => querySnapshot.exists);
   }
 
   void signOut() async {
