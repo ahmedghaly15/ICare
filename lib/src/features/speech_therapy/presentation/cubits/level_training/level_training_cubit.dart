@@ -93,6 +93,10 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     emit(const LevelTrainingState.userIsTryingNow());
   }
 
+  void emitInitial() {
+    emit(const LevelTrainingState.initial());
+  }
+
   void _mark(int id, int level) async {
     emit(const LevelTrainingState.markLoading());
     final result = await _markUseCase.call(MarkParams(

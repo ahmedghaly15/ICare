@@ -13,7 +13,9 @@ class CircularPercentIndicatorBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LevelTrainingCubit, LevelTrainingState>(
       buildWhen: (_, current) =>
-          current is MarkSuccess || current is UserIsTryingNow,
+          current is MarkSuccess ||
+          current is UserIsTryingNow ||
+          current is LevelTrainingInitial,
       builder: (context, state) {
         if (state is MarkSuccess) {
           return Column(
