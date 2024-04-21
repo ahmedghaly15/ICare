@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/navigate_to_current_user_profile.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_drawer_item.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
@@ -51,7 +50,7 @@ class DrawerItems extends StatelessWidget {
       context.pushRoute(const ChatsRoute());
     } else if (AppConstants.drawerItemsTitles[index] == AppStrings.profile) {
       Navigator.pop(context);
-      navigateToCurrentUserProfile(context);
+      context.pushRoute(const ProfileRoute());
     }
   }
 }

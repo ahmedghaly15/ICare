@@ -14,7 +14,6 @@ import 'package:icare/src/features/profile/domain/usecases/update_password.dart'
 import 'package:icare/src/features/profile/domain/usecases/update_user.dart';
 import 'package:icare/src/features/profile/domain/usecases/upload_new_profile_image.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_state.dart';
-import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:image_picker/image_picker.dart';
@@ -192,7 +191,6 @@ class EditProfileCubit extends Cubit<EditProfileState> {
         if (value) {
           context.read<UserCubit>().getUserData().then(
             (value) {
-              context.read<ProfileCubit>().getUserTinyTales(Helper.uId!);
               context.read<TinyTalesCubit>().getTinyTales().then((value) {
                 context.read<TinyTalesCubit>().getBookmarkedTinyTales();
               });
