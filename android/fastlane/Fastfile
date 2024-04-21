@@ -20,6 +20,8 @@ platform :android do
       - Update Drawer UI ✅
       - Fix Bugs where current user's data is shown ✅
       - Handle Disabling Try Button when user is listening ✅
+      - Add Next Button Functionality to Speech Therapy feature ✅
+      - Add Al-basmalah to the Surah ✅
   """
   )
   end
