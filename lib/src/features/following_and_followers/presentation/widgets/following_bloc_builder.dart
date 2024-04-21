@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/models/icare_user.dart';
-import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/follower_user_item.dart';
 import 'package:icare/src/core/widgets/loading_users_sliver_list.dart';
-import 'package:icare/src/features/following_and_followers/presentation/widgets/animated_empty_following_or_followers.dart';
+import 'package:icare/src/features/following_and_followers/presentation/widgets/this_user_empty_animated_following_or_followers.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_state.dart';
 
@@ -42,12 +41,7 @@ class FollowingBlocBuilder extends StatelessWidget {
                     ),
                   ),
                 )
-              : const SliverFillRemaining(
-                  child: AnimatedEmptyFollowingOrFollowers(
-                    title: AppStrings.notFollowingAnyone,
-                    description: AppStrings.notFollowingAnyoneDescription,
-                  ),
-                );
+              : ThisUserEmptyAnimatedFollowingOrFollowers(uId: user.uId!);
         } else if (state is GetFollowingError) {
           return SliverFillRemaining(
             hasScrollBody: false,
