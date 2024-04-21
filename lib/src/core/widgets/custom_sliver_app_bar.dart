@@ -8,18 +8,20 @@ class CustomSliverAppBar extends StatelessWidget {
     this.actions,
     this.titleWidget,
     this.leading,
+    this.backOnPressed,
   });
 
   final String? title;
   final List<Widget>? actions;
   final Widget? titleWidget;
   final Widget? leading;
+  final VoidCallback? backOnPressed;
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       title: titleWidget ?? Text(title ?? ''),
-      leading: leading ?? const CustomCircularArrowButton(),
+      leading: leading ?? CustomCircularArrowButton(onPressed: backOnPressed),
       actions: actions,
     );
   }

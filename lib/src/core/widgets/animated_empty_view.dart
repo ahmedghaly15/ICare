@@ -8,7 +8,7 @@ class AnimatedEmptyView extends StatelessWidget {
   const AnimatedEmptyView({
     super.key,
     required this.svgImage,
-    required this.text,
+    this.text = '',
   });
 
   final String svgImage, text;

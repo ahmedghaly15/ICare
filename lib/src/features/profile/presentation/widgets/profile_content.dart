@@ -18,7 +18,7 @@ class ProfileContent extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: FollowersAndFollowingRow(user: Helper.currentUser!),
         ),
-        MySizedBox.height10,
+        MySizedBox.height15,
         const CurrentUserNameBlocBuilder(),
         MySizedBox.height5,
         const Row(

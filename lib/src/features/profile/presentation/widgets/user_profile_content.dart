@@ -23,7 +23,7 @@ class UserProfileContent extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: FollowersAndFollowingRow(user: user),
         ),
-        MySizedBox.height10,
+        MySizedBox.height15,
         Text(
           user.name!,
           style: AppTextStyles.textStyle15Bold,
