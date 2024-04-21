@@ -103,15 +103,9 @@ import 'package:icare/src/features/onboarding/data/datasources/onboarding_dataso
 import 'package:icare/src/features/onboarding/data/repositories/onboarding_repo.dart';
 import 'package:icare/src/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:icare/src/features/profile/data/datasources/edit_profile_datasource.dart';
-import 'package:icare/src/features/profile/data/datasources/profile_remote_datasource.dart';
 import 'package:icare/src/features/profile/data/repositories/edit_profile_repo.dart';
-import 'package:icare/src/features/profile/data/repositories/profile_repo.dart';
-import 'package:icare/src/features/profile/domain/usecases/get_user_photos.dart';
-import 'package:icare/src/features/profile/domain/usecases/get_user_tiny_tales.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_user.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_cubit.dart';
-import 'package:icare/src/features/profile/presentation/cubits/photos/photos_cubit.dart';
-import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:icare/src/features/search/data/datasources/search_datasource.dart';
 import 'package:icare/src/features/search/data/repositories/search_repo.dart';
 import 'package:icare/src/features/search/domain/usecases/search_users.dart';

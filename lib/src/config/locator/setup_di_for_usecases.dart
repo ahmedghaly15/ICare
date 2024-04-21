@@ -211,14 +211,6 @@ class SetupDIForUseCases {
       () => SearchUsersUseCase(getIt.get<SearchRepo>()),
     );
 
-    // ========== Profile feature ==========
-    getIt.registerLazySingleton<GetUserTinyTalesUseCase>(
-      () => GetUserTinyTalesUseCase(getIt.get<ProfileRepo>()),
-    );
-    getIt.registerLazySingleton<GetUserPhotosUseCase>(
-      () => GetUserPhotosUseCase(getIt.get<ProfileRepo>()),
-    );
-
     // ========== Edit Profile feature ==========
     getIt.registerLazySingleton<UpdateUserUseCase>(
       () => UpdateUserUseCase(getIt.get<EditProfileRepo>()),

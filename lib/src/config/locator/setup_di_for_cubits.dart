@@ -172,14 +172,6 @@ class SetupDIForCubits {
       () => SearchCubit(getIt.get<SearchUsersUseCase>()),
     );
 
-    // ========== Profile feature ==========
-    getIt.registerFactory<ProfileCubit>(
-      () => ProfileCubit(getIt.get<GetUserTinyTalesUseCase>()),
-    );
-    getIt.registerFactory<PhotosCubit>(
-      () => PhotosCubit(getIt.get<GetUserPhotosUseCase>()),
-    );
-
     // ========== Edit Profile feature ==========
     getIt.registerFactory<EditProfileCubit>(
       () => EditProfileCubit(
