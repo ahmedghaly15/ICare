@@ -44,7 +44,7 @@ class AIFeaturesSliverList extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25.r),
             ),
-            splashColor: AppColors.lightBlue,
+            splashColor: isDarkModeActive(context) ? AppColors.lightBlue : null,
             child: Row(
               children: <Widget>[
                 Expanded(
