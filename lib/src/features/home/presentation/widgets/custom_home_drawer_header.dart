@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
-import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/core/widgets/loading_user_item.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_state.dart';
 
@@ -15,11 +15,16 @@ class CustomHomeDrawerHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: BlocBuilder<UserCubit, UserState>(
-        buildWhen: (previous, current) => current is GetUserDataSuccess,
         builder: (context, state) {
-          return Row(
-            children: <Widget>[
-              CustomCachedNetworkImage(
+          if (state is GetUserDataLoading) {
+            return const LoadingUserItem();
+          }
+          return ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: SizedBox(
+              height: 50.h,
+              width: 50.h,
+              child: CustomCachedNetworkImage(
                 imageUrl: Helper.currentUser!.profileImage!,
                 imageBuilder: (_, image) {
                   return CircleAvatar(
@@ -28,31 +33,20 @@ class CustomHomeDrawerHeader extends StatelessWidget {
                   );
                 },
               ),
-              MySizedBox.width10,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    Helper.currentUser!.name!,
-                    style: AppTextStyles.textStyle15Bold,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    Helper.currentUser!.email!,
-                    style: AppTextStyles.textStyle12Regular,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ],
-              ),
-            ],
+            ),
+            title: Text(
+              Helper.currentUser!.name!,
+              style: AppTextStyles.textStyle15Bold,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            subtitle: Text(
+              Helper.currentUser!.email!,
+              style: AppTextStyles.textStyle12Regular,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
           );
-          // if (state is GetUserDataSuccess) {
-
-          // } else {
-          //   return const LoadingUserItem();
-          // }
         },
       ),
     );
