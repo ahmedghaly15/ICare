@@ -19,44 +19,59 @@ class FollowerUserItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      onTap: () {
+    return MaterialButton(
+      padding: EdgeInsets.symmetric(vertical: 8.h),
+      onPressed: () {
         navigateToUserProfile(
           context: context,
           user: user,
         );
       },
-      leading: CustomCachedNetworkImage(
-        imageUrl: user.profileImage!,
-        imageBuilder: (_, image) => CircleAvatar(
-          backgroundImage: image,
-          radius: 24.r,
-        ),
-      ),
-      title: Row(
+      child: Row(
         children: <Widget>[
-          Expanded(
-            child: Text(
-              user.name!,
-              style: AppTextStyles.textStyle14Medium,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+          CustomCachedNetworkImage(
+            imageUrl: user.profileImage!,
+            imageBuilder: (_, image) => CircleAvatar(
+              backgroundImage: image,
+              radius: 24.r,
             ),
           ),
-          MySizedBox.width6,
-          Expanded(child: FollowsYouStreamBuilder(userId: user.uId!)),
+          MySizedBox.width10,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        user.name!,
+                        style: AppTextStyles.textStyle14Medium,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    MySizedBox.width6,
+                    FollowsYouStreamBuilder(userId: user.uId!),
+                  ],
+                ),
+                MySizedBox.height5,
+                Text(
+                  user.email!,
+                  style: AppTextStyles.textStyle12Regular
+                      .copyWith(color: Colors.grey),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ),
+          MySizedBox.width10,
+          user.uId != Helper.uId
+              ? FollowButtonStreamBuilder(user: user)
+              : const SizedBox.shrink(),
         ],
       ),
-      subtitle: Text(
-        user.email!,
-        style: AppTextStyles.textStyle12Regular.copyWith(color: Colors.grey),
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-      ),
-      trailing: user.uId != Helper.uId
-          ? FollowButtonStreamBuilder(user: user)
-          : const SizedBox.shrink(),
     );
   }
 }
