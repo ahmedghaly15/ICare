@@ -10,7 +10,7 @@ MarkResponse _$MarkResponseFromJson(Map<String, dynamic> json) => MarkResponse(
       status: json['status'] as String,
       imageUrl: json['image_url'] as String,
       percent: (json['percent'] as num).toDouble(),
-      next: json['next'] as int?,
+      next: Next.fromJson(json['next'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MarkResponseToJson(MarkResponse instance) =>
@@ -18,5 +18,21 @@ Map<String, dynamic> _$MarkResponseToJson(MarkResponse instance) =>
       'status': instance.status,
       'image_url': instance.imageUrl,
       'percent': instance.percent,
-      'next': instance.next,
+      'next': instance.next.toJson(),
+    };
+
+Next _$NextFromJson(Map<String, dynamic> json) => Next(
+      levelOneDetails: json['levelOneDetails'] == null
+          ? null
+          : LevelOneTrainingResponse.fromJson(
+              json['levelOneDetails'] as Map<String, dynamic>),
+      levelTwoDetails: json['levelTwoDetails'] == null
+          ? null
+          : LevelTwoTrainingResponse.fromJson(
+              json['levelTwoDetails'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$NextToJson(Next instance) => <String, dynamic>{
+      'levelOneDetails': instance.levelOneDetails?.toJson(),
+      'levelTwoDetails': instance.levelTwoDetails?.toJson(),
     };
