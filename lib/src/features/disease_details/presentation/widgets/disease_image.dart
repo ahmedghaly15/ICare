@@ -4,7 +4,7 @@ import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
-import 'package:icare/src/core/widgets/custom_circle_back_button.dart';
+import 'package:icare/src/core/widgets/custom_circular_arrow_button.dart';
 
 class DiseaseImage extends StatelessWidget {
   const DiseaseImage({
@@ -47,7 +47,7 @@ class DiseaseImage extends StatelessWidget {
           Positioned(
             top: SizeConfig.height * 0.03,
             left: 10.w,
-            child: const CustomCircleBackButton(
+            child: const CustomCircularArrowButton(
               icon: Icons.keyboard_arrow_down_outlined,
               size: 24,
             ),

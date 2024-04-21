@@ -4,15 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
-class CustomCircleBackButton extends StatelessWidget {
-  const CustomCircleBackButton({
+class CustomCircularArrowButton extends StatelessWidget {
+  const CustomCircularArrowButton({
     super.key,
     this.icon = Icons.arrow_back_ios_new,
     this.size = 16,
+    this.onPressed,
   });
 
   final IconData icon;
   final double size;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class CustomCircleBackButton extends StatelessWidget {
       ),
       child: MaterialButton(
         padding: EdgeInsets.zero,
-        onPressed: () => context.maybePop(),
+        onPressed: onPressed ?? () => context.maybePop(),
         shape: const CircleBorder(),
         child: Icon(
           icon,
