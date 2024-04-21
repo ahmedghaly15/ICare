@@ -32,7 +32,8 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
           slivers: [
             SliverPadding(
               padding: AppConstants.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(title: AppStrings.cryTranslator),
+              sliver:
+                  const CustomSliverAppBar(title: AppStrings.cryTranslation),
             ),
             BlocBuilder<BabyCryPredictorCubit, BabyCryPredictorState>(
               buildWhen: (_, state) =>

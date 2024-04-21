@@ -10,8 +10,8 @@ import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 
-class WhatToSayAndTopic extends StatelessWidget {
-  const WhatToSayAndTopic({super.key});
+class TipTopicAndReadButton extends StatelessWidget {
+  const TipTopicAndReadButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +44,6 @@ class WhatToSayAndTopic extends StatelessWidget {
           ),
         ),
         MySizedBox.height18,
-        FadeInDown(
-          from: 30,
-          child: Text(
-            AppStrings.todaysTopicIs,
-            style: AppTextStyles.textStyle14Medium,
-          ),
-        ),
-        MySizedBox.height25,
         FadeInDown(
           from: 30,
           child: Text(

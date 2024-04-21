@@ -8,7 +8,7 @@ import 'package:icare/src/features/tips/presentation/cubit/tips_state.dart';
 import 'package:icare/src/features/tips/presentation/widgets/loading_random_tip_widget.dart';
 import 'package:icare/src/features/tips/presentation/widgets/random_tip_error_dialog.dart';
 import 'package:icare/src/features/tips/presentation/widgets/tip_and_done_text_button.dart';
-import 'package:icare/src/features/tips/presentation/widgets/what_to_say_and_topic.dart';
+import 'package:icare/src/features/tips/presentation/widgets/tip_topic_and_read_button.dart';
 
 class RandomTipDialog extends StatelessWidget {
   const RandomTipDialog({super.key});
@@ -57,7 +57,7 @@ class RandomTipDialog extends StatelessWidget {
               state is ConvertIsRandomTipRead) {
             return context.read<TipsCubit>().isRandomTipRead
                 ? const TipAndDoneTextButton()
-                : const WhatToSayAndTopic();
+                : const TipTopicAndReadButton();
           } else {
             return const LoadingRandomTipWidget();
           }
