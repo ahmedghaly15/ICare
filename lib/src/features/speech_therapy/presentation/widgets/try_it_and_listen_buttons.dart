@@ -16,7 +16,7 @@ class TryItAndListenButtons extends StatelessWidget {
     this.listenOnPressed,
   });
 
-  final VoidCallback tryItOnPressed;
+  final VoidCallback? tryItOnPressed;
   final String audioUrl;
   final EdgeInsetsGeometry? padding;
   final TextStyle? textStyle;
@@ -24,27 +24,29 @@ class TryItAndListenButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Expanded(
-          child: CustomTextButtonWithIcon(
-            padding: padding,
-            textStyle: textStyle,
-            onPressed: tryItOnPressed,
-            label: const Icon(
-              Icons.mic,
-              color: Colors.white,
+    return BlocBuilder<LevelTrainingCubit, LevelTrainingState>(
+      buildWhen: (_, current) => current is ConvertIsPlayingBool,
+      builder: (context, state) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: CustomTextButtonWithIcon(
+                padding: padding,
+                textStyle: textStyle,
+                onPressed: context.read<LevelTrainingCubit>().isPlaying
+                    ? null
+                    : tryItOnPressed,
+                label: const Icon(
+                  Icons.mic,
+                  color: Colors.white,
+                ),
+                icon: const Text(AppStrings.tryIt),
+              ),
             ),
-            icon: const Text(AppStrings.tryIt),
-          ),
-        ),
-        MySizedBox.width20,
-        Expanded(
-          child: BlocBuilder<LevelTrainingCubit, LevelTrainingState>(
-            buildWhen: (_, current) => current is ConvertIsPlayingBool,
-            builder: (context, state) {
-              return CustomTextButtonWithIcon(
+            MySizedBox.width20,
+            Expanded(
+              child: CustomTextButtonWithIcon(
                 padding: padding,
                 textStyle: textStyle,
                 onPressed: listenOnPressed ??
@@ -62,11 +64,11 @@ class TryItAndListenButtons extends StatelessWidget {
                 icon: Text(context.read<LevelTrainingCubit>().isPlaying
                     ? AppStrings.pause
                     : AppStrings.listen),
-              );
-            },
-          ),
-        ),
-      ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

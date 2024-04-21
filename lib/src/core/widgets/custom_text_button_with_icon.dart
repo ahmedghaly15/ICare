@@ -21,7 +21,7 @@ class CustomTextButtonWithIcon extends StatelessWidget {
   final Widget label;
   final TextStyle? textStyle;
   final Color? backgroundColor, foregroundColor;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final ButtonStyle? style;
   final EdgeInsetsGeometry? padding;
   final double? radiusVal;
@@ -30,17 +30,32 @@ class CustomTextButtonWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton.icon(
       style: style ??
-          TextButton.styleFrom(
-            backgroundColor: backgroundColor ?? AppColors.primaryColor,
-            textStyle: textStyle ?? AppTextStyles.textStyle20Bold,
-            foregroundColor: foregroundColor ?? Colors.white,
-            padding: padding ??
-                EdgeInsets.symmetric(
-                  horizontal: 27.w,
-                  vertical: 11.h,
-                ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(radiusVal ?? 25.r),
+          ButtonStyle(
+            textStyle: MaterialStateProperty.all<TextStyle>(
+              textStyle ?? AppTextStyles.textStyle20Bold,
+            ),
+            backgroundColor: MaterialStateProperty.all<Color>(
+              backgroundColor ?? AppColors.primaryColor,
+            ),
+            foregroundColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.disabled)) {
+                  return Colors.white;
+                }
+                return foregroundColor ?? Colors.white;
+              },
+            ),
+            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+              padding ??
+                  EdgeInsets.symmetric(
+                    horizontal: 27.w,
+                    vertical: 11.h,
+                  ),
+            ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(radiusVal ?? 25.r),
+              ),
             ),
           ),
       onPressed: onPressed,
