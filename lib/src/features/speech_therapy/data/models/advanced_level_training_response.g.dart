@@ -31,9 +31,6 @@ AdvancedLevelTrainingDetails _$AdvancedLevelTrainingDetailsFromJson(
       typeAr: json['type_ar'] as String,
       typeEn: json['type_en'] as String,
       ayahsNum: json['ayahs_num'] as int,
-      bismillahAr: json['bismillah_ar'] as String,
-      bismillahAudioUrl: json['bismillah_audio_url'] as String,
-      bismillahEn: json['bismillah_en'] as String,
       fullSurah: (json['full_surah'] as List<dynamic>)
           .map((e) => Ayah.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -47,9 +44,6 @@ Map<String, dynamic> _$AdvancedLevelTrainingDetailsToJson(
       'type_ar': instance.typeAr,
       'type_en': instance.typeEn,
       'ayahs_num': instance.ayahsNum,
-      'bismillah_ar': instance.bismillahAr,
-      'bismillah_audio_url': instance.bismillahAudioUrl,
-      'bismillah_en': instance.bismillahEn,
       'full_surah': instance.fullSurah.map((e) => e.toJson()).toList(),
     };
 

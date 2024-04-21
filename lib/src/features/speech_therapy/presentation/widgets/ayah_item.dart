@@ -68,7 +68,7 @@ class AyahItem extends StatelessWidget {
                             ]
                           : null,
                     ),
-                    margin: EdgeInsets.only(bottom: 27.h),
+                    margin: EdgeInsets.only(bottom: 16.h),
                     child: MaterialButton(
                       onPressed: () => context
                           .read<LevelTrainingCubit>()
