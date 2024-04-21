@@ -86,7 +86,6 @@ class AppStrings {
   static const String commentId = 'commentId';
   static const String cachedRandomTip = 'cachedRandomTip';
   static const String done = 'Done';
-  static const String todaysTopicIs = "Today's topic is:";
   static const String read = 'Read';
   static const String lastRetrievedCachedRandomTip =
       'lastRetrievedCachedRandomTip';
@@ -177,5 +176,11 @@ class AppStrings {
   static const String cancel = 'Cancel';
   static const String sureToLogoutQuestion =
       'Are you sure that you would like to log out?';
-  static const String cryTranslator = 'Cry Translator';
+  static const String cryTranslation = 'Cry Translation';
+  static const String cryTranslationFeatureDescription =
+      "Understands your baby’s cry translating it into emotions";
+  static const String speechTherapyFeatureDescription =
+      "Help children improve their speech and language skills";
+  static const String icareBotFeatureDescription =
+      "Conversational AI, here to assist";
 }

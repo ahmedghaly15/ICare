@@ -7,8 +7,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/features/home/presentation/widgets/custom_carousel_slider.dart';
+import 'package:icare/src/features/home/presentation/widgets/ai_features_sliver_list.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/tips/presentation/widgets/random_tip_dialog.dart';
@@ -42,7 +41,7 @@ class HomeView extends StatelessWidget implements AutoRouteWrapper {
               ),
             ),
             SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
               sliver: SliverToBoxAdapter(
                 child: Text(
                   AppStrings.aiAssistedChildCare,
@@ -52,8 +51,13 @@ class HomeView extends StatelessWidget implements AutoRouteWrapper {
                 ),
               ),
             ),
-            const SliverToBoxAdapter(child: MySizedBox.height10),
-            const SliverToBoxAdapter(child: CustomCarouselSlider()),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.w,
+                vertical: 10.h,
+              ),
+              sliver: const AIFeaturesSliverList(),
+            ),
           ],
         ),
       ),

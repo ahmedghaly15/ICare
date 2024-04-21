@@ -43,12 +43,12 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(
       page: EmergencyDiseaseDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
+      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(
       page: MedicalInfoDiseaseDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
+      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(page: BabyCryPredictorRoute.page),
     _buildCustomRoute(page: ICareBotRoute.page),
@@ -56,7 +56,7 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(
       page: NewTinyTaleRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
+      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(page: CommentsRoute.page),
     _buildCustomRoute(page: CommentRepliesRoute.page),
@@ -66,7 +66,7 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(
       page: ChatDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
+      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(page: ChatsRoute.page),
     _buildCustomRoute(page: ProfileRoute.page),
@@ -78,20 +78,20 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(
       page: LevelOneRoute.page,
       transitionsBuilder: TransitionsBuilders.slideTop,
-      durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
+      durationInMilliseconds: AppConstants.slideTopTransitionDuration,
     ),
     _buildCustomRoute(page: TrainingOnLevelOneRoute.page),
     _buildCustomRoute(page: ScoreRoute.page),
     _buildCustomRoute(
       page: LevelTwoRoute.page,
       transitionsBuilder: TransitionsBuilders.slideTop,
-      durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
+      durationInMilliseconds: AppConstants.slideTopTransitionDuration,
     ),
     _buildCustomRoute(page: TrainingOnLevelTwoRoute.page),
     _buildCustomRoute(
       page: AdvancedLevelRoute.page,
       transitionsBuilder: TransitionsBuilders.slideTop,
-      durationInMilliseconds: AppConstants.slideTopOrBottomTransitionDuration,
+      durationInMilliseconds: AppConstants.slideTopTransitionDuration,
     ),
     _buildCustomRoute(page: AdvancedLevelTrainingRoute.page),
     _buildCustomRoute(page: AdvancedLevelScoreRoute.page),

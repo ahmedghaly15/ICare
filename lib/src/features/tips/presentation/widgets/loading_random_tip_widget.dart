@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -14,32 +13,18 @@ class LoadingRandomTipWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            ShimmerWidget(
-              height: SizeConfig.height * 0.02,
-              width: SizeConfig.width * 0.25,
-              circularRadiusVal: AppConstants.radius25,
-            ),
-            ShimmerWidget(
-              height: 25.h,
-              width: 25.h,
-              shape: BoxShape.circle,
-              circularRadiusVal: null,
-            ),
-          ],
+        Align(
+          alignment: Alignment.centerLeft,
+          child: ShimmerWidget(
+            height: SizeConfig.height * 0.02,
+            width: SizeConfig.width * 0.25,
+            circularRadiusVal: AppConstants.radius25,
+          ),
         ),
         MySizedBox.height18,
         ShimmerWidget(
           height: SizeConfig.height * 0.025,
-          width: SizeConfig.width * 0.45,
-          circularRadiusVal: 8,
-        ),
-        MySizedBox.height25,
-        ShimmerWidget(
-          height: SizeConfig.height * 0.025,
-          width: SizeConfig.width * 0.35,
+          width: SizeConfig.width * 0.5,
           circularRadiusVal: 8,
         ),
         MySizedBox.height8,
@@ -47,7 +32,7 @@ class LoadingRandomTipWidget extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: ShimmerWidget(
             height: SizeConfig.height * 0.02,
-            width: SizeConfig.width * 0.2,
+            width: SizeConfig.width * 0.15,
           ),
         ),
       ],

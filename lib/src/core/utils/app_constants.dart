@@ -16,7 +16,8 @@ class AppConstants {
     Widget,
   )? get transitionsBuilder => TransitionsBuilders.slideLeftWithFade;
   static const int transitionDuration = 400;
-  static const int slideTopOrBottomTransitionDuration = 800;
+  static const int slideTopTransitionDuration = 800;
+  static const int slideBottomTransitionDuration = 600;
   static const ScrollPhysics scrollPhysics = BouncingScrollPhysics();
   static EdgeInsetsGeometry get horizontalPadding =>
       EdgeInsets.symmetric(horizontal: padding25.w);
@@ -114,4 +115,24 @@ class AppConstants {
         enlargeFactor: 0.3,
         scrollDirection: Axis.horizontal,
       );
+  static const List<String> homeAIFeaturesTitles = <String>[
+    AppStrings.cryTranslation,
+    AppStrings.speechTherapy,
+    AppStrings.icareBot,
+  ];
+  static const List<String> homeAIFeaturesIcons = <String>[
+    AppAssets.svgsCryTranslationFeatureIcon,
+    AppAssets.svgsSpeechTherapyFeatureIcon,
+    AppAssets.svgsIcareBotFeatureIcon,
+  ];
+  static const List<String> homeAIFeaturesDescriptions = <String>[
+    AppStrings.cryTranslationFeatureDescription,
+    AppStrings.speechTherapyFeatureDescription,
+    AppStrings.icareBotFeatureDescription,
+  ];
+  static const List<String> homeAIFeaturesImages = <String>[
+    AppAssets.imagesCryTranslatorFeature,
+    AppAssets.imagesSpeechTherapyFeature,
+    AppAssets.imagesIcareBotFeature,
+  ];
 }

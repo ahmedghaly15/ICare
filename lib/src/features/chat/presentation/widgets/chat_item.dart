@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_divider.dart';
 import 'package:icare/src/core/widgets/user_item.dart';
 
@@ -22,13 +23,13 @@ class ChatItem extends StatelessWidget {
         children: <Widget>[
           UserItem(
             user: user,
-            onTap: () {
-              context.pushRoute(ChatDetailsRoute(receiver: user));
-            },
+            onTap: () => context.pushRoute(ChatDetailsRoute(receiver: user)),
           ),
           CustomDivider(
             isExpanded: false,
-            color: const Color(0xff5A5A5B).withOpacity(0.5),
+            color: isDarkModeActive(context)
+                ? Colors.white54
+                : const Color(0xff5A5A5B).withOpacity(0.5),
             thickness: 0.5,
           ),
         ],
