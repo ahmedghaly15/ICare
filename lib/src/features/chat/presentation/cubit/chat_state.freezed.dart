@@ -32,6 +32,9 @@ mixin _$ChatState<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +53,9 @@ mixin _$ChatState<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -68,6 +74,9 @@ mixin _$ChatState<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,6 +101,9 @@ mixin _$ChatState<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -114,6 +126,9 @@ mixin _$ChatState<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -134,6 +149,9 @@ mixin _$ChatState<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -209,6 +227,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return initial();
   }
@@ -230,6 +251,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return initial?.call();
   }
@@ -251,6 +275,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -281,6 +308,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return initial(this);
   }
@@ -306,6 +336,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return initial?.call(this);
   }
@@ -329,6 +362,9 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -395,6 +431,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return sendMessageLoading();
   }
@@ -416,6 +455,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return sendMessageLoading?.call();
   }
@@ -437,6 +479,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (sendMessageLoading != null) {
@@ -467,6 +512,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return sendMessageLoading(this);
   }
@@ -492,6 +540,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return sendMessageLoading?.call(this);
   }
@@ -515,6 +566,9 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (sendMessageLoading != null) {
@@ -581,6 +635,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return sendMessageSuccess();
   }
@@ -602,6 +659,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return sendMessageSuccess?.call();
   }
@@ -623,6 +683,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (sendMessageSuccess != null) {
@@ -653,6 +716,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return sendMessageSuccess(this);
   }
@@ -678,6 +744,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return sendMessageSuccess?.call(this);
   }
@@ -701,6 +770,9 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (sendMessageSuccess != null) {
@@ -793,6 +865,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return sendMessageError(error);
   }
@@ -814,6 +889,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return sendMessageError?.call(error);
   }
@@ -835,6 +913,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (sendMessageError != null) {
@@ -865,6 +946,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return sendMessageError(this);
   }
@@ -890,6 +974,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return sendMessageError?.call(this);
   }
@@ -913,6 +1000,9 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (sendMessageError != null) {
@@ -1014,6 +1104,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return pickMessageImageSuccess(messageImage);
   }
@@ -1035,6 +1128,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return pickMessageImageSuccess?.call(messageImage);
   }
@@ -1056,6 +1152,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (pickMessageImageSuccess != null) {
@@ -1086,6 +1185,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return pickMessageImageSuccess(this);
   }
@@ -1111,6 +1213,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return pickMessageImageSuccess?.call(this);
   }
@@ -1134,6 +1239,9 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (pickMessageImageSuccess != null) {
@@ -1234,6 +1342,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return pickMessageImageError(error);
   }
@@ -1255,6 +1366,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return pickMessageImageError?.call(error);
   }
@@ -1276,6 +1390,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (pickMessageImageError != null) {
@@ -1306,6 +1423,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return pickMessageImageError(this);
   }
@@ -1331,6 +1451,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return pickMessageImageError?.call(this);
   }
@@ -1354,6 +1477,9 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (pickMessageImageError != null) {
@@ -1429,6 +1555,9 @@ class _$UploadMessageImageLoadingImpl<T>
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return uploadMessageImageLoading();
   }
@@ -1450,6 +1579,9 @@ class _$UploadMessageImageLoadingImpl<T>
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return uploadMessageImageLoading?.call();
   }
@@ -1471,6 +1603,9 @@ class _$UploadMessageImageLoadingImpl<T>
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageLoading != null) {
@@ -1501,6 +1636,9 @@ class _$UploadMessageImageLoadingImpl<T>
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return uploadMessageImageLoading(this);
   }
@@ -1526,6 +1664,9 @@ class _$UploadMessageImageLoadingImpl<T>
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return uploadMessageImageLoading?.call(this);
   }
@@ -1549,6 +1690,9 @@ class _$UploadMessageImageLoadingImpl<T>
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageLoading != null) {
@@ -1647,6 +1791,9 @@ class _$UploadMessageImageSuccessImpl<T>
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return uploadMessageImageSuccess(imageUrl);
   }
@@ -1668,6 +1815,9 @@ class _$UploadMessageImageSuccessImpl<T>
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return uploadMessageImageSuccess?.call(imageUrl);
   }
@@ -1689,6 +1839,9 @@ class _$UploadMessageImageSuccessImpl<T>
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageSuccess != null) {
@@ -1719,6 +1872,9 @@ class _$UploadMessageImageSuccessImpl<T>
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return uploadMessageImageSuccess(this);
   }
@@ -1744,6 +1900,9 @@ class _$UploadMessageImageSuccessImpl<T>
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return uploadMessageImageSuccess?.call(this);
   }
@@ -1767,6 +1926,9 @@ class _$UploadMessageImageSuccessImpl<T>
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageSuccess != null) {
@@ -1868,6 +2030,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return uploadMessageImageError(error);
   }
@@ -1889,6 +2054,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return uploadMessageImageError?.call(error);
   }
@@ -1910,6 +2078,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageError != null) {
@@ -1940,6 +2111,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return uploadMessageImageError(this);
   }
@@ -1965,6 +2139,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return uploadMessageImageError?.call(this);
   }
@@ -1988,6 +2165,9 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (uploadMessageImageError != null) {
@@ -2086,6 +2266,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return setNewTextValue(text);
   }
@@ -2107,6 +2290,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return setNewTextValue?.call(text);
   }
@@ -2128,6 +2314,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -2158,6 +2347,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return setNewTextValue(this);
   }
@@ -2183,6 +2375,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return setNewTextValue?.call(this);
   }
@@ -2206,6 +2401,9 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (setNewTextValue != null) {
@@ -2277,6 +2475,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return removeMessageImage();
   }
@@ -2298,6 +2499,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return removeMessageImage?.call();
   }
@@ -2319,6 +2523,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (removeMessageImage != null) {
@@ -2349,6 +2556,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return removeMessageImage(this);
   }
@@ -2374,6 +2584,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return removeMessageImage?.call(this);
   }
@@ -2397,6 +2610,9 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (removeMessageImage != null) {
@@ -2462,6 +2678,9 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return getChatsLoading();
   }
@@ -2483,6 +2702,9 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return getChatsLoading?.call();
   }
@@ -2504,6 +2726,9 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (getChatsLoading != null) {
@@ -2534,6 +2759,9 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return getChatsLoading(this);
   }
@@ -2559,6 +2787,9 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return getChatsLoading?.call(this);
   }
@@ -2582,6 +2813,9 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (getChatsLoading != null) {
@@ -2680,6 +2914,9 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return getChatsSuccess(users);
   }
@@ -2701,6 +2938,9 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return getChatsSuccess?.call(users);
   }
@@ -2722,6 +2962,9 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (getChatsSuccess != null) {
@@ -2752,6 +2995,9 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return getChatsSuccess(this);
   }
@@ -2777,6 +3023,9 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return getChatsSuccess?.call(this);
   }
@@ -2800,6 +3049,9 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (getChatsSuccess != null) {
@@ -2898,6 +3150,9 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
     required TResult Function() getChatsLoading,
     required TResult Function(List<ICareUser> users) getChatsSuccess,
     required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
   }) {
     return getChatsError(error);
   }
@@ -2919,6 +3174,9 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
     TResult? Function()? getChatsLoading,
     TResult? Function(List<ICareUser> users)? getChatsSuccess,
     TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
   }) {
     return getChatsError?.call(error);
   }
@@ -2940,6 +3198,9 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
     TResult Function()? getChatsLoading,
     TResult Function(List<ICareUser> users)? getChatsSuccess,
     TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
     required TResult orElse(),
   }) {
     if (getChatsError != null) {
@@ -2970,6 +3231,9 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
     required TResult Function(GetChatsLoading<T> value) getChatsLoading,
     required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
     required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
   }) {
     return getChatsError(this);
   }
@@ -2995,6 +3259,9 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
     TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
   }) {
     return getChatsError?.call(this);
   }
@@ -3018,6 +3285,9 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
     TResult Function(GetChatsLoading<T> value)? getChatsLoading,
     TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
     TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
     required TResult orElse(),
   }) {
     if (getChatsError != null) {
@@ -3033,5 +3303,648 @@ abstract class GetChatsError<T> implements ChatState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$GetChatsErrorImplCopyWith<T, _$GetChatsErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteChatLoadingImplCopyWith<T, $Res> {
+  factory _$$DeleteChatLoadingImplCopyWith(_$DeleteChatLoadingImpl<T> value,
+          $Res Function(_$DeleteChatLoadingImpl<T>) then) =
+      __$$DeleteChatLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteChatLoadingImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$DeleteChatLoadingImpl<T>>
+    implements _$$DeleteChatLoadingImplCopyWith<T, $Res> {
+  __$$DeleteChatLoadingImplCopyWithImpl(_$DeleteChatLoadingImpl<T> _value,
+      $Res Function(_$DeleteChatLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteChatLoadingImpl<T> implements DeleteChatLoading<T> {
+  const _$DeleteChatLoadingImpl();
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.deleteChatLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteChatLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendMessageLoading,
+    required TResult Function() sendMessageSuccess,
+    required TResult Function(String error) sendMessageError,
+    required TResult Function(File messageImage) pickMessageImageSuccess,
+    required TResult Function(String error) pickMessageImageError,
+    required TResult Function() uploadMessageImageLoading,
+    required TResult Function(String imageUrl) uploadMessageImageSuccess,
+    required TResult Function(String error) uploadMessageImageError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
+  }) {
+    return deleteChatLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendMessageLoading,
+    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String error)? sendMessageError,
+    TResult? Function(File messageImage)? pickMessageImageSuccess,
+    TResult? Function(String error)? pickMessageImageError,
+    TResult? Function()? uploadMessageImageLoading,
+    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult? Function(String error)? uploadMessageImageError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
+  }) {
+    return deleteChatLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendMessageLoading,
+    TResult Function()? sendMessageSuccess,
+    TResult Function(String error)? sendMessageError,
+    TResult Function(File messageImage)? pickMessageImageSuccess,
+    TResult Function(String error)? pickMessageImageError,
+    TResult Function()? uploadMessageImageLoading,
+    TResult Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult Function(String error)? uploadMessageImageError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
+    required TResult orElse(),
+  }) {
+    if (deleteChatLoading != null) {
+      return deleteChatLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChatInitial<T> value) initial,
+    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
+    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
+    required TResult Function(SendMessageError<T> value) sendMessageError,
+    required TResult Function(PickMessageImageSuccess<T> value)
+        pickMessageImageSuccess,
+    required TResult Function(PickMessageImageError<T> value)
+        pickMessageImageError,
+    required TResult Function(UploadMessageImageLoading<T> value)
+        uploadMessageImageLoading,
+    required TResult Function(UploadMessageImageSuccess<T> value)
+        uploadMessageImageSuccess,
+    required TResult Function(UploadMessageImageError<T> value)
+        uploadMessageImageError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
+  }) {
+    return deleteChatLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChatInitial<T> value)? initial,
+    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult? Function(SendMessageError<T> value)? sendMessageError,
+    TResult? Function(PickMessageImageSuccess<T> value)?
+        pickMessageImageSuccess,
+    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult? Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult? Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult? Function(UploadMessageImageError<T> value)?
+        uploadMessageImageError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
+  }) {
+    return deleteChatLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChatInitial<T> value)? initial,
+    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult Function(SendMessageError<T> value)? sendMessageError,
+    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
+    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
+    required TResult orElse(),
+  }) {
+    if (deleteChatLoading != null) {
+      return deleteChatLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteChatLoading<T> implements ChatState<T> {
+  const factory DeleteChatLoading() = _$DeleteChatLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteChatSuccessImplCopyWith<T, $Res> {
+  factory _$$DeleteChatSuccessImplCopyWith(_$DeleteChatSuccessImpl<T> value,
+          $Res Function(_$DeleteChatSuccessImpl<T>) then) =
+      __$$DeleteChatSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$DeleteChatSuccessImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$DeleteChatSuccessImpl<T>>
+    implements _$$DeleteChatSuccessImplCopyWith<T, $Res> {
+  __$$DeleteChatSuccessImplCopyWithImpl(_$DeleteChatSuccessImpl<T> _value,
+      $Res Function(_$DeleteChatSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$DeleteChatSuccessImpl<T> implements DeleteChatSuccess<T> {
+  const _$DeleteChatSuccessImpl();
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.deleteChatSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteChatSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendMessageLoading,
+    required TResult Function() sendMessageSuccess,
+    required TResult Function(String error) sendMessageError,
+    required TResult Function(File messageImage) pickMessageImageSuccess,
+    required TResult Function(String error) pickMessageImageError,
+    required TResult Function() uploadMessageImageLoading,
+    required TResult Function(String imageUrl) uploadMessageImageSuccess,
+    required TResult Function(String error) uploadMessageImageError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
+  }) {
+    return deleteChatSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendMessageLoading,
+    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String error)? sendMessageError,
+    TResult? Function(File messageImage)? pickMessageImageSuccess,
+    TResult? Function(String error)? pickMessageImageError,
+    TResult? Function()? uploadMessageImageLoading,
+    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult? Function(String error)? uploadMessageImageError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
+  }) {
+    return deleteChatSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendMessageLoading,
+    TResult Function()? sendMessageSuccess,
+    TResult Function(String error)? sendMessageError,
+    TResult Function(File messageImage)? pickMessageImageSuccess,
+    TResult Function(String error)? pickMessageImageError,
+    TResult Function()? uploadMessageImageLoading,
+    TResult Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult Function(String error)? uploadMessageImageError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
+    required TResult orElse(),
+  }) {
+    if (deleteChatSuccess != null) {
+      return deleteChatSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChatInitial<T> value) initial,
+    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
+    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
+    required TResult Function(SendMessageError<T> value) sendMessageError,
+    required TResult Function(PickMessageImageSuccess<T> value)
+        pickMessageImageSuccess,
+    required TResult Function(PickMessageImageError<T> value)
+        pickMessageImageError,
+    required TResult Function(UploadMessageImageLoading<T> value)
+        uploadMessageImageLoading,
+    required TResult Function(UploadMessageImageSuccess<T> value)
+        uploadMessageImageSuccess,
+    required TResult Function(UploadMessageImageError<T> value)
+        uploadMessageImageError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
+  }) {
+    return deleteChatSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChatInitial<T> value)? initial,
+    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult? Function(SendMessageError<T> value)? sendMessageError,
+    TResult? Function(PickMessageImageSuccess<T> value)?
+        pickMessageImageSuccess,
+    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult? Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult? Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult? Function(UploadMessageImageError<T> value)?
+        uploadMessageImageError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
+  }) {
+    return deleteChatSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChatInitial<T> value)? initial,
+    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult Function(SendMessageError<T> value)? sendMessageError,
+    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
+    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
+    required TResult orElse(),
+  }) {
+    if (deleteChatSuccess != null) {
+      return deleteChatSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteChatSuccess<T> implements ChatState<T> {
+  const factory DeleteChatSuccess() = _$DeleteChatSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$DeleteChatErrorImplCopyWith<T, $Res> {
+  factory _$$DeleteChatErrorImplCopyWith(_$DeleteChatErrorImpl<T> value,
+          $Res Function(_$DeleteChatErrorImpl<T>) then) =
+      __$$DeleteChatErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$DeleteChatErrorImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$DeleteChatErrorImpl<T>>
+    implements _$$DeleteChatErrorImplCopyWith<T, $Res> {
+  __$$DeleteChatErrorImplCopyWithImpl(_$DeleteChatErrorImpl<T> _value,
+      $Res Function(_$DeleteChatErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$DeleteChatErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteChatErrorImpl<T> implements DeleteChatError<T> {
+  const _$DeleteChatErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.deleteChatError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteChatErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteChatErrorImplCopyWith<T, _$DeleteChatErrorImpl<T>> get copyWith =>
+      __$$DeleteChatErrorImplCopyWithImpl<T, _$DeleteChatErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendMessageLoading,
+    required TResult Function() sendMessageSuccess,
+    required TResult Function(String error) sendMessageError,
+    required TResult Function(File messageImage) pickMessageImageSuccess,
+    required TResult Function(String error) pickMessageImageError,
+    required TResult Function() uploadMessageImageLoading,
+    required TResult Function(String imageUrl) uploadMessageImageSuccess,
+    required TResult Function(String error) uploadMessageImageError,
+    required TResult Function(String text) setNewTextValue,
+    required TResult Function() removeMessageImage,
+    required TResult Function() getChatsLoading,
+    required TResult Function(List<ICareUser> users) getChatsSuccess,
+    required TResult Function(String error) getChatsError,
+    required TResult Function() deleteChatLoading,
+    required TResult Function() deleteChatSuccess,
+    required TResult Function(String error) deleteChatError,
+  }) {
+    return deleteChatError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendMessageLoading,
+    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String error)? sendMessageError,
+    TResult? Function(File messageImage)? pickMessageImageSuccess,
+    TResult? Function(String error)? pickMessageImageError,
+    TResult? Function()? uploadMessageImageLoading,
+    TResult? Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult? Function(String error)? uploadMessageImageError,
+    TResult? Function(String text)? setNewTextValue,
+    TResult? Function()? removeMessageImage,
+    TResult? Function()? getChatsLoading,
+    TResult? Function(List<ICareUser> users)? getChatsSuccess,
+    TResult? Function(String error)? getChatsError,
+    TResult? Function()? deleteChatLoading,
+    TResult? Function()? deleteChatSuccess,
+    TResult? Function(String error)? deleteChatError,
+  }) {
+    return deleteChatError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendMessageLoading,
+    TResult Function()? sendMessageSuccess,
+    TResult Function(String error)? sendMessageError,
+    TResult Function(File messageImage)? pickMessageImageSuccess,
+    TResult Function(String error)? pickMessageImageError,
+    TResult Function()? uploadMessageImageLoading,
+    TResult Function(String imageUrl)? uploadMessageImageSuccess,
+    TResult Function(String error)? uploadMessageImageError,
+    TResult Function(String text)? setNewTextValue,
+    TResult Function()? removeMessageImage,
+    TResult Function()? getChatsLoading,
+    TResult Function(List<ICareUser> users)? getChatsSuccess,
+    TResult Function(String error)? getChatsError,
+    TResult Function()? deleteChatLoading,
+    TResult Function()? deleteChatSuccess,
+    TResult Function(String error)? deleteChatError,
+    required TResult orElse(),
+  }) {
+    if (deleteChatError != null) {
+      return deleteChatError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChatInitial<T> value) initial,
+    required TResult Function(SendMessageLoading<T> value) sendMessageLoading,
+    required TResult Function(SendMessageSuccess<T> value) sendMessageSuccess,
+    required TResult Function(SendMessageError<T> value) sendMessageError,
+    required TResult Function(PickMessageImageSuccess<T> value)
+        pickMessageImageSuccess,
+    required TResult Function(PickMessageImageError<T> value)
+        pickMessageImageError,
+    required TResult Function(UploadMessageImageLoading<T> value)
+        uploadMessageImageLoading,
+    required TResult Function(UploadMessageImageSuccess<T> value)
+        uploadMessageImageSuccess,
+    required TResult Function(UploadMessageImageError<T> value)
+        uploadMessageImageError,
+    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
+    required TResult Function(RemoveMessageImage<T> value) removeMessageImage,
+    required TResult Function(GetChatsLoading<T> value) getChatsLoading,
+    required TResult Function(GetChatsSuccess<T> value) getChatsSuccess,
+    required TResult Function(GetChatsError<T> value) getChatsError,
+    required TResult Function(DeleteChatLoading<T> value) deleteChatLoading,
+    required TResult Function(DeleteChatSuccess<T> value) deleteChatSuccess,
+    required TResult Function(DeleteChatError<T> value) deleteChatError,
+  }) {
+    return deleteChatError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChatInitial<T> value)? initial,
+    TResult? Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult? Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult? Function(SendMessageError<T> value)? sendMessageError,
+    TResult? Function(PickMessageImageSuccess<T> value)?
+        pickMessageImageSuccess,
+    TResult? Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult? Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult? Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult? Function(UploadMessageImageError<T> value)?
+        uploadMessageImageError,
+    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult? Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult? Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult? Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult? Function(GetChatsError<T> value)? getChatsError,
+    TResult? Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult? Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult? Function(DeleteChatError<T> value)? deleteChatError,
+  }) {
+    return deleteChatError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChatInitial<T> value)? initial,
+    TResult Function(SendMessageLoading<T> value)? sendMessageLoading,
+    TResult Function(SendMessageSuccess<T> value)? sendMessageSuccess,
+    TResult Function(SendMessageError<T> value)? sendMessageError,
+    TResult Function(PickMessageImageSuccess<T> value)? pickMessageImageSuccess,
+    TResult Function(PickMessageImageError<T> value)? pickMessageImageError,
+    TResult Function(UploadMessageImageLoading<T> value)?
+        uploadMessageImageLoading,
+    TResult Function(UploadMessageImageSuccess<T> value)?
+        uploadMessageImageSuccess,
+    TResult Function(UploadMessageImageError<T> value)? uploadMessageImageError,
+    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
+    TResult Function(RemoveMessageImage<T> value)? removeMessageImage,
+    TResult Function(GetChatsLoading<T> value)? getChatsLoading,
+    TResult Function(GetChatsSuccess<T> value)? getChatsSuccess,
+    TResult Function(GetChatsError<T> value)? getChatsError,
+    TResult Function(DeleteChatLoading<T> value)? deleteChatLoading,
+    TResult Function(DeleteChatSuccess<T> value)? deleteChatSuccess,
+    TResult Function(DeleteChatError<T> value)? deleteChatError,
+    required TResult orElse(),
+  }) {
+    if (deleteChatError != null) {
+      return deleteChatError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteChatError<T> implements ChatState<T> {
+  const factory DeleteChatError(final String error) = _$DeleteChatErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$DeleteChatErrorImplCopyWith<T, _$DeleteChatErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

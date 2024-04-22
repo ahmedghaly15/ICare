@@ -12,6 +12,7 @@ import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
+import 'package:icare/src/features/chat/domain/usecases/delete_chat.dart';
 import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
 import 'package:icare/src/features/chat/domain/usecases/send_message.dart';
 import 'package:icare/src/features/chat/domain/usecases/upload_message_image.dart';
@@ -23,11 +24,13 @@ class ChatCubit extends Cubit<ChatState> {
   final SendMessageUseCase sendMessageUseCase;
   final UploadMessageImageUseCase uploadMessageImageUseCase;
   final GetChatsUseCase getChatsUseCase;
+  final DeleteChatUseCase deleteChatUseCase;
 
   ChatCubit({
     required this.sendMessageUseCase,
     required this.uploadMessageImageUseCase,
     required this.getChatsUseCase,
+    required this.deleteChatUseCase,
   }) : super(const ChatState.initial()) {
     messageController = TextEditingController();
   }
@@ -167,6 +170,15 @@ class ChatCubit extends Cubit<ChatState> {
     }).catchError((error) {
       emit(ChatState.uploadMessageImageError(error.toString()));
     });
+  }
+
+  void deleteChat(String receiverId) async {
+    emit(const ChatState.deleteChatLoading());
+    final result = await deleteChatUseCase(receiverId);
+    result.when(
+      success: (_) => emit(const ChatState.deleteChatSuccess()),
+      error: (error) => emit(ChatState.deleteChatError(error.failureMsg ?? '')),
+    );
   }
 
   void removePickedMessageImage() {

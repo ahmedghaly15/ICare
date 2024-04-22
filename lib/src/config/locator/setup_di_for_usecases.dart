@@ -202,6 +202,9 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetChatsUseCase>(
       () => GetChatsUseCase(getIt.get<ChatRepo>()),
     );
+    getIt.registerLazySingleton<DeleteChatUseCase>(
+      () => DeleteChatUseCase(getIt.get<ChatRepo>()),
+    );
 
     // ========== Search feature ==========
     getIt.registerLazySingleton<SearchUsersUseCase>(

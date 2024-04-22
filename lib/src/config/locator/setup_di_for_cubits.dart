@@ -163,6 +163,7 @@ class SetupDIForCubits {
         sendMessageUseCase: getIt.get<SendMessageUseCase>(),
         uploadMessageImageUseCase: getIt.get<UploadMessageImageUseCase>(),
         getChatsUseCase: getIt.get<GetChatsUseCase>(),
+        deleteChatUseCase: getIt.get<DeleteChatUseCase>(),
       ),
     );
 

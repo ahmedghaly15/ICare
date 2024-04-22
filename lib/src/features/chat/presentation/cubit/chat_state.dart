@@ -27,4 +27,7 @@ class ChatState<T> with _$ChatState<T> {
   const factory ChatState.getChatsSuccess(List<ICareUser> users) =
       GetChatsSuccess<T>;
   const factory ChatState.getChatsError(String error) = GetChatsError<T>;
+  const factory ChatState.deleteChatLoading() = DeleteChatLoading;
+  const factory ChatState.deleteChatSuccess() = DeleteChatSuccess;
+  const factory ChatState.deleteChatError(String error) = DeleteChatError<T>;
 }

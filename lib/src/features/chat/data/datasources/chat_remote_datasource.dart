@@ -14,6 +14,7 @@ abstract class ChatRemoteDatasource {
   Future<void> sendMessage(SendMessageParams params);
   Future<TaskSnapshot> uploadMessageImage(File? messageImage);
   Future<List<ICareUser>> getChats();
+  Future<void> deleteChat(String receiverId);
 }
 
 class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
@@ -102,5 +103,31 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
       chatsQuery.docs.map((e) => ICareUser.fromJson(e.data())).toList(),
     );
     return chats;
+  }
+
+  @override
+  Future<void> deleteChat(String receiverId) async {
+    await _deletingCurrentUserMessages(receiverId);
+    await _deletingReceiverMessages(receiverId);
+  }
+
+  Future<void> _deletingReceiverMessages(String receiverId) async {
+    final receiverMessages =
+        await _accessMessagesCollection(Helper.uId!, senderId: receiverId)
+            .get();
+
+    await Future.forEach(
+      receiverMessages.docs,
+      (doc) async => await doc.reference.delete(),
+    );
+  }
+
+  Future<void> _deletingCurrentUserMessages(String receiverId) async {
+    final currentUserMessages =
+        await _accessMessagesCollection(receiverId).get();
+    await Future.forEach(
+      currentUserMessages.docs,
+      (doc) async => await doc.reference.delete(),
+    );
   }
 }

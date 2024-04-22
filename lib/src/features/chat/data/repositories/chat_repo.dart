@@ -62,4 +62,10 @@ class ChatRepo {
       }
     }
   }
+
+  Future<FirebaseRequestResult<void>> deleteChat(String receiverId) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _chatRemoteDatasource.deleteChat(receiverId),
+    );
+  }
 }
