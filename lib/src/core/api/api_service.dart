@@ -100,6 +100,7 @@ abstract class ApiService {
   Future<AdvancedLevelMarkingResponse> advancedLevelMarking({
     @Query('user_id') required String userId,
     @Query('id') required int id,
+    @Query('ayah_num') required int ayahNum,
     @Part(name: 'audio_file') required File audioFile,
   });
 }

@@ -97,7 +97,7 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     emit(const LevelTrainingState.initial());
   }
 
-  void _mark(int id, int level) async {
+  void _mark({required int id, required int level}) async {
     emit(const LevelTrainingState.markLoading());
     final result = await _markUseCase.call(MarkParams(
       userId: Helper.uId!,
@@ -116,7 +116,11 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     );
   }
 
-  void recordAndMark(int id, int level, BuildContext context) async {
+  void recordAndMark({
+    required int id,
+    required int level,
+    required BuildContext context,
+  }) async {
     if (isRecording == false) {
       final status = await _audioRecorder.hasPermission();
       if (status == true) {
@@ -133,7 +137,7 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
       }
     } else {
       await _stopRecording();
-      _mark(id, level);
+      _mark(id: id, level: level);
     }
     _convertIsRecording();
   }
@@ -141,7 +145,13 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
   void _advancedLevelMarking(int id) async {
     emit(const LevelTrainingState.advancedLevelMarkingLoading());
     final result = await _advancedLevelMarkingUseCase.call(
-        MarkParams(userId: Helper.uId!, id: id, audioFile: File(_audioPath!)));
+      MarkParams(
+        userId: Helper.uId!,
+        id: id,
+        audioFile: File(_audioPath!),
+        ayahNum: selectedAyah?.ayahNum,
+      ),
+    );
     result.when(
       success: (data) {
         emit(LevelTrainingState.advancedLevelMarkingSuccess(data));
@@ -177,7 +187,6 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
 
   bool isAnAdvancedItemSelected = false;
   Ayah? selectedAyah;
-
   bool isScrolledToBottom = false;
 
   Future<void> _scrollToBottom() async {

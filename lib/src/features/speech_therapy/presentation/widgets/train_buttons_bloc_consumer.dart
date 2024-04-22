@@ -51,7 +51,7 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
               tryItOnPressed: () {
                 context
                     .read<LevelTrainingCubit>()
-                    .recordAndMark(id, level, context);
+                    .recordAndMark(id: id, level: level, context: context);
               },
               audioUrl: audioUrl,
             );
@@ -62,7 +62,7 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
               onPressed: () {
                 context
                     .read<LevelTrainingCubit>()
-                    .recordAndMark(id, level, context);
+                    .recordAndMark(id: id, level: level, context: context);
               },
             );
           }

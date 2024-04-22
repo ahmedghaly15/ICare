@@ -68,6 +68,7 @@ class SpeechTherapyRemoteDatasourceImpl
       userId: params.userId,
       id: params.id,
       audioFile: params.audioFile,
+      ayahNum: params.ayahNum!,
     );
   }
 }

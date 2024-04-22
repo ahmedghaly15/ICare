@@ -462,12 +462,14 @@ class _ApiService implements ApiService {
   Future<AdvancedLevelMarkingResponse> advancedLevelMarking({
     required String userId,
     required int id,
+    required int ayahNum,
     required File audioFile,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'user_id': userId,
       r'id': id,
+      r'ayah_num': ayahNum,
     };
     final _headers = <String, dynamic>{};
     final _data = FormData();
