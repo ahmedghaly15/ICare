@@ -11,6 +11,7 @@ import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
 import 'package:icare/src/features/chat/domain/usecases/delete_chat.dart';
 import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
@@ -178,6 +179,21 @@ class ChatCubit extends Cubit<ChatState> {
     result.when(
       success: (_) => emit(const ChatState.deleteChatSuccess()),
       error: (error) => emit(ChatState.deleteChatError(error.failureMsg ?? '')),
+    );
+  }
+
+  void handleDeletingChatStates(
+    ChatState<dynamic> state,
+    BuildContext context,
+    String receiverId,
+  ) {
+    state.whenOrNull(
+      deleteChatSuccess: () async {
+        await _checkChatExistence(receiverId);
+      },
+      deleteChatError: (error) {
+        ShowICareDialog.showICareDialogError(context, error);
+      },
     );
   }
 

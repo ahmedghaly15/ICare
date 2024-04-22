@@ -115,11 +115,11 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
     final receiverMessages =
         await _accessMessagesCollection(Helper.uId!, senderId: receiverId)
             .get();
-
     await Future.forEach(
       receiverMessages.docs,
       (doc) async => await doc.reference.delete(),
     );
+    await _accessChatsCollection(senderId: receiverId).doc(Helper.uId).delete();
   }
 
   Future<void> _deletingCurrentUserMessages(String receiverId) async {
@@ -129,5 +129,6 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
       currentUserMessages.docs,
       (doc) async => await doc.reference.delete(),
     );
+    await _accessChatsCollection().doc(receiverId).delete();
   }
 }
