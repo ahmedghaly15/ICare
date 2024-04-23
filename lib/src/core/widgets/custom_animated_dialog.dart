@@ -10,18 +10,20 @@ class CustomAnimatedDialog extends StatelessWidget {
     super.key,
     required this.animation1,
     required this.child,
-    this.backgroundColor = Colors.white,
+    this.backgroundColor,
     this.isBlurred = true,
     this.appLogoBoxShadow,
     this.padding,
+    this.gradient,
   });
 
   final Animation<double> animation1;
   final Widget child;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final bool isBlurred;
   final List<BoxShadow>? appLogoBoxShadow;
   final EdgeInsetsGeometry? padding;
+  final Gradient? gradient;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,7 @@ class CustomAnimatedDialog extends StatelessWidget {
                             : backgroundColor,
                         appLogoBoxShadow: appLogoBoxShadow,
                         padding: padding,
+                        gradient: gradient,
                         child: child,
                       ),
                     ],
@@ -60,6 +63,7 @@ class CustomAnimatedDialog extends StatelessWidget {
                         : backgroundColor,
                     appLogoBoxShadow: appLogoBoxShadow,
                     padding: padding,
+                    gradient: gradient,
                     child: child,
                   ),
           ),

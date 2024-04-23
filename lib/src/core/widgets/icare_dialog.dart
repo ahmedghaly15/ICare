@@ -14,9 +14,12 @@ class ShowICareDialog {
     ICareDialogStates? state,
     String? message,
     bool isBlurred = true,
-    String anotherTitle = '',
+    String? anotherTitle = '',
     Widget? child,
     EdgeInsetsGeometry? padding,
+    List<BoxShadow>? appLogoBoxShadow,
+    Color backgroundColor = Colors.white,
+    Gradient? gradient,
   }) async {
     return await showGeneralDialog(
       context: context,
@@ -30,13 +33,19 @@ class ShowICareDialog {
                 animation1: animation1,
                 isBlurred: isBlurred,
                 padding: padding,
-                title: _chooseDialogTitle(state!),
+                title: anotherTitle ?? _chooseDialogTitle(state!),
                 message: message,
+                backgroundColor: backgroundColor,
+                appLogoBoxShadow: appLogoBoxShadow,
+                gradient: gradient,
               )
             : ICareDialog(
                 animation1: animation1,
                 isBlurred: isBlurred,
                 padding: padding,
+                backgroundColor: backgroundColor,
+                appLogoBoxShadow: appLogoBoxShadow,
+                gradient: gradient,
                 child: child,
               );
       },
@@ -82,6 +91,9 @@ class ICareDialog extends StatelessWidget {
     this.isBlurred = true,
     this.child,
     this.padding,
+    this.appLogoBoxShadow,
+    this.backgroundColor,
+    this.gradient,
   });
 
   final Animation<double> animation1;
@@ -90,6 +102,9 @@ class ICareDialog extends StatelessWidget {
   final bool isBlurred;
   final Widget? child;
   final EdgeInsetsGeometry? padding;
+  final List<BoxShadow>? appLogoBoxShadow;
+  final Color? backgroundColor;
+  final Gradient? gradient;
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +112,9 @@ class ICareDialog extends StatelessWidget {
       animation1: animation1,
       isBlurred: isBlurred,
       padding: padding,
+      appLogoBoxShadow: appLogoBoxShadow,
+      backgroundColor: backgroundColor,
+      gradient: gradient,
       child: child ??
           Column(
             mainAxisSize: MainAxisSize.min,
