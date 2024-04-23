@@ -83,14 +83,12 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   void changeConfirmPassVisibility() {
     isConfirmPassVisible = !isConfirmPassVisible;
-
     emit(RegisterState.changePassVisibility(
         isRegisterPassVisible: isConfirmPassVisible));
   }
 
   void _createFirestoreUser(CreateFirestoreUserParams params) async {
     final response = await createFirestoreUserUseCase(params);
-
     response.when(
       success: (success) {
         emit(const RegisterState.createFirestoreUserSuccess());
@@ -104,7 +102,6 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   void register() async {
     emit(const RegisterState.loading());
-
     final response = await registerUseCase(
       RegisterRequestParams(
         email: emailController.text.trim(),

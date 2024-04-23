@@ -10,7 +10,6 @@ import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 void navigateToHomeAfterLoginOrRegister(BuildContext context, String data) {
   Helper.uId = data;
-
   getIt
       .get<CacheHelper>()
       .saveData(key: AppStrings.cachedUserId, value: data)

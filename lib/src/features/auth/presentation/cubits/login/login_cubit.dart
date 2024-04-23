@@ -58,14 +58,12 @@ class LoginCubit extends Cubit<LoginState> {
 
   void login() async {
     emit(const LoginState.loading());
-
     final response = await loginUseCase(
       LoginRequestParams(
         email: emailController.text.trim(),
         password: passwordController.text,
       ),
     );
-
     response.when(
       success: (loginResponse) =>
           emit(LoginState.success(loginResponse.user!.uid)),
@@ -77,9 +75,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   void signInWithGoogle() async {
     emit(const LoginState.signInWithGoogleLoading());
-
     final response = await signInWithGoogleUseCase(const NoParams());
-
     response.when(
       success: (credential) async {
         await createFirestoreUserUseCase(
@@ -98,7 +94,6 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   bool isLoginPassVisible = true;
-
   void changePassVisibility() {
     isLoginPassVisible = !isLoginPassVisible;
 
