@@ -49,6 +49,7 @@ class TipTopicAndReadButton extends StatelessWidget {
           child: Text(
             context.read<TipsCubit>().randomTip!.topic,
             style: AppTextStyles.textStyle18Bold,
+            textAlign: TextAlign.center,
           ),
         ),
         Align(

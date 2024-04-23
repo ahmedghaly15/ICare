@@ -99,14 +99,14 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   @override
   Future<void> signOut() async {
-    await getIt
-        .get<CacheHelper>()
-        .clearPreferencesExceptOne(AppStrings.cachedOnboarding, 'bool');
-    await getIt
-        .get<CacheHelper>()
-        .clearPreferencesExceptOne(AppStrings.cachedTheme, 'int');
-    await getIt.get<CacheHelper>().clearPreferencesExceptOne(
-        '${AppStrings.cachedIsDone}${Helper.uId}', 'bool');
+    await getIt.get<CacheHelper>().clearPreferencesExcept(
+      <KeyAndType>[
+        const KeyAndType(AppStrings.cachedOnboarding, 'bool'),
+        const KeyAndType(AppStrings.cachedTheme, 'int'),
+        KeyAndType('${AppStrings.cachedIsDone}${Helper.uId}', 'bool'),
+        KeyAndType('${AppStrings.cachedRandomTip}${Helper.uId}', 'String'),
+      ],
+    );
     await getIt.get<FirebaseAuth>().signOut();
   }
 }
