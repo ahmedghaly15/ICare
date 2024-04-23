@@ -102,7 +102,7 @@ class AppConstants {
         ],
       );
   static CarouselOptions get medicalInfoCarouselOptions => CarouselOptions(
-        aspectRatio: 0.65,
+        aspectRatio: 0.7,
         viewportFraction: 0.7,
         initialPage: 0,
         enableInfiniteScroll: true,
