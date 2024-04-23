@@ -14,11 +14,17 @@ class TipsCubit extends Cubit<TipsState> {
   final GetRandomTipUseCase _getRandomTipUseCase;
 
   TipsCubit(this._getRandomTipUseCase) : super(const TipsState.initial()) {
-    _showOrNotShowTipDialogTimer();
-    Future.wait([_getCachedIsDone()]);
+    _initialization();
   }
 
-  void _showOrNotShowTipDialogTimer() {
+  Future<void> _initialization() async {
+    await _getCachedIsDone();
+    await _showOrNotShowTipDialogTimer();
+    _updateRandomTipDialogOpacity();
+    _showRandomTipDialog();
+  }
+
+  Future<void> _showOrNotShowTipDialogTimer() async {
     _timer = Timer.periodic(
       const Duration(hours: 24),
       (Timer t) async {
@@ -36,7 +42,7 @@ class TipsCubit extends Cubit<TipsState> {
     response.when(
       success: (data) {
         randomTip = data;
-        emit(TipsState.getRandomTipSuccess(data));
+        emit(TipsState.getRandomTipSuccess(randomTip));
       },
       error: (error) => emit(
         TipsState.getRandomTipError(error.apiErrorModel.error ?? ''),
@@ -53,7 +59,7 @@ class TipsCubit extends Cubit<TipsState> {
   bool isDone = false;
   void _convertIsDone() {
     isDone = !isDone;
-    emit(TipsState.convertIsRandomTipRead(isDone));
+    emit(TipsState.convertBoolVal(isDone));
   }
 
   Future<void> _cacheIsDone() async {
@@ -68,13 +74,39 @@ class TipsCubit extends Cubit<TipsState> {
             .get<CacheHelper>()
             .getBoolData(key: '${AppStrings.cachedIsDone}${Helper.uId}')) ??
         false;
-    emit(TipsState.convertIsRandomTipRead(isDone));
+    emit(TipsState.convertBoolVal(isDone));
   }
 
   void emitRandomTipDialogIsClosed() async {
     _convertIsDone();
     await _cacheIsDone();
+    _updateRandomTipDialogOpacity();
+    _showRandomTipDialog();
     emit(const TipsState.randomTipDialogIsClosed());
+  }
+
+  double randomTipDialogOpacity = 1.0;
+  bool isDialogShown = true;
+
+  void _showRandomTipDialog() {
+    if (isDone) {
+      Future.delayed(const Duration(milliseconds: 500), () {
+        isDialogShown = false;
+        emit(TipsState.convertBoolVal(isDialogShown));
+      });
+    } else {
+      isDialogShown = true;
+    }
+    emit(TipsState.convertBoolVal(isDialogShown));
+  }
+
+  void _updateRandomTipDialogOpacity() {
+    if (isDone) {
+      randomTipDialogOpacity = 0.0;
+    } else {
+      randomTipDialogOpacity = 1.0;
+    }
+    emit(TipsState.updateRandomTipDialogOpacity(randomTipDialogOpacity));
   }
 
   void handleTipsState(TipsState<dynamic> state) {

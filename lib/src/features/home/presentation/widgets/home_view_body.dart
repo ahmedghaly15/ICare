@@ -44,7 +44,8 @@ class HomeViewBody extends StatelessWidget {
           ),
           BlocBuilder<TipsCubit, TipsState>(
             builder: (context, state) {
-              return context.read<TipsCubit>().isDone
+              return (context.read<TipsCubit>().isDone &&
+                      !context.read<TipsCubit>().isDialogShown)
                   ? const SliverToBoxAdapter(child: SizedBox.shrink())
                   : SliverToBoxAdapter(
                       child: Container(
@@ -52,7 +53,15 @@ class HomeViewBody extends StatelessWidget {
                           top: SizeConfig.height * 0.05,
                           bottom: 16.h,
                         ),
-                        child: const RandomTipDialog(),
+                        child: AnimatedOpacity(
+                          opacity:
+                              context.read<TipsCubit>().randomTipDialogOpacity,
+                          duration: const Duration(milliseconds: 800),
+                          child: Visibility(
+                            visible: context.read<TipsCubit>().isDialogShown,
+                            child: const RandomTipDialog(),
+                          ),
+                        ),
                       ),
                     );
             },
