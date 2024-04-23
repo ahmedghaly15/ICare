@@ -47,6 +47,7 @@ class LoginViewBody extends StatelessWidget {
                   MySizedBox.height25,
                   GoogleBlocConsumer(),
                   Spacer(),
+                  MySizedBox.height10,
                   DontHavAcc(),
                 ],
               ),

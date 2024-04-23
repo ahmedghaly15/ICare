@@ -66,7 +66,6 @@ class _LoginFormState extends State<LoginForm> {
                       context.read<LoginCubit>().isLoginPassVisible
                           ? Icons.visibility
                           : Icons.visibility_off,
-                      color: Colors.black,
                     ),
                     onPressed: () =>
                         context.read<LoginCubit>().changePassVisibility(),

@@ -40,7 +40,6 @@ class UpdatePasswordFormDialog extends StatelessWidget {
                   context.read<EditProfileCubit>().isPassVisible
                       ? Icons.visibility
                       : Icons.visibility_off,
-                  color: Colors.black,
                 ),
                 onPressed: () =>
                     context.read<EditProfileCubit>().changePasswordVisibility(),

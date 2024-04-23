@@ -119,7 +119,6 @@ class ICareDialog extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              MySizedBox.height8,
               Text(
                 title!,
                 style: AppTextStyles.textStyle16Bold,

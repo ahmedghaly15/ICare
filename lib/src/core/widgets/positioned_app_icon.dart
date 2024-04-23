@@ -25,9 +25,9 @@ class PositionedAppIcon extends StatelessWidget {
               <BoxShadow>[
                 BoxShadow(
                   color: isDarkModeActive(context)
-                      ? Colors.black.withOpacity(0.4)
+                      ? Colors.black
                       : Colors.black.withOpacity(0.25),
-                  offset: const Offset(0, 10),
+                  offset: const Offset(0, 0),
                   blurRadius: 4,
                   spreadRadius: 0,
                   blurStyle: BlurStyle.outer,

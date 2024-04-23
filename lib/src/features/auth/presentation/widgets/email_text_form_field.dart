@@ -28,10 +28,7 @@ class EmailTextFormField extends StatelessWidget {
       focusNode: emailFocusNode,
       autofillHints: const <String>[AutofillHints.email],
       hintText: AppStrings.enterYourEmail,
-      suffixIcon: const Icon(
-        Icons.email_outlined,
-        color: Colors.black,
-      ),
+      suffixIcon: const Icon(Icons.email_outlined),
       onEditingComplete: () => hasEditingComplete
           ? AuthHelper.requestFocus(context, passwordFocusNode!)
           : null,

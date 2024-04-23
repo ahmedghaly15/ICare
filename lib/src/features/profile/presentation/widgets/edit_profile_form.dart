@@ -40,6 +40,7 @@ class EditProfileForm extends StatelessWidget {
                 context.read<EditProfileCubit>().setNewNameTextValue(text),
           ),
           const BottomTextFieldSpacer(),
+          const CustomTextFieldLabel(label: AppStrings.email),
           EmailTextFormField(
             emailController: context.read<EditProfileCubit>().emailController,
             onChanged: (String text) =>

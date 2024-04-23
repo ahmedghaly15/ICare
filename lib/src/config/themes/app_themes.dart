@@ -50,9 +50,6 @@ class AppThemes {
           labelStyle: AppTextStyles.textStyle13Bold,
           unselectedLabelColor: Colors.black,
           labelColor: Colors.black,
-          labelPadding: const EdgeInsets.symmetric(
-            horizontal: 48.0,
-          ),
           tabAlignment: TabAlignment.center,
           overlayColor: MaterialStateProperty.all(
             AppColors.gradientOrange,
@@ -119,9 +116,6 @@ class AppThemes {
           labelStyle: AppTextStyles.textStyle13Bold,
           unselectedLabelColor: Colors.white,
           labelColor: Colors.white,
-          labelPadding: const EdgeInsets.symmetric(
-            horizontal: 48.0,
-          ),
           tabAlignment: TabAlignment.center,
           overlayColor: MaterialStateProperty.all(
             AppColors.lightBlue,

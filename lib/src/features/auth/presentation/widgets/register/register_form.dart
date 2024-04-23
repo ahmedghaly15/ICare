@@ -112,7 +112,6 @@ class _RegisterFormState extends State<RegisterForm> {
                       context.read<RegisterCubit>().isRegisterPassVisible
                           ? Icons.visibility
                           : Icons.visibility_off,
-                      color: Colors.black,
                     ),
                     onPressed: () =>
                         context.read<RegisterCubit>().changePassVisibility(),
@@ -144,7 +143,6 @@ class _RegisterFormState extends State<RegisterForm> {
                       context.read<RegisterCubit>().isConfirmPassVisible
                           ? Icons.visibility
                           : Icons.visibility_off,
-                      color: Colors.black,
                     ),
                     onPressed: () => context
                         .read<RegisterCubit>()

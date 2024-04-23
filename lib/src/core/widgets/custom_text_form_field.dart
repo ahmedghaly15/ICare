@@ -109,7 +109,7 @@ class CustomTextFormField extends StatelessWidget {
           filled: filled ?? true,
           fillColor: fillColor ??
               (isDarkModeActive(context)
-                  ? AppColors.lightOrange
+                  ? AppColors.lightBlue
                   : AppColors.secondaryColor),
           errorStyle: AppTextStyles.textStyle13Light.copyWith(
             color: Colors.red,
@@ -119,6 +119,10 @@ class CustomTextFormField extends StatelessWidget {
           errorMaxLines: null,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
+          suffixIconColor:
+              isDarkModeActive(context) ? Colors.white : Colors.black,
+          prefixIconColor:
+              isDarkModeActive(context) ? Colors.white : Colors.black,
           labelText: label,
           labelStyle: Theme.of(context).textTheme.titleSmall,
           contentPadding: contentPadding ??
