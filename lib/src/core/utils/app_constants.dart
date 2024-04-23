@@ -44,7 +44,7 @@ class AppConstants {
   static const double padding16 = 16;
   static const String defaultProfileImage =
       'https://cdn.create.vista.com/api/media/small/563147854/stock-vector-mother-and-daughter';
-  static const Duration dialogsTransitionDuration = Duration(milliseconds: 200);
+  static const Duration dialogsTransitionDuration = Duration(milliseconds: 150);
   static EdgeInsets bookmarksBubblesPadding = EdgeInsets.symmetric(
     horizontal: 4.w,
     vertical: 16.h,

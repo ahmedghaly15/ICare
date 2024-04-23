@@ -102,6 +102,11 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
     await getIt
         .get<CacheHelper>()
         .clearPreferencesExceptOne(AppStrings.cachedOnboarding, 'bool');
+    await getIt
+        .get<CacheHelper>()
+        .clearPreferencesExceptOne(AppStrings.cachedTheme, 'int');
+    await getIt.get<CacheHelper>().clearPreferencesExceptOne(
+        '${AppStrings.cachedIsDone}${Helper.uId}', 'bool');
     await getIt.get<FirebaseAuth>().signOut();
   }
 }

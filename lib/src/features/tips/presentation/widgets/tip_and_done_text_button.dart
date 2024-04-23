@@ -1,5 +1,4 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
@@ -29,7 +28,6 @@ class TipAndDoneTextButton extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: TextButton(
             onPressed: () {
-              context.maybePop();
               context.read<TipsCubit>().emitRandomTipDialogIsClosed();
             },
             child: const Text(AppStrings.done),

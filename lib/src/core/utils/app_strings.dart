@@ -183,4 +183,6 @@ class AppStrings {
       "Help children improve their speech and language skills";
   static const String icareBotFeatureDescription =
       "Conversational AI, here to assist";
+  static const String dailyRandomTip = 'Daily Random Tip';
+  static const String cachedIsDone = 'cachedIsDone';
 }
