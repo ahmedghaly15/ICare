@@ -118,6 +118,7 @@ class SetupDIForCubits {
     // Speech Therapy feature
     getIt.registerFactory<SpeechTherapyCubit>(
       () => SpeechTherapyCubit(
+        getIt.get<GetSpeechTherapyLevelsUseCase>(),
         getIt.get<GetLevelOneTrainingDataUseCase>(),
         getIt.get<GetLevelTwoTrainingDataUseCase>(),
         getIt.get<GetAdvancedLevelTrainingDataUseCase>(),

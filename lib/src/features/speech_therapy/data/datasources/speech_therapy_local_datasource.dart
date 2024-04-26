@@ -7,8 +7,12 @@ import 'package:icare/src/features/speech_therapy/data/models/advanced_level_tra
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/speech_therapy_level.dart';
 
 abstract class SpeechTherapyLocalDatasource {
+  Future<bool> cacheSpeechTherapyLevels(List<SpeechTherapyLevel> levels);
+  String? cachedSpeechTherapyLevelsJson();
+  List<SpeechTherapyLevel> retrieveCachedSpeechTherapyLevels();
   Future<bool> cacheLevelOneTrainingData(List<LevelOneTrainingResponse> data);
   String? levelOneTrainingDataJson();
   List<LevelOneTrainingResponse> retrieveCachedLevelOneTrainingData();
@@ -27,6 +31,30 @@ abstract class SpeechTherapyLocalDatasource {
 
 class SpeechTherapyLocalDatasourceImpl implements SpeechTherapyLocalDatasource {
   const SpeechTherapyLocalDatasourceImpl();
+
+  @override
+  Future<bool> cacheSpeechTherapyLevels(List<SpeechTherapyLevel> levels) async {
+    return await getIt.get<CacheHelper>().saveData(
+          key: AppStrings.cachedSpeechTherapyLevels,
+          value: json.encode(levels.map((e) => e.toJson()).toList()),
+        );
+  }
+
+  @override
+  String? cachedSpeechTherapyLevelsJson() {
+    return getIt
+        .get<CacheHelper>()
+        .getStringData(key: AppStrings.cachedSpeechTherapyLevels);
+  }
+
+  @override
+  List<SpeechTherapyLevel> retrieveCachedSpeechTherapyLevels() {
+    final List<SpeechTherapyLevel> levels = <SpeechTherapyLevel>[];
+    for (final level in json.decode(cachedSpeechTherapyLevelsJson()!)) {
+      levels.add(SpeechTherapyLevel.fromJson(level));
+    }
+    return levels;
+  }
 
   @override
   Future<bool> cacheLevelOneTrainingData(

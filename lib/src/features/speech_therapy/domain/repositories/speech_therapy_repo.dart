@@ -7,8 +7,10 @@ import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/speech_therapy_level.dart';
 
 abstract class SpeechTherapyRepo {
+  Future<ApiResult<List<SpeechTherapyLevel>>> getSpeechTherapyLevels();
   Future<ApiResult<List<LevelOneTrainingResponse>>> getLevelOneTrainingData(
     String userId,
   );

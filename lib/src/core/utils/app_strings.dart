@@ -188,4 +188,5 @@ class AppStrings {
   static const String sureToDeleteChatHistory =
       'Are you sure you want to delete all message history with';
   static const String onlyMine = 'Only mine';
+  static const String cachedSpeechTherapyLevels = 'cachedSpeechTherapyLevels';
 }

@@ -7,8 +7,10 @@ import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/speech_therapy_level.dart';
 
 abstract class SpeechTherapyRemoteDatasource {
+  Future<List<SpeechTherapyLevel>> getSpeechTherapyLevels();
   Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(String userId);
   Future<MarkResponse> mark(MarkParams params);
   Future<ScoreResponse> score(ScoreParams params);
@@ -22,6 +24,11 @@ class SpeechTherapyRemoteDatasourceImpl
   final ApiService _apiService;
 
   const SpeechTherapyRemoteDatasourceImpl(this._apiService);
+
+  @override
+  Future<List<SpeechTherapyLevel>> getSpeechTherapyLevels() async {
+    return await _apiService.getSpeechTherapyLevels();
+  }
 
   @override
   Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(

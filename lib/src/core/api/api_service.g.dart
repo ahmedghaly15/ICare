@@ -289,6 +289,36 @@ class _ApiService implements ApiService {
   }
 
   @override
+  Future<List<SpeechTherapyLevel>> getSpeechTherapyLevels() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<SpeechTherapyLevel>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://ahmed-muqawi-speech-therapy.hf.space/levels/',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    var value = _result.data!
+        .map((dynamic i) =>
+            SpeechTherapyLevel.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
   Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(
       String userId) async {
     final _extra = <String, dynamic>{};

@@ -3,12 +3,19 @@ import 'package:icare/src/features/speech_therapy/data/models/advanced_level_tra
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/speech_therapy_level.dart';
 
 part 'speech_therapy_state.freezed.dart';
 
 @freezed
 class SpeechTherapyState<T> with _$SpeechTherapyState<T> {
   const factory SpeechTherapyState.initial() = _SpeechTherapyInitial;
+  const factory SpeechTherapyState.getSpeechTherapyLevelsLoading() =
+      GetSpeechTherapyLevelsLoading;
+  const factory SpeechTherapyState.getSpeechTherapyLevelsSuccess(
+      List<SpeechTherapyLevel> levels) = GetSpeechTherapyLevelsSuccess<T>;
+  const factory SpeechTherapyState.getSpeechTherapyLevelsError(String error) =
+      GetSpeechTherapyLevelsError<T>;
   const factory SpeechTherapyState.getLevelOneTrainingDataLoading() =
       GetLevelOneTrainingDataLoading;
   const factory SpeechTherapyState.getLevelOneTrainingDataSuccess(

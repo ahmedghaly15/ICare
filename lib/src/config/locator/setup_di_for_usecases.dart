@@ -129,6 +129,9 @@ class SetupDIForUseCases {
     );
 
     // ========== Speech Therapy feature ==========
+    getIt.registerLazySingleton<GetSpeechTherapyLevelsUseCase>(
+      () => GetSpeechTherapyLevelsUseCase(getIt.get<SpeechTherapyRepo>()),
+    );
     getIt.registerLazySingleton<GetLevelOneTrainingDataUseCase>(
       () => GetLevelOneTrainingDataUseCase(getIt.get<SpeechTherapyRepo>()),
     );

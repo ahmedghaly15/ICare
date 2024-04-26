@@ -11,6 +11,7 @@ import 'package:icare/src/features/speech_therapy/data/models/level_one_training
 import 'package:icare/src/features/speech_therapy/data/models/level_two_training_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/speech_therapy_level.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -66,6 +67,9 @@ abstract class ApiService {
     @Path('user_id') required String userId,
     @Path('bookmark_id') required String bookmarkId,
   });
+
+  @GET(EndPoints.speechTherapyLevels)
+  Future<List<SpeechTherapyLevel>> getSpeechTherapyLevels();
 
   @GET('${EndPoints.levelOneTraining}{user_id}')
   Future<List<LevelOneTrainingResponse>> getLevelOneTrainingData(

@@ -12,6 +12,7 @@ import 'package:icare/src/features/speech_therapy/data/models/mark_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
+import 'package:icare/src/features/speech_therapy/data/models/speech_therapy_level.dart';
 import 'package:icare/src/features/speech_therapy/domain/repositories/speech_therapy_repo.dart';
 
 class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
@@ -22,6 +23,27 @@ class SpeechTherapyRepoImpl implements SpeechTherapyRepo {
     this._speechTherapyRemoteDatasource,
     this._speechTherapyLocalDatasource,
   );
+
+  @override
+  Future<ApiResult<List<SpeechTherapyLevel>>> getSpeechTherapyLevels() async {
+    if (_speechTherapyLocalDatasource.cachedSpeechTherapyLevelsJson() == null) {
+      debugPrint(
+          '************ GOT NO CACHED SPEECH THERAPY LEVELS ************');
+      try {
+        final data =
+            await _speechTherapyRemoteDatasource.getSpeechTherapyLevels();
+        await _speechTherapyLocalDatasource.cacheSpeechTherapyLevels(data);
+        return ApiResult.success(data);
+      } catch (error) {
+        return ApiResult.error(ErrorHandler.handle(error));
+      }
+    } else {
+      debugPrint('************ GOT CACHED SPEECH THERAPY LEVELS ************');
+      return ApiResult.success(
+        _speechTherapyLocalDatasource.retrieveCachedSpeechTherapyLevels(),
+      );
+    }
+  }
 
   @override
   Future<ApiResult<List<LevelOneTrainingResponse>>> getLevelOneTrainingData(

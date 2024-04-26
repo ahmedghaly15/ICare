@@ -12,11 +12,13 @@ import 'package:icare/src/features/speech_therapy/data/models/score_params.dart'
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_advanced_level_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_one_training_data.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/get_level_two_training_data.dart';
+import 'package:icare/src/features/speech_therapy/domain/usecases/get_speech_therapy_levels.dart';
 import 'package:icare/src/features/speech_therapy/domain/usecases/score.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_state.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/mark_success_dialog.dart';
 
 class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
+  final GetSpeechTherapyLevelsUseCase _getSpeechTherapyLevelsUseCase;
   final GetLevelOneTrainingDataUseCase _getLevelOneTrainingDataUseCase;
   final GetLevelTwoTrainingDataUseCase _getLevelTwoTrainingDataUseCase;
   final GetAdvancedLevelTrainingDataUseCase
@@ -24,11 +26,25 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
   final ScoreUseCase _scoreUseCase;
 
   SpeechTherapyCubit(
+    this._getSpeechTherapyLevelsUseCase,
     this._getLevelOneTrainingDataUseCase,
     this._getLevelTwoTrainingDataUseCase,
     this._getAdvancedLevelTrainingDataUseCase,
     this._scoreUseCase,
   ) : super(const SpeechTherapyState.initial());
+
+  void getSpeechTherapyLevels() async {
+    emit(const SpeechTherapyState.getSpeechTherapyLevelsLoading());
+    final result = await _getSpeechTherapyLevelsUseCase.call(const NoParams());
+    result.when(
+      success: (levels) =>
+          emit(SpeechTherapyState.getSpeechTherapyLevelsSuccess(levels)),
+      error: (error) => emit(
+        SpeechTherapyState.getSpeechTherapyLevelsError(
+            error.apiErrorModel.error ?? ''),
+      ),
+    );
+  }
 
   void getLevelOneTrainingData() async {
     emit(const SpeechTherapyState.getLevelOneTrainingDataLoading());

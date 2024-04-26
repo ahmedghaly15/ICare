@@ -19,6 +19,10 @@ mixin _$SpeechTherapyState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -39,6 +43,10 @@ mixin _$SpeechTherapyState<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -59,6 +67,10 @@ mixin _$SpeechTherapyState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -80,6 +92,12 @@ mixin _$SpeechTherapyState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -106,6 +124,12 @@ mixin _$SpeechTherapyState<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -132,6 +156,12 @@ mixin _$SpeechTherapyState<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -219,6 +249,10 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -242,6 +276,10 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -265,6 +303,10 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -292,6 +334,12 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -321,6 +369,12 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -350,6 +404,12 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -382,6 +442,803 @@ class _$SpeechTherapyInitialImpl<T> implements _SpeechTherapyInitial<T> {
 
 abstract class _SpeechTherapyInitial<T> implements SpeechTherapyState<T> {
   const factory _SpeechTherapyInitial() = _$SpeechTherapyInitialImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetSpeechTherapyLevelsLoadingImplCopyWith<T, $Res> {
+  factory _$$GetSpeechTherapyLevelsLoadingImplCopyWith(
+          _$GetSpeechTherapyLevelsLoadingImpl<T> value,
+          $Res Function(_$GetSpeechTherapyLevelsLoadingImpl<T>) then) =
+      __$$GetSpeechTherapyLevelsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetSpeechTherapyLevelsLoadingImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res,
+        _$GetSpeechTherapyLevelsLoadingImpl<T>>
+    implements _$$GetSpeechTherapyLevelsLoadingImplCopyWith<T, $Res> {
+  __$$GetSpeechTherapyLevelsLoadingImplCopyWithImpl(
+      _$GetSpeechTherapyLevelsLoadingImpl<T> _value,
+      $Res Function(_$GetSpeechTherapyLevelsLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetSpeechTherapyLevelsLoadingImpl<T>
+    implements GetSpeechTherapyLevelsLoading<T> {
+  const _$GetSpeechTherapyLevelsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getSpeechTherapyLevelsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSpeechTherapyLevelsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+    required TResult Function() getLevelTwoTrainingDataLoading,
+    required TResult Function(List<LevelTwoTrainingResponse> data)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+    TResult? Function()? getLevelTwoTrainingDataLoading,
+    TResult? Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    TResult Function()? getLevelTwoTrainingDataLoading,
+    TResult Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getSpeechTherapyLevelsLoading != null) {
+      return getSpeechTherapyLevelsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+    required TResult Function(GetLevelTwoTrainingDataLoading<T> value)
+        getLevelTwoTrainingDataLoading,
+    required TResult Function(GetLevelTwoTrainingDataSuccess<T> value)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(GetLevelTwoTrainingDataError<T> value)
+        getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+    TResult? Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult? Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    TResult Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getSpeechTherapyLevelsLoading != null) {
+      return getSpeechTherapyLevelsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSpeechTherapyLevelsLoading<T>
+    implements SpeechTherapyState<T> {
+  const factory GetSpeechTherapyLevelsLoading() =
+      _$GetSpeechTherapyLevelsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetSpeechTherapyLevelsSuccessImplCopyWith<T, $Res> {
+  factory _$$GetSpeechTherapyLevelsSuccessImplCopyWith(
+          _$GetSpeechTherapyLevelsSuccessImpl<T> value,
+          $Res Function(_$GetSpeechTherapyLevelsSuccessImpl<T>) then) =
+      __$$GetSpeechTherapyLevelsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<SpeechTherapyLevel> levels});
+}
+
+/// @nodoc
+class __$$GetSpeechTherapyLevelsSuccessImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res,
+        _$GetSpeechTherapyLevelsSuccessImpl<T>>
+    implements _$$GetSpeechTherapyLevelsSuccessImplCopyWith<T, $Res> {
+  __$$GetSpeechTherapyLevelsSuccessImplCopyWithImpl(
+      _$GetSpeechTherapyLevelsSuccessImpl<T> _value,
+      $Res Function(_$GetSpeechTherapyLevelsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? levels = null,
+  }) {
+    return _then(_$GetSpeechTherapyLevelsSuccessImpl<T>(
+      null == levels
+          ? _value._levels
+          : levels // ignore: cast_nullable_to_non_nullable
+              as List<SpeechTherapyLevel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSpeechTherapyLevelsSuccessImpl<T>
+    implements GetSpeechTherapyLevelsSuccess<T> {
+  const _$GetSpeechTherapyLevelsSuccessImpl(
+      final List<SpeechTherapyLevel> levels)
+      : _levels = levels;
+
+  final List<SpeechTherapyLevel> _levels;
+  @override
+  List<SpeechTherapyLevel> get levels {
+    if (_levels is EqualUnmodifiableListView) return _levels;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_levels);
+  }
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getSpeechTherapyLevelsSuccess(levels: $levels)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSpeechTherapyLevelsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._levels, _levels));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_levels));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSpeechTherapyLevelsSuccessImplCopyWith<T,
+          _$GetSpeechTherapyLevelsSuccessImpl<T>>
+      get copyWith => __$$GetSpeechTherapyLevelsSuccessImplCopyWithImpl<T,
+          _$GetSpeechTherapyLevelsSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+    required TResult Function() getLevelTwoTrainingDataLoading,
+    required TResult Function(List<LevelTwoTrainingResponse> data)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsSuccess(levels);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+    TResult? Function()? getLevelTwoTrainingDataLoading,
+    TResult? Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsSuccess?.call(levels);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    TResult Function()? getLevelTwoTrainingDataLoading,
+    TResult Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getSpeechTherapyLevelsSuccess != null) {
+      return getSpeechTherapyLevelsSuccess(levels);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+    required TResult Function(GetLevelTwoTrainingDataLoading<T> value)
+        getLevelTwoTrainingDataLoading,
+    required TResult Function(GetLevelTwoTrainingDataSuccess<T> value)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(GetLevelTwoTrainingDataError<T> value)
+        getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+    TResult? Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult? Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    TResult Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getSpeechTherapyLevelsSuccess != null) {
+      return getSpeechTherapyLevelsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSpeechTherapyLevelsSuccess<T>
+    implements SpeechTherapyState<T> {
+  const factory GetSpeechTherapyLevelsSuccess(
+          final List<SpeechTherapyLevel> levels) =
+      _$GetSpeechTherapyLevelsSuccessImpl<T>;
+
+  List<SpeechTherapyLevel> get levels;
+  @JsonKey(ignore: true)
+  _$$GetSpeechTherapyLevelsSuccessImplCopyWith<T,
+          _$GetSpeechTherapyLevelsSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetSpeechTherapyLevelsErrorImplCopyWith<T, $Res> {
+  factory _$$GetSpeechTherapyLevelsErrorImplCopyWith(
+          _$GetSpeechTherapyLevelsErrorImpl<T> value,
+          $Res Function(_$GetSpeechTherapyLevelsErrorImpl<T>) then) =
+      __$$GetSpeechTherapyLevelsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetSpeechTherapyLevelsErrorImplCopyWithImpl<T, $Res>
+    extends _$SpeechTherapyStateCopyWithImpl<T, $Res,
+        _$GetSpeechTherapyLevelsErrorImpl<T>>
+    implements _$$GetSpeechTherapyLevelsErrorImplCopyWith<T, $Res> {
+  __$$GetSpeechTherapyLevelsErrorImplCopyWithImpl(
+      _$GetSpeechTherapyLevelsErrorImpl<T> _value,
+      $Res Function(_$GetSpeechTherapyLevelsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetSpeechTherapyLevelsErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetSpeechTherapyLevelsErrorImpl<T>
+    implements GetSpeechTherapyLevelsError<T> {
+  const _$GetSpeechTherapyLevelsErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'SpeechTherapyState<$T>.getSpeechTherapyLevelsError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetSpeechTherapyLevelsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetSpeechTherapyLevelsErrorImplCopyWith<T,
+          _$GetSpeechTherapyLevelsErrorImpl<T>>
+      get copyWith => __$$GetSpeechTherapyLevelsErrorImplCopyWithImpl<T,
+          _$GetSpeechTherapyLevelsErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
+    required TResult Function() getLevelOneTrainingDataLoading,
+    required TResult Function(List<LevelOneTrainingResponse> data)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(String error) getLevelOneTrainingDataError,
+    required TResult Function() getScoreLoading,
+    required TResult Function(ScoreResponse data) getScoreSuccess,
+    required TResult Function(String error) getScoreError,
+    required TResult Function() getLevelTwoTrainingDataLoading,
+    required TResult Function(List<LevelTwoTrainingResponse> data)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(String error) getLevelTwoTrainingDataError,
+    required TResult Function() getAdvancedLevelTrainingDataLoading,
+    required TResult Function(List<AdvancedLevelTrainingResponse> data)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(String error) getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
+    TResult? Function()? getLevelOneTrainingDataLoading,
+    TResult? Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(String error)? getLevelOneTrainingDataError,
+    TResult? Function()? getScoreLoading,
+    TResult? Function(ScoreResponse data)? getScoreSuccess,
+    TResult? Function(String error)? getScoreError,
+    TResult? Function()? getLevelTwoTrainingDataLoading,
+    TResult? Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(String error)? getLevelTwoTrainingDataError,
+    TResult? Function()? getAdvancedLevelTrainingDataLoading,
+    TResult? Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(String error)? getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
+    TResult Function()? getLevelOneTrainingDataLoading,
+    TResult Function(List<LevelOneTrainingResponse> data)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(String error)? getLevelOneTrainingDataError,
+    TResult Function()? getScoreLoading,
+    TResult Function(ScoreResponse data)? getScoreSuccess,
+    TResult Function(String error)? getScoreError,
+    TResult Function()? getLevelTwoTrainingDataLoading,
+    TResult Function(List<LevelTwoTrainingResponse> data)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(String error)? getLevelTwoTrainingDataError,
+    TResult Function()? getAdvancedLevelTrainingDataLoading,
+    TResult Function(List<AdvancedLevelTrainingResponse> data)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(String error)? getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getSpeechTherapyLevelsError != null) {
+      return getSpeechTherapyLevelsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
+    required TResult Function(GetLevelOneTrainingDataLoading<T> value)
+        getLevelOneTrainingDataLoading,
+    required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
+        getLevelOneTrainingDataSuccess,
+    required TResult Function(GetLevelOneTrainingDataError<T> value)
+        getLevelOneTrainingDataError,
+    required TResult Function(GetScoreLoading<T> value) getScoreLoading,
+    required TResult Function(GetScoreSuccess<T> value) getScoreSuccess,
+    required TResult Function(GetScoreError<T> value) getScoreError,
+    required TResult Function(GetLevelTwoTrainingDataLoading<T> value)
+        getLevelTwoTrainingDataLoading,
+    required TResult Function(GetLevelTwoTrainingDataSuccess<T> value)
+        getLevelTwoTrainingDataSuccess,
+    required TResult Function(GetLevelTwoTrainingDataError<T> value)
+        getLevelTwoTrainingDataError,
+    required TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)
+        getAdvancedLevelTrainingDataLoading,
+    required TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)
+        getAdvancedLevelTrainingDataSuccess,
+    required TResult Function(GetAdvancedLevelTrainingDataError<T> value)
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
+    TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult? Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult? Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult? Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult? Function(GetScoreError<T> value)? getScoreError,
+    TResult? Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult? Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult? Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult? Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult? Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult? Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+  }) {
+    return getSpeechTherapyLevelsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
+    TResult Function(GetLevelOneTrainingDataLoading<T> value)?
+        getLevelOneTrainingDataLoading,
+    TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
+        getLevelOneTrainingDataSuccess,
+    TResult Function(GetLevelOneTrainingDataError<T> value)?
+        getLevelOneTrainingDataError,
+    TResult Function(GetScoreLoading<T> value)? getScoreLoading,
+    TResult Function(GetScoreSuccess<T> value)? getScoreSuccess,
+    TResult Function(GetScoreError<T> value)? getScoreError,
+    TResult Function(GetLevelTwoTrainingDataLoading<T> value)?
+        getLevelTwoTrainingDataLoading,
+    TResult Function(GetLevelTwoTrainingDataSuccess<T> value)?
+        getLevelTwoTrainingDataSuccess,
+    TResult Function(GetLevelTwoTrainingDataError<T> value)?
+        getLevelTwoTrainingDataError,
+    TResult Function(GetAdvancedLevelTrainingDataLoading<T> value)?
+        getAdvancedLevelTrainingDataLoading,
+    TResult Function(GetAdvancedLevelTrainingDataSuccess<T> value)?
+        getAdvancedLevelTrainingDataSuccess,
+    TResult Function(GetAdvancedLevelTrainingDataError<T> value)?
+        getAdvancedLevelTrainingDataError,
+    required TResult orElse(),
+  }) {
+    if (getSpeechTherapyLevelsError != null) {
+      return getSpeechTherapyLevelsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetSpeechTherapyLevelsError<T> implements SpeechTherapyState<T> {
+  const factory GetSpeechTherapyLevelsError(final String error) =
+      _$GetSpeechTherapyLevelsErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetSpeechTherapyLevelsErrorImplCopyWith<T,
+          _$GetSpeechTherapyLevelsErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -428,6 +1285,10 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -451,6 +1312,10 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -474,6 +1339,10 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -501,6 +1370,12 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -530,6 +1405,12 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -559,6 +1440,12 @@ class _$GetLevelOneTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -674,6 +1561,10 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -697,6 +1588,10 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -720,6 +1615,10 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -747,6 +1646,12 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -776,6 +1681,12 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -805,6 +1716,12 @@ class _$GetLevelOneTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -919,6 +1836,10 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -942,6 +1863,10 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -965,6 +1890,10 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -992,6 +1921,12 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -1021,6 +1956,12 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1050,6 +1991,12 @@ class _$GetLevelOneTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1131,6 +2078,10 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -1154,6 +2105,10 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1177,6 +2132,10 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1204,6 +2163,12 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -1233,6 +2198,12 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1262,6 +2233,12 @@ class _$GetScoreLoadingImpl<T> implements GetScoreLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1362,6 +2339,10 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -1385,6 +2366,10 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1408,6 +2393,10 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1435,6 +2424,12 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -1464,6 +2459,12 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1493,6 +2494,12 @@ class _$GetScoreSuccessImpl<T> implements GetScoreSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1599,6 +2606,10 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -1622,6 +2633,10 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1645,6 +2660,10 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1672,6 +2691,12 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -1701,6 +2726,12 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1730,6 +2761,12 @@ class _$GetScoreErrorImpl<T> implements GetScoreError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1813,6 +2850,10 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -1836,6 +2877,10 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1859,6 +2904,10 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -1886,6 +2935,12 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -1915,6 +2970,12 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -1944,6 +3005,12 @@ class _$GetLevelTwoTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2059,6 +3126,10 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -2082,6 +3153,10 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2105,6 +3180,10 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2132,6 +3211,12 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -2161,6 +3246,12 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2190,6 +3281,12 @@ class _$GetLevelTwoTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2304,6 +3401,10 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -2327,6 +3428,10 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2350,6 +3455,10 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2377,6 +3486,12 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -2406,6 +3521,12 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2435,6 +3556,12 @@ class _$GetLevelTwoTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2521,6 +3648,10 @@ class _$GetAdvancedLevelTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -2544,6 +3675,10 @@ class _$GetAdvancedLevelTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2567,6 +3702,10 @@ class _$GetAdvancedLevelTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2594,6 +3733,12 @@ class _$GetAdvancedLevelTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -2623,6 +3768,12 @@ class _$GetAdvancedLevelTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2652,6 +3803,12 @@ class _$GetAdvancedLevelTrainingDataLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2767,6 +3924,10 @@ class _$GetAdvancedLevelTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -2790,6 +3951,10 @@ class _$GetAdvancedLevelTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2813,6 +3978,10 @@ class _$GetAdvancedLevelTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -2840,6 +4009,12 @@ class _$GetAdvancedLevelTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -2869,6 +4044,12 @@ class _$GetAdvancedLevelTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -2898,6 +4079,12 @@ class _$GetAdvancedLevelTrainingDataSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -3012,6 +4199,10 @@ class _$GetAdvancedLevelTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() getSpeechTherapyLevelsLoading,
+    required TResult Function(List<SpeechTherapyLevel> levels)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(String error) getSpeechTherapyLevelsError,
     required TResult Function() getLevelOneTrainingDataLoading,
     required TResult Function(List<LevelOneTrainingResponse> data)
         getLevelOneTrainingDataSuccess,
@@ -3035,6 +4226,10 @@ class _$GetAdvancedLevelTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? getSpeechTherapyLevelsLoading,
+    TResult? Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(String error)? getSpeechTherapyLevelsError,
     TResult? Function()? getLevelOneTrainingDataLoading,
     TResult? Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -3058,6 +4253,10 @@ class _$GetAdvancedLevelTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? getSpeechTherapyLevelsLoading,
+    TResult Function(List<SpeechTherapyLevel> levels)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(String error)? getSpeechTherapyLevelsError,
     TResult Function()? getLevelOneTrainingDataLoading,
     TResult Function(List<LevelOneTrainingResponse> data)?
         getLevelOneTrainingDataSuccess,
@@ -3085,6 +4284,12 @@ class _$GetAdvancedLevelTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SpeechTherapyInitial<T> value) initial,
+    required TResult Function(GetSpeechTherapyLevelsLoading<T> value)
+        getSpeechTherapyLevelsLoading,
+    required TResult Function(GetSpeechTherapyLevelsSuccess<T> value)
+        getSpeechTherapyLevelsSuccess,
+    required TResult Function(GetSpeechTherapyLevelsError<T> value)
+        getSpeechTherapyLevelsError,
     required TResult Function(GetLevelOneTrainingDataLoading<T> value)
         getLevelOneTrainingDataLoading,
     required TResult Function(GetLevelOneTrainingDataSuccess<T> value)
@@ -3114,6 +4319,12 @@ class _$GetAdvancedLevelTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult? Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult? Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult? Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult? Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult? Function(GetLevelOneTrainingDataSuccess<T> value)?
@@ -3143,6 +4354,12 @@ class _$GetAdvancedLevelTrainingDataErrorImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SpeechTherapyInitial<T> value)? initial,
+    TResult Function(GetSpeechTherapyLevelsLoading<T> value)?
+        getSpeechTherapyLevelsLoading,
+    TResult Function(GetSpeechTherapyLevelsSuccess<T> value)?
+        getSpeechTherapyLevelsSuccess,
+    TResult Function(GetSpeechTherapyLevelsError<T> value)?
+        getSpeechTherapyLevelsError,
     TResult Function(GetLevelOneTrainingDataLoading<T> value)?
         getLevelOneTrainingDataLoading,
     TResult Function(GetLevelOneTrainingDataSuccess<T> value)?

@@ -15,6 +15,7 @@ class EndPoints {
   static const String deleteBookmark = '${bookmarks}delete/';
   static const String speechTherapyBaseUrl =
       'https://ahmed-muqawi-speech-therapy.hf.space/';
+  static const String speechTherapyLevels = '${speechTherapyBaseUrl}levels/';
   static const String levelOneTraining =
       '${speechTherapyBaseUrl}level1/training/';
   static const String marking = '${speechTherapyBaseUrl}marking/';
