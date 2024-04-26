@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:icare/src/config/themes/themes_cubit.dart';
+import 'package:icare/src/features/chat/domain/usecases/also_delete_chat_for_other_user.dart';
 import 'package:icare/src/features/chat/domain/usecases/delete_chat.dart';
 import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_password.dart';

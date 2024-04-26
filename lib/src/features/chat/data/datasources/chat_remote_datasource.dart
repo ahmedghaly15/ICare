@@ -14,6 +14,7 @@ abstract class ChatRemoteDatasource {
   Future<void> sendMessage(SendMessageParams params);
   Future<TaskSnapshot> uploadMessageImage(File? messageImage);
   Future<List<ICareUser>> getChats();
+  Future<void> alsoDeleteChatForOtherUser(String receiverId);
   Future<void> deleteChat(String receiverId);
 }
 
@@ -106,29 +107,34 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
   }
 
   @override
-  Future<void> deleteChat(String receiverId) async {
+  Future<void> alsoDeleteChatForOtherUser(String receiverId) async {
     await _deletingCurrentUserMessages(receiverId);
     await _deletingReceiverMessages(receiverId);
   }
 
+  @override
+  Future<void> deleteChat(String receiverId) async {
+    await _deletingCurrentUserMessages(receiverId);
+  }
+
   Future<void> _deletingReceiverMessages(String receiverId) async {
-    final receiverMessages =
-        await _accessMessagesCollection(Helper.uId!, senderId: receiverId)
-            .get();
-    await Future.forEach(
-      receiverMessages.docs,
-      (doc) async => await doc.reference.delete(),
-    );
+    // final receiverMessages =
+    //     await _accessMessagesCollection(Helper.uId!, senderId: receiverId)
+    //         .get();
+    // await Future.forEach(
+    //   receiverMessages.docs,
+    //   (doc) async => await doc.reference.delete(),
+    // );
     await _accessChatsCollection(senderId: receiverId).doc(Helper.uId).delete();
   }
 
   Future<void> _deletingCurrentUserMessages(String receiverId) async {
-    final currentUserMessages =
-        await _accessMessagesCollection(receiverId).get();
-    await Future.forEach(
-      currentUserMessages.docs,
-      (doc) async => await doc.reference.delete(),
-    );
+    // final currentUserMessages =
+    //     await _accessMessagesCollection(receiverId).get();
+    // await Future.forEach(
+    //   currentUserMessages.docs,
+    //   (doc) async => await doc.reference.delete(),
+    // );
     await _accessChatsCollection().doc(receiverId).delete();
   }
 }

@@ -13,6 +13,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/chat/data/models/send_message_params.dart';
+import 'package:icare/src/features/chat/domain/usecases/also_delete_chat_for_other_user.dart';
 import 'package:icare/src/features/chat/domain/usecases/delete_chat.dart';
 import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
 import 'package:icare/src/features/chat/domain/usecases/send_message.dart';
@@ -25,12 +26,14 @@ class ChatCubit extends Cubit<ChatState> {
   final SendMessageUseCase sendMessageUseCase;
   final UploadMessageImageUseCase uploadMessageImageUseCase;
   final GetChatsUseCase getChatsUseCase;
+  final AlsoDeleteChatForOtherUserUseCase alsoDeleteChatForOtherUserUseCase;
   final DeleteChatUseCase deleteChatUseCase;
 
   ChatCubit({
     required this.sendMessageUseCase,
     required this.uploadMessageImageUseCase,
     required this.getChatsUseCase,
+    required this.alsoDeleteChatForOtherUserUseCase,
     required this.deleteChatUseCase,
   }) : super(const ChatState.initial()) {
     messageController = TextEditingController();
@@ -171,6 +174,15 @@ class ChatCubit extends Cubit<ChatState> {
     }).catchError((error) {
       emit(ChatState.uploadMessageImageError(error.toString()));
     });
+  }
+
+  void alsoDeleteChatForOtherUser(String receiverId) async {
+    emit(const ChatState.deleteChatLoading());
+    final result = await alsoDeleteChatForOtherUserUseCase(receiverId);
+    result.when(
+      success: (_) => emit(const ChatState.deleteChatSuccess()),
+      error: (error) => emit(ChatState.deleteChatError(error.failureMsg ?? '')),
+    );
   }
 
   void deleteChat(String receiverId) async {
