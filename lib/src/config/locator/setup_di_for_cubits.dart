@@ -183,5 +183,10 @@ class SetupDIForCubits {
         getIt.get<UpdatePasswordUseCase>(),
       ),
     );
+
+    // ========== Home feature ==========
+    getIt.registerFactory<DevelopersCubit>(
+      () => DevelopersCubit(getIt.get<GetDevelopersUseCase>()),
+    );
   }
 }

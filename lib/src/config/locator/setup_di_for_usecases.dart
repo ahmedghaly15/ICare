@@ -227,5 +227,10 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<UpdatePasswordUseCase>(
       () => UpdatePasswordUseCase(getIt.get<EditProfileRepo>()),
     );
+
+    // ========== Home feature ==========
+    getIt.registerLazySingleton<GetDevelopersUseCase>(
+      () => GetDevelopersUseCase(getIt.get<HomeRepo>()),
+    );
   }
 }

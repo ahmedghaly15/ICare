@@ -108,10 +108,18 @@ class SetupDIForRepos {
     getIt.registerLazySingleton<SearchRepo>(
       () => SearchRepo(getIt.get<SearchDatasource>()),
     );
-    
+
     // ========== Edit Profile feature ==========
     getIt.registerLazySingleton<EditProfileRepo>(
       () => EditProfileRepo(getIt.get<EditProfileDatasource>()),
+    );
+
+    // ========== Home feature ==========
+    getIt.registerLazySingleton<HomeRepo>(
+      () => HomeRepo(
+        getIt.get<HomeRemoteDatasource>(),
+        getIt.get<HomeLocalDatasource>(),
+      ),
     );
   }
 }

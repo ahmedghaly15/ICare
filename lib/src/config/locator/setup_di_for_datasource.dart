@@ -113,5 +113,13 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<EditProfileDatasource>(
       () => const EditProfileDatasourceImpl(),
     );
+
+    // ========== Home feature ==========
+    getIt.registerLazySingleton<HomeRemoteDatasource>(
+      () => const HomeRemoteDatasourceImpl(),
+    );
+    getIt.registerLazySingleton<HomeLocalDatasource>(
+      () => const HomeLocalDatasourceImpl(),
+    );
   }
 }
