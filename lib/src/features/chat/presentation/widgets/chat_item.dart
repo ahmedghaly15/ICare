@@ -7,9 +7,11 @@ import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_delete_pop_up_menu_button.dart';
 import 'package:icare/src/core/widgets/custom_divider.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/user_item.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
+import 'package:icare/src/features/chat/presentation/widgets/delete_chat_dialog.dart';
 
 class ChatItem extends StatelessWidget {
   const ChatItem({
@@ -46,7 +48,10 @@ class ChatItem extends StatelessWidget {
                 },
                 child: CustomDeletePopupMenuButton(
                   deleteOnPressed: () {
-                    context.read<ChatCubit>().deleteChat(user.uId!);
+                    ShowICareDialog.show(
+                      context: context,
+                      child: DeleteChatDialog(receiver: user),
+                    );
                   },
                 ),
               ),
