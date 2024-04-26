@@ -106,6 +106,12 @@ abstract class _$AppRouter extends RootStackRouter {
         )),
       );
     },
+    DevelopersRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const DevelopersView()),
+      );
+    },
     EditProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -586,6 +592,20 @@ class CommentsRouteArgs {
   String toString() {
     return 'CommentsRouteArgs{key: $key, tinyTaleId: $tinyTaleId}';
   }
+}
+
+/// generated route for
+/// [DevelopersView]
+class DevelopersRoute extends PageRouteInfo<void> {
+  const DevelopersRoute({List<PageRouteInfo>? children})
+      : super(
+          DevelopersRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DevelopersRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

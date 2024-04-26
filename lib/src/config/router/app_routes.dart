@@ -52,7 +52,10 @@ List<AutoRoute> get appRoutes {
     ),
     _buildCustomRoute(page: BabyCryPredictorRoute.page),
     _buildCustomRoute(page: ICareBotRoute.page),
-    _buildCustomRoute(page: BookmarksRoute.page),
+    _buildCustomRoute(
+      page: BookmarksRoute.page,
+      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+    ),
     _buildCustomRoute(
       page: NewTinyTaleRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
@@ -61,15 +64,27 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(page: CommentsRoute.page),
     _buildCustomRoute(page: CommentRepliesRoute.page),
     _buildCustomRoute(page: PeopleWhoLikedRoute.page),
-    _buildCustomRoute(page: SearchUsersRoute.page),
-    _buildCustomRoute(page: BookmarkedTinyTalesRoute.page),
+    _buildCustomRoute(
+      page: SearchUsersRoute.page,
+      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+    ),
+    _buildCustomRoute(
+      page: BookmarkedTinyTalesRoute.page,
+      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+    ),
     _buildCustomRoute(
       page: ChatDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
       durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
     ),
-    _buildCustomRoute(page: ChatsRoute.page),
-    _buildCustomRoute(page: ProfileRoute.page),
+    _buildCustomRoute(
+      page: ChatsRoute.page,
+      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+    ),
+    _buildCustomRoute(
+      page: ProfileRoute.page,
+      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+    ),
     _buildCustomRoute(page: EditProfileRoute.page),
     _buildCustomRoute(page: UserProfileRoute.page),
     _buildCustomRoute(page: FollowersRoute.page),
@@ -95,6 +110,10 @@ List<AutoRoute> get appRoutes {
     ),
     _buildCustomRoute(page: AdvancedLevelTrainingRoute.page),
     _buildCustomRoute(page: AdvancedLevelScoreRoute.page),
+    _buildCustomRoute(
+      page: DevelopersRoute.page,
+      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+    ),
   ];
 }
 

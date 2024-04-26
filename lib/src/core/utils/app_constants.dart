@@ -14,7 +14,13 @@ class AppConstants {
     Animation<double>,
     Animation<double>,
     Widget,
-  )? get transitionsBuilder => TransitionsBuilders.slideLeftWithFade;
+  )? get transitionsBuilder => TransitionsBuilders.slideLeft;
+  static Widget Function(
+    BuildContext,
+    Animation<double>,
+    Animation<double>,
+    Widget,
+  )? get drawerItemTransitionsBuilder => TransitionsBuilders.slideRight;
   static const int transitionDuration = 400;
   static const int slideTopTransitionDuration = 800;
   static const int slideBottomTransitionDuration = 600;

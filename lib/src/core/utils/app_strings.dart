@@ -189,4 +189,6 @@ class AppStrings {
       'Are you sure you want to delete all message history with';
   static const String onlyMine = 'Only mine';
   static const String cachedSpeechTherapyLevels = 'cachedSpeechTherapyLevels';
+  static const String developersCollection = 'Developers Collection';
+  static const String cachedDevelopers = 'cachedDevelopers';
 }

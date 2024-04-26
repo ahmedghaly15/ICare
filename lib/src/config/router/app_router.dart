@@ -20,6 +20,7 @@ import 'package:icare/src/features/disease_details/presentation/views/medical_in
 import 'package:icare/src/features/entry/presentation/views/entry_view.dart';
 import 'package:icare/src/features/following_and_followers/presentation/views/followers_view.dart';
 import 'package:icare/src/features/following_and_followers/presentation/views/following_view.dart';
+import 'package:icare/src/features/home/presentation/views/developers_view.dart';
 import 'package:icare/src/features/home/presentation/views/home_view.dart';
 import 'package:icare/src/features/icare_bot/presentation/views/bookmarks_view.dart';
 import 'package:icare/src/features/icare_bot/presentation/views/icare_bot_view.dart';
