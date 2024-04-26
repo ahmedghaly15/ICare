@@ -191,4 +191,5 @@ class AppStrings {
   static const String cachedSpeechTherapyLevels = 'cachedSpeechTherapyLevels';
   static const String developersCollection = 'Developers Collection';
   static const String cachedDevelopers = 'cachedDevelopers';
+  static const String developers = 'Developers';
 }

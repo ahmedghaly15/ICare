@@ -46,7 +46,7 @@ mixin _$DevelopersState<T> {
     required TResult Function(_DevelopersInitial<T> value) initial,
     required TResult Function(GetDevelopersLoading<T> value)
         getDevelopersLoading,
-    required TResult Function(GetDevelopersSucces<T> value)
+    required TResult Function(GetDevelopersSuccess<T> value)
         getDevelopersSuccess,
     required TResult Function(GetDevelopersError<T> value) getDevelopersError,
   }) =>
@@ -55,7 +55,7 @@ mixin _$DevelopersState<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DevelopersInitial<T> value)? initial,
     TResult? Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult? Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult? Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult? Function(GetDevelopersError<T> value)? getDevelopersError,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ mixin _$DevelopersState<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DevelopersInitial<T> value)? initial,
     TResult Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult Function(GetDevelopersError<T> value)? getDevelopersError,
     required TResult orElse(),
   }) =>
@@ -167,7 +167,7 @@ class _$DevelopersInitialImpl<T> implements _DevelopersInitial<T> {
     required TResult Function(_DevelopersInitial<T> value) initial,
     required TResult Function(GetDevelopersLoading<T> value)
         getDevelopersLoading,
-    required TResult Function(GetDevelopersSucces<T> value)
+    required TResult Function(GetDevelopersSuccess<T> value)
         getDevelopersSuccess,
     required TResult Function(GetDevelopersError<T> value) getDevelopersError,
   }) {
@@ -179,7 +179,7 @@ class _$DevelopersInitialImpl<T> implements _DevelopersInitial<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DevelopersInitial<T> value)? initial,
     TResult? Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult? Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult? Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult? Function(GetDevelopersError<T> value)? getDevelopersError,
   }) {
     return initial?.call(this);
@@ -190,7 +190,7 @@ class _$DevelopersInitialImpl<T> implements _DevelopersInitial<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DevelopersInitial<T> value)? initial,
     TResult Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult Function(GetDevelopersError<T> value)? getDevelopersError,
     required TResult orElse(),
   }) {
@@ -286,7 +286,7 @@ class _$GetDevelopersLoadingImpl<T> implements GetDevelopersLoading<T> {
     required TResult Function(_DevelopersInitial<T> value) initial,
     required TResult Function(GetDevelopersLoading<T> value)
         getDevelopersLoading,
-    required TResult Function(GetDevelopersSucces<T> value)
+    required TResult Function(GetDevelopersSuccess<T> value)
         getDevelopersSuccess,
     required TResult Function(GetDevelopersError<T> value) getDevelopersError,
   }) {
@@ -298,7 +298,7 @@ class _$GetDevelopersLoadingImpl<T> implements GetDevelopersLoading<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DevelopersInitial<T> value)? initial,
     TResult? Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult? Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult? Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult? Function(GetDevelopersError<T> value)? getDevelopersError,
   }) {
     return getDevelopersLoading?.call(this);
@@ -309,7 +309,7 @@ class _$GetDevelopersLoadingImpl<T> implements GetDevelopersLoading<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DevelopersInitial<T> value)? initial,
     TResult Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult Function(GetDevelopersError<T> value)? getDevelopersError,
     required TResult orElse(),
   }) {
@@ -357,7 +357,7 @@ class __$$GetDevelopersSuccesImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSucces<T> {
+class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSuccess<T> {
   const _$GetDevelopersSuccesImpl(final List<Developer> developers)
       : _developers = developers;
 
@@ -437,7 +437,7 @@ class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSucces<T> {
     required TResult Function(_DevelopersInitial<T> value) initial,
     required TResult Function(GetDevelopersLoading<T> value)
         getDevelopersLoading,
-    required TResult Function(GetDevelopersSucces<T> value)
+    required TResult Function(GetDevelopersSuccess<T> value)
         getDevelopersSuccess,
     required TResult Function(GetDevelopersError<T> value) getDevelopersError,
   }) {
@@ -449,7 +449,7 @@ class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSucces<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DevelopersInitial<T> value)? initial,
     TResult? Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult? Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult? Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult? Function(GetDevelopersError<T> value)? getDevelopersError,
   }) {
     return getDevelopersSuccess?.call(this);
@@ -460,7 +460,7 @@ class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSucces<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DevelopersInitial<T> value)? initial,
     TResult Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult Function(GetDevelopersError<T> value)? getDevelopersError,
     required TResult orElse(),
   }) {
@@ -471,8 +471,8 @@ class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSucces<T> {
   }
 }
 
-abstract class GetDevelopersSucces<T> implements DevelopersState<T> {
-  const factory GetDevelopersSucces(final List<Developer> developers) =
+abstract class GetDevelopersSuccess<T> implements DevelopersState<T> {
+  const factory GetDevelopersSuccess(final List<Developer> developers) =
       _$GetDevelopersSuccesImpl<T>;
 
   List<Developer> get developers;
@@ -586,7 +586,7 @@ class _$GetDevelopersErrorImpl<T> implements GetDevelopersError<T> {
     required TResult Function(_DevelopersInitial<T> value) initial,
     required TResult Function(GetDevelopersLoading<T> value)
         getDevelopersLoading,
-    required TResult Function(GetDevelopersSucces<T> value)
+    required TResult Function(GetDevelopersSuccess<T> value)
         getDevelopersSuccess,
     required TResult Function(GetDevelopersError<T> value) getDevelopersError,
   }) {
@@ -598,7 +598,7 @@ class _$GetDevelopersErrorImpl<T> implements GetDevelopersError<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_DevelopersInitial<T> value)? initial,
     TResult? Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult? Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult? Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult? Function(GetDevelopersError<T> value)? getDevelopersError,
   }) {
     return getDevelopersError?.call(this);
@@ -609,7 +609,7 @@ class _$GetDevelopersErrorImpl<T> implements GetDevelopersError<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DevelopersInitial<T> value)? initial,
     TResult Function(GetDevelopersLoading<T> value)? getDevelopersLoading,
-    TResult Function(GetDevelopersSucces<T> value)? getDevelopersSuccess,
+    TResult Function(GetDevelopersSuccess<T> value)? getDevelopersSuccess,
     TResult Function(GetDevelopersError<T> value)? getDevelopersError,
     required TResult orElse(),
   }) {

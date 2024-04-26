@@ -62,13 +62,15 @@ class AppConstants {
     AppStrings.chats,
     AppStrings.search,
     AppStrings.icareBotBookmarks,
+    AppStrings.developers,
   ];
-  static const List<IconData> drawerItemsSvgs = <IconData>[
+  static const List<IconData> drawerItemsIcons = <IconData>[
     Icons.person,
     Icons.bookmark,
     Icons.forum,
     Icons.search,
     Icons.bookmark,
+    Icons.person,
   ];
   static EdgeInsets profileTabsPadding = EdgeInsets.symmetric(
     vertical: 16.h,

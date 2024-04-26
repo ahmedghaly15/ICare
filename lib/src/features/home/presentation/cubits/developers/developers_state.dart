@@ -8,7 +8,7 @@ class DevelopersState<T> with _$DevelopersState<T> {
   const factory DevelopersState.initial() = _DevelopersInitial;
   const factory DevelopersState.getDevelopersLoading() = GetDevelopersLoading;
   const factory DevelopersState.getDevelopersSuccess(
-      List<Developer> developers) = GetDevelopersSucces<T>;
+      List<Developer> developers) = GetDevelopersSuccess<T>;
   const factory DevelopersState.getDevelopersError(String error) =
       GetDevelopersError<T>;
 }

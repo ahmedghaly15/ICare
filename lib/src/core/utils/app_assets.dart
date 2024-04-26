@@ -3,7 +3,7 @@ class AppAssets {
 
   /// Assets for AppIcon
   /// assets/app_icon.png
-  static const String appIcon = "assets/app_icon.png";
+  static const String AppIcon = "assets/app_icon.png";
 
   /// Assets for fontsInterInterBold
   /// assets/fonts/inter/Inter-Bold.ttf
@@ -151,6 +151,10 @@ class AppAssets {
   static const String svgsBlackCommunityIcon =
       "assets/svgs/black_community_icon.svg";
 
+  /// Assets for svgsBlackGithubIcon
+  /// assets/svgs/black_github_icon.svg
+  static const String svgsBlackGithubIcon = "assets/svgs/black_github_icon.svg";
+
   /// Assets for svgsBlackHeartIcon
   /// assets/svgs/black_heart_icon.svg
   static const String svgsBlackHeartIcon = "assets/svgs/black_heart_icon.svg";
@@ -158,6 +162,11 @@ class AppAssets {
   /// Assets for svgsBlackHomeIcon
   /// assets/svgs/black_home_icon.svg
   static const String svgsBlackHomeIcon = "assets/svgs/black_home_icon.svg";
+
+  /// Assets for svgsBlackLinkedinIcon
+  /// assets/svgs/black_linkedin_icon.svg
+  static const String svgsBlackLinkedinIcon =
+      "assets/svgs/black_linkedin_icon.svg";
 
   /// Assets for svgsBlackMedicalIcon
   /// assets/svgs/black_medical_icon.svg
@@ -292,9 +301,18 @@ class AppAssets {
   static const String svgsWhiteCommunityIcon =
       "assets/svgs/white_community_icon.svg";
 
+  /// Assets for svgsWhiteGithubIcon
+  /// assets/svgs/white_github_icon.svg
+  static const String svgsWhiteGithubIcon = "assets/svgs/white_github_icon.svg";
+
   /// Assets for svgsWhiteHomeIcon
   /// assets/svgs/white_home_icon.svg
   static const String svgsWhiteHomeIcon = "assets/svgs/white_home_icon.svg";
+
+  /// Assets for svgsWhiteLinkedinIcon
+  /// assets/svgs/white_linkedin_icon.svg
+  static const String svgsWhiteLinkedinIcon =
+      "assets/svgs/white_linkedin_icon.svg";
 
   /// Assets for svgsWhiteMedicalIcon
   /// assets/svgs/white_medical_icon.svg

@@ -23,7 +23,7 @@ class DrawerItems extends StatelessWidget {
           onPressed: () {
             _handleDrawerItemsOnPressed(index, context);
           },
-          icon: AppConstants.drawerItemsSvgs[index],
+          icon: AppConstants.drawerItemsIcons[index],
           title: AppConstants.drawerItemsTitles[index],
         ),
         growable: false,
@@ -51,6 +51,9 @@ class DrawerItems extends StatelessWidget {
     } else if (AppConstants.drawerItemsTitles[index] == AppStrings.profile) {
       Navigator.pop(context);
       context.pushRoute(const ProfileRoute());
+    } else if (AppConstants.drawerItemsTitles[index] == AppStrings.developers) {
+      Navigator.pop(context);
+      context.pushRoute(const DevelopersRoute());
     }
   }
 }
