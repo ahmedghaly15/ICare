@@ -6,7 +6,7 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/widgets/custom_arrow_back_button.dart';
+import 'package:icare/src/core/widgets/custom_circular_arrow_button.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/forgot_password/forgot_password_form.dart';
@@ -41,7 +41,7 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
                       margin: EdgeInsets.only(
                         top: AppConstants.authTopMargin.h,
                       ),
-                      child: const CustomArrowBackButton(),
+                      child: const CustomCircularArrowButton(),
                     ),
                     const Spacer(),
                     Text(

@@ -7,7 +7,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/core/widgets/custom_arrow_back_button.dart';
+import 'package:icare/src/core/widgets/custom_circular_arrow_button.dart';
 
 class CustomAuthAppBar extends StatelessWidget {
   const CustomAuthAppBar({super.key});
@@ -19,7 +19,7 @@ class CustomAuthAppBar extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const CustomArrowBackButton(),
+          const CustomCircularArrowButton(),
           const Spacer(),
           Column(
             children: <Widget>[
