@@ -135,4 +135,5 @@ class AppConstants {
     AppAssets.imagesSpeechTherapyFeature,
     AppAssets.imagesIcareBotFeature,
   ];
+  static const double outlinedButtonBorderRadiusVal = 16.0;
 }

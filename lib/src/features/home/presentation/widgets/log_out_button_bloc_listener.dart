@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/router/app_router.dart';
+import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
@@ -36,7 +37,8 @@ class LogoutButtonBlocListener extends StatelessWidget {
         onPressed: () => context.read<UserCubit>().signOut(),
         text: AppStrings.logOut,
         hasShadow: false,
-        borderRadius: 16,
+        borderRadius: AppConstants.outlinedButtonBorderRadiusVal,
+        fontSize: 16,
       ),
     );
   }

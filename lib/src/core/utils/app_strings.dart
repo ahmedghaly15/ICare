@@ -185,4 +185,7 @@ class AppStrings {
       "Conversational AI, here to assist";
   static const String dailyRandomTip = 'Daily Random Tip';
   static const String cachedIsDone = 'cachedIsDone';
+  static const String sureToDeleteChatHistory =
+      'Are you sure you want to delete all message history with';
+  static const String onlyMine = 'Only mine';
 }

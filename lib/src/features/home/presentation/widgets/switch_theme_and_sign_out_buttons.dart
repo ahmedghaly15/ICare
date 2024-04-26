@@ -6,6 +6,7 @@ import 'package:icare/src/config/themes/themes_cubit.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/home/presentation/widgets/log_out_dialog.dart';
 
 class SwitchThemeAndSignOutButtons extends StatelessWidget {
@@ -15,12 +16,15 @@ class SwitchThemeAndSignOutButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        MySizedBox.height10,
         const Spacer(),
         ListTile(
           contentPadding: EdgeInsets.zero,
           leading: Text(
             AppStrings.darkMode,
-            style: AppTextStyles.textStyle13Bold,
+            style: AppTextStyles.textStyle13Bold.copyWith(
+              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+            ),
           ),
           trailing: Switch(
             value: isDarkModeActive(context) ? true : false,
