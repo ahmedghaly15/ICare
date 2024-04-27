@@ -39,7 +39,9 @@ class CommentItemContent extends StatelessWidget {
         children: <Widget>[
           Text(
             comment.user!.name!,
-            style: AppTextStyles.textStyle15Bold,
+            style: AppTextStyles.textStyle15Bold.copyWith(
+              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+            ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -47,7 +49,9 @@ class CommentItemContent extends StatelessWidget {
             MySizedBox.height7,
             Linkify(
               text: comment.commentData!.commentText!,
-              style: AppTextStyles.textStyle14Regular,
+              style: AppTextStyles.textStyle13Regular.copyWith(
+                color: isDarkModeActive(context) ? Colors.white : Colors.black,
+              ),
               onOpen: (link) => openUrl(link),
             ),
           ],
