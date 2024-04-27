@@ -4,7 +4,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/gradient_colorful_container.dart';
-import 'package:icare/src/features/speech_therapy/presentation/widgets/levels_list.dart';
+import 'package:icare/src/features/speech_therapy/presentation/widgets/levels_list_view_bloc_builder.dart';
 
 @RoutePage()
 class SpeechTherapyView extends StatelessWidget {
@@ -21,8 +21,9 @@ class SpeechTherapyView extends StatelessWidget {
               sliver: const CustomSliverAppBar(title: AppStrings.speechTherapy),
             ),
             const SliverFillRemaining(
-              hasScrollBody: false,
-              child: GradientColorfulContainer(child: LevelsList()),
+              child: GradientColorfulContainer(
+                child: LevelsListViewBlocBuilder(),
+              ),
             ),
           ],
         ),

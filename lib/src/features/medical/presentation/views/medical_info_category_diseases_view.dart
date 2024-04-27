@@ -23,26 +23,28 @@ class MedicalInfoCategoryDiseasesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(AppConstants.padding25.h),
+      body: SafeArea(
         child: CustomScrollView(
           physics: AppConstants.scrollPhysics,
           slivers: <Widget>[
             CustomSliverAppBar(title: diseaseType),
-            CustomSliverGrid(
-              delegate: SliverChildBuilderDelegate(
-                (_, index) => ZoomIn(
-                  child: DiseaseItem(
-                    diseaseData: diseases[index],
-                    onPressed: () => context.pushRoute(
-                      MedicalInfoDiseaseDetailsRoute(
-                        diseaseData: diseases[index],
-                        diseaseType: diseaseType,
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              sliver: CustomSliverGrid(
+                delegate: SliverChildBuilderDelegate(
+                  (_, index) => ZoomIn(
+                    child: DiseaseItem(
+                      diseaseData: diseases[index],
+                      onPressed: () => context.pushRoute(
+                        MedicalInfoDiseaseDetailsRoute(
+                          diseaseData: diseases[index],
+                          diseaseType: diseaseType,
+                        ),
                       ),
                     ),
                   ),
+                  childCount: diseases.length,
                 ),
-                childCount: diseases.length,
               ),
             ),
           ],
