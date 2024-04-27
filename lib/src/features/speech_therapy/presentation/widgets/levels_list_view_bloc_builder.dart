@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,11 +24,9 @@ class LevelsListViewBlocBuilder extends StatelessWidget {
           return ListView.builder(
             padding: EdgeInsets.zero,
             itemBuilder: (_, index) {
-              return JelloIn(
-                child: SpeechTherapyLevelItem(
-                  onTap: () => moveToLevelDetails(state.levels[index], context),
-                  level: state.levels[index],
-                ),
+              return SpeechTherapyLevelItem(
+                onTap: () => moveToLevelDetails(state.levels[index], context),
+                level: state.levels[index],
               );
             },
             itemCount: state.levels.length,

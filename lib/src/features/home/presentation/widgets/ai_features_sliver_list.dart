@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/config/router/app_router.dart';
@@ -9,6 +10,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 
 class AIFeaturesSliverList extends StatelessWidget {
   const AIFeaturesSliverList({super.key});
@@ -95,6 +97,7 @@ class AIFeaturesSliverList extends StatelessWidget {
     if (featureTitle == AppStrings.cryTranslation) {
       context.pushRoute(const BabyCryPredictorRoute());
     } else if (featureTitle == AppStrings.speechTherapy) {
+      context.read<SpeechTherapyCubit>().getSpeechTherapyLevels();
       context.pushRoute(const SpeechTherapyRoute());
     } else if (featureTitle == AppStrings.icareBot) {
       context.pushRoute(const ICareBotRoute());
