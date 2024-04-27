@@ -9,7 +9,7 @@ class CustomCircularArrowButton extends StatelessWidget {
   const CustomCircularArrowButton({
     super.key,
     this.icon = Icons.arrow_back_ios_new,
-    this.size = 16,
+    this.size = 24,
     this.onPressed,
   });
 

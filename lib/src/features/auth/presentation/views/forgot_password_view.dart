@@ -31,7 +31,7 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
             const SliverToBoxAdapter(
               child: Align(
                 alignment: AlignmentDirectional.centerStart,
-                child: CustomCircularArrowButton(),
+                child: CustomCircularArrowButton(size: 16),
               ),
             ),
             SliverPadding(

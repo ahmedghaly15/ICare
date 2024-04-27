@@ -45,11 +45,10 @@ class DiseaseImage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: SizeConfig.height * 0.03,
-            left: 10.w,
+            top: SizeConfig.height * 0.04,
+            // left: 10.w,
             child: const CustomCircularArrowButton(
               icon: Icons.keyboard_arrow_down_outlined,
-              size: 24,
             ),
           ),
         ],
