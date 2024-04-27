@@ -24,6 +24,10 @@ class GoogleBlocConsumer extends StatelessWidget {
           state is SignInWithGoogleError,
       listener: (context, state) =>
           context.read<LoginCubit>().googleListener(state, context),
+      buildWhen: (_, state) =>
+          state is SignInWithGoogleLoading ||
+          state is SignInWithGoogleSuccess ||
+          state is SignInWithGoogleError,
       builder: (context, state) {
         return PrimaryButton(
           backgroundColor:

@@ -106,7 +106,9 @@ class LoginCubit extends Cubit<LoginState> {
         navigateToHomeAfterLoginOrRegister(context, data);
       },
       signInWithGoogleError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
+        if (error != "type 'Null' is not a subtype of type 'UserCredential'") {
+          ShowICareDialog.showICareDialogError(context, error);
+        }
       },
     );
   }
