@@ -40,7 +40,8 @@ class ICareApp extends StatelessWidget {
             create: (_) => getIt.get<ChatCubit>(),
           ),
           BlocProvider<SpeechTherapyCubit>(
-            create: (_) => getIt.get<SpeechTherapyCubit>(),
+            create: (_) =>
+                getIt.get<SpeechTherapyCubit>()..getSpeechTherapyLevels(),
           ),
           BlocProvider<ThemesCubit>(
             create: (_) => getIt.get<ThemesCubit>(),

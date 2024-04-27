@@ -18,22 +18,29 @@ class LoginViewBody extends StatelessWidget {
     return SafeArea(
       child: CustomScrollView(
         slivers: [
-          SliverPadding(
-            padding: AppConstants.horizontalPadding,
-            sliver: const SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  CustomAuthAppBar(),
-                  AuthMediumSizeTitle(title: AppStrings.login),
-                  MySizedBox.height7,
-                  AuthSmallSizeDescription(
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const CustomAuthAppBar(),
+                MySizedBox.height30,
+                Padding(
+                  padding: AppConstants.horizontalPadding,
+                  child: const AuthMediumSizeTitle(title: AppStrings.login),
+                ),
+                MySizedBox.height7,
+                Padding(
+                  padding: AppConstants.horizontalPadding,
+                  child: const AuthSmallSizeDescription(
                     description: AppStrings.loginDescription,
                   ),
-                  MySizedBox.height25,
-                  LoginForm(),
-                ],
-              ),
+                ),
+                MySizedBox.height25,
+                Padding(
+                  padding: AppConstants.horizontalPadding,
+                  child: const LoginForm(),
+                ),
+              ],
             ),
           ),
           SliverPadding(

@@ -27,15 +27,17 @@ class CustomCircularArrowButton extends StatelessWidget {
             : AppColors.primaryColor,
         shape: BoxShape.circle,
       ),
-      child: MaterialButton(
-        padding: EdgeInsets.zero,
-        onPressed: onPressed ?? () => context.maybePop(),
-        shape: const CircleBorder(),
-        child: Center(
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: size.h,
+      child: FittedBox(
+        child: MaterialButton(
+          padding: EdgeInsets.zero,
+          onPressed: onPressed ?? () => context.maybePop(),
+          shape: const CircleBorder(),
+          child: Center(
+            child: Icon(
+              icon,
+              color: Colors.white,
+              size: size.h,
+            ),
           ),
         ),
       ),

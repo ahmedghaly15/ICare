@@ -30,20 +30,24 @@ class RegisterView extends StatelessWidget implements AutoRouteWrapper {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppConstants.horizontalPadding,
-              sliver: const SliverToBoxAdapter(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    CustomAuthAppBar(),
-                    AuthMediumSizeTitle(title: AppStrings.register),
-                    MySizedBox.height7,
-                    AuthSmallSizeDescription(
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const CustomAuthAppBar(),
+                  Padding(
+                    padding: AppConstants.horizontalPadding,
+                    child:
+                        const AuthMediumSizeTitle(title: AppStrings.register),
+                  ),
+                  MySizedBox.height7,
+                  Padding(
+                    padding: AppConstants.horizontalPadding,
+                    child: const AuthSmallSizeDescription(
                       description: AppStrings.enterYourPersonalInfo,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             SliverPadding(
