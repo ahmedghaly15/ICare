@@ -62,7 +62,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
         ),
         MySizedBox.width6,
         TinyTaleLikeButtonBlocListener(
-          tinyTaleId: tinyTale.tinyTaleId,
+          tinyTale: tinyTale,
           isTinyTaleContainsImage: isTinyTaleContainsImage,
         ),
         StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
