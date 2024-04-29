@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
@@ -8,7 +9,6 @@ import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
-import 'package:icare/src/core/utils/functions/get_mobile_token.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 void navigateToHomeAfterLoginOrRegister(
@@ -16,7 +16,7 @@ void navigateToHomeAfterLoginOrRegister(
   String data,
 ) async {
   Helper.uId = data;
-  final String? mobileToken = await getMobileToken();
+  final String? mobileToken = await _getMobileToken();
   getIt
       .get<CacheHelper>()
       .saveData(key: AppStrings.cachedUserId, value: data)
@@ -33,6 +33,10 @@ void navigateToHomeAfterLoginOrRegister(
       });
     },
   );
+}
+
+Future<String?> _getMobileToken() async {
+  return await getIt.get<FirebaseMessaging>().getToken();
 }
 
 Future<void> _updateUserMobileToken(String? mobileToken) async {
