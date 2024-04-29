@@ -7,18 +7,18 @@ class SetupDIForExternal {
     );
 
     getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
-
     getIt.registerLazySingleton<FirebaseFirestore>(
       () => FirebaseFirestore.instance,
     );
+    getIt.registerLazySingleton<FirebaseStorage>(
+      () => firebase_storage.FirebaseStorage.instance,
+    );
+    getIt.registerLazySingleton<FirebaseMessaging>(
+        () => FirebaseMessaging.instance);
 
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
     getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
-
-    getIt.registerLazySingleton<FirebaseStorage>(
-      () => firebase_storage.FirebaseStorage.instance,
-    );
 
     getIt.registerLazySingleton<ImagePicker>(() => ImagePicker());
   }

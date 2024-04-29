@@ -96,7 +96,6 @@ class LoginCubit extends Cubit<LoginState> {
   bool isLoginPassVisible = true;
   void changePassVisibility() {
     isLoginPassVisible = !isLoginPassVisible;
-
     emit(LoginState.convertBoolValue(boolean: isLoginPassVisible));
   }
 

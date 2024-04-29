@@ -11,6 +11,7 @@ ICareUser _$ICareUserFromJson(Map<String, dynamic> json) => ICareUser(
       email: json['email'] as String?,
       uId: json['uId'] as String?,
       profileImage: json['profileImage'] as String?,
+      mobileToken: json['mobileToken'] as String?,
     );
 
 Map<String, dynamic> _$ICareUserToJson(ICareUser instance) => <String, dynamic>{
@@ -18,4 +19,5 @@ Map<String, dynamic> _$ICareUserToJson(ICareUser instance) => <String, dynamic>{
       'email': instance.email,
       'profileImage': instance.profileImage,
       'uId': instance.uId,
+      'mobileToken': instance.mobileToken,
     };

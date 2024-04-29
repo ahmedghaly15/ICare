@@ -5,7 +5,6 @@ import 'package:icare/src/features/auth/data/models/login_request_params.dart';
 
 abstract class LoginDataSource {
   Future<UserCredential> login(LoginRequestParams params);
-
   Future signInWithGoogle();
 }
 
@@ -23,17 +22,13 @@ class LoginDataSourceImpl implements LoginDataSource {
   @override
   Future signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
     if (googleUser == null) return;
-
     final GoogleSignInAuthentication googleAuth =
         await googleUser.authentication;
-
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-
     return await getIt.get<FirebaseAuth>().signInWithCredential(credential);
   }
 }

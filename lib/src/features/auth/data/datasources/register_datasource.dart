@@ -9,7 +9,6 @@ import 'package:icare/src/features/auth/data/models/register_request_params.dart
 
 abstract class RegisterDataSource {
   Future<UserCredential> register(RegisterRequestParams params);
-
   Future<void> createFirestoreUser(CreateFirestoreUserParams params);
 }
 
@@ -32,7 +31,6 @@ class RegisterDataSourceImpl implements RegisterDataSource {
       uId: params.uId,
       profileImage: AppConstants.defaultProfileImage,
     );
-
     await getIt
         .get<FirebaseFirestore>()
         .collection(AppStrings.usersCollection)

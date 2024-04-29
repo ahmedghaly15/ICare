@@ -13,7 +13,9 @@ class HomeView extends StatelessWidget implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider<TipsCubit>(
-      create: (_) => getIt.get<TipsCubit>()..getRandomTip(),
+      create: (_) => getIt.get<TipsCubit>()
+        ..getRandomTip()
+        ..requestNotificationsPermission(context),
       child: this,
     );
   }
