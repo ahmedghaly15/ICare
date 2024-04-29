@@ -48,7 +48,7 @@ class CommentItemContent extends StatelessWidget {
           if (comment.commentData!.commentText != null) ...[
             MySizedBox.height7,
             Linkify(
-              text: comment.commentData!.commentText!,
+              text: comment.commentData!.commentText!.trim(),
               style: AppTextStyles.textStyle13Regular.copyWith(
                 color: isDarkModeActive(context) ? Colors.white : Colors.black,
               ),

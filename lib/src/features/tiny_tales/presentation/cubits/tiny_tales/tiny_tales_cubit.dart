@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/bookmark_tiny_tale.dart';
@@ -97,33 +98,20 @@ class TinyTalesCubit extends Cubit<TinyTalesState> {
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> likesStream(String tinyTaleId) {
-    return _accessTinyTaleLikesCollection(tinyTaleId).snapshots();
-  }
-
-  CollectionReference<Map<String, dynamic>> _accessTinyTaleLikesCollection(
-      String tinyTaleId) {
-    return _accessTinyTalesCollection()
-        .doc(tinyTaleId)
-        .collection(AppStrings.likesCollection);
+    return accessTinyTaleLikesCollection(tinyTaleId).snapshots();
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> streamFirstThreeLikeTinyTale(
       String tinyTaleId) {
-    return _accessTinyTaleLikesCollection(tinyTaleId).limit(3).snapshots();
+    return accessTinyTaleLikesCollection(tinyTaleId).limit(3).snapshots();
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> commentsStream(
       String tinyTaleId) {
-    return _accessTinyTalesCollection()
+    return accessTinyTalesCollection()
         .doc(tinyTaleId)
         .collection(AppStrings.commentsCollection)
         .snapshots();
-  }
-
-  CollectionReference<Map<String, dynamic>> _accessTinyTalesCollection() {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.tinyTalesCollection);
   }
 
   void bookmarkTinyTale(TinyTale tinyTale) async {

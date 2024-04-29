@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/comments/data/datasources/comments_remote_datasource.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
@@ -15,20 +16,11 @@ import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   const CommentsRemoteDatasourceImpl();
 
-  CollectionReference<Map<String, dynamic>> _accessCommentsCollection(
-      String tinyTaleId) {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.tinyTalesCollection)
-        .doc(tinyTaleId)
-        .collection(AppStrings.commentsCollection);
-  }
-
   @override
   Future<QuerySnapshot<Map<String, dynamic>>> streamComments(
     String tinyTaleId,
   ) {
-    return _accessCommentsCollection(tinyTaleId)
+    return accessCommentsCollection(tinyTaleId)
         .orderBy(AppStrings.dateTime, descending: false)
         .get();
   }
@@ -44,7 +36,7 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
     );
 
     final DocumentReference<Map<String, dynamic>> document =
-        await _accessCommentsCollection(typeCommentParams.tinyTaleId!)
+        await accessCommentsCollection(typeCommentParams.tinyTaleId!)
             .add(comment.toJson());
 
     await document.update({AppStrings.commentId: document.id});
@@ -58,15 +50,13 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
     _deleteEachCommentReplies(params);
     _deleteEachCommentLikes(params);
 
-    return await _accessCommentsCollection(params.tinyTaleId!)
+    return await accessCommentsCollection(params.tinyTaleId!)
         .doc(params.commentId)
         .delete();
   }
 
   void _deleteEachCommentLikes(DeleteCommentParams params) {
-    _accessCommentsCollection(params.tinyTaleId!)
-        .snapshots()
-        .listen((snapshot) {
+    accessCommentsCollection(params.tinyTaleId!).snapshots().listen((snapshot) {
       for (final doc in snapshot.docs) {
         doc.reference
             .collection(AppStrings.commentLikesCollection)
@@ -81,9 +71,7 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   }
 
   void _deleteEachCommentReplies(DeleteCommentParams params) {
-    _accessCommentsCollection(params.tinyTaleId!)
-        .snapshots()
-        .listen((snapshot) {
+    accessCommentsCollection(params.tinyTaleId!).snapshots().listen((snapshot) {
       for (final doc in snapshot.docs) {
         doc.reference
             .collection(AppStrings.commentReplies)
@@ -98,9 +86,7 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   }
 
   void _deleteEachCommentRepliesLikes(DeleteCommentParams params) {
-    _accessCommentsCollection(params.tinyTaleId!)
-        .snapshots()
-        .listen((snapshot) {
+    accessCommentsCollection(params.tinyTaleId!).snapshots().listen((snapshot) {
       for (final doc in snapshot.docs) {
         doc.reference
             .collection(AppStrings.commentReplies)
@@ -139,26 +125,23 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
       dateTime: DateTime.now().toString(),
     );
 
-    return await _accessCommentLikesCollection(params)
+    return await accessCommentLikesCollection(
+            params.tinyTaleId, params.commentId!)
         .doc(Helper.uId)
         .set(like.toJson());
   }
 
-  CollectionReference<Map<String, dynamic>> _accessCommentLikesCollection(
-      LikeParams params) {
-    return _accessCommentsCollection(params.tinyTaleId)
-        .doc(params.commentId)
-        .collection(AppStrings.commentLikesCollection);
-  }
-
   @override
   Future<void> unLikeComment(LikeParams params) async {
-    return await _accessCommentLikesCollection(params).doc(Helper.uId).delete();
+    return await accessCommentLikesCollection(
+            params.tinyTaleId, params.commentId!)
+        .doc(Helper.uId)
+        .delete();
   }
 
   @override
   Stream<bool> isCommentLikedByMe(LikeParams params) {
-    return _accessCommentLikesCollection(params)
+    return accessCommentLikesCollection(params.tinyTaleId, params.commentId!)
         .doc(Helper.uId)
         .snapshots()
         .map((snapshot) => snapshot.exists);

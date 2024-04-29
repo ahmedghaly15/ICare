@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/user/domain/usecases/follow.dart';
 import 'package:icare/src/features/user/domain/usecases/get_all_users.dart';
 import 'package:icare/src/features/user/domain/usecases/get_followers.dart';
@@ -94,7 +94,7 @@ class UserCubit extends Cubit<UserState> {
   }
 
   Stream<bool> userIsInFollowing(String uId) {
-    return _accessUsersCollection()
+    return accessUsersCollection()
         .doc(Helper.uId!)
         .collection(AppStrings.followingCollection)
         .doc(uId)
@@ -103,7 +103,7 @@ class UserCubit extends Cubit<UserState> {
   }
 
   Stream<bool> userIsInFollowers(String userId) {
-    return _accessUsersCollection()
+    return accessUsersCollection()
         .doc(Helper.uId!)
         .collection(AppStrings.followersCollection)
         .doc(userId)
@@ -119,21 +119,15 @@ class UserCubit extends Cubit<UserState> {
     );
   }
 
-  CollectionReference<Map<String, dynamic>> _accessUsersCollection() {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection);
-  }
-
   Stream<QuerySnapshot<Map<String, dynamic>>> followersStream(ICareUser user) {
-    return _accessUsersCollection()
+    return accessUsersCollection()
         .doc(user.uId)
         .collection(AppStrings.followersCollection)
         .snapshots();
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> followingStream(ICareUser user) {
-    return _accessUsersCollection()
+    return accessUsersCollection()
         .doc(user.uId)
         .collection(AppStrings.followingCollection)
         .snapshots();

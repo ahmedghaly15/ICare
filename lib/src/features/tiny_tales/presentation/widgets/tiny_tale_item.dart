@@ -25,7 +25,7 @@ class TinyTaleItem extends StatelessWidget {
               tinyTale.tinyTaleData!.text!.isNotEmpty) ...[
             MySizedBox.height10,
             Linkify(
-              text: tinyTale.tinyTaleData!.text!,
+              text: tinyTale.tinyTaleData!.text!.trim(),
               style: AppTextStyles.textStyle14Regular,
               onOpen: (link) => openUrl(link),
             )

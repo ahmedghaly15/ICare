@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource.dart';
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_model.dart';
@@ -14,19 +15,6 @@ import 'package:icare/src/features/tiny_tales/data/models/tiny_tale_data.dart';
 
 class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   const TinyTalesRemoteDatasourceImpl();
-
-  CollectionReference<Map<String, dynamic>> _accessTinyTalesCollection() {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.tinyTalesCollection);
-  }
-
-  CollectionReference<Map<String, dynamic>> _accessLikesCollection(
-      String tinyTaleId) {
-    return _accessTinyTalesCollection()
-        .doc(tinyTaleId)
-        .collection(AppStrings.likesCollection);
-  }
 
   @override
   Future<DocumentReference<Map<String, dynamic>>> createTinyTale(
@@ -43,7 +31,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
       dateTime: Timestamp.now(),
     );
     final DocumentReference<Map<String, dynamic>> documentReference =
-        await _accessTinyTalesCollection().add(tinyTale.toJson());
+        await accessTinyTalesCollection().add(tinyTale.toJson());
     await documentReference
         .update({AppStrings.tinyTaleId: documentReference.id});
     return documentReference;
@@ -56,21 +44,23 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
       dateTime: DateTime.now().toString(),
     );
 
-    return await _accessLikesCollection(params.tinyTaleId)
+    return await accessTinyTaleLikesCollection(params.tinyTaleId)
         .doc(Helper.uId)
         .set(like.toJson());
   }
 
   @override
   Future<void> unLikeTinyTale(String tinyTaleId) async {
-    return await _accessLikesCollection(tinyTaleId).doc(Helper.uId).delete();
+    return await accessTinyTaleLikesCollection(tinyTaleId)
+        .doc(Helper.uId)
+        .delete();
   }
 
   @override
   Future<QuerySnapshot<Map<String, dynamic>>> getPeopleWhoLiked(
     String tinyTaleId,
   ) async {
-    return await _accessLikesCollection(tinyTaleId).get();
+    return await accessTinyTaleLikesCollection(tinyTaleId).get();
   }
 
   @override
@@ -80,7 +70,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
     await _deleteEachCommentReplies(tinyTaleId);
     await _deleteEachCommentLikes(tinyTaleId);
     await _deleteTinyTaleComments(tinyTaleId);
-    await _accessTinyTalesCollection().doc(tinyTaleId).delete();
+    await accessTinyTalesCollection().doc(tinyTaleId).delete();
   }
 
   Future<void> _deleteTinyTaleComments(String tinyTaleId) async {
@@ -129,7 +119,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   }
 
   Future<void> _deleteTinyTaleLikes(String tinyTaleId) async {
-    final snapshot = await _accessLikesCollection(tinyTaleId).get();
+    final snapshot = await accessTinyTaleLikesCollection(tinyTaleId).get();
     await Future.forEach(snapshot.docs, (doc) async {
       await doc.reference.delete();
     });
@@ -137,7 +127,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   CollectionReference<Map<String, dynamic>> _accessCommentsCollection(
       String tinyTaleId) {
-    return _accessTinyTalesCollection()
+    return accessTinyTalesCollection()
         .doc(tinyTaleId)
         .collection(AppStrings.commentsCollection);
   }
@@ -154,7 +144,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   @override
   Stream<bool> isTinyTaleLikedByMe(String tinyTaleId) {
-    return _accessLikesCollection(tinyTaleId)
+    return accessTinyTaleLikesCollection(tinyTaleId)
         .doc(Helper.uId)
         .snapshots()
         .map((snapshot) => snapshot.exists);
