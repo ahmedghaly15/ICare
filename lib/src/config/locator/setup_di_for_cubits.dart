@@ -188,5 +188,10 @@ class SetupDIForCubits {
     getIt.registerFactory<DevelopersCubit>(
       () => DevelopersCubit(getIt.get<GetDevelopersUseCase>()),
     );
+
+    // ========== Notifications feature ==========
+    getIt.registerFactory<NotificationsCubit>(
+      () => NotificationsCubit(getIt.get<SendNotificationUseCase>()),
+    );
   }
 }

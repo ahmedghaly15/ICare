@@ -14,6 +14,10 @@ import 'package:icare/src/features/home/data/datasources/home_remote_datasource.
 import 'package:icare/src/features/home/data/repositories/home_repo.dart';
 import 'package:icare/src/features/home/domain/usecases/get_developers.dart';
 import 'package:icare/src/features/home/presentation/cubits/developers/developers_cubit.dart';
+import 'package:icare/src/features/notifications/data/datasources/notifications_datasource.dart';
+import 'package:icare/src/features/notifications/data/repositories/notifications_repo.dart';
+import 'package:icare/src/features/notifications/domain/usecases/send_notification.dart';
+import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_password.dart';
 import 'package:icare/src/features/profile/domain/usecases/upload_new_profile_image.dart';
 import 'package:icare/src/features/speech_therapy/data/datasources/speech_therapy_local_datasource.dart';

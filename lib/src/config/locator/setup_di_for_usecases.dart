@@ -232,5 +232,10 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetDevelopersUseCase>(
       () => GetDevelopersUseCase(getIt.get<HomeRepo>()),
     );
+
+    // ========== Notifications feature ==========
+    getIt.registerLazySingleton<SendNotificationUseCase>(
+      () => SendNotificationUseCase(getIt.get<NotificationsRepo>()),
+    );
   }
 }

@@ -11,6 +11,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
+import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
@@ -44,6 +45,9 @@ class ICareApp extends StatelessWidget {
           ),
           BlocProvider<ThemesCubit>(
             create: (_) => getIt.get<ThemesCubit>(),
+          ),
+          BlocProvider<NotificationsCubit>(
+            create: (_) => getIt.get<NotificationsCubit>(),
           ),
         ],
         child: BlocBuilder<ThemesCubit, ThemeData>(

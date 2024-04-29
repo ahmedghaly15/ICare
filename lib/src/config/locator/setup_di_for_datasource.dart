@@ -121,5 +121,10 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<HomeLocalDatasource>(
       () => const HomeLocalDatasourceImpl(),
     );
+
+    // ========== Notifications feature ==========
+    getIt.registerLazySingleton<NotificationsDatasource>(
+      () => NotificationsDatasourceImpl(getIt.get<ApiService>()),
+    );
   }
 }

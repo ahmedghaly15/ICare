@@ -121,5 +121,10 @@ class SetupDIForRepos {
         getIt.get<HomeLocalDatasource>(),
       ),
     );
+
+    // ========== Notifications feature ==========
+    getIt.registerLazySingleton<NotificationsRepo>(
+      () => NotificationsRepo(getIt.get<NotificationsDatasource>()),
+    );
   }
 }
