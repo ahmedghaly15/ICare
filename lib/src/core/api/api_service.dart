@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:icare/src/features/notifications/data/models/notification_request.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
@@ -13,6 +14,7 @@ import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart
 import 'package:icare/src/features/speech_therapy/data/models/score_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/speech_therapy_level.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
+import 'package:retrofit/http.dart' as retrofit;
 import 'package:retrofit/retrofit.dart';
 
 import 'package:icare/src/core/api/end_points.dart';
@@ -107,4 +109,12 @@ abstract class ApiService {
     @Query('ayah_num') required int ayahNum,
     @Part(name: 'audio_file') required File audioFile,
   });
+
+  @POST(EndPoints.sendNotification)
+  @retrofit.Headers({
+    "Content-Type": "application/json",
+    "Authorization":
+        "key=AAAAQf84HOk:APA91bFKOKY_KNlsW6QaMaGYDxqGU1L2cKWnXADsCZyStYwPwwd2zvezFC_2ps-g7TLZnAetFx_OxeCJQMqX6k4d7P8atV4O1doYCsQmQWkZnkwVeC73wEf3FSkor3GEpBnkTN3mnnzN",
+  })
+  Future<void> sendNotification(@Body() NotificationRequest params);
 }

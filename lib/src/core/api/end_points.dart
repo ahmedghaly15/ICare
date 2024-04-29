@@ -26,4 +26,5 @@ class EndPoints {
       '${speechTherapyBaseUrl}advanced/training/';
   static const String advancedLevelMarking =
       '${speechTherapyBaseUrl}advanced/marking/';
+  static const String sendNotification = 'https://fcm.googleapis.com/fcm/send';
 }

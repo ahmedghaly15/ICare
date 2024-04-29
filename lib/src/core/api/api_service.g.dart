@@ -532,6 +532,37 @@ class _ApiService implements ApiService {
     return value;
   }
 
+  @override
+  Future<void> sendNotification(NotificationRequest params) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{
+      r'Content-Type': 'application/json',
+      r'Authorization':
+          'key=AAAAQf84HOk:APA91bFKOKY_KNlsW6QaMaGYDxqGU1L2cKWnXADsCZyStYwPwwd2zvezFC_2ps-g7TLZnAetFx_OxeCJQMqX6k4d7P8atV4O1doYCsQmQWkZnkwVeC73wEf3FSkor3GEpBnkTN3mnnzN',
+    };
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(params.toJson());
+    await _dio.fetch<void>(_setStreamType<void>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/json',
+    )
+        .compose(
+          _dio.options,
+          'https://fcm.googleapis.com/fcm/send',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||
