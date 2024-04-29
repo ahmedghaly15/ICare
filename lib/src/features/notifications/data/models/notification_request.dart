@@ -23,12 +23,12 @@ class NotificationRequest {
 @JsonSerializable()
 class ICareNotification {
   final String title, body;
-  // final Timestamp? dateTime;
+  final Timestamp? dateTime;
 
   const ICareNotification({
     required this.title,
     required this.body,
-    // this.dateTime,
+    this.dateTime,
   });
 
   factory ICareNotification.fromJson(Map<String, dynamic> json) =>

@@ -73,6 +73,8 @@ class AppStrings {
   static const String tryAgain = 'Try Again';
   static const String dotEnvFileName = '.env';
   static const String apiKey = 'API_KEY';
+  static const String firebaseMessagingServerKey =
+      'FIREBASE_MESSAGING_SERVER_KEY';
   static const String noApiKeyFound =
       'No API key found. Please provide an API Key.';
   static const String cryPredictor = 'Cry Predictor';
@@ -192,4 +194,5 @@ class AppStrings {
   static const String developersCollection = 'Developers Collection';
   static const String cachedDevelopers = 'cachedDevelopers';
   static const String developers = 'Developers';
+  static const String notificationsCollection = 'Notifications Collection';
 }

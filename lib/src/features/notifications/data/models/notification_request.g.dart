@@ -19,17 +19,19 @@ Map<String, dynamic> _$NotificationRequestToJson(
     <String, dynamic>{
       'to': instance.to,
       'receiverId': instance.receiverId,
-      'notification': instance.notification,
+      'notification': instance.notification.toJson(),
     };
 
 ICareNotification _$ICareNotificationFromJson(Map<String, dynamic> json) =>
     ICareNotification(
       title: json['title'] as String,
       body: json['body'] as String,
+      dateTime: json['dateTime'] as Timestamp?,
     );
 
 Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
     <String, dynamic>{
       'title': instance.title,
       'body': instance.body,
+      'dateTime': instance.dateTime,
     };

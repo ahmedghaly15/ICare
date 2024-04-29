@@ -325,20 +325,22 @@ abstract class GetDevelopersLoading<T> implements DevelopersState<T> {
 }
 
 /// @nodoc
-abstract class _$$GetDevelopersSuccesImplCopyWith<T, $Res> {
-  factory _$$GetDevelopersSuccesImplCopyWith(_$GetDevelopersSuccesImpl<T> value,
-          $Res Function(_$GetDevelopersSuccesImpl<T>) then) =
-      __$$GetDevelopersSuccesImplCopyWithImpl<T, $Res>;
+abstract class _$$GetDevelopersSuccessImplCopyWith<T, $Res> {
+  factory _$$GetDevelopersSuccessImplCopyWith(
+          _$GetDevelopersSuccessImpl<T> value,
+          $Res Function(_$GetDevelopersSuccessImpl<T>) then) =
+      __$$GetDevelopersSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({List<Developer> developers});
 }
 
 /// @nodoc
-class __$$GetDevelopersSuccesImplCopyWithImpl<T, $Res>
-    extends _$DevelopersStateCopyWithImpl<T, $Res, _$GetDevelopersSuccesImpl<T>>
-    implements _$$GetDevelopersSuccesImplCopyWith<T, $Res> {
-  __$$GetDevelopersSuccesImplCopyWithImpl(_$GetDevelopersSuccesImpl<T> _value,
-      $Res Function(_$GetDevelopersSuccesImpl<T>) _then)
+class __$$GetDevelopersSuccessImplCopyWithImpl<T, $Res>
+    extends _$DevelopersStateCopyWithImpl<T, $Res,
+        _$GetDevelopersSuccessImpl<T>>
+    implements _$$GetDevelopersSuccessImplCopyWith<T, $Res> {
+  __$$GetDevelopersSuccessImplCopyWithImpl(_$GetDevelopersSuccessImpl<T> _value,
+      $Res Function(_$GetDevelopersSuccessImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -346,7 +348,7 @@ class __$$GetDevelopersSuccesImplCopyWithImpl<T, $Res>
   $Res call({
     Object? developers = null,
   }) {
-    return _then(_$GetDevelopersSuccesImpl<T>(
+    return _then(_$GetDevelopersSuccessImpl<T>(
       null == developers
           ? _value._developers
           : developers // ignore: cast_nullable_to_non_nullable
@@ -357,8 +359,8 @@ class __$$GetDevelopersSuccesImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSuccess<T> {
-  const _$GetDevelopersSuccesImpl(final List<Developer> developers)
+class _$GetDevelopersSuccessImpl<T> implements GetDevelopersSuccess<T> {
+  const _$GetDevelopersSuccessImpl(final List<Developer> developers)
       : _developers = developers;
 
   final List<Developer> _developers;
@@ -378,7 +380,7 @@ class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSuccess<T> {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetDevelopersSuccesImpl<T> &&
+            other is _$GetDevelopersSuccessImpl<T> &&
             const DeepCollectionEquality()
                 .equals(other._developers, _developers));
   }
@@ -390,9 +392,9 @@ class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSuccess<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetDevelopersSuccesImplCopyWith<T, _$GetDevelopersSuccesImpl<T>>
-      get copyWith => __$$GetDevelopersSuccesImplCopyWithImpl<T,
-          _$GetDevelopersSuccesImpl<T>>(this, _$identity);
+  _$$GetDevelopersSuccessImplCopyWith<T, _$GetDevelopersSuccessImpl<T>>
+      get copyWith => __$$GetDevelopersSuccessImplCopyWithImpl<T,
+          _$GetDevelopersSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -473,11 +475,11 @@ class _$GetDevelopersSuccesImpl<T> implements GetDevelopersSuccess<T> {
 
 abstract class GetDevelopersSuccess<T> implements DevelopersState<T> {
   const factory GetDevelopersSuccess(final List<Developer> developers) =
-      _$GetDevelopersSuccesImpl<T>;
+      _$GetDevelopersSuccessImpl<T>;
 
   List<Developer> get developers;
   @JsonKey(ignore: true)
-  _$$GetDevelopersSuccesImplCopyWith<T, _$GetDevelopersSuccesImpl<T>>
+  _$$GetDevelopersSuccessImplCopyWith<T, _$GetDevelopersSuccessImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
