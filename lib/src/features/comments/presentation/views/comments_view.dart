@@ -7,7 +7,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
-import 'package:icare/src/features/comments/presentation/widgets/comments_bloc_builder.dart';
+import 'package:icare/src/features/comments/presentation/widgets/comments_list_view_bloc_builder.dart';
 import 'package:icare/src/features/comments/presentation/widgets/type_comment_field_and_buttons.dart';
 
 @RoutePage()
@@ -19,7 +19,7 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider<CommentsCubit>(
-      create: (_) => getIt.get<CommentsCubit>()..streamComments(tinyTaleId),
+      create: (_) => getIt.get<CommentsCubit>()..getComments(tinyTaleId),
       child: this,
     );
   }
@@ -34,12 +34,12 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
               padding: AppConstants.viewAppBarPadding,
               sliver: const CustomSliverAppBar(title: AppStrings.comments),
             ),
-            CommentsBlocBuilder(tinyTaleId: tinyTaleId),
             SliverFillRemaining(
-              hasScrollBody: false,
               child: Column(
                 children: <Widget>[
-                  const Spacer(),
+                  Expanded(
+                    child: CommentsListViewBlocBuilder(tinyTaleId: tinyTaleId),
+                  ),
                   Padding(
                     padding: EdgeInsets.only(
                       right: 8.w,

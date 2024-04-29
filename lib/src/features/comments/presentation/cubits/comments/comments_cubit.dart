@@ -47,7 +47,7 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   late final TextEditingController commentController;
 
-  Future<void> streamComments(String tinyTaleId) async {
+  Future<void> getComments(String tinyTaleId) async {
     emit(const CommentsState.streamCommentsLoading());
     final result = await streamCommentsUseCase(tinyTaleId);
     result.when(
@@ -237,7 +237,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     state.whenOrNull(
       typeNewCommentSuccess: () {
         commentController.clear();
-        streamComments(tinyTaleId);
+        getComments(tinyTaleId);
       },
       typeNewCommentError: (error) {
         ShowICareDialog.showICareDialogError(context, error);

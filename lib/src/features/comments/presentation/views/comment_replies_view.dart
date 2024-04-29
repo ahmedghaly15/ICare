@@ -8,7 +8,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
-import 'package:icare/src/features/comments/presentation/widgets/comment_replies_bloc_builder.dart';
+import 'package:icare/src/features/comments/presentation/widgets/comment_replies_list_view_bloc_builder.dart';
 import 'package:icare/src/features/comments/presentation/widgets/new_reply_field_and_buttons.dart';
 
 @RoutePage()
@@ -37,12 +37,12 @@ class CommentRepliesView extends StatelessWidget implements AutoRouteWrapper {
               sliver:
                   const CustomSliverAppBar(title: AppStrings.commentReplies),
             ),
-            CommentRepliesBlocBuilder(params: params),
             SliverFillRemaining(
-              hasScrollBody: false,
               child: Column(
                 children: <Widget>[
-                  const Spacer(),
+                  Expanded(
+                    child: CommentRepliesListViewBlocBuilder(params: params),
+                  ),
                   Padding(
                     padding: EdgeInsets.only(
                       right: 8.w,
