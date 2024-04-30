@@ -102,7 +102,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(
             child: CommentsView(
           key: args.key,
-          tinyTaleId: args.tinyTaleId,
+          tinyTale: args.tinyTale,
         )),
       );
     },
@@ -561,13 +561,13 @@ class CommentRepliesRouteArgs {
 class CommentsRoute extends PageRouteInfo<CommentsRouteArgs> {
   CommentsRoute({
     Key? key,
-    required String tinyTaleId,
+    required TinyTale tinyTale,
     List<PageRouteInfo>? children,
   }) : super(
           CommentsRoute.name,
           args: CommentsRouteArgs(
             key: key,
-            tinyTaleId: tinyTaleId,
+            tinyTale: tinyTale,
           ),
           initialChildren: children,
         );
@@ -581,16 +581,16 @@ class CommentsRoute extends PageRouteInfo<CommentsRouteArgs> {
 class CommentsRouteArgs {
   const CommentsRouteArgs({
     this.key,
-    required this.tinyTaleId,
+    required this.tinyTale,
   });
 
   final Key? key;
 
-  final String tinyTaleId;
+  final TinyTale tinyTale;
 
   @override
   String toString() {
-    return 'CommentsRouteArgs{key: $key, tinyTaleId: $tinyTaleId}';
+    return 'CommentsRouteArgs{key: $key, tinyTale: $tinyTale}';
   }
 }
 

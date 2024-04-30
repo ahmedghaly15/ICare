@@ -9,17 +9,19 @@ import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comments_list_view_bloc_builder.dart';
 import 'package:icare/src/features/comments/presentation/widgets/type_comment_field_and_buttons.dart';
+import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
 @RoutePage()
 class CommentsView extends StatelessWidget implements AutoRouteWrapper {
-  const CommentsView({super.key, required this.tinyTaleId});
+  const CommentsView({super.key, required this.tinyTale});
 
-  final String tinyTaleId;
+  final TinyTale tinyTale;
 
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider<CommentsCubit>(
-      create: (_) => getIt.get<CommentsCubit>()..getComments(tinyTaleId),
+      create: (_) =>
+          getIt.get<CommentsCubit>()..getComments(tinyTale.tinyTaleId!),
       child: this,
     );
   }
@@ -38,7 +40,9 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
               child: Column(
                 children: <Widget>[
                   Expanded(
-                    child: CommentsListViewBlocBuilder(tinyTaleId: tinyTaleId),
+                    child: CommentsListViewBlocBuilder(
+                      tinyTaleId: tinyTale.tinyTaleId!,
+                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
@@ -46,7 +50,7 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
                       bottom: AppConstants.textFieldBottomPadding,
                       top: 8.h,
                     ),
-                    child: TypeCommentFieldAndButtons(tinyTaleId: tinyTaleId),
+                    child: TypeCommentFieldAndButtons(tinyTale: tinyTale),
                   ),
                 ],
               ),
