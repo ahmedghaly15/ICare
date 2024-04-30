@@ -39,6 +39,7 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
                     to: params.comment!.user!.mobileToken!,
                     body: '${Helper.currentUser!.name} replied on your comment',
                     receiverId: params.comment!.user!.uId,
+                    comment: params.comment,
                   ));
             }
           },

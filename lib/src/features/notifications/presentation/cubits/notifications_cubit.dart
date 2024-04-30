@@ -43,6 +43,10 @@ class NotificationsCubit extends Cubit<NotificationsState> {
       body: params.body,
       receiverId: params.receiverId,
       dateTime: Timestamp.now(),
+      tinyTale: params.tinyTale,
+      comment: params.comment,
+      reply: params.reply,
+      user: params.user,
     );
     await getIt
         .get<FirebaseFirestore>()

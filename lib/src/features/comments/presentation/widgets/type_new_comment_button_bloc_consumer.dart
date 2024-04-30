@@ -38,6 +38,7 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
                     body:
                         '${Helper.currentUser!.name} commented on your tiny tale',
                     receiverId: tinyTale.user!.uId,
+                    tinyTale: tinyTale,
                   ));
             }
           },

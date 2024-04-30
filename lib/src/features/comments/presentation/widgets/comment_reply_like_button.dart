@@ -46,6 +46,7 @@ class CommentReplyLikeButton extends StatelessWidget {
                 to: reply.user!.mobileToken!,
                 body: '${Helper.currentUser!.name} liked your reply',
                 receiverId: reply.user!.uId,
+                reply: reply,
               ));
         }
       },

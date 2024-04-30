@@ -65,6 +65,7 @@ class TinyTaleLikeButtonBlocListener extends StatelessWidget {
                             body:
                                 '${Helper.currentUser!.name} liked your tiny tale',
                             receiverId: tinyTale.user!.uId,
+                            tinyTale: tinyTale,
                           ));
                     }
                     context.read<TinyTalesCubit>().likeTinyTale(

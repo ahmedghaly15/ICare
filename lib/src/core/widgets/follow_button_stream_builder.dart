@@ -50,6 +50,7 @@ class FollowButtonStreamBuilder extends StatelessWidget {
                         body:
                             '${Helper.currentUser!.name} is now following you',
                         receiverId: user.uId,
+                        user: user,
                       ));
                 },
           child: Text(isFollowed ? AppStrings.unFollow : AppStrings.follow),
