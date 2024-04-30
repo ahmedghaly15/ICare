@@ -44,6 +44,7 @@ class CommentLikeButton extends StatelessWidget {
                 body: '${Helper.currentUser!.name} liked your comment',
                 receiverId: comment.user!.uId,
                 comment: comment,
+                user: Helper.currentUser,
               ));
         }
       },

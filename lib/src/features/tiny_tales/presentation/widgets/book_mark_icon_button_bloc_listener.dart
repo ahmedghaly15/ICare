@@ -61,6 +61,8 @@ class BookmarkIconButtonBlocListener extends StatelessWidget {
                             body:
                                 '${Helper.currentUser!.name} bookmarked your tiny tale',
                             receiverId: tinyTale.user!.uId!,
+                            tinyTale: tinyTale,
+                            user: Helper.currentUser,
                           ));
                     }
                     context.read<TinyTalesCubit>().bookmarkTinyTale(tinyTale);

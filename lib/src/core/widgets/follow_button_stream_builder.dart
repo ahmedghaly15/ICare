@@ -46,11 +46,11 @@ class FollowButtonStreamBuilder extends StatelessWidget {
                   context
                       .read<NotificationsCubit>()
                       .sendNotification(SendNotificationParams(
-                        to: user.mobileToken ?? '',
+                        to: user.mobileToken!,
                         body:
                             '${Helper.currentUser!.name} is now following you',
                         receiverId: user.uId,
-                        user: user,
+                        user: Helper.currentUser,
                       ));
                 },
           child: Text(isFollowed ? AppStrings.unFollow : AppStrings.follow),

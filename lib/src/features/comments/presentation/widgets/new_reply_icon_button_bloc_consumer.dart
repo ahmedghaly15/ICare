@@ -40,6 +40,7 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
                     body: '${Helper.currentUser!.name} replied on your comment',
                     receiverId: params.comment!.user!.uId,
                     comment: params.comment,
+                    user: Helper.currentUser,
                   ));
             }
           },
