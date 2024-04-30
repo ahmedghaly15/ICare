@@ -46,65 +46,53 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
 
   @override
   Future<void> deleteComment(DeleteCommentParams params) async {
-    _deleteEachCommentRepliesLikes(params);
-    _deleteEachCommentReplies(params);
-    _deleteEachCommentLikes(params);
-
-    return await accessCommentsCollection(params.tinyTaleId!)
+    await _deleteEachCommentRepliesLikes(params);
+    await _deleteEachCommentReplies(params);
+    await _deleteEachCommentLikes(params);
+    await accessCommentsCollection(params.tinyTaleId!)
         .doc(params.commentId)
         .delete();
   }
 
-  void _deleteEachCommentLikes(DeleteCommentParams params) {
-    accessCommentsCollection(params.tinyTaleId!).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference
-            .collection(AppStrings.commentLikesCollection)
-            .snapshots()
-            .listen((event) {
-          for (final doc in event.docs) {
-            doc.reference.delete();
-          }
-        });
+  Future<void> _deleteEachCommentLikes(DeleteCommentParams params) async {
+    final comments = await accessCommentsCollection(params.tinyTaleId!).get();
+    for (final comment in comments.docs) {
+      final commentLikes = await comment.reference
+          .collection(AppStrings.commentLikesCollection)
+          .get();
+      for (final commentLike in commentLikes.docs) {
+        await commentLike.reference.delete();
       }
-    });
+    }
   }
 
-  void _deleteEachCommentReplies(DeleteCommentParams params) {
-    accessCommentsCollection(params.tinyTaleId!).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference
-            .collection(AppStrings.commentReplies)
-            .snapshots()
-            .listen((event) {
-          for (final doc in event.docs) {
-            doc.reference.delete();
-          }
-        });
+  Future<void> _deleteEachCommentReplies(DeleteCommentParams params) async {
+    final comments = await accessCommentsCollection(params.tinyTaleId!).get();
+    for (final comment in comments.docs) {
+      final commentReplies =
+          await comment.reference.collection(AppStrings.commentReplies).get();
+      for (final commentReply in commentReplies.docs) {
+        await commentReply.reference.delete();
       }
-    });
+    }
   }
 
-  void _deleteEachCommentRepliesLikes(DeleteCommentParams params) {
-    accessCommentsCollection(params.tinyTaleId!).snapshots().listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference
-            .collection(AppStrings.commentReplies)
-            .snapshots()
-            .listen((event) {
-          for (final doc in event.docs) {
-            doc.reference
-                .collection(AppStrings.replyLikes)
-                .snapshots()
-                .listen((event) {
-              for (final doc in event.docs) {
-                doc.reference.delete();
-              }
-            });
-          }
-        });
+  Future<void> _deleteEachCommentRepliesLikes(
+    DeleteCommentParams params,
+  ) async {
+    final comments = await accessCommentsCollection(params.tinyTaleId!).get();
+    for (final comment in comments.docs) {
+      final commentReplies =
+          await comment.reference.collection(AppStrings.commentReplies).get();
+      for (final commentReply in commentReplies.docs) {
+        final replyLikes = await commentReply.reference
+            .collection(AppStrings.replyLikes)
+            .get();
+        for (final replyLike in replyLikes.docs) {
+          await replyLike.reference.delete();
+        }
       }
-    });
+    }
   }
 
   @override

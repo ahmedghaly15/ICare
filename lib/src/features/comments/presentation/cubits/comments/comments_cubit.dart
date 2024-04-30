@@ -8,7 +8,6 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_data.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
@@ -227,25 +226,6 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   void setNewTextValue(String text) {
     emit(CommentsState.setNewTextValue(text));
-  }
-
-  void handleCommentsState(
-    CommentsState<dynamic> state,
-    BuildContext context,
-    String tinyTaleId,
-  ) {
-    state.whenOrNull(
-      typeNewCommentSuccess: () {
-        commentController.clear();
-        getComments(tinyTaleId);
-      },
-      typeNewCommentError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
-      },
-      uploadCommentImageError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
-      },
-    );
   }
 
   @override

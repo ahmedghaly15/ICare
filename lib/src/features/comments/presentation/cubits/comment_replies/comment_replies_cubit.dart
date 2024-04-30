@@ -8,7 +8,6 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_data.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
@@ -50,7 +49,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
 
   void getCommentReplies(CommentRepliesViewParams params) async {
     emit(const CommentRepliesState.getCommentRepliesLoading());
-
     final result = await getCommentRepliesUseCase(params);
     result.when(
       success: (commentReplies) {
@@ -74,7 +72,7 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
               _typeNewCommentReply(
                 TypeNewCommentParams(
                   tinyTaleId: params.tinyTaleId,
-                  commentId: params.commentId,
+                  commentId: params.comment!.commentId,
                   commentData: CommentData(
                     commentText: commentReplyController.text,
                     date: getDate(),
@@ -87,7 +85,7 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
               _uploadCommentReplyImage(
                 TypeNewCommentParams(
                   tinyTaleId: params.tinyTaleId,
-                  commentId: params.commentId,
+                  commentId: params.comment!.commentId,
                   commentData: CommentData(
                     date: getDate(),
                     time: DateFormat.jm().format(DateTime.now()),
@@ -98,7 +96,7 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
                 commentReplyController.text.isNotEmpty) {
               _uploadCommentReplyImage(TypeNewCommentParams(
                 tinyTaleId: params.tinyTaleId,
-                commentId: params.commentId,
+                commentId: params.comment!.commentId,
                 commentData: CommentData(
                   commentText: commentReplyController.text,
                   date: getDate(),
@@ -227,24 +225,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
         .doc(replyId)
         .collection(AppStrings.replyLikes)
         .snapshots();
-  }
-
-  void handleCommentRepliesState(
-    CommentRepliesState<dynamic> state,
-    BuildContext context,
-    CommentRepliesViewParams commentRepliesViewParams,
-  ) {
-    state.whenOrNull(
-      typeNewCommentReplyError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
-      },
-      typeNewCommentReplySuccess: () {
-        getCommentReplies(commentRepliesViewParams);
-      },
-      uploadCommentReplyImageError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
-      },
-    );
   }
 
   void setNewTextValue(String text) {

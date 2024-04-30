@@ -17,48 +17,43 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
   const CommentRepliesDatasourceImpl();
 
   CollectionReference<Map<String, dynamic>> _accessCommentRepliesCollection(
-      CommentRepliesViewParams params) {
+      String tinyTaleId, String commentId) {
     return getIt
         .get<FirebaseFirestore>()
         .collection(AppStrings.tinyTalesCollection)
-        .doc(params.tinyTaleId)
+        .doc(tinyTaleId)
         .collection(AppStrings.commentsCollection)
-        .doc(params.commentId)
+        .doc(commentId)
         .collection(AppStrings.commentReplies);
   }
 
   @override
   Future<void> deleteCommentReply(DeleteCommentParams params) async {
-    _deleteReplyLikes(params);
-
-    return await _accessCommentRepliesCollection(
-      CommentRepliesViewParams(
-        commentId: params.commentId!,
-        tinyTaleId: params.tinyTaleId!,
-      ),
+    await _deleteReplyLikes(params);
+    await _accessCommentRepliesCollection(
+      params.commentId!,
+      params.tinyTaleId!,
     ).doc(params.commentReplyId).delete();
   }
 
-  void _deleteReplyLikes(DeleteCommentParams params) {
-    _accessCommentRepliesCollection(CommentRepliesViewParams(
-      commentId: params.commentId!,
-      tinyTaleId: params.tinyTaleId!,
-    ))
-        .doc(params.commentReplyId)
-        .collection(AppStrings.replyLikes)
-        .snapshots()
-        .listen((snapshot) {
-      for (final doc in snapshot.docs) {
-        doc.reference.delete();
-      }
-    });
+  Future<void> _deleteReplyLikes(DeleteCommentParams params) async {
+    final replyLikes = await _accessCommentRepliesCollection(
+      params.commentId!,
+      params.tinyTaleId!,
+    ).doc(params.commentReplyId).collection(AppStrings.replyLikes).get();
+
+    for (final doc in replyLikes.docs) {
+      await doc.reference.delete();
+    }
   }
 
   @override
   Future<QuerySnapshot<Map<String, dynamic>>> getCommentReplies(
     CommentRepliesViewParams params,
   ) async {
-    return await _accessCommentRepliesCollection(params).get();
+    return await _accessCommentRepliesCollection(
+            params.tinyTaleId!, params.comment!.commentId!)
+        .get();
   }
 
   @override
@@ -76,7 +71,7 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
       dateTime: DateTime.now().toString(),
     );
 
-    return await _accessCommentReplyLikesCollection(params)
+    await _accessCommentReplyLikesCollection(params)
         .doc(Helper.uId)
         .set(like.toJson());
   }
@@ -85,10 +80,8 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
     LikeParams params,
   ) {
     return _accessCommentRepliesCollection(
-      CommentRepliesViewParams(
-        commentId: params.commentId!,
-        tinyTaleId: params.tinyTaleId,
-      ),
+      params.tinyTaleId,
+      params.commentId!,
     ).doc(params.replyId).collection(AppStrings.replyLikes);
   }
 
@@ -101,15 +94,11 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
       commentData: typeCommentParams.commentData,
       dateTime: Timestamp.now(),
     );
-
     final DocumentReference<Map<String, dynamic>> document =
         await _accessCommentRepliesCollection(
-      CommentRepliesViewParams(
-        commentId: typeCommentParams.commentId!,
-        tinyTaleId: typeCommentParams.tinyTaleId!,
-      ),
+      typeCommentParams.tinyTaleId!,
+      typeCommentParams.commentId!,
     ).add(comment.toJson());
-
     await document.update({AppStrings.commentId: document.id});
     return document;
   }
