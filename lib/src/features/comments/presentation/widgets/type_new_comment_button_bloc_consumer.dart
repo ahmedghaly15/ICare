@@ -6,6 +6,7 @@ import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_state.dart';
+import 'package:icare/src/features/notifications/data/models/send_notification_params.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
@@ -30,11 +31,14 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
             context.read<CommentsCubit>().commentController.clear();
             context.read<CommentsCubit>().getComments(tinyTale.tinyTaleId!);
             if (tinyTale.user!.uId != Helper.uId) {
-              context.read<NotificationsCubit>().sendNotification(
+              context
+                  .read<NotificationsCubit>()
+                  .sendNotification(SendNotificationParams(
                     to: tinyTale.user!.mobileToken!,
                     body:
                         '${Helper.currentUser!.name} commented on your tiny tale',
-                  );
+                    receiverId: tinyTale.user!.uId,
+                  ));
             }
           },
           typeNewCommentError: (error) {

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
-import 'package:icare/src/core/widgets/follower_user_item.dart';
+import 'package:icare/src/features/following_and_followers/presentation/widgets/follower_user_item.dart';
 import 'package:icare/src/core/widgets/loading_users_sliver_list.dart';
 import 'package:icare/src/features/following_and_followers/presentation/widgets/this_user_empty_animated_following_or_followers.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
