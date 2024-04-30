@@ -1,14 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'send_notification_params.dart';
+part of 'icare_notification.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SendNotificationParams _$SendNotificationParamsFromJson(
-        Map<String, dynamic> json) =>
-    SendNotificationParams(
+ICareNotification _$ICareNotificationFromJson(Map<String, dynamic> json) =>
+    ICareNotification(
       to: json['to'] as String,
       body: json['body'] as String,
       title: json['title'] as String,
@@ -28,8 +27,7 @@ SendNotificationParams _$SendNotificationParamsFromJson(
           : CommentModel.fromJson(json['reply'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SendNotificationParamsToJson(
-        SendNotificationParams instance) =>
+Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
     <String, dynamic>{
       'to': instance.to,
       'body': instance.body,

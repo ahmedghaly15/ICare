@@ -5,10 +5,10 @@ import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'send_notification_params.g.dart';
+part 'icare_notification.g.dart';
 
 @JsonSerializable()
-class SendNotificationParams {
+class ICareNotification {
   final String to, body, title;
   final String? receiverId;
   final Timestamp? dateTime;
@@ -16,7 +16,7 @@ class SendNotificationParams {
   final CommentModel? comment, reply;
   final TinyTale? tinyTale;
 
-  const SendNotificationParams({
+  const ICareNotification({
     required this.to,
     required this.body,
     this.title = AppStrings.appTitle,
@@ -28,7 +28,7 @@ class SendNotificationParams {
     this.tinyTale,
   });
 
-  factory SendNotificationParams.fromJson(Map<String, dynamic> json) =>
-      _$SendNotificationParamsFromJson(json);
-  Map<String, dynamic> toJson() => _$SendNotificationParamsToJson(this);
+  factory ICareNotification.fromJson(Map<String, dynamic> json) =>
+      _$ICareNotificationFromJson(json);
+  Map<String, dynamic> toJson() => _$ICareNotificationToJson(this);
 }

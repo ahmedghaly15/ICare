@@ -7,7 +7,7 @@ import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_state.dart';
-import 'package:icare/src/features/notifications/data/models/send_notification_params.dart';
+import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 
 class NewReplyIconButtonBlocConsumer extends StatelessWidget {
@@ -35,7 +35,7 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
             if (params.comment!.user!.uId != Helper.uId) {
               context
                   .read<NotificationsCubit>()
-                  .sendNotification(SendNotificationParams(
+                  .sendNotification(ICareNotification(
                     to: params.comment!.user!.mobileToken!,
                     body: '${Helper.currentUser!.name} replied on your comment',
                     receiverId: params.comment!.user!.uId,

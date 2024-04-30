@@ -5,7 +5,7 @@ part 'notification_request.g.dart';
 @JsonSerializable()
 class NotificationRequest {
   final String to;
-  final ICareNotification notification;
+  final NotificationContent notification;
 
   const NotificationRequest({
     required this.to,
@@ -18,15 +18,15 @@ class NotificationRequest {
 }
 
 @JsonSerializable()
-class ICareNotification {
+class NotificationContent {
   final String title, body;
 
-  const ICareNotification({
+  const NotificationContent({
     required this.title,
     required this.body,
   });
 
-  factory ICareNotification.fromJson(Map<String, dynamic> json) =>
-      _$ICareNotificationFromJson(json);
-  Map<String, dynamic> toJson() => _$ICareNotificationToJson(this);
+  factory NotificationContent.fromJson(Map<String, dynamic> json) =>
+      _$NotificationContentFromJson(json);
+  Map<String, dynamic> toJson() => _$NotificationContentToJson(this);
 }

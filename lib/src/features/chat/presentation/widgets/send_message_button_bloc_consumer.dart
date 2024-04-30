@@ -7,7 +7,7 @@ import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
-import 'package:icare/src/features/notifications/data/models/send_notification_params.dart';
+import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 
 class SendMessageButtonBlocConsumer extends StatelessWidget {
@@ -30,7 +30,7 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
           sendMessageSuccess: () {
             context
                 .read<NotificationsCubit>()
-                .sendNotification(SendNotificationParams(
+                .sendNotification(ICareNotification(
                   to: receiver.mobileToken!,
                   title: Helper.currentUser!.name!,
                   body: context.read<ChatCubit>().messageController.text.trim(),

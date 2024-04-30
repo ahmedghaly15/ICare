@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
-import 'package:icare/src/features/notifications/data/models/send_notification_params.dart';
+import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
@@ -56,7 +56,7 @@ class BookmarkIconButtonBlocListener extends StatelessWidget {
                     if (tinyTale.user!.uId != Helper.uId) {
                       context
                           .read<NotificationsCubit>()
-                          .sendNotification(SendNotificationParams(
+                          .sendNotification(ICareNotification(
                             to: tinyTale.user!.mobileToken!,
                             body:
                                 '${Helper.currentUser!.name} bookmarked your tiny tale',

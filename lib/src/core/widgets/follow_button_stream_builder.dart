@@ -7,7 +7,7 @@ import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
-import 'package:icare/src/features/notifications/data/models/send_notification_params.dart';
+import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
@@ -45,7 +45,7 @@ class FollowButtonStreamBuilder extends StatelessWidget {
                   context.read<UserCubit>().follow(user);
                   context
                       .read<NotificationsCubit>()
-                      .sendNotification(SendNotificationParams(
+                      .sendNotification(ICareNotification(
                         to: user.mobileToken!,
                         body:
                             '${Helper.currentUser!.name} is now following you',
