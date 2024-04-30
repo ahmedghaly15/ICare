@@ -37,6 +37,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     await _updateUserBookmarkedTinyTales(user);
     await _updateUserInOtherUsersFollowing(user);
     await _updateUserInOtherUsersFollowers(user);
+    await _updateUserInChats(user);
   }
 
   @override
@@ -213,6 +214,21 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
           await accessUserFollowersCollection(queryUser.id)
               .doc(Helper.uId)
               .update(user.toJson());
+        }
+      }
+    }
+  }
+
+  Future<void> _updateUserInChats(ICareUser user) async {
+    final usersQuery = await accessUsersCollection().get();
+    for (final queryUser in usersQuery.docs) {
+      final chatQuery = await queryUser.reference
+          .collection(AppStrings.chatsCollection)
+          .get();
+
+      for (final chat in chatQuery.docs) {
+        if (chat.id == Helper.uId) {
+          await chat.reference.update(user.toJson());
         }
       }
     }
