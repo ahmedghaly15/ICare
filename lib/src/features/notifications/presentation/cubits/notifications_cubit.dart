@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/notifications/data/models/notification_request.dart';
+import 'package:icare/src/features/notifications/data/models/send_notification_params.dart';
 import 'package:icare/src/features/notifications/domain/usecases/send_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_state.dart';
 
@@ -13,38 +14,41 @@ class NotificationsCubit extends Cubit<NotificationsState> {
     this._sendNotificationUseCase,
   ) : super(const NotificationsState.initial());
 
-  void sendNotification({
-    required String to,
-    required String body,
-  }) async {
+  Future<void> sendNotification(SendNotificationParams params) async {
     final NotificationRequest notificationRequest = NotificationRequest(
-      to: to,
+      to: params.to,
       notification: ICareNotification(
-        title: AppStrings.appTitle,
-        body: body,
-        // dateTime: Timestamp.now(),
+        title: params.title,
+        body: params.body,
       ),
     );
-
     final result = await _sendNotificationUseCase.call(notificationRequest);
     result.when(
       success: (_) {
-        // await _saveNotificationToFirebaseFirestore(notificationRequest);
         emit(const NotificationsState.sendNotificationSuccess());
+        _saveNotificationToFirebaseFirestore(params);
       },
       error: (error) => emit(NotificationsState.sendNotificationError(
           error.apiErrorModel.error ?? '')),
     );
   }
 
-  // Future<void> _saveNotificationToFirebaseFirestore(
-  //   NotificationRequest notificationRequest,
-  // ) async {
-  //   await getIt
-  //       .get<FirebaseFirestore>()
-  //       .collection(AppStrings.usersCollection)
-  //       .doc(notificationRequest.receiverId)
-  //       .collection(AppStrings.notificationsCollection)
-  //       .add(notificationRequest.notification.toJson());
-  // }
+  void _saveNotificationToFirebaseFirestore(
+    SendNotificationParams params,
+  ) async {
+    final SendNotificationParams sendNotificationParams =
+        SendNotificationParams(
+      to: params.to,
+      title: params.title,
+      body: params.body,
+      receiverId: params.receiverId,
+      dateTime: Timestamp.now(),
+    );
+    await getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.usersCollection)
+        .doc(params.receiverId)
+        .collection(AppStrings.notificationsCollection)
+        .add(sendNotificationParams.toJson());
+  }
 }
