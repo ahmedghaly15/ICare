@@ -51,10 +51,11 @@ Future<void> _updateMobileTokenInOtherCollections(String? mobileToken) async {
   await _updateMobileTokenInComments(mobileToken);
   await _updateMobileTokenInCommentsLikes(mobileToken);
   await _updateMobileTokenInCommentsReplies(mobileToken);
+  await _updateMobileTokenInCommentsRepliesLikes(mobileToken);
   await _updateMobileTokenInBookmarkedTinyTales(mobileToken);
   await _updateMobileTokenInOtherUsersFollowing(mobileToken);
   await _updateMobileTokenInOtherUsersFollowers(mobileToken);
-  await _updateMobileTokenInCommentsRepliesLikes(mobileToken);
+  await _updateMobileTokenInChats(mobileToken);
 }
 
 Map<Object, Object?> _mobileTokenMap(String? mobileToken) =>
@@ -202,6 +203,19 @@ Future<void> _updateMobileTokenInOtherUsersFollowers(
         await accessUserFollowersCollection(queryUser.id)
             .doc(Helper.uId)
             .update(_mobileTokenMap(mobileToken));
+      }
+    }
+  }
+}
+
+Future<void> _updateMobileTokenInChats(String? mobileToken) async {
+  final usersQuery = await accessUsersCollection().get();
+  for (final queryUser in usersQuery.docs) {
+    final chatQuery =
+        await queryUser.reference.collection(AppStrings.chatsCollection).get();
+    for (final chat in chatQuery.docs) {
+      if (chat.id == Helper.uId) {
+        await chat.reference.update(_mobileTokenMap(mobileToken));
       }
     }
   }
