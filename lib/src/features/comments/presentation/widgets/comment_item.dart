@@ -47,7 +47,7 @@ class CommentItem extends StatelessWidget {
             CommentItemContent(comment: comment),
             MySizedBox.height2,
             LikeAndReplyButtons(
-              commentId: comment.commentId,
+              comment: comment,
               tinyTaleId: tinyTaleId,
             ),
           ],

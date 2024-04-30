@@ -13,11 +13,23 @@ class NotificationsCubit extends Cubit<NotificationsState> {
     this._sendNotificationUseCase,
   ) : super(const NotificationsState.initial());
 
-  void sendNotification(NotificationRequest notificationRequest) async {
+  void sendNotification({
+    required String to,
+    required String body,
+  }) async {
+    final NotificationRequest notificationRequest = NotificationRequest(
+      to: to,
+      notification: ICareNotification(
+        title: AppStrings.appTitle,
+        body: body,
+        // dateTime: Timestamp.now(),
+      ),
+    );
+
     final result = await _sendNotificationUseCase.call(notificationRequest);
     result.when(
-      success: (_) async {
-        await _saveNotificationToFirebaseFirestore(notificationRequest);
+      success: (_) {
+        // await _saveNotificationToFirebaseFirestore(notificationRequest);
         emit(const NotificationsState.sendNotificationSuccess());
       },
       error: (error) => emit(NotificationsState.sendNotificationError(
@@ -25,14 +37,14 @@ class NotificationsCubit extends Cubit<NotificationsState> {
     );
   }
 
-  Future<void> _saveNotificationToFirebaseFirestore(
-    NotificationRequest notificationRequest,
-  ) async {
-    await getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection)
-        .doc(notificationRequest.receiverId)
-        .collection(AppStrings.notificationsCollection)
-        .add(notificationRequest.notification.toJson());
-  }
+  // Future<void> _saveNotificationToFirebaseFirestore(
+  //   NotificationRequest notificationRequest,
+  // ) async {
+  //   await getIt
+  //       .get<FirebaseFirestore>()
+  //       .collection(AppStrings.usersCollection)
+  //       .doc(notificationRequest.receiverId)
+  //       .collection(AppStrings.notificationsCollection)
+  //       .add(notificationRequest.notification.toJson());
+  // }
 }

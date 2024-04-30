@@ -37,9 +37,7 @@ class TinyTaleItem extends StatelessWidget {
               tinyTale: tinyTale,
             ),
           if (tinyTale.tinyTaleData!.tinyTaleImage == null)
-            LikeCommentBookmarkButtons(
-              tinyTale: tinyTale,
-            ),
+            LikeCommentBookmarkButtons(tinyTale: tinyTale),
         ],
       ),
     );

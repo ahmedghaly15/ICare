@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_state.dart';
+import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 
 class NewReplyIconButtonBlocConsumer extends StatelessWidget {
   const NewReplyIconButtonBlocConsumer({
@@ -22,9 +25,23 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
           current is UploadCommentReplyImageError ||
           current is TypeNewCommentReplySuccess,
       listener: (context, state) {
-        context
-            .read<CommentRepliesCubit>()
-            .handleCommentRepliesState(state, context, params);
+        state.whenOrNull(
+          typeNewCommentReplyError: (error) {
+            ShowICareDialog.showICareDialogError(context, error);
+          },
+          typeNewCommentReplySuccess: () {
+            context.read<CommentRepliesCubit>().getCommentReplies(params);
+            if (params.comment!.user!.uId != Helper.uId) {
+              context.read<NotificationsCubit>().sendNotification(
+                    to: params.comment!.user!.mobileToken!,
+                    body: '${Helper.currentUser!.name} replied on your comment',
+                  );
+            }
+          },
+          uploadCommentReplyImageError: (error) {
+            ShowICareDialog.showICareDialogError(context, error);
+          },
+        );
       },
       buildWhen: (_, current) =>
           current is TypeNewCommentReplyLoading ||

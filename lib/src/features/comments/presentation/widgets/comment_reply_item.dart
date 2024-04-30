@@ -9,10 +9,9 @@ import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_item_content.dart';
-import 'package:icare/src/features/comments/presentation/widgets/comment_like_icon_button_stream_builder.dart';
 import 'package:icare/src/features/comments/presentation/widgets/comment_reply_more_icon_button_bloc_listener.dart';
+import 'package:icare/src/features/comments/presentation/widgets/comment_reply_like_button.dart';
 import 'package:icare/src/features/comments/presentation/widgets/query_snapshot_text_stream_builder.dart';
-import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 
 class CommentReplyItem extends StatelessWidget {
   const CommentReplyItem({
@@ -54,43 +53,13 @@ class CommentReplyItem extends StatelessWidget {
             Row(
               children: <Widget>[
                 MySizedBox.width10,
-                CommentLikeIconButtonStreamBuilder(
-                  stream: reply.commentId != null
-                      ? context
-                          .read<CommentRepliesCubit>()
-                          .isCommentReplyLikedByMe(
-                            LikeParams(
-                              tinyTaleId: params.tinyTaleId!,
-                              commentId: params.commentId,
-                              replyId: reply.commentId,
-                            ),
-                          )
-                      : const Stream<bool>.empty(),
-                  likeOnPressed: () {
-                    context.read<CommentRepliesCubit>().likeCommentReply(
-                          LikeParams(
-                            tinyTaleId: params.tinyTaleId!,
-                            commentId: params.commentId,
-                            replyId: reply.commentId,
-                          ),
-                        );
-                  },
-                  unLikeOnPressed: () {
-                    context.read<CommentRepliesCubit>().unlikeCommentReply(
-                          LikeParams(
-                            tinyTaleId: params.tinyTaleId!,
-                            commentId: params.commentId,
-                            replyId: reply.commentId,
-                          ),
-                        );
-                  },
-                ),
+                CommentReplyLikeButton(reply: reply, params: params),
                 QuerySnapshotTextStreamBuilder(
                   stream: context
                       .read<CommentRepliesCubit>()
                       .commentReplyLikesStream(
                         params.tinyTaleId!,
-                        params.commentId!,
+                        params.comment!.commentId!,
                         reply.commentId!,
                       ),
                 ),

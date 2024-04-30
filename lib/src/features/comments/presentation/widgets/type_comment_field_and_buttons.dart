@@ -5,15 +5,16 @@ import 'package:icare/src/core/widgets/pick_image_icon_button.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/widgets/new_comment_field_bloc_builder.dart';
 import 'package:icare/src/features/comments/presentation/widgets/type_new_comment_button_bloc_consumer.dart';
+import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:image_picker/image_picker.dart';
 
 class TypeCommentFieldAndButtons extends StatelessWidget {
   const TypeCommentFieldAndButtons({
     super.key,
-    required this.tinyTaleId,
+    required this.tinyTale,
   });
 
-  final String tinyTaleId;
+  final TinyTale tinyTale;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +34,7 @@ class TypeCommentFieldAndButtons extends StatelessWidget {
         ),
         const NewCommentFieldBlocBuilder(),
         SizedBox.square(dimension: 8.h),
-        TypeNewCommentButtonBlocConsumer(
-          tinyTaleId: tinyTaleId,
-        ),
+        TypeNewCommentButtonBlocConsumer(tinyTale: tinyTale),
       ],
     );
   }

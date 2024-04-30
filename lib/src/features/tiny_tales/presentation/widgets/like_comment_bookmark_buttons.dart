@@ -31,7 +31,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
       children: <Widget>[
         IconButton(
           onPressed: () {
-            context.pushRoute(CommentsRoute(tinyTaleId: tinyTale.tinyTaleId!));
+            context.pushRoute(CommentsRoute(tinyTale: tinyTale));
           },
           icon: SvgPicture.asset(
             isDarkModeActive(context)

@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_state.dart';
+import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
+import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
 class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
   const TypeNewCommentButtonBlocConsumer({
     super.key,
-    required this.tinyTaleId,
+    required this.tinyTale,
   });
 
-  final String tinyTaleId;
+  final TinyTale tinyTale;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +25,25 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
           current is UploadCommentImageError ||
           current is TypeNewCommentSuccess,
       listener: (context, state) {
-        context
-            .read<CommentsCubit>()
-            .handleCommentsState(state, context, tinyTaleId);
+        state.whenOrNull(
+          typeNewCommentSuccess: () {
+            context.read<CommentsCubit>().commentController.clear();
+            context.read<CommentsCubit>().getComments(tinyTale.tinyTaleId!);
+            if (tinyTale.user!.uId != Helper.uId) {
+              context.read<NotificationsCubit>().sendNotification(
+                    to: tinyTale.user!.mobileToken!,
+                    body:
+                        '${Helper.currentUser!.name} commented on your tiny tale',
+                  );
+            }
+          },
+          typeNewCommentError: (error) {
+            ShowICareDialog.showICareDialogError(context, error);
+          },
+          uploadCommentImageError: (error) {
+            ShowICareDialog.showICareDialogError(context, error);
+          },
+        );
       },
       buildWhen: (_, current) =>
           current is TypeNewCommentLoading ||
@@ -45,8 +65,9 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
           isEnabled:
               context.read<CommentsCubit>().commentController.text.isNotEmpty ||
                   context.read<CommentsCubit>().commentImage != null,
-          onPressed:
-              context.read<CommentsCubit>().newComment(context, tinyTaleId),
+          onPressed: context
+              .read<CommentsCubit>()
+              .newComment(context, tinyTale.tinyTaleId!),
         );
       },
     );
