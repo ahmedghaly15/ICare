@@ -36,6 +36,7 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
                   body: context.read<ChatCubit>().messageController.text.trim(),
                   receiverId: receiver.uId,
                   user: Helper.currentUser,
+                  isMessage: true,
                 ))
                 .then((value) {
               context.read<ChatCubit>().messageController.clear();

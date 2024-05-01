@@ -195,4 +195,5 @@ class AppStrings {
   static const String cachedDevelopers = 'cachedDevelopers';
   static const String developers = 'Developers';
   static const String notificationsCollection = 'Notifications Collection';
+  static const String notifications = 'Notifications';
 }

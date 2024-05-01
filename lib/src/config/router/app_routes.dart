@@ -114,6 +114,7 @@ List<AutoRoute> get appRoutes {
       page: DevelopersRoute.page,
       transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
     ),
+    _buildCustomRoute(page: NotificationsRoute.page),
   ];
 }
 
