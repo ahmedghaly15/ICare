@@ -8,12 +8,6 @@ part 'comment_replies_state.freezed.dart';
 @freezed
 class CommentRepliesState<T> with _$CommentRepliesState<T> {
   const factory CommentRepliesState.initial() = _CommentRepliesInitial;
-  const factory CommentRepliesState.getCommentRepliesLoading() =
-      GetCommentRepliesLoading;
-  const factory CommentRepliesState.getCommentRepliesSuccess(
-      List<CommentModel> comments) = GetCommentRepliesSuccess<T>;
-  const factory CommentRepliesState.getCommentRepliesError(String error) =
-      GetCommentRepliesError<T>;
   const factory CommentRepliesState.typeNewCommentReplyLoading() =
       TypeNewCommentReplyLoading;
   const factory CommentRepliesState.typeNewCommentReplySuccess() =

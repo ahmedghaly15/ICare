@@ -19,10 +19,6 @@ mixin _$CommentsState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -45,9 +41,6 @@ mixin _$CommentsState<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -70,9 +63,6 @@ mixin _$CommentsState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -96,11 +86,6 @@ mixin _$CommentsState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -134,9 +119,6 @@ mixin _$CommentsState<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -164,9 +146,6 @@ mixin _$CommentsState<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -249,10 +228,6 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -278,9 +253,6 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -306,9 +278,6 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -338,11 +307,6 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -379,9 +343,6 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -412,9 +373,6 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -446,798 +404,6 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
 
 abstract class _CommentsInitial<T> implements CommentsState<T> {
   const factory _CommentsInitial() = _$CommentsInitialImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$StreamCommentsLoadingImplCopyWith<T, $Res> {
-  factory _$$StreamCommentsLoadingImplCopyWith(
-          _$StreamCommentsLoadingImpl<T> value,
-          $Res Function(_$StreamCommentsLoadingImpl<T>) then) =
-      __$$StreamCommentsLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$StreamCommentsLoadingImplCopyWithImpl<T, $Res>
-    extends _$CommentsStateCopyWithImpl<T, $Res, _$StreamCommentsLoadingImpl<T>>
-    implements _$$StreamCommentsLoadingImplCopyWith<T, $Res> {
-  __$$StreamCommentsLoadingImplCopyWithImpl(
-      _$StreamCommentsLoadingImpl<T> _value,
-      $Res Function(_$StreamCommentsLoadingImpl<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$StreamCommentsLoadingImpl<T> implements StreamCommentsLoading<T> {
-  const _$StreamCommentsLoadingImpl();
-
-  @override
-  String toString() {
-    return 'CommentsState<$T>.streamCommentsLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StreamCommentsLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
-    required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
-    required TResult Function(String error) typeNewCommentError,
-    required TResult Function(File commentImage) pickCommentImageSuccess,
-    required TResult Function(String error) pickCommentImageError,
-    required TResult Function() uploadCommentImageLoading,
-    required TResult Function(String imageUrl) uploadCommentImageSuccess,
-    required TResult Function(String error) uploadCommentImageError,
-    required TResult Function() deleteCommentLoading,
-    required TResult Function() deleteCommentSuccess,
-    required TResult Function(String error) deleteCommentError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removePickedCommentImage,
-    required TResult Function() likeCommentSuccess,
-    required TResult Function(String error) likeCommentError,
-    required TResult Function() unlikeCommentSuccess,
-    required TResult Function(String error) unlikeCommentError,
-  }) {
-    return streamCommentsLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
-    TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
-    TResult? Function(String error)? typeNewCommentError,
-    TResult? Function(File commentImage)? pickCommentImageSuccess,
-    TResult? Function(String error)? pickCommentImageError,
-    TResult? Function()? uploadCommentImageLoading,
-    TResult? Function(String imageUrl)? uploadCommentImageSuccess,
-    TResult? Function(String error)? uploadCommentImageError,
-    TResult? Function()? deleteCommentLoading,
-    TResult? Function()? deleteCommentSuccess,
-    TResult? Function(String error)? deleteCommentError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removePickedCommentImage,
-    TResult? Function()? likeCommentSuccess,
-    TResult? Function(String error)? likeCommentError,
-    TResult? Function()? unlikeCommentSuccess,
-    TResult? Function(String error)? unlikeCommentError,
-  }) {
-    return streamCommentsLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
-    TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
-    TResult Function(String error)? typeNewCommentError,
-    TResult Function(File commentImage)? pickCommentImageSuccess,
-    TResult Function(String error)? pickCommentImageError,
-    TResult Function()? uploadCommentImageLoading,
-    TResult Function(String imageUrl)? uploadCommentImageSuccess,
-    TResult Function(String error)? uploadCommentImageError,
-    TResult Function()? deleteCommentLoading,
-    TResult Function()? deleteCommentSuccess,
-    TResult Function(String error)? deleteCommentError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removePickedCommentImage,
-    TResult Function()? likeCommentSuccess,
-    TResult Function(String error)? likeCommentError,
-    TResult Function()? unlikeCommentSuccess,
-    TResult Function(String error)? unlikeCommentError,
-    required TResult orElse(),
-  }) {
-    if (streamCommentsLoading != null) {
-      return streamCommentsLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
-    required TResult Function(TypeNewCommentLoading<T> value)
-        typeNewCommentLoading,
-    required TResult Function(TypeNewCommentSuccess<T> value)
-        typeNewCommentSuccess,
-    required TResult Function(TypeNewCommentError<T> value) typeNewCommentError,
-    required TResult Function(PickCommentImageSuccess<T> value)
-        pickCommentImageSuccess,
-    required TResult Function(PickCommentImageError<T> value)
-        pickCommentImageError,
-    required TResult Function(UploadCommentImageLoading<T> value)
-        uploadCommentImageLoading,
-    required TResult Function(UploadCommentImageSuccess<T> value)
-        uploadCommentImageSuccess,
-    required TResult Function(UploadCommentImageError<T> value)
-        uploadCommentImageError,
-    required TResult Function(DeleteCommentLoading<T> value)
-        deleteCommentLoading,
-    required TResult Function(DeleteCommentSuccess<T> value)
-        deleteCommentSuccess,
-    required TResult Function(DeleteCommentError<T> value) deleteCommentError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemovePickedCommentImage<T> value)
-        removePickedCommentImage,
-    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
-    required TResult Function(LikeCommentError<T> value) likeCommentError,
-    required TResult Function(UnlikeCommentSuccess<T> value)
-        unlikeCommentSuccess,
-    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
-  }) {
-    return streamCommentsLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
-    TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
-    TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
-    TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
-    TResult? Function(PickCommentImageSuccess<T> value)?
-        pickCommentImageSuccess,
-    TResult? Function(PickCommentImageError<T> value)? pickCommentImageError,
-    TResult? Function(UploadCommentImageLoading<T> value)?
-        uploadCommentImageLoading,
-    TResult? Function(UploadCommentImageSuccess<T> value)?
-        uploadCommentImageSuccess,
-    TResult? Function(UploadCommentImageError<T> value)?
-        uploadCommentImageError,
-    TResult? Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
-    TResult? Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
-    TResult? Function(DeleteCommentError<T> value)? deleteCommentError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemovePickedCommentImage<T> value)?
-        removePickedCommentImage,
-    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
-    TResult? Function(LikeCommentError<T> value)? likeCommentError,
-    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
-    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
-  }) {
-    return streamCommentsLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
-    TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
-    TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
-    TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
-    TResult Function(PickCommentImageSuccess<T> value)? pickCommentImageSuccess,
-    TResult Function(PickCommentImageError<T> value)? pickCommentImageError,
-    TResult Function(UploadCommentImageLoading<T> value)?
-        uploadCommentImageLoading,
-    TResult Function(UploadCommentImageSuccess<T> value)?
-        uploadCommentImageSuccess,
-    TResult Function(UploadCommentImageError<T> value)? uploadCommentImageError,
-    TResult Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
-    TResult Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
-    TResult Function(DeleteCommentError<T> value)? deleteCommentError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemovePickedCommentImage<T> value)?
-        removePickedCommentImage,
-    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
-    TResult Function(LikeCommentError<T> value)? likeCommentError,
-    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
-    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
-    required TResult orElse(),
-  }) {
-    if (streamCommentsLoading != null) {
-      return streamCommentsLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StreamCommentsLoading<T> implements CommentsState<T> {
-  const factory StreamCommentsLoading() = _$StreamCommentsLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$StreamCommentsSuccessImplCopyWith<T, $Res> {
-  factory _$$StreamCommentsSuccessImplCopyWith(
-          _$StreamCommentsSuccessImpl<T> value,
-          $Res Function(_$StreamCommentsSuccessImpl<T>) then) =
-      __$$StreamCommentsSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({List<CommentModel> comments});
-}
-
-/// @nodoc
-class __$$StreamCommentsSuccessImplCopyWithImpl<T, $Res>
-    extends _$CommentsStateCopyWithImpl<T, $Res, _$StreamCommentsSuccessImpl<T>>
-    implements _$$StreamCommentsSuccessImplCopyWith<T, $Res> {
-  __$$StreamCommentsSuccessImplCopyWithImpl(
-      _$StreamCommentsSuccessImpl<T> _value,
-      $Res Function(_$StreamCommentsSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? comments = null,
-  }) {
-    return _then(_$StreamCommentsSuccessImpl<T>(
-      null == comments
-          ? _value._comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as List<CommentModel>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$StreamCommentsSuccessImpl<T> implements StreamCommentsSuccess<T> {
-  const _$StreamCommentsSuccessImpl(final List<CommentModel> comments)
-      : _comments = comments;
-
-  final List<CommentModel> _comments;
-  @override
-  List<CommentModel> get comments {
-    if (_comments is EqualUnmodifiableListView) return _comments;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_comments);
-  }
-
-  @override
-  String toString() {
-    return 'CommentsState<$T>.streamCommentsSuccess(comments: $comments)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StreamCommentsSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other._comments, _comments));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_comments));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StreamCommentsSuccessImplCopyWith<T, _$StreamCommentsSuccessImpl<T>>
-      get copyWith => __$$StreamCommentsSuccessImplCopyWithImpl<T,
-          _$StreamCommentsSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
-    required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
-    required TResult Function(String error) typeNewCommentError,
-    required TResult Function(File commentImage) pickCommentImageSuccess,
-    required TResult Function(String error) pickCommentImageError,
-    required TResult Function() uploadCommentImageLoading,
-    required TResult Function(String imageUrl) uploadCommentImageSuccess,
-    required TResult Function(String error) uploadCommentImageError,
-    required TResult Function() deleteCommentLoading,
-    required TResult Function() deleteCommentSuccess,
-    required TResult Function(String error) deleteCommentError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removePickedCommentImage,
-    required TResult Function() likeCommentSuccess,
-    required TResult Function(String error) likeCommentError,
-    required TResult Function() unlikeCommentSuccess,
-    required TResult Function(String error) unlikeCommentError,
-  }) {
-    return streamCommentsSuccess(comments);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
-    TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
-    TResult? Function(String error)? typeNewCommentError,
-    TResult? Function(File commentImage)? pickCommentImageSuccess,
-    TResult? Function(String error)? pickCommentImageError,
-    TResult? Function()? uploadCommentImageLoading,
-    TResult? Function(String imageUrl)? uploadCommentImageSuccess,
-    TResult? Function(String error)? uploadCommentImageError,
-    TResult? Function()? deleteCommentLoading,
-    TResult? Function()? deleteCommentSuccess,
-    TResult? Function(String error)? deleteCommentError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removePickedCommentImage,
-    TResult? Function()? likeCommentSuccess,
-    TResult? Function(String error)? likeCommentError,
-    TResult? Function()? unlikeCommentSuccess,
-    TResult? Function(String error)? unlikeCommentError,
-  }) {
-    return streamCommentsSuccess?.call(comments);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
-    TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
-    TResult Function(String error)? typeNewCommentError,
-    TResult Function(File commentImage)? pickCommentImageSuccess,
-    TResult Function(String error)? pickCommentImageError,
-    TResult Function()? uploadCommentImageLoading,
-    TResult Function(String imageUrl)? uploadCommentImageSuccess,
-    TResult Function(String error)? uploadCommentImageError,
-    TResult Function()? deleteCommentLoading,
-    TResult Function()? deleteCommentSuccess,
-    TResult Function(String error)? deleteCommentError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removePickedCommentImage,
-    TResult Function()? likeCommentSuccess,
-    TResult Function(String error)? likeCommentError,
-    TResult Function()? unlikeCommentSuccess,
-    TResult Function(String error)? unlikeCommentError,
-    required TResult orElse(),
-  }) {
-    if (streamCommentsSuccess != null) {
-      return streamCommentsSuccess(comments);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
-    required TResult Function(TypeNewCommentLoading<T> value)
-        typeNewCommentLoading,
-    required TResult Function(TypeNewCommentSuccess<T> value)
-        typeNewCommentSuccess,
-    required TResult Function(TypeNewCommentError<T> value) typeNewCommentError,
-    required TResult Function(PickCommentImageSuccess<T> value)
-        pickCommentImageSuccess,
-    required TResult Function(PickCommentImageError<T> value)
-        pickCommentImageError,
-    required TResult Function(UploadCommentImageLoading<T> value)
-        uploadCommentImageLoading,
-    required TResult Function(UploadCommentImageSuccess<T> value)
-        uploadCommentImageSuccess,
-    required TResult Function(UploadCommentImageError<T> value)
-        uploadCommentImageError,
-    required TResult Function(DeleteCommentLoading<T> value)
-        deleteCommentLoading,
-    required TResult Function(DeleteCommentSuccess<T> value)
-        deleteCommentSuccess,
-    required TResult Function(DeleteCommentError<T> value) deleteCommentError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemovePickedCommentImage<T> value)
-        removePickedCommentImage,
-    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
-    required TResult Function(LikeCommentError<T> value) likeCommentError,
-    required TResult Function(UnlikeCommentSuccess<T> value)
-        unlikeCommentSuccess,
-    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
-  }) {
-    return streamCommentsSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
-    TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
-    TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
-    TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
-    TResult? Function(PickCommentImageSuccess<T> value)?
-        pickCommentImageSuccess,
-    TResult? Function(PickCommentImageError<T> value)? pickCommentImageError,
-    TResult? Function(UploadCommentImageLoading<T> value)?
-        uploadCommentImageLoading,
-    TResult? Function(UploadCommentImageSuccess<T> value)?
-        uploadCommentImageSuccess,
-    TResult? Function(UploadCommentImageError<T> value)?
-        uploadCommentImageError,
-    TResult? Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
-    TResult? Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
-    TResult? Function(DeleteCommentError<T> value)? deleteCommentError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemovePickedCommentImage<T> value)?
-        removePickedCommentImage,
-    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
-    TResult? Function(LikeCommentError<T> value)? likeCommentError,
-    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
-    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
-  }) {
-    return streamCommentsSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
-    TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
-    TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
-    TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
-    TResult Function(PickCommentImageSuccess<T> value)? pickCommentImageSuccess,
-    TResult Function(PickCommentImageError<T> value)? pickCommentImageError,
-    TResult Function(UploadCommentImageLoading<T> value)?
-        uploadCommentImageLoading,
-    TResult Function(UploadCommentImageSuccess<T> value)?
-        uploadCommentImageSuccess,
-    TResult Function(UploadCommentImageError<T> value)? uploadCommentImageError,
-    TResult Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
-    TResult Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
-    TResult Function(DeleteCommentError<T> value)? deleteCommentError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemovePickedCommentImage<T> value)?
-        removePickedCommentImage,
-    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
-    TResult Function(LikeCommentError<T> value)? likeCommentError,
-    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
-    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
-    required TResult orElse(),
-  }) {
-    if (streamCommentsSuccess != null) {
-      return streamCommentsSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StreamCommentsSuccess<T> implements CommentsState<T> {
-  const factory StreamCommentsSuccess(final List<CommentModel> comments) =
-      _$StreamCommentsSuccessImpl<T>;
-
-  List<CommentModel> get comments;
-  @JsonKey(ignore: true)
-  _$$StreamCommentsSuccessImplCopyWith<T, _$StreamCommentsSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$StreamCommentsErrorImplCopyWith<T, $Res> {
-  factory _$$StreamCommentsErrorImplCopyWith(_$StreamCommentsErrorImpl<T> value,
-          $Res Function(_$StreamCommentsErrorImpl<T>) then) =
-      __$$StreamCommentsErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$StreamCommentsErrorImplCopyWithImpl<T, $Res>
-    extends _$CommentsStateCopyWithImpl<T, $Res, _$StreamCommentsErrorImpl<T>>
-    implements _$$StreamCommentsErrorImplCopyWith<T, $Res> {
-  __$$StreamCommentsErrorImplCopyWithImpl(_$StreamCommentsErrorImpl<T> _value,
-      $Res Function(_$StreamCommentsErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$StreamCommentsErrorImpl<T>(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$StreamCommentsErrorImpl<T> implements StreamCommentsError<T> {
-  const _$StreamCommentsErrorImpl(this.error);
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'CommentsState<$T>.streamCommentsError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$StreamCommentsErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$StreamCommentsErrorImplCopyWith<T, _$StreamCommentsErrorImpl<T>>
-      get copyWith => __$$StreamCommentsErrorImplCopyWithImpl<T,
-          _$StreamCommentsErrorImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
-    required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
-    required TResult Function(String error) typeNewCommentError,
-    required TResult Function(File commentImage) pickCommentImageSuccess,
-    required TResult Function(String error) pickCommentImageError,
-    required TResult Function() uploadCommentImageLoading,
-    required TResult Function(String imageUrl) uploadCommentImageSuccess,
-    required TResult Function(String error) uploadCommentImageError,
-    required TResult Function() deleteCommentLoading,
-    required TResult Function() deleteCommentSuccess,
-    required TResult Function(String error) deleteCommentError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removePickedCommentImage,
-    required TResult Function() likeCommentSuccess,
-    required TResult Function(String error) likeCommentError,
-    required TResult Function() unlikeCommentSuccess,
-    required TResult Function(String error) unlikeCommentError,
-  }) {
-    return streamCommentsError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
-    TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
-    TResult? Function(String error)? typeNewCommentError,
-    TResult? Function(File commentImage)? pickCommentImageSuccess,
-    TResult? Function(String error)? pickCommentImageError,
-    TResult? Function()? uploadCommentImageLoading,
-    TResult? Function(String imageUrl)? uploadCommentImageSuccess,
-    TResult? Function(String error)? uploadCommentImageError,
-    TResult? Function()? deleteCommentLoading,
-    TResult? Function()? deleteCommentSuccess,
-    TResult? Function(String error)? deleteCommentError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removePickedCommentImage,
-    TResult? Function()? likeCommentSuccess,
-    TResult? Function(String error)? likeCommentError,
-    TResult? Function()? unlikeCommentSuccess,
-    TResult? Function(String error)? unlikeCommentError,
-  }) {
-    return streamCommentsError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
-    TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
-    TResult Function(String error)? typeNewCommentError,
-    TResult Function(File commentImage)? pickCommentImageSuccess,
-    TResult Function(String error)? pickCommentImageError,
-    TResult Function()? uploadCommentImageLoading,
-    TResult Function(String imageUrl)? uploadCommentImageSuccess,
-    TResult Function(String error)? uploadCommentImageError,
-    TResult Function()? deleteCommentLoading,
-    TResult Function()? deleteCommentSuccess,
-    TResult Function(String error)? deleteCommentError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removePickedCommentImage,
-    TResult Function()? likeCommentSuccess,
-    TResult Function(String error)? likeCommentError,
-    TResult Function()? unlikeCommentSuccess,
-    TResult Function(String error)? unlikeCommentError,
-    required TResult orElse(),
-  }) {
-    if (streamCommentsError != null) {
-      return streamCommentsError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
-    required TResult Function(TypeNewCommentLoading<T> value)
-        typeNewCommentLoading,
-    required TResult Function(TypeNewCommentSuccess<T> value)
-        typeNewCommentSuccess,
-    required TResult Function(TypeNewCommentError<T> value) typeNewCommentError,
-    required TResult Function(PickCommentImageSuccess<T> value)
-        pickCommentImageSuccess,
-    required TResult Function(PickCommentImageError<T> value)
-        pickCommentImageError,
-    required TResult Function(UploadCommentImageLoading<T> value)
-        uploadCommentImageLoading,
-    required TResult Function(UploadCommentImageSuccess<T> value)
-        uploadCommentImageSuccess,
-    required TResult Function(UploadCommentImageError<T> value)
-        uploadCommentImageError,
-    required TResult Function(DeleteCommentLoading<T> value)
-        deleteCommentLoading,
-    required TResult Function(DeleteCommentSuccess<T> value)
-        deleteCommentSuccess,
-    required TResult Function(DeleteCommentError<T> value) deleteCommentError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemovePickedCommentImage<T> value)
-        removePickedCommentImage,
-    required TResult Function(LikeCommentSuccess<T> value) likeCommentSuccess,
-    required TResult Function(LikeCommentError<T> value) likeCommentError,
-    required TResult Function(UnlikeCommentSuccess<T> value)
-        unlikeCommentSuccess,
-    required TResult Function(UnlikeCommentError<T> value) unlikeCommentError,
-  }) {
-    return streamCommentsError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
-    TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
-    TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
-    TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
-    TResult? Function(PickCommentImageSuccess<T> value)?
-        pickCommentImageSuccess,
-    TResult? Function(PickCommentImageError<T> value)? pickCommentImageError,
-    TResult? Function(UploadCommentImageLoading<T> value)?
-        uploadCommentImageLoading,
-    TResult? Function(UploadCommentImageSuccess<T> value)?
-        uploadCommentImageSuccess,
-    TResult? Function(UploadCommentImageError<T> value)?
-        uploadCommentImageError,
-    TResult? Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
-    TResult? Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
-    TResult? Function(DeleteCommentError<T> value)? deleteCommentError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemovePickedCommentImage<T> value)?
-        removePickedCommentImage,
-    TResult? Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
-    TResult? Function(LikeCommentError<T> value)? likeCommentError,
-    TResult? Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
-    TResult? Function(UnlikeCommentError<T> value)? unlikeCommentError,
-  }) {
-    return streamCommentsError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
-    TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
-    TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
-    TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
-    TResult Function(PickCommentImageSuccess<T> value)? pickCommentImageSuccess,
-    TResult Function(PickCommentImageError<T> value)? pickCommentImageError,
-    TResult Function(UploadCommentImageLoading<T> value)?
-        uploadCommentImageLoading,
-    TResult Function(UploadCommentImageSuccess<T> value)?
-        uploadCommentImageSuccess,
-    TResult Function(UploadCommentImageError<T> value)? uploadCommentImageError,
-    TResult Function(DeleteCommentLoading<T> value)? deleteCommentLoading,
-    TResult Function(DeleteCommentSuccess<T> value)? deleteCommentSuccess,
-    TResult Function(DeleteCommentError<T> value)? deleteCommentError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemovePickedCommentImage<T> value)?
-        removePickedCommentImage,
-    TResult Function(LikeCommentSuccess<T> value)? likeCommentSuccess,
-    TResult Function(LikeCommentError<T> value)? likeCommentError,
-    TResult Function(UnlikeCommentSuccess<T> value)? unlikeCommentSuccess,
-    TResult Function(UnlikeCommentError<T> value)? unlikeCommentError,
-    required TResult orElse(),
-  }) {
-    if (streamCommentsError != null) {
-      return streamCommentsError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class StreamCommentsError<T> implements CommentsState<T> {
-  const factory StreamCommentsError(final String error) =
-      _$StreamCommentsErrorImpl<T>;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$StreamCommentsErrorImplCopyWith<T, _$StreamCommentsErrorImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1282,10 +448,6 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -1311,9 +473,6 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -1339,9 +498,6 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -1371,11 +527,6 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -1412,9 +563,6 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -1445,9 +593,6 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -1523,10 +668,6 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -1552,9 +693,6 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -1580,9 +718,6 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -1612,11 +747,6 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -1653,9 +783,6 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -1686,9 +813,6 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -1788,10 +912,6 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -1817,9 +937,6 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -1845,9 +962,6 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -1877,11 +991,6 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -1918,9 +1027,6 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -1951,9 +1057,6 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -2063,10 +1166,6 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -2092,9 +1191,6 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -2120,9 +1216,6 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -2152,11 +1245,6 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -2193,9 +1281,6 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -2226,9 +1311,6 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -2336,10 +1418,6 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -2365,9 +1443,6 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -2393,9 +1468,6 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -2425,11 +1497,6 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -2466,9 +1533,6 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -2499,9 +1563,6 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -2585,10 +1646,6 @@ class _$UploadCommentImageLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -2614,9 +1671,6 @@ class _$UploadCommentImageLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -2642,9 +1696,6 @@ class _$UploadCommentImageLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -2674,11 +1725,6 @@ class _$UploadCommentImageLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -2715,9 +1761,6 @@ class _$UploadCommentImageLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -2748,9 +1791,6 @@ class _$UploadCommentImageLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -2857,10 +1897,6 @@ class _$UploadCommentImageSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -2886,9 +1922,6 @@ class _$UploadCommentImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -2914,9 +1947,6 @@ class _$UploadCommentImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -2946,11 +1976,6 @@ class _$UploadCommentImageSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -2987,9 +2012,6 @@ class _$UploadCommentImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3020,9 +2042,6 @@ class _$UploadCommentImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3132,10 +2151,6 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -3161,9 +2176,6 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -3189,9 +2201,6 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -3221,11 +2230,6 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -3262,9 +2266,6 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3295,9 +2296,6 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3378,10 +2376,6 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -3407,9 +2401,6 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -3435,9 +2426,6 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -3467,11 +2455,6 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -3508,9 +2491,6 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3541,9 +2521,6 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3618,10 +2595,6 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -3647,9 +2620,6 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -3675,9 +2645,6 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -3707,11 +2674,6 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -3748,9 +2710,6 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3781,9 +2740,6 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -3883,10 +2839,6 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -3912,9 +2864,6 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -3940,9 +2889,6 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -3972,11 +2918,6 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -4013,9 +2954,6 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4046,9 +2984,6 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4154,10 +3089,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -4183,9 +3114,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -4211,9 +3139,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -4243,11 +3168,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -4284,9 +3204,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4317,9 +3234,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4401,10 +3315,6 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -4430,9 +3340,6 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -4458,9 +3365,6 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -4490,11 +3394,6 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -4531,9 +3430,6 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4564,9 +3460,6 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4640,10 +3533,6 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -4669,9 +3558,6 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -4697,9 +3583,6 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -4729,11 +3612,6 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -4770,9 +3648,6 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4803,9 +3678,6 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -4905,10 +3777,6 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -4934,9 +3802,6 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -4962,9 +3827,6 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -4994,11 +3856,6 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -5035,9 +3892,6 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -5068,9 +3922,6 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -5151,10 +4002,6 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -5180,9 +4027,6 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -5208,9 +4052,6 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -5240,11 +4081,6 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -5281,9 +4117,6 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -5314,9 +4147,6 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -5416,10 +4246,6 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() streamCommentsLoading,
-    required TResult Function(List<CommentModel> comments)
-        streamCommentsSuccess,
-    required TResult Function(String error) streamCommentsError,
     required TResult Function() typeNewCommentLoading,
     required TResult Function() typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
@@ -5445,9 +4271,6 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? streamCommentsLoading,
-    TResult? Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult? Function(String error)? streamCommentsError,
     TResult? Function()? typeNewCommentLoading,
     TResult? Function()? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
@@ -5473,9 +4296,6 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? streamCommentsLoading,
-    TResult Function(List<CommentModel> comments)? streamCommentsSuccess,
-    TResult Function(String error)? streamCommentsError,
     TResult Function()? typeNewCommentLoading,
     TResult Function()? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
@@ -5505,11 +4325,6 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentsInitial<T> value) initial,
-    required TResult Function(StreamCommentsLoading<T> value)
-        streamCommentsLoading,
-    required TResult Function(StreamCommentsSuccess<T> value)
-        streamCommentsSuccess,
-    required TResult Function(StreamCommentsError<T> value) streamCommentsError,
     required TResult Function(TypeNewCommentLoading<T> value)
         typeNewCommentLoading,
     required TResult Function(TypeNewCommentSuccess<T> value)
@@ -5546,9 +4361,6 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentsInitial<T> value)? initial,
-    TResult? Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult? Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult? Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult? Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult? Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult? Function(TypeNewCommentError<T> value)? typeNewCommentError,
@@ -5579,9 +4391,6 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentsInitial<T> value)? initial,
-    TResult Function(StreamCommentsLoading<T> value)? streamCommentsLoading,
-    TResult Function(StreamCommentsSuccess<T> value)? streamCommentsSuccess,
-    TResult Function(StreamCommentsError<T> value)? streamCommentsError,
     TResult Function(TypeNewCommentLoading<T> value)? typeNewCommentLoading,
     TResult Function(TypeNewCommentSuccess<T> value)? typeNewCommentSuccess,
     TResult Function(TypeNewCommentError<T> value)? typeNewCommentError,

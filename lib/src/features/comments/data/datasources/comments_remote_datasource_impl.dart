@@ -17,15 +17,6 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   const CommentsRemoteDatasourceImpl();
 
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> streamComments(
-    String tinyTaleId,
-  ) {
-    return accessCommentsCollection(tinyTaleId)
-        .orderBy(AppStrings.dateTime, descending: false)
-        .get();
-  }
-
-  @override
   Future<DocumentReference<Map<String, dynamic>>> typeNewComment(
     TypeNewCommentParams typeCommentParams,
   ) async {

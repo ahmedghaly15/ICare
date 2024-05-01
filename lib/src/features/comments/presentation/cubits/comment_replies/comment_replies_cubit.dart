@@ -13,7 +13,6 @@ import 'package:icare/src/features/comments/data/models/comment_replies_view_par
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment_reply.dart';
-import 'package:icare/src/features/comments/domain/usecases/get_comment_replies.dart';
 import 'package:icare/src/features/comments/domain/usecases/is_comment_reply_liked_by_me.dart';
 import 'package:icare/src/features/comments/domain/usecases/like_comment_reply.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment_reply.dart';
@@ -25,7 +24,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
 class CommentRepliesCubit extends Cubit<CommentRepliesState> {
-  final GetCommentRepliesUseCase getCommentRepliesUseCase;
   final TypeNewCommentReplyUseCase typeNewCommentReplyUseCase;
   final UploadCommentReplyImageUseCase uploadCommentReplyImageUseCase;
   final DeleteCommentReplyUseCase deleteCommentReplyUseCase;
@@ -34,7 +32,6 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
   final IsCommentReplyLikedByMeUseCase isCommentReplyLikedByMeUseCase;
 
   CommentRepliesCubit({
-    required this.getCommentRepliesUseCase,
     required this.typeNewCommentReplyUseCase,
     required this.uploadCommentReplyImageUseCase,
     required this.deleteCommentReplyUseCase,
@@ -47,16 +44,16 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
 
   late final TextEditingController commentReplyController;
 
-  void getCommentReplies(CommentRepliesViewParams params) async {
-    emit(const CommentRepliesState.getCommentRepliesLoading());
-    final result = await getCommentRepliesUseCase(params);
-    result.when(
-      success: (commentReplies) {
-        emit(CommentRepliesState.getCommentRepliesSuccess(commentReplies));
-      },
-      error: (error) => emit(
-          CommentRepliesState.getCommentRepliesError(error.failureMsg ?? '')),
-    );
+  Stream<QuerySnapshot<Map<String, dynamic>>> streamCommentReplies(
+      CommentRepliesViewParams params) {
+    return getIt
+        .get<FirebaseFirestore>()
+        .collection(AppStrings.tinyTalesCollection)
+        .doc(params.tinyTaleId)
+        .collection(AppStrings.commentsCollection)
+        .doc(params.comment!.commentId)
+        .collection(AppStrings.commentReplies)
+        .snapshots();
   }
 
   void Function()? newCommentReply(

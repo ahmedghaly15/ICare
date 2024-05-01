@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/features/comments/data/models/comment_data.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
@@ -14,7 +15,6 @@ import 'package:icare/src/features/comments/data/models/type_new_comment_params.
 import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/is_comment_liked_by_me.dart';
 import 'package:icare/src/features/comments/domain/usecases/like_comment.dart';
-import 'package:icare/src/features/comments/domain/usecases/stream_comments.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/unlike_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/upload_comment_image.dart';
@@ -24,7 +24,6 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 
 class CommentsCubit extends Cubit<CommentsState> {
-  final StreamCommentsUseCase streamCommentsUseCase;
   final TypeNewCommentUseCase typeNewCommentUseCase;
   final UploadCommentImageUseCase uploadCommentImageUseCase;
   final DeleteCommentUseCase deleteCommentUseCase;
@@ -33,7 +32,6 @@ class CommentsCubit extends Cubit<CommentsState> {
   final IsCommentLikedByMeUseCase isCommentLikedByMeUseCase;
 
   CommentsCubit({
-    required this.streamCommentsUseCase,
     required this.typeNewCommentUseCase,
     required this.uploadCommentImageUseCase,
     required this.deleteCommentUseCase,
@@ -46,16 +44,11 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   late final TextEditingController commentController;
 
-  Future<void> getComments(String tinyTaleId) async {
-    emit(const CommentsState.streamCommentsLoading());
-    final result = await streamCommentsUseCase(tinyTaleId);
-    result.when(
-      success: (comments) {
-        emit(CommentsState.streamCommentsSuccess(comments));
-      },
-      error: (error) =>
-          emit(CommentsState.streamCommentsError(error.failureMsg ?? '')),
-    );
+  Stream<QuerySnapshot<Map<String, dynamic>>> streamComments(
+      String tinyTaleId) {
+    return accessCommentsCollection(tinyTaleId)
+        .orderBy(AppStrings.dateTime, descending: false)
+        .snapshots();
   }
 
   void Function()? newComment(BuildContext context, String tinyTaleId) {
@@ -190,20 +183,11 @@ class CommentsCubit extends Cubit<CommentsState> {
     return isCommentLikedByMeUseCase(params);
   }
 
-  CollectionReference<Map<String, dynamic>> _accessCommentsCollection(
-      String tinyTaleId) {
-    return getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.tinyTalesCollection)
-        .doc(tinyTaleId)
-        .collection(AppStrings.commentsCollection);
-  }
-
   Stream<QuerySnapshot<Map<String, dynamic>>> commentLikesStream(
     String tinyTaleId,
     String commentId,
   ) {
-    return _accessCommentsCollection(tinyTaleId)
+    return accessCommentsCollection(tinyTaleId)
         .doc(commentId)
         .collection(AppStrings.commentLikesCollection)
         .snapshots();
@@ -213,7 +197,7 @@ class CommentsCubit extends Cubit<CommentsState> {
     String tinyTaleId,
     String commentId,
   ) {
-    return _accessCommentsCollection(tinyTaleId)
+    return accessCommentsCollection(tinyTaleId)
         .doc(commentId)
         .collection(AppStrings.commentReplies)
         .snapshots();

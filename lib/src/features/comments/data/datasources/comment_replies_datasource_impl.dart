@@ -7,7 +7,6 @@ import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/comments/data/datasources/comment_replies_datasource.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
-import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_model.dart';
@@ -45,15 +44,6 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
     for (final doc in replyLikes.docs) {
       await doc.reference.delete();
     }
-  }
-
-  @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getCommentReplies(
-    CommentRepliesViewParams params,
-  ) async {
-    return await _accessCommentRepliesCollection(
-            params.tinyTaleId!, params.comment!.commentId!)
-        .get();
   }
 
   @override

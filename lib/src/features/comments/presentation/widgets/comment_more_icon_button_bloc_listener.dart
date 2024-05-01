@@ -21,7 +21,7 @@ class CommentMoreIconButtonBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           deleteCommentSuccess: () =>
-              context.read<CommentsCubit>().getComments(tinyTaleId),
+              context.read<CommentsCubit>().streamComments(tinyTaleId),
         );
       },
       child: CustomDeletePopupMenuButton(

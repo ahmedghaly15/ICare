@@ -72,12 +72,10 @@ import 'package:icare/src/features/comments/domain/repositories/comment_replies_
 import 'package:icare/src/features/comments/domain/repositories/comments_repo.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment_reply.dart';
-import 'package:icare/src/features/comments/domain/usecases/get_comment_replies.dart';
 import 'package:icare/src/features/comments/domain/usecases/is_comment_liked_by_me.dart';
 import 'package:icare/src/features/comments/domain/usecases/is_comment_reply_liked_by_me.dart';
 import 'package:icare/src/features/comments/domain/usecases/like_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/like_comment_reply.dart';
-import 'package:icare/src/features/comments/domain/usecases/stream_comments.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment.dart';
 import 'package:icare/src/features/comments/domain/usecases/type_new_comment_reply.dart';
 import 'package:icare/src/features/comments/domain/usecases/unlike_comment.dart';

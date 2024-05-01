@@ -11,7 +11,6 @@ abstract class CommentsRemoteDatasource {
     TypeNewCommentParams typeCommentParams,
   );
   Future<TaskSnapshot> uploadCommentImage(File? commentImage);
-  Future<QuerySnapshot<Map<String, dynamic>>> streamComments(String tinyTaleId);
   Future<void> deleteComment(DeleteCommentParams params);
   Future<void> likeComment(LikeParams params);
   Future<void> unLikeComment(LikeParams params);

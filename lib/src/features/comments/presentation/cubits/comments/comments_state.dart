@@ -8,11 +8,6 @@ part 'comments_state.freezed.dart';
 @freezed
 class CommentsState<T> with _$CommentsState<T> {
   const factory CommentsState.initial() = _CommentsInitial;
-  const factory CommentsState.streamCommentsLoading() = StreamCommentsLoading;
-  const factory CommentsState.streamCommentsSuccess(
-      List<CommentModel> comments) = StreamCommentsSuccess<T>;
-  const factory CommentsState.streamCommentsError(String error) =
-      StreamCommentsError<T>;
   const factory CommentsState.typeNewCommentLoading() = TypeNewCommentLoading;
   const factory CommentsState.typeNewCommentSuccess() =
       TypeNewCommentSuccess<T>;

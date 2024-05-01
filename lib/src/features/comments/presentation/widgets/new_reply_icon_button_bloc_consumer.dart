@@ -31,7 +31,6 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
             ShowICareDialog.showICareDialogError(context, error);
           },
           typeNewCommentReplySuccess: () {
-            context.read<CommentRepliesCubit>().getCommentReplies(params);
             if (params.comment!.user!.uId != Helper.uId) {
               context
                   .read<NotificationsCubit>()

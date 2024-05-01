@@ -7,7 +7,7 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
-import 'package:icare/src/features/comments/presentation/widgets/comments_list_view_bloc_builder.dart';
+import 'package:icare/src/features/comments/presentation/widgets/comments_list_view_stream_builder.dart';
 import 'package:icare/src/features/comments/presentation/widgets/type_comment_field_and_buttons.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 
@@ -21,7 +21,7 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider<CommentsCubit>(
       create: (_) =>
-          getIt.get<CommentsCubit>()..getComments(tinyTale.tinyTaleId!),
+          getIt.get<CommentsCubit>()..streamComments(tinyTale.tinyTaleId!),
       child: this,
     );
   }
@@ -40,7 +40,7 @@ class CommentsView extends StatelessWidget implements AutoRouteWrapper {
               child: Column(
                 children: <Widget>[
                   Expanded(
-                    child: CommentsListViewBlocBuilder(
+                    child: CommentsListViewStreamBuilder(
                       tinyTaleId: tinyTale.tinyTaleId!,
                     ),
                   ),

@@ -5,8 +5,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/comments/data/datasources/comment_replies_datasource.dart';
-import 'package:icare/src/features/comments/data/models/comment_model.dart';
-import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/repositories/comment_replies_repo.dart';
@@ -23,20 +21,6 @@ class CommentRepliesRepoImpl implements CommentRepliesRepo {
     return executeAndHandleFirebaseErrors<void>(
       () async => await _commentRepliesDatasource.deleteCommentReply(params),
     );
-  }
-
-  @override
-  Future<FirebaseRequestResult<List<CommentModel>>> getCommentReplies(
-    CommentRepliesViewParams params,
-  ) {
-    return executeAndHandleFirebaseErrors<List<CommentModel>>(() async {
-      final QuerySnapshot<Map<String, dynamic>> querySnapshot =
-          await _commentRepliesDatasource.getCommentReplies(params);
-
-      return querySnapshot.docs
-          .map((doc) => CommentModel.fromJson(doc.data()))
-          .toList();
-    });
   }
 
   @override

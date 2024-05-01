@@ -19,10 +19,6 @@ mixin _$CommentRepliesState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -45,9 +41,6 @@ mixin _$CommentRepliesState<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -70,9 +63,6 @@ mixin _$CommentRepliesState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -96,12 +86,6 @@ mixin _$CommentRepliesState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -140,11 +124,6 @@ mixin _$CommentRepliesState<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -182,11 +161,6 @@ mixin _$CommentRepliesState<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -283,10 +257,6 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -312,9 +282,6 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -340,9 +307,6 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -372,12 +336,6 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -419,11 +377,6 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -464,11 +417,6 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -509,890 +457,6 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
 
 abstract class _CommentRepliesInitial<T> implements CommentRepliesState<T> {
   const factory _CommentRepliesInitial() = _$CommentRepliesInitialImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$GetCommentRepliesLoadingImplCopyWith<T, $Res> {
-  factory _$$GetCommentRepliesLoadingImplCopyWith(
-          _$GetCommentRepliesLoadingImpl<T> value,
-          $Res Function(_$GetCommentRepliesLoadingImpl<T>) then) =
-      __$$GetCommentRepliesLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$GetCommentRepliesLoadingImplCopyWithImpl<T, $Res>
-    extends _$CommentRepliesStateCopyWithImpl<T, $Res,
-        _$GetCommentRepliesLoadingImpl<T>>
-    implements _$$GetCommentRepliesLoadingImplCopyWith<T, $Res> {
-  __$$GetCommentRepliesLoadingImplCopyWithImpl(
-      _$GetCommentRepliesLoadingImpl<T> _value,
-      $Res Function(_$GetCommentRepliesLoadingImpl<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetCommentRepliesLoadingImpl<T> implements GetCommentRepliesLoading<T> {
-  const _$GetCommentRepliesLoadingImpl();
-
-  @override
-  String toString() {
-    return 'CommentRepliesState<$T>.getCommentRepliesLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetCommentRepliesLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
-    required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
-    required TResult Function(String error) typeNewCommentReplyError,
-    required TResult Function() deleteCommentReplyLoading,
-    required TResult Function() deleteCommentReplySuccess,
-    required TResult Function(String error) deleteCommentReplyError,
-    required TResult Function(File commentImage) pickCommentReplyImageSuccess,
-    required TResult Function(String error) pickCommentReplyImageError,
-    required TResult Function() uploadCommentReplyImageLoading,
-    required TResult Function(String imageUrl) uploadCommentReplyImageSuccess,
-    required TResult Function(String error) uploadCommentReplyImageError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removePickedCommentReplyImage,
-    required TResult Function() likeCommentReplySuccess,
-    required TResult Function(String error) likeCommentReplyError,
-    required TResult Function() unlikeCommentReplySuccess,
-    required TResult Function(String error) unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
-    TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
-    TResult? Function(String error)? typeNewCommentReplyError,
-    TResult? Function()? deleteCommentReplyLoading,
-    TResult? Function()? deleteCommentReplySuccess,
-    TResult? Function(String error)? deleteCommentReplyError,
-    TResult? Function(File commentImage)? pickCommentReplyImageSuccess,
-    TResult? Function(String error)? pickCommentReplyImageError,
-    TResult? Function()? uploadCommentReplyImageLoading,
-    TResult? Function(String imageUrl)? uploadCommentReplyImageSuccess,
-    TResult? Function(String error)? uploadCommentReplyImageError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removePickedCommentReplyImage,
-    TResult? Function()? likeCommentReplySuccess,
-    TResult? Function(String error)? likeCommentReplyError,
-    TResult? Function()? unlikeCommentReplySuccess,
-    TResult? Function(String error)? unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
-    TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
-    TResult Function(String error)? typeNewCommentReplyError,
-    TResult Function()? deleteCommentReplyLoading,
-    TResult Function()? deleteCommentReplySuccess,
-    TResult Function(String error)? deleteCommentReplyError,
-    TResult Function(File commentImage)? pickCommentReplyImageSuccess,
-    TResult Function(String error)? pickCommentReplyImageError,
-    TResult Function()? uploadCommentReplyImageLoading,
-    TResult Function(String imageUrl)? uploadCommentReplyImageSuccess,
-    TResult Function(String error)? uploadCommentReplyImageError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removePickedCommentReplyImage,
-    TResult Function()? likeCommentReplySuccess,
-    TResult Function(String error)? likeCommentReplyError,
-    TResult Function()? unlikeCommentReplySuccess,
-    TResult Function(String error)? unlikeCommentReplyError,
-    required TResult orElse(),
-  }) {
-    if (getCommentRepliesLoading != null) {
-      return getCommentRepliesLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
-    required TResult Function(TypeNewCommentReplyLoading<T> value)
-        typeNewCommentReplyLoading,
-    required TResult Function(TypeNewCommentReplySuccess<T> value)
-        typeNewCommentReplySuccess,
-    required TResult Function(TypeNewCommentReplyError<T> value)
-        typeNewCommentReplyError,
-    required TResult Function(DeleteCommentReplyLoading<T> value)
-        deleteCommentReplyLoading,
-    required TResult Function(DeleteCommentReplySuccess<T> value)
-        deleteCommentReplySuccess,
-    required TResult Function(DeleteCommentReplyError<T> value)
-        deleteCommentReplyError,
-    required TResult Function(PickCommentReplyImageSuccess<T> value)
-        pickCommentReplyImageSuccess,
-    required TResult Function(PickCommentReplyImageError<T> value)
-        pickCommentReplyImageError,
-    required TResult Function(UploadCommentReplyImageLoading<T> value)
-        uploadCommentReplyImageLoading,
-    required TResult Function(UploadCommentReplyImageSuccess<T> value)
-        uploadCommentReplyImageSuccess,
-    required TResult Function(UploadCommentReplyImageError<T> value)
-        uploadCommentReplyImageError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemovePickedCommentReplyImage<T> value)
-        removePickedCommentReplyImage,
-    required TResult Function(LikeCommentReplySuccess<T> value)
-        likeCommentReplySuccess,
-    required TResult Function(LikeCommentReplyError<T> value)
-        likeCommentReplyError,
-    required TResult Function(UnlikeCommentReplySuccess<T> value)
-        unlikeCommentReplySuccess,
-    required TResult Function(UnlikeCommentReplyError<T> value)
-        unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
-    TResult? Function(TypeNewCommentReplyLoading<T> value)?
-        typeNewCommentReplyLoading,
-    TResult? Function(TypeNewCommentReplySuccess<T> value)?
-        typeNewCommentReplySuccess,
-    TResult? Function(TypeNewCommentReplyError<T> value)?
-        typeNewCommentReplyError,
-    TResult? Function(DeleteCommentReplyLoading<T> value)?
-        deleteCommentReplyLoading,
-    TResult? Function(DeleteCommentReplySuccess<T> value)?
-        deleteCommentReplySuccess,
-    TResult? Function(DeleteCommentReplyError<T> value)?
-        deleteCommentReplyError,
-    TResult? Function(PickCommentReplyImageSuccess<T> value)?
-        pickCommentReplyImageSuccess,
-    TResult? Function(PickCommentReplyImageError<T> value)?
-        pickCommentReplyImageError,
-    TResult? Function(UploadCommentReplyImageLoading<T> value)?
-        uploadCommentReplyImageLoading,
-    TResult? Function(UploadCommentReplyImageSuccess<T> value)?
-        uploadCommentReplyImageSuccess,
-    TResult? Function(UploadCommentReplyImageError<T> value)?
-        uploadCommentReplyImageError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemovePickedCommentReplyImage<T> value)?
-        removePickedCommentReplyImage,
-    TResult? Function(LikeCommentReplySuccess<T> value)?
-        likeCommentReplySuccess,
-    TResult? Function(LikeCommentReplyError<T> value)? likeCommentReplyError,
-    TResult? Function(UnlikeCommentReplySuccess<T> value)?
-        unlikeCommentReplySuccess,
-    TResult? Function(UnlikeCommentReplyError<T> value)?
-        unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
-    TResult Function(TypeNewCommentReplyLoading<T> value)?
-        typeNewCommentReplyLoading,
-    TResult Function(TypeNewCommentReplySuccess<T> value)?
-        typeNewCommentReplySuccess,
-    TResult Function(TypeNewCommentReplyError<T> value)?
-        typeNewCommentReplyError,
-    TResult Function(DeleteCommentReplyLoading<T> value)?
-        deleteCommentReplyLoading,
-    TResult Function(DeleteCommentReplySuccess<T> value)?
-        deleteCommentReplySuccess,
-    TResult Function(DeleteCommentReplyError<T> value)? deleteCommentReplyError,
-    TResult Function(PickCommentReplyImageSuccess<T> value)?
-        pickCommentReplyImageSuccess,
-    TResult Function(PickCommentReplyImageError<T> value)?
-        pickCommentReplyImageError,
-    TResult Function(UploadCommentReplyImageLoading<T> value)?
-        uploadCommentReplyImageLoading,
-    TResult Function(UploadCommentReplyImageSuccess<T> value)?
-        uploadCommentReplyImageSuccess,
-    TResult Function(UploadCommentReplyImageError<T> value)?
-        uploadCommentReplyImageError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemovePickedCommentReplyImage<T> value)?
-        removePickedCommentReplyImage,
-    TResult Function(LikeCommentReplySuccess<T> value)? likeCommentReplySuccess,
-    TResult Function(LikeCommentReplyError<T> value)? likeCommentReplyError,
-    TResult Function(UnlikeCommentReplySuccess<T> value)?
-        unlikeCommentReplySuccess,
-    TResult Function(UnlikeCommentReplyError<T> value)? unlikeCommentReplyError,
-    required TResult orElse(),
-  }) {
-    if (getCommentRepliesLoading != null) {
-      return getCommentRepliesLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetCommentRepliesLoading<T> implements CommentRepliesState<T> {
-  const factory GetCommentRepliesLoading() = _$GetCommentRepliesLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$GetCommentRepliesSuccessImplCopyWith<T, $Res> {
-  factory _$$GetCommentRepliesSuccessImplCopyWith(
-          _$GetCommentRepliesSuccessImpl<T> value,
-          $Res Function(_$GetCommentRepliesSuccessImpl<T>) then) =
-      __$$GetCommentRepliesSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({List<CommentModel> comments});
-}
-
-/// @nodoc
-class __$$GetCommentRepliesSuccessImplCopyWithImpl<T, $Res>
-    extends _$CommentRepliesStateCopyWithImpl<T, $Res,
-        _$GetCommentRepliesSuccessImpl<T>>
-    implements _$$GetCommentRepliesSuccessImplCopyWith<T, $Res> {
-  __$$GetCommentRepliesSuccessImplCopyWithImpl(
-      _$GetCommentRepliesSuccessImpl<T> _value,
-      $Res Function(_$GetCommentRepliesSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? comments = null,
-  }) {
-    return _then(_$GetCommentRepliesSuccessImpl<T>(
-      null == comments
-          ? _value._comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as List<CommentModel>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetCommentRepliesSuccessImpl<T> implements GetCommentRepliesSuccess<T> {
-  const _$GetCommentRepliesSuccessImpl(final List<CommentModel> comments)
-      : _comments = comments;
-
-  final List<CommentModel> _comments;
-  @override
-  List<CommentModel> get comments {
-    if (_comments is EqualUnmodifiableListView) return _comments;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_comments);
-  }
-
-  @override
-  String toString() {
-    return 'CommentRepliesState<$T>.getCommentRepliesSuccess(comments: $comments)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetCommentRepliesSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other._comments, _comments));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_comments));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetCommentRepliesSuccessImplCopyWith<T, _$GetCommentRepliesSuccessImpl<T>>
-      get copyWith => __$$GetCommentRepliesSuccessImplCopyWithImpl<T,
-          _$GetCommentRepliesSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
-    required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
-    required TResult Function(String error) typeNewCommentReplyError,
-    required TResult Function() deleteCommentReplyLoading,
-    required TResult Function() deleteCommentReplySuccess,
-    required TResult Function(String error) deleteCommentReplyError,
-    required TResult Function(File commentImage) pickCommentReplyImageSuccess,
-    required TResult Function(String error) pickCommentReplyImageError,
-    required TResult Function() uploadCommentReplyImageLoading,
-    required TResult Function(String imageUrl) uploadCommentReplyImageSuccess,
-    required TResult Function(String error) uploadCommentReplyImageError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removePickedCommentReplyImage,
-    required TResult Function() likeCommentReplySuccess,
-    required TResult Function(String error) likeCommentReplyError,
-    required TResult Function() unlikeCommentReplySuccess,
-    required TResult Function(String error) unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesSuccess(comments);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
-    TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
-    TResult? Function(String error)? typeNewCommentReplyError,
-    TResult? Function()? deleteCommentReplyLoading,
-    TResult? Function()? deleteCommentReplySuccess,
-    TResult? Function(String error)? deleteCommentReplyError,
-    TResult? Function(File commentImage)? pickCommentReplyImageSuccess,
-    TResult? Function(String error)? pickCommentReplyImageError,
-    TResult? Function()? uploadCommentReplyImageLoading,
-    TResult? Function(String imageUrl)? uploadCommentReplyImageSuccess,
-    TResult? Function(String error)? uploadCommentReplyImageError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removePickedCommentReplyImage,
-    TResult? Function()? likeCommentReplySuccess,
-    TResult? Function(String error)? likeCommentReplyError,
-    TResult? Function()? unlikeCommentReplySuccess,
-    TResult? Function(String error)? unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesSuccess?.call(comments);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
-    TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
-    TResult Function(String error)? typeNewCommentReplyError,
-    TResult Function()? deleteCommentReplyLoading,
-    TResult Function()? deleteCommentReplySuccess,
-    TResult Function(String error)? deleteCommentReplyError,
-    TResult Function(File commentImage)? pickCommentReplyImageSuccess,
-    TResult Function(String error)? pickCommentReplyImageError,
-    TResult Function()? uploadCommentReplyImageLoading,
-    TResult Function(String imageUrl)? uploadCommentReplyImageSuccess,
-    TResult Function(String error)? uploadCommentReplyImageError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removePickedCommentReplyImage,
-    TResult Function()? likeCommentReplySuccess,
-    TResult Function(String error)? likeCommentReplyError,
-    TResult Function()? unlikeCommentReplySuccess,
-    TResult Function(String error)? unlikeCommentReplyError,
-    required TResult orElse(),
-  }) {
-    if (getCommentRepliesSuccess != null) {
-      return getCommentRepliesSuccess(comments);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
-    required TResult Function(TypeNewCommentReplyLoading<T> value)
-        typeNewCommentReplyLoading,
-    required TResult Function(TypeNewCommentReplySuccess<T> value)
-        typeNewCommentReplySuccess,
-    required TResult Function(TypeNewCommentReplyError<T> value)
-        typeNewCommentReplyError,
-    required TResult Function(DeleteCommentReplyLoading<T> value)
-        deleteCommentReplyLoading,
-    required TResult Function(DeleteCommentReplySuccess<T> value)
-        deleteCommentReplySuccess,
-    required TResult Function(DeleteCommentReplyError<T> value)
-        deleteCommentReplyError,
-    required TResult Function(PickCommentReplyImageSuccess<T> value)
-        pickCommentReplyImageSuccess,
-    required TResult Function(PickCommentReplyImageError<T> value)
-        pickCommentReplyImageError,
-    required TResult Function(UploadCommentReplyImageLoading<T> value)
-        uploadCommentReplyImageLoading,
-    required TResult Function(UploadCommentReplyImageSuccess<T> value)
-        uploadCommentReplyImageSuccess,
-    required TResult Function(UploadCommentReplyImageError<T> value)
-        uploadCommentReplyImageError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemovePickedCommentReplyImage<T> value)
-        removePickedCommentReplyImage,
-    required TResult Function(LikeCommentReplySuccess<T> value)
-        likeCommentReplySuccess,
-    required TResult Function(LikeCommentReplyError<T> value)
-        likeCommentReplyError,
-    required TResult Function(UnlikeCommentReplySuccess<T> value)
-        unlikeCommentReplySuccess,
-    required TResult Function(UnlikeCommentReplyError<T> value)
-        unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
-    TResult? Function(TypeNewCommentReplyLoading<T> value)?
-        typeNewCommentReplyLoading,
-    TResult? Function(TypeNewCommentReplySuccess<T> value)?
-        typeNewCommentReplySuccess,
-    TResult? Function(TypeNewCommentReplyError<T> value)?
-        typeNewCommentReplyError,
-    TResult? Function(DeleteCommentReplyLoading<T> value)?
-        deleteCommentReplyLoading,
-    TResult? Function(DeleteCommentReplySuccess<T> value)?
-        deleteCommentReplySuccess,
-    TResult? Function(DeleteCommentReplyError<T> value)?
-        deleteCommentReplyError,
-    TResult? Function(PickCommentReplyImageSuccess<T> value)?
-        pickCommentReplyImageSuccess,
-    TResult? Function(PickCommentReplyImageError<T> value)?
-        pickCommentReplyImageError,
-    TResult? Function(UploadCommentReplyImageLoading<T> value)?
-        uploadCommentReplyImageLoading,
-    TResult? Function(UploadCommentReplyImageSuccess<T> value)?
-        uploadCommentReplyImageSuccess,
-    TResult? Function(UploadCommentReplyImageError<T> value)?
-        uploadCommentReplyImageError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemovePickedCommentReplyImage<T> value)?
-        removePickedCommentReplyImage,
-    TResult? Function(LikeCommentReplySuccess<T> value)?
-        likeCommentReplySuccess,
-    TResult? Function(LikeCommentReplyError<T> value)? likeCommentReplyError,
-    TResult? Function(UnlikeCommentReplySuccess<T> value)?
-        unlikeCommentReplySuccess,
-    TResult? Function(UnlikeCommentReplyError<T> value)?
-        unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
-    TResult Function(TypeNewCommentReplyLoading<T> value)?
-        typeNewCommentReplyLoading,
-    TResult Function(TypeNewCommentReplySuccess<T> value)?
-        typeNewCommentReplySuccess,
-    TResult Function(TypeNewCommentReplyError<T> value)?
-        typeNewCommentReplyError,
-    TResult Function(DeleteCommentReplyLoading<T> value)?
-        deleteCommentReplyLoading,
-    TResult Function(DeleteCommentReplySuccess<T> value)?
-        deleteCommentReplySuccess,
-    TResult Function(DeleteCommentReplyError<T> value)? deleteCommentReplyError,
-    TResult Function(PickCommentReplyImageSuccess<T> value)?
-        pickCommentReplyImageSuccess,
-    TResult Function(PickCommentReplyImageError<T> value)?
-        pickCommentReplyImageError,
-    TResult Function(UploadCommentReplyImageLoading<T> value)?
-        uploadCommentReplyImageLoading,
-    TResult Function(UploadCommentReplyImageSuccess<T> value)?
-        uploadCommentReplyImageSuccess,
-    TResult Function(UploadCommentReplyImageError<T> value)?
-        uploadCommentReplyImageError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemovePickedCommentReplyImage<T> value)?
-        removePickedCommentReplyImage,
-    TResult Function(LikeCommentReplySuccess<T> value)? likeCommentReplySuccess,
-    TResult Function(LikeCommentReplyError<T> value)? likeCommentReplyError,
-    TResult Function(UnlikeCommentReplySuccess<T> value)?
-        unlikeCommentReplySuccess,
-    TResult Function(UnlikeCommentReplyError<T> value)? unlikeCommentReplyError,
-    required TResult orElse(),
-  }) {
-    if (getCommentRepliesSuccess != null) {
-      return getCommentRepliesSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetCommentRepliesSuccess<T> implements CommentRepliesState<T> {
-  const factory GetCommentRepliesSuccess(final List<CommentModel> comments) =
-      _$GetCommentRepliesSuccessImpl<T>;
-
-  List<CommentModel> get comments;
-  @JsonKey(ignore: true)
-  _$$GetCommentRepliesSuccessImplCopyWith<T, _$GetCommentRepliesSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GetCommentRepliesErrorImplCopyWith<T, $Res> {
-  factory _$$GetCommentRepliesErrorImplCopyWith(
-          _$GetCommentRepliesErrorImpl<T> value,
-          $Res Function(_$GetCommentRepliesErrorImpl<T>) then) =
-      __$$GetCommentRepliesErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$GetCommentRepliesErrorImplCopyWithImpl<T, $Res>
-    extends _$CommentRepliesStateCopyWithImpl<T, $Res,
-        _$GetCommentRepliesErrorImpl<T>>
-    implements _$$GetCommentRepliesErrorImplCopyWith<T, $Res> {
-  __$$GetCommentRepliesErrorImplCopyWithImpl(
-      _$GetCommentRepliesErrorImpl<T> _value,
-      $Res Function(_$GetCommentRepliesErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$GetCommentRepliesErrorImpl<T>(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetCommentRepliesErrorImpl<T> implements GetCommentRepliesError<T> {
-  const _$GetCommentRepliesErrorImpl(this.error);
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'CommentRepliesState<$T>.getCommentRepliesError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetCommentRepliesErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetCommentRepliesErrorImplCopyWith<T, _$GetCommentRepliesErrorImpl<T>>
-      get copyWith => __$$GetCommentRepliesErrorImplCopyWithImpl<T,
-          _$GetCommentRepliesErrorImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
-    required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
-    required TResult Function(String error) typeNewCommentReplyError,
-    required TResult Function() deleteCommentReplyLoading,
-    required TResult Function() deleteCommentReplySuccess,
-    required TResult Function(String error) deleteCommentReplyError,
-    required TResult Function(File commentImage) pickCommentReplyImageSuccess,
-    required TResult Function(String error) pickCommentReplyImageError,
-    required TResult Function() uploadCommentReplyImageLoading,
-    required TResult Function(String imageUrl) uploadCommentReplyImageSuccess,
-    required TResult Function(String error) uploadCommentReplyImageError,
-    required TResult Function(String text) setNewTextValue,
-    required TResult Function() removePickedCommentReplyImage,
-    required TResult Function() likeCommentReplySuccess,
-    required TResult Function(String error) likeCommentReplyError,
-    required TResult Function() unlikeCommentReplySuccess,
-    required TResult Function(String error) unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
-    TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
-    TResult? Function(String error)? typeNewCommentReplyError,
-    TResult? Function()? deleteCommentReplyLoading,
-    TResult? Function()? deleteCommentReplySuccess,
-    TResult? Function(String error)? deleteCommentReplyError,
-    TResult? Function(File commentImage)? pickCommentReplyImageSuccess,
-    TResult? Function(String error)? pickCommentReplyImageError,
-    TResult? Function()? uploadCommentReplyImageLoading,
-    TResult? Function(String imageUrl)? uploadCommentReplyImageSuccess,
-    TResult? Function(String error)? uploadCommentReplyImageError,
-    TResult? Function(String text)? setNewTextValue,
-    TResult? Function()? removePickedCommentReplyImage,
-    TResult? Function()? likeCommentReplySuccess,
-    TResult? Function(String error)? likeCommentReplyError,
-    TResult? Function()? unlikeCommentReplySuccess,
-    TResult? Function(String error)? unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
-    TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
-    TResult Function(String error)? typeNewCommentReplyError,
-    TResult Function()? deleteCommentReplyLoading,
-    TResult Function()? deleteCommentReplySuccess,
-    TResult Function(String error)? deleteCommentReplyError,
-    TResult Function(File commentImage)? pickCommentReplyImageSuccess,
-    TResult Function(String error)? pickCommentReplyImageError,
-    TResult Function()? uploadCommentReplyImageLoading,
-    TResult Function(String imageUrl)? uploadCommentReplyImageSuccess,
-    TResult Function(String error)? uploadCommentReplyImageError,
-    TResult Function(String text)? setNewTextValue,
-    TResult Function()? removePickedCommentReplyImage,
-    TResult Function()? likeCommentReplySuccess,
-    TResult Function(String error)? likeCommentReplyError,
-    TResult Function()? unlikeCommentReplySuccess,
-    TResult Function(String error)? unlikeCommentReplyError,
-    required TResult orElse(),
-  }) {
-    if (getCommentRepliesError != null) {
-      return getCommentRepliesError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
-    required TResult Function(TypeNewCommentReplyLoading<T> value)
-        typeNewCommentReplyLoading,
-    required TResult Function(TypeNewCommentReplySuccess<T> value)
-        typeNewCommentReplySuccess,
-    required TResult Function(TypeNewCommentReplyError<T> value)
-        typeNewCommentReplyError,
-    required TResult Function(DeleteCommentReplyLoading<T> value)
-        deleteCommentReplyLoading,
-    required TResult Function(DeleteCommentReplySuccess<T> value)
-        deleteCommentReplySuccess,
-    required TResult Function(DeleteCommentReplyError<T> value)
-        deleteCommentReplyError,
-    required TResult Function(PickCommentReplyImageSuccess<T> value)
-        pickCommentReplyImageSuccess,
-    required TResult Function(PickCommentReplyImageError<T> value)
-        pickCommentReplyImageError,
-    required TResult Function(UploadCommentReplyImageLoading<T> value)
-        uploadCommentReplyImageLoading,
-    required TResult Function(UploadCommentReplyImageSuccess<T> value)
-        uploadCommentReplyImageSuccess,
-    required TResult Function(UploadCommentReplyImageError<T> value)
-        uploadCommentReplyImageError,
-    required TResult Function(SetNewTextValue<T> value) setNewTextValue,
-    required TResult Function(RemovePickedCommentReplyImage<T> value)
-        removePickedCommentReplyImage,
-    required TResult Function(LikeCommentReplySuccess<T> value)
-        likeCommentReplySuccess,
-    required TResult Function(LikeCommentReplyError<T> value)
-        likeCommentReplyError,
-    required TResult Function(UnlikeCommentReplySuccess<T> value)
-        unlikeCommentReplySuccess,
-    required TResult Function(UnlikeCommentReplyError<T> value)
-        unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
-    TResult? Function(TypeNewCommentReplyLoading<T> value)?
-        typeNewCommentReplyLoading,
-    TResult? Function(TypeNewCommentReplySuccess<T> value)?
-        typeNewCommentReplySuccess,
-    TResult? Function(TypeNewCommentReplyError<T> value)?
-        typeNewCommentReplyError,
-    TResult? Function(DeleteCommentReplyLoading<T> value)?
-        deleteCommentReplyLoading,
-    TResult? Function(DeleteCommentReplySuccess<T> value)?
-        deleteCommentReplySuccess,
-    TResult? Function(DeleteCommentReplyError<T> value)?
-        deleteCommentReplyError,
-    TResult? Function(PickCommentReplyImageSuccess<T> value)?
-        pickCommentReplyImageSuccess,
-    TResult? Function(PickCommentReplyImageError<T> value)?
-        pickCommentReplyImageError,
-    TResult? Function(UploadCommentReplyImageLoading<T> value)?
-        uploadCommentReplyImageLoading,
-    TResult? Function(UploadCommentReplyImageSuccess<T> value)?
-        uploadCommentReplyImageSuccess,
-    TResult? Function(UploadCommentReplyImageError<T> value)?
-        uploadCommentReplyImageError,
-    TResult? Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult? Function(RemovePickedCommentReplyImage<T> value)?
-        removePickedCommentReplyImage,
-    TResult? Function(LikeCommentReplySuccess<T> value)?
-        likeCommentReplySuccess,
-    TResult? Function(LikeCommentReplyError<T> value)? likeCommentReplyError,
-    TResult? Function(UnlikeCommentReplySuccess<T> value)?
-        unlikeCommentReplySuccess,
-    TResult? Function(UnlikeCommentReplyError<T> value)?
-        unlikeCommentReplyError,
-  }) {
-    return getCommentRepliesError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
-    TResult Function(TypeNewCommentReplyLoading<T> value)?
-        typeNewCommentReplyLoading,
-    TResult Function(TypeNewCommentReplySuccess<T> value)?
-        typeNewCommentReplySuccess,
-    TResult Function(TypeNewCommentReplyError<T> value)?
-        typeNewCommentReplyError,
-    TResult Function(DeleteCommentReplyLoading<T> value)?
-        deleteCommentReplyLoading,
-    TResult Function(DeleteCommentReplySuccess<T> value)?
-        deleteCommentReplySuccess,
-    TResult Function(DeleteCommentReplyError<T> value)? deleteCommentReplyError,
-    TResult Function(PickCommentReplyImageSuccess<T> value)?
-        pickCommentReplyImageSuccess,
-    TResult Function(PickCommentReplyImageError<T> value)?
-        pickCommentReplyImageError,
-    TResult Function(UploadCommentReplyImageLoading<T> value)?
-        uploadCommentReplyImageLoading,
-    TResult Function(UploadCommentReplyImageSuccess<T> value)?
-        uploadCommentReplyImageSuccess,
-    TResult Function(UploadCommentReplyImageError<T> value)?
-        uploadCommentReplyImageError,
-    TResult Function(SetNewTextValue<T> value)? setNewTextValue,
-    TResult Function(RemovePickedCommentReplyImage<T> value)?
-        removePickedCommentReplyImage,
-    TResult Function(LikeCommentReplySuccess<T> value)? likeCommentReplySuccess,
-    TResult Function(LikeCommentReplyError<T> value)? likeCommentReplyError,
-    TResult Function(UnlikeCommentReplySuccess<T> value)?
-        unlikeCommentReplySuccess,
-    TResult Function(UnlikeCommentReplyError<T> value)? unlikeCommentReplyError,
-    required TResult orElse(),
-  }) {
-    if (getCommentRepliesError != null) {
-      return getCommentRepliesError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetCommentRepliesError<T> implements CommentRepliesState<T> {
-  const factory GetCommentRepliesError(final String error) =
-      _$GetCommentRepliesErrorImpl<T>;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$GetCommentRepliesErrorImplCopyWith<T, _$GetCommentRepliesErrorImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1439,10 +503,6 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -1468,9 +528,6 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -1496,9 +553,6 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -1528,12 +582,6 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -1575,11 +623,6 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -1620,11 +663,6 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -1712,10 +750,6 @@ class _$TypeNewCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -1741,9 +775,6 @@ class _$TypeNewCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -1769,9 +800,6 @@ class _$TypeNewCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -1801,12 +829,6 @@ class _$TypeNewCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -1848,11 +870,6 @@ class _$TypeNewCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -1893,11 +910,6 @@ class _$TypeNewCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -2010,10 +1022,6 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -2039,9 +1047,6 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -2067,9 +1072,6 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -2099,12 +1101,6 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -2146,11 +1142,6 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -2191,11 +1182,6 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -2288,10 +1274,6 @@ class _$DeleteCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -2317,9 +1299,6 @@ class _$DeleteCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -2345,9 +1324,6 @@ class _$DeleteCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -2377,12 +1353,6 @@ class _$DeleteCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -2424,11 +1394,6 @@ class _$DeleteCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -2469,11 +1434,6 @@ class _$DeleteCommentReplyLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -2561,10 +1521,6 @@ class _$DeleteCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -2590,9 +1546,6 @@ class _$DeleteCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -2618,9 +1571,6 @@ class _$DeleteCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -2650,12 +1600,6 @@ class _$DeleteCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -2697,11 +1641,6 @@ class _$DeleteCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -2742,11 +1681,6 @@ class _$DeleteCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -2859,10 +1793,6 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -2888,9 +1818,6 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -2916,9 +1843,6 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -2948,12 +1872,6 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -2995,11 +1913,6 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -3040,11 +1953,6 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -3165,10 +2073,6 @@ class _$PickCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -3194,9 +2098,6 @@ class _$PickCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -3222,9 +2123,6 @@ class _$PickCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -3254,12 +2152,6 @@ class _$PickCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -3301,11 +2193,6 @@ class _$PickCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -3346,11 +2233,6 @@ class _$PickCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -3472,10 +2354,6 @@ class _$PickCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -3501,9 +2379,6 @@ class _$PickCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -3529,9 +2404,6 @@ class _$PickCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -3561,12 +2433,6 @@ class _$PickCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -3608,11 +2474,6 @@ class _$PickCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -3653,11 +2514,6 @@ class _$PickCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -3751,10 +2607,6 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -3780,9 +2632,6 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -3808,9 +2657,6 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -3840,12 +2686,6 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -3887,11 +2727,6 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -3932,11 +2767,6 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -4053,10 +2883,6 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -4082,9 +2908,6 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -4110,9 +2933,6 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -4142,12 +2962,6 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -4189,11 +3003,6 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -4234,11 +3043,6 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -4360,10 +3164,6 @@ class _$UploadCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -4389,9 +3189,6 @@ class _$UploadCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -4417,9 +3214,6 @@ class _$UploadCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -4449,12 +3243,6 @@ class _$UploadCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -4496,11 +3284,6 @@ class _$UploadCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -4541,11 +3324,6 @@ class _$UploadCommentReplyImageErrorImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -4662,10 +3440,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -4691,9 +3465,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -4719,9 +3490,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -4751,12 +3519,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -4798,11 +3560,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -4843,11 +3600,6 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -4939,10 +3691,6 @@ class _$RemovePickedCommentReplyImageImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -4968,9 +3716,6 @@ class _$RemovePickedCommentReplyImageImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -4996,9 +3741,6 @@ class _$RemovePickedCommentReplyImageImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -5028,12 +3770,6 @@ class _$RemovePickedCommentReplyImageImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -5075,11 +3811,6 @@ class _$RemovePickedCommentReplyImageImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -5120,11 +3851,6 @@ class _$RemovePickedCommentReplyImageImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -5212,10 +3938,6 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -5241,9 +3963,6 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -5269,9 +3988,6 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -5301,12 +4017,6 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -5348,11 +4058,6 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -5393,11 +4098,6 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -5509,10 +4209,6 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -5538,9 +4234,6 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -5566,9 +4259,6 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -5598,12 +4288,6 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -5645,11 +4329,6 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -5690,11 +4369,6 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -5787,10 +4461,6 @@ class _$UnlikeCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -5816,9 +4486,6 @@ class _$UnlikeCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -5844,9 +4511,6 @@ class _$UnlikeCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -5876,12 +4540,6 @@ class _$UnlikeCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -5923,11 +4581,6 @@ class _$UnlikeCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -5968,11 +4621,6 @@ class _$UnlikeCommentReplySuccessImpl<T>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?
@@ -6085,10 +4733,6 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() getCommentRepliesLoading,
-    required TResult Function(List<CommentModel> comments)
-        getCommentRepliesSuccess,
-    required TResult Function(String error) getCommentRepliesError,
     required TResult Function() typeNewCommentReplyLoading,
     required TResult Function() typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
@@ -6114,9 +4758,6 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? getCommentRepliesLoading,
-    TResult? Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult? Function(String error)? getCommentRepliesError,
     TResult? Function()? typeNewCommentReplyLoading,
     TResult? Function()? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
@@ -6142,9 +4783,6 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? getCommentRepliesLoading,
-    TResult Function(List<CommentModel> comments)? getCommentRepliesSuccess,
-    TResult Function(String error)? getCommentRepliesError,
     TResult Function()? typeNewCommentReplyLoading,
     TResult Function()? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
@@ -6174,12 +4812,6 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CommentRepliesInitial<T> value) initial,
-    required TResult Function(GetCommentRepliesLoading<T> value)
-        getCommentRepliesLoading,
-    required TResult Function(GetCommentRepliesSuccess<T> value)
-        getCommentRepliesSuccess,
-    required TResult Function(GetCommentRepliesError<T> value)
-        getCommentRepliesError,
     required TResult Function(TypeNewCommentReplyLoading<T> value)
         typeNewCommentReplyLoading,
     required TResult Function(TypeNewCommentReplySuccess<T> value)
@@ -6221,11 +4853,6 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CommentRepliesInitial<T> value)? initial,
-    TResult? Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult? Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult? Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult? Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult? Function(TypeNewCommentReplySuccess<T> value)?
@@ -6266,11 +4893,6 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CommentRepliesInitial<T> value)? initial,
-    TResult Function(GetCommentRepliesLoading<T> value)?
-        getCommentRepliesLoading,
-    TResult Function(GetCommentRepliesSuccess<T> value)?
-        getCommentRepliesSuccess,
-    TResult Function(GetCommentRepliesError<T> value)? getCommentRepliesError,
     TResult Function(TypeNewCommentReplyLoading<T> value)?
         typeNewCommentReplyLoading,
     TResult Function(TypeNewCommentReplySuccess<T> value)?

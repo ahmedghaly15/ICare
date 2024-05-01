@@ -5,7 +5,6 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/comments/data/datasources/comments_remote_datasource.dart';
-import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/repositories/comments_repo.dart';
@@ -22,22 +21,6 @@ class CommentsRepoImpl implements CommentsRepo {
   ) {
     return executeAndHandleFirebaseErrors<void>(
       () async => await _commentsRemoteDatasource.deleteComment(params),
-    );
-  }
-
-  @override
-  Future<FirebaseRequestResult<List<CommentModel>>> streamComments(
-    String tinyTaleId,
-  ) {
-    return executeAndHandleFirebaseErrors<List<CommentModel>>(
-      () async {
-        final QuerySnapshot<Map<String, dynamic>> querySnapshot =
-            await _commentsRemoteDatasource.streamComments(tinyTaleId);
-
-        return querySnapshot.docs
-            .map((doc) => CommentModel.fromJson(doc.data()))
-            .toList();
-      },
     );
   }
 
