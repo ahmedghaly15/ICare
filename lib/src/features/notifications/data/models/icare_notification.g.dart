@@ -12,7 +12,7 @@ ICareNotification _$ICareNotificationFromJson(Map<String, dynamic> json) =>
       body: json['body'] as String,
       title: json['title'] as String,
       receiverId: json['receiverId'] as String,
-      dateTime: json['dateTime'] as Timestamp?,
+      // dateTime: json['dateTime'] as Timestamp?,
       user: json['user'] == null
           ? null
           : ICareUser.fromJson(json['user'] as Map<String, dynamic>),
@@ -25,6 +25,9 @@ ICareNotification _$ICareNotificationFromJson(Map<String, dynamic> json) =>
       reply: json['reply'] == null
           ? null
           : CommentModel.fromJson(json['reply'] as Map<String, dynamic>),
+      seen: json['seen'] as bool,
+      isMessage: json['isMessage'] as bool?,
+      id: json['id'] as String?,
     );
 
 Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
@@ -38,4 +41,7 @@ Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
       'comment': instance.comment?.toJson(),
       'tinyTale': instance.tinyTale?.toJson(),
       'reply': instance.reply?.toJson(),
+      'seen': instance.seen,
+      'isMessage': instance.isMessage,
+      'id': instance.id,
     };

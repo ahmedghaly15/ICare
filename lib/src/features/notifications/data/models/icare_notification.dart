@@ -10,22 +10,27 @@ part 'icare_notification.g.dart';
 @JsonSerializable()
 class ICareNotification {
   final String to, body, title;
-  final String? receiverId;
+  final String? receiverId, id;
   final Timestamp? dateTime;
   final ICareUser? user;
   final CommentModel? comment, reply;
   final TinyTale? tinyTale;
+  final bool seen;
+  final bool? isMessage;
 
   const ICareNotification({
     required this.to,
     required this.body,
     this.title = AppStrings.appTitle,
+    this.id,
     this.receiverId,
     this.dateTime,
     this.user,
     this.comment,
     this.reply,
     this.tinyTale,
+    this.seen = false,
+    this.isMessage,
   });
 
   factory ICareNotification.fromJson(Map<String, dynamic> json) =>

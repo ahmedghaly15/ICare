@@ -135,7 +135,6 @@ class SetupDIForCubits {
     // ========== Comments feature ==========
     getIt.registerFactory<CommentsCubit>(
       () => CommentsCubit(
-        streamCommentsUseCase: getIt.get<StreamCommentsUseCase>(),
         typeNewCommentUseCase: getIt.get<TypeNewCommentUseCase>(),
         uploadCommentImageUseCase: getIt.get<UploadCommentImageUseCase>(),
         deleteCommentUseCase: getIt.get<DeleteCommentUseCase>(),
@@ -151,7 +150,6 @@ class SetupDIForCubits {
         unlikeCommentReplyUseCase: getIt.get<UnLikeCommentReplyUseCase>(),
         isCommentReplyLikedByMeUseCase:
             getIt.get<IsCommentReplyLikedByMeUseCase>(),
-        getCommentRepliesUseCase: getIt.get<GetCommentRepliesUseCase>(),
         typeNewCommentReplyUseCase: getIt.get<TypeNewCommentReplyUseCase>(),
         uploadCommentReplyImageUseCase:
             getIt.get<UploadCommentReplyImageUseCase>(),

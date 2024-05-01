@@ -152,9 +152,6 @@ class SetupDIForUseCases {
     );
 
     // ========== Comments feature ==========
-    getIt.registerLazySingleton<StreamCommentsUseCase>(
-      () => StreamCommentsUseCase(getIt.get<CommentsRepo>()),
-    );
     getIt.registerLazySingleton<TypeNewCommentUseCase>(
       () => TypeNewCommentUseCase(getIt.get<CommentsRepo>()),
     );
@@ -172,9 +169,6 @@ class SetupDIForUseCases {
     );
     getIt.registerLazySingleton<IsCommentLikedByMeUseCase>(
       () => IsCommentLikedByMeUseCase(getIt.get<CommentsRepo>()),
-    );
-    getIt.registerLazySingleton<GetCommentRepliesUseCase>(
-      () => GetCommentRepliesUseCase(getIt.get<CommentRepliesRepo>()),
     );
     getIt.registerLazySingleton<DeleteCommentReplyUseCase>(
       () => DeleteCommentReplyUseCase(getIt.get<CommentRepliesRepo>()),
