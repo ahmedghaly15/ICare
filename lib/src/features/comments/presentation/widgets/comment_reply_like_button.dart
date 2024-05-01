@@ -45,6 +45,8 @@ class CommentReplyLikeButton extends StatelessWidget {
                 body: '${Helper.currentUser!.name} liked your reply',
                 receiverId: reply.user!.uId,
                 reply: reply,
+                comment: params.comment,
+                tinyTaleId: params.tinyTaleId,
                 user: Helper.currentUser,
               ));
         }
