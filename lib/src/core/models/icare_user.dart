@@ -20,6 +20,10 @@ class ICareUser {
 
   factory ICareUser.fromJson(Map<String, dynamic> json) =>
       _$ICareUserFromJson(json);
-
   Map<String, dynamic> toJson() => _$ICareUserToJson(this);
+
+  @override
+  String toString() {
+    return 'ICareUser(name: $name, email: $email, uId: $uId, profileImage: $profileImage, mobileToken: $mobileToken)';
+  }
 }

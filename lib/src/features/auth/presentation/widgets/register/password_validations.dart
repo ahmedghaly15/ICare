@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 
 class PasswordValidations extends StatelessWidget {
@@ -63,8 +64,11 @@ Widget _validationRow(BuildContext context, String text, bool hasValidated) {
     children: [
       CircleAvatar(
         radius: 2.5.r,
-        backgroundColor:
-            hasValidated ? AppColors.primaryColor : AppColors.greyColor,
+        backgroundColor: hasValidated
+            ? AppColors.primaryColor
+            : (isDarkModeActive(context)
+                ? Colors.white70
+                : AppColors.greyColor),
       ),
       MySizedBox.width6,
       Text(
@@ -73,7 +77,11 @@ Widget _validationRow(BuildContext context, String text, bool hasValidated) {
           decoration: hasValidated ? TextDecoration.lineThrough : null,
           decorationColor: AppColors.primaryColor,
           decorationThickness: 2,
-          color: hasValidated ? AppColors.primaryColor : AppColors.greyColor,
+          color: hasValidated
+              ? AppColors.primaryColor
+              : (isDarkModeActive(context)
+                  ? Colors.white70
+                  : AppColors.greyColor),
         ),
       ),
     ],

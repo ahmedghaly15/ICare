@@ -1,11 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 @RoutePage()
 class EntryView extends StatefulWidget {
@@ -26,6 +28,9 @@ class _EntryViewState extends State<EntryView> {
     if (onboarding != null) {
       if (Helper.uId != null) {
         context.replaceRoute(const BottomNavBarRoute());
+        context.read<UserCubit>().getUserData().then((value) {
+          debugPrint('****** CURRENT USER:${Helper.currentUser} ******');
+        });
       } else {
         context.replaceRoute(const StartRoute());
       }
@@ -36,11 +41,11 @@ class _EntryViewState extends State<EntryView> {
 
   @override
   void initState() {
+    super.initState();
     // To ensure that navigation calls are performed after the widget tree has been built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _goToNextView();
     });
-    super.initState();
   }
 
   void _setSystemUIOverlayStyle() {

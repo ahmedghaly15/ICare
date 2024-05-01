@@ -36,7 +36,7 @@ class NotificationItem extends StatelessWidget {
             child: CustomCachedNetworkImage(
               imageUrl: notification.user!.profileImage!,
               imageBuilder: (_, image) => CircleAvatar(
-                radius: 16.r,
+                radius: 14.r,
                 backgroundImage: image,
               ),
             ),

@@ -9,7 +9,7 @@ class CustomCircularArrowButton extends StatelessWidget {
   const CustomCircularArrowButton({
     super.key,
     this.icon = Icons.arrow_back_ios_new,
-    this.size = 24,
+    this.size = 16,
     this.onPressed,
   });
 
@@ -27,17 +27,14 @@ class CustomCircularArrowButton extends StatelessWidget {
             : AppColors.primaryColor,
         shape: BoxShape.circle,
       ),
-      child: FittedBox(
-        child: MaterialButton(
-          padding: EdgeInsets.zero,
-          onPressed: onPressed ?? () => context.maybePop(),
-          shape: const CircleBorder(),
-          child: Center(
-            child: Icon(
-              icon,
-              color: Colors.white,
-              size: size.h,
-            ),
+      child: MaterialButton(
+        onPressed: onPressed ?? () => context.maybePop(),
+        shape: const CircleBorder(),
+        child: Center(
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: size.h,
           ),
         ),
       ),

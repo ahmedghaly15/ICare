@@ -15,7 +15,7 @@ class CustomAuthAppBar extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const CustomCircularArrowButton(size: 16),
+        const CustomCircularArrowButton(),
         const Spacer(),
         Column(
           children: <Widget>[
