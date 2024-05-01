@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:icare/src/features/comments/data/models/comment_model.dart';
 
 part 'comments_state.freezed.dart';
 

@@ -53,6 +53,7 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
         .collection(AppStrings.commentsCollection)
         .doc(params.comment!.commentId)
         .collection(AppStrings.commentReplies)
+        .orderBy(AppStrings.dateTime, descending: false)
         .snapshots();
   }
 
