@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
@@ -27,11 +28,14 @@ class SliverNotificationsStreamBuilder extends StatelessWidget {
                 ICareNotification.fromJson(notification.data()))
             .toList();
         return notifications.isNotEmpty
-            ? SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) =>
-                      NotificationItem(notification: notifications[index]),
-                  childCount: notifications.length,
+            ? SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: 9.w),
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) =>
+                        NotificationItem(notification: notifications[index]),
+                    childCount: notifications.length,
+                  ),
                 ),
               )
             : const SliverFillRemaining(child: SizedBox.shrink());
