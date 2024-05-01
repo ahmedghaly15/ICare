@@ -25,10 +25,7 @@ class ICareCommunityView extends StatelessWidget {
               sliver: const ICareCommunitySliverAppBar(),
             ),
             SliverPadding(
-              padding: EdgeInsets.symmetric(
-                vertical: 25.h,
-                horizontal: 10.w,
-              ),
+              padding: AppConstants.tinyTalesPadding,
               sliver: const TinyTalesStreamBuilder(),
             ),
           ],

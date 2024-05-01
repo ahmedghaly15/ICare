@@ -238,6 +238,39 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const NewTinyTaleView()),
       );
     },
+    NotificationCommentRoute.name: (routeData) {
+      final args = routeData.argsAs<NotificationCommentRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: NotificationCommentView(
+          key: args.key,
+          params: args.params,
+        )),
+      );
+    },
+    NotificationReplyRoute.name: (routeData) {
+      final args = routeData.argsAs<NotificationReplyRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: NotificationReplyView(
+          key: args.key,
+          reply: args.reply,
+          params: args.params,
+        )),
+      );
+    },
+    NotificationTinyTaleRoute.name: (routeData) {
+      final args = routeData.argsAs<NotificationTinyTaleRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: NotificationTinyTaleView(
+          key: args.key,
+          tinyTale: args.tinyTale,
+        ),
+      );
+    },
     NotificationsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -983,6 +1016,127 @@ class NewTinyTaleRoute extends PageRouteInfo<void> {
   static const String name = 'NewTinyTaleRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [NotificationCommentView]
+class NotificationCommentRoute
+    extends PageRouteInfo<NotificationCommentRouteArgs> {
+  NotificationCommentRoute({
+    Key? key,
+    required CommentRepliesViewParams params,
+    List<PageRouteInfo>? children,
+  }) : super(
+          NotificationCommentRoute.name,
+          args: NotificationCommentRouteArgs(
+            key: key,
+            params: params,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'NotificationCommentRoute';
+
+  static const PageInfo<NotificationCommentRouteArgs> page =
+      PageInfo<NotificationCommentRouteArgs>(name);
+}
+
+class NotificationCommentRouteArgs {
+  const NotificationCommentRouteArgs({
+    this.key,
+    required this.params,
+  });
+
+  final Key? key;
+
+  final CommentRepliesViewParams params;
+
+  @override
+  String toString() {
+    return 'NotificationCommentRouteArgs{key: $key, params: $params}';
+  }
+}
+
+/// generated route for
+/// [NotificationReplyView]
+class NotificationReplyRoute extends PageRouteInfo<NotificationReplyRouteArgs> {
+  NotificationReplyRoute({
+    Key? key,
+    required CommentModel reply,
+    required CommentRepliesViewParams params,
+    List<PageRouteInfo>? children,
+  }) : super(
+          NotificationReplyRoute.name,
+          args: NotificationReplyRouteArgs(
+            key: key,
+            reply: reply,
+            params: params,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'NotificationReplyRoute';
+
+  static const PageInfo<NotificationReplyRouteArgs> page =
+      PageInfo<NotificationReplyRouteArgs>(name);
+}
+
+class NotificationReplyRouteArgs {
+  const NotificationReplyRouteArgs({
+    this.key,
+    required this.reply,
+    required this.params,
+  });
+
+  final Key? key;
+
+  final CommentModel reply;
+
+  final CommentRepliesViewParams params;
+
+  @override
+  String toString() {
+    return 'NotificationReplyRouteArgs{key: $key, reply: $reply, params: $params}';
+  }
+}
+
+/// generated route for
+/// [NotificationTinyTaleView]
+class NotificationTinyTaleRoute
+    extends PageRouteInfo<NotificationTinyTaleRouteArgs> {
+  NotificationTinyTaleRoute({
+    Key? key,
+    required TinyTale tinyTale,
+    List<PageRouteInfo>? children,
+  }) : super(
+          NotificationTinyTaleRoute.name,
+          args: NotificationTinyTaleRouteArgs(
+            key: key,
+            tinyTale: tinyTale,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'NotificationTinyTaleRoute';
+
+  static const PageInfo<NotificationTinyTaleRouteArgs> page =
+      PageInfo<NotificationTinyTaleRouteArgs>(name);
+}
+
+class NotificationTinyTaleRouteArgs {
+  const NotificationTinyTaleRouteArgs({
+    this.key,
+    required this.tinyTale,
+  });
+
+  final Key? key;
+
+  final TinyTale tinyTale;
+
+  @override
+  String toString() {
+    return 'NotificationTinyTaleRouteArgs{key: $key, tinyTale: $tinyTale}';
+  }
 }
 
 /// generated route for

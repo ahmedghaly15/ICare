@@ -12,6 +12,7 @@ import 'package:icare/src/features/baby_cry_predictor/presentation/views/baby_cr
 import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
 import 'package:icare/src/features/chat/presentation/views/chat_details_view.dart';
 import 'package:icare/src/features/chat/presentation/views/chats_view.dart';
+import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/views/comment_replies_view.dart';
 import 'package:icare/src/features/comments/presentation/views/comments_view.dart';
@@ -26,6 +27,9 @@ import 'package:icare/src/features/icare_bot/presentation/views/bookmarks_view.d
 import 'package:icare/src/features/icare_bot/presentation/views/icare_bot_view.dart';
 import 'package:icare/src/features/medical/presentation/views/medical_view.dart';
 import 'package:icare/src/features/medical/presentation/views/medical_info_category_diseases_view.dart';
+import 'package:icare/src/features/notifications/presentation/views/notification_comment_view.dart';
+import 'package:icare/src/features/notifications/presentation/views/notification_reply_view.dart';
+import 'package:icare/src/features/notifications/presentation/views/notification_tiny_tale_view.dart';
 import 'package:icare/src/features/notifications/presentation/views/notifications_view.dart';
 import 'package:icare/src/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:icare/src/features/profile/presentation/views/edit_profile_view.dart';

@@ -115,6 +115,9 @@ List<AutoRoute> get appRoutes {
       transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
     ),
     _buildCustomRoute(page: NotificationsRoute.page),
+    _buildCustomRoute(page: NotificationTinyTaleRoute.page),
+    _buildCustomRoute(page: NotificationCommentRoute.page),
+    _buildCustomRoute(page: NotificationReplyRoute.page),
   ];
 }
 

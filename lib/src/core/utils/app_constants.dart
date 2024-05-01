@@ -129,4 +129,13 @@ class AppConstants {
     AppAssets.imagesIcareBotFeature,
   ];
   static const double outlinedButtonBorderRadiusVal = 16.0;
+  static EdgeInsetsGeometry get commentsPadding => EdgeInsets.only(
+        top: 16.h,
+        right: 9.w,
+        left: 9.w,
+      );
+  static EdgeInsetsGeometry get tinyTalesPadding => EdgeInsets.symmetric(
+        vertical: 25.h,
+        horizontal: 10.w,
+      );
 }
