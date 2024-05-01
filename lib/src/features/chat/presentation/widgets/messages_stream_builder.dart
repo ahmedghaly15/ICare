@@ -20,18 +20,19 @@ class MessagesStreamBuilder extends StatelessWidget {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: context.read<ChatCubit>().messagesStream(receiverId),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
+        if (snapshot.connectionState == ConnectionState.waiting &&
+            snapshot.data == null) {
           return const Expanded(
             child: Center(
               child: CustomCircularProgressIndicator(),
             ),
           );
         }
-        final messages = snapshot.data?.docs
+        final messages = snapshot.data!.docs
             .map((doc) => MessageModel.fromJson(doc.data()))
             .toList();
         return Expanded(
-          child: messages!.isNotEmpty
+          child: messages.isNotEmpty
               ? ListView.builder(
                   padding: EdgeInsets.zero,
                   reverse: true,

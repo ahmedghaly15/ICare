@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
@@ -12,16 +13,17 @@ class TinyTalesStreamBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: context.read<TinyTalesCubit>().streamTinyTales(),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
+        if (snapshot.connectionState == ConnectionState.waiting &&
+            snapshot.data == null) {
           return const TinyTalesLoadingSliverList();
         }
-        final tinyTales = snapshot.data?.docs
+        final tinyTales = snapshot.data!.docs
             .map((e) => TinyTale.fromJson(e.data()))
             .toList();
-        return tinyTales!.isNotEmpty
+        return tinyTales.isNotEmpty
             ? SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) => ElasticIn(
