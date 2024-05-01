@@ -23,12 +23,12 @@ void navigateToHomeAfterLoginOrRegister(
       .then(
     (value) {
       _updateUserMobileToken(mobileToken).then((value) {
-        context.read<UserCubit>().getUserData().then((value) {
+        context.read<UserCubit>().getUserData().then((value) async {
           context.router.pushAndPopUntil(
             const BottomNavBarRoute(),
             predicate: (route) => route.settings.name == BottomNavBarRoute.name,
           );
-          _updateMobileTokenInOtherCollections(mobileToken);
+          await _updateMobileTokenInOtherCollections(mobileToken);
         });
       });
     },
