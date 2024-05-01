@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
@@ -8,6 +10,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/home/presentation/widgets/ai_features_sliver_list.dart';
+import 'package:icare/src/features/home/presentation/widgets/notification_icon_stream_builder.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_state.dart';
 import 'package:icare/src/features/tips/presentation/widgets/random_tip_dialog.dart';
@@ -22,6 +25,10 @@ class HomeViewBody extends StatelessWidget {
         slivers: [
           SliverAppBar(
             actions: <Widget>[
+              IconButton(
+                onPressed: () => context.pushRoute(const NotificationsRoute()),
+                icon: const NotificationIconStreamBuilder(),
+              ),
               BlocBuilder<TipsCubit, TipsState>(
                 builder: (context, state) {
                   if (context.read<TipsCubit>().isDone) {
