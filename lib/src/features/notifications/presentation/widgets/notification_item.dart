@@ -20,7 +20,7 @@ class NotificationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      padding: EdgeInsets.symmetric(vertical: 12.h),
+      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
       onPressed: () {
         context.read<NotificationsCubit>().readNotification(notification.id!);
         context
@@ -50,6 +50,9 @@ class NotificationItem extends StatelessWidget {
                       Text(
                         notification.title,
                         style: AppTextStyles.textStyle13Bold.copyWith(
+                          fontWeight: notification.seen
+                              ? FontWeight.w400
+                              : FontWeight.bold,
                           color: isDarkModeActive(context)
                               ? Colors.white
                               : Colors.black,
@@ -75,6 +78,8 @@ class NotificationItem extends StatelessWidget {
                   child: Text(
                     notification.body,
                     style: AppTextStyles.textStyle13Bold.copyWith(
+                      fontWeight:
+                          notification.seen ? FontWeight.w400 : FontWeight.bold,
                       color: isDarkModeActive(context)
                           ? Colors.white
                           : Colors.black,

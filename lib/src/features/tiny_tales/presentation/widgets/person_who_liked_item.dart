@@ -57,7 +57,9 @@ class PersonWhoLikedItem extends StatelessWidget {
         ),
         title: Text(
           person.name!,
-          style: AppTextStyles.textStyle15Bold,
+          style: AppTextStyles.textStyle15Bold.copyWith(
+            color: isDarkModeActive(context) ? Colors.white : Colors.black,
+          ),
         ),
       ),
     );

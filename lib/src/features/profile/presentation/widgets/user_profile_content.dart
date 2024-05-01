@@ -5,6 +5,7 @@ import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/follow_button_stream_builder.dart';
 import 'package:icare/src/core/widgets/followers_and_following_row.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -26,7 +27,9 @@ class UserProfileContent extends StatelessWidget {
         MySizedBox.height15,
         Text(
           user.name!,
-          style: AppTextStyles.textStyle15Bold,
+          style: AppTextStyles.textStyle15Bold.copyWith(
+            color: isDarkModeActive(context) ? Colors.white : Colors.black,
+          ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
@@ -38,7 +41,9 @@ class UserProfileContent extends StatelessWidget {
             MySizedBox.width10,
             Text(
               user.email!,
-              style: AppTextStyles.textStyle12Regular,
+              style: AppTextStyles.textStyle12Regular.copyWith(
+                color: isDarkModeActive(context) ? Colors.white : Colors.black,
+              ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),

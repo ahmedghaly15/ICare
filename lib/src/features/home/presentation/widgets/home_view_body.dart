@@ -8,6 +8,7 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/core/widgets/custom_drawer_icon_button.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/home/presentation/widgets/ai_features_sliver_list.dart';
 import 'package:icare/src/features/home/presentation/widgets/notification_icon_stream_builder.dart';
@@ -24,6 +25,7 @@ class HomeViewBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverAppBar(
+            leading: const CustomDrawerIconButton(),
             actions: <Widget>[
               IconButton(
                 onPressed: () => context.pushRoute(const NotificationsRoute()),

@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_pop_menu_button.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/icare_bot_image.dart';
@@ -52,14 +53,18 @@ class MessageBubble extends StatelessWidget {
               child: isUser
                   ? Text(
                       message,
-                      style: AppTextStyles.textStyle13Regular,
+                      style: AppTextStyles.textStyle14Regular.copyWith(
+                        color: isDarkModeActive(context)
+                            ? Colors.white
+                            : Colors.black,
+                      ),
                       textAlign: TextAlign.left,
                     )
                   : Markdown(
                       data: message,
                       padding: EdgeInsets.zero,
                       styleSheet: MarkdownStyleSheet(
-                        p: AppTextStyles.textStyle13Regular.copyWith(
+                        p: AppTextStyles.textStyle14Regular.copyWith(
                           color: Colors.white,
                         ),
                       ),

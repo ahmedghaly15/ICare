@@ -49,7 +49,10 @@ class TinyTaleItemUpperSection extends StatelessWidget {
                 },
                 child: Text(
                   tinyTale.user!.name!,
-                  style: AppTextStyles.textStyle15Bold,
+                  style: AppTextStyles.textStyle15Bold.copyWith(
+                    color:
+                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                  ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

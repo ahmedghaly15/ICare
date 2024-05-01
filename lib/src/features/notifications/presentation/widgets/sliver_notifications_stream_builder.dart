@@ -29,7 +29,7 @@ class SliverNotificationsStreamBuilder extends StatelessWidget {
             .toList();
         return notifications.isNotEmpty
             ? SliverPadding(
-                padding: EdgeInsets.symmetric(horizontal: 9.w),
+                padding: EdgeInsets.symmetric(horizontal: 0.w),
                 sliver: SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) =>

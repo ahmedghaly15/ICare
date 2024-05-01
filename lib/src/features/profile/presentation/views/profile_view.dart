@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/profile/presentation/widgets/profile_view_body.dart';
@@ -25,7 +26,12 @@ class ProfileView extends StatelessWidget {
                   IconButton(
                     onPressed: () =>
                         context.pushRoute(const EditProfileRoute()),
-                    icon: const Icon(Icons.edit),
+                    icon: Icon(
+                      Icons.edit,
+                      color: isDarkModeActive(context)
+                          ? Colors.white
+                          : Colors.black,
+                    ),
                   ),
                 ],
               ),
