@@ -29,7 +29,7 @@ class ICareApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<UserCubit>(
-            create: (context) => getIt.get<UserCubit>()..getUserData(),
+            create: (context) => getIt.get<UserCubit>(),
           ),
           BlocProvider<TinyTalesCubit>(
             create: (_) => getIt.get<TinyTalesCubit>(),
