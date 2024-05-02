@@ -21,6 +21,10 @@ mixin _$NotificationsState<T> {
     required TResult Function() initial,
     required TResult Function() sendNotificationSuccess,
     required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +32,10 @@ mixin _$NotificationsState<T> {
     TResult? Function()? initial,
     TResult? Function()? sendNotificationSuccess,
     TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +43,10 @@ mixin _$NotificationsState<T> {
     TResult Function()? initial,
     TResult Function()? sendNotificationSuccess,
     TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +57,14 @@ mixin _$NotificationsState<T> {
         sendNotificationSuccess,
     required TResult Function(_SendNotificationError<T> value)
         sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +73,14 @@ mixin _$NotificationsState<T> {
     TResult? Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +89,14 @@ mixin _$NotificationsState<T> {
     TResult Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,6 +162,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() sendNotificationSuccess,
     required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
   }) {
     return initial();
   }
@@ -136,6 +176,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? initial,
     TResult? Function()? sendNotificationSuccess,
     TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
   }) {
     return initial?.call();
   }
@@ -146,6 +190,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? sendNotificationSuccess,
     TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -162,6 +210,14 @@ class _$InitialImpl<T> implements _Initial<T> {
         sendNotificationSuccess,
     required TResult Function(_SendNotificationError<T> value)
         sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
   }) {
     return initial(this);
   }
@@ -173,6 +229,14 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
   }) {
     return initial?.call(this);
   }
@@ -184,6 +248,14 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,6 +314,10 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
     required TResult Function() initial,
     required TResult Function() sendNotificationSuccess,
     required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
   }) {
     return sendNotificationSuccess();
   }
@@ -252,6 +328,10 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
     TResult? Function()? initial,
     TResult? Function()? sendNotificationSuccess,
     TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
   }) {
     return sendNotificationSuccess?.call();
   }
@@ -262,6 +342,10 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
     TResult Function()? initial,
     TResult Function()? sendNotificationSuccess,
     TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) {
     if (sendNotificationSuccess != null) {
@@ -278,6 +362,14 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
         sendNotificationSuccess,
     required TResult Function(_SendNotificationError<T> value)
         sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
   }) {
     return sendNotificationSuccess(this);
   }
@@ -289,6 +381,14 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
     TResult? Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
   }) {
     return sendNotificationSuccess?.call(this);
   }
@@ -300,6 +400,14 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
     TResult Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) {
     if (sendNotificationSuccess != null) {
@@ -384,6 +492,10 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
     required TResult Function() initial,
     required TResult Function() sendNotificationSuccess,
     required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
   }) {
     return sendNotificationError(error);
   }
@@ -394,6 +506,10 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
     TResult? Function()? initial,
     TResult? Function()? sendNotificationSuccess,
     TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
   }) {
     return sendNotificationError?.call(error);
   }
@@ -404,6 +520,10 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
     TResult Function()? initial,
     TResult Function()? sendNotificationSuccess,
     TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) {
     if (sendNotificationError != null) {
@@ -420,6 +540,14 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
         sendNotificationSuccess,
     required TResult Function(_SendNotificationError<T> value)
         sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
   }) {
     return sendNotificationError(this);
   }
@@ -431,6 +559,14 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
     TResult? Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
   }) {
     return sendNotificationError?.call(this);
   }
@@ -442,6 +578,14 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
     TResult Function(_SendNotificationSuccess<T> value)?
         sendNotificationSuccess,
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
     required TResult orElse(),
   }) {
     if (sendNotificationError != null) {
@@ -458,5 +602,691 @@ abstract class _SendNotificationError<T> implements NotificationsState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$SendNotificationErrorImplCopyWith<T, _$SendNotificationErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ClearNotificationsHistorySuccessImplCopyWith<T, $Res> {
+  factory _$$ClearNotificationsHistorySuccessImplCopyWith(
+          _$ClearNotificationsHistorySuccessImpl<T> value,
+          $Res Function(_$ClearNotificationsHistorySuccessImpl<T>) then) =
+      __$$ClearNotificationsHistorySuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ClearNotificationsHistorySuccessImplCopyWithImpl<T, $Res>
+    extends _$NotificationsStateCopyWithImpl<T, $Res,
+        _$ClearNotificationsHistorySuccessImpl<T>>
+    implements _$$ClearNotificationsHistorySuccessImplCopyWith<T, $Res> {
+  __$$ClearNotificationsHistorySuccessImplCopyWithImpl(
+      _$ClearNotificationsHistorySuccessImpl<T> _value,
+      $Res Function(_$ClearNotificationsHistorySuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ClearNotificationsHistorySuccessImpl<T>
+    implements _ClearNotificationsHistorySuccess<T> {
+  const _$ClearNotificationsHistorySuccessImpl();
+
+  @override
+  String toString() {
+    return 'NotificationsState<$T>.clearNotificationsHistorySuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ClearNotificationsHistorySuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendNotificationSuccess,
+    required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistorySuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendNotificationSuccess,
+    TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistorySuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendNotificationSuccess,
+    TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (clearNotificationsHistorySuccess != null) {
+      return clearNotificationsHistorySuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(_SendNotificationSuccess<T> value)
+        sendNotificationSuccess,
+    required TResult Function(_SendNotificationError<T> value)
+        sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistorySuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistorySuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (clearNotificationsHistorySuccess != null) {
+      return clearNotificationsHistorySuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearNotificationsHistorySuccess<T>
+    implements NotificationsState<T> {
+  const factory _ClearNotificationsHistorySuccess() =
+      _$ClearNotificationsHistorySuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$ClearNotificationsHistoryErrorImplCopyWith<T, $Res> {
+  factory _$$ClearNotificationsHistoryErrorImplCopyWith(
+          _$ClearNotificationsHistoryErrorImpl<T> value,
+          $Res Function(_$ClearNotificationsHistoryErrorImpl<T>) then) =
+      __$$ClearNotificationsHistoryErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ClearNotificationsHistoryErrorImplCopyWithImpl<T, $Res>
+    extends _$NotificationsStateCopyWithImpl<T, $Res,
+        _$ClearNotificationsHistoryErrorImpl<T>>
+    implements _$$ClearNotificationsHistoryErrorImplCopyWith<T, $Res> {
+  __$$ClearNotificationsHistoryErrorImplCopyWithImpl(
+      _$ClearNotificationsHistoryErrorImpl<T> _value,
+      $Res Function(_$ClearNotificationsHistoryErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ClearNotificationsHistoryErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ClearNotificationsHistoryErrorImpl<T>
+    implements _ClearNotificationsHistoryError<T> {
+  const _$ClearNotificationsHistoryErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'NotificationsState<$T>.clearNotificationsHistoryError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ClearNotificationsHistoryErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ClearNotificationsHistoryErrorImplCopyWith<T,
+          _$ClearNotificationsHistoryErrorImpl<T>>
+      get copyWith => __$$ClearNotificationsHistoryErrorImplCopyWithImpl<T,
+          _$ClearNotificationsHistoryErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendNotificationSuccess,
+    required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistoryError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendNotificationSuccess,
+    TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistoryError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendNotificationSuccess,
+    TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (clearNotificationsHistoryError != null) {
+      return clearNotificationsHistoryError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(_SendNotificationSuccess<T> value)
+        sendNotificationSuccess,
+    required TResult Function(_SendNotificationError<T> value)
+        sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistoryError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+  }) {
+    return clearNotificationsHistoryError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (clearNotificationsHistoryError != null) {
+      return clearNotificationsHistoryError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearNotificationsHistoryError<T>
+    implements NotificationsState<T> {
+  const factory _ClearNotificationsHistoryError(final String error) =
+      _$ClearNotificationsHistoryErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$ClearNotificationsHistoryErrorImplCopyWith<T,
+          _$ClearNotificationsHistoryErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SaveNotificationsToFirebaseSuccessImplCopyWith<T, $Res> {
+  factory _$$SaveNotificationsToFirebaseSuccessImplCopyWith(
+          _$SaveNotificationsToFirebaseSuccessImpl<T> value,
+          $Res Function(_$SaveNotificationsToFirebaseSuccessImpl<T>) then) =
+      __$$SaveNotificationsToFirebaseSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SaveNotificationsToFirebaseSuccessImplCopyWithImpl<T, $Res>
+    extends _$NotificationsStateCopyWithImpl<T, $Res,
+        _$SaveNotificationsToFirebaseSuccessImpl<T>>
+    implements _$$SaveNotificationsToFirebaseSuccessImplCopyWith<T, $Res> {
+  __$$SaveNotificationsToFirebaseSuccessImplCopyWithImpl(
+      _$SaveNotificationsToFirebaseSuccessImpl<T> _value,
+      $Res Function(_$SaveNotificationsToFirebaseSuccessImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SaveNotificationsToFirebaseSuccessImpl<T>
+    implements _SaveNotificationsToFirebaseSuccess<T> {
+  const _$SaveNotificationsToFirebaseSuccessImpl();
+
+  @override
+  String toString() {
+    return 'NotificationsState<$T>.saveNotificationsToFirebaseSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveNotificationsToFirebaseSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendNotificationSuccess,
+    required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendNotificationSuccess,
+    TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendNotificationSuccess,
+    TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (saveNotificationsToFirebaseSuccess != null) {
+      return saveNotificationsToFirebaseSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(_SendNotificationSuccess<T> value)
+        sendNotificationSuccess,
+    required TResult Function(_SendNotificationError<T> value)
+        sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (saveNotificationsToFirebaseSuccess != null) {
+      return saveNotificationsToFirebaseSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SaveNotificationsToFirebaseSuccess<T>
+    implements NotificationsState<T> {
+  const factory _SaveNotificationsToFirebaseSuccess() =
+      _$SaveNotificationsToFirebaseSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SaveNotificationsToFirebaseErrorImplCopyWith<T, $Res> {
+  factory _$$SaveNotificationsToFirebaseErrorImplCopyWith(
+          _$SaveNotificationsToFirebaseErrorImpl<T> value,
+          $Res Function(_$SaveNotificationsToFirebaseErrorImpl<T>) then) =
+      __$$SaveNotificationsToFirebaseErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$SaveNotificationsToFirebaseErrorImplCopyWithImpl<T, $Res>
+    extends _$NotificationsStateCopyWithImpl<T, $Res,
+        _$SaveNotificationsToFirebaseErrorImpl<T>>
+    implements _$$SaveNotificationsToFirebaseErrorImplCopyWith<T, $Res> {
+  __$$SaveNotificationsToFirebaseErrorImplCopyWithImpl(
+      _$SaveNotificationsToFirebaseErrorImpl<T> _value,
+      $Res Function(_$SaveNotificationsToFirebaseErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$SaveNotificationsToFirebaseErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SaveNotificationsToFirebaseErrorImpl<T>
+    implements _SaveNotificationsToFirebaseError<T> {
+  const _$SaveNotificationsToFirebaseErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'NotificationsState<$T>.saveNotificationsToFirebaseError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SaveNotificationsToFirebaseErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SaveNotificationsToFirebaseErrorImplCopyWith<T,
+          _$SaveNotificationsToFirebaseErrorImpl<T>>
+      get copyWith => __$$SaveNotificationsToFirebaseErrorImplCopyWithImpl<T,
+          _$SaveNotificationsToFirebaseErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() sendNotificationSuccess,
+    required TResult Function(String error) sendNotificationError,
+    required TResult Function() clearNotificationsHistorySuccess,
+    required TResult Function(String error) clearNotificationsHistoryError,
+    required TResult Function() saveNotificationsToFirebaseSuccess,
+    required TResult Function(String error) saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? sendNotificationSuccess,
+    TResult? Function(String error)? sendNotificationError,
+    TResult? Function()? clearNotificationsHistorySuccess,
+    TResult? Function(String error)? clearNotificationsHistoryError,
+    TResult? Function()? saveNotificationsToFirebaseSuccess,
+    TResult? Function(String error)? saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? sendNotificationSuccess,
+    TResult Function(String error)? sendNotificationError,
+    TResult Function()? clearNotificationsHistorySuccess,
+    TResult Function(String error)? clearNotificationsHistoryError,
+    TResult Function()? saveNotificationsToFirebaseSuccess,
+    TResult Function(String error)? saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (saveNotificationsToFirebaseError != null) {
+      return saveNotificationsToFirebaseError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(_SendNotificationSuccess<T> value)
+        sendNotificationSuccess,
+    required TResult Function(_SendNotificationError<T> value)
+        sendNotificationError,
+    required TResult Function(_ClearNotificationsHistorySuccess<T> value)
+        clearNotificationsHistorySuccess,
+    required TResult Function(_ClearNotificationsHistoryError<T> value)
+        clearNotificationsHistoryError,
+    required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
+        saveNotificationsToFirebaseSuccess,
+    required TResult Function(_SaveNotificationsToFirebaseError<T> value)
+        saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult? Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+  }) {
+    return saveNotificationsToFirebaseError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(_SendNotificationSuccess<T> value)?
+        sendNotificationSuccess,
+    TResult Function(_SendNotificationError<T> value)? sendNotificationError,
+    TResult Function(_ClearNotificationsHistorySuccess<T> value)?
+        clearNotificationsHistorySuccess,
+    TResult Function(_ClearNotificationsHistoryError<T> value)?
+        clearNotificationsHistoryError,
+    TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
+        saveNotificationsToFirebaseSuccess,
+    TResult Function(_SaveNotificationsToFirebaseError<T> value)?
+        saveNotificationsToFirebaseError,
+    required TResult orElse(),
+  }) {
+    if (saveNotificationsToFirebaseError != null) {
+      return saveNotificationsToFirebaseError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SaveNotificationsToFirebaseError<T>
+    implements NotificationsState<T> {
+  const factory _SaveNotificationsToFirebaseError(final String error) =
+      _$SaveNotificationsToFirebaseErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$SaveNotificationsToFirebaseErrorImplCopyWith<T,
+          _$SaveNotificationsToFirebaseErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -3,11 +3,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/router/app_router.dart';
+import 'package:icare/src/core/entities/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/notifications/data/models/notification_request.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
+import 'package:icare/src/features/notifications/domain/usecases/clear_notifications_history.dart';
 import 'package:icare/src/features/notifications/domain/usecases/save_notifications_to_firebase_firestore.dart';
 import 'package:icare/src/features/notifications/domain/usecases/send_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_state.dart';
@@ -16,10 +18,12 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   final SendNotificationUseCase sendNotificationUseCase;
   final SaveNotificationsToFirebaseFirestoreUseCase
       saveNotificationsToFirebaseFirestoreUseCase;
+  final ClearNotificationsHistoryUseCase clearNotificationsHistoryUseCase;
 
   NotificationsCubit({
     required this.sendNotificationUseCase,
     required this.saveNotificationsToFirebaseFirestoreUseCase,
+    required this.clearNotificationsHistoryUseCase,
   }) : super(const NotificationsState.initial());
 
   Future<void> sendNotification(ICareNotification params) async {
@@ -44,7 +48,15 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   void _saveNotificationToFirebaseFirestore(
     ICareNotification params,
   ) async {
-    await saveNotificationsToFirebaseFirestoreUseCase.call(params);
+    final result =
+        await saveNotificationsToFirebaseFirestoreUseCase.call(params);
+    result.when(
+      success: (_) =>
+          emit(const NotificationsState.saveNotificationsToFirebaseSuccess()),
+      error: (error) => emit(
+          NotificationsState.saveNotificationsToFirebaseError(
+              error.failureMsg ?? '')),
+    );
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> streamNotifications() {
@@ -66,6 +78,17 @@ class NotificationsCubit extends Cubit<NotificationsState> {
       }
       return false;
     });
+  }
+
+  void clearNotificationsHistory() async {
+    final result =
+        await clearNotificationsHistoryUseCase.call(const NoParams());
+    result.when(
+      success: (_) =>
+          emit(const NotificationsState.clearNotificationsHistorySuccess()),
+      error: (error) => emit(NotificationsState.clearNotificationsHistoryError(
+          error.failureMsg ?? '')),
+    );
   }
 
   void readNotification(String notificationId) async {

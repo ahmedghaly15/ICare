@@ -9,4 +9,12 @@ class NotificationsState<T> with _$NotificationsState<T> {
       _SendNotificationSuccess;
   const factory NotificationsState.sendNotificationError(String error) =
       _SendNotificationError<T>;
+  const factory NotificationsState.clearNotificationsHistorySuccess() =
+      _ClearNotificationsHistorySuccess;
+  const factory NotificationsState.clearNotificationsHistoryError(
+      String error) = _ClearNotificationsHistoryError<T>;
+  const factory NotificationsState.saveNotificationsToFirebaseSuccess() =
+      _SaveNotificationsToFirebaseSuccess;
+  const factory NotificationsState.saveNotificationsToFirebaseError(
+      String error) = _SaveNotificationsToFirebaseError<T>;
 }
