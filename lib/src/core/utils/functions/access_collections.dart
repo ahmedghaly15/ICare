@@ -68,3 +68,10 @@ CollectionReference<Map<String, dynamic>> accessCommentRepliesLikesCollection(
       .doc(replyId)
       .collection(AppStrings.replyLikes);
 }
+
+CollectionReference<Map<String, dynamic>>
+    accessCurrentUserNotificationsCollection() {
+  return accessUsersCollection()
+      .doc(Helper.uId)
+      .collection(AppStrings.notificationsCollection);
+}

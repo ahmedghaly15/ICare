@@ -231,5 +231,10 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<SendNotificationUseCase>(
       () => SendNotificationUseCase(getIt.get<NotificationsRepo>()),
     );
+    getIt.registerLazySingleton<SaveNotificationsToFirebaseFirestoreUseCase>(
+      () => SaveNotificationsToFirebaseFirestoreUseCase(
+        getIt.get<NotificationsRepo>(),
+      ),
+    );
   }
 }

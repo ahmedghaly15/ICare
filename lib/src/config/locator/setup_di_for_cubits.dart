@@ -189,7 +189,11 @@ class SetupDIForCubits {
 
     // ========== Notifications feature ==========
     getIt.registerFactory<NotificationsCubit>(
-      () => NotificationsCubit(getIt.get<SendNotificationUseCase>()),
+      () => NotificationsCubit(
+        sendNotificationUseCase: getIt.get<SendNotificationUseCase>(),
+        saveNotificationsToFirebaseFirestoreUseCase:
+            getIt.get<SaveNotificationsToFirebaseFirestoreUseCase>(),
+      ),
     );
   }
 }

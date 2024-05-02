@@ -2,23 +2,25 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
-import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/notifications/data/models/notification_request.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
+import 'package:icare/src/features/notifications/domain/usecases/save_notifications_to_firebase_firestore.dart';
 import 'package:icare/src/features/notifications/domain/usecases/send_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_state.dart';
 
 class NotificationsCubit extends Cubit<NotificationsState> {
-  final SendNotificationUseCase _sendNotificationUseCase;
+  final SendNotificationUseCase sendNotificationUseCase;
+  final SaveNotificationsToFirebaseFirestoreUseCase
+      saveNotificationsToFirebaseFirestoreUseCase;
 
-  NotificationsCubit(
-    this._sendNotificationUseCase,
-  ) : super(const NotificationsState.initial());
+  NotificationsCubit({
+    required this.sendNotificationUseCase,
+    required this.saveNotificationsToFirebaseFirestoreUseCase,
+  }) : super(const NotificationsState.initial());
 
   Future<void> sendNotification(ICareNotification params) async {
     final NotificationRequest notificationRequest = NotificationRequest(
@@ -28,7 +30,7 @@ class NotificationsCubit extends Cubit<NotificationsState> {
         body: params.body,
       ),
     );
-    final result = await _sendNotificationUseCase.call(notificationRequest);
+    final result = await sendNotificationUseCase.call(notificationRequest);
     result.when(
       success: (_) {
         emit(const NotificationsState.sendNotificationSuccess());
@@ -42,37 +44,11 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   void _saveNotificationToFirebaseFirestore(
     ICareNotification params,
   ) async {
-    final ICareNotification iCareNotification = ICareNotification(
-      to: params.to,
-      title: params.title,
-      body: params.body,
-      receiverId: params.receiverId,
-      dateTime: Timestamp.now(),
-      tinyTale: params.tinyTale,
-      comment: params.comment,
-      reply: params.reply,
-      user: params.user,
-      isMessage: params.isMessage ?? false,
-      isComment: params.isComment ?? false,
-      tinyTaleId: params.tinyTaleId,
-    );
-    final DocumentReference<Map<String, dynamic>> document = await getIt
-        .get<FirebaseFirestore>()
-        .collection(AppStrings.usersCollection)
-        .doc(params.receiverId)
-        .collection(AppStrings.notificationsCollection)
-        .add(iCareNotification.toJson());
-    await document.update({'id': document.id});
-  }
-
-  CollectionReference<Map<String, dynamic>> _accessNotificationsCollection() {
-    return accessUsersCollection()
-        .doc(Helper.uId)
-        .collection(AppStrings.notificationsCollection);
+    await saveNotificationsToFirebaseFirestoreUseCase.call(params);
   }
 
   Stream<QuerySnapshot<Map<String, dynamic>>> streamNotifications() {
-    return _accessNotificationsCollection()
+    return accessCurrentUserNotificationsCollection()
         .orderBy(
           AppStrings.dateTime,
           descending: true,
@@ -93,7 +69,7 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   }
 
   void readNotification(String notificationId) async {
-    await _accessNotificationsCollection()
+    await accessCurrentUserNotificationsCollection()
         .doc(notificationId)
         .update({'seen': true});
   }

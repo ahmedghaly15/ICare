@@ -16,6 +16,7 @@ import 'package:icare/src/features/home/domain/usecases/get_developers.dart';
 import 'package:icare/src/features/home/presentation/cubits/developers/developers_cubit.dart';
 import 'package:icare/src/features/notifications/data/datasources/notifications_datasource.dart';
 import 'package:icare/src/features/notifications/data/repositories/notifications_repo.dart';
+import 'package:icare/src/features/notifications/domain/usecases/save_notifications_to_firebase_firestore.dart';
 import 'package:icare/src/features/notifications/domain/usecases/send_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_password.dart';
