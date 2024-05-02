@@ -236,5 +236,8 @@ class SetupDIForUseCases {
         getIt.get<NotificationsRepo>(),
       ),
     );
+    getIt.registerLazySingleton<ClearNotificationsHistoryUseCase>(
+      () => ClearNotificationsHistoryUseCase(getIt.get<NotificationsRepo>()),
+    );
   }
 }

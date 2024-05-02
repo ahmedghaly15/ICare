@@ -13,7 +13,7 @@ class NotificationsRepo {
 
   Future<ApiResult<void>> sendNotifications(
     NotificationRequest notificationRequest,
-  ) async {
+  ) {
     return executeAndHandleErrors<void>(
       () async =>
           await _notificationsDatasource.sendNotification(notificationRequest),
@@ -22,10 +22,16 @@ class NotificationsRepo {
 
   Future<FirebaseRequestResult<void>> saveNotificationToFirebaseFirestore(
     ICareNotification params,
-  ) async {
+  ) {
     return executeAndHandleFirebaseErrors<void>(
       () async => await _notificationsDatasource
           .saveNotificationToFirebaseFirestore(params),
+    );
+  }
+
+  Future<FirebaseRequestResult<void>> clearNotificationsHistory() {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _notificationsDatasource.clearNotificationsHistory(),
     );
   }
 }

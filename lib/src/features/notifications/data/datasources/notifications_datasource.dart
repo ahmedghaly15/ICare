@@ -2,12 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/api/api_service.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/data/models/notification_request.dart';
 
 abstract class NotificationsDatasource {
   Future<void> sendNotification(NotificationRequest notificationRequest);
   Future<void> saveNotificationToFirebaseFirestore(ICareNotification params);
+  Future<void> clearNotificationsHistory();
 }
 
 class NotificationsDatasourceImpl implements NotificationsDatasource {
@@ -44,5 +46,14 @@ class NotificationsDatasourceImpl implements NotificationsDatasource {
         .collection(AppStrings.notificationsCollection)
         .add(iCareNotification.toJson());
     await document.update({'id': document.id});
+  }
+
+  @override
+  Future<void> clearNotificationsHistory() async {
+    final queryNotifications =
+        await accessCurrentUserNotificationsCollection().get();
+    for (final notification in queryNotifications.docs) {
+      await notification.reference.delete();
+    }
   }
 }
