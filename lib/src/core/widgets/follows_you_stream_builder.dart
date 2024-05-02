@@ -17,7 +17,7 @@ class FollowsYouStreamBuilder extends StatelessWidget {
     return StreamBuilder<bool>(
       stream: context.read<UserCubit>().userIsInFollowers(userId),
       builder: (context, snapshot) {
-        bool isInFollowers = snapshot.data ?? false;
+        final bool isInFollowers = snapshot.data ?? false;
         return isInFollowers
             ? Expanded(
                 child: Container(

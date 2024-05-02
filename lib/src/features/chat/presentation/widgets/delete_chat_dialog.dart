@@ -45,7 +45,9 @@ class DeleteChatDialog extends StatelessWidget {
         MySizedBox.height20,
         Text(
           '${AppStrings.sureToDeleteChatHistory} ${receiver.name}?',
-          style: AppTextStyles.textStyle13Bold,
+          style: AppTextStyles.textStyle13Bold.copyWith(
+            color: isDarkModeActive(context) ? Colors.white : Colors.black,
+          ),
         ),
         MySizedBox.height20,
         Row(

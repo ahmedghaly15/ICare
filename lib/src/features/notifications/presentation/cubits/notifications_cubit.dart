@@ -97,6 +97,20 @@ class NotificationsCubit extends Cubit<NotificationsState> {
         .update({'seen': true});
   }
 
+  Stream<bool> isNotificationsNotEmpty() {
+    return accessCurrentUserNotificationsCollection()
+        .limit(1)
+        .snapshots()
+        .map((snapshot) {
+      for (final doc in snapshot.docs) {
+        if (doc.exists) {
+          return true;
+        }
+      }
+      return false;
+    });
+  }
+
   void navigateToNotificationView(
       BuildContext context, ICareNotification notification) {
     if (notification.isMessage!) {

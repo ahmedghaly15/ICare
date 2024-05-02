@@ -24,7 +24,7 @@ class FollowButtonStreamBuilder extends StatelessWidget {
     return StreamBuilder<bool>(
       stream: context.read<UserCubit>().userIsInFollowing(user.uId!),
       builder: (context, snapshot) {
-        bool isFollowed = snapshot.data ?? false;
+        final bool isFollowed = snapshot.data ?? false;
         return OutlinedButton(
           style: OutlinedButton.styleFrom(
             side: BorderSide(

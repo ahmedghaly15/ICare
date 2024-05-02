@@ -20,8 +20,7 @@ class CommentLikeIconButtonStreamBuilder extends StatelessWidget {
     return StreamBuilder<bool>(
       stream: stream,
       builder: (context, snapshot) {
-        bool isCommentLikedByMe = snapshot.data ?? false;
-
+        final bool isCommentLikedByMe = snapshot.data ?? false;
         return IconButton(
           padding: EdgeInsets.all(6.h),
           onPressed: () {

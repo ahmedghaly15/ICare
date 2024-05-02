@@ -29,8 +29,7 @@ class BookmarkIconButtonBlocListener extends StatelessWidget {
               .isTinyTaleBookmarkedByMe(tinyTale.tinyTaleId!)
           : const Stream<bool>.empty(),
       builder: (context, snapshot) {
-        bool isTinyTaleBookmarkedByMe = snapshot.data ?? false;
-
+        final bool isTinyTaleBookmarkedByMe = snapshot.data ?? false;
         return BlocListener<TinyTalesCubit, TinyTalesState>(
           listenWhen: (_, current) =>
               current is BookmarkTinyTaleSuccess ||

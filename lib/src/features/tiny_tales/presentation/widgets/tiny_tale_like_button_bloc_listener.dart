@@ -47,8 +47,7 @@ class TinyTaleLikeButtonBlocListener extends StatelessWidget {
                 .isTinyTaleLikedByMe(tinyTale.tinyTaleId!)
             : const Stream<bool>.empty(),
         builder: (context, snapshot) {
-          bool isTinyTaleLikedByMe = snapshot.data ?? false;
-
+          final bool isTinyTaleLikedByMe = snapshot.data ?? false;
           return IconButton(
             onPressed: isTinyTaleLikedByMe
                 ? () {

@@ -196,4 +196,7 @@ class AppStrings {
   static const String developers = 'Developers';
   static const String notificationsCollection = 'Notifications Collection';
   static const String notifications = 'Notifications';
+  static const String clear = 'Clear';
+  static const String sureToClearNotificationsHistory =
+      'Are you sure to clear notifications history?';
 }
