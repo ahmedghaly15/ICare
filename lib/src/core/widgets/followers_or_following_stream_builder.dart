@@ -25,7 +25,6 @@ class FollowersOrFollowingStreamBuilder extends StatelessWidget {
             stream: stream,
             builder: (context, snapshot) {
               int streamCount = snapshot.data?.docs.length ?? 0;
-
               return Text(
                 '$streamCount',
                 style: AppTextStyles.textStyle13Regular,

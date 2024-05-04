@@ -201,4 +201,6 @@ class AppStrings {
       'Are you sure to clear notifications history?';
   static const String sureToDeleteThisNotification =
       'Are you sure to delete this notification?';
+  static const String emptyNotifications =
+      "You're all caught up! Check back later for updates.";
 }
