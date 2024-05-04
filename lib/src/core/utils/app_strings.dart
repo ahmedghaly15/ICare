@@ -199,4 +199,6 @@ class AppStrings {
   static const String clear = 'Clear';
   static const String sureToClearNotificationsHistory =
       'Are you sure to clear notifications history?';
+  static const String sureToDeleteThisNotification =
+      'Are you sure to delete this notification?';
 }

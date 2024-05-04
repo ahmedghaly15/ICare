@@ -11,6 +11,8 @@ void navigateToUserProfile({
   if (user.uId! != Helper.uId) {
     context.pushRoute(UserProfileRoute(user: user));
   } else {
-    context.pushRoute(const ProfileRoute());
+    if (context.router.current.name != ProfileRoute.name) {
+      context.pushRoute(const ProfileRoute());
+    }
   }
 }
