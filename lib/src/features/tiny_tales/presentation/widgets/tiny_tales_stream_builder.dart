@@ -27,6 +27,7 @@ class TinyTalesStreamBuilder extends StatelessWidget {
             ? SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) => ElasticIn(
+                    duration: const Duration(seconds: 2),
                     child: TinyTaleItem(tinyTale: tinyTales[index]),
                   ),
                   childCount: tinyTales.length,
