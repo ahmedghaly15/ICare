@@ -5,13 +5,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/home/data/models/custom_drawer_item.dart';
+import 'package:icare/src/features/home/data/models/home_ai_feature.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
+import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 
 class AppUtils {
@@ -134,4 +137,31 @@ class AppUtils {
         vertical: 25.h,
         horizontal: 10.w,
       );
+  static List<HomeAIFeature> homeAIFeatures(BuildContext context) =>
+      <HomeAIFeature>[
+        HomeAIFeature(
+          title: AppStrings.cryTranslation,
+          icon: AppAssets.svgsCryTranslationFeatureIcon,
+          description: AppStrings.cryTranslationFeatureDescription,
+          image: AppAssets.imagesCryTranslatorFeature,
+          onPressed: () => context.pushRoute(const BabyCryPredictorRoute()),
+        ),
+        HomeAIFeature(
+          title: AppStrings.speechTherapy,
+          icon: AppAssets.svgsSpeechTherapyFeatureIcon,
+          description: AppStrings.speechTherapyFeatureDescription,
+          image: AppAssets.imagesSpeechTherapyFeature,
+          onPressed: () {
+            context.read<SpeechTherapyCubit>().getSpeechTherapyLevels();
+            context.pushRoute(const SpeechTherapyRoute());
+          },
+        ),
+        HomeAIFeature(
+          title: AppStrings.icareBot,
+          icon: AppAssets.svgsIcareBotFeatureIcon,
+          description: AppStrings.icareBotFeatureDescription,
+          image: AppAssets.imagesIcareBotFeature,
+          onPressed: () => context.pushRoute(const ICareBotRoute()),
+        ),
+      ];
 }
