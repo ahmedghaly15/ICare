@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/entities/no_params.dart';
+import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';

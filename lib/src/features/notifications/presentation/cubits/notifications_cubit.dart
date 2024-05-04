@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/router/app_router.dart';
-import 'package:icare/src/core/entities/no_params.dart';
+import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';

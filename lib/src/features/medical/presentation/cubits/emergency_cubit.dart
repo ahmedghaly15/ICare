@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/entities/no_params.dart';
+import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/features/medical/domain/usecases/get_emergency_diseases.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_state.dart';
 

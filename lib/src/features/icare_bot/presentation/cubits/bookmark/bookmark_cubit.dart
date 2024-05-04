@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/entities/no_params.dart';
+import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
