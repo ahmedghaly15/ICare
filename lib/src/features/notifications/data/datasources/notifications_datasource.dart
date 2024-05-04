@@ -10,6 +10,7 @@ abstract class NotificationsDatasource {
   Future<void> sendNotification(NotificationRequest notificationRequest);
   Future<void> saveNotificationToFirebaseFirestore(ICareNotification params);
   Future<void> clearNotificationsHistory();
+  Future<void> deleteNotification(String notificationId);
 }
 
 class NotificationsDatasourceImpl implements NotificationsDatasource {
@@ -54,6 +55,17 @@ class NotificationsDatasourceImpl implements NotificationsDatasource {
         await accessCurrentUserNotificationsCollection().get();
     for (final notification in queryNotifications.docs) {
       await notification.reference.delete();
+    }
+  }
+
+  @override
+  Future<void> deleteNotification(String notificationId) async {
+    final queryNotifications =
+        await accessCurrentUserNotificationsCollection().get();
+    for (final notification in queryNotifications.docs) {
+      if (notification.id == notificationId) {
+        await notification.reference.delete();
+      }
     }
   }
 }

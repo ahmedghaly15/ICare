@@ -27,6 +27,7 @@ class NotificationItem extends StatelessWidget {
             .read<NotificationsCubit>()
             .navigateToNotificationView(context, notification);
       },
+      onLongPress: () {},
       child: Row(
         children: <Widget>[
           InkWell(

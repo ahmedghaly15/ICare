@@ -34,4 +34,13 @@ class NotificationsRepo {
       () async => await _notificationsDatasource.clearNotificationsHistory(),
     );
   }
+
+  Future<FirebaseRequestResult<void>> deleteNotification(
+    String notificationId,
+  ) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async =>
+          await _notificationsDatasource.deleteNotification(notificationId),
+    );
+  }
 }

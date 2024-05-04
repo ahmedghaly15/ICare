@@ -10,6 +10,7 @@ import 'package:icare/src/features/comments/data/models/comment_replies_view_par
 import 'package:icare/src/features/notifications/data/models/notification_request.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/domain/usecases/clear_notifications_history.dart';
+import 'package:icare/src/features/notifications/domain/usecases/delete_notification.dart';
 import 'package:icare/src/features/notifications/domain/usecases/save_notifications_to_firebase_firestore.dart';
 import 'package:icare/src/features/notifications/domain/usecases/send_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_state.dart';
@@ -19,11 +20,13 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   final SaveNotificationsToFirebaseFirestoreUseCase
       saveNotificationsToFirebaseFirestoreUseCase;
   final ClearNotificationsHistoryUseCase clearNotificationsHistoryUseCase;
+  final DeleteNotificationUseCase deleteNotificationUseCase;
 
   NotificationsCubit({
     required this.sendNotificationUseCase,
     required this.saveNotificationsToFirebaseFirestoreUseCase,
     required this.clearNotificationsHistoryUseCase,
+    required this.deleteNotificationUseCase,
   }) : super(const NotificationsState.initial());
 
   Future<void> sendNotification(ICareNotification params) async {
@@ -109,6 +112,16 @@ class NotificationsCubit extends Cubit<NotificationsState> {
       }
       return false;
     });
+  }
+
+  void deleteNotification(String notificationId) async {
+    final result = await deleteNotificationUseCase(notificationId);
+    result.when(
+      success: (_) =>
+          emit(const NotificationsState.deleteNotificationSuccess()),
+      error: (error) => emit(
+          NotificationsState.deleteNotificationError(error.failureMsg ?? '')),
+    );
   }
 
   void navigateToNotificationView(

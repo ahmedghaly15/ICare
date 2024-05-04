@@ -17,4 +17,8 @@ class NotificationsState<T> with _$NotificationsState<T> {
       _SaveNotificationsToFirebaseSuccess;
   const factory NotificationsState.saveNotificationsToFirebaseError(
       String error) = _SaveNotificationsToFirebaseError<T>;
+  const factory NotificationsState.deleteNotificationSuccess() =
+      _DeleteNotificationSuccess;
+  const factory NotificationsState.deleteNotificationError(String error) =
+      _DeleteNotificationError<T>;
 }

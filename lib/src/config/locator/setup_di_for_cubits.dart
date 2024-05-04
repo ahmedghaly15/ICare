@@ -195,6 +195,7 @@ class SetupDIForCubits {
             getIt.get<SaveNotificationsToFirebaseFirestoreUseCase>(),
         clearNotificationsHistoryUseCase:
             getIt.get<ClearNotificationsHistoryUseCase>(),
+        deleteNotificationUseCase: getIt.get<DeleteNotificationUseCase>(),
       ),
     );
   }
