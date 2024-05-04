@@ -65,7 +65,7 @@ mixin _$NotificationsState<T> {
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -73,7 +73,7 @@ mixin _$NotificationsState<T> {
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) =>
       throw _privateConstructorUsedError;
@@ -85,7 +85,7 @@ mixin _$NotificationsState<T> {
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -93,7 +93,7 @@ mixin _$NotificationsState<T> {
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) =>
       throw _privateConstructorUsedError;
@@ -105,7 +105,7 @@ mixin _$NotificationsState<T> {
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -113,8 +113,7 @@ mixin _$NotificationsState<T> {
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -236,7 +235,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -244,7 +243,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return initial(this);
@@ -259,7 +258,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -267,7 +266,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return initial?.call(this);
@@ -282,7 +281,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -290,8 +289,7 @@ class _$InitialImpl<T> implements _Initial<T> {
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -406,7 +404,7 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -414,7 +412,7 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return sendNotificationSuccess(this);
@@ -429,7 +427,7 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -437,7 +435,7 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return sendNotificationSuccess?.call(this);
@@ -452,7 +450,7 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -460,8 +458,7 @@ class _$SendNotificationSuccessImpl<T> implements _SendNotificationSuccess<T> {
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (sendNotificationSuccess != null) {
@@ -602,7 +599,7 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -610,7 +607,7 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return sendNotificationError(this);
@@ -625,7 +622,7 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -633,7 +630,7 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return sendNotificationError?.call(this);
@@ -648,7 +645,7 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -656,8 +653,7 @@ class _$SendNotificationErrorImpl<T> implements _SendNotificationError<T> {
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (sendNotificationError != null) {
@@ -779,7 +775,7 @@ class _$ClearNotificationsHistorySuccessImpl<T>
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -787,7 +783,7 @@ class _$ClearNotificationsHistorySuccessImpl<T>
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return clearNotificationsHistorySuccess(this);
@@ -802,7 +798,7 @@ class _$ClearNotificationsHistorySuccessImpl<T>
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -810,7 +806,7 @@ class _$ClearNotificationsHistorySuccessImpl<T>
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return clearNotificationsHistorySuccess?.call(this);
@@ -825,7 +821,7 @@ class _$ClearNotificationsHistorySuccessImpl<T>
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -833,8 +829,7 @@ class _$ClearNotificationsHistorySuccessImpl<T>
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (clearNotificationsHistorySuccess != null) {
@@ -887,7 +882,7 @@ class __$$ClearNotificationsHistoryErrorImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$ClearNotificationsHistoryErrorImpl<T>
-    implements _ClearNotificationsHistoryError<T> {
+    implements ClearNotificationsHistoryError<T> {
   const _$ClearNotificationsHistoryErrorImpl(this.error);
 
   @override
@@ -979,7 +974,7 @@ class _$ClearNotificationsHistoryErrorImpl<T>
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -987,7 +982,7 @@ class _$ClearNotificationsHistoryErrorImpl<T>
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return clearNotificationsHistoryError(this);
@@ -1002,7 +997,7 @@ class _$ClearNotificationsHistoryErrorImpl<T>
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1010,7 +1005,7 @@ class _$ClearNotificationsHistoryErrorImpl<T>
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return clearNotificationsHistoryError?.call(this);
@@ -1025,7 +1020,7 @@ class _$ClearNotificationsHistoryErrorImpl<T>
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1033,8 +1028,7 @@ class _$ClearNotificationsHistoryErrorImpl<T>
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (clearNotificationsHistoryError != null) {
@@ -1044,9 +1038,9 @@ class _$ClearNotificationsHistoryErrorImpl<T>
   }
 }
 
-abstract class _ClearNotificationsHistoryError<T>
+abstract class ClearNotificationsHistoryError<T>
     implements NotificationsState<T> {
-  const factory _ClearNotificationsHistoryError(final String error) =
+  const factory ClearNotificationsHistoryError(final String error) =
       _$ClearNotificationsHistoryErrorImpl<T>;
 
   String get error;
@@ -1158,7 +1152,7 @@ class _$SaveNotificationsToFirebaseSuccessImpl<T>
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -1166,7 +1160,7 @@ class _$SaveNotificationsToFirebaseSuccessImpl<T>
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return saveNotificationsToFirebaseSuccess(this);
@@ -1181,7 +1175,7 @@ class _$SaveNotificationsToFirebaseSuccessImpl<T>
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1189,7 +1183,7 @@ class _$SaveNotificationsToFirebaseSuccessImpl<T>
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return saveNotificationsToFirebaseSuccess?.call(this);
@@ -1204,7 +1198,7 @@ class _$SaveNotificationsToFirebaseSuccessImpl<T>
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1212,8 +1206,7 @@ class _$SaveNotificationsToFirebaseSuccessImpl<T>
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (saveNotificationsToFirebaseSuccess != null) {
@@ -1358,7 +1351,7 @@ class _$SaveNotificationsToFirebaseErrorImpl<T>
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -1366,7 +1359,7 @@ class _$SaveNotificationsToFirebaseErrorImpl<T>
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return saveNotificationsToFirebaseError(this);
@@ -1381,7 +1374,7 @@ class _$SaveNotificationsToFirebaseErrorImpl<T>
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1389,7 +1382,7 @@ class _$SaveNotificationsToFirebaseErrorImpl<T>
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return saveNotificationsToFirebaseError?.call(this);
@@ -1404,7 +1397,7 @@ class _$SaveNotificationsToFirebaseErrorImpl<T>
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1412,8 +1405,7 @@ class _$SaveNotificationsToFirebaseErrorImpl<T>
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (saveNotificationsToFirebaseError != null) {
@@ -1537,7 +1529,7 @@ class _$DeleteNotificationSuccessImpl<T>
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -1545,7 +1537,7 @@ class _$DeleteNotificationSuccessImpl<T>
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return deleteNotificationSuccess(this);
@@ -1560,7 +1552,7 @@ class _$DeleteNotificationSuccessImpl<T>
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1568,7 +1560,7 @@ class _$DeleteNotificationSuccessImpl<T>
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return deleteNotificationSuccess?.call(this);
@@ -1583,7 +1575,7 @@ class _$DeleteNotificationSuccessImpl<T>
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1591,8 +1583,7 @@ class _$DeleteNotificationSuccessImpl<T>
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (deleteNotificationSuccess != null) {
@@ -1643,7 +1634,7 @@ class __$$DeleteNotificationErrorImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
+class _$DeleteNotificationErrorImpl<T> implements DeleteNotificationError<T> {
   const _$DeleteNotificationErrorImpl(this.error);
 
   @override
@@ -1734,7 +1725,7 @@ class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
         sendNotificationError,
     required TResult Function(_ClearNotificationsHistorySuccess<T> value)
         clearNotificationsHistorySuccess,
-    required TResult Function(_ClearNotificationsHistoryError<T> value)
+    required TResult Function(ClearNotificationsHistoryError<T> value)
         clearNotificationsHistoryError,
     required TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)
         saveNotificationsToFirebaseSuccess,
@@ -1742,7 +1733,7 @@ class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
         saveNotificationsToFirebaseError,
     required TResult Function(_DeleteNotificationSuccess<T> value)
         deleteNotificationSuccess,
-    required TResult Function(_DeleteNotificationError<T> value)
+    required TResult Function(DeleteNotificationError<T> value)
         deleteNotificationError,
   }) {
     return deleteNotificationError(this);
@@ -1757,7 +1748,7 @@ class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
     TResult? Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult? Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult? Function(_ClearNotificationsHistoryError<T> value)?
+    TResult? Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult? Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1765,7 +1756,7 @@ class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
         saveNotificationsToFirebaseError,
     TResult? Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult? Function(_DeleteNotificationError<T> value)?
+    TResult? Function(DeleteNotificationError<T> value)?
         deleteNotificationError,
   }) {
     return deleteNotificationError?.call(this);
@@ -1780,7 +1771,7 @@ class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
     TResult Function(_SendNotificationError<T> value)? sendNotificationError,
     TResult Function(_ClearNotificationsHistorySuccess<T> value)?
         clearNotificationsHistorySuccess,
-    TResult Function(_ClearNotificationsHistoryError<T> value)?
+    TResult Function(ClearNotificationsHistoryError<T> value)?
         clearNotificationsHistoryError,
     TResult Function(_SaveNotificationsToFirebaseSuccess<T> value)?
         saveNotificationsToFirebaseSuccess,
@@ -1788,8 +1779,7 @@ class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
         saveNotificationsToFirebaseError,
     TResult Function(_DeleteNotificationSuccess<T> value)?
         deleteNotificationSuccess,
-    TResult Function(_DeleteNotificationError<T> value)?
-        deleteNotificationError,
+    TResult Function(DeleteNotificationError<T> value)? deleteNotificationError,
     required TResult orElse(),
   }) {
     if (deleteNotificationError != null) {
@@ -1799,8 +1789,8 @@ class _$DeleteNotificationErrorImpl<T> implements _DeleteNotificationError<T> {
   }
 }
 
-abstract class _DeleteNotificationError<T> implements NotificationsState<T> {
-  const factory _DeleteNotificationError(final String error) =
+abstract class DeleteNotificationError<T> implements NotificationsState<T> {
+  const factory DeleteNotificationError(final String error) =
       _$DeleteNotificationErrorImpl<T>;
 
   String get error;

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/outlined_cancel_button.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
+import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
+import 'package:icare/src/features/notifications/presentation/cubits/notifications_state.dart';
 
 class ClearNotificationsDialog extends StatelessWidget {
   const ClearNotificationsDialog({
@@ -35,12 +39,27 @@ class ClearNotificationsDialog extends StatelessWidget {
             const Expanded(child: OutlinedCancelButton()),
             MySizedBox.width15,
             Expanded(
-              child: PrimaryButton(
-                onPressed: onDeleteTapped,
-                text: clearButtonText,
-                hasShadow: false,
-                borderRadius: AppConstants.outlinedButtonBorderRadiusVal,
-                fontSize: 16,
+              child: BlocListener<NotificationsCubit, NotificationsState>(
+                listenWhen: (_, current) =>
+                    current is ClearNotificationsHistoryError ||
+                    current is DeleteNotificationError,
+                listener: (context, state) {
+                  state.whenOrNull(
+                    clearNotificationsHistoryError: (error) {
+                      ShowICareDialog.showICareDialogError(context, error);
+                    },
+                    deleteNotificationError: (error) {
+                      ShowICareDialog.showICareDialogError(context, error);
+                    },
+                  );
+                },
+                child: PrimaryButton(
+                  onPressed: onDeleteTapped,
+                  text: clearButtonText,
+                  hasShadow: false,
+                  borderRadius: AppConstants.outlinedButtonBorderRadiusVal,
+                  fontSize: 16,
+                ),
               ),
             ),
           ],

@@ -12,7 +12,7 @@ class NotificationsState<T> with _$NotificationsState<T> {
   const factory NotificationsState.clearNotificationsHistorySuccess() =
       _ClearNotificationsHistorySuccess;
   const factory NotificationsState.clearNotificationsHistoryError(
-      String error) = _ClearNotificationsHistoryError<T>;
+      String error) = ClearNotificationsHistoryError<T>;
   const factory NotificationsState.saveNotificationsToFirebaseSuccess() =
       _SaveNotificationsToFirebaseSuccess;
   const factory NotificationsState.saveNotificationsToFirebaseError(
@@ -20,5 +20,5 @@ class NotificationsState<T> with _$NotificationsState<T> {
   const factory NotificationsState.deleteNotificationSuccess() =
       _DeleteNotificationSuccess;
   const factory NotificationsState.deleteNotificationError(String error) =
-      _DeleteNotificationError<T>;
+      DeleteNotificationError<T>;
 }
