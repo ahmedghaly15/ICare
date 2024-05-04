@@ -210,8 +210,8 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
 
   Stream<QuerySnapshot<Map<String, dynamic>>> commentReplyLikesStream(
     String tinyTaleId,
-    String commentId,
-    String replyId,
+    String? commentId,
+    String? replyId,
   ) {
     return getIt
         .get<FirebaseFirestore>()

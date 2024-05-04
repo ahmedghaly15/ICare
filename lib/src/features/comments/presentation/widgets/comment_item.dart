@@ -56,7 +56,7 @@ class CommentItem extends StatelessWidget {
           Flexible(
             child: CommentMoreIconButtonBlocListener(
               tinyTaleId: tinyTaleId,
-              commentId: comment.commentId!,
+              commentId: comment.commentId ?? '',
             ),
           ),
       ],

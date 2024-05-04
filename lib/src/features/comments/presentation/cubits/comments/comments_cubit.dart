@@ -185,7 +185,7 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   Stream<QuerySnapshot<Map<String, dynamic>>> commentLikesStream(
     String tinyTaleId,
-    String commentId,
+    String? commentId,
   ) {
     return accessCommentsCollection(tinyTaleId)
         .doc(commentId)
@@ -195,7 +195,7 @@ class CommentsCubit extends Cubit<CommentsState> {
 
   Stream<QuerySnapshot<Map<String, dynamic>>> commentRepliesStream(
     String tinyTaleId,
-    String commentId,
+    String? commentId,
   ) {
     return accessCommentsCollection(tinyTaleId)
         .doc(commentId)

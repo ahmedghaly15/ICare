@@ -37,13 +37,12 @@ class UserCubit extends Cubit<UserState> {
     emit(const UserState.getUserDataLoading());
     final remoteUser = await getUserDataUseCase(const NoParams());
     remoteUser.when(
-      success: (data) async {
+      success: (data) {
         Helper.currentUser = data;
         emit(UserState.getUserData(data));
       },
-      error: (error) {
-        emit(UserState.getUserDataError(error.toString()));
-      },
+      error: (error) =>
+          emit(UserState.getUserDataError(error.failureMsg ?? '')),
     );
   }
 
@@ -111,7 +110,7 @@ class UserCubit extends Cubit<UserState> {
         .map((querySnapshot) => querySnapshot.exists);
   }
 
-  void signOut() async {
+  void logout() async {
     final result = await signOutUseCase(const NoParams());
     result.when(
       success: (_) => emit(const UserState.signOutSuccess()),

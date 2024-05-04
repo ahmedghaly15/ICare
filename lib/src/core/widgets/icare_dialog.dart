@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_animated_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 
@@ -121,13 +122,19 @@ class ICareDialog extends StatelessWidget {
             children: <Widget>[
               Text(
                 title!,
-                style: AppTextStyles.textStyle16Bold,
+                style: AppTextStyles.textStyle15Bold.copyWith(
+                  color:
+                      isDarkModeActive(context) ? Colors.white : Colors.black,
+                ),
               ),
               MySizedBox.height8,
               Flexible(
                 child: Text(
                   message!,
-                  style: AppTextStyles.textStyle13Bold,
+                  style: AppTextStyles.textStyle13Bold.copyWith(
+                    color:
+                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

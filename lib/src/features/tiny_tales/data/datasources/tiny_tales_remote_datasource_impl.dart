@@ -65,11 +65,11 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   @override
   Future<void> deleteTinyTale(String tinyTaleId) async {
-    await _deleteTinyTaleLikes(tinyTaleId);
     await _deleteEachCommentRepliesLikes(tinyTaleId);
     await _deleteEachCommentReplies(tinyTaleId);
     await _deleteEachCommentLikes(tinyTaleId);
     await _deleteTinyTaleComments(tinyTaleId);
+    await _deleteTinyTaleLikes(tinyTaleId);
     await accessTinyTalesCollection().doc(tinyTaleId).delete();
   }
 

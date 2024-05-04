@@ -34,7 +34,7 @@ class LogoutButtonBlocListener extends StatelessWidget {
         );
       },
       child: PrimaryButton(
-        onPressed: () => context.read<UserCubit>().signOut(),
+        onPressed: () => context.read<UserCubit>().logout(),
         text: AppStrings.logOut,
         hasShadow: false,
         borderRadius: AppConstants.outlinedButtonBorderRadiusVal,

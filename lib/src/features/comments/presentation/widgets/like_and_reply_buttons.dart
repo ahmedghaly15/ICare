@@ -33,7 +33,7 @@ class LikeAndReplyButtons extends StatelessWidget {
         QuerySnapshotTextStreamBuilder(
           stream: context.read<CommentsCubit>().commentLikesStream(
                 tinyTaleId,
-                comment.commentId!,
+                comment.commentId,
               ),
         ),
         MySizedBox.width15,
@@ -61,11 +61,10 @@ class LikeAndReplyButtons extends StatelessWidget {
         QuerySnapshotTextStreamBuilder(
           stream: context.read<CommentsCubit>().commentRepliesStream(
                 tinyTaleId,
-                comment.commentId!,
+                comment.commentId,
               ),
         ),
       ],
     );
   }
 }
-

@@ -23,7 +23,7 @@ class CommentReplyMoreIconButtonBlocListener extends StatelessWidget {
           context.read<CommentRepliesCubit>().deleteCommentReply(
                 DeleteCommentParams(
                   tinyTaleId: params.tinyTaleId!,
-                  commentId: params.comment!.commentId!,
+                  commentId: params.comment!.commentId,
                   commentReplyId: reply.commentId,
                 ),
               ),

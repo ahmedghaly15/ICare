@@ -19,26 +19,30 @@ class CommentsListViewStreamBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: context.read<CommentsCubit>().streamComments(tinyTaleId),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting &&
-              snapshot.data == null) {
-            return const Center(
-              child: CustomCircularProgressIndicator(),
-            );
-          }
-          final comments = snapshot.data!.docs
-              .map((comment) => CommentModel.fromJson(comment.data()))
-              .toList();
-          return ListView.separated(
-            padding: AppConstants.commentsPadding,
-            itemBuilder: (context, index) => CommentItem(
-              tinyTaleId: tinyTaleId,
-              comment: comments[index],
-            ),
-            itemCount: comments.length,
-            separatorBuilder: (context, index) => MySizedBox.height15,
+      stream: context.read<CommentsCubit>().streamComments(tinyTaleId),
+      builder: (context, snapshot) {
+        debugPrint('SNAPSHOT HAS DATA: ${snapshot.hasData}\n${snapshot.data}');
+        debugPrint(
+            'SNAPSHOT HAS ERROR: ${snapshot.hasError}\n${snapshot.error.toString()}');
+        debugPrint('CONNECTION STATE :${snapshot.connectionState.toString()}');
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CustomCircularProgressIndicator(),
           );
-        },);
+        }
+        final comments = snapshot.data!.docs
+            .map((comment) => CommentModel.fromJson(comment.data()))
+            .toList();
+        return ListView.separated(
+          padding: AppConstants.commentsPadding,
+          itemBuilder: (context, index) => CommentItem(
+            tinyTaleId: tinyTaleId,
+            comment: comments[index],
+          ),
+          itemCount: comments.length,
+          separatorBuilder: (context, index) => MySizedBox.height15,
+        );
+      },
+    );
   }
 }

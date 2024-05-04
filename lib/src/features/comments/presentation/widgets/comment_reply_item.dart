@@ -59,8 +59,8 @@ class CommentReplyItem extends StatelessWidget {
                       .read<CommentRepliesCubit>()
                       .commentReplyLikesStream(
                         params.tinyTaleId!,
-                        params.comment!.commentId!,
-                        reply.commentId!,
+                        params.comment!.commentId,
+                        reply.commentId,
                       ),
                 ),
               ],
