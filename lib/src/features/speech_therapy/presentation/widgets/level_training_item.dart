@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 
@@ -20,11 +20,11 @@ class LevelTrainingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppConstants.levelOneItemHeight,
+      height: AppUtils.levelOneItemHeight,
       width: double.infinity,
       decoration: BoxDecoration(
         boxShadow: [
-          AppConstants.primaryBoxShadow,
+          AppUtils.primaryBoxShadow,
         ],
         borderRadius: BorderRadius.circular(25.r),
       ),

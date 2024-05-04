@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
@@ -32,7 +32,7 @@ class CommentRepliesListViewStreamBuilder extends StatelessWidget {
             .map((commentReply) => CommentModel.fromJson(commentReply.data()))
             .toList();
         return ListView.separated(
-          padding: AppConstants.commentsPadding,
+          padding: AppUtils.commentsPadding,
           itemBuilder: (context, index) => CommentReplyItem(
             reply: commentReplies[index],
             params: params,

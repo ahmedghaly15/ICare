@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
@@ -37,7 +37,7 @@ class SentenceContainerBlocBuilder extends StatelessWidget {
                     ? AppColors.scaffoldDarkModeBackgroundColor
                     : AppColors.secondWhiteColor,
                 boxShadow: [
-                  AppConstants.primaryBoxShadow,
+                  AppUtils.primaryBoxShadow,
                 ],
                 borderRadius: BorderRadius.circular(25.r),
               ),

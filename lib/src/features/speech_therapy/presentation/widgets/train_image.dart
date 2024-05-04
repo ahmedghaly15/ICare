@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 
 class TrainImage extends StatelessWidget {
@@ -16,7 +16,7 @@ class TrainImage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
-          AppConstants.primaryBoxShadow,
+          AppUtils.primaryBoxShadow,
         ],
         borderRadius: BorderRadius.circular(50.r),
       ),

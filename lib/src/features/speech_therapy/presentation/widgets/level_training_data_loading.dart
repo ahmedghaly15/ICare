@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/shimmer_widget.dart';
 
@@ -10,7 +10,7 @@ class LevelTrainingDataLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       itemBuilder: (_, __) => ShimmerWidget(
-        height: AppConstants.levelOneItemHeight,
+        height: AppUtils.levelOneItemHeight,
         width: double.infinity,
       ),
       separatorBuilder: (_, __) => MySizedBox.height15,

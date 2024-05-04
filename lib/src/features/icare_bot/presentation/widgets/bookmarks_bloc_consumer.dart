@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_state.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_message_bubble.dart';
@@ -33,7 +33,7 @@ class BookmarksBlocConsumer extends StatelessWidget {
                   ),
                 )
               : SliverPadding(
-                  padding: AppConstants.bookmarksBubblesPadding,
+                  padding: AppUtils.bookmarksBubblesPadding,
                   sliver: SliverList(
                     delegate: SliverChildBuilderDelegate(
                       (context, index) => BookmarkMessageBubble(
@@ -45,7 +45,7 @@ class BookmarksBlocConsumer extends StatelessWidget {
                 );
         } else {
           return SliverPadding(
-            padding: AppConstants.bookmarksBubblesPadding,
+            padding: AppUtils.bookmarksBubblesPadding,
             sliver: const LoadingBookmarksView(),
           );
         }

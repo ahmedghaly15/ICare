@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/shimmer_widget.dart';
 import 'package:icare/src/features/medical/presentation/cubits/medical_info_cubit.dart';
@@ -39,7 +39,7 @@ class MedicalInfoDiseasesBlocBuilder extends StatelessWidget {
             child: CarouselSlider.builder(
               itemBuilder: (_, __, ___) => const ShimmerWidget(),
               itemCount: 10,
-              options: AppConstants.medicalInfoCarouselOptions,
+              options: AppUtils.medicalInfoCarouselOptions,
             ),
           );
         }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:icare/src/config/router/routes_names.dart';
 import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/models/icare_user.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_medium_size_title.dart';
 import 'package:icare/src/features/auth/presentation/widgets/auth_small_size_description.dart';
@@ -25,26 +25,26 @@ class LoginViewBody extends StatelessWidget {
                 const CustomAuthAppBar(),
                 MySizedBox.height30,
                 Padding(
-                  padding: AppConstants.horizontalPadding,
+                  padding: AppUtils.horizontalPadding,
                   child: const AuthMediumSizeTitle(title: AppStrings.login),
                 ),
                 MySizedBox.height7,
                 Padding(
-                  padding: AppConstants.horizontalPadding,
+                  padding: AppUtils.horizontalPadding,
                   child: const AuthSmallSizeDescription(
                     description: AppStrings.loginDescription,
                   ),
                 ),
                 MySizedBox.height25,
                 Padding(
-                  padding: AppConstants.horizontalPadding,
+                  padding: AppUtils.horizontalPadding,
                   child: const LoginForm(),
                 ),
               ],
             ),
           ),
           SliverPadding(
-            padding: AppConstants.horizontalPadding,
+            padding: AppUtils.horizontalPadding,
             sliver: const SliverFillRemaining(
               hasScrollBody: false,
               child: Column(

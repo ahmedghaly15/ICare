@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/level_training_item.dart';
 
@@ -38,7 +38,7 @@ class BlurredLevelTrainingItem extends StatelessWidget {
                 sigmaY: 4,
               ),
               child: Container(
-                height: AppConstants.levelOneItemHeight,
+                height: AppUtils.levelOneItemHeight,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.r),
                   color: Colors.transparent,

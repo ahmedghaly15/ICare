@@ -1,113 +1,36 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
+import 'package:icare/src/features/home/data/models/custom_drawer_item.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
+import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 
 class AppConstants {
-  static Widget Function(
-    BuildContext,
-    Animation<double>,
-    Animation<double>,
-    Widget,
-  )? get transitionsBuilder => TransitionsBuilders.slideLeft;
-  static Widget Function(
-    BuildContext,
-    Animation<double>,
-    Animation<double>,
-    Widget,
-  )? get drawerItemTransitionsBuilder => TransitionsBuilders.slideRight;
-  static const int transitionDuration = 400;
-  static const int slideTopTransitionDuration = 800;
-  static const int slideBottomTransitionDuration = 600;
   static const ScrollPhysics scrollPhysics = BouncingScrollPhysics();
-  static EdgeInsetsGeometry get horizontalPadding =>
-      EdgeInsets.symmetric(horizontal: padding25.w);
   static const double padding25 = 25;
   static const double radius25 = 25.0;
   static const double authTopMargin = 27.0;
-  static Duration get onboardingScrollingDuration =>
-      const Duration(milliseconds: 300);
-  static Curve get onboardingScrollingCurve => Curves.linear;
-  static BoxShadow get primaryBoxShadow => BoxShadow(
-        offset: Offset(0.w, 4.h),
-        blurRadius: 4.w,
-        spreadRadius: 0,
-        color: Colors.black.withOpacity(0.25),
-      );
+  static const Duration onboardingScrollingDuration =
+      Duration(milliseconds: 300);
+  static const Curve onboardingScrollingCurve = Curves.linear;
   static const Duration cryTranslatorAnimationDuration =
       Duration(milliseconds: 650);
   static const double medicalCategoryItemAspectRatio = 350 / 175;
   static const double medicalInfoCategoryItemAspectRatio = 1.5;
-  static BorderRadius get diseaseDetailsImageBorderRadius =>
-      BorderRadius.vertical(
-        bottom: Radius.circular(50.r),
-      );
   static const double padding16 = 16;
   static const String defaultProfileImage =
       'https://cdn.create.vista.com/api/media/small/563147854/stock-vector-mother-and-daughter';
   static const Duration dialogsTransitionDuration = Duration(milliseconds: 150);
-  static EdgeInsets bookmarksBubblesPadding = EdgeInsets.symmetric(
-    horizontal: 4.w,
-    vertical: 16.h,
-  );
-  static double get textFieldBottomPadding => SizeConfig.height * 0.04;
-  static const List<String> drawerItemsTitles = <String>[
-    AppStrings.profile,
-    AppStrings.bookmarks,
-    AppStrings.chats,
-    AppStrings.search,
-    AppStrings.icareBotBookmarks,
-    AppStrings.developers,
-  ];
-  static const List<IconData> drawerItemsIcons = <IconData>[
-    Icons.person,
-    Icons.bookmark,
-    Icons.forum,
-    Icons.search,
-    Icons.bookmark,
-    Icons.person,
-  ];
-  static EdgeInsets profileTabsPadding = EdgeInsets.symmetric(
-    vertical: 16.h,
-    horizontal: 8.w,
-  );
-  static EdgeInsets viewAppBarPadding = EdgeInsets.only(left: 9.w);
-  static double get levelOneItemHeight => SizeConfig.height * 0.2;
   static const double trainGradientContainerRadius = 50;
-  static BoxDecoration surahItemDecoration(BuildContext context) =>
-      BoxDecoration(
-        borderRadius: BorderRadius.circular(50.r),
-        color: isDarkModeActive(context)
-            ? AppColors.scaffoldDarkModeBackgroundColor
-            : Colors.white,
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            offset: Offset(0, 2.h),
-            blurRadius: 12.r,
-            spreadRadius: 0,
-            color: Colors.black.withOpacity(0.08),
-          ),
-        ],
-      );
-  static CarouselOptions get medicalInfoCarouselOptions => CarouselOptions(
-        aspectRatio: 0.7,
-        viewportFraction: 0.7,
-        initialPage: 0,
-        enableInfiniteScroll: true,
-        reverse: false,
-        autoPlay: true,
-        autoPlayInterval: const Duration(seconds: 3),
-        autoPlayAnimationDuration: const Duration(milliseconds: 800),
-        autoPlayCurve: Curves.fastOutSlowIn,
-        enlargeCenterPage: true,
-        enlargeFactor: 0.3,
-        scrollDirection: Axis.horizontal,
-      );
   static const List<String> homeAIFeaturesTitles = <String>[
     AppStrings.cryTranslation,
     AppStrings.speechTherapy,
@@ -129,13 +52,4 @@ class AppConstants {
     AppAssets.imagesIcareBotFeature,
   ];
   static const double outlinedButtonBorderRadiusVal = 16.0;
-  static EdgeInsetsGeometry get commentsPadding => EdgeInsets.only(
-        top: 16.h,
-        right: 9.w,
-        left: 9.w,
-      );
-  static EdgeInsetsGeometry get tinyTalesPadding => EdgeInsets.symmetric(
-        vertical: 25.h,
-        horizontal: 10.w,
-      );
 }

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/models/icare_user.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/features/chat/presentation/widgets/chat_details_custom_app_bar.dart';
 import 'package:icare/src/features/chat/presentation/widgets/message_field_and_buttons.dart';
 import 'package:icare/src/features/chat/presentation/widgets/messages_stream_builder.dart';
@@ -29,7 +29,7 @@ class ChatDetailsView extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(
                 right: 8.w,
-                bottom: AppConstants.textFieldBottomPadding,
+                bottom: AppUtils.textFieldBottomPadding,
                 top: 8.h,
               ),
               child: MessageFieldAndButtons(receiver: receiver),

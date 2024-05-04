@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/advanced_level_scores_list_bloc_builder.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/gradient_colorful_container.dart';
@@ -18,7 +18,7 @@ class AdvancedLevelScoreView extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverPadding(
-              padding: AppConstants.viewAppBarPadding,
+              padding: AppUtils.viewAppBarPadding,
               sliver: const CustomSliverAppBar(title: AppStrings.score),
             ),
             SliverFillRemaining(

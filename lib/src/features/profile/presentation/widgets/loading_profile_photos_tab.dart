@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/shimmer_widget.dart';
 
 class LoadingProfilePhotosTab extends StatelessWidget {
@@ -13,7 +13,7 @@ class LoadingProfilePhotosTab extends StatelessWidget {
         crossAxisSpacing: 10.0,
         mainAxisSpacing: 10.0,
       ),
-      padding: AppConstants.profileTabsPadding,
+      padding: AppUtils.profileTabsPadding,
       itemCount: 9,
       itemBuilder: (_, index) => const ShimmerWidget(circularRadiusVal: 15),
     );

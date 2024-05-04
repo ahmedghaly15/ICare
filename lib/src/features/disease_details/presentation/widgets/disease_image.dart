@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/models/disease_data.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/custom_circular_arrow_button.dart';
@@ -19,7 +19,7 @@ class DiseaseImage extends StatelessWidget {
     return Container(
       height: SizeConfig.height * 0.35,
       decoration: BoxDecoration(
-        borderRadius: AppConstants.diseaseDetailsImageBorderRadius,
+        borderRadius: AppUtils.diseaseDetailsImageBorderRadius,
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
@@ -37,7 +37,7 @@ class DiseaseImage extends StatelessWidget {
               height: SizeConfig.height * 0.35,
               width: SizeConfig.width,
               child: ClipRRect(
-                borderRadius: AppConstants.diseaseDetailsImageBorderRadius,
+                borderRadius: AppUtils.diseaseDetailsImageBorderRadius,
                 child: CustomCachedNetworkImage(
                   imageUrl: diseaseData.diseaseImage,
                 ),

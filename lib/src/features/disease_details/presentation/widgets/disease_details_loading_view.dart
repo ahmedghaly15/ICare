@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/shimmer_disease_details_description.dart';
@@ -18,7 +19,7 @@ class DiseaseDetailsLoadingView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         ShimmerWidget(
-          borderRadius: AppConstants.diseaseDetailsImageBorderRadius,
+          borderRadius: AppUtils.diseaseDetailsImageBorderRadius,
           height: SizeConfig.height * 0.35,
         ),
         MySizedBox.height12,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/people_who_liked_bloc_builder.dart';
 
@@ -20,7 +21,7 @@ class PeopleWhoLikedView extends StatelessWidget {
           physics: AppConstants.scrollPhysics,
           slivers: [
             SliverPadding(
-              padding: AppConstants.viewAppBarPadding,
+              padding: AppUtils.viewAppBarPadding,
               sliver:
                   const CustomSliverAppBar(title: AppStrings.peopleWhoLiked),
             ),

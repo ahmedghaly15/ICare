@@ -43,47 +43,47 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(
       page: EmergencyDiseaseDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
+      durationInMilliseconds: AppUtils.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(
       page: MedicalInfoDiseaseDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
+      durationInMilliseconds: AppUtils.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(page: BabyCryPredictorRoute.page),
     _buildCustomRoute(page: ICareBotRoute.page),
     _buildCustomRoute(
       page: BookmarksRoute.page,
-      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+      transitionsBuilder: AppUtils.drawerItemTransitionsBuilder,
     ),
     _buildCustomRoute(
       page: NewTinyTaleRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
+      durationInMilliseconds: AppUtils.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(page: CommentsRoute.page),
     _buildCustomRoute(page: CommentRepliesRoute.page),
     _buildCustomRoute(page: PeopleWhoLikedRoute.page),
     _buildCustomRoute(
       page: SearchUsersRoute.page,
-      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+      transitionsBuilder: AppUtils.drawerItemTransitionsBuilder,
     ),
     _buildCustomRoute(
       page: BookmarkedTinyTalesRoute.page,
-      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+      transitionsBuilder: AppUtils.drawerItemTransitionsBuilder,
     ),
     _buildCustomRoute(
       page: ChatDetailsRoute.page,
       transitionsBuilder: TransitionsBuilders.slideBottom,
-      durationInMilliseconds: AppConstants.slideBottomTransitionDuration,
+      durationInMilliseconds: AppUtils.slideBottomTransitionDuration,
     ),
     _buildCustomRoute(
       page: ChatsRoute.page,
-      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+      transitionsBuilder: AppUtils.drawerItemTransitionsBuilder,
     ),
     _buildCustomRoute(
       page: ProfileRoute.page,
-      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+      transitionsBuilder: AppUtils.drawerItemTransitionsBuilder,
     ),
     _buildCustomRoute(page: EditProfileRoute.page),
     _buildCustomRoute(page: UserProfileRoute.page),
@@ -93,26 +93,26 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(
       page: LevelOneRoute.page,
       transitionsBuilder: TransitionsBuilders.slideTop,
-      durationInMilliseconds: AppConstants.slideTopTransitionDuration,
+      durationInMilliseconds: AppUtils.slideTopTransitionDuration,
     ),
     _buildCustomRoute(page: TrainingOnLevelOneRoute.page),
     _buildCustomRoute(page: ScoreRoute.page),
     _buildCustomRoute(
       page: LevelTwoRoute.page,
       transitionsBuilder: TransitionsBuilders.slideTop,
-      durationInMilliseconds: AppConstants.slideTopTransitionDuration,
+      durationInMilliseconds: AppUtils.slideTopTransitionDuration,
     ),
     _buildCustomRoute(page: TrainingOnLevelTwoRoute.page),
     _buildCustomRoute(
       page: AdvancedLevelRoute.page,
       transitionsBuilder: TransitionsBuilders.slideTop,
-      durationInMilliseconds: AppConstants.slideTopTransitionDuration,
+      durationInMilliseconds: AppUtils.slideTopTransitionDuration,
     ),
     _buildCustomRoute(page: AdvancedLevelTrainingRoute.page),
     _buildCustomRoute(page: AdvancedLevelScoreRoute.page),
     _buildCustomRoute(
       page: DevelopersRoute.page,
-      transitionsBuilder: AppConstants.drawerItemTransitionsBuilder,
+      transitionsBuilder: AppUtils.drawerItemTransitionsBuilder,
     ),
     _buildCustomRoute(page: NotificationsRoute.page),
     _buildCustomRoute(page: NotificationTinyTaleRoute.page),
@@ -132,9 +132,9 @@ CustomRoute _buildCustomRoute({
   return CustomRoute(
     initial: initial,
     page: page,
-    transitionsBuilder: transitionsBuilder ?? AppConstants.transitionsBuilder,
+    transitionsBuilder: transitionsBuilder ?? AppUtils.transitionsBuilder,
     durationInMilliseconds:
-        durationInMilliseconds ?? AppConstants.transitionDuration,
+        durationInMilliseconds ?? AppUtils.transitionDuration,
     children: children,
   );
 }

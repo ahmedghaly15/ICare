@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_drawer.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/icare_community_sliver_app_bar.dart';
 import 'package:icare/src/features/tiny_tales/presentation/widgets/tiny_tales_stream_builder.dart';
@@ -21,11 +22,11 @@ class ICareCommunityView extends StatelessWidget {
           physics: AppConstants.scrollPhysics,
           slivers: <Widget>[
             SliverPadding(
-              padding: AppConstants.viewAppBarPadding,
+              padding: AppUtils.viewAppBarPadding,
               sliver: const ICareCommunitySliverAppBar(),
             ),
             SliverPadding(
-              padding: AppConstants.tinyTalesPadding,
+              padding: AppUtils.tinyTalesPadding,
               sliver: const TinyTalesStreamBuilder(),
             ),
           ],

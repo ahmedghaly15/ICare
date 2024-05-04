@@ -8,6 +8,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
@@ -34,7 +35,7 @@ class AIFeaturesSliverList extends StatelessWidget {
                       spreadRadius: 0,
                       color: Colors.black.withOpacity(0.8),
                     )
-                  : AppConstants.primaryBoxShadow,
+                  : AppUtils.primaryBoxShadow,
             ],
           ),
           child: MaterialButton(

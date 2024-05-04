@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/animated_empty_view.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/features/profile/presentation/widgets/loading_profile_photos_tab.dart';
@@ -39,7 +39,7 @@ class ProfilePhotosTab extends StatelessWidget {
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 10.0,
                 ),
-                padding: AppConstants.profileTabsPadding,
+                padding: AppUtils.profileTabsPadding,
                 itemCount: photos.length,
                 itemBuilder: (_, index) => ZoomIn(
                   child: ClipRRect(

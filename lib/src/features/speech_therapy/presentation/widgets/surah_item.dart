@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/data/models/advanced_level_training_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/surah_info_container.dart';
@@ -21,7 +21,7 @@ class SurahItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: AppConstants.surahItemDecoration(context),
+      decoration: AppUtils.surahItemDecoration(context),
       child: MaterialButton(
         onPressed: () {
           context.pushRoute(AdvancedLevelTrainingRoute(data: data));
