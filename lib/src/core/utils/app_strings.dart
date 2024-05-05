@@ -203,4 +203,8 @@ class AppStrings {
       'Are you sure to delete this notification?';
   static const String emptyNotifications =
       "You're all caught up! Check back later for updates.";
+  static const String about = 'About';
+  static const String cachedAbout = 'cachedAbout';
+  static const String cachedBabyCryPredictorClasses =
+      'cachedBabyCryPredictorClasses';
 }

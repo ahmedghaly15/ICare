@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
 import 'package:icare/src/features/notifications/data/models/notification_request.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
@@ -117,4 +118,10 @@ abstract class ApiService {
         "key=AAAAQf84HOk:APA91bFKOKY_KNlsW6QaMaGYDxqGU1L2cKWnXADsCZyStYwPwwd2zvezFC_2ps-g7TLZnAetFx_OxeCJQMqX6k4d7P8atV4O1doYCsQmQWkZnkwVeC73wEf3FSkor3GEpBnkTN3mnnzN",
   })
   Future<void> sendNotification(@Body() NotificationRequest params);
+
+  @GET(EndPoints.babyCryPredictorAbout)
+  Future<String> getBabyCryPredictorAbout();
+
+  @GET(EndPoints.babyCryPredictorClasses)
+  Future<List<BabyCryPredictorClass>> getBabyCryPredictorClasses();
 }
