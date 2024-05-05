@@ -32,7 +32,6 @@ class EmergencyDiseaseDetailsRepo {
       }
     } else {
       debugPrint('GOT CACHED EMERGENCY DISEASE DETAILS DATA');
-
       return ApiResult.success(
         _localDatasource.getCachedDiseaseDetails(diseaseId),
       );

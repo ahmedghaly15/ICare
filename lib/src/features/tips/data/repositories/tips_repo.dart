@@ -14,20 +14,15 @@ class TipsRepo {
     try {
       final lastRetrievalTime =
           await _tipsLocalDataSource.getLastRetrievalTime();
-
       final currentTime = DateTime.now();
-
       if (lastRetrievalTime == null ||
           currentTime.difference(lastRetrievalTime).inHours >= 24) {
         final GetRandomTipResponse randomTip =
             await _tipsRemoteDataSource.getRandomTip();
-
         await _tipsLocalDataSource.cacheRandomTip(randomTip);
-
         await _tipsLocalDataSource.updateLastRetrievalTime(
           currentTime,
         );
-
         return ApiResult.success(randomTip);
       } else {
         return ApiResult.success(_tipsLocalDataSource.getCachedRandomTip());

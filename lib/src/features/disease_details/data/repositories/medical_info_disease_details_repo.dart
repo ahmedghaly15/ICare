@@ -19,12 +19,9 @@ class MedicalInfoDiseaseDetailsRepo {
   }) async {
     if (_localDatasource.getJsonString(params.diseaseId) == null) {
       debugPrint('GOT NO CACHED MEDICAL INFO DISEASE DETAILS DATA');
-
       final data =
           await _remoteDatasource.getMedicalInfoDiseaseDetails(params: params);
-
       await _localDatasource.cacheDiseaseDetails(params.diseaseId, data);
-
       return ApiResult.success(data);
     } else {
       debugPrint('GOT CACHED MEDICAL INFO DISEASE DETAILS DATA');

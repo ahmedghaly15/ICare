@@ -18,7 +18,6 @@ class MedicalRepo {
   Future<ApiResult<List<DiseaseData>>> getEmergencyDiseases() async {
     if (_medicalLocalDatasource.emergencyDiseasesJson() == null) {
       debugPrint('GOT NO CACHED EMERGENCY DATA');
-
       try {
         final data = await _medicalRemoteDatasource.getEmergencyDiseases();
         await _medicalLocalDatasource.cacheEmergencyDiseases(data);
@@ -37,7 +36,6 @@ class MedicalRepo {
   Future<ApiResult<List<GetMedicalInfoResponse>>> getMedicalInfo() async {
     if (_medicalLocalDatasource.cachedMedicalInfoJson() == null) {
       debugPrint('GOT NO CACHED MEDICAL INFO DATA');
-
       try {
         final data = await _medicalRemoteDatasource.getMedicalInfo();
         await _medicalLocalDatasource.cacheMedicalInfo(data);
@@ -47,7 +45,6 @@ class MedicalRepo {
       }
     } else {
       debugPrint('GOT CACHED MEDICAL INFO DATA');
-
       return ApiResult.success(
         _medicalLocalDatasource.getCachedMedicalInfo(),
       );

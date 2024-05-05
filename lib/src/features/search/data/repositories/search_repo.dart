@@ -15,25 +15,20 @@ class SearchRepo {
     return executeAndHandleFirebaseErrors<List<ICareUser>>(
       () async {
         final List<ICareUser> searchResult = <ICareUser>[];
-
         final users = await _searchDatasource.searchUsers();
-
         searchResult.clear();
-
         for (var user in users.docs) {
           if (user['uId'] != Helper.uId) {
             final String lowercaseName =
                 user.data()['name'].toString().toLowerCase();
             final String lowercaseEmail =
                 user.data()['email'].toString().toLowerCase();
-
             if (lowercaseName.startsWith(nameOrEmail.toLowerCase()) ||
                 lowercaseEmail.startsWith(nameOrEmail.toLowerCase())) {
               searchResult.add(ICareUser.fromJson(user.data()));
             }
           }
         }
-
         return searchResult;
       },
     );

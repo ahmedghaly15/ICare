@@ -18,6 +18,8 @@ abstract class BabyCryPredictorLocalDatasource {
 
 class BabyCryPredictorLocalDatasourceImpl
     implements BabyCryPredictorLocalDatasource {
+  const BabyCryPredictorLocalDatasourceImpl();
+
   @override
   Future<bool> cacheBabyCryPredictorAbout(String about) async {
     return await getIt.get<CacheHelper>().saveData(

@@ -58,6 +58,9 @@ class SetupDIForDatasource {
     getIt.registerLazySingleton<BabyCryPredictorRemoteDatasource>(
       () => BabyCryPredictorRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
+    getIt.registerLazySingleton<BabyCryPredictorLocalDatasource>(
+      () => const BabyCryPredictorLocalDatasourceImpl(),
+    );
 
     // ========== ICareBot feature ==========
     getIt.registerLazySingleton<ICareBotRemoteDatasource>(
