@@ -55,7 +55,7 @@ import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_cubit.dart';
-import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_predictor_datasource.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_predictor_remote_datasource.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/repositories/baby_cry_predictor_repo.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';

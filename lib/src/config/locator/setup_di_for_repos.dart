@@ -56,7 +56,7 @@ class SetupDIForRepos {
 
     // ========== BabyCryPredictor feature ==========
     getIt.registerLazySingleton<BabyCryPredictorRepo>(
-      () => BabyCryPredictorRepo(getIt.get<BabyCryPredictorDatasource>()),
+      () => BabyCryPredictorRepo(getIt.get<BabyCryPredictorRemoteDatasource>()),
     );
 
     // ========== ICareBot feature ==========

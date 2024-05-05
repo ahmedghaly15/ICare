@@ -55,8 +55,8 @@ class SetupDIForDatasource {
     );
 
     // ========== BabyCryPredictor feature ==========
-    getIt.registerLazySingleton<BabyCryPredictorDatasource>(
-      () => BabyCryPredictorDatasourceImpl(getIt.get<ApiService>()),
+    getIt.registerLazySingleton<BabyCryPredictorRemoteDatasource>(
+      () => BabyCryPredictorRemoteDatasourceImpl(getIt.get<ApiService>()),
     );
 
     // ========== ICareBot feature ==========
