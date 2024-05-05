@@ -3,20 +3,27 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
+import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
+import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_about.dart';
+import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_classes.dart';
 import 'package:record/record.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
 
 class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
-  final BabyCryPredictorUseCase _babyCryPredictorUseCase;
+  final BabyCryPredictorUseCase babyCryPredictorUseCase;
+  final GetBabyCryPredictorAboutUseCase getBabyCryPredictorAboutUseCase;
+  final GetBabyCryPredictorClassesUseCase getBabyCryPredictorClassesUseCase;
 
-  BabyCryPredictorCubit(
-    this._babyCryPredictorUseCase,
-  ) : super(const BabyCryPredictorState.initial()) {
+  BabyCryPredictorCubit({
+    required this.babyCryPredictorUseCase,
+    required this.getBabyCryPredictorAboutUseCase,
+    required this.getBabyCryPredictorClassesUseCase,
+  }) : super(const BabyCryPredictorState.initial()) {
     isRecording = false;
     _audioRecorder = AudioRecorder();
   }
@@ -79,7 +86,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
   void _babyCryPredictor() async {
     emit(const BabyCryPredictorState.loading());
-    final result = await _babyCryPredictorUseCase.call(File(_audioPath!));
+    final result = await babyCryPredictorUseCase.call(File(_audioPath!));
     result.when(
       success: (data) {
         emit(BabyCryPredictorState.success(data));
@@ -115,6 +122,30 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
       _babyCryPredictor();
       _convertIsRecording();
     }
+  }
+
+  void getBabyCryPredictorAbout() async {
+    final result = await getBabyCryPredictorAboutUseCase.call(const NoParams());
+    result.when(
+      success: (data) => emit(BabyCryPredictorState.getAboutSuccess(data)),
+      error: (error) => emit(
+        BabyCryPredictorState.getAboutError(error.apiErrorModel.error ?? ''),
+      ),
+    );
+  }
+
+  void getBabyCryPredictorClasses() async {
+    emit(const BabyCryPredictorState.getBabyCryPredictorClassesLoading());
+    final result =
+        await getBabyCryPredictorClassesUseCase.call(const NoParams());
+    result.when(
+      success: (data) =>
+          emit(BabyCryPredictorState.getBabyCryPredictorClassesSuccess(data)),
+      error: (error) => emit(
+        BabyCryPredictorState.getBabyCryPredictorClassesError(
+            error.apiErrorModel.error ?? ''),
+      ),
+    );
   }
 
   @override

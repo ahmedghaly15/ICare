@@ -69,7 +69,13 @@ class SetupDIForCubits {
 
     // ========== BabyCryPredictor feature ==========
     getIt.registerFactory<BabyCryPredictorCubit>(
-      () => BabyCryPredictorCubit(getIt.get<BabyCryPredictorUseCase>()),
+      () => BabyCryPredictorCubit(
+        babyCryPredictorUseCase: getIt.get<BabyCryPredictorUseCase>(),
+        getBabyCryPredictorAboutUseCase:
+            getIt.get<GetBabyCryPredictorAboutUseCase>(),
+        getBabyCryPredictorClassesUseCase:
+            getIt.get<GetBabyCryPredictorClassesUseCase>(),
+      ),
     );
 
     // ========== ICareBot feature ==========
