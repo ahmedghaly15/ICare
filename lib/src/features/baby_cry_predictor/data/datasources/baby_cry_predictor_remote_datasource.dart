@@ -1,13 +1,16 @@
 import 'dart:io';
 
 import 'package:icare/src/core/api/api_service.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
 
 abstract class BabyCryPredictorRemoteDatasource {
   Future<BabyCryPredictorResponse> babyCryPredictor(File audioPath);
   Future<String> getBabyCryPredictorAbout();
   Future<List<BabyCryPredictorClass>> getBabyCryPredictorClasses();
+  Future<LastResultResponse> getBabyCryPredictorLastResult();
 }
 
 class BabyCryPredictorRemoteDatasourceImpl
@@ -18,7 +21,10 @@ class BabyCryPredictorRemoteDatasourceImpl
 
   @override
   Future<BabyCryPredictorResponse> babyCryPredictor(File audioPath) async {
-    return await _apiService.babyCryPredictor(audioPath);
+    return await _apiService.babyCryPredictor(
+      babyCryAudio: audioPath,
+      userId: Helper.uId!,
+    );
   }
 
   @override
@@ -29,5 +35,10 @@ class BabyCryPredictorRemoteDatasourceImpl
   @override
   Future<List<BabyCryPredictorClass>> getBabyCryPredictorClasses() async {
     return await _apiService.getBabyCryPredictorClasses();
+  }
+
+  @override
+  Future<LastResultResponse> getBabyCryPredictorLastResult() async {
+    return await _apiService.getBabyCryPredictorLastResult(Helper.uId!);
   }
 }

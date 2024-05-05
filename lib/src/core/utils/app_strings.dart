@@ -207,4 +207,5 @@ class AppStrings {
   static const String cachedAbout = 'cachedAbout';
   static const String cachedBabyCryPredictorClasses =
       'cachedBabyCryPredictorClasses';
+      static const String cachedBabyCryPredictorLastResult = 'cachedBabyCryPredictorLastResult';
 }
