@@ -80,6 +80,18 @@ class SetupDIForUseCases {
       () =>
           GetBabyCryPredictorClassesUseCase(getIt.get<BabyCryPredictorRepo>()),
     );
+    getIt.registerLazySingleton<GetBabyCryPredictorLastResultUseCase>(
+      () => GetBabyCryPredictorLastResultUseCase(
+          getIt.get<BabyCryPredictorRepo>()),
+    );
+    getIt.registerLazySingleton<BabyCryPredictorAddNewClassUseCase>(
+      () =>
+          BabyCryPredictorAddNewClassUseCase(getIt.get<BabyCryPredictorRepo>()),
+    );
+    getIt.registerLazySingleton<BabyCryPredictorUploadMissClassifyingUseCase>(
+      () => BabyCryPredictorUploadMissClassifyingUseCase(
+          getIt.get<BabyCryPredictorRepo>()),
+    );
 
     // ========== ICareBot feature ==========
     getIt.registerLazySingleton<AskICareBotUseCase>(

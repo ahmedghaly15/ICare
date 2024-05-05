@@ -75,6 +75,12 @@ class SetupDIForCubits {
             getIt.get<GetBabyCryPredictorAboutUseCase>(),
         getBabyCryPredictorClassesUseCase:
             getIt.get<GetBabyCryPredictorClassesUseCase>(),
+        getBabyCryPredictorLastResultUseCase:
+            getIt.get<GetBabyCryPredictorLastResultUseCase>(),
+        babyCryPredictorAddNewClassUseCase:
+            getIt.get<BabyCryPredictorAddNewClassUseCase>(),
+        babyCryPredictorUploadMissClassifyingUseCase:
+            getIt.get<BabyCryPredictorUploadMissClassifyingUseCase>(),
       ),
     );
 
