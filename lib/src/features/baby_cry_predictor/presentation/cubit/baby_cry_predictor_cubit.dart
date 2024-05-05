@@ -7,9 +7,13 @@ import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/upload_miss_classifying_params.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
+import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor_add_new_class.dart';
+import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor_upload_miss_classifying.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_about.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_classes.dart';
+import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_last_result.dart';
 import 'package:record/record.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
@@ -18,18 +22,32 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   final BabyCryPredictorUseCase babyCryPredictorUseCase;
   final GetBabyCryPredictorAboutUseCase getBabyCryPredictorAboutUseCase;
   final GetBabyCryPredictorClassesUseCase getBabyCryPredictorClassesUseCase;
+  final GetBabyCryPredictorLastResultUseCase
+      getBabyCryPredictorLastResultUseCase;
+  final BabyCryPredictorAddNewClassUseCase babyCryPredictorAddNewClassUseCase;
+  final BabyCryPredictorUploadMissClassifyingUseCase
+      babyCryPredictorUploadMissClassifyingUseCase;
 
   BabyCryPredictorCubit({
     required this.babyCryPredictorUseCase,
     required this.getBabyCryPredictorAboutUseCase,
     required this.getBabyCryPredictorClassesUseCase,
+    required this.getBabyCryPredictorLastResultUseCase,
+    required this.babyCryPredictorAddNewClassUseCase,
+    required this.babyCryPredictorUploadMissClassifyingUseCase,
   }) : super(const BabyCryPredictorState.initial()) {
+    _initAttributes();
+  }
+
+  void _initAttributes() {
     isRecording = false;
     _audioRecorder = AudioRecorder();
+    newClassTextEditingController = TextEditingController();
   }
 
   late bool isRecording;
   late CountdownTimerController countDownController;
+  late final TextEditingController newClassTextEditingController;
   late final AudioRecorder _audioRecorder;
   String? _audioPath;
 
@@ -127,7 +145,8 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   void getBabyCryPredictorAbout() async {
     final result = await getBabyCryPredictorAboutUseCase.call(const NoParams());
     result.when(
-      success: (data) => emit(BabyCryPredictorState.getAboutSuccess(data)),
+      success: (success) =>
+          emit(BabyCryPredictorState.getAboutSuccess(success)),
       error: (error) => emit(
         BabyCryPredictorState.getAboutError(error.apiErrorModel.error ?? ''),
       ),
@@ -139,10 +158,57 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     final result =
         await getBabyCryPredictorClassesUseCase.call(const NoParams());
     result.when(
-      success: (data) =>
-          emit(BabyCryPredictorState.getBabyCryPredictorClassesSuccess(data)),
+      success: (classes) => emit(
+          BabyCryPredictorState.getBabyCryPredictorClassesSuccess(classes)),
       error: (error) => emit(
         BabyCryPredictorState.getBabyCryPredictorClassesError(
+            error.apiErrorModel.error ?? ''),
+      ),
+    );
+  }
+
+  void getBabyCryPredictorLastResult() async {
+    emit(const BabyCryPredictorState.getBabyCryPredictorLastResultLoading());
+    final result =
+        await getBabyCryPredictorLastResultUseCase.call(const NoParams());
+    result.when(
+      success: (lastResult) => emit(
+          BabyCryPredictorState.getBabyCryPredictorLastResultSuccess(
+              lastResult)),
+      error: (error) => emit(
+        BabyCryPredictorState.getBabyCryPredictorLastResultError(
+            error.apiErrorModel.error ?? ''),
+      ),
+    );
+  }
+
+  void babyCryPredictorAddNewClass() async {
+    emit(const BabyCryPredictorState.addNewClassLoading());
+    final result = await babyCryPredictorAddNewClassUseCase(
+        newClassTextEditingController.text.trim());
+    result.when(
+      success: (success) =>
+          emit(BabyCryPredictorState.addNewClassSuccess(success)),
+      error: (error) => emit(
+        BabyCryPredictorState.addNewClassError(error.apiErrorModel.error ?? ''),
+      ),
+    );
+  }
+
+  void uploadMissClassifying() async {
+    emit(const BabyCryPredictorState.uploadMissClassifyingLoading());
+    final result = await babyCryPredictorUploadMissClassifyingUseCase(
+      UploadMissClassifyingParams(
+        // TODO: use another audio file and controller if you need to
+        audioFile: File(_audioPath!),
+        className: newClassTextEditingController.text.trim(),
+      ),
+    );
+    result.when(
+      success: (success) =>
+          emit(BabyCryPredictorState.uploadMissClassifyingSuccess(success)),
+      error: (error) => emit(
+        BabyCryPredictorState.uploadMissClassifyingError(
             error.apiErrorModel.error ?? ''),
       ),
     );

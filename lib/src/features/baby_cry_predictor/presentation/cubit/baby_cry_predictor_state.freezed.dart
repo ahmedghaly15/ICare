@@ -30,6 +30,16 @@ mixin _$BabyCryPredictorState<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +56,16 @@ mixin _$BabyCryPredictorState<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +82,16 @@ mixin _$BabyCryPredictorState<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -81,6 +111,21 @@ mixin _$BabyCryPredictorState<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +144,21 @@ mixin _$BabyCryPredictorState<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -117,6 +177,21 @@ mixin _$BabyCryPredictorState<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -195,6 +270,16 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return initial();
   }
@@ -214,6 +299,16 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return initial?.call();
   }
@@ -233,6 +328,16 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -258,6 +363,21 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return initial(this);
   }
@@ -279,6 +399,21 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return initial?.call(this);
   }
@@ -300,6 +435,21 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -392,6 +542,16 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return convertIsRecording(isRecording);
   }
@@ -411,6 +571,16 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return convertIsRecording?.call(isRecording);
   }
@@ -430,6 +600,16 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (convertIsRecording != null) {
@@ -455,6 +635,21 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return convertIsRecording(this);
   }
@@ -476,6 +671,21 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return convertIsRecording?.call(this);
   }
@@ -497,6 +707,21 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (convertIsRecording != null) {
@@ -594,6 +819,16 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return assignAudioPathVal(path);
   }
@@ -613,6 +848,16 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return assignAudioPathVal?.call(path);
   }
@@ -632,6 +877,16 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (assignAudioPathVal != null) {
@@ -657,6 +912,21 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return assignAudioPathVal(this);
   }
@@ -678,6 +948,21 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return assignAudioPathVal?.call(this);
   }
@@ -699,6 +984,21 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (assignAudioPathVal != null) {
@@ -772,6 +1072,16 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return loading();
   }
@@ -791,6 +1101,16 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return loading?.call();
   }
@@ -810,6 +1130,16 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -835,6 +1165,21 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return loading(this);
   }
@@ -856,6 +1201,21 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return loading?.call(this);
   }
@@ -877,6 +1237,21 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -970,6 +1345,16 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return success(data);
   }
@@ -989,6 +1374,16 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return success?.call(data);
   }
@@ -1008,6 +1403,16 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1033,6 +1438,21 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return success(this);
   }
@@ -1054,6 +1474,21 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return success?.call(this);
   }
@@ -1075,6 +1510,21 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1174,6 +1624,16 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return error(this.error);
   }
@@ -1193,6 +1653,16 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return error?.call(this.error);
   }
@@ -1212,6 +1682,16 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1237,6 +1717,21 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return error(this);
   }
@@ -1258,6 +1753,21 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return error?.call(this);
   }
@@ -1279,6 +1789,21 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1376,6 +1901,16 @@ class _$GetAboutSuccessImpl<T> implements GetAboutSuccess<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return getAboutSuccess(data);
   }
@@ -1395,6 +1930,16 @@ class _$GetAboutSuccessImpl<T> implements GetAboutSuccess<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return getAboutSuccess?.call(data);
   }
@@ -1414,6 +1959,16 @@ class _$GetAboutSuccessImpl<T> implements GetAboutSuccess<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getAboutSuccess != null) {
@@ -1439,6 +1994,21 @@ class _$GetAboutSuccessImpl<T> implements GetAboutSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return getAboutSuccess(this);
   }
@@ -1460,6 +2030,21 @@ class _$GetAboutSuccessImpl<T> implements GetAboutSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return getAboutSuccess?.call(this);
   }
@@ -1481,6 +2066,21 @@ class _$GetAboutSuccessImpl<T> implements GetAboutSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getAboutSuccess != null) {
@@ -1576,6 +2176,16 @@ class _$GetAboutErrorImpl<T> implements GetAboutError<T> {
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return getAboutError(this.error);
   }
@@ -1595,6 +2205,16 @@ class _$GetAboutErrorImpl<T> implements GetAboutError<T> {
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return getAboutError?.call(this.error);
   }
@@ -1614,6 +2234,16 @@ class _$GetAboutErrorImpl<T> implements GetAboutError<T> {
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getAboutError != null) {
@@ -1639,6 +2269,21 @@ class _$GetAboutErrorImpl<T> implements GetAboutError<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return getAboutError(this);
   }
@@ -1660,6 +2305,21 @@ class _$GetAboutErrorImpl<T> implements GetAboutError<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return getAboutError?.call(this);
   }
@@ -1681,6 +2341,21 @@ class _$GetAboutErrorImpl<T> implements GetAboutError<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getAboutError != null) {
@@ -1754,6 +2429,16 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesLoading();
   }
@@ -1773,6 +2458,16 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesLoading?.call();
   }
@@ -1792,6 +2487,16 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getBabyCryPredictorClassesLoading != null) {
@@ -1817,6 +2522,21 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesLoading(this);
   }
@@ -1838,6 +2558,21 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesLoading?.call(this);
   }
@@ -1859,6 +2594,21 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getBabyCryPredictorClassesLoading != null) {
@@ -1964,6 +2714,16 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesSuccess(data);
   }
@@ -1983,6 +2743,16 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesSuccess?.call(data);
   }
@@ -2002,6 +2772,16 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getBabyCryPredictorClassesSuccess != null) {
@@ -2027,6 +2807,21 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesSuccess(this);
   }
@@ -2048,6 +2843,21 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesSuccess?.call(this);
   }
@@ -2069,6 +2879,21 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getBabyCryPredictorClassesSuccess != null) {
@@ -2173,6 +2998,16 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
     required TResult Function(List<BabyCryPredictorClass> data)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesError(this.error);
   }
@@ -2192,6 +3027,16 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
     TResult? Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesError?.call(this.error);
   }
@@ -2211,6 +3056,16 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
     TResult Function(List<BabyCryPredictorClass> data)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getBabyCryPredictorClassesError != null) {
@@ -2236,6 +3091,21 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesError(this);
   }
@@ -2257,6 +3127,21 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
   }) {
     return getBabyCryPredictorClassesError?.call(this);
   }
@@ -2278,6 +3163,21 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
     required TResult orElse(),
   }) {
     if (getBabyCryPredictorClassesError != null) {
@@ -2296,5 +3196,2438 @@ abstract class GetBabyCryPredictorClassesError<T>
   @JsonKey(ignore: true)
   _$$GetBabyCryPredictorClassesErrorImplCopyWith<T,
           _$GetBabyCryPredictorClassesErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetBabyCryPredictorLastResultLoadingImplCopyWith<T, $Res> {
+  factory _$$GetBabyCryPredictorLastResultLoadingImplCopyWith(
+          _$GetBabyCryPredictorLastResultLoadingImpl<T> value,
+          $Res Function(_$GetBabyCryPredictorLastResultLoadingImpl<T>) then) =
+      __$$GetBabyCryPredictorLastResultLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetBabyCryPredictorLastResultLoadingImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$GetBabyCryPredictorLastResultLoadingImpl<T>>
+    implements _$$GetBabyCryPredictorLastResultLoadingImplCopyWith<T, $Res> {
+  __$$GetBabyCryPredictorLastResultLoadingImplCopyWithImpl(
+      _$GetBabyCryPredictorLastResultLoadingImpl<T> _value,
+      $Res Function(_$GetBabyCryPredictorLastResultLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetBabyCryPredictorLastResultLoadingImpl<T>
+    implements GetBabyCryPredictorLastResultLoading<T> {
+  const _$GetBabyCryPredictorLastResultLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.getBabyCryPredictorLastResultLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBabyCryPredictorLastResultLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorLastResultLoading != null) {
+      return getBabyCryPredictorLastResultLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorLastResultLoading != null) {
+      return getBabyCryPredictorLastResultLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBabyCryPredictorLastResultLoading<T>
+    implements BabyCryPredictorState<T> {
+  const factory GetBabyCryPredictorLastResultLoading() =
+      _$GetBabyCryPredictorLastResultLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetBabyCryPredictorLastResultSuccessImplCopyWith<T, $Res> {
+  factory _$$GetBabyCryPredictorLastResultSuccessImplCopyWith(
+          _$GetBabyCryPredictorLastResultSuccessImpl<T> value,
+          $Res Function(_$GetBabyCryPredictorLastResultSuccessImpl<T>) then) =
+      __$$GetBabyCryPredictorLastResultSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({LastResultResponse lastResult});
+}
+
+/// @nodoc
+class __$$GetBabyCryPredictorLastResultSuccessImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$GetBabyCryPredictorLastResultSuccessImpl<T>>
+    implements _$$GetBabyCryPredictorLastResultSuccessImplCopyWith<T, $Res> {
+  __$$GetBabyCryPredictorLastResultSuccessImplCopyWithImpl(
+      _$GetBabyCryPredictorLastResultSuccessImpl<T> _value,
+      $Res Function(_$GetBabyCryPredictorLastResultSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? lastResult = null,
+  }) {
+    return _then(_$GetBabyCryPredictorLastResultSuccessImpl<T>(
+      null == lastResult
+          ? _value.lastResult
+          : lastResult // ignore: cast_nullable_to_non_nullable
+              as LastResultResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBabyCryPredictorLastResultSuccessImpl<T>
+    implements GetBabyCryPredictorLastResultSuccess<T> {
+  const _$GetBabyCryPredictorLastResultSuccessImpl(this.lastResult);
+
+  @override
+  final LastResultResponse lastResult;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.getBabyCryPredictorLastResultSuccess(lastResult: $lastResult)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBabyCryPredictorLastResultSuccessImpl<T> &&
+            (identical(other.lastResult, lastResult) ||
+                other.lastResult == lastResult));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, lastResult);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBabyCryPredictorLastResultSuccessImplCopyWith<T,
+          _$GetBabyCryPredictorLastResultSuccessImpl<T>>
+      get copyWith => __$$GetBabyCryPredictorLastResultSuccessImplCopyWithImpl<
+          T, _$GetBabyCryPredictorLastResultSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultSuccess(lastResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultSuccess?.call(lastResult);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorLastResultSuccess != null) {
+      return getBabyCryPredictorLastResultSuccess(lastResult);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorLastResultSuccess != null) {
+      return getBabyCryPredictorLastResultSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBabyCryPredictorLastResultSuccess<T>
+    implements BabyCryPredictorState<T> {
+  const factory GetBabyCryPredictorLastResultSuccess(
+          final LastResultResponse lastResult) =
+      _$GetBabyCryPredictorLastResultSuccessImpl<T>;
+
+  LastResultResponse get lastResult;
+  @JsonKey(ignore: true)
+  _$$GetBabyCryPredictorLastResultSuccessImplCopyWith<T,
+          _$GetBabyCryPredictorLastResultSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetBabyCryPredictorLastResultErrorImplCopyWith<T, $Res> {
+  factory _$$GetBabyCryPredictorLastResultErrorImplCopyWith(
+          _$GetBabyCryPredictorLastResultErrorImpl<T> value,
+          $Res Function(_$GetBabyCryPredictorLastResultErrorImpl<T>) then) =
+      __$$GetBabyCryPredictorLastResultErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetBabyCryPredictorLastResultErrorImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$GetBabyCryPredictorLastResultErrorImpl<T>>
+    implements _$$GetBabyCryPredictorLastResultErrorImplCopyWith<T, $Res> {
+  __$$GetBabyCryPredictorLastResultErrorImplCopyWithImpl(
+      _$GetBabyCryPredictorLastResultErrorImpl<T> _value,
+      $Res Function(_$GetBabyCryPredictorLastResultErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetBabyCryPredictorLastResultErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBabyCryPredictorLastResultErrorImpl<T>
+    implements GetBabyCryPredictorLastResultError<T> {
+  const _$GetBabyCryPredictorLastResultErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.getBabyCryPredictorLastResultError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBabyCryPredictorLastResultErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBabyCryPredictorLastResultErrorImplCopyWith<T,
+          _$GetBabyCryPredictorLastResultErrorImpl<T>>
+      get copyWith => __$$GetBabyCryPredictorLastResultErrorImplCopyWithImpl<T,
+          _$GetBabyCryPredictorLastResultErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultError(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultError?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorLastResultError != null) {
+      return getBabyCryPredictorLastResultError(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return getBabyCryPredictorLastResultError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorLastResultError != null) {
+      return getBabyCryPredictorLastResultError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBabyCryPredictorLastResultError<T>
+    implements BabyCryPredictorState<T> {
+  const factory GetBabyCryPredictorLastResultError(final String error) =
+      _$GetBabyCryPredictorLastResultErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetBabyCryPredictorLastResultErrorImplCopyWith<T,
+          _$GetBabyCryPredictorLastResultErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddNewClassLoadingImplCopyWith<T, $Res> {
+  factory _$$AddNewClassLoadingImplCopyWith(_$AddNewClassLoadingImpl<T> value,
+          $Res Function(_$AddNewClassLoadingImpl<T>) then) =
+      __$$AddNewClassLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddNewClassLoadingImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$AddNewClassLoadingImpl<T>>
+    implements _$$AddNewClassLoadingImplCopyWith<T, $Res> {
+  __$$AddNewClassLoadingImplCopyWithImpl(_$AddNewClassLoadingImpl<T> _value,
+      $Res Function(_$AddNewClassLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddNewClassLoadingImpl<T> implements AddNewClassLoading<T> {
+  const _$AddNewClassLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.addNewClassLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewClassLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return addNewClassLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return addNewClassLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassLoading != null) {
+      return addNewClassLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return addNewClassLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return addNewClassLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassLoading != null) {
+      return addNewClassLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewClassLoading<T> implements BabyCryPredictorState<T> {
+  const factory AddNewClassLoading() = _$AddNewClassLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AddNewClassSuccessImplCopyWith<T, $Res> {
+  factory _$$AddNewClassSuccessImplCopyWith(_$AddNewClassSuccessImpl<T> value,
+          $Res Function(_$AddNewClassSuccessImpl<T>) then) =
+      __$$AddNewClassSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String data});
+}
+
+/// @nodoc
+class __$$AddNewClassSuccessImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$AddNewClassSuccessImpl<T>>
+    implements _$$AddNewClassSuccessImplCopyWith<T, $Res> {
+  __$$AddNewClassSuccessImplCopyWithImpl(_$AddNewClassSuccessImpl<T> _value,
+      $Res Function(_$AddNewClassSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AddNewClassSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddNewClassSuccessImpl<T> implements AddNewClassSuccess<T> {
+  const _$AddNewClassSuccessImpl(this.data);
+
+  @override
+  final String data;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.addNewClassSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewClassSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddNewClassSuccessImplCopyWith<T, _$AddNewClassSuccessImpl<T>>
+      get copyWith => __$$AddNewClassSuccessImplCopyWithImpl<T,
+          _$AddNewClassSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return addNewClassSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return addNewClassSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassSuccess != null) {
+      return addNewClassSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return addNewClassSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return addNewClassSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassSuccess != null) {
+      return addNewClassSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewClassSuccess<T> implements BabyCryPredictorState<T> {
+  const factory AddNewClassSuccess(final String data) =
+      _$AddNewClassSuccessImpl<T>;
+
+  String get data;
+  @JsonKey(ignore: true)
+  _$$AddNewClassSuccessImplCopyWith<T, _$AddNewClassSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddNewClassErrorImplCopyWith<T, $Res> {
+  factory _$$AddNewClassErrorImplCopyWith(_$AddNewClassErrorImpl<T> value,
+          $Res Function(_$AddNewClassErrorImpl<T>) then) =
+      __$$AddNewClassErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AddNewClassErrorImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$AddNewClassErrorImpl<T>>
+    implements _$$AddNewClassErrorImplCopyWith<T, $Res> {
+  __$$AddNewClassErrorImplCopyWithImpl(_$AddNewClassErrorImpl<T> _value,
+      $Res Function(_$AddNewClassErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AddNewClassErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddNewClassErrorImpl<T> implements AddNewClassError<T> {
+  const _$AddNewClassErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.addNewClassError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewClassErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddNewClassErrorImplCopyWith<T, _$AddNewClassErrorImpl<T>> get copyWith =>
+      __$$AddNewClassErrorImplCopyWithImpl<T, _$AddNewClassErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return addNewClassError(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return addNewClassError?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassError != null) {
+      return addNewClassError(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return addNewClassError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return addNewClassError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassError != null) {
+      return addNewClassError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewClassError<T> implements BabyCryPredictorState<T> {
+  const factory AddNewClassError(final String error) =
+      _$AddNewClassErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$AddNewClassErrorImplCopyWith<T, _$AddNewClassErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadMissClassifyingLoadingImplCopyWith<T, $Res> {
+  factory _$$UploadMissClassifyingLoadingImplCopyWith(
+          _$UploadMissClassifyingLoadingImpl<T> value,
+          $Res Function(_$UploadMissClassifyingLoadingImpl<T>) then) =
+      __$$UploadMissClassifyingLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$UploadMissClassifyingLoadingImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$UploadMissClassifyingLoadingImpl<T>>
+    implements _$$UploadMissClassifyingLoadingImplCopyWith<T, $Res> {
+  __$$UploadMissClassifyingLoadingImplCopyWithImpl(
+      _$UploadMissClassifyingLoadingImpl<T> _value,
+      $Res Function(_$UploadMissClassifyingLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UploadMissClassifyingLoadingImpl<T>
+    implements UploadMissClassifyingLoading<T> {
+  const _$UploadMissClassifyingLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.uploadMissClassifyingLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadMissClassifyingLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (uploadMissClassifyingLoading != null) {
+      return uploadMissClassifyingLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (uploadMissClassifyingLoading != null) {
+      return uploadMissClassifyingLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadMissClassifyingLoading<T>
+    implements BabyCryPredictorState<T> {
+  const factory UploadMissClassifyingLoading() =
+      _$UploadMissClassifyingLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$UploadMissClassifyingSuccessImplCopyWith<T, $Res> {
+  factory _$$UploadMissClassifyingSuccessImplCopyWith(
+          _$UploadMissClassifyingSuccessImpl<T> value,
+          $Res Function(_$UploadMissClassifyingSuccessImpl<T>) then) =
+      __$$UploadMissClassifyingSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String data});
+}
+
+/// @nodoc
+class __$$UploadMissClassifyingSuccessImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$UploadMissClassifyingSuccessImpl<T>>
+    implements _$$UploadMissClassifyingSuccessImplCopyWith<T, $Res> {
+  __$$UploadMissClassifyingSuccessImplCopyWithImpl(
+      _$UploadMissClassifyingSuccessImpl<T> _value,
+      $Res Function(_$UploadMissClassifyingSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$UploadMissClassifyingSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadMissClassifyingSuccessImpl<T>
+    implements UploadMissClassifyingSuccess<T> {
+  const _$UploadMissClassifyingSuccessImpl(this.data);
+
+  @override
+  final String data;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.uploadMissClassifyingSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadMissClassifyingSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadMissClassifyingSuccessImplCopyWith<T,
+          _$UploadMissClassifyingSuccessImpl<T>>
+      get copyWith => __$$UploadMissClassifyingSuccessImplCopyWithImpl<T,
+          _$UploadMissClassifyingSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (uploadMissClassifyingSuccess != null) {
+      return uploadMissClassifyingSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (uploadMissClassifyingSuccess != null) {
+      return uploadMissClassifyingSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadMissClassifyingSuccess<T>
+    implements BabyCryPredictorState<T> {
+  const factory UploadMissClassifyingSuccess(final String data) =
+      _$UploadMissClassifyingSuccessImpl<T>;
+
+  String get data;
+  @JsonKey(ignore: true)
+  _$$UploadMissClassifyingSuccessImplCopyWith<T,
+          _$UploadMissClassifyingSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UploadMissClassifyingErrorImplCopyWith<T, $Res> {
+  factory _$$UploadMissClassifyingErrorImplCopyWith(
+          _$UploadMissClassifyingErrorImpl<T> value,
+          $Res Function(_$UploadMissClassifyingErrorImpl<T>) then) =
+      __$$UploadMissClassifyingErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$UploadMissClassifyingErrorImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
+        _$UploadMissClassifyingErrorImpl<T>>
+    implements _$$UploadMissClassifyingErrorImplCopyWith<T, $Res> {
+  __$$UploadMissClassifyingErrorImplCopyWithImpl(
+      _$UploadMissClassifyingErrorImpl<T> _value,
+      $Res Function(_$UploadMissClassifyingErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$UploadMissClassifyingErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UploadMissClassifyingErrorImpl<T>
+    implements UploadMissClassifyingError<T> {
+  const _$UploadMissClassifyingErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorState<$T>.uploadMissClassifyingError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UploadMissClassifyingErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UploadMissClassifyingErrorImplCopyWith<T,
+          _$UploadMissClassifyingErrorImpl<T>>
+      get copyWith => __$$UploadMissClassifyingErrorImplCopyWithImpl<T,
+          _$UploadMissClassifyingErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isRecording) convertIsRecording,
+    required TResult Function(String? path) assignAudioPathVal,
+    required TResult Function() loading,
+    required TResult Function(BabyCryPredictorResponse data) success,
+    required TResult Function(String error) error,
+    required TResult Function(String data) getAboutSuccess,
+    required TResult Function(String error) getAboutError,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> data)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function() getBabyCryPredictorLastResultLoading,
+    required TResult Function(LastResultResponse lastResult)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(String error) getBabyCryPredictorLastResultError,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() uploadMissClassifyingLoading,
+    required TResult Function(String data) uploadMissClassifyingSuccess,
+    required TResult Function(String error) uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingError(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isRecording)? convertIsRecording,
+    TResult? Function(String? path)? assignAudioPathVal,
+    TResult? Function()? loading,
+    TResult? Function(BabyCryPredictorResponse data)? success,
+    TResult? Function(String error)? error,
+    TResult? Function(String data)? getAboutSuccess,
+    TResult? Function(String error)? getAboutError,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function()? getBabyCryPredictorLastResultLoading,
+    TResult? Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(String error)? getBabyCryPredictorLastResultError,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? uploadMissClassifyingLoading,
+    TResult? Function(String data)? uploadMissClassifyingSuccess,
+    TResult? Function(String error)? uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingError?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isRecording)? convertIsRecording,
+    TResult Function(String? path)? assignAudioPathVal,
+    TResult Function()? loading,
+    TResult Function(BabyCryPredictorResponse data)? success,
+    TResult Function(String error)? error,
+    TResult Function(String data)? getAboutSuccess,
+    TResult Function(String error)? getAboutError,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> data)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function()? getBabyCryPredictorLastResultLoading,
+    TResult Function(LastResultResponse lastResult)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(String error)? getBabyCryPredictorLastResultError,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? uploadMissClassifyingLoading,
+    TResult Function(String data)? uploadMissClassifyingSuccess,
+    TResult Function(String error)? uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (uploadMissClassifyingError != null) {
+      return uploadMissClassifyingError(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BabyCryPredictorInitial<T> value) initial,
+    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
+    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
+    required TResult Function(BabyCryPredictorLoading<T> value) loading,
+    required TResult Function(BabyCryPredictorSuccess<T> value) success,
+    required TResult Function(BabyCryPredictorError<T> value) error,
+    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
+    required TResult Function(GetAboutError<T> value) getAboutError,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
+        getBabyCryPredictorLastResultLoading,
+    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
+        getBabyCryPredictorLastResultSuccess,
+    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
+        getBabyCryPredictorLastResultError,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(UploadMissClassifyingLoading<T> value)
+        uploadMissClassifyingLoading,
+    required TResult Function(UploadMissClassifyingSuccess<T> value)
+        uploadMissClassifyingSuccess,
+    required TResult Function(UploadMissClassifyingError<T> value)
+        uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult? Function(BabyCryPredictorError<T> value)? error,
+    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult? Function(GetAboutError<T> value)? getAboutError,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult? Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult? Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+  }) {
+    return uploadMissClassifyingError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BabyCryPredictorInitial<T> value)? initial,
+    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
+    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
+    TResult Function(BabyCryPredictorLoading<T> value)? loading,
+    TResult Function(BabyCryPredictorSuccess<T> value)? success,
+    TResult Function(BabyCryPredictorError<T> value)? error,
+    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
+    TResult Function(GetAboutError<T> value)? getAboutError,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
+        getBabyCryPredictorLastResultLoading,
+    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
+        getBabyCryPredictorLastResultSuccess,
+    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
+        getBabyCryPredictorLastResultError,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(UploadMissClassifyingLoading<T> value)?
+        uploadMissClassifyingLoading,
+    TResult Function(UploadMissClassifyingSuccess<T> value)?
+        uploadMissClassifyingSuccess,
+    TResult Function(UploadMissClassifyingError<T> value)?
+        uploadMissClassifyingError,
+    required TResult orElse(),
+  }) {
+    if (uploadMissClassifyingError != null) {
+      return uploadMissClassifyingError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UploadMissClassifyingError<T>
+    implements BabyCryPredictorState<T> {
+  const factory UploadMissClassifyingError(final String error) =
+      _$UploadMissClassifyingErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$UploadMissClassifyingErrorImplCopyWith<T,
+          _$UploadMissClassifyingErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

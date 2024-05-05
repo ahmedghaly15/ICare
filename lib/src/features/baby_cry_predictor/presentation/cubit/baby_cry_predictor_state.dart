@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
 
 part 'baby_cry_predictor_state.freezed.dart';
 
@@ -26,4 +27,21 @@ class BabyCryPredictorState<T> with _$BabyCryPredictorState<T> {
       List<BabyCryPredictorClass> data) = GetBabyCryPredictorClassesSuccess<T>;
   const factory BabyCryPredictorState.getBabyCryPredictorClassesError(
       String error) = GetBabyCryPredictorClassesError<T>;
+  const factory BabyCryPredictorState.getBabyCryPredictorLastResultLoading() =
+      GetBabyCryPredictorLastResultLoading;
+  const factory BabyCryPredictorState.getBabyCryPredictorLastResultSuccess(
+      LastResultResponse lastResult) = GetBabyCryPredictorLastResultSuccess<T>;
+  const factory BabyCryPredictorState.getBabyCryPredictorLastResultError(
+      String error) = GetBabyCryPredictorLastResultError<T>;
+  const factory BabyCryPredictorState.addNewClassLoading() = AddNewClassLoading;
+  const factory BabyCryPredictorState.addNewClassSuccess(String data) =
+      AddNewClassSuccess<T>;
+  const factory BabyCryPredictorState.addNewClassError(String error) =
+      AddNewClassError<T>;
+  const factory BabyCryPredictorState.uploadMissClassifyingLoading() =
+      UploadMissClassifyingLoading;
+  const factory BabyCryPredictorState.uploadMissClassifyingSuccess(
+      String data) = UploadMissClassifyingSuccess<T>;
+  const factory BabyCryPredictorState.uploadMissClassifyingError(String error) =
+      UploadMissClassifyingError<T>;
 }
