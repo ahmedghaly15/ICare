@@ -137,7 +137,10 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<BabyCryPredictorResponse> babyCryPredictor(File babyCryAudio) async {
+  Future<BabyCryPredictorResponse> babyCryPredictor({
+    required File babyCryAudio,
+    required String userId,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -158,7 +161,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://ahmed-muqawi-baby-cry-predictor.hf.space/baby_cry_predictor/',
+              'https://ahmed-muqawi-baby-cry-predictor.hf.space/baby_cry_predictor/${userId}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -616,6 +619,97 @@ class _ApiService implements ApiService {
         .map((dynamic i) =>
             BabyCryPredictorClass.fromJson(i as Map<String, dynamic>))
         .toList();
+    return value;
+  }
+
+  @override
+  Future<LastResultResponse> getBabyCryPredictorLastResult(
+      String userId) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LastResultResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://ahmed-muqawi-baby-cry-predictor.hf.space/last result/${userId}',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = LastResultResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<String> babyCryPredictorAddNewClass(String className) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'https://ahmed-muqawi-baby-cry-predictor.hf.space/add class/${className}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data!;
+    return value;
+  }
+
+  @override
+  Future<String> babyCryPredictorUploadMissClassifying({
+    required File audioFile,
+    required String className,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = FormData();
+    _data.files.add(MapEntry(
+      'file',
+      MultipartFile.fromFileSync(
+        audioFile.path,
+        filename: audioFile.path.split(Platform.pathSeparator).last,
+      ),
+    ));
+    final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'multipart/form-data',
+    )
+        .compose(
+          _dio.options,
+          'https://ahmed-muqawi-baby-cry-predictor.hf.space/upload audio/${className}',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
+    final value = _result.data!;
     return value;
   }
 

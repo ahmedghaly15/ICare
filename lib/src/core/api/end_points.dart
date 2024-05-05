@@ -31,4 +31,10 @@ class EndPoints {
       '${babyCryPredictorBaseUrl}about/';
   static const String babyCryPredictorClasses =
       '${babyCryPredictorBaseUrl}classes/';
+  static const String babyCryPredictorLastResult =
+      '${babyCryPredictorBaseUrl}last result/';
+  static const String babyCryPredictorAddNewClass =
+      '${babyCryPredictorBaseUrl}add class/';
+  static const String babyCryPredictorUploadMissClassifying =
+      '${babyCryPredictorBaseUrl}upload audio/';
 }

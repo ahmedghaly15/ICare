@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
 import 'package:icare/src/features/notifications/data/models/notification_request.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
@@ -46,11 +47,12 @@ abstract class ApiService {
     @Query('disease_id') required String diseaseId,
   });
 
-  @POST(EndPoints.babyCryPredictor)
+  @POST('${EndPoints.babyCryPredictor}{user_id}')
   @MultiPart()
-  Future<BabyCryPredictorResponse> babyCryPredictor(
-    @Part(name: 'baby_cry_audio') File babyCryAudio,
-  );
+  Future<BabyCryPredictorResponse> babyCryPredictor({
+    @Part(name: 'baby_cry_audio') required File babyCryAudio,
+    @Path('user_id') required String userId,
+  });
 
   @GET(EndPoints.getRandomTip)
   Future<GetRandomTipResponse> getRandomTip();
@@ -124,4 +126,21 @@ abstract class ApiService {
 
   @GET(EndPoints.babyCryPredictorClasses)
   Future<List<BabyCryPredictorClass>> getBabyCryPredictorClasses();
+
+  @GET('${EndPoints.babyCryPredictorLastResult}{user_id}')
+  Future<LastResultResponse> getBabyCryPredictorLastResult(
+    @Path('user_id') String userId,
+  );
+
+  @POST('${EndPoints.babyCryPredictorAddNewClass}{class_name}')
+  Future<String> babyCryPredictorAddNewClass(
+    @Path('class_name') String className,
+  );
+
+  @POST('${EndPoints.babyCryPredictorUploadMissClassifying}{class_name}')
+  @MultiPart()
+  Future<String> babyCryPredictorUploadMissClassifying({
+    @Part(name: 'file') required File audioFile,
+    @Path('class_name') required String className,
+  });
 }
