@@ -213,4 +213,7 @@ class AppStrings {
       "We’re constantly working to enhance our app’s AI model. Your feedback is invaluable in helping us make improvements.";
   static const String hasUserNotifiedAboutEnhancing =
       'hasUserNotifiedAboutEnhancing';
+  static const String lastTimeTheBabyWas = 'Last time the baby was';
+  static const String yseThatsRight = "Yes, that’s right!";
+  static const String leaveFeedback = 'Leave feedback';
 }

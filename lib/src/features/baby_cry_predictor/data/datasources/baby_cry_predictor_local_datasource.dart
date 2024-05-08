@@ -87,6 +87,7 @@ class BabyCryPredictorLocalDatasourceImpl
 
   @override
   LastResultResponse retrieveCachedBabyCryPredictorLastResult() {
-    return json.decode(cachedBabyCryPredictorLastResultJson()!);
+    return LastResultResponse.fromJson(
+        json.decode(cachedBabyCryPredictorLastResultJson()!));
   }
 }

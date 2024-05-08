@@ -90,6 +90,8 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
         const KeyAndType(AppStrings.cachedTheme, 'int'),
         KeyAndType('${AppStrings.cachedIsDone}${Helper.uId}', 'bool'),
         KeyAndType('${AppStrings.cachedRandomTip}${Helper.uId}', 'String'),
+        KeyAndType(
+            '${AppStrings.hasUserNotifiedAboutEnhancing}${Helper.uId}', 'bool'),
       ],
     );
     await getIt.get<FirebaseAuth>().signOut();

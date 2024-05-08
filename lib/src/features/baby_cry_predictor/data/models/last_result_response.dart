@@ -4,11 +4,11 @@ part 'last_result_response.g.dart';
 
 @JsonSerializable()
 class LastResultResponse {
-  final String feeling, photo;
+  final String? feeling, photo;
 
   const LastResultResponse({
-    required this.feeling,
-    required this.photo,
+    this.feeling,
+    this.photo,
   });
 
   factory LastResultResponse.fromJson(Map<String, dynamic> json) =>

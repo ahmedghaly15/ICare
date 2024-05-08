@@ -637,7 +637,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'https://ahmed-muqawi-baby-cry-predictor.hf.space/last result/${userId}',
+              'https://ahmed-muqawi-baby-cry-predictor.hf.space/last_result/${userId}',
               queryParameters: queryParameters,
               data: _data,
             )

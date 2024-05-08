@@ -32,7 +32,7 @@ class EndPoints {
   static const String babyCryPredictorClasses =
       '${babyCryPredictorBaseUrl}classes/';
   static const String babyCryPredictorLastResult =
-      '${babyCryPredictorBaseUrl}last result/';
+      '${babyCryPredictorBaseUrl}last_result/';
   static const String babyCryPredictorAddNewClass =
       '${babyCryPredictorBaseUrl}add class/';
   static const String babyCryPredictorUploadMissClassifying =

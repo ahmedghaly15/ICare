@@ -8,8 +8,8 @@ part of 'last_result_response.dart';
 
 LastResultResponse _$LastResultResponseFromJson(Map<String, dynamic> json) =>
     LastResultResponse(
-      feeling: json['feeling'] as String,
-      photo: json['photo'] as String,
+      feeling: json['feeling'] as String?,
+      photo: json['photo'] as String?,
     );
 
 Map<String, dynamic> _$LastResultResponseToJson(LastResultResponse instance) =>
