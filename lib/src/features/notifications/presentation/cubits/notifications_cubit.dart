@@ -30,14 +30,13 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   }) : super(const NotificationsState.initial());
 
   Future<void> sendNotification(ICareNotification params) async {
-    final NotificationRequest notificationRequest = NotificationRequest(
+    final result = await sendNotificationUseCase.call(NotificationRequest(
       to: params.to,
       notification: NotificationContent(
         title: params.title,
         body: params.body,
       ),
-    );
-    final result = await sendNotificationUseCase.call(notificationRequest);
+    ));
     result.when(
       success: (_) {
         emit(const NotificationsState.sendNotificationSuccess());

@@ -221,7 +221,7 @@ class ChatCubit extends Cubit<ChatState> {
 
   @override
   Future<void> close() {
-    messageController.clear();
+    messageController.dispose();
     return super.close();
   }
 }

@@ -3,6 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:record/record.dart';
+
+import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
@@ -14,9 +19,8 @@ import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_p
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_about.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_classes.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_last_result.dart';
-import 'package:record/record.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/notifying_user_about_enhancing_dialog.dart';
 
 class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   final BabyCryPredictorUseCase babyCryPredictorUseCase;
@@ -212,6 +216,36 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
             error.apiErrorModel.error ?? ''),
       ),
     );
+  }
+
+  void showNotifyingUserAboutEnhancingDialog(BuildContext context) {
+    bool? hasUserNotifiedAboutEnhancing =
+        _getHasUserNotifiedAboutEnhancingBool();
+    if (hasUserNotifiedAboutEnhancing == null) {
+      // To build this dialog after the frame (UI) is built
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        ShowICareDialog.show(
+          context: context,
+          child: BlocProvider<BabyCryPredictorCubit>(
+            create: (_) => getIt.get<BabyCryPredictorCubit>(),
+            child: const NotifyingUserAboutEnhancingDialog(),
+          ),
+        );
+      });
+    }
+  }
+
+  bool? _getHasUserNotifiedAboutEnhancingBool() {
+    return getIt
+        .get<CacheHelper>()
+        .getBoolData(key: AppStrings.hasUserNotifiedAboutEnhancing);
+  }
+
+  Future<bool> cacheHasUserNotifiedAboutEnhancing() async {
+    return await getIt.get<CacheHelper>().saveData(
+          key: AppStrings.hasUserNotifiedAboutEnhancing,
+          value: true,
+        );
   }
 
   @override

@@ -207,5 +207,10 @@ class AppStrings {
   static const String cachedAbout = 'cachedAbout';
   static const String cachedBabyCryPredictorClasses =
       'cachedBabyCryPredictorClasses';
-      static const String cachedBabyCryPredictorLastResult = 'cachedBabyCryPredictorLastResult';
+  static const String cachedBabyCryPredictorLastResult =
+      'cachedBabyCryPredictorLastResult';
+  static const String notifyingUserAboutEnhancingAIModel =
+      "We’re constantly working to enhance our app’s AI model. Your feedback is invaluable in helping us make improvements.";
+  static const String hasUserNotifiedAboutEnhancing =
+      'hasUserNotifiedAboutEnhancing';
 }
