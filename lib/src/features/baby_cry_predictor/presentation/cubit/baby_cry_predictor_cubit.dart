@@ -3,15 +3,18 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/upload_miss_classifying_params.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor_add_new_class.dart';
@@ -20,6 +23,7 @@ import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_c
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_classes.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_last_result.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/last_result_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/notifying_user_about_enhancing_dialog.dart';
 
 class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
@@ -171,19 +175,38 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     );
   }
 
-  void getBabyCryPredictorLastResult() async {
+  void getBabyCryPredictorLastResult(BuildContext context) async {
     emit(const BabyCryPredictorState.getBabyCryPredictorLastResultLoading());
     final result =
         await getBabyCryPredictorLastResultUseCase.call(const NoParams());
     result.when(
-      success: (lastResult) => emit(
-          BabyCryPredictorState.getBabyCryPredictorLastResultSuccess(
-              lastResult)),
+      success: (lastResult) {
+        emit(BabyCryPredictorState.getBabyCryPredictorLastResultSuccess(
+            lastResult));
+        _showLastResultDialog(context, lastResult);
+      },
       error: (error) => emit(
         BabyCryPredictorState.getBabyCryPredictorLastResultError(
             error.apiErrorModel.error ?? ''),
       ),
     );
+  }
+
+  void _showLastResultDialog(
+    BuildContext context,
+    LastResultResponse lastResult,
+  ) {
+    if (lastResult.feeling != null && lastResult.photo != null) {
+      // To build this dialog after the frame (UI) is built
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        ShowICareDialog.show(
+          context: context,
+          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 32.h),
+          isBlurred: false,
+          child: LastResultDialog(lastResult: lastResult),
+        );
+      });
+    }
   }
 
   void babyCryPredictorAddNewClass() async {
@@ -236,15 +259,21 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   }
 
   bool? _getHasUserNotifiedAboutEnhancingBool() {
-    return getIt
-        .get<CacheHelper>()
-        .getBoolData(key: AppStrings.hasUserNotifiedAboutEnhancing);
+    return getIt.get<CacheHelper>().getBoolData(
+          key: '${AppStrings.hasUserNotifiedAboutEnhancing}${Helper.uId}',
+        );
   }
 
   Future<bool> cacheHasUserNotifiedAboutEnhancing() async {
     return await getIt.get<CacheHelper>().saveData(
-          key: AppStrings.hasUserNotifiedAboutEnhancing,
+          key: '${AppStrings.hasUserNotifiedAboutEnhancing}${Helper.uId}',
           value: true,
+        );
+  }
+
+  Future<bool> removeCachedLastResult() async {
+    return await getIt.get<CacheHelper>().removeData(
+          key: AppStrings.cachedBabyCryPredictorLastResult,
         );
   }
 

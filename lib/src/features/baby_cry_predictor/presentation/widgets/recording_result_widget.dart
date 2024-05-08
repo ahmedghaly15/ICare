@@ -43,17 +43,17 @@ class RecordingResultWidget extends StatelessWidget {
               children: [
                 TextSpan(
                   text: AppStrings.theBabyIs,
-                  style: AppTextStyles.textStyle20Bold.copyWith(
+                  style: AppTextStyles.textStyle18Bold.copyWith(
                     color:
                         isDarkModeActive(context) ? Colors.white : Colors.black,
                   ),
                 ),
                 TextSpan(
                   text: predictionResult.feeling,
-                  style: AppTextStyles.textStyle20Bold.copyWith(
+                  style: AppTextStyles.textStyle18Bold.copyWith(
                     color: AppColors.primaryColor,
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -66,8 +66,10 @@ class RecordingResultWidget extends StatelessWidget {
           ),
           child: FadeInUp(
             child: PrimaryButton(
-              onPressed: () =>
-                  context.read<BabyCryPredictorCubit>().emitInitialState(),
+              onPressed: () {
+                context.read<BabyCryPredictorCubit>().emitInitialState();
+                context.read<BabyCryPredictorCubit>().removeCachedLastResult();
+              },
               text: AppStrings.done,
             ),
           ),

@@ -20,7 +20,8 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
       create: (_) => getIt.get<BabyCryPredictorCubit>()
-        ..showNotifyingUserAboutEnhancingDialog(context),
+        ..showNotifyingUserAboutEnhancingDialog(context)
+        ..getBabyCryPredictorLastResult(context),
       child: this,
     );
   }
@@ -41,9 +42,15 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
                   state is BabyCryPredictorInitial ||
                   state is BabyCryPredictorSuccess ||
                   state is BabyCryPredictorError ||
-                  state is BabyCryPredictorLoading,
+                  state is BabyCryPredictorLoading ||
+                  state is GetBabyCryPredictorLastResultLoading ||
+                  state is GetBabyCryPredictorLastResultSuccess ||
+                  state is GetBabyCryPredictorLastResultError,
               builder: (context, state) {
-                if (state is BabyCryPredictorInitial) {
+                if (state is BabyCryPredictorInitial ||
+                    state is GetBabyCryPredictorLastResultLoading ||
+                    state is GetBabyCryPredictorLastResultError ||
+                    state is GetBabyCryPredictorLastResultSuccess) {
                   return const SliverFillRemaining(
                     hasScrollBody: false,
                     child: RecordingWidget(),
