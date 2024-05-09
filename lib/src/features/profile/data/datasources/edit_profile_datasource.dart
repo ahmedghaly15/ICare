@@ -49,7 +49,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     for (final user in users.docs) {
       if (user.id == Helper.uId) {
         final notifications =
-            await accessUserNotificationsCollection(user.id).get();
+            await accessCurrentUserNotificationsCollection().get();
         for (final notification in notifications.docs) {
           Future.wait([
             _updateUserInNotificationsTinyTales(
@@ -68,7 +68,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       QueryDocumentSnapshot<Map<String, dynamic>> notification,
       ICareUser iCareUser) async {
     if (notification.data()['reply'] != null) {
-      await accessUserNotificationsCollection(userId)
+      await accessCurrentUserNotificationsCollection()
           .doc(notification.id)
           .update({
         'reply': {
@@ -84,7 +84,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       QueryDocumentSnapshot<Map<String, dynamic>> notification,
       ICareUser iCareUser) async {
     if (notification.data()['comment'] != null) {
-      await accessUserNotificationsCollection(userId)
+      await accessCurrentUserNotificationsCollection()
           .doc(notification.id)
           .update({
         'comment': {
@@ -100,7 +100,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       QueryDocumentSnapshot<Map<String, dynamic>> notification,
       ICareUser iCareUser) async {
     if (notification.data()['tinyTale'] != null) {
-      await accessUserNotificationsCollection(userId)
+      await accessCurrentUserNotificationsCollection()
           .doc(notification.id)
           .update({
         'tinyTale': {

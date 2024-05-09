@@ -65,12 +65,27 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
 
   @override
   Future<void> deleteTinyTale(String tinyTaleId) async {
-    await _deleteEachCommentRepliesLikes(tinyTaleId);
-    await _deleteEachCommentReplies(tinyTaleId);
-    await _deleteEachCommentLikes(tinyTaleId);
-    await _deleteTinyTaleComments(tinyTaleId);
-    await _deleteTinyTaleLikes(tinyTaleId);
-    await accessTinyTalesCollection().doc(tinyTaleId).delete();
+    Future.wait([
+      _deleteEachCommentRepliesLikes(tinyTaleId),
+      _deleteEachCommentReplies(tinyTaleId),
+      _deleteEachCommentLikes(tinyTaleId),
+      _deleteTinyTaleComments(tinyTaleId),
+      _deleteTinyTaleLikes(tinyTaleId),
+      _deleteTinyTalesFromNotifications(tinyTaleId),
+      accessTinyTalesCollection().doc(tinyTaleId).delete(),
+    ]);
+  }
+
+  Future<void> _deleteTinyTalesFromNotifications(String tinyTaleId) async {
+    final notifications =
+        await accessCurrentUserNotificationsCollection().get();
+    Future.forEach(notifications.docs, (notification) async {
+      if (notification.data()['tinyTale'] != null &&
+          notification.data()['tinyTale'][AppStrings.tinyTaleId] ==
+              tinyTaleId) {
+        await notification.reference.delete();
+      }
+    });
   }
 
   Future<void> _deleteTinyTaleComments(String tinyTaleId) async {
