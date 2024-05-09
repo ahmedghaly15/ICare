@@ -28,19 +28,20 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
 
   @override
   Future<void> deleteCommentReply(DeleteCommentParams params) async {
-    await _deleteReplyLikes(params);
-    await _accessCommentRepliesCollection(
-      params.commentId!,
-      params.tinyTaleId!,
-    ).doc(params.commentReplyId).delete();
+    Future.wait([
+      _deleteReplyLikes(params),
+      _accessCommentRepliesCollection(
+        params.tinyTaleId!,
+        params.commentId!,
+      ).doc(params.commentReplyId).delete(),
+    ]);
   }
 
   Future<void> _deleteReplyLikes(DeleteCommentParams params) async {
     final replyLikes = await _accessCommentRepliesCollection(
-      params.commentId!,
       params.tinyTaleId!,
+      params.commentId!,
     ).doc(params.commentReplyId).collection(AppStrings.replyLikes).get();
-
     for (final doc in replyLikes.docs) {
       await doc.reference.delete();
     }
@@ -60,7 +61,6 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
       user: Helper.currentUser,
       dateTime: DateTime.now().toString(),
     );
-
     await _accessCommentReplyLikesCollection(params)
         .doc(Helper.uId)
         .set(like.toJson());

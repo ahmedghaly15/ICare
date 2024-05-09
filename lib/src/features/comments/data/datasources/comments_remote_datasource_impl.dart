@@ -25,24 +25,23 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
       commentData: typeCommentParams.commentData,
       dateTime: Timestamp.now(),
     );
-
     final DocumentReference<Map<String, dynamic>> document =
         await accessCommentsCollection(typeCommentParams.tinyTaleId!)
             .add(comment.toJson());
-
     await document.update({AppStrings.commentId: document.id});
-
     return document;
   }
 
   @override
   Future<void> deleteComment(DeleteCommentParams params) async {
-    await _deleteEachCommentRepliesLikes(params);
-    await _deleteEachCommentReplies(params);
-    await _deleteEachCommentLikes(params);
-    await accessCommentsCollection(params.tinyTaleId!)
-        .doc(params.commentId)
-        .delete();
+    Future.wait([
+      _deleteEachCommentRepliesLikes(params),
+      _deleteEachCommentReplies(params),
+      _deleteEachCommentLikes(params),
+      accessCommentsCollection(params.tinyTaleId!)
+          .doc(params.commentId)
+          .delete(),
+    ]);
   }
 
   Future<void> _deleteEachCommentLikes(DeleteCommentParams params) async {
@@ -103,7 +102,6 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
       user: Helper.currentUser,
       dateTime: DateTime.now().toString(),
     );
-
     return await accessCommentLikesCollection(
             params.tinyTaleId, params.commentId!)
         .doc(Helper.uId)
