@@ -1,0 +1,2308 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'bab_cry_predictor_feedback_state.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+/// @nodoc
+mixin _$BabyCryPredictorFeedbackState<T> {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BabyCryPredictorFeedbackStateCopyWith<T, $Res> {
+  factory $BabyCryPredictorFeedbackStateCopyWith(
+          BabyCryPredictorFeedbackState<T> value,
+          $Res Function(BabyCryPredictorFeedbackState<T>) then) =
+      _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+          BabyCryPredictorFeedbackState<T>>;
+}
+
+/// @nodoc
+class _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        $Val extends BabyCryPredictorFeedbackState<T>>
+    implements $BabyCryPredictorFeedbackStateCopyWith<T, $Res> {
+  _$BabyCryPredictorFeedbackStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$InitialImplCopyWith<T, $Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl<T> value, $Res Function(_$InitialImpl<T>) then) =
+      __$$InitialImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$InitialImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$InitialImpl<T>> implements _$$InitialImplCopyWith<T, $Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InitialImpl<T> implements _Initial<T> {
+  const _$InitialImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.initial()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitialImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initial<T> implements BabyCryPredictorFeedbackState<T> {
+  const factory _Initial() = _$InitialImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetBabyCryPredictorClassesLoadingImplCopyWith<T, $Res> {
+  factory _$$GetBabyCryPredictorClassesLoadingImplCopyWith(
+          _$GetBabyCryPredictorClassesLoadingImpl<T> value,
+          $Res Function(_$GetBabyCryPredictorClassesLoadingImpl<T>) then) =
+      __$$GetBabyCryPredictorClassesLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$GetBabyCryPredictorClassesLoadingImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$GetBabyCryPredictorClassesLoadingImpl<T>>
+    implements _$$GetBabyCryPredictorClassesLoadingImplCopyWith<T, $Res> {
+  __$$GetBabyCryPredictorClassesLoadingImplCopyWithImpl(
+      _$GetBabyCryPredictorClassesLoadingImpl<T> _value,
+      $Res Function(_$GetBabyCryPredictorClassesLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetBabyCryPredictorClassesLoadingImpl<T>
+    implements GetBabyCryPredictorClassesLoading<T> {
+  const _$GetBabyCryPredictorClassesLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.getBabyCryPredictorClassesLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBabyCryPredictorClassesLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorClassesLoading != null) {
+      return getBabyCryPredictorClassesLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorClassesLoading != null) {
+      return getBabyCryPredictorClassesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBabyCryPredictorClassesLoading<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory GetBabyCryPredictorClassesLoading() =
+      _$GetBabyCryPredictorClassesLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$GetBabyCryPredictorClassesSuccessImplCopyWith<T, $Res> {
+  factory _$$GetBabyCryPredictorClassesSuccessImplCopyWith(
+          _$GetBabyCryPredictorClassesSuccessImpl<T> value,
+          $Res Function(_$GetBabyCryPredictorClassesSuccessImpl<T>) then) =
+      __$$GetBabyCryPredictorClassesSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<BabyCryPredictorClass> classes});
+}
+
+/// @nodoc
+class __$$GetBabyCryPredictorClassesSuccessImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$GetBabyCryPredictorClassesSuccessImpl<T>>
+    implements _$$GetBabyCryPredictorClassesSuccessImplCopyWith<T, $Res> {
+  __$$GetBabyCryPredictorClassesSuccessImplCopyWithImpl(
+      _$GetBabyCryPredictorClassesSuccessImpl<T> _value,
+      $Res Function(_$GetBabyCryPredictorClassesSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? classes = null,
+  }) {
+    return _then(_$GetBabyCryPredictorClassesSuccessImpl<T>(
+      null == classes
+          ? _value._classes
+          : classes // ignore: cast_nullable_to_non_nullable
+              as List<BabyCryPredictorClass>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBabyCryPredictorClassesSuccessImpl<T>
+    implements GetBabyCryPredictorClassesSuccess<T> {
+  const _$GetBabyCryPredictorClassesSuccessImpl(
+      final List<BabyCryPredictorClass> classes)
+      : _classes = classes;
+
+  final List<BabyCryPredictorClass> _classes;
+  @override
+  List<BabyCryPredictorClass> get classes {
+    if (_classes is EqualUnmodifiableListView) return _classes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_classes);
+  }
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.getBabyCryPredictorClassesSuccess(classes: $classes)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBabyCryPredictorClassesSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._classes, _classes));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_classes));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBabyCryPredictorClassesSuccessImplCopyWith<T,
+          _$GetBabyCryPredictorClassesSuccessImpl<T>>
+      get copyWith => __$$GetBabyCryPredictorClassesSuccessImplCopyWithImpl<T,
+          _$GetBabyCryPredictorClassesSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesSuccess(classes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesSuccess?.call(classes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorClassesSuccess != null) {
+      return getBabyCryPredictorClassesSuccess(classes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorClassesSuccess != null) {
+      return getBabyCryPredictorClassesSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBabyCryPredictorClassesSuccess<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory GetBabyCryPredictorClassesSuccess(
+          final List<BabyCryPredictorClass> classes) =
+      _$GetBabyCryPredictorClassesSuccessImpl<T>;
+
+  List<BabyCryPredictorClass> get classes;
+  @JsonKey(ignore: true)
+  _$$GetBabyCryPredictorClassesSuccessImplCopyWith<T,
+          _$GetBabyCryPredictorClassesSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetBabyCryPredictorClassesErrorImplCopyWith<T, $Res> {
+  factory _$$GetBabyCryPredictorClassesErrorImplCopyWith(
+          _$GetBabyCryPredictorClassesErrorImpl<T> value,
+          $Res Function(_$GetBabyCryPredictorClassesErrorImpl<T>) then) =
+      __$$GetBabyCryPredictorClassesErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$GetBabyCryPredictorClassesErrorImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$GetBabyCryPredictorClassesErrorImpl<T>>
+    implements _$$GetBabyCryPredictorClassesErrorImplCopyWith<T, $Res> {
+  __$$GetBabyCryPredictorClassesErrorImplCopyWithImpl(
+      _$GetBabyCryPredictorClassesErrorImpl<T> _value,
+      $Res Function(_$GetBabyCryPredictorClassesErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GetBabyCryPredictorClassesErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBabyCryPredictorClassesErrorImpl<T>
+    implements GetBabyCryPredictorClassesError<T> {
+  const _$GetBabyCryPredictorClassesErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.getBabyCryPredictorClassesError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBabyCryPredictorClassesErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBabyCryPredictorClassesErrorImplCopyWith<T,
+          _$GetBabyCryPredictorClassesErrorImpl<T>>
+      get copyWith => __$$GetBabyCryPredictorClassesErrorImplCopyWithImpl<T,
+          _$GetBabyCryPredictorClassesErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorClassesError != null) {
+      return getBabyCryPredictorClassesError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return getBabyCryPredictorClassesError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (getBabyCryPredictorClassesError != null) {
+      return getBabyCryPredictorClassesError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBabyCryPredictorClassesError<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory GetBabyCryPredictorClassesError(final String error) =
+      _$GetBabyCryPredictorClassesErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GetBabyCryPredictorClassesErrorImplCopyWith<T,
+          _$GetBabyCryPredictorClassesErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ConvertIsPlayingBoolImplCopyWith<T, $Res> {
+  factory _$$ConvertIsPlayingBoolImplCopyWith(
+          _$ConvertIsPlayingBoolImpl<T> value,
+          $Res Function(_$ConvertIsPlayingBoolImpl<T>) then) =
+      __$$ConvertIsPlayingBoolImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({bool isPlaying});
+}
+
+/// @nodoc
+class __$$ConvertIsPlayingBoolImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$ConvertIsPlayingBoolImpl<T>>
+    implements _$$ConvertIsPlayingBoolImplCopyWith<T, $Res> {
+  __$$ConvertIsPlayingBoolImplCopyWithImpl(_$ConvertIsPlayingBoolImpl<T> _value,
+      $Res Function(_$ConvertIsPlayingBoolImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isPlaying = null,
+  }) {
+    return _then(_$ConvertIsPlayingBoolImpl<T>(
+      null == isPlaying
+          ? _value.isPlaying
+          : isPlaying // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ConvertIsPlayingBoolImpl<T> implements ConvertIsPlayingBool<T> {
+  const _$ConvertIsPlayingBoolImpl(this.isPlaying);
+
+  @override
+  final bool isPlaying;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.convertIsPlayingBool(isPlaying: $isPlaying)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConvertIsPlayingBoolImpl<T> &&
+            (identical(other.isPlaying, isPlaying) ||
+                other.isPlaying == isPlaying));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isPlaying);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConvertIsPlayingBoolImplCopyWith<T, _$ConvertIsPlayingBoolImpl<T>>
+      get copyWith => __$$ConvertIsPlayingBoolImplCopyWithImpl<T,
+          _$ConvertIsPlayingBoolImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return convertIsPlayingBool(isPlaying);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return convertIsPlayingBool?.call(isPlaying);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (convertIsPlayingBool != null) {
+      return convertIsPlayingBool(isPlaying);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return convertIsPlayingBool(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return convertIsPlayingBool?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (convertIsPlayingBool != null) {
+      return convertIsPlayingBool(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConvertIsPlayingBool<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory ConvertIsPlayingBool(final bool isPlaying) =
+      _$ConvertIsPlayingBoolImpl<T>;
+
+  bool get isPlaying;
+  @JsonKey(ignore: true)
+  _$$ConvertIsPlayingBoolImplCopyWith<T, _$ConvertIsPlayingBoolImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddNewClassLoadingImplCopyWith<T, $Res> {
+  factory _$$AddNewClassLoadingImplCopyWith(_$AddNewClassLoadingImpl<T> value,
+          $Res Function(_$AddNewClassLoadingImpl<T>) then) =
+      __$$AddNewClassLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$AddNewClassLoadingImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$AddNewClassLoadingImpl<T>>
+    implements _$$AddNewClassLoadingImplCopyWith<T, $Res> {
+  __$$AddNewClassLoadingImplCopyWithImpl(_$AddNewClassLoadingImpl<T> _value,
+      $Res Function(_$AddNewClassLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AddNewClassLoadingImpl<T> implements AddNewClassLoading<T> {
+  const _$AddNewClassLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.addNewClassLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewClassLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return addNewClassLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return addNewClassLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassLoading != null) {
+      return addNewClassLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return addNewClassLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return addNewClassLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassLoading != null) {
+      return addNewClassLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewClassLoading<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory AddNewClassLoading() = _$AddNewClassLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$AddNewClassSuccessImplCopyWith<T, $Res> {
+  factory _$$AddNewClassSuccessImplCopyWith(_$AddNewClassSuccessImpl<T> value,
+          $Res Function(_$AddNewClassSuccessImpl<T>) then) =
+      __$$AddNewClassSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String data});
+}
+
+/// @nodoc
+class __$$AddNewClassSuccessImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$AddNewClassSuccessImpl<T>>
+    implements _$$AddNewClassSuccessImplCopyWith<T, $Res> {
+  __$$AddNewClassSuccessImplCopyWithImpl(_$AddNewClassSuccessImpl<T> _value,
+      $Res Function(_$AddNewClassSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$AddNewClassSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddNewClassSuccessImpl<T> implements AddNewClassSuccess<T> {
+  const _$AddNewClassSuccessImpl(this.data);
+
+  @override
+  final String data;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.addNewClassSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewClassSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddNewClassSuccessImplCopyWith<T, _$AddNewClassSuccessImpl<T>>
+      get copyWith => __$$AddNewClassSuccessImplCopyWithImpl<T,
+          _$AddNewClassSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return addNewClassSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return addNewClassSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassSuccess != null) {
+      return addNewClassSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return addNewClassSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return addNewClassSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassSuccess != null) {
+      return addNewClassSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewClassSuccess<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory AddNewClassSuccess(final String data) =
+      _$AddNewClassSuccessImpl<T>;
+
+  String get data;
+  @JsonKey(ignore: true)
+  _$$AddNewClassSuccessImplCopyWith<T, _$AddNewClassSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddNewClassErrorImplCopyWith<T, $Res> {
+  factory _$$AddNewClassErrorImplCopyWith(_$AddNewClassErrorImpl<T> value,
+          $Res Function(_$AddNewClassErrorImpl<T>) then) =
+      __$$AddNewClassErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$AddNewClassErrorImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$AddNewClassErrorImpl<T>>
+    implements _$$AddNewClassErrorImplCopyWith<T, $Res> {
+  __$$AddNewClassErrorImplCopyWithImpl(_$AddNewClassErrorImpl<T> _value,
+      $Res Function(_$AddNewClassErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$AddNewClassErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddNewClassErrorImpl<T> implements AddNewClassError<T> {
+  const _$AddNewClassErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.addNewClassError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddNewClassErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddNewClassErrorImplCopyWith<T, _$AddNewClassErrorImpl<T>> get copyWith =>
+      __$$AddNewClassErrorImplCopyWithImpl<T, _$AddNewClassErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return addNewClassError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return addNewClassError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassError != null) {
+      return addNewClassError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return addNewClassError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return addNewClassError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (addNewClassError != null) {
+      return addNewClassError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddNewClassError<T> implements BabyCryPredictorFeedbackState<T> {
+  const factory AddNewClassError(final String error) =
+      _$AddNewClassErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$AddNewClassErrorImplCopyWith<T, _$AddNewClassErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LeaveFeedbackLoadingImplCopyWith<T, $Res> {
+  factory _$$LeaveFeedbackLoadingImplCopyWith(
+          _$LeaveFeedbackLoadingImpl<T> value,
+          $Res Function(_$LeaveFeedbackLoadingImpl<T>) then) =
+      __$$LeaveFeedbackLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$LeaveFeedbackLoadingImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$LeaveFeedbackLoadingImpl<T>>
+    implements _$$LeaveFeedbackLoadingImplCopyWith<T, $Res> {
+  __$$LeaveFeedbackLoadingImplCopyWithImpl(_$LeaveFeedbackLoadingImpl<T> _value,
+      $Res Function(_$LeaveFeedbackLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LeaveFeedbackLoadingImpl<T> implements LeaveFeedbackLoading<T> {
+  const _$LeaveFeedbackLoadingImpl();
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.leaveFeedbackLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeaveFeedbackLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return leaveFeedbackLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return leaveFeedbackLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (leaveFeedbackLoading != null) {
+      return leaveFeedbackLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return leaveFeedbackLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return leaveFeedbackLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (leaveFeedbackLoading != null) {
+      return leaveFeedbackLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LeaveFeedbackLoading<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory LeaveFeedbackLoading() = _$LeaveFeedbackLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$LeaveFeedbackSuccessImplCopyWith<T, $Res> {
+  factory _$$LeaveFeedbackSuccessImplCopyWith(
+          _$LeaveFeedbackSuccessImpl<T> value,
+          $Res Function(_$LeaveFeedbackSuccessImpl<T>) then) =
+      __$$LeaveFeedbackSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String data});
+}
+
+/// @nodoc
+class __$$LeaveFeedbackSuccessImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$LeaveFeedbackSuccessImpl<T>>
+    implements _$$LeaveFeedbackSuccessImplCopyWith<T, $Res> {
+  __$$LeaveFeedbackSuccessImplCopyWithImpl(_$LeaveFeedbackSuccessImpl<T> _value,
+      $Res Function(_$LeaveFeedbackSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = null,
+  }) {
+    return _then(_$LeaveFeedbackSuccessImpl<T>(
+      null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LeaveFeedbackSuccessImpl<T> implements LeaveFeedbackSuccess<T> {
+  const _$LeaveFeedbackSuccessImpl(this.data);
+
+  @override
+  final String data;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.leaveFeedbackSuccess(data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeaveFeedbackSuccessImpl<T> &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeaveFeedbackSuccessImplCopyWith<T, _$LeaveFeedbackSuccessImpl<T>>
+      get copyWith => __$$LeaveFeedbackSuccessImplCopyWithImpl<T,
+          _$LeaveFeedbackSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return leaveFeedbackSuccess(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return leaveFeedbackSuccess?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (leaveFeedbackSuccess != null) {
+      return leaveFeedbackSuccess(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return leaveFeedbackSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return leaveFeedbackSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (leaveFeedbackSuccess != null) {
+      return leaveFeedbackSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LeaveFeedbackSuccess<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory LeaveFeedbackSuccess(final String data) =
+      _$LeaveFeedbackSuccessImpl<T>;
+
+  String get data;
+  @JsonKey(ignore: true)
+  _$$LeaveFeedbackSuccessImplCopyWith<T, _$LeaveFeedbackSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LeaveFeedbackErrorImplCopyWith<T, $Res> {
+  factory _$$LeaveFeedbackErrorImplCopyWith(_$LeaveFeedbackErrorImpl<T> value,
+          $Res Function(_$LeaveFeedbackErrorImpl<T>) then) =
+      __$$LeaveFeedbackErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$LeaveFeedbackErrorImplCopyWithImpl<T, $Res>
+    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
+        _$LeaveFeedbackErrorImpl<T>>
+    implements _$$LeaveFeedbackErrorImplCopyWith<T, $Res> {
+  __$$LeaveFeedbackErrorImplCopyWithImpl(_$LeaveFeedbackErrorImpl<T> _value,
+      $Res Function(_$LeaveFeedbackErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$LeaveFeedbackErrorImpl<T>(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LeaveFeedbackErrorImpl<T> implements LeaveFeedbackError<T> {
+  const _$LeaveFeedbackErrorImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'BabyCryPredictorFeedbackState<$T>.leaveFeedbackError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeaveFeedbackErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeaveFeedbackErrorImplCopyWith<T, _$LeaveFeedbackErrorImpl<T>>
+      get copyWith => __$$LeaveFeedbackErrorImplCopyWithImpl<T,
+          _$LeaveFeedbackErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBabyCryPredictorClassesLoading,
+    required TResult Function(List<BabyCryPredictorClass> classes)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(String error) getBabyCryPredictorClassesError,
+    required TResult Function(bool isPlaying) convertIsPlayingBool,
+    required TResult Function() addNewClassLoading,
+    required TResult Function(String data) addNewClassSuccess,
+    required TResult Function(String error) addNewClassError,
+    required TResult Function() leaveFeedbackLoading,
+    required TResult Function(String data) leaveFeedbackSuccess,
+    required TResult Function(String error) leaveFeedbackError,
+  }) {
+    return leaveFeedbackError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBabyCryPredictorClassesLoading,
+    TResult? Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(String error)? getBabyCryPredictorClassesError,
+    TResult? Function(bool isPlaying)? convertIsPlayingBool,
+    TResult? Function()? addNewClassLoading,
+    TResult? Function(String data)? addNewClassSuccess,
+    TResult? Function(String error)? addNewClassError,
+    TResult? Function()? leaveFeedbackLoading,
+    TResult? Function(String data)? leaveFeedbackSuccess,
+    TResult? Function(String error)? leaveFeedbackError,
+  }) {
+    return leaveFeedbackError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBabyCryPredictorClassesLoading,
+    TResult Function(List<BabyCryPredictorClass> classes)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(String error)? getBabyCryPredictorClassesError,
+    TResult Function(bool isPlaying)? convertIsPlayingBool,
+    TResult Function()? addNewClassLoading,
+    TResult Function(String data)? addNewClassSuccess,
+    TResult Function(String error)? addNewClassError,
+    TResult Function()? leaveFeedbackLoading,
+    TResult Function(String data)? leaveFeedbackSuccess,
+    TResult Function(String error)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (leaveFeedbackError != null) {
+      return leaveFeedbackError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
+        getBabyCryPredictorClassesLoading,
+    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
+        getBabyCryPredictorClassesSuccess,
+    required TResult Function(GetBabyCryPredictorClassesError<T> value)
+        getBabyCryPredictorClassesError,
+    required TResult Function(ConvertIsPlayingBool<T> value)
+        convertIsPlayingBool,
+    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
+    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
+    required TResult Function(AddNewClassError<T> value) addNewClassError,
+    required TResult Function(LeaveFeedbackLoading<T> value)
+        leaveFeedbackLoading,
+    required TResult Function(LeaveFeedbackSuccess<T> value)
+        leaveFeedbackSuccess,
+    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
+  }) {
+    return leaveFeedbackError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult? Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult? Function(AddNewClassError<T> value)? addNewClassError,
+    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+  }) {
+    return leaveFeedbackError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
+        getBabyCryPredictorClassesLoading,
+    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
+        getBabyCryPredictorClassesSuccess,
+    TResult Function(GetBabyCryPredictorClassesError<T> value)?
+        getBabyCryPredictorClassesError,
+    TResult Function(ConvertIsPlayingBool<T> value)? convertIsPlayingBool,
+    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
+    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
+    TResult Function(AddNewClassError<T> value)? addNewClassError,
+    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
+    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
+    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
+    required TResult orElse(),
+  }) {
+    if (leaveFeedbackError != null) {
+      return leaveFeedbackError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LeaveFeedbackError<T>
+    implements BabyCryPredictorFeedbackState<T> {
+  const factory LeaveFeedbackError(final String error) =
+      _$LeaveFeedbackErrorImpl<T>;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$LeaveFeedbackErrorImplCopyWith<T, _$LeaveFeedbackErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
