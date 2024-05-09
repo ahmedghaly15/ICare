@@ -20,7 +20,7 @@ mixin _$ChatState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -41,7 +41,7 @@ mixin _$ChatState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -62,7 +62,7 @@ mixin _$ChatState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -215,7 +215,7 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -239,7 +239,7 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -263,7 +263,7 @@ class _$ChatInitialImpl<T> implements _ChatInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -419,7 +419,7 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -443,7 +443,7 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -467,7 +467,7 @@ class _$SendMessageLoadingImpl<T> implements SendMessageLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -587,6 +587,8 @@ abstract class _$$SendMessageSuccessImplCopyWith<T, $Res> {
   factory _$$SendMessageSuccessImplCopyWith(_$SendMessageSuccessImpl<T> value,
           $Res Function(_$SendMessageSuccessImpl<T>) then) =
       __$$SendMessageSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -596,34 +598,58 @@ class __$$SendMessageSuccessImplCopyWithImpl<T, $Res>
   __$$SendMessageSuccessImplCopyWithImpl(_$SendMessageSuccessImpl<T> _value,
       $Res Function(_$SendMessageSuccessImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$SendMessageSuccessImpl<T>(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
-  const _$SendMessageSuccessImpl();
+  const _$SendMessageSuccessImpl(this.message);
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'ChatState<$T>.sendMessageSuccess()';
+    return 'ChatState<$T>.sendMessageSuccess(message: $message)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SendMessageSuccessImpl<T>);
+            other is _$SendMessageSuccessImpl<T> &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendMessageSuccessImplCopyWith<T, _$SendMessageSuccessImpl<T>>
+      get copyWith => __$$SendMessageSuccessImplCopyWithImpl<T,
+          _$SendMessageSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -639,7 +665,7 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     required TResult Function() deleteChatSuccess,
     required TResult Function(String error) deleteChatError,
   }) {
-    return sendMessageSuccess();
+    return sendMessageSuccess(message);
   }
 
   @override
@@ -647,7 +673,7 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -663,7 +689,7 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     TResult? Function()? deleteChatSuccess,
     TResult? Function(String error)? deleteChatError,
   }) {
-    return sendMessageSuccess?.call();
+    return sendMessageSuccess?.call(message);
   }
 
   @override
@@ -671,7 +697,7 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -689,7 +715,7 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
     required TResult orElse(),
   }) {
     if (sendMessageSuccess != null) {
-      return sendMessageSuccess();
+      return sendMessageSuccess(message);
     }
     return orElse();
   }
@@ -783,7 +809,13 @@ class _$SendMessageSuccessImpl<T> implements SendMessageSuccess<T> {
 }
 
 abstract class SendMessageSuccess<T> implements ChatState<T> {
-  const factory SendMessageSuccess() = _$SendMessageSuccessImpl<T>;
+  const factory SendMessageSuccess(final String message) =
+      _$SendMessageSuccessImpl<T>;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$SendMessageSuccessImplCopyWith<T, _$SendMessageSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -853,7 +885,7 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -877,7 +909,7 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -901,7 +933,7 @@ class _$SendMessageErrorImpl<T> implements SendMessageError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -1092,7 +1124,7 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -1116,7 +1148,7 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -1140,7 +1172,7 @@ class _$PickMessageImageSuccessImpl<T> implements PickMessageImageSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -1330,7 +1362,7 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -1354,7 +1386,7 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -1378,7 +1410,7 @@ class _$PickMessageImageErrorImpl<T> implements PickMessageImageError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -1543,7 +1575,7 @@ class _$UploadMessageImageLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -1567,7 +1599,7 @@ class _$UploadMessageImageLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -1591,7 +1623,7 @@ class _$UploadMessageImageLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -1779,7 +1811,7 @@ class _$UploadMessageImageSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -1803,7 +1835,7 @@ class _$UploadMessageImageSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -1827,7 +1859,7 @@ class _$UploadMessageImageSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -2018,7 +2050,7 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -2042,7 +2074,7 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -2066,7 +2098,7 @@ class _$UploadMessageImageErrorImpl<T> implements UploadMessageImageError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -2254,7 +2286,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -2278,7 +2310,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -2302,7 +2334,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -2463,7 +2495,7 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -2487,7 +2519,7 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -2511,7 +2543,7 @@ class _$RemoveMessageImageImpl<T> implements RemoveMessageImage<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -2666,7 +2698,7 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -2690,7 +2722,7 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -2714,7 +2746,7 @@ class _$GetChatsLoadingImpl<T> implements GetChatsLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -2902,7 +2934,7 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -2926,7 +2958,7 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -2950,7 +2982,7 @@ class _$GetChatsSuccessImpl<T> implements GetChatsSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -3138,7 +3170,7 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -3162,7 +3194,7 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -3186,7 +3218,7 @@ class _$GetChatsErrorImpl<T> implements GetChatsError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -3347,7 +3379,7 @@ class _$DeleteChatLoadingImpl<T> implements DeleteChatLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -3371,7 +3403,7 @@ class _$DeleteChatLoadingImpl<T> implements DeleteChatLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -3395,7 +3427,7 @@ class _$DeleteChatLoadingImpl<T> implements DeleteChatLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -3551,7 +3583,7 @@ class _$DeleteChatSuccessImpl<T> implements DeleteChatSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -3575,7 +3607,7 @@ class _$DeleteChatSuccessImpl<T> implements DeleteChatSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -3599,7 +3631,7 @@ class _$DeleteChatSuccessImpl<T> implements DeleteChatSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,
@@ -3781,7 +3813,7 @@ class _$DeleteChatErrorImpl<T> implements DeleteChatError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() sendMessageLoading,
-    required TResult Function() sendMessageSuccess,
+    required TResult Function(String message) sendMessageSuccess,
     required TResult Function(String error) sendMessageError,
     required TResult Function(File messageImage) pickMessageImageSuccess,
     required TResult Function(String error) pickMessageImageError,
@@ -3805,7 +3837,7 @@ class _$DeleteChatErrorImpl<T> implements DeleteChatError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? sendMessageLoading,
-    TResult? Function()? sendMessageSuccess,
+    TResult? Function(String message)? sendMessageSuccess,
     TResult? Function(String error)? sendMessageError,
     TResult? Function(File messageImage)? pickMessageImageSuccess,
     TResult? Function(String error)? pickMessageImageError,
@@ -3829,7 +3861,7 @@ class _$DeleteChatErrorImpl<T> implements DeleteChatError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? sendMessageLoading,
-    TResult Function()? sendMessageSuccess,
+    TResult Function(String message)? sendMessageSuccess,
     TResult Function(String error)? sendMessageError,
     TResult Function(File messageImage)? pickMessageImageSuccess,
     TResult Function(String error)? pickMessageImageError,

@@ -47,16 +47,17 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
       messageData: params,
       dateTime: Timestamp.now(),
     );
-
-    await _settingUpSenderChat(SettingUpChatParams(
-      receiverId: params.receiver!.uId!,
-      messageModel: message,
-      receiver: params.receiver,
-    ));
-    await _settingUpReceiverChat(SettingUpChatParams(
-      receiverId: params.receiver!.uId!,
-      messageModel: message,
-    ));
+    Future.wait([
+      _settingUpReceiverChat(SettingUpChatParams(
+        receiverId: params.receiver!.uId!,
+        messageModel: message,
+      )),
+      _settingUpSenderChat(SettingUpChatParams(
+        receiverId: params.receiver!.uId!,
+        messageModel: message,
+        receiver: params.receiver,
+      ))
+    ]);
   }
 
   Future<DocumentReference<Map<String, dynamic>>> _settingUpSenderChat(

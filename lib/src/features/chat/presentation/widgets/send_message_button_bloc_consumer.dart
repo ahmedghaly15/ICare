@@ -27,20 +27,17 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
           current is UploadMessageImageError,
       listener: (context, state) {
         state.whenOrNull(
-          sendMessageSuccess: () {
+          sendMessageSuccess: (message) {
             context
                 .read<NotificationsCubit>()
                 .sendNotification(ICareNotification(
                   to: receiver.mobileToken!,
                   title: Helper.currentUser!.name!,
-                  body: context.read<ChatCubit>().messageController.text.trim(),
+                  body: message,
                   receiverId: receiver.uId,
                   user: Helper.currentUser,
                   isMessage: true,
-                ))
-                .then((value) {
-              context.read<ChatCubit>().messageController.clear();
-            });
+                ));
           },
           sendMessageError: (error) {
             ShowICareDialog.showICareDialogError(context, error);

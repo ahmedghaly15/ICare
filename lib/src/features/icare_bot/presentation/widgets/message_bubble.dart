@@ -53,7 +53,7 @@ class MessageBubble extends StatelessWidget {
               child: isUser
                   ? Text(
                       message,
-                      style: AppTextStyles.textStyle14Regular.copyWith(
+                      style: AppTextStyles.textStyle13Regular.copyWith(
                         color: isDarkModeActive(context)
                             ? Colors.white
                             : Colors.black,
@@ -64,7 +64,7 @@ class MessageBubble extends StatelessWidget {
                       data: message,
                       padding: EdgeInsets.zero,
                       styleSheet: MarkdownStyleSheet(
-                        p: AppTextStyles.textStyle14Regular.copyWith(
+                        p: AppTextStyles.textStyle13Regular.copyWith(
                           color: Colors.white,
                         ),
                       ),

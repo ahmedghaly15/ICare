@@ -4,11 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
+
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -19,8 +22,6 @@ import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
 import 'package:icare/src/features/chat/domain/usecases/send_message.dart';
 import 'package:icare/src/features/chat/domain/usecases/upload_message_image.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
 
 class ChatCubit extends Cubit<ChatState> {
   final SendMessageUseCase sendMessageUseCase;
@@ -122,7 +123,10 @@ class ChatCubit extends Cubit<ChatState> {
     emit(const ChatState.sendMessageLoading());
     final result = await sendMessageUseCase.call(params);
     result.when(
-      success: (_) => emit(const ChatState.sendMessageSuccess()),
+      success: (_) {
+        emit(ChatState.sendMessageSuccess(messageController.text.trim()));
+        messageController.clear();
+      },
       error: (error) =>
           emit(ChatState.sendMessageError(error.failureMsg ?? '')),
     );

@@ -9,7 +9,8 @@ part 'chat_state.freezed.dart';
 class ChatState<T> with _$ChatState<T> {
   const factory ChatState.initial() = _ChatInitial;
   const factory ChatState.sendMessageLoading() = SendMessageLoading;
-  const factory ChatState.sendMessageSuccess() = SendMessageSuccess;
+  const factory ChatState.sendMessageSuccess(String message) =
+      SendMessageSuccess<T>;
   const factory ChatState.sendMessageError(String error) = SendMessageError<T>;
   const factory ChatState.pickMessageImageSuccess(File messageImage) =
       PickMessageImageSuccess<T>;

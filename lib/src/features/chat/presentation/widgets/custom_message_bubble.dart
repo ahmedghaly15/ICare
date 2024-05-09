@@ -38,7 +38,7 @@ class CustomMessageBubble extends StatelessWidget {
             if (message.messageData!.messageText != null)
               Linkify(
                 text: message.messageData!.messageText!.trim(),
-                style: AppTextStyles.textStyle13Bold.copyWith(
+                style: AppTextStyles.textStyle13Regular.copyWith(
                   color: isMe ? Colors.white : Colors.black,
                 ),
                 maxLines: null,
