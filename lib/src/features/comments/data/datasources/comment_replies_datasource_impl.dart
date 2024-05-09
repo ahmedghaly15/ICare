@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/comments/data/datasources/comment_replies_datasource.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
@@ -30,11 +31,23 @@ class CommentRepliesDatasourceImpl implements CommentRepliesDatasource {
   Future<void> deleteCommentReply(DeleteCommentParams params) async {
     Future.wait([
       _deleteReplyLikes(params),
+      _deleteReplyFromNotifications(params.commentReplyId!),
       _accessCommentRepliesCollection(
         params.tinyTaleId!,
         params.commentId!,
       ).doc(params.commentReplyId).delete(),
     ]);
+  }
+
+  Future<void> _deleteReplyFromNotifications(String replyId) async {
+    final notifications =
+        await accessCurrentUserNotificationsCollection().get();
+    Future.forEach(notifications.docs, (notification) async {
+      if (notification.data()['reply'] != null &&
+          notification.data()['reply']['commentId'] == replyId) {
+        await notification.reference.delete();
+      }
+    });
   }
 
   Future<void> _deleteReplyLikes(DeleteCommentParams params) async {

@@ -38,10 +38,22 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
       _deleteEachCommentRepliesLikes(params),
       _deleteEachCommentReplies(params),
       _deleteEachCommentLikes(params),
+      _deleteCommentFromNotifications(params.commentId!),
       accessCommentsCollection(params.tinyTaleId!)
           .doc(params.commentId)
           .delete(),
     ]);
+  }
+
+  Future<void> _deleteCommentFromNotifications(String commentId) async {
+    final notifications =
+        await accessCurrentUserNotificationsCollection().get();
+    Future.forEach(notifications.docs, (notification) async {
+      if (notification.data()['comment'] != null &&
+          notification.data()['comment']['commentId'] == commentId) {
+        await notification.reference.delete();
+      }
+    });
   }
 
   Future<void> _deleteEachCommentLikes(DeleteCommentParams params) async {
