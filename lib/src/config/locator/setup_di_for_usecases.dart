@@ -88,8 +88,8 @@ class SetupDIForUseCases {
       () =>
           BabyCryPredictorAddNewClassUseCase(getIt.get<BabyCryPredictorRepo>()),
     );
-    getIt.registerLazySingleton<BabyCryPredictorUploadMissClassifyingUseCase>(
-      () => BabyCryPredictorUploadMissClassifyingUseCase(
+    getIt.registerLazySingleton<BabyCryPredictorLeaveFeedbackUseCase>(
+      () => BabyCryPredictorLeaveFeedbackUseCase(
           getIt.get<BabyCryPredictorRepo>()),
     );
 

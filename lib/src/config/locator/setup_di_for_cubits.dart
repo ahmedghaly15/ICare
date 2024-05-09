@@ -73,14 +73,18 @@ class SetupDIForCubits {
         babyCryPredictorUseCase: getIt.get<BabyCryPredictorUseCase>(),
         getBabyCryPredictorAboutUseCase:
             getIt.get<GetBabyCryPredictorAboutUseCase>(),
-        getBabyCryPredictorClassesUseCase:
-            getIt.get<GetBabyCryPredictorClassesUseCase>(),
         getBabyCryPredictorLastResultUseCase:
             getIt.get<GetBabyCryPredictorLastResultUseCase>(),
+      ),
+    );
+    getIt.registerFactory<BabyCryPredictorFeedbackCubit>(
+      () => BabyCryPredictorFeedbackCubit(
+        babyCryPredictorLeaveFeedbackUseCase:
+            getIt.get<BabyCryPredictorLeaveFeedbackUseCase>(),
         babyCryPredictorAddNewClassUseCase:
             getIt.get<BabyCryPredictorAddNewClassUseCase>(),
-        babyCryPredictorUploadMissClassifyingUseCase:
-            getIt.get<BabyCryPredictorUploadMissClassifyingUseCase>(),
+        getBabyCryPredictorClassesUseCase:
+            getIt.get<GetBabyCryPredictorClassesUseCase>(),
       ),
     );
 
