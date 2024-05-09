@@ -56,7 +56,7 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
         receiverId: params.receiver!.uId!,
         messageModel: message,
         receiver: params.receiver,
-      ))
+      )),
     ]);
   }
 
@@ -109,8 +109,10 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
 
   @override
   Future<void> alsoDeleteChatForOtherUser(String receiverId) async {
-    await _deletingCurrentUserMessages(receiverId);
-    await _deletingReceiverMessages(receiverId);
+    Future.wait([
+      _deletingCurrentUserMessages(receiverId),
+      _deletingReceiverMessages(receiverId),
+    ]);
   }
 
   @override
@@ -119,23 +121,23 @@ class ChatRemoteDatasourceImpl implements ChatRemoteDatasource {
   }
 
   Future<void> _deletingReceiverMessages(String receiverId) async {
-    // final receiverMessages =
-    //     await _accessMessagesCollection(Helper.uId!, senderId: receiverId)
-    //         .get();
-    // await Future.forEach(
-    //   receiverMessages.docs,
-    //   (doc) async => await doc.reference.delete(),
-    // );
+    final receiverMessages =
+        await _accessMessagesCollection(Helper.uId!, senderId: receiverId)
+            .get();
+    Future.forEach(
+      receiverMessages.docs,
+      (doc) async => await doc.reference.delete(),
+    );
     await _accessChatsCollection(senderId: receiverId).doc(Helper.uId).delete();
   }
 
   Future<void> _deletingCurrentUserMessages(String receiverId) async {
-    // final currentUserMessages =
-    //     await _accessMessagesCollection(receiverId).get();
-    // await Future.forEach(
-    //   currentUserMessages.docs,
-    //   (doc) async => await doc.reference.delete(),
-    // );
+    final currentUserMessages =
+        await _accessMessagesCollection(receiverId).get();
+    Future.forEach(
+      currentUserMessages.docs,
+      (doc) async => await doc.reference.delete(),
+    );
     await _accessChatsCollection().doc(receiverId).delete();
   }
 }
