@@ -20,7 +20,7 @@ mixin _$CommentRepliesState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -42,7 +42,7 @@ mixin _$CommentRepliesState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -64,7 +64,7 @@ mixin _$CommentRepliesState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -258,7 +258,7 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -283,7 +283,7 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -308,7 +308,7 @@ class _$CommentRepliesInitialImpl<T> implements _CommentRepliesInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -504,7 +504,7 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -529,7 +529,7 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -554,7 +554,7 @@ class _$TypeNewCommentReplyLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -712,6 +712,8 @@ abstract class _$$TypeNewCommentReplySuccessImplCopyWith<T, $Res> {
           _$TypeNewCommentReplySuccessImpl<T> value,
           $Res Function(_$TypeNewCommentReplySuccessImpl<T>) then) =
       __$$TypeNewCommentReplySuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String reply});
 }
 
 /// @nodoc
@@ -723,35 +725,60 @@ class __$$TypeNewCommentReplySuccessImplCopyWithImpl<T, $Res>
       _$TypeNewCommentReplySuccessImpl<T> _value,
       $Res Function(_$TypeNewCommentReplySuccessImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reply = null,
+  }) {
+    return _then(_$TypeNewCommentReplySuccessImpl<T>(
+      null == reply
+          ? _value.reply
+          : reply // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$TypeNewCommentReplySuccessImpl<T>
     implements TypeNewCommentReplySuccess<T> {
-  const _$TypeNewCommentReplySuccessImpl();
+  const _$TypeNewCommentReplySuccessImpl(this.reply);
+
+  @override
+  final String reply;
 
   @override
   String toString() {
-    return 'CommentRepliesState<$T>.typeNewCommentReplySuccess()';
+    return 'CommentRepliesState<$T>.typeNewCommentReplySuccess(reply: $reply)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TypeNewCommentReplySuccessImpl<T>);
+            other is _$TypeNewCommentReplySuccessImpl<T> &&
+            (identical(other.reply, reply) || other.reply == reply));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, reply);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TypeNewCommentReplySuccessImplCopyWith<T,
+          _$TypeNewCommentReplySuccessImpl<T>>
+      get copyWith => __$$TypeNewCommentReplySuccessImplCopyWithImpl<T,
+          _$TypeNewCommentReplySuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -768,7 +795,7 @@ class _$TypeNewCommentReplySuccessImpl<T>
     required TResult Function() unlikeCommentReplySuccess,
     required TResult Function(String error) unlikeCommentReplyError,
   }) {
-    return typeNewCommentReplySuccess();
+    return typeNewCommentReplySuccess(reply);
   }
 
   @override
@@ -776,7 +803,7 @@ class _$TypeNewCommentReplySuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -793,7 +820,7 @@ class _$TypeNewCommentReplySuccessImpl<T>
     TResult? Function()? unlikeCommentReplySuccess,
     TResult? Function(String error)? unlikeCommentReplyError,
   }) {
-    return typeNewCommentReplySuccess?.call();
+    return typeNewCommentReplySuccess?.call(reply);
   }
 
   @override
@@ -801,7 +828,7 @@ class _$TypeNewCommentReplySuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -820,7 +847,7 @@ class _$TypeNewCommentReplySuccessImpl<T>
     required TResult orElse(),
   }) {
     if (typeNewCommentReplySuccess != null) {
-      return typeNewCommentReplySuccess();
+      return typeNewCommentReplySuccess(reply);
     }
     return orElse();
   }
@@ -949,8 +976,14 @@ class _$TypeNewCommentReplySuccessImpl<T>
 }
 
 abstract class TypeNewCommentReplySuccess<T> implements CommentRepliesState<T> {
-  const factory TypeNewCommentReplySuccess() =
+  const factory TypeNewCommentReplySuccess(final String reply) =
       _$TypeNewCommentReplySuccessImpl<T>;
+
+  String get reply;
+  @JsonKey(ignore: true)
+  _$$TypeNewCommentReplySuccessImplCopyWith<T,
+          _$TypeNewCommentReplySuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1023,7 +1056,7 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -1048,7 +1081,7 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -1073,7 +1106,7 @@ class _$TypeNewCommentReplyErrorImpl<T> implements TypeNewCommentReplyError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -1275,7 +1308,7 @@ class _$DeleteCommentReplyLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -1300,7 +1333,7 @@ class _$DeleteCommentReplyLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -1325,7 +1358,7 @@ class _$DeleteCommentReplyLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -1522,7 +1555,7 @@ class _$DeleteCommentReplySuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -1547,7 +1580,7 @@ class _$DeleteCommentReplySuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -1572,7 +1605,7 @@ class _$DeleteCommentReplySuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -1794,7 +1827,7 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -1819,7 +1852,7 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -1844,7 +1877,7 @@ class _$DeleteCommentReplyErrorImpl<T> implements DeleteCommentReplyError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -2074,7 +2107,7 @@ class _$PickCommentReplyImageSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -2099,7 +2132,7 @@ class _$PickCommentReplyImageSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -2124,7 +2157,7 @@ class _$PickCommentReplyImageSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -2355,7 +2388,7 @@ class _$PickCommentReplyImageErrorImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -2380,7 +2413,7 @@ class _$PickCommentReplyImageErrorImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -2405,7 +2438,7 @@ class _$PickCommentReplyImageErrorImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -2608,7 +2641,7 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -2633,7 +2666,7 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -2658,7 +2691,7 @@ class _$UploadCommentReplyImageLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -2884,7 +2917,7 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -2909,7 +2942,7 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -2934,7 +2967,7 @@ class _$UploadCommentReplyImageSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -3165,7 +3198,7 @@ class _$UploadCommentReplyImageErrorImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -3190,7 +3223,7 @@ class _$UploadCommentReplyImageErrorImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -3215,7 +3248,7 @@ class _$UploadCommentReplyImageErrorImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -3441,7 +3474,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -3466,7 +3499,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -3491,7 +3524,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -3692,7 +3725,7 @@ class _$RemovePickedCommentReplyImageImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -3717,7 +3750,7 @@ class _$RemovePickedCommentReplyImageImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -3742,7 +3775,7 @@ class _$RemovePickedCommentReplyImageImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -3939,7 +3972,7 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -3964,7 +3997,7 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -3989,7 +4022,7 @@ class _$LikeCommentReplySuccessImpl<T> implements LikeCommentReplySuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -4210,7 +4243,7 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -4235,7 +4268,7 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -4260,7 +4293,7 @@ class _$LikeCommentReplyErrorImpl<T> implements LikeCommentReplyError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -4462,7 +4495,7 @@ class _$UnlikeCommentReplySuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -4487,7 +4520,7 @@ class _$UnlikeCommentReplySuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -4512,7 +4545,7 @@ class _$UnlikeCommentReplySuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,
@@ -4734,7 +4767,7 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentReplyLoading,
-    required TResult Function() typeNewCommentReplySuccess,
+    required TResult Function(String reply) typeNewCommentReplySuccess,
     required TResult Function(String error) typeNewCommentReplyError,
     required TResult Function() deleteCommentReplyLoading,
     required TResult Function() deleteCommentReplySuccess,
@@ -4759,7 +4792,7 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentReplyLoading,
-    TResult? Function()? typeNewCommentReplySuccess,
+    TResult? Function(String reply)? typeNewCommentReplySuccess,
     TResult? Function(String error)? typeNewCommentReplyError,
     TResult? Function()? deleteCommentReplyLoading,
     TResult? Function()? deleteCommentReplySuccess,
@@ -4784,7 +4817,7 @@ class _$UnlikeCommentReplyErrorImpl<T> implements UnlikeCommentReplyError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentReplyLoading,
-    TResult Function()? typeNewCommentReplySuccess,
+    TResult Function(String reply)? typeNewCommentReplySuccess,
     TResult Function(String error)? typeNewCommentReplyError,
     TResult Function()? deleteCommentReplyLoading,
     TResult Function()? deleteCommentReplySuccess,

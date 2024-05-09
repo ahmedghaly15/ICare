@@ -97,7 +97,11 @@ class CommentsCubit extends Cubit<CommentsState> {
     emit(const CommentsState.typeNewCommentLoading());
     final result = await typeNewCommentUseCase(params);
     result.when(
-      success: (comment) => emit(const CommentsState.typeNewCommentSuccess()),
+      success: (_) {
+        emit(
+            CommentsState.typeNewCommentSuccess(commentController.text.trim()));
+        commentController.clear();
+      },
       error: (error) =>
           emit(CommentsState.typeNewCommentError(error.failureMsg ?? '')),
     );

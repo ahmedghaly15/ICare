@@ -9,7 +9,7 @@ class CommentRepliesState<T> with _$CommentRepliesState<T> {
   const factory CommentRepliesState.initial() = _CommentRepliesInitial;
   const factory CommentRepliesState.typeNewCommentReplyLoading() =
       TypeNewCommentReplyLoading;
-  const factory CommentRepliesState.typeNewCommentReplySuccess() =
+  const factory CommentRepliesState.typeNewCommentReplySuccess(String reply) =
       TypeNewCommentReplySuccess<T>;
   const factory CommentRepliesState.typeNewCommentReplyError(String error) =
       TypeNewCommentReplyError<T>;

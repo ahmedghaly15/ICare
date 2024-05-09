@@ -27,8 +27,7 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
           current is TypeNewCommentSuccess,
       listener: (context, state) {
         state.whenOrNull(
-          typeNewCommentSuccess: () {
-            context.read<CommentsCubit>().commentController.clear();
+          typeNewCommentSuccess: (_) {
             if (tinyTale.user!.uId != Helper.uId) {
               context
                   .read<NotificationsCubit>()

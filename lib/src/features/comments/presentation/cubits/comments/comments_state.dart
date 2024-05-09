@@ -8,7 +8,7 @@ part 'comments_state.freezed.dart';
 class CommentsState<T> with _$CommentsState<T> {
   const factory CommentsState.initial() = _CommentsInitial;
   const factory CommentsState.typeNewCommentLoading() = TypeNewCommentLoading;
-  const factory CommentsState.typeNewCommentSuccess() =
+  const factory CommentsState.typeNewCommentSuccess(String comment) =
       TypeNewCommentSuccess<T>;
   const factory CommentsState.typeNewCommentError(String error) =
       TypeNewCommentError<T>;

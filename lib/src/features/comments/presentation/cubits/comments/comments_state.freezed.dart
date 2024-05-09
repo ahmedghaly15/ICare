@@ -20,7 +20,7 @@ mixin _$CommentsState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -42,7 +42,7 @@ mixin _$CommentsState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -64,7 +64,7 @@ mixin _$CommentsState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -229,7 +229,7 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -254,7 +254,7 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -279,7 +279,7 @@ class _$CommentsInitialImpl<T> implements _CommentsInitial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -449,7 +449,7 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -474,7 +474,7 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -499,7 +499,7 @@ class _$TypeNewCommentLoadingImpl<T> implements TypeNewCommentLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -632,6 +632,8 @@ abstract class _$$TypeNewCommentSuccessImplCopyWith<T, $Res> {
           _$TypeNewCommentSuccessImpl<T> value,
           $Res Function(_$TypeNewCommentSuccessImpl<T>) then) =
       __$$TypeNewCommentSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String comment});
 }
 
 /// @nodoc
@@ -642,34 +644,58 @@ class __$$TypeNewCommentSuccessImplCopyWithImpl<T, $Res>
       _$TypeNewCommentSuccessImpl<T> _value,
       $Res Function(_$TypeNewCommentSuccessImpl<T>) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? comment = null,
+  }) {
+    return _then(_$TypeNewCommentSuccessImpl<T>(
+      null == comment
+          ? _value.comment
+          : comment // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
-  const _$TypeNewCommentSuccessImpl();
+  const _$TypeNewCommentSuccessImpl(this.comment);
+
+  @override
+  final String comment;
 
   @override
   String toString() {
-    return 'CommentsState<$T>.typeNewCommentSuccess()';
+    return 'CommentsState<$T>.typeNewCommentSuccess(comment: $comment)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TypeNewCommentSuccessImpl<T>);
+            other is _$TypeNewCommentSuccessImpl<T> &&
+            (identical(other.comment, comment) || other.comment == comment));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, comment);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TypeNewCommentSuccessImplCopyWith<T, _$TypeNewCommentSuccessImpl<T>>
+      get copyWith => __$$TypeNewCommentSuccessImplCopyWithImpl<T,
+          _$TypeNewCommentSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -686,7 +712,7 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     required TResult Function() unlikeCommentSuccess,
     required TResult Function(String error) unlikeCommentError,
   }) {
-    return typeNewCommentSuccess();
+    return typeNewCommentSuccess(comment);
   }
 
   @override
@@ -694,7 +720,7 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -711,7 +737,7 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     TResult? Function()? unlikeCommentSuccess,
     TResult? Function(String error)? unlikeCommentError,
   }) {
-    return typeNewCommentSuccess?.call();
+    return typeNewCommentSuccess?.call(comment);
   }
 
   @override
@@ -719,7 +745,7 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -738,7 +764,7 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
     required TResult orElse(),
   }) {
     if (typeNewCommentSuccess != null) {
-      return typeNewCommentSuccess();
+      return typeNewCommentSuccess(comment);
     }
     return orElse();
   }
@@ -843,7 +869,13 @@ class _$TypeNewCommentSuccessImpl<T> implements TypeNewCommentSuccess<T> {
 }
 
 abstract class TypeNewCommentSuccess<T> implements CommentsState<T> {
-  const factory TypeNewCommentSuccess() = _$TypeNewCommentSuccessImpl<T>;
+  const factory TypeNewCommentSuccess(final String comment) =
+      _$TypeNewCommentSuccessImpl<T>;
+
+  String get comment;
+  @JsonKey(ignore: true)
+  _$$TypeNewCommentSuccessImplCopyWith<T, _$TypeNewCommentSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -913,7 +945,7 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -938,7 +970,7 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -963,7 +995,7 @@ class _$TypeNewCommentErrorImpl<T> implements TypeNewCommentError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -1167,7 +1199,7 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -1192,7 +1224,7 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -1217,7 +1249,7 @@ class _$PickCommentImageSuccessImpl<T> implements PickCommentImageSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -1419,7 +1451,7 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -1444,7 +1476,7 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -1469,7 +1501,7 @@ class _$PickCommentImageErrorImpl<T> implements PickCommentImageError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -1647,7 +1679,7 @@ class _$UploadCommentImageLoadingImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -1672,7 +1704,7 @@ class _$UploadCommentImageLoadingImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -1697,7 +1729,7 @@ class _$UploadCommentImageLoadingImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -1898,7 +1930,7 @@ class _$UploadCommentImageSuccessImpl<T>
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -1923,7 +1955,7 @@ class _$UploadCommentImageSuccessImpl<T>
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -1948,7 +1980,7 @@ class _$UploadCommentImageSuccessImpl<T>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -2152,7 +2184,7 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -2177,7 +2209,7 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -2202,7 +2234,7 @@ class _$UploadCommentImageErrorImpl<T> implements UploadCommentImageError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -2377,7 +2409,7 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -2402,7 +2434,7 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -2427,7 +2459,7 @@ class _$DeleteCommentLoadingImpl<T> implements DeleteCommentLoading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -2596,7 +2628,7 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -2621,7 +2653,7 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -2646,7 +2678,7 @@ class _$DeleteCommentSuccessImpl<T> implements DeleteCommentSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -2840,7 +2872,7 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -2865,7 +2897,7 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -2890,7 +2922,7 @@ class _$DeleteCommentErrorImpl<T> implements DeleteCommentError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -3090,7 +3122,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -3115,7 +3147,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -3140,7 +3172,7 @@ class _$SetNewTextValueImpl<T> implements SetNewTextValue<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -3316,7 +3348,7 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -3341,7 +3373,7 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -3366,7 +3398,7 @@ class _$RemovePickedCommentImageImpl<T> implements RemovePickedCommentImage<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -3534,7 +3566,7 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -3559,7 +3591,7 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -3584,7 +3616,7 @@ class _$LikeCommentSuccessImpl<T> implements LikeCommentSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -3778,7 +3810,7 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -3803,7 +3835,7 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -3828,7 +3860,7 @@ class _$LikeCommentErrorImpl<T> implements LikeCommentError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -4003,7 +4035,7 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -4028,7 +4060,7 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -4053,7 +4085,7 @@ class _$UnlikeCommentSuccessImpl<T> implements UnlikeCommentSuccess<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,
@@ -4247,7 +4279,7 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() typeNewCommentLoading,
-    required TResult Function() typeNewCommentSuccess,
+    required TResult Function(String comment) typeNewCommentSuccess,
     required TResult Function(String error) typeNewCommentError,
     required TResult Function(File commentImage) pickCommentImageSuccess,
     required TResult Function(String error) pickCommentImageError,
@@ -4272,7 +4304,7 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? typeNewCommentLoading,
-    TResult? Function()? typeNewCommentSuccess,
+    TResult? Function(String comment)? typeNewCommentSuccess,
     TResult? Function(String error)? typeNewCommentError,
     TResult? Function(File commentImage)? pickCommentImageSuccess,
     TResult? Function(String error)? pickCommentImageError,
@@ -4297,7 +4329,7 @@ class _$UnlikeCommentErrorImpl<T> implements UnlikeCommentError<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? typeNewCommentLoading,
-    TResult Function()? typeNewCommentSuccess,
+    TResult Function(String comment)? typeNewCommentSuccess,
     TResult Function(String error)? typeNewCommentError,
     TResult Function(File commentImage)? pickCommentImageSuccess,
     TResult Function(String error)? pickCommentImageError,

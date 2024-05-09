@@ -30,7 +30,7 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
           typeNewCommentReplyError: (error) {
             ShowICareDialog.showICareDialogError(context, error);
           },
-          typeNewCommentReplySuccess: () {
+          typeNewCommentReplySuccess: (_) {
             if (params.comment!.user!.uId != Helper.uId) {
               context
                   .read<NotificationsCubit>()
