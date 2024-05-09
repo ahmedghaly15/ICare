@@ -24,7 +24,6 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
   Future<ICareUser> getUserData() async {
     final DocumentSnapshot<Map<String, dynamic>> documentSnapshot =
         await accessUsersCollection().doc(Helper.uId).get();
-
     return ICareUser.fromJson(documentSnapshot.data()!);
   }
 
@@ -35,9 +34,10 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   @override
   Future<void> follow(ICareUser user) async {
-    _addCurrentUserToOthersFollowers(user).then((value) {
-      _addUserToFollowing(user);
-    });
+    Future.wait([
+      _addCurrentUserToOthersFollowers(user),
+      _addUserToFollowing(user),
+    ]);
   }
 
   Future<void> _addCurrentUserToOthersFollowers(ICareUser user) async {
@@ -66,8 +66,10 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
 
   @override
   Future<void> unFollow(ICareUser user) async {
-    await _removeCurrentUserToOthersFollowers(user);
-    await _removeUserToFollowing(user);
+    Future.wait([
+      _removeCurrentUserToOthersFollowers(user),
+      _removeUserToFollowing(user),
+    ]);
   }
 
   Future<void> _removeCurrentUserToOthersFollowers(ICareUser user) async {
