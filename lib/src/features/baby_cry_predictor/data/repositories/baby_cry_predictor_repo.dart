@@ -9,7 +9,6 @@ import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
-import 'package:icare/src/features/baby_cry_predictor/data/models/upload_miss_classifying_params.dart';
 
 class BabyCryPredictorRepo {
   final BabyCryPredictorRemoteDatasource _babyCryPredictorRemoteDatasource;
@@ -104,10 +103,10 @@ class BabyCryPredictorRepo {
   }
 
   Future<ApiResult<String>> babyCryPredictorUploadMissClassifying(
-      UploadMissClassifyingParams params) async {
+      String className) async {
     return executeAndHandleErrors<String>(
       () async => await _babyCryPredictorRemoteDatasource
-          .babyCryPredictorUploadMissClassifying(params),
+          .babyCryPredictorLeaveFeedback(className),
     );
   }
 }
