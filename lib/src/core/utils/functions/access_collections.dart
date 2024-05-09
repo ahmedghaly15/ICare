@@ -75,3 +75,10 @@ CollectionReference<Map<String, dynamic>>
       .doc(Helper.uId)
       .collection(AppStrings.notificationsCollection);
 }
+
+CollectionReference<Map<String, dynamic>> accessUserNotificationsCollection(
+    String userId) {
+  return accessUsersCollection()
+      .doc(userId)
+      .collection(AppStrings.notificationsCollection);
+}

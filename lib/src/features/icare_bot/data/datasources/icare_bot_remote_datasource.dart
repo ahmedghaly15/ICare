@@ -9,13 +9,10 @@ import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_respons
 
 abstract class ICareBotRemoteDatasource {
   Future<GenerateContentResponse> askICareBot(AskICareBotParams params);
-
   Future<BookmarkICareBotMessageResponse> bookmarkICareBotMessage(
     BookmarkICareBotMessageParams params,
   );
-
   Future<List<BookmarkICareBotMessageResponse>> retrieveICareBotBookmarks();
-
   Future<DeleteBookmarkResponse> deleteBookmark(DeleteBookmarkParams params);
 }
 

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
@@ -27,17 +28,87 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       profileImage: params.profileImage ?? Helper.currentUser!.profileImage,
     );
     Helper.currentUser = user;
-    await accessUsersCollection().doc(Helper.uId).update(user.toJson());
-    await _updateUserTinyTales(user);
-    await _updateUserTinyTalesLikes(user);
-    await _updateUserComments(user);
-    await _updateUserCommentsLikes(user);
-    await _updateUserCommentsReplies(user);
-    await _updateUserCommentsRepliesLikes(user);
-    await _updateUserBookmarkedTinyTales(user);
-    await _updateUserInOtherUsersFollowing(user);
-    await _updateUserInOtherUsersFollowers(user);
-    await _updateUserInChats(user);
+    Future.wait([
+      accessUsersCollection().doc(Helper.uId).update(user.toJson()),
+      _updateUserTinyTales(user),
+      _updateUserTinyTalesLikes(user),
+      _updateUserComments(user),
+      _updateUserCommentsLikes(user),
+      _updateUserCommentsReplies(user),
+      _updateUserCommentsRepliesLikes(user),
+      _updateUserBookmarkedTinyTales(user),
+      _updateUserInOtherUsersFollowing(user),
+      _updateUserInOtherUsersFollowers(user),
+      _updateUserInChats(user),
+      _updateUserInNotifications(user),
+    ]);
+  }
+
+  Future<void> _updateUserInNotifications(ICareUser iCareUser) async {
+    final users = await accessUsersCollection().get();
+    for (final user in users.docs) {
+      if (user.id == Helper.uId) {
+        final notifications =
+            await accessUserNotificationsCollection(user.id).get();
+        for (final notification in notifications.docs) {
+          Future.wait([
+            _updateUserInNotificationsTinyTales(
+                user.id, notification, iCareUser),
+            _updateUserInNotificationsComments(
+                user.id, notification, iCareUser),
+            _updateUserInNotificationsReplies(user.id, notification, iCareUser),
+          ]);
+        }
+      }
+    }
+  }
+
+  Future<void> _updateUserInNotificationsReplies(
+      String userId,
+      QueryDocumentSnapshot<Map<String, dynamic>> notification,
+      ICareUser iCareUser) async {
+    if (notification.data()['reply'] != null) {
+      await accessUserNotificationsCollection(userId)
+          .doc(notification.id)
+          .update({
+        'reply': {
+          ...notification.data()['reply'],
+          'user': iCareUser.toJson(),
+        },
+      });
+    }
+  }
+
+  Future<void> _updateUserInNotificationsComments(
+      String userId,
+      QueryDocumentSnapshot<Map<String, dynamic>> notification,
+      ICareUser iCareUser) async {
+    if (notification.data()['comment'] != null) {
+      await accessUserNotificationsCollection(userId)
+          .doc(notification.id)
+          .update({
+        'comment': {
+          ...notification.data()['comment'],
+          'user': iCareUser.toJson(),
+        },
+      });
+    }
+  }
+
+  Future<void> _updateUserInNotificationsTinyTales(
+      String userId,
+      QueryDocumentSnapshot<Map<String, dynamic>> notification,
+      ICareUser iCareUser) async {
+    if (notification.data()['tinyTale'] != null) {
+      await accessUserNotificationsCollection(userId)
+          .doc(notification.id)
+          .update({
+        'tinyTale': {
+          ...notification.data()['tinyTale'],
+          'user': iCareUser.toJson(),
+        },
+      });
+    }
   }
 
   @override
