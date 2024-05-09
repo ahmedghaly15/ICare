@@ -46,16 +46,18 @@ Future<void> _updateUserMobileToken(String? mobileToken) async {
 }
 
 Future<void> _updateMobileTokenInOtherCollections(String? mobileToken) async {
-  await _updateMobileTokenInTinyTales(mobileToken);
-  await _updateMobileTokenInTinyTalesLikes(mobileToken);
-  await _updateMobileTokenInComments(mobileToken);
-  await _updateMobileTokenInCommentsLikes(mobileToken);
-  await _updateMobileTokenInCommentsReplies(mobileToken);
-  await _updateMobileTokenInCommentsRepliesLikes(mobileToken);
-  await _updateMobileTokenInBookmarkedTinyTales(mobileToken);
-  await _updateMobileTokenInOtherUsersFollowing(mobileToken);
-  await _updateMobileTokenInOtherUsersFollowers(mobileToken);
-  await _updateMobileTokenInChats(mobileToken);
+  Future.wait([
+    _updateMobileTokenInTinyTales(mobileToken),
+    _updateMobileTokenInTinyTalesLikes(mobileToken),
+    _updateMobileTokenInComments(mobileToken),
+    _updateMobileTokenInCommentsLikes(mobileToken),
+    _updateMobileTokenInCommentsReplies(mobileToken),
+    _updateMobileTokenInCommentsRepliesLikes(mobileToken),
+    _updateMobileTokenInBookmarkedTinyTales(mobileToken),
+    _updateMobileTokenInOtherUsersFollowing(mobileToken),
+    _updateMobileTokenInOtherUsersFollowers(mobileToken),
+    _updateMobileTokenInChats(mobileToken),
+  ]);
 }
 
 Map<Object, Object?> _mobileTokenMap(String? mobileToken) =>
