@@ -677,7 +677,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<String> babyCryPredictorUploadMissClassifying({
+  Future<String> babyCryPredictorLeaveFeedback({
     required String className,
     required String userId,
   }) async {

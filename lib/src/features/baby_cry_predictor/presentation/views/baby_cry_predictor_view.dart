@@ -7,8 +7,8 @@ import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
-import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_cubit.dart';
-import 'package:icare/src/features/baby_cry_predictor/presentation/cubit/baby_cry_predictor_state.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor/baby_cry_predictor_cubit.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor/baby_cry_predictor_state.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/recording_result_widget.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/recording_widget.dart';
 
