@@ -118,6 +118,7 @@ List<AutoRoute> get appRoutes {
     _buildCustomRoute(page: NotificationTinyTaleRoute.page),
     _buildCustomRoute(page: NotificationCommentRoute.page),
     _buildCustomRoute(page: NotificationReplyRoute.page),
+    _buildCustomRoute(page: BabyCryPredictorLeaveFeedbackRoute.page),
   ];
 }
 

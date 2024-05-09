@@ -8,6 +8,7 @@ import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:icare/src/features/auth/presentation/views/login_view.dart';
 import 'package:icare/src/features/auth/presentation/views/register_view.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/views/baby_cry_predictor_leave_feedback_view.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/views/baby_cry_predictor_view.dart';
 import 'package:icare/src/features/bottom_nav_bar/presentation/views/layout_view.dart';
 import 'package:icare/src/features/chat/presentation/views/chat_details_view.dart';

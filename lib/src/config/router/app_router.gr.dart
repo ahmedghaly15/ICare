@@ -44,6 +44,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const Auth(),
       );
     },
+    BabyCryPredictorLeaveFeedbackRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const BabyCryPredictorLeaveFeedbackView()),
+      );
+    },
     BabyCryPredictorRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -445,6 +451,20 @@ class AuthRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AuthRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BabyCryPredictorLeaveFeedbackView]
+class BabyCryPredictorLeaveFeedbackRoute extends PageRouteInfo<void> {
+  const BabyCryPredictorLeaveFeedbackRoute({List<PageRouteInfo>? children})
+      : super(
+          BabyCryPredictorLeaveFeedbackRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BabyCryPredictorLeaveFeedbackRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
