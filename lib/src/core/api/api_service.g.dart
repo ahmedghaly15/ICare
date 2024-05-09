@@ -678,20 +678,13 @@ class _ApiService implements ApiService {
 
   @override
   Future<String> babyCryPredictorUploadMissClassifying({
-    required File audioFile,
     required String className,
+    required String userId,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'user_id': userId};
     final _headers = <String, dynamic>{};
-    final _data = FormData();
-    _data.files.add(MapEntry(
-      'file',
-      MultipartFile.fromFileSync(
-        audioFile.path,
-        filename: audioFile.path.split(Platform.pathSeparator).last,
-      ),
-    ));
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
       method: 'POST',
       headers: _headers,

@@ -140,7 +140,7 @@ abstract class ApiService {
   @POST('${EndPoints.babyCryPredictorUploadMissClassifying}{class_name}')
   @MultiPart()
   Future<String> babyCryPredictorUploadMissClassifying({
-    @Part(name: 'file') required File audioFile,
     @Path('class_name') required String className,
+    @Query('user_id') required String userId,
   });
 }

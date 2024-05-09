@@ -57,8 +57,8 @@ class BabyCryPredictorRemoteDatasourceImpl
     UploadMissClassifyingParams params,
   ) async {
     return await _apiService.babyCryPredictorUploadMissClassifying(
-      audioFile: params.audioFile,
       className: params.className,
+      userId: Helper.uId!,
     );
   }
 }
