@@ -237,6 +237,14 @@ class AppAssets {
   static const String svgsOrangeBookmarkIcon =
       "assets/svgs/orange_bookmark_icon.svg";
 
+  /// Assets for svgsPauseAudioIcon
+  /// assets/svgs/pause_audio_icon.svg
+  static const String svgsPauseAudioIcon = "assets/svgs/pause_audio_icon.svg";
+
+  /// Assets for svgsPlayAudioIcon
+  /// assets/svgs/play_audio_icon.svg
+  static const String svgsPlayAudioIcon = "assets/svgs/play_audio_icon.svg";
+
   /// Assets for svgsRedHeartCommentIcon
   /// assets/svgs/red_heart_comment_icon.svg
   static const String svgsRedHeartCommentIcon =

@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/models/no_params.dart';
+import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor_add_new_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor_leave_feedback.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_classes.dart';
@@ -20,6 +21,21 @@ class BabyCryPredictorFeedbackCubit
     required this.babyCryPredictorAddNewClassUseCase,
   }) : super(const BabyCryPredictorFeedbackState.initial()) {
     _initAttributes();
+    _listenOnPlayerStates();
+  }
+
+  void _listenOnPlayerStates() {
+    _audioPlayer.onPlayerStateChanged.listen((playerState) {
+      if (playerState == PlayerState.completed ||
+          playerState == PlayerState.stopped) {
+        _makePlayingIndexNull();
+      }
+    });
+  }
+
+  void _makePlayingIndexNull() {
+    playingIndex = null;
+    emit(BabyCryPredictorFeedbackState.updatePlayingIndex(playingIndex));
   }
 
   void _initAttributes() {
@@ -29,12 +45,6 @@ class BabyCryPredictorFeedbackCubit
 
   late final TextEditingController newClassTextEditingController;
   late final AudioPlayer _audioPlayer;
-  bool isPlaying = false;
-
-  void covertIsPlaying() {
-    isPlaying = !isPlaying;
-    emit(BabyCryPredictorFeedbackState.convertIsPlayingBool(isPlaying));
-  }
 
   void getBabyCryPredictorClasses() async {
     emit(const BabyCryPredictorFeedbackState
@@ -50,6 +60,25 @@ class BabyCryPredictorFeedbackCubit
             error.apiErrorModel.error ?? ''),
       ),
     );
+  }
+
+  BabyCryPredictorClass? selectedClass;
+
+  void updateSelectedClass(BabyCryPredictorClass selectedClass) {
+    if (this.selectedClass == selectedClass) {
+      _makeSelectedClassNull(selectedClass);
+    } else {
+      _renewSelectedClass(selectedClass);
+    }
+    emit(BabyCryPredictorFeedbackState.updateSelectedClass(this.selectedClass));
+  }
+
+  void _makeSelectedClassNull(BabyCryPredictorClass selectedClass) {
+    this.selectedClass = null;
+  }
+
+  void _renewSelectedClass(BabyCryPredictorClass selectedClass) {
+    this.selectedClass = selectedClass;
   }
 
   void babyCryPredictorAddNewClass() async {
@@ -69,7 +98,8 @@ class BabyCryPredictorFeedbackCubit
   void babyCryPredictorLeaveFeedback() async {
     emit(const BabyCryPredictorFeedbackState.leaveFeedbackLoading());
     final result = await babyCryPredictorLeaveFeedbackUseCase(
-        newClassTextEditingController.text.trim());
+      selectedClass!.className,
+    );
     result.when(
       success: (success) =>
           emit(BabyCryPredictorFeedbackState.leaveFeedbackSuccess(success)),
@@ -78,6 +108,26 @@ class BabyCryPredictorFeedbackCubit
             error.apiErrorModel.error ?? ''),
       ),
     );
+  }
+
+  int? playingIndex;
+
+  void playPauseAudio(String url, int index) async {
+    if (playingIndex != null && playingIndex == index) {
+      await _audioPlayer.pause();
+    } else {
+      await _audioPlayer.play(UrlSource(url));
+    }
+    _updatePlayingIndex(index);
+  }
+
+  void _updatePlayingIndex(int index) {
+    if (playingIndex != null && playingIndex == index) {
+      playingIndex = null;
+    } else {
+      playingIndex = index;
+    }
+    emit(BabyCryPredictorFeedbackState.updatePlayingIndex(playingIndex));
   }
 
   @override

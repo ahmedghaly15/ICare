@@ -216,4 +216,8 @@ class AppStrings {
   static const String lastTimeTheBabyWas = 'Last time the baby was';
   static const String yseThatsRight = "Yes, that’s right!";
   static const String leaveFeedback = 'Leave feedback';
+  static const String feedback = 'Feedback';
+  static const String listenToVoices =
+      'Listen to voices and choose the correct reason';
+  static const String noneOfThem = 'None of them';
 }

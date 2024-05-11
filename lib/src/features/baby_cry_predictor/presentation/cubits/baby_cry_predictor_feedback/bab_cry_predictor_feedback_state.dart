@@ -13,8 +13,6 @@ class BabyCryPredictorFeedbackState<T> with _$BabyCryPredictorFeedbackState<T> {
       GetBabyCryPredictorClassesSuccess<T>;
   const factory BabyCryPredictorFeedbackState.getBabyCryPredictorClassesError(
       String error) = GetBabyCryPredictorClassesError<T>;
-  const factory BabyCryPredictorFeedbackState.convertIsPlayingBool(
-      bool isPlaying) = ConvertIsPlayingBool<T>;
   const factory BabyCryPredictorFeedbackState.addNewClassLoading() =
       AddNewClassLoading;
   const factory BabyCryPredictorFeedbackState.addNewClassSuccess(String data) =
@@ -27,4 +25,8 @@ class BabyCryPredictorFeedbackState<T> with _$BabyCryPredictorFeedbackState<T> {
       String data) = LeaveFeedbackSuccess<T>;
   const factory BabyCryPredictorFeedbackState.leaveFeedbackError(String error) =
       LeaveFeedbackError<T>;
+  const factory BabyCryPredictorFeedbackState.updateSelectedClass(
+      BabyCryPredictorClass? babyCryPredictorClass) = UpdateSelectedClass<T>;
+  const factory BabyCryPredictorFeedbackState.updatePlayingIndex(
+      int? playingIndex) = UpdatePlayingIndex<T>;
 }

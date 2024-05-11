@@ -97,7 +97,6 @@ class AppUtils {
     vertical: 16.h,
     horizontal: 8.w,
   );
-  static EdgeInsets viewAppBarPadding = EdgeInsets.only(left: 9.w);
   static double get levelOneItemHeight => SizeConfig.height * 0.2;
   static BoxDecoration surahItemDecoration(BuildContext context) =>
       BoxDecoration(
