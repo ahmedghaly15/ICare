@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
-import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/speech_therapy/data/models/level_one_training_response.dart';
@@ -37,10 +36,7 @@ class TrainingOnLevelOneView extends StatelessWidget
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(),
-            ),
+            const CustomSliverAppBar(),
             NextCircularButtonBlocBuilder(
               onPressed: (next) {
                 context.replaceRoute(

@@ -21,10 +21,7 @@ class ICareCommunityView extends StatelessWidget {
         child: CustomScrollView(
           physics: AppConstants.scrollPhysics,
           slivers: <Widget>[
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const ICareCommunitySliverAppBar(),
-            ),
+            const ICareCommunitySliverAppBar(),
             SliverPadding(
               padding: AppUtils.tinyTalesPadding,
               sliver: const TinyTalesStreamBuilder(),

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -18,23 +17,18 @@ class ProfileView extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: CustomSliverAppBar(
-                title: AppStrings.profile,
-                actions: <Widget>[
-                  IconButton(
-                    onPressed: () =>
-                        context.pushRoute(const EditProfileRoute()),
-                    icon: Icon(
-                      Icons.edit,
-                      color: isDarkModeActive(context)
-                          ? Colors.white
-                          : Colors.black,
-                    ),
+            CustomSliverAppBar(
+              title: AppStrings.profile,
+              actions: <Widget>[
+                IconButton(
+                  onPressed: () => context.pushRoute(const EditProfileRoute()),
+                  icon: Icon(
+                    Icons.edit,
+                    color:
+                        isDarkModeActive(context) ? Colors.white : Colors.black,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             const SliverToBoxAdapter(child: MySizedBox.height65),
             const SliverFillRemaining(child: ProfileViewBody()),

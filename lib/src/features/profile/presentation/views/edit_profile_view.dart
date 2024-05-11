@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_cubit.dart';
 import 'package:icare/src/features/profile/presentation/widgets/edit_profile_form.dart';
@@ -27,10 +26,7 @@ class EditProfileView extends StatelessWidget implements AutoRouteWrapper {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(title: AppStrings.editProfile),
-            ),
+            const CustomSliverAppBar(title: AppStrings.editProfile),
             SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               sliver: const SliverFillRemaining(

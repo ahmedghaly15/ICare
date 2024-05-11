@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/gradient_colorful_container.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/scores_grid_bloc_builder.dart';
@@ -19,10 +18,7 @@ class ScoreView extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(title: AppStrings.score),
-            ),
+            const CustomSliverAppBar(title: AppStrings.score),
             SliverFillRemaining(
               child: GradientColorfulContainer(
                 padding: EdgeInsets.symmetric(

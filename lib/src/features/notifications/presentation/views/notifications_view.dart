@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/notifications/presentation/widgets/clear_text_button_stream_builder.dart';
 import 'package:icare/src/features/notifications/presentation/widgets/sliver_notifications_stream_builder.dart';
@@ -12,20 +11,17 @@ class NotificationsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(
-                title: AppStrings.notifications,
-                actions: <Widget>[
-                  ClearTextButtonStreamBuilder(),
-                ],
-              ),
+            CustomSliverAppBar(
+              title: AppStrings.notifications,
+              actions: <Widget>[
+                ClearTextButtonStreamBuilder(),
+              ],
             ),
-            const SliverNotificationsStreamBuilder(),
+            SliverNotificationsStreamBuilder(),
           ],
         ),
       ),

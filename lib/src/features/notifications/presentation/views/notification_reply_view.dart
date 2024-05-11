@@ -35,10 +35,7 @@ class NotificationReplyView extends StatelessWidget
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(),
-            ),
+            const CustomSliverAppBar(),
             SliverPadding(
               padding: AppUtils.commentsPadding,
               sliver: SliverToBoxAdapter(

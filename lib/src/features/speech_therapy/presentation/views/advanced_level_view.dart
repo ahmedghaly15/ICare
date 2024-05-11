@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/advanced_level_data_bloc_builder.dart';
 import 'package:icare/src/features/speech_therapy/presentation/widgets/gradient_colorful_container.dart';
@@ -12,15 +11,12 @@ class AdvancedLevelView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(title: AppStrings.advancedLevel),
-            ),
-            const SliverFillRemaining(
+            CustomSliverAppBar(title: AppStrings.advancedLevel),
+            SliverFillRemaining(
               child: GradientColorfulContainer(
                 radiusVal: 50,
                 child: AdvancedLevelDataBlocBuilder(),

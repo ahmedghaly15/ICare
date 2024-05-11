@@ -31,11 +31,7 @@ class CommentRepliesView extends StatelessWidget implements AutoRouteWrapper {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver:
-                  const CustomSliverAppBar(title: AppStrings.commentReplies),
-            ),
+            const CustomSliverAppBar(title: AppStrings.commentReplies),
             SliverFillRemaining(
               child: Column(
                 children: <Widget>[

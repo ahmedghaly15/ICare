@@ -17,10 +17,7 @@ class NotificationTinyTaleView extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: AppUtils.viewAppBarPadding,
-              sliver: const CustomSliverAppBar(),
-            ),
+            const CustomSliverAppBar(),
             SliverPadding(
               padding: AppUtils.tinyTalesPadding,
               sliver: SliverToBoxAdapter(
