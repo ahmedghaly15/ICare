@@ -220,4 +220,6 @@ class AppStrings {
   static const String listenToVoices =
       'Listen to voices and choose the correct reason';
   static const String noneOfThem = 'None of them';
+  static const String thankYouForFeedback =
+      "Your feedback has been sent. Thank you for taking the time to share your thoughts with us. We greatly appreciate it!";
 }

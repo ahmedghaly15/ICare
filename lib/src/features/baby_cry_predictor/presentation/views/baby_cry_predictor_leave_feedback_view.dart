@@ -5,11 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor_feedback/bab_cry_predictor_feedback_cubit.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/baby_cry_predictor_classes_sliver_list_bloc_builder.dart';
-import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/leave_feedback_button_bloc_builder.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/leave_feedback_button_bloc_consumer.dart';
 
 @RoutePage()
 class BabyCryPredictorLeaveFeedbackView extends StatelessWidget
@@ -36,7 +37,10 @@ class BabyCryPredictorLeaveFeedbackView extends StatelessWidget
             sliver: SliverToBoxAdapter(
               child: Text(
                 AppStrings.listenToVoices,
-                style: AppTextStyles.textStyle16Bold,
+                style: AppTextStyles.textStyle16Bold.copyWith(
+                  color:
+                      isDarkModeActive(context) ? Colors.white : Colors.black,
+                ),
               ),
             ),
           ),
@@ -55,7 +59,7 @@ class BabyCryPredictorLeaveFeedbackView extends StatelessWidget
                     vertical: 42.h,
                     horizontal: 54.w, // 54 = 18 + 36
                   ),
-                  child: const LeaveFeedbackButtonBlocBuilder(),
+                  child: const LeaveFeedbackButtonBlocConsumer(),
                 ),
               ],
             ),

@@ -66,15 +66,20 @@ class BabyCryPredictorFeedbackCubit
 
   void updateSelectedClass(BabyCryPredictorClass selectedClass) {
     if (this.selectedClass == selectedClass) {
-      _makeSelectedClassNull(selectedClass);
+      _makeSelectedClassNull();
     } else {
       _renewSelectedClass(selectedClass);
     }
     emit(BabyCryPredictorFeedbackState.updateSelectedClass(this.selectedClass));
   }
 
-  void _makeSelectedClassNull(BabyCryPredictorClass selectedClass) {
-    this.selectedClass = null;
+  void _makeSelectedClassNull() {
+    selectedClass = null;
+  }
+
+  void emitSelectedClassNull() {
+    selectedClass = null;
+    emit(BabyCryPredictorFeedbackState.updateSelectedClass(selectedClass));
   }
 
   void _renewSelectedClass(BabyCryPredictorClass selectedClass) {

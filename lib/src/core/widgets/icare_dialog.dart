@@ -15,7 +15,7 @@ class ShowICareDialog {
     ICareDialogStates? state,
     String? message,
     bool isBlurred = true,
-    String? anotherTitle = '',
+    String? anotherTitle,
     Widget? child,
     EdgeInsetsGeometry? padding,
     List<BoxShadow>? appLogoBoxShadow,
@@ -131,7 +131,7 @@ class ICareDialog extends StatelessWidget {
               Flexible(
                 child: Text(
                   message!,
-                  style: AppTextStyles.textStyle13Bold.copyWith(
+                  style: AppTextStyles.textStyle13Regular.copyWith(
                     color:
                         isDarkModeActive(context) ? Colors.white : Colors.black,
                   ),
