@@ -222,4 +222,6 @@ class AppStrings {
   static const String noneOfThem = 'None of them';
   static const String thankYouForFeedback =
       "Your feedback has been sent. Thank you for taking the time to share your thoughts with us. We greatly appreciate it!";
+  static const String correctReason = 'Correct Reason';
+  static const String writeTheCorrectReason = 'Write the correct reason';
 }

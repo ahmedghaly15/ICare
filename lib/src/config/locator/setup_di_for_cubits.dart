@@ -81,10 +81,13 @@ class SetupDIForCubits {
       () => BabyCryPredictorFeedbackCubit(
         babyCryPredictorLeaveFeedbackUseCase:
             getIt.get<BabyCryPredictorLeaveFeedbackUseCase>(),
-        babyCryPredictorAddNewClassUseCase:
-            getIt.get<BabyCryPredictorAddNewClassUseCase>(),
         getBabyCryPredictorClassesUseCase:
             getIt.get<GetBabyCryPredictorClassesUseCase>(),
+      ),
+    );
+    getIt.registerFactory<AddNewClassCubit>(
+      () => AddNewClassCubit(
+        getIt.get<BabyCryPredictorAddNewClassUseCase>(),
       ),
     );
 

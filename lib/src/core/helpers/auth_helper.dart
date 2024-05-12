@@ -42,6 +42,16 @@ class AuthHelper {
     return null;
   }
 
+  static String? validateField({
+    String? value,
+  }) {
+    if (value!.isEmpty) {
+      return "This field can't be blank!";
+    }
+
+    return null;
+  }
+
   static void keyboardUnfocus(BuildContext context) {
     FocusScope.of(context).unfocus();
   }
