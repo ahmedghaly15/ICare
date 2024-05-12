@@ -17,9 +17,7 @@ class MedicalInfoDiseaseDetailsCubit
   }) async {
     emit(const MedicalInfoDiseaseDetailsState
         .getMedicalInfoDiseaseDetailsLoading());
-
     final result = await _getMedicalInfoDiseaseDetailsUseCase(params);
-
     result.when(
       success: (data) => emit(
         MedicalInfoDiseaseDetailsState.getMedicalInfoDiseaseDetailsSuccess(

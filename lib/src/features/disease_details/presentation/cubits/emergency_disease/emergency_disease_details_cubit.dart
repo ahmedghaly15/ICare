@@ -12,9 +12,7 @@ class EmergencyDiseaseDetailsCubit extends Cubit<EmergencyDiseaseDetailsState> {
   void getEmergencyDiseaseDetails(String diseaseId) async {
     emit(
         const EmergencyDiseaseDetailsState.getEmergencyDiseaseDetailsLoading());
-
     final result = await _getEmergencyDiseaseDetailsUseCase(diseaseId);
-
     result.when(
       success: (data) => emit(
           EmergencyDiseaseDetailsState.getEmergencyDiseaseDetailsSuccess(data)),

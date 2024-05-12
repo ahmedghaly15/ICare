@@ -48,7 +48,9 @@ class TipTopicAndReadButton extends StatelessWidget {
           from: 30,
           child: Text(
             context.read<TipsCubit>().randomTip!.topic,
-            style: AppTextStyles.textStyle18Bold,
+            style: AppTextStyles.textStyle18Bold.copyWith(
+              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
         ),

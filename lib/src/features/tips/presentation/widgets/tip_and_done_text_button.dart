@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 
 class TipAndDoneTextButton extends StatelessWidget {
@@ -18,7 +19,9 @@ class TipAndDoneTextButton extends StatelessWidget {
           from: 30,
           child: Text(
             context.read<TipsCubit>().randomTip!.info,
-            style: AppTextStyles.textStyle14Medium,
+            style: AppTextStyles.textStyle14Medium.copyWith(
+              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
         ),
