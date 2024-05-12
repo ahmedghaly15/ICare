@@ -38,7 +38,6 @@ import 'package:icare/src/features/baby_cry_predictor/data/repositories/baby_cry
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor_add_new_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor_leave_feedback.dart';
-import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_about.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_classes.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_last_result.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor/baby_cry_predictor_cubit.dart';

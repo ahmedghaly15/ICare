@@ -7,9 +7,6 @@ import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predi
 import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
 
 abstract class BabyCryPredictorLocalDatasource {
-  Future<bool> cacheBabyCryPredictorAbout(String about);
-  String? cachedBabyCryPredictorAboutJson();
-  String retrieveCachedBabyCryPredictorAbout();
   Future<bool> cacheBabyCryPredictorClasses(
     List<BabyCryPredictorClass> classes,
   );
@@ -23,24 +20,6 @@ abstract class BabyCryPredictorLocalDatasource {
 class BabyCryPredictorLocalDatasourceImpl
     implements BabyCryPredictorLocalDatasource {
   const BabyCryPredictorLocalDatasourceImpl();
-
-  @override
-  Future<bool> cacheBabyCryPredictorAbout(String about) async {
-    return await getIt.get<CacheHelper>().saveData(
-          key: AppStrings.cachedAbout,
-          value: json.encode(about),
-        );
-  }
-
-  @override
-  String? cachedBabyCryPredictorAboutJson() {
-    return getIt.get<CacheHelper>().getStringData(key: AppStrings.cachedAbout);
-  }
-
-  @override
-  String retrieveCachedBabyCryPredictorAbout() {
-    return json.decode(cachedBabyCryPredictorAboutJson()!);
-  }
 
   @override
   Future<bool> cacheBabyCryPredictorClasses(

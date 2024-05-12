@@ -121,9 +121,6 @@ abstract class ApiService {
   })
   Future<void> sendNotification(@Body() NotificationRequest params);
 
-  @GET(EndPoints.babyCryPredictorAbout)
-  Future<String> getBabyCryPredictorAbout();
-
   @GET(EndPoints.babyCryPredictorClasses)
   Future<List<BabyCryPredictorClass>> getBabyCryPredictorClasses();
 

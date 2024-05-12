@@ -8,7 +8,6 @@ import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_re
 
 abstract class BabyCryPredictorRemoteDatasource {
   Future<BabyCryPredictorResponse> babyCryPredictor(File audioPath);
-  Future<String> getBabyCryPredictorAbout();
   Future<List<BabyCryPredictorClass>> getBabyCryPredictorClasses();
   Future<LastResultResponse> getBabyCryPredictorLastResult();
   Future<String> babyCryPredictorAddNewClass(String className);
@@ -27,11 +26,6 @@ class BabyCryPredictorRemoteDatasourceImpl
       babyCryAudio: audioPath,
       userId: Helper.uId!,
     );
-  }
-
-  @override
-  Future<String> getBabyCryPredictorAbout() async {
-    return await _apiService.getBabyCryPredictorAbout();
   }
 
   @override

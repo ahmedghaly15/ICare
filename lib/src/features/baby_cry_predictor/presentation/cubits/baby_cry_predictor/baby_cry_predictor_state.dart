@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_response.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
 
@@ -17,10 +16,6 @@ class BabyCryPredictorState<T> with _$BabyCryPredictorState<T> {
       BabyCryPredictorSuccess<T>;
   const factory BabyCryPredictorState.error(String error) =
       BabyCryPredictorError<T>;
-  const factory BabyCryPredictorState.getAboutSuccess(String data) =
-      GetAboutSuccess<T>;
-  const factory BabyCryPredictorState.getAboutError(String error) =
-      GetAboutError<T>;
   const factory BabyCryPredictorState.getBabyCryPredictorLastResultLoading() =
       GetBabyCryPredictorLastResultLoading;
   const factory BabyCryPredictorState.getBabyCryPredictorLastResultSuccess(

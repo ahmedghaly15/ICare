@@ -16,7 +16,6 @@ import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dar
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/last_result_response.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/baby_cry_predictor.dart';
-import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_about.dart';
 import 'package:icare/src/features/baby_cry_predictor/domain/usecases/get_baby_cry_predictor_last_result.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor/baby_cry_predictor_state.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/last_result_dialog.dart';
@@ -24,13 +23,11 @@ import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/notif
 
 class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
   final BabyCryPredictorUseCase babyCryPredictorUseCase;
-  final GetBabyCryPredictorAboutUseCase getBabyCryPredictorAboutUseCase;
   final GetBabyCryPredictorLastResultUseCase
       getBabyCryPredictorLastResultUseCase;
 
   BabyCryPredictorCubit({
     required this.babyCryPredictorUseCase,
-    required this.getBabyCryPredictorAboutUseCase,
     required this.getBabyCryPredictorLastResultUseCase,
   }) : super(const BabyCryPredictorState.initial()) {
     _initAttributes();
@@ -135,17 +132,6 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
       _babyCryPredictor();
       _convertIsRecording();
     }
-  }
-
-  void getBabyCryPredictorAbout() async {
-    final result = await getBabyCryPredictorAboutUseCase.call(const NoParams());
-    result.when(
-      success: (success) =>
-          emit(BabyCryPredictorState.getAboutSuccess(success)),
-      error: (error) => emit(
-        BabyCryPredictorState.getAboutError(error.apiErrorModel.error ?? ''),
-      ),
-    );
   }
 
   void getBabyCryPredictorLastResult(BuildContext context) async {

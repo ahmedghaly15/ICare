@@ -28,27 +28,6 @@ class BabyCryPredictorRepo {
     );
   }
 
-  Future<ApiResult<String>> getBabyCryPredictorAbout() async {
-    if (_babyCryPredictorLocalDatasource.cachedBabyCryPredictorAboutJson() !=
-        null) {
-      debugPrint('*********** GOT CACHED ABOUT **********');
-      return ApiResult.success(
-        _babyCryPredictorLocalDatasource.retrieveCachedBabyCryPredictorAbout(),
-      );
-    } else {
-      try {
-        debugPrint('*********** GOT REMOTE ABOUT **********');
-        final about =
-            await _babyCryPredictorRemoteDatasource.getBabyCryPredictorAbout();
-        await _babyCryPredictorLocalDatasource
-            .cacheBabyCryPredictorAbout(about);
-        return ApiResult.success(about);
-      } catch (error) {
-        return ApiResult.error(ErrorHandler.handle(error));
-      }
-    }
-  }
-
   Future<ApiResult<List<BabyCryPredictorClass>>>
       getBabyCryPredictorClasses() async {
     if (_babyCryPredictorLocalDatasource.cachedBabyCryPredictorClassesJson() !=

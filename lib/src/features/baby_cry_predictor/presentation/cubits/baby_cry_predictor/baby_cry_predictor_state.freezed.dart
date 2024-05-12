@@ -24,8 +24,6 @@ mixin _$BabyCryPredictorState<T> {
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -40,8 +38,6 @@ mixin _$BabyCryPredictorState<T> {
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -56,8 +52,6 @@ mixin _$BabyCryPredictorState<T> {
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -73,8 +67,6 @@ mixin _$BabyCryPredictorState<T> {
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -91,8 +83,6 @@ mixin _$BabyCryPredictorState<T> {
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -109,8 +99,6 @@ mixin _$BabyCryPredictorState<T> {
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -189,8 +177,6 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -208,8 +194,6 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -227,8 +211,6 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -250,8 +232,6 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -271,8 +251,6 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -292,8 +270,6 @@ class _$BabyCryPredictorInitialImpl<T> implements BabyCryPredictorInitial<T> {
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -386,8 +362,6 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -405,8 +379,6 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -424,8 +396,6 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -447,8 +417,6 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -468,8 +436,6 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -489,8 +455,6 @@ class _$ConvertIsRecordingImpl<T> implements _ConvertIsRecording<T> {
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -588,8 +552,6 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -607,8 +569,6 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -626,8 +586,6 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -649,8 +607,6 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -670,8 +626,6 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -691,8 +645,6 @@ class _$AssignAudioPathValImpl<T> implements _AssignAudioPathVal<T> {
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -766,8 +718,6 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -785,8 +735,6 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -804,8 +752,6 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -827,8 +773,6 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -848,8 +792,6 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -869,8 +811,6 @@ class _$BabyCryPredictorLoadingImpl<T> implements BabyCryPredictorLoading<T> {
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -964,8 +904,6 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -983,8 +921,6 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -1002,8 +938,6 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -1025,8 +959,6 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -1046,8 +978,6 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -1067,8 +997,6 @@ class _$BabyCryPredictorSuccessImpl<T> implements BabyCryPredictorSuccess<T> {
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -1168,8 +1096,6 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -1187,8 +1113,6 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -1206,8 +1130,6 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -1229,8 +1151,6 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -1250,8 +1170,6 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -1271,8 +1189,6 @@ class _$BabyCryPredictorErrorImpl<T> implements BabyCryPredictorError<T> {
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -1296,407 +1212,6 @@ abstract class BabyCryPredictorError<T> implements BabyCryPredictorState<T> {
   @JsonKey(ignore: true)
   _$$BabyCryPredictorErrorImplCopyWith<T, _$BabyCryPredictorErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GetAboutSuccessImplCopyWith<T, $Res> {
-  factory _$$GetAboutSuccessImplCopyWith(_$GetAboutSuccessImpl<T> value,
-          $Res Function(_$GetAboutSuccessImpl<T>) then) =
-      __$$GetAboutSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String data});
-}
-
-/// @nodoc
-class __$$GetAboutSuccessImplCopyWithImpl<T, $Res>
-    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res,
-        _$GetAboutSuccessImpl<T>>
-    implements _$$GetAboutSuccessImplCopyWith<T, $Res> {
-  __$$GetAboutSuccessImplCopyWithImpl(_$GetAboutSuccessImpl<T> _value,
-      $Res Function(_$GetAboutSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$GetAboutSuccessImpl<T>(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAboutSuccessImpl<T> implements GetAboutSuccess<T> {
-  const _$GetAboutSuccessImpl(this.data);
-
-  @override
-  final String data;
-
-  @override
-  String toString() {
-    return 'BabyCryPredictorState<$T>.getAboutSuccess(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAboutSuccessImpl<T> &&
-            (identical(other.data, data) || other.data == data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAboutSuccessImplCopyWith<T, _$GetAboutSuccessImpl<T>> get copyWith =>
-      __$$GetAboutSuccessImplCopyWithImpl<T, _$GetAboutSuccessImpl<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String? path) assignAudioPathVal,
-    required TResult Function() loading,
-    required TResult Function(BabyCryPredictorResponse data) success,
-    required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
-    required TResult Function() getBabyCryPredictorLastResultLoading,
-    required TResult Function(LastResultResponse lastResult)
-        getBabyCryPredictorLastResultSuccess,
-    required TResult Function(String error) getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String? path)? assignAudioPathVal,
-    TResult? Function()? loading,
-    TResult? Function(BabyCryPredictorResponse data)? success,
-    TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
-    TResult? Function()? getBabyCryPredictorLastResultLoading,
-    TResult? Function(LastResultResponse lastResult)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult? Function(String error)? getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String? path)? assignAudioPathVal,
-    TResult Function()? loading,
-    TResult Function(BabyCryPredictorResponse data)? success,
-    TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
-    TResult Function()? getBabyCryPredictorLastResultLoading,
-    TResult Function(LastResultResponse lastResult)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult Function(String error)? getBabyCryPredictorLastResultError,
-    required TResult orElse(),
-  }) {
-    if (getAboutSuccess != null) {
-      return getAboutSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(BabyCryPredictorInitial<T> value) initial,
-    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
-    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
-    required TResult Function(BabyCryPredictorLoading<T> value) loading,
-    required TResult Function(BabyCryPredictorSuccess<T> value) success,
-    required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
-    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
-        getBabyCryPredictorLastResultLoading,
-    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
-        getBabyCryPredictorLastResultSuccess,
-    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
-        getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
-    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
-    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
-    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
-    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
-    TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
-    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
-        getBabyCryPredictorLastResultLoading,
-    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
-        getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(BabyCryPredictorInitial<T> value)? initial,
-    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
-    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
-    TResult Function(BabyCryPredictorLoading<T> value)? loading,
-    TResult Function(BabyCryPredictorSuccess<T> value)? success,
-    TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
-    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
-        getBabyCryPredictorLastResultLoading,
-    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
-        getBabyCryPredictorLastResultError,
-    required TResult orElse(),
-  }) {
-    if (getAboutSuccess != null) {
-      return getAboutSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAboutSuccess<T> implements BabyCryPredictorState<T> {
-  const factory GetAboutSuccess(final String data) = _$GetAboutSuccessImpl<T>;
-
-  String get data;
-  @JsonKey(ignore: true)
-  _$$GetAboutSuccessImplCopyWith<T, _$GetAboutSuccessImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GetAboutErrorImplCopyWith<T, $Res> {
-  factory _$$GetAboutErrorImplCopyWith(_$GetAboutErrorImpl<T> value,
-          $Res Function(_$GetAboutErrorImpl<T>) then) =
-      __$$GetAboutErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$GetAboutErrorImplCopyWithImpl<T, $Res>
-    extends _$BabyCryPredictorStateCopyWithImpl<T, $Res, _$GetAboutErrorImpl<T>>
-    implements _$$GetAboutErrorImplCopyWith<T, $Res> {
-  __$$GetAboutErrorImplCopyWithImpl(_$GetAboutErrorImpl<T> _value,
-      $Res Function(_$GetAboutErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$GetAboutErrorImpl<T>(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAboutErrorImpl<T> implements GetAboutError<T> {
-  const _$GetAboutErrorImpl(this.error);
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'BabyCryPredictorState<$T>.getAboutError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAboutErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAboutErrorImplCopyWith<T, _$GetAboutErrorImpl<T>> get copyWith =>
-      __$$GetAboutErrorImplCopyWithImpl<T, _$GetAboutErrorImpl<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(bool isRecording) convertIsRecording,
-    required TResult Function(String? path) assignAudioPathVal,
-    required TResult Function() loading,
-    required TResult Function(BabyCryPredictorResponse data) success,
-    required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
-    required TResult Function() getBabyCryPredictorLastResultLoading,
-    required TResult Function(LastResultResponse lastResult)
-        getBabyCryPredictorLastResultSuccess,
-    required TResult Function(String error) getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutError(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(bool isRecording)? convertIsRecording,
-    TResult? Function(String? path)? assignAudioPathVal,
-    TResult? Function()? loading,
-    TResult? Function(BabyCryPredictorResponse data)? success,
-    TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
-    TResult? Function()? getBabyCryPredictorLastResultLoading,
-    TResult? Function(LastResultResponse lastResult)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult? Function(String error)? getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutError?.call(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool isRecording)? convertIsRecording,
-    TResult Function(String? path)? assignAudioPathVal,
-    TResult Function()? loading,
-    TResult Function(BabyCryPredictorResponse data)? success,
-    TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
-    TResult Function()? getBabyCryPredictorLastResultLoading,
-    TResult Function(LastResultResponse lastResult)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult Function(String error)? getBabyCryPredictorLastResultError,
-    required TResult orElse(),
-  }) {
-    if (getAboutError != null) {
-      return getAboutError(this.error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(BabyCryPredictorInitial<T> value) initial,
-    required TResult Function(_ConvertIsRecording<T> value) convertIsRecording,
-    required TResult Function(_AssignAudioPathVal<T> value) assignAudioPathVal,
-    required TResult Function(BabyCryPredictorLoading<T> value) loading,
-    required TResult Function(BabyCryPredictorSuccess<T> value) success,
-    required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
-    required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
-        getBabyCryPredictorLastResultLoading,
-    required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
-        getBabyCryPredictorLastResultSuccess,
-    required TResult Function(GetBabyCryPredictorLastResultError<T> value)
-        getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(BabyCryPredictorInitial<T> value)? initial,
-    TResult? Function(_ConvertIsRecording<T> value)? convertIsRecording,
-    TResult? Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
-    TResult? Function(BabyCryPredictorLoading<T> value)? loading,
-    TResult? Function(BabyCryPredictorSuccess<T> value)? success,
-    TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
-    TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
-        getBabyCryPredictorLastResultLoading,
-    TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult? Function(GetBabyCryPredictorLastResultError<T> value)?
-        getBabyCryPredictorLastResultError,
-  }) {
-    return getAboutError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(BabyCryPredictorInitial<T> value)? initial,
-    TResult Function(_ConvertIsRecording<T> value)? convertIsRecording,
-    TResult Function(_AssignAudioPathVal<T> value)? assignAudioPathVal,
-    TResult Function(BabyCryPredictorLoading<T> value)? loading,
-    TResult Function(BabyCryPredictorSuccess<T> value)? success,
-    TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
-    TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
-        getBabyCryPredictorLastResultLoading,
-    TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
-        getBabyCryPredictorLastResultSuccess,
-    TResult Function(GetBabyCryPredictorLastResultError<T> value)?
-        getBabyCryPredictorLastResultError,
-    required TResult orElse(),
-  }) {
-    if (getAboutError != null) {
-      return getAboutError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAboutError<T> implements BabyCryPredictorState<T> {
-  const factory GetAboutError(final String error) = _$GetAboutErrorImpl<T>;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$GetAboutErrorImplCopyWith<T, _$GetAboutErrorImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1748,8 +1263,6 @@ class _$GetBabyCryPredictorLastResultLoadingImpl<T>
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -1767,8 +1280,6 @@ class _$GetBabyCryPredictorLastResultLoadingImpl<T>
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -1786,8 +1297,6 @@ class _$GetBabyCryPredictorLastResultLoadingImpl<T>
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -1809,8 +1318,6 @@ class _$GetBabyCryPredictorLastResultLoadingImpl<T>
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -1830,8 +1337,6 @@ class _$GetBabyCryPredictorLastResultLoadingImpl<T>
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -1851,8 +1356,6 @@ class _$GetBabyCryPredictorLastResultLoadingImpl<T>
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -1951,8 +1454,6 @@ class _$GetBabyCryPredictorLastResultSuccessImpl<T>
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -1970,8 +1471,6 @@ class _$GetBabyCryPredictorLastResultSuccessImpl<T>
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -1989,8 +1488,6 @@ class _$GetBabyCryPredictorLastResultSuccessImpl<T>
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -2012,8 +1509,6 @@ class _$GetBabyCryPredictorLastResultSuccessImpl<T>
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -2033,8 +1528,6 @@ class _$GetBabyCryPredictorLastResultSuccessImpl<T>
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -2054,8 +1547,6 @@ class _$GetBabyCryPredictorLastResultSuccessImpl<T>
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -2160,8 +1651,6 @@ class _$GetBabyCryPredictorLastResultErrorImpl<T>
     required TResult Function() loading,
     required TResult Function(BabyCryPredictorResponse data) success,
     required TResult Function(String error) error,
-    required TResult Function(String data) getAboutSuccess,
-    required TResult Function(String error) getAboutError,
     required TResult Function() getBabyCryPredictorLastResultLoading,
     required TResult Function(LastResultResponse lastResult)
         getBabyCryPredictorLastResultSuccess,
@@ -2179,8 +1668,6 @@ class _$GetBabyCryPredictorLastResultErrorImpl<T>
     TResult? Function()? loading,
     TResult? Function(BabyCryPredictorResponse data)? success,
     TResult? Function(String error)? error,
-    TResult? Function(String data)? getAboutSuccess,
-    TResult? Function(String error)? getAboutError,
     TResult? Function()? getBabyCryPredictorLastResultLoading,
     TResult? Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -2198,8 +1685,6 @@ class _$GetBabyCryPredictorLastResultErrorImpl<T>
     TResult Function()? loading,
     TResult Function(BabyCryPredictorResponse data)? success,
     TResult Function(String error)? error,
-    TResult Function(String data)? getAboutSuccess,
-    TResult Function(String error)? getAboutError,
     TResult Function()? getBabyCryPredictorLastResultLoading,
     TResult Function(LastResultResponse lastResult)?
         getBabyCryPredictorLastResultSuccess,
@@ -2221,8 +1706,6 @@ class _$GetBabyCryPredictorLastResultErrorImpl<T>
     required TResult Function(BabyCryPredictorLoading<T> value) loading,
     required TResult Function(BabyCryPredictorSuccess<T> value) success,
     required TResult Function(BabyCryPredictorError<T> value) error,
-    required TResult Function(GetAboutSuccess<T> value) getAboutSuccess,
-    required TResult Function(GetAboutError<T> value) getAboutError,
     required TResult Function(GetBabyCryPredictorLastResultLoading<T> value)
         getBabyCryPredictorLastResultLoading,
     required TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)
@@ -2242,8 +1725,6 @@ class _$GetBabyCryPredictorLastResultErrorImpl<T>
     TResult? Function(BabyCryPredictorLoading<T> value)? loading,
     TResult? Function(BabyCryPredictorSuccess<T> value)? success,
     TResult? Function(BabyCryPredictorError<T> value)? error,
-    TResult? Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult? Function(GetAboutError<T> value)? getAboutError,
     TResult? Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult? Function(GetBabyCryPredictorLastResultSuccess<T> value)?
@@ -2263,8 +1744,6 @@ class _$GetBabyCryPredictorLastResultErrorImpl<T>
     TResult Function(BabyCryPredictorLoading<T> value)? loading,
     TResult Function(BabyCryPredictorSuccess<T> value)? success,
     TResult Function(BabyCryPredictorError<T> value)? error,
-    TResult Function(GetAboutSuccess<T> value)? getAboutSuccess,
-    TResult Function(GetAboutError<T> value)? getAboutError,
     TResult Function(GetBabyCryPredictorLastResultLoading<T> value)?
         getBabyCryPredictorLastResultLoading,
     TResult Function(GetBabyCryPredictorLastResultSuccess<T> value)?

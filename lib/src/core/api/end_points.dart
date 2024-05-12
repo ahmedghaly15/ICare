@@ -27,8 +27,6 @@ class EndPoints {
   static const String advancedLevelMarking =
       '${speechTherapyBaseUrl}advanced/marking/';
   static const String sendNotification = 'https://fcm.googleapis.com/fcm/send';
-  static const String babyCryPredictorAbout =
-      '${babyCryPredictorBaseUrl}about/';
   static const String babyCryPredictorClasses =
       '${babyCryPredictorBaseUrl}classes/';
   static const String babyCryPredictorLastResult =

@@ -73,9 +73,6 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<BabyCryPredictorUseCase>(
       () => BabyCryPredictorUseCase(getIt.get<BabyCryPredictorRepo>()),
     );
-    getIt.registerLazySingleton<GetBabyCryPredictorAboutUseCase>(
-      () => GetBabyCryPredictorAboutUseCase(getIt.get<BabyCryPredictorRepo>()),
-    );
     getIt.registerLazySingleton<GetBabyCryPredictorClassesUseCase>(
       () =>
           GetBabyCryPredictorClassesUseCase(getIt.get<BabyCryPredictorRepo>()),

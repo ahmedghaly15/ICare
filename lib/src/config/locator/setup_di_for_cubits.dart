@@ -71,8 +71,6 @@ class SetupDIForCubits {
     getIt.registerFactory<BabyCryPredictorCubit>(
       () => BabyCryPredictorCubit(
         babyCryPredictorUseCase: getIt.get<BabyCryPredictorUseCase>(),
-        getBabyCryPredictorAboutUseCase:
-            getIt.get<GetBabyCryPredictorAboutUseCase>(),
         getBabyCryPredictorLastResultUseCase:
             getIt.get<GetBabyCryPredictorLastResultUseCase>(),
       ),
