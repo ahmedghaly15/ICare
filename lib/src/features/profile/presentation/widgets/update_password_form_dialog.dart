@@ -21,7 +21,6 @@ class UpdatePasswordFormDialog extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          MySizedBox.height8,
           Text(
             AppStrings.changePassword,
             style: AppTextStyles.textStyle18Bold.copyWith(

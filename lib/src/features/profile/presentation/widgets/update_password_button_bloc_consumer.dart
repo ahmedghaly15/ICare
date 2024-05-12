@@ -44,7 +44,7 @@ class UpdatePasswordButtonBlocConsumer extends StatelessWidget {
                 )
               : Text(
                   AppStrings.update,
-                  style: AppTextStyles.textStyle24Medium.copyWith(
+                  style: AppTextStyles.textStyle16Bold.copyWith(
                     color: Colors.white,
                   ),
                 ),

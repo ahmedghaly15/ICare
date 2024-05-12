@@ -10,8 +10,7 @@ class CustomClassDescriptionText extends StatelessWidget {
 
   List<TextSpan> _parseText(BuildContext context) {
     List<TextSpan> textSpans = [];
-    RegExp regex = RegExp(
-        r'\b[A-Z]{3}\b'); // Regular expression to match three capital characters
+    RegExp regex = RegExp(r'\b[A-Z]+\b');
 
     int start = 0;
     for (RegExpMatch match in regex.allMatches(originalText)) {

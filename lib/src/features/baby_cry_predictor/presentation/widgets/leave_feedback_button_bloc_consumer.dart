@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/add_new_class/add_new_class_cubit.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor_feedback/bab_cry_predictor_feedback_cubit.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor_feedback/bab_cry_predictor_feedback_state.dart';
+import 'package:icare/src/features/baby_cry_predictor/presentation/widgets/write_new_class_dialog.dart';
 
 class LeaveFeedbackButtonBlocConsumer extends StatelessWidget {
   const LeaveFeedbackButtonBlocConsumer({super.key});
@@ -46,7 +49,16 @@ class LeaveFeedbackButtonBlocConsumer extends StatelessWidget {
                   ? () => context
                       .read<BabyCryPredictorFeedbackCubit>()
                       .babyCryPredictorLeaveFeedback()
-                  : () {},
+                  : () {
+                      ShowICareDialog.show(
+                        context: context,
+                        isBlurred: false,
+                        child: BlocProvider<AddNewClassCubit>(
+                          create: (_) => getIt.get<AddNewClassCubit>(),
+                          child: const WriteNewClassDialog(),
+                        ),
+                      );
+                    },
           text: state is LeaveFeedbackLoading
               ? null
               : context.read<BabyCryPredictorFeedbackCubit>().selectedClass !=
