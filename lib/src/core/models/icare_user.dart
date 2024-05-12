@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'icare_user.g.dart';
@@ -9,6 +10,7 @@ class ICareUser {
   final String? profileImage;
   final String? uId;
   final String? mobileToken;
+  final Timestamp? createdAt;
 
   const ICareUser({
     this.name,
@@ -16,6 +18,7 @@ class ICareUser {
     this.uId,
     this.profileImage,
     this.mobileToken,
+    this.createdAt,
   });
 
   factory ICareUser.fromJson(Map<String, dynamic> json) =>
