@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_container.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/custom_title_container.dart';
 
@@ -21,12 +22,8 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
           itemCount: listOfStringData.length,
           itemBuilder: (context, index) {
             final item = listOfStringData[index];
-            if (item is String) {
-              return Text(
-                '$item\n',
-                style: AppTextStyles.textStyle13Bold,
-              );
-            } else if (item is Map<String, dynamic>) {
+
+            if (item is Map<String, dynamic>) {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -38,7 +35,11 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                       CustomTitleContainer(
                         child: Text(
                           entry.key,
-                          style: AppTextStyles.textStyle16Bold,
+                          style: AppTextStyles.textStyle16Bold.copyWith(
+                            color: isDarkModeActive(context)
+                                ? Colors.white
+                                : Colors.black,
+                          ),
                         ),
                       ),
                       ListView.builder(
@@ -50,7 +51,11 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                           return Markdown(
                             data: '${(entry.value as List<dynamic>)[index]}\n',
                             styleSheet: MarkdownStyleSheet(
-                              p: AppTextStyles.textStyle13Bold,
+                              p: AppTextStyles.textStyle14Regular.copyWith(
+                                color: isDarkModeActive(context)
+                                    ? Colors.white
+                                    : Colors.black,
+                              ),
                             ),
                             padding: EdgeInsets.zero,
                             selectable: false,
@@ -63,8 +68,21 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                   );
                 }).toList(),
               );
+            } else {
+              return Markdown(
+                data: item,
+                styleSheet: MarkdownStyleSheet(
+                  p: AppTextStyles.textStyle14Regular.copyWith(
+                    color:
+                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                  ),
+                ),
+                padding: EdgeInsets.zero,
+                selectable: false,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+              );
             }
-            return const SizedBox.shrink();
           },
         ),
       ),
