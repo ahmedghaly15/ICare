@@ -13,12 +13,6 @@ class BabyCryPredictorFeedbackState<T> with _$BabyCryPredictorFeedbackState<T> {
       GetBabyCryPredictorClassesSuccess<T>;
   const factory BabyCryPredictorFeedbackState.getBabyCryPredictorClassesError(
       String error) = GetBabyCryPredictorClassesError<T>;
-  const factory BabyCryPredictorFeedbackState.addNewClassLoading() =
-      AddNewClassLoading;
-  const factory BabyCryPredictorFeedbackState.addNewClassSuccess(String data) =
-      AddNewClassSuccess<T>;
-  const factory BabyCryPredictorFeedbackState.addNewClassError(String error) =
-      AddNewClassError<T>;
   const factory BabyCryPredictorFeedbackState.leaveFeedbackLoading() =
       LeaveFeedbackLoading;
   const factory BabyCryPredictorFeedbackState.leaveFeedbackSuccess(

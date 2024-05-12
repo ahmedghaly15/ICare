@@ -23,9 +23,6 @@ mixin _$BabyCryPredictorFeedbackState<T> {
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -41,9 +38,6 @@ mixin _$BabyCryPredictorFeedbackState<T> {
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -59,9 +53,6 @@ mixin _$BabyCryPredictorFeedbackState<T> {
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -80,9 +71,6 @@ mixin _$BabyCryPredictorFeedbackState<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -101,9 +89,6 @@ mixin _$BabyCryPredictorFeedbackState<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -120,9 +105,6 @@ mixin _$BabyCryPredictorFeedbackState<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -197,9 +179,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -218,9 +197,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -239,9 +215,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -266,9 +239,6 @@ class _$InitialImpl<T> implements _Initial<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -290,9 +260,6 @@ class _$InitialImpl<T> implements _Initial<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -312,9 +279,6 @@ class _$InitialImpl<T> implements _Initial<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -381,9 +345,6 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -402,9 +363,6 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -423,9 +381,6 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -450,9 +405,6 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -474,9 +426,6 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -496,9 +445,6 @@ class _$GetBabyCryPredictorClassesLoadingImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -602,9 +548,6 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -623,9 +566,6 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -644,9 +584,6 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -671,9 +608,6 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -695,9 +629,6 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -717,9 +648,6 @@ class _$GetBabyCryPredictorClassesSuccessImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -822,9 +750,6 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -843,9 +768,6 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -864,9 +786,6 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -891,9 +810,6 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -915,9 +831,6 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -937,9 +850,6 @@ class _$GetBabyCryPredictorClassesErrorImpl<T>
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -964,615 +874,6 @@ abstract class GetBabyCryPredictorClassesError<T>
   _$$GetBabyCryPredictorClassesErrorImplCopyWith<T,
           _$GetBabyCryPredictorClassesErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$AddNewClassLoadingImplCopyWith<T, $Res> {
-  factory _$$AddNewClassLoadingImplCopyWith(_$AddNewClassLoadingImpl<T> value,
-          $Res Function(_$AddNewClassLoadingImpl<T>) then) =
-      __$$AddNewClassLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$AddNewClassLoadingImplCopyWithImpl<T, $Res>
-    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
-        _$AddNewClassLoadingImpl<T>>
-    implements _$$AddNewClassLoadingImplCopyWith<T, $Res> {
-  __$$AddNewClassLoadingImplCopyWithImpl(_$AddNewClassLoadingImpl<T> _value,
-      $Res Function(_$AddNewClassLoadingImpl<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$AddNewClassLoadingImpl<T> implements AddNewClassLoading<T> {
-  const _$AddNewClassLoadingImpl();
-
-  @override
-  String toString() {
-    return 'BabyCryPredictorFeedbackState<$T>.addNewClassLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddNewClassLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBabyCryPredictorClassesLoading,
-    required TResult Function(List<BabyCryPredictorClass> classes)
-        getBabyCryPredictorClassesSuccess,
-    required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
-    required TResult Function() leaveFeedbackLoading,
-    required TResult Function(String data) leaveFeedbackSuccess,
-    required TResult Function(String error) leaveFeedbackError,
-    required TResult Function(BabyCryPredictorClass? babyCryPredictorClass)
-        updateSelectedClass,
-    required TResult Function(int? playingIndex) updatePlayingIndex,
-  }) {
-    return addNewClassLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBabyCryPredictorClassesLoading,
-    TResult? Function(List<BabyCryPredictorClass> classes)?
-        getBabyCryPredictorClassesSuccess,
-    TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
-    TResult? Function()? leaveFeedbackLoading,
-    TResult? Function(String data)? leaveFeedbackSuccess,
-    TResult? Function(String error)? leaveFeedbackError,
-    TResult? Function(BabyCryPredictorClass? babyCryPredictorClass)?
-        updateSelectedClass,
-    TResult? Function(int? playingIndex)? updatePlayingIndex,
-  }) {
-    return addNewClassLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBabyCryPredictorClassesLoading,
-    TResult Function(List<BabyCryPredictorClass> classes)?
-        getBabyCryPredictorClassesSuccess,
-    TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
-    TResult Function()? leaveFeedbackLoading,
-    TResult Function(String data)? leaveFeedbackSuccess,
-    TResult Function(String error)? leaveFeedbackError,
-    TResult Function(BabyCryPredictorClass? babyCryPredictorClass)?
-        updateSelectedClass,
-    TResult Function(int? playingIndex)? updatePlayingIndex,
-    required TResult orElse(),
-  }) {
-    if (addNewClassLoading != null) {
-      return addNewClassLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
-        getBabyCryPredictorClassesLoading,
-    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
-        getBabyCryPredictorClassesSuccess,
-    required TResult Function(GetBabyCryPredictorClassesError<T> value)
-        getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
-    required TResult Function(LeaveFeedbackLoading<T> value)
-        leaveFeedbackLoading,
-    required TResult Function(LeaveFeedbackSuccess<T> value)
-        leaveFeedbackSuccess,
-    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
-    required TResult Function(UpdateSelectedClass<T> value) updateSelectedClass,
-    required TResult Function(UpdatePlayingIndex<T> value) updatePlayingIndex,
-  }) {
-    return addNewClassLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
-        getBabyCryPredictorClassesLoading,
-    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
-        getBabyCryPredictorClassesSuccess,
-    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
-        getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
-    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
-    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
-    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
-    TResult? Function(UpdateSelectedClass<T> value)? updateSelectedClass,
-    TResult? Function(UpdatePlayingIndex<T> value)? updatePlayingIndex,
-  }) {
-    return addNewClassLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
-        getBabyCryPredictorClassesLoading,
-    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
-        getBabyCryPredictorClassesSuccess,
-    TResult Function(GetBabyCryPredictorClassesError<T> value)?
-        getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
-    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
-    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
-    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
-    TResult Function(UpdateSelectedClass<T> value)? updateSelectedClass,
-    TResult Function(UpdatePlayingIndex<T> value)? updatePlayingIndex,
-    required TResult orElse(),
-  }) {
-    if (addNewClassLoading != null) {
-      return addNewClassLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AddNewClassLoading<T>
-    implements BabyCryPredictorFeedbackState<T> {
-  const factory AddNewClassLoading() = _$AddNewClassLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$AddNewClassSuccessImplCopyWith<T, $Res> {
-  factory _$$AddNewClassSuccessImplCopyWith(_$AddNewClassSuccessImpl<T> value,
-          $Res Function(_$AddNewClassSuccessImpl<T>) then) =
-      __$$AddNewClassSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String data});
-}
-
-/// @nodoc
-class __$$AddNewClassSuccessImplCopyWithImpl<T, $Res>
-    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
-        _$AddNewClassSuccessImpl<T>>
-    implements _$$AddNewClassSuccessImplCopyWith<T, $Res> {
-  __$$AddNewClassSuccessImplCopyWithImpl(_$AddNewClassSuccessImpl<T> _value,
-      $Res Function(_$AddNewClassSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$AddNewClassSuccessImpl<T>(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$AddNewClassSuccessImpl<T> implements AddNewClassSuccess<T> {
-  const _$AddNewClassSuccessImpl(this.data);
-
-  @override
-  final String data;
-
-  @override
-  String toString() {
-    return 'BabyCryPredictorFeedbackState<$T>.addNewClassSuccess(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddNewClassSuccessImpl<T> &&
-            (identical(other.data, data) || other.data == data));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, data);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddNewClassSuccessImplCopyWith<T, _$AddNewClassSuccessImpl<T>>
-      get copyWith => __$$AddNewClassSuccessImplCopyWithImpl<T,
-          _$AddNewClassSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBabyCryPredictorClassesLoading,
-    required TResult Function(List<BabyCryPredictorClass> classes)
-        getBabyCryPredictorClassesSuccess,
-    required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
-    required TResult Function() leaveFeedbackLoading,
-    required TResult Function(String data) leaveFeedbackSuccess,
-    required TResult Function(String error) leaveFeedbackError,
-    required TResult Function(BabyCryPredictorClass? babyCryPredictorClass)
-        updateSelectedClass,
-    required TResult Function(int? playingIndex) updatePlayingIndex,
-  }) {
-    return addNewClassSuccess(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBabyCryPredictorClassesLoading,
-    TResult? Function(List<BabyCryPredictorClass> classes)?
-        getBabyCryPredictorClassesSuccess,
-    TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
-    TResult? Function()? leaveFeedbackLoading,
-    TResult? Function(String data)? leaveFeedbackSuccess,
-    TResult? Function(String error)? leaveFeedbackError,
-    TResult? Function(BabyCryPredictorClass? babyCryPredictorClass)?
-        updateSelectedClass,
-    TResult? Function(int? playingIndex)? updatePlayingIndex,
-  }) {
-    return addNewClassSuccess?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBabyCryPredictorClassesLoading,
-    TResult Function(List<BabyCryPredictorClass> classes)?
-        getBabyCryPredictorClassesSuccess,
-    TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
-    TResult Function()? leaveFeedbackLoading,
-    TResult Function(String data)? leaveFeedbackSuccess,
-    TResult Function(String error)? leaveFeedbackError,
-    TResult Function(BabyCryPredictorClass? babyCryPredictorClass)?
-        updateSelectedClass,
-    TResult Function(int? playingIndex)? updatePlayingIndex,
-    required TResult orElse(),
-  }) {
-    if (addNewClassSuccess != null) {
-      return addNewClassSuccess(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
-        getBabyCryPredictorClassesLoading,
-    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
-        getBabyCryPredictorClassesSuccess,
-    required TResult Function(GetBabyCryPredictorClassesError<T> value)
-        getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
-    required TResult Function(LeaveFeedbackLoading<T> value)
-        leaveFeedbackLoading,
-    required TResult Function(LeaveFeedbackSuccess<T> value)
-        leaveFeedbackSuccess,
-    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
-    required TResult Function(UpdateSelectedClass<T> value) updateSelectedClass,
-    required TResult Function(UpdatePlayingIndex<T> value) updatePlayingIndex,
-  }) {
-    return addNewClassSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
-        getBabyCryPredictorClassesLoading,
-    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
-        getBabyCryPredictorClassesSuccess,
-    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
-        getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
-    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
-    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
-    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
-    TResult? Function(UpdateSelectedClass<T> value)? updateSelectedClass,
-    TResult? Function(UpdatePlayingIndex<T> value)? updatePlayingIndex,
-  }) {
-    return addNewClassSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
-        getBabyCryPredictorClassesLoading,
-    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
-        getBabyCryPredictorClassesSuccess,
-    TResult Function(GetBabyCryPredictorClassesError<T> value)?
-        getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
-    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
-    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
-    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
-    TResult Function(UpdateSelectedClass<T> value)? updateSelectedClass,
-    TResult Function(UpdatePlayingIndex<T> value)? updatePlayingIndex,
-    required TResult orElse(),
-  }) {
-    if (addNewClassSuccess != null) {
-      return addNewClassSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AddNewClassSuccess<T>
-    implements BabyCryPredictorFeedbackState<T> {
-  const factory AddNewClassSuccess(final String data) =
-      _$AddNewClassSuccessImpl<T>;
-
-  String get data;
-  @JsonKey(ignore: true)
-  _$$AddNewClassSuccessImplCopyWith<T, _$AddNewClassSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$AddNewClassErrorImplCopyWith<T, $Res> {
-  factory _$$AddNewClassErrorImplCopyWith(_$AddNewClassErrorImpl<T> value,
-          $Res Function(_$AddNewClassErrorImpl<T>) then) =
-      __$$AddNewClassErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$AddNewClassErrorImplCopyWithImpl<T, $Res>
-    extends _$BabyCryPredictorFeedbackStateCopyWithImpl<T, $Res,
-        _$AddNewClassErrorImpl<T>>
-    implements _$$AddNewClassErrorImplCopyWith<T, $Res> {
-  __$$AddNewClassErrorImplCopyWithImpl(_$AddNewClassErrorImpl<T> _value,
-      $Res Function(_$AddNewClassErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$AddNewClassErrorImpl<T>(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$AddNewClassErrorImpl<T> implements AddNewClassError<T> {
-  const _$AddNewClassErrorImpl(this.error);
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'BabyCryPredictorFeedbackState<$T>.addNewClassError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddNewClassErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddNewClassErrorImplCopyWith<T, _$AddNewClassErrorImpl<T>> get copyWith =>
-      __$$AddNewClassErrorImplCopyWithImpl<T, _$AddNewClassErrorImpl<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getBabyCryPredictorClassesLoading,
-    required TResult Function(List<BabyCryPredictorClass> classes)
-        getBabyCryPredictorClassesSuccess,
-    required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
-    required TResult Function() leaveFeedbackLoading,
-    required TResult Function(String data) leaveFeedbackSuccess,
-    required TResult Function(String error) leaveFeedbackError,
-    required TResult Function(BabyCryPredictorClass? babyCryPredictorClass)
-        updateSelectedClass,
-    required TResult Function(int? playingIndex) updatePlayingIndex,
-  }) {
-    return addNewClassError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getBabyCryPredictorClassesLoading,
-    TResult? Function(List<BabyCryPredictorClass> classes)?
-        getBabyCryPredictorClassesSuccess,
-    TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
-    TResult? Function()? leaveFeedbackLoading,
-    TResult? Function(String data)? leaveFeedbackSuccess,
-    TResult? Function(String error)? leaveFeedbackError,
-    TResult? Function(BabyCryPredictorClass? babyCryPredictorClass)?
-        updateSelectedClass,
-    TResult? Function(int? playingIndex)? updatePlayingIndex,
-  }) {
-    return addNewClassError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getBabyCryPredictorClassesLoading,
-    TResult Function(List<BabyCryPredictorClass> classes)?
-        getBabyCryPredictorClassesSuccess,
-    TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
-    TResult Function()? leaveFeedbackLoading,
-    TResult Function(String data)? leaveFeedbackSuccess,
-    TResult Function(String error)? leaveFeedbackError,
-    TResult Function(BabyCryPredictorClass? babyCryPredictorClass)?
-        updateSelectedClass,
-    TResult Function(int? playingIndex)? updatePlayingIndex,
-    required TResult orElse(),
-  }) {
-    if (addNewClassError != null) {
-      return addNewClassError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(GetBabyCryPredictorClassesLoading<T> value)
-        getBabyCryPredictorClassesLoading,
-    required TResult Function(GetBabyCryPredictorClassesSuccess<T> value)
-        getBabyCryPredictorClassesSuccess,
-    required TResult Function(GetBabyCryPredictorClassesError<T> value)
-        getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
-    required TResult Function(LeaveFeedbackLoading<T> value)
-        leaveFeedbackLoading,
-    required TResult Function(LeaveFeedbackSuccess<T> value)
-        leaveFeedbackSuccess,
-    required TResult Function(LeaveFeedbackError<T> value) leaveFeedbackError,
-    required TResult Function(UpdateSelectedClass<T> value) updateSelectedClass,
-    required TResult Function(UpdatePlayingIndex<T> value) updatePlayingIndex,
-  }) {
-    return addNewClassError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(GetBabyCryPredictorClassesLoading<T> value)?
-        getBabyCryPredictorClassesLoading,
-    TResult? Function(GetBabyCryPredictorClassesSuccess<T> value)?
-        getBabyCryPredictorClassesSuccess,
-    TResult? Function(GetBabyCryPredictorClassesError<T> value)?
-        getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
-    TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
-    TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
-    TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
-    TResult? Function(UpdateSelectedClass<T> value)? updateSelectedClass,
-    TResult? Function(UpdatePlayingIndex<T> value)? updatePlayingIndex,
-  }) {
-    return addNewClassError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(GetBabyCryPredictorClassesLoading<T> value)?
-        getBabyCryPredictorClassesLoading,
-    TResult Function(GetBabyCryPredictorClassesSuccess<T> value)?
-        getBabyCryPredictorClassesSuccess,
-    TResult Function(GetBabyCryPredictorClassesError<T> value)?
-        getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
-    TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
-    TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
-    TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
-    TResult Function(UpdateSelectedClass<T> value)? updateSelectedClass,
-    TResult Function(UpdatePlayingIndex<T> value)? updatePlayingIndex,
-    required TResult orElse(),
-  }) {
-    if (addNewClassError != null) {
-      return addNewClassError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AddNewClassError<T> implements BabyCryPredictorFeedbackState<T> {
-  const factory AddNewClassError(final String error) =
-      _$AddNewClassErrorImpl<T>;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$AddNewClassErrorImplCopyWith<T, _$AddNewClassErrorImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1621,9 +922,6 @@ class _$LeaveFeedbackLoadingImpl<T> implements LeaveFeedbackLoading<T> {
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -1642,9 +940,6 @@ class _$LeaveFeedbackLoadingImpl<T> implements LeaveFeedbackLoading<T> {
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -1663,9 +958,6 @@ class _$LeaveFeedbackLoadingImpl<T> implements LeaveFeedbackLoading<T> {
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -1690,9 +982,6 @@ class _$LeaveFeedbackLoadingImpl<T> implements LeaveFeedbackLoading<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -1714,9 +1003,6 @@ class _$LeaveFeedbackLoadingImpl<T> implements LeaveFeedbackLoading<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -1736,9 +1022,6 @@ class _$LeaveFeedbackLoadingImpl<T> implements LeaveFeedbackLoading<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -1830,9 +1113,6 @@ class _$LeaveFeedbackSuccessImpl<T> implements LeaveFeedbackSuccess<T> {
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -1851,9 +1131,6 @@ class _$LeaveFeedbackSuccessImpl<T> implements LeaveFeedbackSuccess<T> {
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -1872,9 +1149,6 @@ class _$LeaveFeedbackSuccessImpl<T> implements LeaveFeedbackSuccess<T> {
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -1899,9 +1173,6 @@ class _$LeaveFeedbackSuccessImpl<T> implements LeaveFeedbackSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -1923,9 +1194,6 @@ class _$LeaveFeedbackSuccessImpl<T> implements LeaveFeedbackSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -1945,9 +1213,6 @@ class _$LeaveFeedbackSuccessImpl<T> implements LeaveFeedbackSuccess<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -2044,9 +1309,6 @@ class _$LeaveFeedbackErrorImpl<T> implements LeaveFeedbackError<T> {
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -2065,9 +1327,6 @@ class _$LeaveFeedbackErrorImpl<T> implements LeaveFeedbackError<T> {
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -2086,9 +1345,6 @@ class _$LeaveFeedbackErrorImpl<T> implements LeaveFeedbackError<T> {
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -2113,9 +1369,6 @@ class _$LeaveFeedbackErrorImpl<T> implements LeaveFeedbackError<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -2137,9 +1390,6 @@ class _$LeaveFeedbackErrorImpl<T> implements LeaveFeedbackError<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -2159,9 +1409,6 @@ class _$LeaveFeedbackErrorImpl<T> implements LeaveFeedbackError<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -2259,9 +1506,6 @@ class _$UpdateSelectedClassImpl<T> implements UpdateSelectedClass<T> {
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -2280,9 +1524,6 @@ class _$UpdateSelectedClassImpl<T> implements UpdateSelectedClass<T> {
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -2301,9 +1542,6 @@ class _$UpdateSelectedClassImpl<T> implements UpdateSelectedClass<T> {
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -2328,9 +1566,6 @@ class _$UpdateSelectedClassImpl<T> implements UpdateSelectedClass<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -2352,9 +1587,6 @@ class _$UpdateSelectedClassImpl<T> implements UpdateSelectedClass<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -2374,9 +1606,6 @@ class _$UpdateSelectedClassImpl<T> implements UpdateSelectedClass<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -2475,9 +1704,6 @@ class _$UpdatePlayingIndexImpl<T> implements UpdatePlayingIndex<T> {
     required TResult Function(List<BabyCryPredictorClass> classes)
         getBabyCryPredictorClassesSuccess,
     required TResult Function(String error) getBabyCryPredictorClassesError,
-    required TResult Function() addNewClassLoading,
-    required TResult Function(String data) addNewClassSuccess,
-    required TResult Function(String error) addNewClassError,
     required TResult Function() leaveFeedbackLoading,
     required TResult Function(String data) leaveFeedbackSuccess,
     required TResult Function(String error) leaveFeedbackError,
@@ -2496,9 +1722,6 @@ class _$UpdatePlayingIndexImpl<T> implements UpdatePlayingIndex<T> {
     TResult? Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult? Function(String error)? getBabyCryPredictorClassesError,
-    TResult? Function()? addNewClassLoading,
-    TResult? Function(String data)? addNewClassSuccess,
-    TResult? Function(String error)? addNewClassError,
     TResult? Function()? leaveFeedbackLoading,
     TResult? Function(String data)? leaveFeedbackSuccess,
     TResult? Function(String error)? leaveFeedbackError,
@@ -2517,9 +1740,6 @@ class _$UpdatePlayingIndexImpl<T> implements UpdatePlayingIndex<T> {
     TResult Function(List<BabyCryPredictorClass> classes)?
         getBabyCryPredictorClassesSuccess,
     TResult Function(String error)? getBabyCryPredictorClassesError,
-    TResult Function()? addNewClassLoading,
-    TResult Function(String data)? addNewClassSuccess,
-    TResult Function(String error)? addNewClassError,
     TResult Function()? leaveFeedbackLoading,
     TResult Function(String data)? leaveFeedbackSuccess,
     TResult Function(String error)? leaveFeedbackError,
@@ -2544,9 +1764,6 @@ class _$UpdatePlayingIndexImpl<T> implements UpdatePlayingIndex<T> {
         getBabyCryPredictorClassesSuccess,
     required TResult Function(GetBabyCryPredictorClassesError<T> value)
         getBabyCryPredictorClassesError,
-    required TResult Function(AddNewClassLoading<T> value) addNewClassLoading,
-    required TResult Function(AddNewClassSuccess<T> value) addNewClassSuccess,
-    required TResult Function(AddNewClassError<T> value) addNewClassError,
     required TResult Function(LeaveFeedbackLoading<T> value)
         leaveFeedbackLoading,
     required TResult Function(LeaveFeedbackSuccess<T> value)
@@ -2568,9 +1785,6 @@ class _$UpdatePlayingIndexImpl<T> implements UpdatePlayingIndex<T> {
         getBabyCryPredictorClassesSuccess,
     TResult? Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult? Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult? Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult? Function(AddNewClassError<T> value)? addNewClassError,
     TResult? Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult? Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult? Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
@@ -2590,9 +1804,6 @@ class _$UpdatePlayingIndexImpl<T> implements UpdatePlayingIndex<T> {
         getBabyCryPredictorClassesSuccess,
     TResult Function(GetBabyCryPredictorClassesError<T> value)?
         getBabyCryPredictorClassesError,
-    TResult Function(AddNewClassLoading<T> value)? addNewClassLoading,
-    TResult Function(AddNewClassSuccess<T> value)? addNewClassSuccess,
-    TResult Function(AddNewClassError<T> value)? addNewClassError,
     TResult Function(LeaveFeedbackLoading<T> value)? leaveFeedbackLoading,
     TResult Function(LeaveFeedbackSuccess<T> value)? leaveFeedbackSuccess,
     TResult Function(LeaveFeedbackError<T> value)? leaveFeedbackError,
