@@ -625,9 +625,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<String> babyCryPredictorAddNewClass(String className) async {
+  Future<String> babyCryPredictorAddNewClass({
+    required String className,
+    required String userId,
+  }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'user_id': userId};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<String>(_setStreamType<String>(Options(

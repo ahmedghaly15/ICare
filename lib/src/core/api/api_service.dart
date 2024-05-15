@@ -130,9 +130,10 @@ abstract class ApiService {
   );
 
   @POST('${EndPoints.babyCryPredictorAddNewClass}{class_name}')
-  Future<String> babyCryPredictorAddNewClass(
-    @Path('class_name') String className,
-  );
+  Future<String> babyCryPredictorAddNewClass({
+    @Path('class_name') required String className,
+    @Query('user_id') required String userId,
+  });
 
   @POST('${EndPoints.babyCryPredictorUploadMissClassifying}{class_name}')
   @MultiPart()

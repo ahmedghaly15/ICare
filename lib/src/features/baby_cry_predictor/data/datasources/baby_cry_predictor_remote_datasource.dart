@@ -40,7 +40,10 @@ class BabyCryPredictorRemoteDatasourceImpl
 
   @override
   Future<String> babyCryPredictorAddNewClass(String className) async {
-    return await _apiService.babyCryPredictorAddNewClass(className);
+    return await _apiService.babyCryPredictorAddNewClass(
+      className: className,
+      userId: Helper.uId!,
+    );
   }
 
   @override
