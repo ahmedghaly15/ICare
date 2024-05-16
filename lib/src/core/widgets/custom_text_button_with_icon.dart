@@ -31,28 +31,28 @@ class CustomTextButtonWithIcon extends StatelessWidget {
     return TextButton.icon(
       style: style ??
           ButtonStyle(
-            textStyle: MaterialStateProperty.all<TextStyle>(
+            textStyle: WidgetStateProperty.all<TextStyle>(
               textStyle ?? AppTextStyles.textStyle20Bold,
             ),
-            backgroundColor: MaterialStateProperty.all<Color>(
+            backgroundColor: WidgetStateProperty.all<Color>(
               backgroundColor ?? AppColors.primaryColor,
             ),
-            foregroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.disabled)) {
+            foregroundColor: WidgetStateProperty.resolveWith<Color>(
+              (Set<WidgetState> states) {
+                if (states.contains(WidgetState.disabled)) {
                   return Colors.white;
                 }
                 return foregroundColor ?? Colors.white;
               },
             ),
-            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+            padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
               padding ??
                   EdgeInsets.symmetric(
                     horizontal: 27.w,
                     vertical: 11.h,
                   ),
             ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(radiusVal ?? 25.r),
               ),

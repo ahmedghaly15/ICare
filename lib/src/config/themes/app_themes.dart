@@ -51,7 +51,7 @@ class AppThemes {
           unselectedLabelColor: Colors.black,
           labelColor: Colors.black,
           tabAlignment: TabAlignment.center,
-          overlayColor: MaterialStateProperty.all(
+          overlayColor: WidgetStateProperty.all(
             AppColors.gradientOrange,
           ),
         ),
@@ -117,7 +117,7 @@ class AppThemes {
           unselectedLabelColor: Colors.white,
           labelColor: Colors.white,
           tabAlignment: TabAlignment.center,
-          overlayColor: MaterialStateProperty.all(
+          overlayColor: WidgetStateProperty.all(
             AppColors.lightBlue,
           ),
         ),

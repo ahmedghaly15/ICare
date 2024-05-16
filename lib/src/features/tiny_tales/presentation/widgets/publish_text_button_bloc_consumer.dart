@@ -33,15 +33,15 @@ class PublishTextButtonBlocConsumer extends StatelessWidget {
           onPressed:
               context.read<NewTinyTaleCubit>().publishNewTinyTale(context),
           style: ButtonStyle(
-            padding: MaterialStatePropertyAll(EdgeInsets.all(8.h)),
-            shape: MaterialStatePropertyAll(
+            padding: WidgetStatePropertyAll(EdgeInsets.all(8.h)),
+            shape: WidgetStatePropertyAll(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(24.r)),
               ),
             ),
-            backgroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.disabled)) {
+            backgroundColor: WidgetStateProperty.resolveWith<Color>(
+              (Set<WidgetState> states) {
+                if (states.contains(WidgetState.disabled)) {
                   return isDarkModeActive(context)
                       ? AppColors.lightBlue
                       : AppColors.lightGrey;
@@ -49,10 +49,10 @@ class PublishTextButtonBlocConsumer extends StatelessWidget {
                 return AppColors.primaryColor;
               },
             ),
-            foregroundColor: const MaterialStatePropertyAll(Colors.white),
-            textStyle: MaterialStateProperty.resolveWith<TextStyle>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.disabled)) {
+            foregroundColor: const WidgetStatePropertyAll(Colors.white),
+            textStyle: WidgetStateProperty.resolveWith<TextStyle>(
+              (Set<WidgetState> states) {
+                if (states.contains(WidgetState.disabled)) {
                   return AppTextStyles.textStyle14Regular;
                 }
                 return AppTextStyles.textStyle15Bold;
