@@ -55,9 +55,10 @@ class BabyCryPredictorLeaveFeedbackView extends StatelessWidget
               children: <Widget>[
                 const Spacer(),
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 42.h,
-                    horizontal: 54.w, // 54 = 18 + 36
+                  padding: EdgeInsets.only(
+                    left: 54.w, // 54 = 18 + 36,
+                    right: 54.w, // 54 = 18 + 36,
+                    bottom: 42.h,
                   ),
                   child: const LeaveFeedbackButtonBlocConsumer(),
                 ),
