@@ -21,5 +21,9 @@ class SetupDIForExternal {
     getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
 
     getIt.registerLazySingleton<ImagePicker>(() => ImagePicker());
+
+    getIt.registerLazySingleton<FlutterLocalNotificationsPlugin>(
+      () => FlutterLocalNotificationsPlugin(),
+    );
   }
 }

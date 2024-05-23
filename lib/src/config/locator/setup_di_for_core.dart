@@ -14,5 +14,10 @@ class SetupDIForCore {
 
     final Dio dio = DioFactory.getDio();
     getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+
+    getIt.registerLazySingleton<LocalNotificationsService>(
+      () => LocalNotificationsService(
+          getIt.get<FlutterLocalNotificationsPlugin>()),
+    );
   }
 }
