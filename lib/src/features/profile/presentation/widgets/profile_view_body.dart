@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/features/profile/presentation/widgets/profile_content.dart';
-import 'package:icare/src/features/profile/presentation/widgets/profile_image_bloc_builder.dart';
 
 class ProfileViewBody extends StatelessWidget {
   const ProfileViewBody({super.key});
@@ -29,7 +32,19 @@ class ProfileViewBody extends StatelessWidget {
           left: 0,
           right: 0,
           top: -65.h,
-          child: const ProfileImageBlocBuilder(),
+          child: CustomCachedNetworkImage(
+            imageUrl: Helper.currentUser!.profileImage!,
+            imageBuilder: (_, image) => CircleAvatar(
+              backgroundColor: isDarkModeActive(context)
+                  ? AppColors.lightBlue
+                  : Colors.white,
+              radius: 65.r,
+              child: CircleAvatar(
+                radius: 60.r,
+                backgroundImage: image,
+              ),
+            ),
+          ),
         ),
       ],
     );
