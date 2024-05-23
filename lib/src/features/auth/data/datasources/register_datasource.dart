@@ -30,7 +30,6 @@ class RegisterDataSourceImpl implements RegisterDataSource {
       email: params.email,
       uId: params.uId,
       profileImage: AppConstants.defaultProfileImage,
-      createdAt: Timestamp.now(),
     );
     await getIt
         .get<FirebaseFirestore>()

@@ -22,17 +22,24 @@ void navigateToHomeAfterLoginOrRegister(
       .saveData(key: AppStrings.cachedUserId, value: data)
       .then(
     (value) {
-      _updateUserMobileToken(mobileToken).then((value) {
-        context.read<UserCubit>().getUserData().then((value) async {
-          context.router.pushAndPopUntil(
-            const BottomNavBarRoute(),
-            predicate: (route) => route.settings.name == BottomNavBarRoute.name,
-          );
-          await _updateMobileTokenInOtherCollections(mobileToken);
-        });
-      });
+      _updateUserMobileTokenAndGetHisData(mobileToken, context);
+      context.router.pushAndPopUntil(
+        const BottomNavBarRoute(),
+        predicate: (route) => route.settings.name == BottomNavBarRoute.name,
+      );
     },
   );
+}
+
+Future<List<void>> _updateUserMobileTokenAndGetHisData(
+  String? mobileToken,
+  BuildContext context,
+) async {
+  return await Future.wait([
+    _updateUserMobileToken(mobileToken),
+    context.read<UserCubit>().getUserData(),
+    _updateMobileTokenInOtherCollections(mobileToken),
+  ]);
 }
 
 Future<String?> _getMobileToken() async {
@@ -45,8 +52,10 @@ Future<void> _updateUserMobileToken(String? mobileToken) async {
       .update(_mobileTokenMap(mobileToken));
 }
 
-Future<void> _updateMobileTokenInOtherCollections(String? mobileToken) async {
-  Future.wait([
+Future<List<void>> _updateMobileTokenInOtherCollections(
+  String? mobileToken,
+) async {
+  return await Future.wait([
     _updateMobileTokenInTinyTales(mobileToken),
     _updateMobileTokenInTinyTalesLikes(mobileToken),
     _updateMobileTokenInComments(mobileToken),
