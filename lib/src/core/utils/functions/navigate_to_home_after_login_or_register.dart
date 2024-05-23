@@ -21,12 +21,16 @@ void navigateToHomeAfterLoginOrRegister(
       .get<CacheHelper>()
       .saveData(key: AppStrings.cachedUserId, value: data)
       .then(
-    (value) {
-      _updateUserMobileTokenAndGetHisData(mobileToken, context);
-      context.router.pushAndPopUntil(
-        const BottomNavBarRoute(),
-        predicate: (route) => route.settings.name == BottomNavBarRoute.name,
+    (value) async {
+      _updateUserMobileTokenAndGetHisData(mobileToken, context).then(
+        (_) {
+          context.router.pushAndPopUntil(
+            const BottomNavBarRoute(),
+            predicate: (route) => route.settings.name == BottomNavBarRoute.name,
+          );
+        },
       );
+      await _updateMobileTokenInOtherCollections(mobileToken);
     },
   );
 }
@@ -35,10 +39,9 @@ Future<List<void>> _updateUserMobileTokenAndGetHisData(
   String? mobileToken,
   BuildContext context,
 ) async {
-  return await Future.wait([
+  return await Future.wait<void>([
     _updateUserMobileToken(mobileToken),
     context.read<UserCubit>().getUserData(),
-    _updateMobileTokenInOtherCollections(mobileToken),
   ]);
 }
 
@@ -55,7 +58,7 @@ Future<void> _updateUserMobileToken(String? mobileToken) async {
 Future<List<void>> _updateMobileTokenInOtherCollections(
   String? mobileToken,
 ) async {
-  return await Future.wait([
+  return await Future.wait<void>([
     _updateMobileTokenInTinyTales(mobileToken),
     _updateMobileTokenInTinyTalesLikes(mobileToken),
     _updateMobileTokenInComments(mobileToken),
