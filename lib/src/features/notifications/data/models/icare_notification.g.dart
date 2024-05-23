@@ -10,26 +10,26 @@ ICareNotification _$ICareNotificationFromJson(Map<String, dynamic> json) =>
     ICareNotification(
       to: json['to'] as String,
       body: json['body'] as String,
-      title: json['title'] as String,
-      receiverId: json['receiverId'] as String,
-      dateTime: json['dateTime'] as Timestamp?,
+      title: json['title'] as String? ?? AppStrings.appTitle,
+      id: json['id'] as String?,
+      receiverId: json['receiverId'] as String?,
+      tinyTaleId: json['tinyTaleId'] as String?,
       user: json['user'] == null
           ? null
           : ICareUser.fromJson(json['user'] as Map<String, dynamic>),
       comment: json['comment'] == null
           ? null
           : CommentModel.fromJson(json['comment'] as Map<String, dynamic>),
-      tinyTale: json['tinyTale'] == null
-          ? null
-          : TinyTale.fromJson(json['tinyTale'] as Map<String, dynamic>),
       reply: json['reply'] == null
           ? null
           : CommentModel.fromJson(json['reply'] as Map<String, dynamic>),
-      seen: json['seen'] as bool,
+      tinyTale: json['tinyTale'] == null
+          ? null
+          : TinyTale.fromJson(json['tinyTale'] as Map<String, dynamic>),
+      seen: json['seen'] as bool? ?? false,
       isMessage: json['isMessage'] as bool?,
-      id: json['id'] as String?,
       isComment: json['isComment'] as bool?,
-      tinyTaleId: json['tinyTaleId'] as String?,
+      dateTime: json['dateTime'] as Timestamp?,
     );
 
 Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
@@ -38,14 +38,14 @@ Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
       'body': instance.body,
       'title': instance.title,
       'receiverId': instance.receiverId,
-      'dateTime': instance.dateTime,
-      'user': instance.user?.toJson(),
-      'comment': instance.comment?.toJson(),
-      'tinyTale': instance.tinyTale?.toJson(),
-      'reply': instance.reply?.toJson(),
+      'id': instance.id,
+      'tinyTaleId': instance.tinyTaleId,
+      'user': instance.user,
+      'comment': instance.comment,
+      'reply': instance.reply,
+      'tinyTale': instance.tinyTale,
       'seen': instance.seen,
       'isMessage': instance.isMessage,
-      'id': instance.id,
       'isComment': instance.isComment,
-      'tinyTaleId': instance.tinyTaleId,
+      'dateTime': instance.dateTime,
     };

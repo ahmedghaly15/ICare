@@ -9,8 +9,8 @@ part of 'level_two_training_response.dart';
 LevelTwoTrainingResponse _$LevelTwoTrainingResponseFromJson(
         Map<String, dynamic> json) =>
     LevelTwoTrainingResponse(
-      level: json['level'] as int,
-      id: json['id'] as int,
+      level: (json['level'] as num).toInt(),
+      id: (json['id'] as num).toInt(),
       details: LevelTwoTrainingDetails.fromJson(
           json['details'] as Map<String, dynamic>),
     );

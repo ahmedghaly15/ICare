@@ -124,7 +124,9 @@ class NotificationsCubit extends Cubit<NotificationsState> {
   }
 
   void navigateToNotificationView(
-      BuildContext context, ICareNotification notification) {
+    BuildContext context,
+    ICareNotification notification,
+  ) {
     if (notification.isMessage!) {
       context.pushRoute(ChatDetailsRoute(receiver: notification.user!));
     } else if (notification.isComment!) {

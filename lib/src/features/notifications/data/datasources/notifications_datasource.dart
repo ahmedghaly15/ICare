@@ -25,7 +25,8 @@ class NotificationsDatasourceImpl implements NotificationsDatasource {
 
   @override
   Future<void> saveNotificationToFirebaseFirestore(
-      ICareNotification params) async {
+    ICareNotification params,
+  ) async {
     final ICareNotification iCareNotification = ICareNotification(
       to: params.to,
       title: params.title,

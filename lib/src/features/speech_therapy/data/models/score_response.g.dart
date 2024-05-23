@@ -8,7 +8,7 @@ part of 'score_response.dart';
 
 ScoreResponse _$ScoreResponseFromJson(Map<String, dynamic> json) =>
     ScoreResponse(
-      level: json['level'] as int,
+      level: (json['level'] as num).toInt(),
       subLevels: (json['sub_levels'] as List<dynamic>)
           .map((e) => ScoreDetail.fromJson(e as Map<String, dynamic>))
           .toList(),

@@ -9,8 +9,8 @@ part of 'advanced_level_training_response.dart';
 AdvancedLevelTrainingResponse _$AdvancedLevelTrainingResponseFromJson(
         Map<String, dynamic> json) =>
     AdvancedLevelTrainingResponse(
-      id: json['id'] as int,
-      level: json['level'] as int,
+      id: (json['id'] as num).toInt(),
+      level: (json['level'] as num).toInt(),
       details: AdvancedLevelTrainingDetails.fromJson(
           json['details'] as Map<String, dynamic>),
     );
@@ -30,7 +30,7 @@ AdvancedLevelTrainingDetails _$AdvancedLevelTrainingDetailsFromJson(
       surahNameEn: json['surah_name_en'] as String,
       typeAr: json['type_ar'] as String,
       typeEn: json['type_en'] as String,
-      ayahsNum: json['ayahs_num'] as int,
+      ayahsNum: (json['ayahs_num'] as num).toInt(),
       fullSurah: (json['full_surah'] as List<dynamic>)
           .map((e) => Ayah.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -48,7 +48,7 @@ Map<String, dynamic> _$AdvancedLevelTrainingDetailsToJson(
     };
 
 Ayah _$AyahFromJson(Map<String, dynamic> json) => Ayah(
-      ayahNum: json['ayah_num'] as int,
+      ayahNum: (json['ayah_num'] as num).toInt(),
       ayahAr: json['ayah_ar'] as String,
       ayahEn: json['ayah_en'] as String,
       ayahAudioUrl: json['ayah_audio_url'] as String,
