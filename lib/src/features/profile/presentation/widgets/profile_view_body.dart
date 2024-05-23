@@ -36,8 +36,8 @@ class ProfileViewBody extends StatelessWidget {
             imageUrl: Helper.currentUser!.profileImage!,
             imageBuilder: (_, image) => CircleAvatar(
               backgroundColor: isDarkModeActive(context)
-                  ? AppColors.lightBlue
-                  : Colors.white,
+                  ? AppColors.scaffoldDarkModeBackgroundColor
+                  : AppColors.scaffoldBackgroundColor,
               radius: 65.r,
               child: CircleAvatar(
                 radius: 60.r,

@@ -6,6 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:icare/bloc_observer.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/firebase/firebase_options.dart';
+import 'package:icare/src/core/services/local_notifications/local_notifications_service.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/icare_app.dart';
 
@@ -16,6 +17,7 @@ void main() async {
   );
   await dotenv.load(fileName: AppStrings.dotEnvFileName);
   await DependencyInjection().setup();
+  await getIt.get<LocalNotificationsService>().initLocalNotifications();
   Bloc.observer = MyBlocObserver();
   runApp(const ICareApp());
 }

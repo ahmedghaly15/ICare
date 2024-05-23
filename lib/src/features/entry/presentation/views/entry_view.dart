@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +7,8 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/services/local_notifications/local_notification.dart';
+import 'package:icare/src/core/services/local_notifications/local_notifications_service.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
@@ -45,6 +48,23 @@ class _EntryViewState extends State<EntryView> {
     // To ensure that navigation calls are performed after the widget tree has been built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _goToNextView();
+    });
+    _handleForegroundNotification();
+  }
+
+  void _handleForegroundNotification() {
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      debugPrint(
+        '********* FOREGROUND NOTIFICATION *********\n NOTIFICATION TITLE: ${message.notification!.title}\n NOTIFICATION BODY: ${message.notification!.body}',
+      );
+      if (message.notification != null) {
+        getIt.get<LocalNotificationsService>().showLocalNotification(
+              LocalNotification(
+                title: message.notification!.title!,
+                body: message.notification!.body!,
+              ),
+            );
+      }
     });
   }
 
