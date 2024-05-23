@@ -224,4 +224,6 @@ class AppStrings {
       "Your feedback has been sent. Thank you for taking the time to share your thoughts with us. We greatly appreciate it!";
   static const String correctReason = 'Correct Reason';
   static const String writeTheCorrectReason = 'Write the correct reason';
+  static const String localNotificationsChannelId = 'basic_channel';
+  static const String localNotificationsChannelName = 'Local Notifications';
 }
