@@ -13,10 +13,7 @@ platform :android do
     testers: ["ahmedghaly152002@gmail.com", "ahmedmuqawi@gmail.com", "mukhalifa5@gmail.com", "Osamazxzx64@gmail.com", "youmnaelghanam226@gmail.com", "byralmrshdy41@gmail.com", "hebauwk25800@gmail.com", "kareem01095134688@gmail.com", "nadanasr370@gmail.com", "weaam.ai_0482@ai.kfs.edu.eg"].join(","),
     release_notes: """
     This is a new release. Updates:
-      - Added Delete/Clear notifications (UI & Logic) ✅
-      - Enhanced some Functionalities, App is much faster now ✅
-        ** (Edit user, send message, and more)
-      - Finished Feedback functionality in CryTranslation feature (UI & Logic) ✅
+      - Added some enhancements in the code 
   """
   )
   end

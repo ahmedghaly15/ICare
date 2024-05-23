@@ -1,7 +1,7 @@
 name: icare
 description: "A child care app."
 publish_to: "none"
-version: 1.1.9+1
+version: 1.2.0+1
 
 environment:
   sdk: ">=3.2.0 <4.0.0"
@@ -84,6 +84,8 @@ dependencies:
   audio_wave: ^0.1.5
   # Library that allows you to display progress widgets based on percentage
   percent_indicator: ^4.2.3
+  # A cross platform plugin for displaying and scheduling local notifications for Flutter applications
+  flutter_local_notifications: ^17.1.2
 
 dev_dependencies:
   flutter_test:
