@@ -1,5 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/widgets/icare_dialog.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
@@ -18,6 +23,11 @@ class ShowCustomImageBottomSheet {
         onPressedCamera: onPressedCamera,
         onPressedGallery: onPressedGallery,
       ),
+      showDragHandle: true,
+      enableDrag: true,
+      backgroundColor: isDarkModeActive(context)
+          ? AppColors.scaffoldDarkModeBackgroundColor
+          : Colors.white,
     );
   }
 }
@@ -39,18 +49,24 @@ class CustomImageBottomSheet extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
       child: BottomSheet(
+        backgroundColor: isDarkModeActive(context)
+            ? AppColors.scaffoldDarkModeBackgroundColor
+            : Colors.white,
         enableDrag: true,
         onClosing: () => context.maybePop(),
         builder: (context) {
           return Padding(
-            padding: EdgeInsets.only(bottom: 25.h, top: 20.h),
+            padding: EdgeInsets.only(bottom: 25.h),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
                   "Pick a $type Picture",
-                  style: AppTextStyles.textStyle18Bold,
+                  style: AppTextStyles.textStyle18Bold.copyWith(
+                    color:
+                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                  ),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 10.h),
@@ -58,11 +74,21 @@ class CustomImageBottomSheet extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     ImageCircle(
-                      onPressed: onPressedGallery,
+                      onPressed: () async {
+                        await _requestStoragePermission(
+                          context: context,
+                          execute: onPressedGallery,
+                        );
+                      },
                       icon: AppAssets.imagesAddImage,
                     ),
                     ImageCircle(
-                      onPressed: onPressedCamera,
+                      onPressed: () async {
+                        await _requestStoragePermission(
+                          context: context,
+                          execute: onPressedCamera,
+                        );
+                      },
                       icon: AppAssets.imagesCamera,
                     ),
                   ],
@@ -73,6 +99,22 @@ class CustomImageBottomSheet extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Future<void> _requestStoragePermission({
+    required BuildContext context,
+    required void Function()? execute,
+  }) async {
+    if (await Permission.storage.request().isGranted) {
+      execute!;
+    } else {
+      ShowICareDialog.show(
+        // ignore: use_build_context_synchronously
+        context: context,
+        state: ICareDialogStates.warning,
+        message: AppStrings.storagePermissionDenied,
+      );
+    }
   }
 }
 
@@ -92,7 +134,9 @@ class ImageCircle extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 16.h,
-        backgroundColor: Colors.white,
+        backgroundColor: isDarkModeActive(context)
+            ? AppColors.scaffoldDarkModeBackgroundColor
+            : Colors.white,
         shape: const CircleBorder(),
         fixedSize: Size(150.w, 130.h),
       ),

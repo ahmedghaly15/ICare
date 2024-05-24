@@ -111,9 +111,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
   void handleBabyCryPrediction(BuildContext context) async {
     if (isRecording == false) {
-      final status = await _audioRecorder.hasPermission();
-
-      if (status) {
+      if (await _audioRecorder.hasPermission()) {
         _startTimer();
         // ignore: use_build_context_synchronously
         _startRecording(context);
