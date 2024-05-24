@@ -21,27 +21,31 @@ void navigateToHomeAfterLoginOrRegister(
       .get<CacheHelper>()
       .saveData(key: AppStrings.cachedUserId, value: data)
       .then(
-    (value) async {
-      _updateUserMobileTokenAndGetHisData(mobileToken, context).then(
-        (_) {
-          context.router.pushAndPopUntil(
-            const BottomNavBarRoute(),
-            predicate: (route) => route.settings.name == BottomNavBarRoute.name,
-          );
-        },
-      );
-      await _updateMobileTokenInOtherCollections(mobileToken);
+    (_) {
+      _updateMobileTokenAndNavigate(context, mobileToken);
     },
   );
 }
 
-Future<List<void>> _updateUserMobileTokenAndGetHisData(
+void _updateMobileTokenAndNavigate(BuildContext context, String? mobileToken) {
+  context.read<UserCubit>().getUserData().then((_) {
+    if (Helper.currentUser!.mobileToken != mobileToken) {
+      _updateUserMobileTokenEveryWhere(mobileToken, context);
+    }
+    context.router.pushAndPopUntil(
+      const BottomNavBarRoute(),
+      predicate: (route) => route.settings.name == BottomNavBarRoute.name,
+    );
+  });
+}
+
+Future<List<void>> _updateUserMobileTokenEveryWhere(
   String? mobileToken,
   BuildContext context,
 ) async {
   return await Future.wait<void>([
     _updateUserMobileToken(mobileToken),
-    context.read<UserCubit>().getUserData(),
+    _updateMobileTokenInOtherCollections(mobileToken),
   ]);
 }
 
@@ -225,11 +229,14 @@ Future<void> _updateMobileTokenInOtherUsersFollowers(
 Future<void> _updateMobileTokenInChats(String? mobileToken) async {
   final usersQuery = await accessUsersCollection().get();
   for (final queryUser in usersQuery.docs) {
-    final chatQuery =
-        await queryUser.reference.collection(AppStrings.chatsCollection).get();
-    for (final chat in chatQuery.docs) {
-      if (chat.id == Helper.uId) {
-        await chat.reference.update(_mobileTokenMap(mobileToken));
+    if (queryUser.id != Helper.uId) {
+      final chatQuery = await queryUser.reference
+          .collection(AppStrings.chatsCollection)
+          .get();
+      for (final chat in chatQuery.docs) {
+        if (chat.id == Helper.uId) {
+          await chat.reference.update(_mobileTokenMap(mobileToken));
+        }
       }
     }
   }
