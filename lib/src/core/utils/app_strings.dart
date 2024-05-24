@@ -69,6 +69,8 @@ class AppStrings {
   static const String responseItemId = 'ID';
   static const String microphonePermissionDenied =
       'Microphone access is denied. Please go to Settings and grant permission.';
+  static const String storagePermissionDenied =
+      'Storage access is denied. Please go to Settings and grant permission.';
   static const String theBabyIs = 'The Baby is: ';
   static const String tryAgain = 'Try Again';
   static const String dotEnvFileName = '.env';
