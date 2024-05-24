@@ -30,13 +30,18 @@ void navigateToHomeAfterLoginOrRegister(
 void _updateMobileTokenAndNavigate(BuildContext context, String? mobileToken) {
   context.read<UserCubit>().getUserData().then((_) {
     if (Helper.currentUser!.mobileToken != mobileToken) {
+      _navigateToHome(context);
       _updateUserMobileTokenEveryWhere(mobileToken, context);
     }
-    context.router.pushAndPopUntil(
-      const BottomNavBarRoute(),
-      predicate: (route) => route.settings.name == BottomNavBarRoute.name,
-    );
+    _navigateToHome(context);
   });
+}
+
+void _navigateToHome(BuildContext context) {
+  context.router.pushAndPopUntil(
+    const BottomNavBarRoute(),
+    predicate: (route) => route.settings.name == BottomNavBarRoute.name,
+  );
 }
 
 Future<List<void>> _updateUserMobileTokenEveryWhere(
