@@ -1,12 +1,16 @@
 import 'dart:async';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/services/local_notifications/local_notification.dart';
+import 'package:icare/src/core/services/local_notifications/local_notifications_service.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
@@ -154,6 +158,29 @@ class TipsCubit extends Cubit<TipsState> {
         convertIsRandomTipRead();
       },
     );
+  }
+
+  void initializeNotificationListeners(BuildContext context) {
+    _handleForegroundNotification();
+    FirebaseMessaging.onMessageOpenedApp.listen((_) {
+      context.pushRoute(const NotificationsRoute());
+    });
+  }
+
+  void _handleForegroundNotification() {
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      debugPrint(
+        '********* FOREGROUND NOTIFICATION *********\nNOTIFICATION TITLE: ${message.notification!.title}\nNOTIFICATION BODY: ${message.notification!.body}',
+      );
+      if (message.notification != null) {
+        getIt.get<LocalNotificationsService>().showLocalNotification(
+              LocalNotification(
+                title: message.notification!.title!,
+                body: message.notification!.body!,
+              ),
+            );
+      }
+    });
   }
 
   @override
