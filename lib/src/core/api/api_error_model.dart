@@ -1,16 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'api_error_model.g.dart';
+part 'api_error_model.freezed.dart';
 
-@JsonSerializable()
-class ApiErrorModel {
-  @JsonKey(name: 'Error')
-  final String? error;
-
-  const ApiErrorModel({this.error});
+@freezed
+class ApiErrorModel with _$ApiErrorModel {
+  const factory ApiErrorModel({
+    @JsonKey(name: 'Error') String? error,
+  }) = _ApiErrorModel;
 
   factory ApiErrorModel.fromJson(Map<String, dynamic> json) =>
       _$ApiErrorModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ApiErrorModelToJson(this);
 }

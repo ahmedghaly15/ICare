@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/models/icare_user.dart';
+import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -48,7 +49,9 @@ class ChatDetailsCustomAppBar extends StatelessWidget {
         Expanded(
           child: Text(
             receiver.name!,
-            style: AppTextStyles.textStyle16Bold,
+            style: AppTextStyles.textStyle16Bold.copyWith(
+              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+            ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
