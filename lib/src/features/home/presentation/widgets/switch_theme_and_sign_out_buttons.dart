@@ -5,9 +5,10 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/config/themes/themes_cubit.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/widgets/action_dialog.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
-import 'package:icare/src/features/home/presentation/widgets/log_out_dialog.dart';
+import 'package:icare/src/features/home/presentation/widgets/log_out_button_bloc_listener.dart';
 
 class SwitchThemeAndSignOutButtons extends StatelessWidget {
   const SwitchThemeAndSignOutButtons({super.key});
@@ -39,7 +40,10 @@ class SwitchThemeAndSignOutButtons extends StatelessWidget {
           onPressed: () {
             ShowICareDialog.show(
               context: context,
-              child: const LogoutDialog(),
+              child: const ActionDialog(
+                text: AppStrings.sureToLogoutQuestion,
+                actionButtonWidget: LogoutButtonBlocListener(),
+              ),
             );
           },
           padding: EdgeInsets.zero,

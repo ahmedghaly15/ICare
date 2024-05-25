@@ -1,15 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/app_utils.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/core/widgets/animated_empty_view.dart';
-import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/features/profile/presentation/widgets/loading_profile_photos_tab.dart';
 import 'package:icare/src/features/profile/data/models/photo.dart';
+import 'package:icare/src/features/profile/presentation/widgets/profile_photo_item.dart';
 
 class ProfilePhotosTab extends StatelessWidget {
   const ProfilePhotosTab({super.key, required this.uId});
@@ -19,9 +18,7 @@ class ProfilePhotosTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-      stream: getIt
-          .get<FirebaseFirestore>()
-          .collection(AppStrings.usersCollection)
+      stream: accessUsersCollection()
           .doc(uId)
           .collection(AppStrings.photos)
           .snapshots(),
@@ -42,12 +39,7 @@ class ProfilePhotosTab extends StatelessWidget {
                 padding: AppUtils.profileTabsPadding,
                 itemCount: photos.length,
                 itemBuilder: (_, index) => ZoomIn(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15.r),
-                    child: CustomCachedNetworkImage(
-                      imageUrl: photos[index].imagePath!,
-                    ),
-                  ),
+                  child: ProfilePhotoItem(photo: photos[index]),
                 ),
               )
             : const AnimatedEmptyView(svgImage: AppAssets.svgsEmptyPhotos);
