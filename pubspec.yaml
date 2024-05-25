@@ -32,9 +32,6 @@ dependencies:
   # Code generator (mainly used with Cubit & retrofit)
   freezed: ^2.4.7
   freezed_annotation: ^2.4.1
-  # Automatically generate code for converting to and from JSON by annotating Dart classes.
-  json_serializable: ^6.7.1
-  json_annotation: ^4.8.1
   # An SVG rendering and widget library for Flutter, which allows painting
   flutter_svg: ^2.0.10+1
   # Flutter plugin for reading and writing simple key-value pairs for cache
