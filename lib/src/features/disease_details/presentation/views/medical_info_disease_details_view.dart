@@ -6,9 +6,10 @@ import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/disease_details/data/models/get_medical_info_disease_details_params.dart';
+import 'package:icare/src/features/disease_details/presentation/cubits/current_tap/current_tap_cubit.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_cubit.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/medical_info_disease/medical_info_disease_details_state.dart';
-import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_tabs.dart';
+import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_tabs_builder.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/disease_details_loading_view.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/disease_image.dart';
 
@@ -26,14 +27,21 @@ class MedicalInfoDiseaseDetailsView extends StatelessWidget
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider<MedicalInfoDiseaseDetailsCubit>(
-      create: (_) => getIt.get<MedicalInfoDiseaseDetailsCubit>()
-        ..getMedicalInfoDiseaseDetails(
-          params: GetMedicalInfoDiseaseDetailsParams(
-            diseaseId: diseaseData.id,
-            diseaseType: diseaseType,
-          ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<MedicalInfoDiseaseDetailsCubit>(
+          create: (context) => getIt.get<MedicalInfoDiseaseDetailsCubit>()
+            ..getMedicalInfoDiseaseDetails(
+              params: GetMedicalInfoDiseaseDetailsParams(
+                diseaseId: diseaseData.id,
+                diseaseType: diseaseType,
+              ),
+            ),
         ),
+        BlocProvider<CurrentTapCubit>(
+          create: (context) => getIt.get<CurrentTapCubit>(),
+        ),
+      ],
       child: this,
     );
   }
@@ -62,7 +70,8 @@ class MedicalInfoDiseaseDetailsView extends StatelessWidget
                 children: <Widget>[
                   DiseaseImage(diseaseData: diseaseData),
                   MySizedBox.height18,
-                  CustomDiseaseDetailsTabs(diseaseDetails: state.data),
+                  CustomDiseaseDetailsTabsBlocBuilder(
+                      diseaseDetails: state.data),
                 ],
               );
             } else {

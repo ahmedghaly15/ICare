@@ -67,6 +67,8 @@ class SetupDIForCubits {
       ),
     );
 
+    getIt.registerFactory<CurrentTapCubit>(() => CurrentTapCubit());
+
     // ========== BabyCryPredictor feature ==========
     getIt.registerFactory<BabyCryPredictorCubit>(
       () => BabyCryPredictorCubit(

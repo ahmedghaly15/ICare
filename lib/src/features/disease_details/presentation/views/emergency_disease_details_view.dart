@@ -5,9 +5,10 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/disease_data.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
+import 'package:icare/src/features/disease_details/presentation/cubits/current_tap/current_tap_cubit.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/emergency_disease/emergency_disease_details_cubit.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/emergency_disease/emergency_disease_details_state.dart';
-import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_tabs.dart';
+import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_tabs_builder.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/disease_details_loading_view.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/disease_image.dart';
 
@@ -23,9 +24,16 @@ class EmergencyDiseaseDetailsView extends StatelessWidget
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider<EmergencyDiseaseDetailsCubit>(
-      create: (_) => getIt.get<EmergencyDiseaseDetailsCubit>()
-        ..getEmergencyDiseaseDetails(diseaseData.id),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<EmergencyDiseaseDetailsCubit>(
+          create: (context) => getIt.get<EmergencyDiseaseDetailsCubit>()
+            ..getEmergencyDiseaseDetails(diseaseData.id),
+        ),
+        BlocProvider<CurrentTapCubit>(
+          create: (context) => getIt.get<CurrentTapCubit>(),
+        ),
+      ],
       child: this,
     );
   }
@@ -49,7 +57,8 @@ class EmergencyDiseaseDetailsView extends StatelessWidget
                 children: <Widget>[
                   DiseaseImage(diseaseData: diseaseData),
                   MySizedBox.height18,
-                  CustomDiseaseDetailsTabs(diseaseDetails: state.data),
+                  CustomDiseaseDetailsTabsBlocBuilder(
+                      diseaseDetails: state.data),
                 ],
               );
             } else {
