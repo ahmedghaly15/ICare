@@ -12,7 +12,6 @@ class MedicalInfoDiseaseDetailsState<T>
       GetMedicalInfoDiseaseDetailsLoading;
   const factory MedicalInfoDiseaseDetailsState.getMedicalInfoDiseaseDetailsSuccess(
       DiseaseDetails data) = GetMedicalInfoDiseaseDetailsSuccess<T>;
-
   const factory MedicalInfoDiseaseDetailsState.getMedicalInfoDiseaseDetailsError(
       String error) = GetMedicalInfoDiseaseDetailsError;
 }

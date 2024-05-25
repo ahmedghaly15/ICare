@@ -163,4 +163,11 @@ class AppUtils {
           onPressed: () => context.pushRoute(const ICareBotRoute()),
         ),
       ];
+
+  static const List<String> diseaseDetailsTabsTitles = <String>[
+    'Symptoms',
+    'Red Flags',
+    'Initial Management',
+    'Do or Not',
+  ];
 }
