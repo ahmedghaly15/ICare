@@ -227,6 +227,11 @@ class SetupDIForUseCases {
       () => SearchUsersUseCase(getIt.get<SearchRepo>()),
     );
 
+    // ========== Profile feature ==========
+    getIt.registerLazySingleton<DeletePhotoFromPhotosUseCase>(
+      () => DeletePhotoFromPhotosUseCase(getIt.get<ProfileRepo>()),
+    );
+
     // ========== Edit Profile feature ==========
     getIt.registerLazySingleton<UpdateUserUseCase>(
       () => UpdateUserUseCase(getIt.get<EditProfileRepo>()),

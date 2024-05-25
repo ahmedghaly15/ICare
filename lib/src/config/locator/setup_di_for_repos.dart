@@ -112,6 +112,11 @@ class SetupDIForRepos {
       () => SearchRepo(getIt.get<SearchDatasource>()),
     );
 
+    // ========== Profile feature ==========
+    getIt.registerLazySingleton<ProfileRepo>(
+      () => ProfileRepo(getIt.get<ProfileDatasource>()),
+    );
+
     // ========== Edit Profile feature ==========
     getIt.registerLazySingleton<EditProfileRepo>(
       () => EditProfileRepo(getIt.get<EditProfileDatasource>()),

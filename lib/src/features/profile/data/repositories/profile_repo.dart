@@ -3,7 +3,7 @@ import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_error
 import 'package:icare/src/features/profile/data/datasources/profile_datasource.dart';
 
 class ProfileRepo {
-  final ProfileDataSource _profileDataSource;
+  final ProfileDatasource _profileDataSource;
 
   const ProfileRepo(this._profileDataSource);
 

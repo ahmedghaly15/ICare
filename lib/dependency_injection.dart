@@ -10,6 +10,10 @@ import 'package:icare/src/core/services/local_notifications/local_notifications_
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/add_new_class/add_new_class_cubit.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor_feedback/bab_cry_predictor_feedback_cubit.dart';
 import 'package:icare/src/features/disease_details/presentation/cubits/current_tap/current_tap_cubit.dart';
+import 'package:icare/src/features/profile/data/datasources/profile_datasource.dart';
+import 'package:icare/src/features/profile/data/repositories/profile_repo.dart';
+import 'package:icare/src/features/profile/domain/usecases/delete_photo_from_photos.dart';
+import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';

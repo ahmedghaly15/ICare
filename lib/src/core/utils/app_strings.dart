@@ -180,6 +180,8 @@ class AppStrings {
   static const String cancel = 'Cancel';
   static const String sureToLogoutQuestion =
       'Are you sure that you would like to log out?';
+  static const String sureToDeleteThisPhoto =
+      'Are you sure that you would like to delete this photo?';
   static const String cryTranslation = 'Cry Translation';
   static const String cryTranslationFeatureDescription =
       "Understands your baby’s cry translating it into emotions";
