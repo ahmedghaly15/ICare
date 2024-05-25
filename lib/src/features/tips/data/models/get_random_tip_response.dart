@@ -1,21 +1,16 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'get_random_tip_response.g.dart';
+part 'get_random_tip_response.freezed.dart';
 
-@JsonSerializable()
-class GetRandomTipResponse {
-  @JsonKey(name: 'what_to_say')
-  final String whatToSay;
-  final String topic, info;
-
-  const GetRandomTipResponse({
-    required this.whatToSay,
-    required this.topic,
-    required this.info,
-  });
+@freezed
+class GetRandomTipResponse with _$GetRandomTipResponse {
+  const factory GetRandomTipResponse({
+    @JsonKey(name: 'what_to_say') required String whatToSay,
+    required String topic,
+    required String info,
+  }) = _GetRandomTipResponse;
 
   factory GetRandomTipResponse.fromJson(Map<String, dynamic> json) =>
       _$GetRandomTipResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$GetRandomTipResponseToJson(this);
 }

@@ -6,15 +6,15 @@ part of 'bookmark_icare_bot_message_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BookmarkICareBotMessageResponse _$BookmarkICareBotMessageResponseFromJson(
-        Map<String, dynamic> json) =>
-    BookmarkICareBotMessageResponse(
-      chatResponseId: json['chat_response_id'] as String,
-      chatResponse: json['chat_response'] as String,
-    );
+_$BookmarkICareBotMessageResponseImpl
+    _$$BookmarkICareBotMessageResponseImplFromJson(Map<String, dynamic> json) =>
+        _$BookmarkICareBotMessageResponseImpl(
+          chatResponseId: json['chat_response_id'] as String,
+          chatResponse: json['chat_response'] as String,
+        );
 
-Map<String, dynamic> _$BookmarkICareBotMessageResponseToJson(
-        BookmarkICareBotMessageResponse instance) =>
+Map<String, dynamic> _$$BookmarkICareBotMessageResponseImplToJson(
+        _$BookmarkICareBotMessageResponseImpl instance) =>
     <String, dynamic>{
       'chat_response_id': instance.chatResponseId,
       'chat_response': instance.chatResponse,

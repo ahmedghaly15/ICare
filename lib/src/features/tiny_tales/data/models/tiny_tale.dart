@@ -1,26 +1,32 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/core/models/icare_user.dart';
-import 'package:icare/src/features/tiny_tales/data/models/tiny_tale_data.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 part 'tiny_tale.g.dart';
+part 'tiny_tale.freezed.dart';
 
-@JsonSerializable()
-class TinyTale {
-  final ICareUser? user;
-  final TinyTaleData? tinyTaleData;
-  final String? tinyTaleId;
-  final Timestamp? dateTime;
-
-  const TinyTale({
-    this.user,
-    this.tinyTaleData,
-    this.tinyTaleId,
-    this.dateTime,
-  });
+@freezed
+class TinyTale with _$TinyTale {
+  const factory TinyTale({
+    ICareUser? user,
+    TinyTaleData? tinyTaleData,
+    String? tinyTaleId,
+    Timestamp? dateTime,
+  }) = _TinyTale;
 
   factory TinyTale.fromJson(Map<String, dynamic> json) =>
       _$TinyTaleFromJson(json);
+}
 
-  Map<String, dynamic> toJson() => _$TinyTaleToJson(this);
+@freezed
+class TinyTaleData with _$TinyTaleData {
+  const factory TinyTaleData({
+    String? time,
+    String? date,
+    String? text,
+    String? tinyTaleImage,
+  }) = _TinyTaleData;
+
+  factory TinyTaleData.fromJson(Map<String, dynamic> json) =>
+      _$TinyTaleDataFromJson(json);
 }

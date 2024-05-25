@@ -2280,6 +2280,8 @@ abstract class _$$GetScoreSuccessImplCopyWith<T, $Res> {
       __$$GetScoreSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({ScoreResponse data});
+
+  $ScoreResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -2301,6 +2303,14 @@ class __$$GetScoreSuccessImplCopyWithImpl<T, $Res>
           : data // ignore: cast_nullable_to_non_nullable
               as ScoreResponse,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ScoreResponseCopyWith<$Res> get data {
+    return $ScoreResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 

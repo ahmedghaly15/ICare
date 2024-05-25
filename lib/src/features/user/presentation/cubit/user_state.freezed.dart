@@ -592,6 +592,8 @@ abstract class _$$GetUserDataSuccessImplCopyWith<T, $Res> {
       __$$GetUserDataSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({ICareUser user});
+
+  $ICareUserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -613,6 +615,14 @@ class __$$GetUserDataSuccessImplCopyWithImpl<T, $Res>
           : user // ignore: cast_nullable_to_non_nullable
               as ICareUser,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ICareUserCopyWith<$Res> get user {
+    return $ICareUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 

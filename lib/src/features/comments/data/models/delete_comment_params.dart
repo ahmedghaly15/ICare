@@ -1,11 +1,12 @@
-class DeleteCommentParams {
-  final String? tinyTaleId;
-  final String? commentId;
-  final String? commentReplyId;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const DeleteCommentParams({
-    this.tinyTaleId,
-    this.commentId,
-    this.commentReplyId,
-  });
+part 'delete_comment_params.freezed.dart';
+
+@freezed
+class DeleteCommentParams with _$DeleteCommentParams {
+  const factory DeleteCommentParams({
+    String? tinyTaleId,
+    String? commentId,
+    String? commentReplyId,
+  }) = _DeleteCommentParams;
 }

@@ -1,15 +1,14 @@
-class UpdateUserParams {
-  final String? name;
-  final String? email;
-  final String? profileImage;
-  final String? password;
-  final String? uId;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const UpdateUserParams({
-    this.name,
-    this.email,
-    this.profileImage,
-    this.password,
-    this.uId,
-  });
+part 'update_user_params.freezed.dart';
+
+@freezed
+class UpdateUserParams with _$UpdateUserParams {
+  const factory UpdateUserParams({
+    String? name,
+    String? email,
+    String? profileImage,
+    String? password,
+    String? uId,
+  }) = _UpdateUserParams;
 }

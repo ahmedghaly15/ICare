@@ -6,13 +6,15 @@ part of 'last_result_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LastResultResponse _$LastResultResponseFromJson(Map<String, dynamic> json) =>
-    LastResultResponse(
+_$LastResultResponseImpl _$$LastResultResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LastResultResponseImpl(
       feeling: json['feeling'] as String?,
       photo: json['photo'] as String?,
     );
 
-Map<String, dynamic> _$LastResultResponseToJson(LastResultResponse instance) =>
+Map<String, dynamic> _$$LastResultResponseImplToJson(
+        _$LastResultResponseImpl instance) =>
     <String, dynamic>{
       'feeling': instance.feeling,
       'photo': instance.photo,

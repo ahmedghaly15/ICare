@@ -4,11 +4,11 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/features/auth/data/models/auth_request_params.dart';
 import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
-import 'package:icare/src/features/auth/data/models/register_request_params.dart';
 
 abstract class RegisterDataSource {
-  Future<UserCredential> register(RegisterRequestParams params);
+  Future<UserCredential> register(AuthRequestParams params);
   Future<void> createFirestoreUser(CreateFirestoreUserParams params);
 }
 
@@ -16,7 +16,7 @@ class RegisterDataSourceImpl implements RegisterDataSource {
   const RegisterDataSourceImpl();
 
   @override
-  Future<UserCredential> register(RegisterRequestParams params) async {
+  Future<UserCredential> register(AuthRequestParams params) async {
     return await getIt.get<FirebaseAuth>().createUserWithEmailAndPassword(
           email: params.email,
           password: params.password,

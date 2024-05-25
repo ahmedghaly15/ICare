@@ -6,7 +6,8 @@ part of 'tiny_tale.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-TinyTale _$TinyTaleFromJson(Map<String, dynamic> json) => TinyTale(
+_$TinyTaleImpl _$$TinyTaleImplFromJson(Map<String, dynamic> json) =>
+    _$TinyTaleImpl(
       user: json['user'] == null
           ? null
           : ICareUser.fromJson(json['user'] as Map<String, dynamic>),
@@ -17,9 +18,26 @@ TinyTale _$TinyTaleFromJson(Map<String, dynamic> json) => TinyTale(
       dateTime: json['dateTime'] as Timestamp?,
     );
 
-Map<String, dynamic> _$TinyTaleToJson(TinyTale instance) => <String, dynamic>{
+Map<String, dynamic> _$$TinyTaleImplToJson(_$TinyTaleImpl instance) =>
+    <String, dynamic>{
       'user': instance.user?.toJson(),
       'tinyTaleData': instance.tinyTaleData?.toJson(),
       'tinyTaleId': instance.tinyTaleId,
       'dateTime': instance.dateTime,
+    };
+
+_$TinyTaleDataImpl _$$TinyTaleDataImplFromJson(Map<String, dynamic> json) =>
+    _$TinyTaleDataImpl(
+      time: json['time'] as String?,
+      date: json['date'] as String?,
+      text: json['text'] as String?,
+      tinyTaleImage: json['tinyTaleImage'] as String?,
+    );
+
+Map<String, dynamic> _$$TinyTaleDataImplToJson(_$TinyTaleDataImpl instance) =>
+    <String, dynamic>{
+      'time': instance.time,
+      'date': instance.date,
+      'text': instance.text,
+      'tinyTaleImage': instance.tinyTaleImage,
     };

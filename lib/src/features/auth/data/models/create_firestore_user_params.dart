@@ -1,11 +1,12 @@
-class CreateFirestoreUserParams {
-  final String name;
-  final String email;
-  final String uId;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const CreateFirestoreUserParams({
-    required this.name,
-    required this.email,
-    required this.uId,
-  });
+part 'create_firestore_user_params.freezed.dart';
+
+@freezed
+class CreateFirestoreUserParams with _$CreateFirestoreUserParams {
+  const factory CreateFirestoreUserParams({
+    required String name,
+    required String email,
+    required String uId,
+  }) = _CreateFirestoreUserParams;
 }

@@ -1,21 +1,16 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'advanced_level_marking_response.g.dart';
+part 'advanced_level_marking_response.freezed.dart';
 
-@JsonSerializable()
-class AdvancedLevelMarkingResponse {
-  final String status;
-  @JsonKey(name: 'image_url')
-  final String imageUrl;
-  final double percent;
-
-  const AdvancedLevelMarkingResponse({
-    required this.status,
-    required this.imageUrl,
-    required this.percent,
-  });
+@freezed
+class AdvancedLevelMarkingResponse with _$AdvancedLevelMarkingResponse {
+  const factory AdvancedLevelMarkingResponse({
+    required String status,
+    @JsonKey(name: 'image_url') required String imageUrl,
+    required double percent,
+  }) = __AdvancedLevelMarkingResponse;
 
   factory AdvancedLevelMarkingResponse.fromJson(Map<String, dynamic> json) =>
       _$AdvancedLevelMarkingResponseFromJson(json);
-  Map<String, dynamic> toJson() => _$AdvancedLevelMarkingResponseToJson(this);
 }

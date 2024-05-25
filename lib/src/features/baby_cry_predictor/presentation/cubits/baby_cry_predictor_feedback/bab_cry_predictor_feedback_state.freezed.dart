@@ -1441,6 +1441,8 @@ abstract class _$$UpdateSelectedClassImplCopyWith<T, $Res> {
       __$$UpdateSelectedClassImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({BabyCryPredictorClass? babyCryPredictorClass});
+
+  $BabyCryPredictorClassCopyWith<$Res>? get babyCryPredictorClass;
 }
 
 /// @nodoc
@@ -1463,6 +1465,19 @@ class __$$UpdateSelectedClassImplCopyWithImpl<T, $Res>
           : babyCryPredictorClass // ignore: cast_nullable_to_non_nullable
               as BabyCryPredictorClass?,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BabyCryPredictorClassCopyWith<$Res>? get babyCryPredictorClass {
+    if (_value.babyCryPredictorClass == null) {
+      return null;
+    }
+
+    return $BabyCryPredictorClassCopyWith<$Res>(_value.babyCryPredictorClass!,
+        (value) {
+      return _then(_value.copyWith(babyCryPredictorClass: value));
+    });
   }
 }
 

@@ -1,17 +1,15 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'last_result_response.g.dart';
+part 'last_result_response.freezed.dart';
 
-@JsonSerializable()
-class LastResultResponse {
-  final String? feeling, photo;
-
-  const LastResultResponse({
-    this.feeling,
-    this.photo,
-  });
+@freezed
+class LastResultResponse with _$LastResultResponse {
+  const factory LastResultResponse({
+    String? feeling,
+    String? photo,
+  }) = _LastResultResponse;
 
   factory LastResultResponse.fromJson(Map<String, dynamic> json) =>
       _$LastResultResponseFromJson(json);
-  Map<String, dynamic> toJson() => _$LastResultResponseToJson(this);
 }

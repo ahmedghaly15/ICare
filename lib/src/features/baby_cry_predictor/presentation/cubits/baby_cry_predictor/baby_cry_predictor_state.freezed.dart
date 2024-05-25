@@ -838,6 +838,8 @@ abstract class _$$BabyCryPredictorSuccessImplCopyWith<T, $Res> {
       __$$BabyCryPredictorSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({BabyCryPredictorResponse data});
+
+  $BabyCryPredictorResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -861,6 +863,14 @@ class __$$BabyCryPredictorSuccessImplCopyWithImpl<T, $Res>
           : data // ignore: cast_nullable_to_non_nullable
               as BabyCryPredictorResponse,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BabyCryPredictorResponseCopyWith<$Res> get data {
+    return $BabyCryPredictorResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
@@ -1385,6 +1395,8 @@ abstract class _$$GetBabyCryPredictorLastResultSuccessImplCopyWith<T, $Res> {
       __$$GetBabyCryPredictorLastResultSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({LastResultResponse lastResult});
+
+  $LastResultResponseCopyWith<$Res> get lastResult;
 }
 
 /// @nodoc
@@ -1408,6 +1420,14 @@ class __$$GetBabyCryPredictorLastResultSuccessImplCopyWithImpl<T, $Res>
           : lastResult // ignore: cast_nullable_to_non_nullable
               as LastResultResponse,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LastResultResponseCopyWith<$Res> get lastResult {
+    return $LastResultResponseCopyWith<$Res>(_value.lastResult, (value) {
+      return _then(_value.copyWith(lastResult: value));
+    });
   }
 }
 

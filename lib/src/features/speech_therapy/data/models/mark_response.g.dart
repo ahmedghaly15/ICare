@@ -6,14 +6,15 @@ part of 'mark_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MarkResponse _$MarkResponseFromJson(Map<String, dynamic> json) => MarkResponse(
+_$MarkResponseImpl _$$MarkResponseImplFromJson(Map<String, dynamic> json) =>
+    _$MarkResponseImpl(
       status: json['status'] as String,
       imageUrl: json['image_url'] as String,
       percent: (json['percent'] as num).toDouble(),
       next: Next.fromJson(json['next'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MarkResponseToJson(MarkResponse instance) =>
+Map<String, dynamic> _$$MarkResponseImplToJson(_$MarkResponseImpl instance) =>
     <String, dynamic>{
       'status': instance.status,
       'image_url': instance.imageUrl,
@@ -21,7 +22,7 @@ Map<String, dynamic> _$MarkResponseToJson(MarkResponse instance) =>
       'next': instance.next.toJson(),
     };
 
-Next _$NextFromJson(Map<String, dynamic> json) => Next(
+_$NextImpl _$$NextImplFromJson(Map<String, dynamic> json) => _$NextImpl(
       levelOneDetails: json['levelOneDetails'] == null
           ? null
           : LevelOneTrainingResponse.fromJson(
@@ -32,7 +33,8 @@ Next _$NextFromJson(Map<String, dynamic> json) => Next(
               json['levelTwoDetails'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$NextToJson(Next instance) => <String, dynamic>{
+Map<String, dynamic> _$$NextImplToJson(_$NextImpl instance) =>
+    <String, dynamic>{
       'levelOneDetails': instance.levelOneDetails?.toJson(),
       'levelTwoDetails': instance.levelTwoDetails?.toJson(),
     };

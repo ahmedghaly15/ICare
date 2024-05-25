@@ -1,11 +1,12 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 
-class AskICareBotParams {
-  final ChatSession chat;
-  final Content content;
+part 'ask_icare_bot_params.freezed.dart';
 
-  const AskICareBotParams({
-    required this.chat,
-    required this.content,
-  });
+@freezed
+class AskICareBotParams with _$AskICareBotParams {
+  const factory AskICareBotParams({
+    required ChatSession chat,
+    required Content content,
+  }) = _AskICareBotParams;
 }

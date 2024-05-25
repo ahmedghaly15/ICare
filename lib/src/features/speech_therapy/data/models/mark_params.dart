@@ -1,17 +1,16 @@
 import 'dart:io';
 
-class MarkParams {
-  final int id;
-  final int? level;
-  final int? ayahNum;
-  final File audioFile;
-  final String userId;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const MarkParams({
-    this.level,
-    this.ayahNum,
-    required this.id,
-    required this.audioFile,
-    required this.userId,
-  });
+part 'mark_params.freezed.dart';
+
+@freezed
+class MarkParams with _$MarkParams {
+  const factory MarkParams({
+    int? level,
+    int? ayahNum,
+    required int id,
+    required File audioFile,
+    required String userId,
+  }) = _MarkParams;
 }

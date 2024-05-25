@@ -6,18 +6,19 @@ part of 'message_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MessageModel _$MessageModelFromJson(Map<String, dynamic> json) => MessageModel(
+_$MessageModelImpl _$$MessageModelImplFromJson(Map<String, dynamic> json) =>
+    _$MessageModelImpl(
       senderId: json['senderId'] as String?,
       senderName: json['senderName'] as String?,
+      messageId: json['messageId'] as String?,
       messageData: json['messageData'] == null
           ? null
           : SendMessageParams.fromJson(
               json['messageData'] as Map<String, dynamic>),
-      messageId: json['messageId'] as String?,
       dateTime: json['dateTime'] as Timestamp?,
     );
 
-Map<String, dynamic> _$MessageModelToJson(MessageModel instance) =>
+Map<String, dynamic> _$$MessageModelImplToJson(_$MessageModelImpl instance) =>
     <String, dynamic>{
       'senderId': instance.senderId,
       'senderName': instance.senderName,

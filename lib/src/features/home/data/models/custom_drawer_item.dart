@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class CustomDrawerItem {
-  final String title;
-  final IconData icon;
-  final VoidCallback onPressed;
+part 'custom_drawer_item.freezed.dart';
 
-  const CustomDrawerItem({
-    required this.title,
-    required this.icon,
-    required this.onPressed,
-  });
+@freezed
+class CustomDrawerItem with _$CustomDrawerItem {
+  const factory CustomDrawerItem({
+    required String title,
+    required IconData icon,
+    required VoidCallback onPressed,
+  }) = _CustomDrawerItem;
 }

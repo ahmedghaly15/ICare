@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/features/auth/data/models/auth_request_params.dart';
 import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
-import 'package:icare/src/features/auth/data/models/register_request_params.dart';
 import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
 import 'package:icare/src/features/auth/domain/usecases/register.dart';
 import 'package:icare/src/features/auth/presentation/cubits/register/register_state.dart';
@@ -103,7 +103,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   void register() async {
     emit(const RegisterState.loading());
     final response = await registerUseCase(
-      RegisterRequestParams(
+      AuthRequestParams(
         email: emailController.text.trim(),
         password: passwordController.text,
       ),

@@ -517,6 +517,8 @@ abstract class _$$BookmarkICareBotMessageSuccessImplCopyWith<T, $Res> {
       __$$BookmarkICareBotMessageSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({BookmarkICareBotMessageResponse data});
+
+  $BookmarkICareBotMessageResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -540,6 +542,14 @@ class __$$BookmarkICareBotMessageSuccessImplCopyWithImpl<T, $Res>
           : data // ignore: cast_nullable_to_non_nullable
               as BookmarkICareBotMessageResponse,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BookmarkICareBotMessageResponseCopyWith<$Res> get data {
+    return $BookmarkICareBotMessageResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
@@ -1754,6 +1764,8 @@ abstract class _$$DeleteBookmarkSuccessImplCopyWith<T, $Res> {
       __$$DeleteBookmarkSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({DeleteBookmarkResponse data});
+
+  $DeleteBookmarkResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -1776,6 +1788,14 @@ class __$$DeleteBookmarkSuccessImplCopyWithImpl<T, $Res>
           : data // ignore: cast_nullable_to_non_nullable
               as DeleteBookmarkResponse,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeleteBookmarkResponseCopyWith<$Res> get data {
+    return $DeleteBookmarkResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 

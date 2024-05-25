@@ -1,29 +1,18 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'icare_user.g.dart';
+part 'icare_user.freezed.dart';
 
-@JsonSerializable()
-class ICareUser {
-  final String? name;
-  final String? email;
-  final String? profileImage;
-  final String? uId;
-  final String? mobileToken;
-
-  const ICareUser({
-    this.name,
-    this.email,
-    this.uId,
-    this.profileImage,
-    this.mobileToken,
-  });
+@freezed
+class ICareUser with _$ICareUser {
+  const factory ICareUser({
+    String? name,
+    String? email,
+    String? profileImage,
+    String? uId,
+    String? mobileToken,
+  }) = _ICareUser;
 
   factory ICareUser.fromJson(Map<String, dynamic> json) =>
       _$ICareUserFromJson(json);
-  Map<String, dynamic> toJson() => _$ICareUserToJson(this);
-
-  @override
-  String toString() {
-    return 'ICareUser(name: $name, email: $email, uId: $uId, profileImage: $profileImage, mobileToken: $mobileToken)';
-  }
 }

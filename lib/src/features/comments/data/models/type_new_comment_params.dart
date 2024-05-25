@@ -1,12 +1,13 @@
-import 'package:icare/src/features/comments/data/models/comment_data.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:icare/src/features/comments/data/models/comment_model.dart';
 
-class TypeNewCommentParams {
-  final CommentData? commentData;
-  final String? tinyTaleId, commentId;
+part 'type_new_comment_params.freezed.dart';
 
-  const TypeNewCommentParams({
-    this.tinyTaleId,
-    this.commentId,
-    this.commentData,
-  });
+@freezed
+class TypeNewCommentParams with _$TypeNewCommentParams {
+  const factory TypeNewCommentParams({
+    String? tinyTaleId,
+    String? commentId,
+    CommentData? commentData,
+  }) = _TypeNewCommentParams;
 }

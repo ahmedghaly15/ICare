@@ -6,26 +6,26 @@ part of 'level_two_training_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LevelTwoTrainingResponse _$LevelTwoTrainingResponseFromJson(
+_$LevelTwoTrainingResponseImpl _$$LevelTwoTrainingResponseImplFromJson(
         Map<String, dynamic> json) =>
-    LevelTwoTrainingResponse(
+    _$LevelTwoTrainingResponseImpl(
       level: (json['level'] as num).toInt(),
       id: (json['id'] as num).toInt(),
       details: LevelTwoTrainingDetails.fromJson(
           json['details'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$LevelTwoTrainingResponseToJson(
-        LevelTwoTrainingResponse instance) =>
+Map<String, dynamic> _$$LevelTwoTrainingResponseImplToJson(
+        _$LevelTwoTrainingResponseImpl instance) =>
     <String, dynamic>{
       'level': instance.level,
       'id': instance.id,
-      'details': instance.details,
+      'details': instance.details.toJson(),
     };
 
-LevelTwoTrainingDetails _$LevelTwoTrainingDetailsFromJson(
+_$LevelTwoTrainingDetailsImpl _$$LevelTwoTrainingDetailsImplFromJson(
         Map<String, dynamic> json) =>
-    LevelTwoTrainingDetails(
+    _$LevelTwoTrainingDetailsImpl(
       available: json['available'] as bool,
       shapeName: json['shape_name'] as String,
       sentence: json['sentence'] as String,
@@ -33,8 +33,8 @@ LevelTwoTrainingDetails _$LevelTwoTrainingDetailsFromJson(
       audioUrl: json['audio_url'] as String,
     );
 
-Map<String, dynamic> _$LevelTwoTrainingDetailsToJson(
-        LevelTwoTrainingDetails instance) =>
+Map<String, dynamic> _$$LevelTwoTrainingDetailsImplToJson(
+        _$LevelTwoTrainingDetailsImpl instance) =>
     <String, dynamic>{
       'available': instance.available,
       'shape_name': instance.shapeName,

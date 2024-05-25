@@ -1,22 +1,15 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'bookmark_icare_bot_message_response.g.dart';
+part 'bookmark_icare_bot_message_response.freezed.dart';
 
-@JsonSerializable()
-class BookmarkICareBotMessageResponse {
-  @JsonKey(name: 'chat_response_id')
-  final String chatResponseId;
-  @JsonKey(name: 'chat_response')
-  final String chatResponse;
-
-  const BookmarkICareBotMessageResponse({
-    required this.chatResponseId,
-    required this.chatResponse,
-  });
+@freezed
+class BookmarkICareBotMessageResponse with _$BookmarkICareBotMessageResponse {
+  const factory BookmarkICareBotMessageResponse({
+    @JsonKey(name: 'chat_response_id') required String chatResponseId,
+    @JsonKey(name: 'chat_response') required String chatResponse,
+  }) = _BookmarkICareBotMessageResponse;
 
   factory BookmarkICareBotMessageResponse.fromJson(Map<String, dynamic> json) =>
       _$BookmarkICareBotMessageResponseFromJson(json);
-
-  Map<String, dynamic> toJson() =>
-      _$BookmarkICareBotMessageResponseToJson(this);
 }

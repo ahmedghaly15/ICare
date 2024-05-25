@@ -372,6 +372,8 @@ abstract class _$$GetMedicalInfoDiseaseDetailsSuccessImplCopyWith<T, $Res> {
       __$$GetMedicalInfoDiseaseDetailsSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({DiseaseDetails data});
+
+  $DiseaseDetailsCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -395,6 +397,14 @@ class __$$GetMedicalInfoDiseaseDetailsSuccessImplCopyWithImpl<T, $Res>
           : data // ignore: cast_nullable_to_non_nullable
               as DiseaseDetails,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DiseaseDetailsCopyWith<$Res> get data {
+    return $DiseaseDetailsCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 

@@ -6,16 +6,16 @@ part of 'get_random_tip_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GetRandomTipResponse _$GetRandomTipResponseFromJson(
+_$GetRandomTipResponseImpl _$$GetRandomTipResponseImplFromJson(
         Map<String, dynamic> json) =>
-    GetRandomTipResponse(
+    _$GetRandomTipResponseImpl(
       whatToSay: json['what_to_say'] as String,
       topic: json['topic'] as String,
       info: json['info'] as String,
     );
 
-Map<String, dynamic> _$GetRandomTipResponseToJson(
-        GetRandomTipResponse instance) =>
+Map<String, dynamic> _$$GetRandomTipResponseImplToJson(
+        _$GetRandomTipResponseImpl instance) =>
     <String, dynamic>{
       'what_to_say': instance.whatToSay,
       'topic': instance.topic,

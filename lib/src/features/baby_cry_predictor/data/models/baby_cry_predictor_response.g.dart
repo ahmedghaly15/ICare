@@ -6,15 +6,15 @@ part of 'baby_cry_predictor_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BabyCryPredictorResponse _$BabyCryPredictorResponseFromJson(
+_$BabyCryPredictorResponseImpl _$$BabyCryPredictorResponseImplFromJson(
         Map<String, dynamic> json) =>
-    BabyCryPredictorResponse(
+    _$BabyCryPredictorResponseImpl(
       feeling: json['feeling'] as String,
       photo: json['photo'] as String,
     );
 
-Map<String, dynamic> _$BabyCryPredictorResponseToJson(
-        BabyCryPredictorResponse instance) =>
+Map<String, dynamic> _$$BabyCryPredictorResponseImplToJson(
+        _$BabyCryPredictorResponseImpl instance) =>
     <String, dynamic>{
       'feeling': instance.feeling,
       'photo': instance.photo,

@@ -1,13 +1,13 @@
-class CreateTinyTaleParams {
-  final String date;
-  final String time;
-  final String? text;
-  final String? tinyTaleImage;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const CreateTinyTaleParams({
-    required this.date,
-    required this.time,
-    this.text,
-    this.tinyTaleImage,
-  });
+part 'create_tiny_tale_params.freezed.dart';
+
+@freezed
+class CreateTinyTaleParams with _$CreateTinyTaleParams {
+  const factory CreateTinyTaleParams({
+    required String date,
+    required String time,
+    String? text,
+    String? tinyTaleImage,
+  }) = _CreateTinyTaleParams;
 }

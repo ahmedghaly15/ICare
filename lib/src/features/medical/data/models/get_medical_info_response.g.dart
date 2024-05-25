@@ -6,9 +6,9 @@ part of 'get_medical_info_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GetMedicalInfoResponse _$GetMedicalInfoResponseFromJson(
+_$GetMedicalInfoResponseImpl _$$GetMedicalInfoResponseImplFromJson(
         Map<String, dynamic> json) =>
-    GetMedicalInfoResponse(
+    _$GetMedicalInfoResponseImpl(
       diseaseType: json['disease_type'] as String,
       diseaseTypeImage: json['disease_type_image'] as String,
       diseases: (json['diseases'] as List<dynamic>)
@@ -16,10 +16,10 @@ GetMedicalInfoResponse _$GetMedicalInfoResponseFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$GetMedicalInfoResponseToJson(
-        GetMedicalInfoResponse instance) =>
+Map<String, dynamic> _$$GetMedicalInfoResponseImplToJson(
+        _$GetMedicalInfoResponseImpl instance) =>
     <String, dynamic>{
       'disease_type': instance.diseaseType,
       'disease_type_image': instance.diseaseTypeImage,
-      'diseases': instance.diseases,
+      'diseases': instance.diseases.map((e) => e.toJson()).toList(),
     };

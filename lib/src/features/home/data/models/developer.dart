@@ -1,24 +1,17 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'developer.g.dart';
+part 'developer.freezed.dart';
 
-@JsonSerializable()
-class Developer {
-  final String name;
-  final String title;
-  @JsonKey(name: 'GitHub')
-  final String? gitHub;
-  @JsonKey(name: 'LinkedIn')
-  final String? linkedIn;
-
-  const Developer({
-    required this.name,
-    required this.title,
-    this.gitHub,
-    this.linkedIn,
-  });
+@freezed
+class Developer with _$Developer {
+  const factory Developer({
+    required String name,
+    required String title,
+    @JsonKey(name: 'GitHub') String? gitHub,
+    @JsonKey(name: 'LinkedIn') String? linkedIn,
+  }) = _Developer;
 
   factory Developer.fromJson(Map<String, dynamic> json) =>
       _$DeveloperFromJson(json);
-  Map<String, dynamic> toJson() => _$DeveloperToJson(this);
 }

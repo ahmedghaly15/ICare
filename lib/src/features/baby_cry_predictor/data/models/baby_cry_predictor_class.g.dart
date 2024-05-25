@@ -6,16 +6,16 @@ part of 'baby_cry_predictor_class.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BabyCryPredictorClass _$BabyCryPredictorClassFromJson(
+_$BabyCryPredictorClassImpl _$$BabyCryPredictorClassImplFromJson(
         Map<String, dynamic> json) =>
-    BabyCryPredictorClass(
+    _$BabyCryPredictorClassImpl(
       className: json['Class'] as String,
       audio: json['audio'] as String,
       hint: json['hint'] as String,
     );
 
-Map<String, dynamic> _$BabyCryPredictorClassToJson(
-        BabyCryPredictorClass instance) =>
+Map<String, dynamic> _$$BabyCryPredictorClassImplToJson(
+        _$BabyCryPredictorClassImpl instance) =>
     <String, dynamic>{
       'Class': instance.className,
       'audio': instance.audio,

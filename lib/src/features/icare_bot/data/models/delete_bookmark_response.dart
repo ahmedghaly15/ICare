@@ -1,15 +1,14 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'delete_bookmark_response.g.dart';
+part 'delete_bookmark_response.freezed.dart';
 
-@JsonSerializable()
-class DeleteBookmarkResponse {
-  final String message;
-
-  const DeleteBookmarkResponse({required this.message});
+@freezed
+class DeleteBookmarkResponse with _$DeleteBookmarkResponse {
+  const factory DeleteBookmarkResponse({
+    required String message,
+  }) = _DeleteBookmarkResponse;
 
   factory DeleteBookmarkResponse.fromJson(Map<String, dynamic> json) =>
       _$DeleteBookmarkResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$DeleteBookmarkResponseToJson(this);
 }

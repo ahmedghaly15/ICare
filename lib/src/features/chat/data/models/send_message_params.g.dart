@@ -6,8 +6,9 @@ part of 'send_message_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SendMessageParams _$SendMessageParamsFromJson(Map<String, dynamic> json) =>
-    SendMessageParams(
+_$SendMessageParamsImpl _$$SendMessageParamsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SendMessageParamsImpl(
       time: json['time'] as String?,
       date: json['date'] as String?,
       messageText: json['messageText'] as String?,
@@ -17,7 +18,8 @@ SendMessageParams _$SendMessageParamsFromJson(Map<String, dynamic> json) =>
           : ICareUser.fromJson(json['receiver'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SendMessageParamsToJson(SendMessageParams instance) =>
+Map<String, dynamic> _$$SendMessageParamsImplToJson(
+        _$SendMessageParamsImpl instance) =>
     <String, dynamic>{
       'time': instance.time,
       'date': instance.date,

@@ -1,39 +1,28 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'score_response.g.dart';
+part 'score_response.freezed.dart';
 
-@JsonSerializable()
-class ScoreResponse {
-  final int level;
-  @JsonKey(name: 'sub_levels')
-  final List<ScoreDetail> subLevels;
-
-  const ScoreResponse({required this.level, required this.subLevels});
+@freezed
+class ScoreResponse with _$ScoreResponse {
+  const factory ScoreResponse({
+    required int level,
+    @JsonKey(name: 'sub_levels') required List<ScoreDetail> subLevels,
+  }) = _ScoreResponse;
 
   factory ScoreResponse.fromJson(Map<String, dynamic> json) =>
       _$ScoreResponseFromJson(json);
-  Map<String, dynamic> toJson() => _$ScoreResponseToJson(this);
 }
 
-@JsonSerializable()
-class ScoreDetail {
-  @JsonKey(name: 'sub_level_name_ar')
-  final String? subLevelNameAr;
-  @JsonKey(name: 'sub_level_name_en')
-  final String? subLevelNameEn;
-  @JsonKey(name: 'sub_level_image_url')
-  final String? subLevelImageUrl;
-  @JsonKey(name: 'sub_level_percent')
-  final double subLevelPercent;
-
-  const ScoreDetail({
-    required this.subLevelNameAr,
-    required this.subLevelNameEn,
-    required this.subLevelImageUrl,
-    required this.subLevelPercent,
-  });
+@freezed
+class ScoreDetail with _$ScoreDetail {
+  const factory ScoreDetail({
+    @JsonKey(name: 'sub_level_name_ar') required String? subLevelNameAr,
+    @JsonKey(name: 'sub_level_name_en') required String? subLevelNameEn,
+    @JsonKey(name: 'sub_level_image_url') required String? subLevelImageUrl,
+    @JsonKey(name: 'sub_level_percent') required double subLevelPercent,
+  }) = _ScoreDetails;
 
   factory ScoreDetail.fromJson(Map<String, dynamic> json) =>
       _$ScoreDetailFromJson(json);
-  Map<String, dynamic> toJson() => _$ScoreDetailToJson(this);
 }

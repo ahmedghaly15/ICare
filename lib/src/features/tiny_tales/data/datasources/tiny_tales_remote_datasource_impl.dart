@@ -11,7 +11,6 @@ import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_param
 import 'package:icare/src/features/tiny_tales/data/models/like_model.dart';
 import 'package:icare/src/features/tiny_tales/data/models/like_params.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
-import 'package:icare/src/features/tiny_tales/data/models/tiny_tale_data.dart';
 
 class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   const TinyTalesRemoteDatasourceImpl();

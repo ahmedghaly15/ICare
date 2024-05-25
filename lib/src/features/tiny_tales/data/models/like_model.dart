@@ -1,19 +1,16 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/core/models/icare_user.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 part 'like_model.g.dart';
+part 'like_model.freezed.dart';
 
-@JsonSerializable()
-class LikeModel {
-  final ICareUser? user;
-  final String? dateTime;
-
-  const LikeModel({
-    this.user,
-    this.dateTime,
-  });
+@freezed
+class LikeModel with _$LikeModel {
+  const factory LikeModel({
+    ICareUser? user,
+    String? dateTime,
+  }) = _LikeModel;
 
   factory LikeModel.fromJson(Map<String, dynamic> json) =>
       _$LikeModelFromJson(json);
-  Map<String, dynamic> toJson() => _$LikeModelToJson(this);
 }

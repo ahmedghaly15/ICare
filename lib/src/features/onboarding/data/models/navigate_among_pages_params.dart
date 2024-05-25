@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class NavigateAmongPagesParams {
-  final BuildContext context;
-  final PageController pageController;
-  final bool isLastBoarding;
+part 'navigate_among_pages_params.freezed.dart';
 
-  const NavigateAmongPagesParams({
-    required this.context,
-    required this.pageController,
-    required this.isLastBoarding,
-  });
+@freezed
+class NavigateAmongPagesParams with _$NavigateAmongPagesParams {
+  const factory NavigateAmongPagesParams({
+    required BuildContext context,
+    required PageController pageController,
+    required bool isLastBoarding,
+  }) = _NavigateAmongPagesParams;
 }

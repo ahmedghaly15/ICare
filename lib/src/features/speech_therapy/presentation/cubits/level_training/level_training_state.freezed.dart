@@ -1406,6 +1406,8 @@ abstract class _$$MarkSuccessImplCopyWith<T, $Res> {
       __$$MarkSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({MarkResponse data});
+
+  $MarkResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -1427,6 +1429,14 @@ class __$$MarkSuccessImplCopyWithImpl<T, $Res>
           : data // ignore: cast_nullable_to_non_nullable
               as MarkResponse,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MarkResponseCopyWith<$Res> get data {
+    return $MarkResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
@@ -2040,6 +2050,8 @@ abstract class _$$AdvancedLevelMarkingSuccessImplCopyWith<T, $Res> {
       __$$AdvancedLevelMarkingSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({AdvancedLevelMarkingResponse data});
+
+  $AdvancedLevelMarkingResponseCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -2063,6 +2075,14 @@ class __$$AdvancedLevelMarkingSuccessImplCopyWithImpl<T, $Res>
           : data // ignore: cast_nullable_to_non_nullable
               as AdvancedLevelMarkingResponse,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AdvancedLevelMarkingResponseCopyWith<$Res> get data {
+    return $AdvancedLevelMarkingResponseCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
@@ -2725,6 +2745,8 @@ abstract class _$$UpdateSelectedAyahImplCopyWith<T, $Res> {
       __$$UpdateSelectedAyahImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({Ayah selectedAyah});
+
+  $AyahCopyWith<$Res> get selectedAyah;
 }
 
 /// @nodoc
@@ -2747,6 +2769,14 @@ class __$$UpdateSelectedAyahImplCopyWithImpl<T, $Res>
           : selectedAyah // ignore: cast_nullable_to_non_nullable
               as Ayah,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AyahCopyWith<$Res> get selectedAyah {
+    return $AyahCopyWith<$Res>(_value.selectedAyah, (value) {
+      return _then(_value.copyWith(selectedAyah: value));
+    });
   }
 }
 

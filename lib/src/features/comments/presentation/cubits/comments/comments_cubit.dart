@@ -9,7 +9,7 @@ import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
-import 'package:icare/src/features/comments/data/models/comment_data.dart';
+import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/delete_comment_params.dart';
 import 'package:icare/src/features/comments/data/models/type_new_comment_params.dart';
 import 'package:icare/src/features/comments/domain/usecases/delete_comment.dart';

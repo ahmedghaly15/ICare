@@ -1,25 +1,19 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:icare/src/core/models/icare_user.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 part 'send_message_params.g.dart';
+part 'send_message_params.freezed.dart';
 
-@JsonSerializable()
-class SendMessageParams {
-  final String? time;
-  final String? date;
-  final String? messageText;
-  final String? messageImage;
-  final ICareUser? receiver;
+@freezed
+class SendMessageParams with _$SendMessageParams {
+  const factory SendMessageParams({
+    String? time,
+    String? date,
+    String? messageText,
+    String? messageImage,
+    ICareUser? receiver,
+  }) = _SendMessageParams;
 
-  const SendMessageParams({
-    this.time,
-    this.date,
-    this.messageText,
-    this.messageImage,
-    this.receiver,
-  });
   factory SendMessageParams.fromJson(Map<String, dynamic> json) =>
       _$SendMessageParamsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SendMessageParamsToJson(this);
 }

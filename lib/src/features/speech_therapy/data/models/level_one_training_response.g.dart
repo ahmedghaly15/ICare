@@ -6,34 +6,34 @@ part of 'level_one_training_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LevelOneTrainingResponse _$LevelOneTrainingResponseFromJson(
+_$LevelOneTrainingResponseImpl _$$LevelOneTrainingResponseImplFromJson(
         Map<String, dynamic> json) =>
-    LevelOneTrainingResponse(
-      level: (json['level'] as num).toInt(),
+    _$LevelOneTrainingResponseImpl(
       id: (json['id'] as num).toInt(),
+      level: (json['level'] as num).toInt(),
       details: LevelOneTrainingDetails.fromJson(
           json['details'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$LevelOneTrainingResponseToJson(
-        LevelOneTrainingResponse instance) =>
+Map<String, dynamic> _$$LevelOneTrainingResponseImplToJson(
+        _$LevelOneTrainingResponseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'level': instance.level,
-      'details': instance.details,
+      'details': instance.details.toJson(),
     };
 
-LevelOneTrainingDetails _$LevelOneTrainingDetailsFromJson(
+_$LevelOneTrainingDetailsImpl _$$LevelOneTrainingDetailsImplFromJson(
         Map<String, dynamic> json) =>
-    LevelOneTrainingDetails(
+    _$LevelOneTrainingDetailsImpl(
       animalName: json['animal_name'] as String,
       imageUrl: json['image_url'] as String,
       audioUrl: json['audio_url'] as String,
       available: json['available'] as bool,
     );
 
-Map<String, dynamic> _$LevelOneTrainingDetailsToJson(
-        LevelOneTrainingDetails instance) =>
+Map<String, dynamic> _$$LevelOneTrainingDetailsImplToJson(
+        _$LevelOneTrainingDetailsImpl instance) =>
     <String, dynamic>{
       'animal_name': instance.animalName,
       'image_url': instance.imageUrl,

@@ -1,45 +1,30 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'level_two_training_response.g.dart';
+part 'level_two_training_response.freezed.dart';
 
-@JsonSerializable()
-class LevelTwoTrainingResponse {
-  final int level, id;
-  final LevelTwoTrainingDetails details;
-
-  const LevelTwoTrainingResponse({
-    required this.level,
-    required this.id,
-    required this.details,
-  });
+@freezed
+class LevelTwoTrainingResponse with _$LevelTwoTrainingResponse {
+  const factory LevelTwoTrainingResponse({
+    required int level,
+    required int id,
+    required LevelTwoTrainingDetails details,
+  }) = _LevelTwoTrainingResponse;
 
   factory LevelTwoTrainingResponse.fromJson(Map<String, dynamic> json) =>
       _$LevelTwoTrainingResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LevelTwoTrainingResponseToJson(this);
 }
 
-@JsonSerializable()
-class LevelTwoTrainingDetails {
-  final bool available;
-  @JsonKey(name: 'shape_name')
-  final String shapeName;
-  final String sentence;
-  @JsonKey(name: 'image_url')
-  final String imageUrl;
-  @JsonKey(name: 'audio_url')
-  final String audioUrl;
-
-  const LevelTwoTrainingDetails({
-    required this.available,
-    required this.shapeName,
-    required this.sentence,
-    required this.imageUrl,
-    required this.audioUrl,
-  });
+@freezed
+class LevelTwoTrainingDetails with _$LevelTwoTrainingDetails {
+  const factory LevelTwoTrainingDetails({
+    required bool available,
+    @JsonKey(name: 'shape_name') required String shapeName,
+    required String sentence,
+    @JsonKey(name: 'image_url') required String imageUrl,
+    @JsonKey(name: 'audio_url') required String audioUrl,
+  }) = _LevelTwoTrainingDetails;
 
   factory LevelTwoTrainingDetails.fromJson(Map<String, dynamic> json) =>
       _$LevelTwoTrainingDetailsFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LevelTwoTrainingDetailsToJson(this);
 }

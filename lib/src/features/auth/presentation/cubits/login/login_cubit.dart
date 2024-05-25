@@ -4,7 +4,7 @@ import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
-import 'package:icare/src/features/auth/data/models/login_request_params.dart';
+import 'package:icare/src/features/auth/data/models/auth_request_params.dart';
 import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
 import 'package:icare/src/features/auth/domain/usecases/login.dart';
 import 'package:icare/src/features/auth/domain/usecases/sign_in_with_google.dart';
@@ -59,7 +59,7 @@ class LoginCubit extends Cubit<LoginState> {
   void login() async {
     emit(const LoginState.loading());
     final response = await loginUseCase(
-      LoginRequestParams(
+      AuthRequestParams(
         email: emailController.text.trim(),
         password: passwordController.text,
       ),

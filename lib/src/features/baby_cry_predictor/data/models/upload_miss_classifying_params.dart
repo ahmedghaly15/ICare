@@ -1,11 +1,13 @@
 import 'dart:io';
 
-class UploadMissClassifyingParams {
-  final File audioFile;
-  final String className;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const UploadMissClassifyingParams({
-    required this.audioFile,
-    required this.className,
-  });
+part 'upload_miss_classifying_params.freezed.dart';
+
+@freezed
+class UploadMissClassifyingParams with _$UploadMissClassifyingParams {
+  const factory UploadMissClassifyingParams({
+    required File audioFile,
+    required String className,
+  }) = _UploadMissClassifyingParams;
 }

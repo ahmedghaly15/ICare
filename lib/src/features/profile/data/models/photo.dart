@@ -1,19 +1,14 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'photo.g.dart';
+part 'photo.freezed.dart';
 
-@JsonSerializable()
-class Photo {
-  @JsonKey(name: 'IMAGE PATH')
-  final String? imagePath;
-  @JsonKey(name: 'id')
-  final String? imageId;
-
-  const Photo({
-    this.imagePath,
-    this.imageId,
-  });
+@freezed
+class Photo with _$Photo {
+  const factory Photo({
+    @JsonKey(name: 'IMAGE PATH') String? imagePath,
+    @JsonKey(name: 'id') String? imageId,
+  }) = _Photo;
 
   factory Photo.fromJson(Map<String, dynamic> json) => _$PhotoFromJson(json);
-  Map<String, dynamic> toJson() => _$PhotoToJson(this);
 }

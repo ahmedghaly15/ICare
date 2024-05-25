@@ -6,13 +6,15 @@ part of 'icare_notification.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ICareNotification _$ICareNotificationFromJson(Map<String, dynamic> json) =>
-    ICareNotification(
+_$ICareNotificationImpl _$$ICareNotificationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ICareNotificationImpl(
       to: json['to'] as String,
       body: json['body'] as String,
       title: json['title'] as String? ?? AppStrings.appTitle,
-      id: json['id'] as String?,
+      seen: json['seen'] as bool? ?? false,
       receiverId: json['receiverId'] as String?,
+      id: json['id'] as String?,
       tinyTaleId: json['tinyTaleId'] as String?,
       user: json['user'] == null
           ? null
@@ -26,17 +28,18 @@ ICareNotification _$ICareNotificationFromJson(Map<String, dynamic> json) =>
       tinyTale: json['tinyTale'] == null
           ? null
           : TinyTale.fromJson(json['tinyTale'] as Map<String, dynamic>),
-      seen: json['seen'] as bool? ?? false,
       isMessage: json['isMessage'] as bool?,
       isComment: json['isComment'] as bool?,
       dateTime: json['dateTime'] as Timestamp?,
     );
 
-Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
+Map<String, dynamic> _$$ICareNotificationImplToJson(
+        _$ICareNotificationImpl instance) =>
     <String, dynamic>{
       'to': instance.to,
       'body': instance.body,
       'title': instance.title,
+      'seen': instance.seen,
       'receiverId': instance.receiverId,
       'id': instance.id,
       'tinyTaleId': instance.tinyTaleId,
@@ -44,7 +47,6 @@ Map<String, dynamic> _$ICareNotificationToJson(ICareNotification instance) =>
       'comment': instance.comment?.toJson(),
       'reply': instance.reply?.toJson(),
       'tinyTale': instance.tinyTale?.toJson(),
-      'seen': instance.seen,
       'isMessage': instance.isMessage,
       'isComment': instance.isComment,
       'dateTime': instance.dateTime,
