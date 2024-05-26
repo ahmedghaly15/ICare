@@ -11,29 +11,37 @@ class SendMessageTextField extends StatelessWidget {
     this.controller,
     this.enabled,
     this.onChanged,
+    this.hasShadow = true,
+    this.borderSide = BorderSide.none,
+    this.autofocus = false,
   });
 
   final bool? enabled;
   final TextEditingController? controller;
   final String hintText;
   final Function(String)? onChanged;
+  final bool hasShadow;
+  final BorderSide borderSide;
+  final bool autofocus;
 
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      autofocus: autofocus,
       enabled: enabled,
       controller: controller,
-      fillColor:
-          isDarkModeActive(context) ? AppColors.lightBlue : Colors.white,
-      boxShadow: <BoxShadow>[
-        BoxShadow(
-          offset: Offset(5.w, 4.h),
-          blurRadius: 20.r,
-          spreadRadius: 0,
-          color: Colors.black.withOpacity(0.13),
-        ),
-      ],
-      borderSide: BorderSide.none,
+      fillColor: isDarkModeActive(context) ? AppColors.lightBlue : Colors.white,
+      boxShadow: hasShadow
+          ? <BoxShadow>[
+              BoxShadow(
+                offset: Offset(5.w, 4.h),
+                blurRadius: 20.r,
+                spreadRadius: 0,
+                color: Colors.black.withOpacity(0.13),
+              ),
+            ]
+          : null,
+      borderSide: borderSide,
       maxLines: null,
       contentPadding: EdgeInsets.all(16.h),
       textCapitalization: TextCapitalization.sentences,

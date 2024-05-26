@@ -81,3 +81,11 @@ CollectionReference<Map<String, dynamic>> accessTipsCollection() {
       .doc(Helper.uId)
       .collection(AppStrings.tipsCollection);
 }
+
+CollectionReference<Map<String, dynamic>> accessCurrentUserChatsCollection() {
+  return getIt
+      .get<FirebaseFirestore>()
+      .collection(AppStrings.usersCollection)
+      .doc(Helper.uId)
+      .collection(AppStrings.chatsCollection);
+}
