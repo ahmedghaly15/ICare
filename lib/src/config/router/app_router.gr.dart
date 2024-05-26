@@ -65,7 +65,7 @@ abstract class _$AppRouter extends RootStackRouter {
     BookmarksRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const BookmarksView(),
+        child: WrappedRoute(child: const BookmarksView()),
       );
     },
     BottomNavBarRoute.name: (routeData) {

@@ -12,7 +12,6 @@ import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/home/data/models/custom_drawer_item.dart';
 import 'package:icare/src/features/home/data/models/home_ai_feature.dart';
-import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/speech_therapy/speech_therapy_cubit.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
 
@@ -78,10 +77,7 @@ class AppUtils {
         CustomDrawerItem(
           title: AppStrings.icareBotBookmarks,
           icon: Icons.bookmark,
-          onPressed: () {
-            context.pushRoute(const BookmarksRoute());
-            context.read<BookmarkCubit>().retrieveICareBotBookmarks();
-          },
+          onPressed: () => context.pushRoute(const BookmarksRoute()),
         ),
         CustomDrawerItem(
           title: AppStrings.developers,
