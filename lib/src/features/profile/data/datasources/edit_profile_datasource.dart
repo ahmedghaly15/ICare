@@ -11,7 +11,7 @@ import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/profile/data/models/update_user_params.dart';
 
 abstract class EditProfileDatasource {
-  Future<void> updateUser(UpdateUserParams params);
+  Future<List<void>> updateUser(UpdateUserParams params);
   Future<TaskSnapshot> uploadNewProfileImage(File? newProfileImage);
   Future<void> updatePassword(String password);
 }
@@ -20,7 +20,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
   const EditProfileDatasourceImpl();
 
   @override
-  Future<void> updateUser(UpdateUserParams params) async {
+  Future<List<void>> updateUser(UpdateUserParams params) async {
     final ICareUser user = ICareUser(
       email: params.email ?? Helper.currentUser!.email,
       uId: Helper.uId,
@@ -28,7 +28,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       profileImage: params.profileImage ?? Helper.currentUser!.profileImage,
     );
     Helper.currentUser = user;
-    Future.wait([
+    return await Future.wait([
       accessUsersCollection().doc(Helper.uId).update(user.toJson()),
       _updateUserTinyTales(user),
       _updateUserTinyTalesLikes(user),
