@@ -25,7 +25,7 @@ class ChatCubit extends Cubit<ChatState> {
   }) : super(const ChatState.initial());
 
   List<ICareUser> _chats = [];
-  void getChats() async {
+  Future<void> getChats() async {
     emit(const ChatState.getChatsLoading());
     final result = await getChatsUseCase.call(const NoParams());
     result.when(
@@ -45,10 +45,8 @@ class ChatCubit extends Cubit<ChatState> {
       getIt
           .get<CacheHelper>()
           .removeData(key: AppStrings.cachedChats)
-          .then((value) {
-        if (value) {
-          getChats();
-        }
+          .then((_) {
+        getChats();
       });
     } else {
       debugPrint('***** EXISTING CHAT *****');
@@ -79,8 +77,8 @@ class ChatCubit extends Cubit<ChatState> {
     String receiverId,
   ) {
     state.whenOrNull(
-      deleteChatSuccess: () async {
-        await checkChatExistence(receiverId);
+      deleteChatSuccess: () {
+        checkChatExistence(receiverId);
       },
       deleteChatError: (error) {
         ShowICareDialog.showICareDialogError(context, error);

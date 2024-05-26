@@ -50,7 +50,7 @@ class ChatItem extends StatelessWidget {
                   deleteOnPressed: () {
                     ShowICareDialog.show(
                       context: context,
-                      child: DeleteChatDialog(receiver: user),
+                      child: buildDeleteChatDialog(context, receiver: user),
                     );
                   },
                 ),
