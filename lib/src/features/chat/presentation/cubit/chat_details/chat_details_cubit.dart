@@ -74,8 +74,10 @@ class ChatDetailsCubit extends Cubit<ChatDetailsState> {
           };
   }
 
-  void _sendMessage(BuildContext context,
-      {required SendMessageParams params}) async {
+  void _sendMessage(
+    BuildContext context, {
+    required SendMessageParams params,
+  }) async {
     await context.read<ChatCubit>().checkChatExistence(params.receiver!.uId!);
     emit(const ChatDetailsState.sendMessageLoading());
     final result = await sendMessageUseCase.call(params);

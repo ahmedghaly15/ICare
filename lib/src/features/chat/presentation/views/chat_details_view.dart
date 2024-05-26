@@ -1,15 +1,37 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_utils.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat/chat_cubit.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_cubit.dart';
 import 'package:icare/src/features/chat/presentation/widgets/chat_details_custom_app_bar.dart';
 import 'package:icare/src/features/chat/presentation/widgets/message_field_and_buttons.dart';
 import 'package:icare/src/features/chat/presentation/widgets/messages_stream_builder.dart';
 
 @RoutePage()
-class ChatDetailsView extends StatelessWidget {
-  const ChatDetailsView({super.key, required this.receiver});
+class ChatDetailsView extends StatelessWidget implements AutoRouteWrapper {
+  const ChatDetailsView({
+    super.key,
+    required this.receiver,
+  });
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ChatDetailsCubit>(
+          create: (context) => getIt.get<ChatDetailsCubit>(),
+        ),
+        BlocProvider<ChatCubit>(
+          create: (context) => getIt.get<ChatCubit>(),
+        ),
+      ],
+      child: this,
+    );
+  }
 
   final ICareUser receiver;
   @override

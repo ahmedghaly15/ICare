@@ -5,8 +5,8 @@ import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_cubit.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_state.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 
@@ -20,7 +20,7 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ChatCubit, ChatState>(
+    return BlocConsumer<ChatDetailsCubit, ChatDetailsState>(
       listenWhen: (_, current) =>
           current is SendMessageError ||
           current is SendMessageSuccess ||
@@ -63,10 +63,15 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
           return const CustomCircularProgressIndicator();
         }
         return CustomSendMessageIconButton(
-          isEnabled:
-              context.read<ChatCubit>().messageController.text.isNotEmpty ||
-                  context.read<ChatCubit>().messageImage != null,
-          onPressed: context.read<ChatCubit>().newMessage(receiver),
+          isEnabled: context
+                  .read<ChatDetailsCubit>()
+                  .messageController
+                  .text
+                  .isNotEmpty ||
+              context.read<ChatDetailsCubit>().messageImage != null,
+          onPressed: context
+              .read<ChatDetailsCubit>()
+              .newMessage(context, receiver: receiver),
         );
       },
     );

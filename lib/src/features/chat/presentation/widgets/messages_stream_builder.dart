@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/features/chat/data/models/message_model.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_cubit.dart';
 import 'package:icare/src/features/chat/presentation/widgets/custom_message_bubble.dart';
 
 class MessagesStreamBuilder extends StatelessWidget {
@@ -18,7 +18,7 @@ class MessagesStreamBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-      stream: context.read<ChatCubit>().messagesStream(receiverId),
+      stream: context.read<ChatDetailsCubit>().messagesStream(receiverId),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting &&
             snapshot.data == null) {

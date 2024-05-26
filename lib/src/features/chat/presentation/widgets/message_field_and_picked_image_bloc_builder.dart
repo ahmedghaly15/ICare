@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/send_message_text_field.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_cubit.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_state.dart';
 import 'package:icare/src/features/comments/presentation/widgets/picked_comment_image.dart';
 
 class MessageFieldAndPickedImageBlocBuilder extends StatelessWidget {
@@ -12,7 +12,7 @@ class MessageFieldAndPickedImageBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ChatCubit, ChatState>(
+    return BlocBuilder<ChatDetailsCubit, ChatDetailsState>(
       buildWhen: (_, current) =>
           current is PickMessageImageSuccess ||
           current is RemoveMessageImage ||
@@ -22,18 +22,19 @@ class MessageFieldAndPickedImageBlocBuilder extends StatelessWidget {
           child: Column(
             children: <Widget>[
               SendMessageTextField(
-                controller: context.read<ChatCubit>().messageController,
+                controller: context.read<ChatDetailsCubit>().messageController,
                 hintText: AppStrings.typeAMessage,
                 onChanged: (String value) {
-                  context.read<ChatCubit>().setNewTextValue(value);
+                  context.read<ChatDetailsCubit>().setNewTextValue(value);
                 },
               ),
-              if (context.read<ChatCubit>().messageImage != null) ...[
+              if (context.read<ChatDetailsCubit>().messageImage != null) ...[
                 MySizedBox.height8,
                 PickedCommentImage(
-                  image: context.read<ChatCubit>().messageImage!,
-                  removeButtonOnPressed: () =>
-                      context.read<ChatCubit>().removePickedMessageImage(),
+                  image: context.read<ChatDetailsCubit>().messageImage!,
+                  removeButtonOnPressed: () => context
+                      .read<ChatDetailsCubit>()
+                      .removePickedMessageImage(),
                 ),
               ],
             ],

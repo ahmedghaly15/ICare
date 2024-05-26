@@ -10,7 +10,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat/chat_cubit.dart';
 
 class DeleteChatDialog extends StatelessWidget {
   const DeleteChatDialog({

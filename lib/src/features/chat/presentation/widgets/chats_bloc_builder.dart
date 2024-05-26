@@ -6,8 +6,8 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_error_widget.dart';
 import 'package:icare/src/core/widgets/animated_empty_view.dart';
 import 'package:icare/src/core/widgets/loading_users_sliver_list.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_state.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat/chat_cubit.dart';
+import 'package:icare/src/features/chat/presentation/cubit/chat/chat_state.dart';
 import 'package:icare/src/features/chat/presentation/widgets/chat_item.dart';
 
 class ChatsBlocBuilder extends StatelessWidget {
@@ -35,12 +35,16 @@ class ChatsBlocBuilder extends StatelessWidget {
                     ),
                   ),
                 )
-              : const SliverFillRemaining(
-                  child: AnimatedEmptyView(
-                    svgImage: AppAssets.svgsEmptyChats,
-                    text: AppStrings.startChatting,
-                  ),
-                );
+              : (context.read<ChatCubit>().isSearching
+                  ? const SliverFillRemaining(
+                      child: SizedBox.shrink(),
+                    )
+                  : const SliverFillRemaining(
+                      child: AnimatedEmptyView(
+                        svgImage: AppAssets.svgsEmptyChats,
+                        text: AppStrings.startChatting,
+                      ),
+                    ));
         } else if (state is GetChatsError) {
           return SliverFillRemaining(
             child: CustomErrorWidget(
