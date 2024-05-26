@@ -178,12 +178,16 @@ class SetupDIForCubits {
     // ========== Chat feature ==========
     getIt.registerFactory<ChatCubit>(
       () => ChatCubit(
-        sendMessageUseCase: getIt.get<SendMessageUseCase>(),
-        uploadMessageImageUseCase: getIt.get<UploadMessageImageUseCase>(),
         getChatsUseCase: getIt.get<GetChatsUseCase>(),
         alsoDeleteChatForOtherUserUseCase:
             getIt.get<AlsoDeleteChatForOtherUserUseCase>(),
         deleteChatUseCase: getIt.get<DeleteChatUseCase>(),
+      ),
+    );
+    getIt.registerFactory<ChatDetailsCubit>(
+      () => ChatDetailsCubit(
+        sendMessageUseCase: getIt.get<SendMessageUseCase>(),
+        uploadMessageImageUseCase: getIt.get<UploadMessageImageUseCase>(),
       ),
     );
 
