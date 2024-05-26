@@ -230,4 +230,5 @@ class AppStrings {
   static const String writeTheCorrectReason = 'Write the correct reason';
   static const String localNotificationsChannelId = 'basic_channel';
   static const String localNotificationsChannelName = 'Local Notifications';
+  static const String tipsCollection = 'Tips Collection';
 }

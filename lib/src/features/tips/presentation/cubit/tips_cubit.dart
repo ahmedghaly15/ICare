@@ -7,11 +7,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/models/no_params.dart';
-import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/services/local_notifications/local_notification.dart';
 import 'package:icare/src/core/services/local_notifications/local_notifications_service.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
+import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:icare/src/features/tips/domain/usecases/get_random_tip.dart';
@@ -25,8 +25,8 @@ class TipsCubit extends Cubit<TipsState> {
   }
 
   Future<void> _initialization() async {
-    await _getCachedIsDone();
     await _showOrNotShowTipDialogTimer();
+    await _getSavedIsDone();
     _updateRandomTipDialogOpacity();
     _showRandomTipDialog();
   }
@@ -35,9 +35,15 @@ class TipsCubit extends Cubit<TipsState> {
     _timer = Timer.periodic(
       const Duration(hours: 24),
       (Timer t) async {
-        await getIt.get<CacheHelper>().removeData(key: AppStrings.cachedIsDone);
+        await _setIsDoneToFalse();
       },
     );
+  }
+
+  Future<void> _setIsDoneToFalse() async {
+    await accessTipsCollection().doc(Helper.uId).update({
+      AppStrings.cachedIsDone: false,
+    });
   }
 
   late final Timer _timer;
@@ -100,29 +106,28 @@ class TipsCubit extends Cubit<TipsState> {
   }
 
   bool isDone = false;
-  void _convertIsDone() {
+  void _invertIsDone() {
     isDone = !isDone;
     emit(TipsState.convertBoolVal(isDone));
   }
 
-  Future<void> _cacheIsDone() async {
-    await getIt.get<CacheHelper>().saveData(
-          key: '${AppStrings.cachedIsDone}${Helper.uId}',
-          value: isDone,
-        );
+  Future<void> _saveIsDone() async {
+    return await accessTipsCollection().doc(Helper.uId).set({
+      AppStrings.cachedIsDone: isDone,
+    });
   }
 
-  Future<void> _getCachedIsDone() async {
-    isDone = (getIt
-            .get<CacheHelper>()
-            .getBoolData(key: '${AppStrings.cachedIsDone}${Helper.uId}')) ??
-        false;
+  Future<void> _getSavedIsDone() async {
+    final isDoneQuery = await accessTipsCollection().doc(Helper.uId).get();
+    isDone = isDoneQuery.data()?[AppStrings.cachedIsDone] ?? false;
+    debugPrint(
+        '******* =>>>>>>>> IS DONE ${isDoneQuery.data()?[AppStrings.cachedIsDone]}');
     emit(TipsState.convertBoolVal(isDone));
   }
 
   void emitRandomTipDialogIsClosed() async {
-    _convertIsDone();
-    await _cacheIsDone();
+    _invertIsDone();
+    await _saveIsDone();
     _updateRandomTipDialogOpacity();
     _showRandomTipDialog();
     emit(const TipsState.randomTipDialogIsClosed());
@@ -133,10 +138,7 @@ class TipsCubit extends Cubit<TipsState> {
 
   void _showRandomTipDialog() {
     if (isDone) {
-      Future.delayed(const Duration(milliseconds: 500), () {
-        isDialogShown = false;
-        emit(TipsState.convertBoolVal(isDialogShown));
-      });
+      isDialogShown = false;
     } else {
       isDialogShown = true;
     }

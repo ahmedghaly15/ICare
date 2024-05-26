@@ -75,3 +75,9 @@ CollectionReference<Map<String, dynamic>>
       .doc(Helper.uId)
       .collection(AppStrings.notificationsCollection);
 }
+
+CollectionReference<Map<String, dynamic>> accessTipsCollection() {
+  return accessUsersCollection()
+      .doc(Helper.uId)
+      .collection(AppStrings.tipsCollection);
+}
