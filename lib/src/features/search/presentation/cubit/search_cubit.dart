@@ -17,7 +17,6 @@ class SearchCubit extends Cubit<SearchState> {
   void searchUsers() async {
     if (searchController.text.isEmpty) {
       emit(const SearchState.initial());
-
       return;
     }
 

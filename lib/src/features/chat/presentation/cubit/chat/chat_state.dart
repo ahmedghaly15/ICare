@@ -1,0 +1,18 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:icare/src/core/models/icare_user.dart';
+
+part 'chat_state.freezed.dart';
+
+@freezed
+class ChatState<T> with _$ChatState<T> {
+  const factory ChatState.initial() = _ChatInitial;
+  const factory ChatState.getChatsLoading() = GetChatsLoading;
+  const factory ChatState.getChatsSuccess(List<ICareUser> users) =
+      GetChatsSuccess<T>;
+  const factory ChatState.getChatsError(String error) = GetChatsError<T>;
+  const factory ChatState.deleteChatLoading() = DeleteChatLoading;
+  const factory ChatState.deleteChatSuccess() = DeleteChatSuccess;
+  const factory ChatState.deleteChatError(String error) = DeleteChatError<T>;
+  const factory ChatState.invertIsSearchingBool(bool isSearching) =
+      InvertIsSearchingBool<T>;
+}
