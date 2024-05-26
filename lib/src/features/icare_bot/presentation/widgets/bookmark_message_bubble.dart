@@ -12,6 +12,7 @@ import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
+import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_state.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/icare_bot_image.dart';
 
 class BookmarkMessageBubble extends StatelessWidget {
@@ -55,23 +56,32 @@ class BookmarkMessageBubble extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: IconButton(
-                    padding: EdgeInsets.all(4.h),
-                    style: IconButton.styleFrom(
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      minimumSize: Size.zero,
-                    ),
-                    onPressed: () {
-                      context.read<BookmarkCubit>().deleteBookmark(
-                            DeleteBookmarkParams(
-                              userId: Helper.uId!,
-                              bookmarkId: bookmark.chatResponseId,
-                            ),
-                          );
-                    },
-                    icon: const Icon(
-                      Icons.bookmark,
-                      color: AppColors.primaryColor,
+                  child: BlocListener<BookmarkCubit, BookmarkState>(
+                    listenWhen: (_, current) =>
+                        current is RetrieveICareBotBookmarksError ||
+                        current is DeleteBookmarkSuccess ||
+                        current is DeleteBookmarkError,
+                    listener: (context, state) => context
+                        .read<BookmarkCubit>()
+                        .handleDeleteBookmarkStates(state, context),
+                    child: IconButton(
+                      padding: EdgeInsets.all(4.h),
+                      style: IconButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        minimumSize: Size.zero,
+                      ),
+                      onPressed: () {
+                        context.read<BookmarkCubit>().deleteBookmark(
+                              DeleteBookmarkParams(
+                                userId: Helper.uId!,
+                                bookmarkId: bookmark.chatResponseId,
+                              ),
+                            );
+                      },
+                      icon: const Icon(
+                        Icons.bookmark,
+                        color: AppColors.primaryColor,
+                      ),
                     ),
                   ),
                 )

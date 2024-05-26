@@ -7,7 +7,7 @@ import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_pop_menu_button.dart';
+import 'package:icare/src/features/icare_bot/presentation/widgets/bookmark_pop_menu_button_bloc_listener.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/icare_bot_image.dart';
 
 class MessageBubble extends StatelessWidget {
@@ -77,7 +77,7 @@ class MessageBubble extends StatelessWidget {
         ),
         isUser
             ? const SizedBox.shrink()
-            : BookmarkPopUpMenuButton(chatResponse: message),
+            : BookmarkPopUpMenuButtonBlocListener(chatResponse: message),
       ],
     );
   }
