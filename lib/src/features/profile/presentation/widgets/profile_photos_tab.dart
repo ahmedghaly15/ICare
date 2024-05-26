@@ -39,7 +39,7 @@ class ProfilePhotosTab extends StatelessWidget {
                 padding: AppUtils.profileTabsPadding,
                 itemCount: photos.length,
                 itemBuilder: (_, index) => ZoomIn(
-                  child: ProfilePhotoItem(photo: photos[index]),
+                  child: ProfilePhotoItem(photo: photos[index], userId: uId),
                 ),
               )
             : const AnimatedEmptyView(svgImage: AppAssets.svgsEmptyPhotos);

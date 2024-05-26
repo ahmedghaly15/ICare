@@ -46,58 +46,54 @@ class CustomImageBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: BottomSheet(
-        backgroundColor: isDarkModeActive(context)
-            ? AppColors.scaffoldDarkModeBackgroundColor
-            : Colors.white,
-        enableDrag: true,
-        onClosing: () => context.maybePop(),
-        builder: (context) {
-          return Padding(
-            padding: EdgeInsets.only(bottom: 25.h),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Pick a $type Picture",
-                  style: AppTextStyles.textStyle18Bold.copyWith(
-                    color:
-                        isDarkModeActive(context) ? Colors.white : Colors.black,
+    return BottomSheet(
+      backgroundColor: isDarkModeActive(context)
+          ? AppColors.scaffoldDarkModeBackgroundColor
+          : Colors.white,
+      onClosing: () => context.maybePop(),
+      builder: (context) {
+        return Padding(
+          padding: EdgeInsets.only(bottom: 25.h),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Pick a $type Picture",
+                style: AppTextStyles.textStyle18Bold.copyWith(
+                  color:
+                      isDarkModeActive(context) ? Colors.white : Colors.black,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 10.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  ImageCircle(
+                    onPressed: () async {
+                      await _requestStoragePermission(
+                        context: context,
+                        execute: onPressedGallery,
+                      );
+                    },
+                    icon: AppAssets.imagesAddImage,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 10.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    ImageCircle(
-                      onPressed: () async {
-                        await _requestStoragePermission(
-                          context: context,
-                          execute: onPressedGallery,
-                        );
-                      },
-                      icon: AppAssets.imagesAddImage,
-                    ),
-                    ImageCircle(
-                      onPressed: () async {
-                        await _requestStoragePermission(
-                          context: context,
-                          execute: onPressedCamera,
-                        );
-                      },
-                      icon: AppAssets.imagesCamera,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+                  ImageCircle(
+                    onPressed: () async {
+                      await _requestStoragePermission(
+                        context: context,
+                        execute: onPressedCamera,
+                      );
+                    },
+                    icon: AppAssets.imagesCamera,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -106,7 +102,7 @@ class CustomImageBottomSheet extends StatelessWidget {
     required void Function()? execute,
   }) async {
     if (await Permission.storage.request().isGranted) {
-      execute!;
+      execute!();
     } else {
       ShowICareDialog.show(
         // ignore: use_build_context_synchronously
