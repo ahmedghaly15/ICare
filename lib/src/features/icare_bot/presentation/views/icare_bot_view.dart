@@ -18,8 +18,15 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider<ICareBotCubit>(
-      create: (_) => getIt.get<ICareBotCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ICareBotCubit>(
+          create: (_) => getIt.get<ICareBotCubit>(),
+        ),
+        BlocProvider<BookmarkCubit>(
+          create: (_) => getIt.get<BookmarkCubit>(),
+        ),
+      ],
       child: this,
     );
   }
@@ -59,10 +66,7 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
       ),
       actions: <Widget>[
         IconButton(
-          onPressed: () {
-            context.read<BookmarkCubit>().retrieveICareBotBookmarks();
-            context.pushRoute(const BookmarksRoute());
-          },
+          onPressed: () => context.pushRoute(const BookmarksRoute()),
           icon: const Icon(
             Icons.bookmark,
             color: Colors.white,

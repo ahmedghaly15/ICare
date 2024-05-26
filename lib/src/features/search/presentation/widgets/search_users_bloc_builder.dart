@@ -30,22 +30,20 @@ class SearchUsersBlocBuilder extends StatelessWidget {
               horizontal: 16.w,
               vertical: 16.h,
             ),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) => Container(
-                  margin: EdgeInsets.only(bottom: 16.h),
-                  child: UserItem(
-                    user: state.searchResult[index],
-                    onTap: () {
-                      navigateToUserProfile(
-                context: context,
-                user: state.searchResult[index],
-              );
-                    },
-                  ),
+            sliver: SliverList.builder(
+              itemBuilder: (context, index) => Container(
+                margin: EdgeInsets.only(bottom: 16.h),
+                child: UserItem(
+                  user: state.searchResult[index],
+                  onTap: () {
+                    navigateToUserProfile(
+                      context: context,
+                      user: state.searchResult[index],
+                    );
+                  },
                 ),
-                childCount: state.searchResult.length,
               ),
+              itemCount: state.searchResult.length,
             ),
           );
         } else if (state is SearchUsersError) {

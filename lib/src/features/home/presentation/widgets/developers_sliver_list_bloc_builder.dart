@@ -18,12 +18,10 @@ class DevelopersSliverListBlocBuilder extends StatelessWidget {
           current is GetDevelopersError,
       builder: (context, state) {
         if (state is GetDevelopersSuccess) {
-          return SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) =>
-                  DeveloperItem(developer: state.developers[index]),
-              childCount: state.developers.length,
-            ),
+          return SliverList.builder(
+            itemBuilder: (context, index) =>
+                DeveloperItem(developer: state.developers[index]),
+            itemCount: state.developers.length,
           );
         } else if (state is GetDevelopersError) {
           return SliverFillRemaining(

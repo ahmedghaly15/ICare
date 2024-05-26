@@ -32,12 +32,10 @@ class FollowersBlocBuilder extends StatelessWidget {
                     vertical: 16.h,
                     horizontal: 9.w,
                   ),
-                  sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) =>
-                          FollowerUserItem(user: state.users[index]),
-                      childCount: state.users.length,
-                    ),
+                  sliver: SliverList.builder(
+                    itemBuilder: (context, index) =>
+                        FollowerUserItem(user: state.users[index]),
+                    itemCount: state.users.length,
                   ),
                 )
               : ThisUserEmptyAnimatedFollowingOrFollowers(uId: user.uId!);

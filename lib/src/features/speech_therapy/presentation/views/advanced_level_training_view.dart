@@ -40,12 +40,10 @@ class AdvancedLevelTrainingView extends StatelessWidget
             CustomSliverAppBar(title: data.details.surahNameEn),
             SliverPadding(
               padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 16.w),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) => ZoomIn(
-                      child: AyahItem(ayah: data.details.fullSurah[index])),
-                  childCount: data.details.fullSurah.length,
-                ),
+              sliver: SliverList.builder(
+                itemBuilder: (context, index) => ZoomIn(
+                    child: AyahItem(ayah: data.details.fullSurah[index])),
+                itemCount: data.details.fullSurah.length,
               ),
             ),
             AdvancedLevelTryListenButtonsBlocConsumer(id: data.id),

@@ -34,13 +34,11 @@ class BookmarksBlocConsumer extends StatelessWidget {
                 )
               : SliverPadding(
                   padding: AppUtils.bookmarksBubblesPadding,
-                  sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) => BookmarkMessageBubble(
-                        bookmark: state.data[index],
-                      ),
-                      childCount: state.data.length,
+                  sliver: SliverList.builder(
+                    itemBuilder: (context, index) => BookmarkMessageBubble(
+                      bookmark: state.data[index],
                     ),
+                    itemCount: state.data.length,
                   ),
                 );
         } else {

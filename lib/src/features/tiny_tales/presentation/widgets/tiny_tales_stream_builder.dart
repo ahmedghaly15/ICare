@@ -24,15 +24,13 @@ class TinyTalesStreamBuilder extends StatelessWidget {
             .map((e) => TinyTale.fromJson(e.data()))
             .toList();
         return tinyTales.isNotEmpty
-            ? SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) => ElasticIn(
-                    duration: const Duration(seconds: 2),
-                    delay: Duration(milliseconds: index * 100),
-                    child: TinyTaleItem(tinyTale: tinyTales[index]),
-                  ),
-                  childCount: tinyTales.length,
+            ? SliverList.builder(
+                itemBuilder: (context, index) => ElasticIn(
+                  duration: const Duration(seconds: 2),
+                  delay: Duration(milliseconds: index * 100),
+                  child: TinyTaleItem(tinyTale: tinyTales[index]),
                 ),
+                itemCount: tinyTales.length,
               )
             : const SliverFillRemaining(child: EmptyTinyTales());
       },

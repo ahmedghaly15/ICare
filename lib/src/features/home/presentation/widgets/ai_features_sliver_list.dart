@@ -7,12 +7,10 @@ class AIFeaturesSliverList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, index) => AIFeatureItem(
-            homeAIFeature: AppUtils.homeAIFeatures(context)[index]),
-        childCount: AppUtils.homeAIFeatures(context).length,
-      ),
+    return SliverList.builder(
+      itemBuilder: (context, index) =>
+          AIFeatureItem(homeAIFeature: AppUtils.homeAIFeatures(context)[index]),
+      itemCount: AppUtils.homeAIFeatures(context).length,
     );
   }
 }

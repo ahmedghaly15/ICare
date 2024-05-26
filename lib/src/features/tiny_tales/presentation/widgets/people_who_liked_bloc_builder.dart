@@ -24,15 +24,13 @@ class PeopleWhoLikedBlocBuilder extends StatelessWidget {
           current is GetPeopleWhoLikedError,
       builder: (context, state) {
         if (state is GetPeopleWhoLikedSuccess) {
-          return SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => FadeInLeft(
-                child: PersonWhoLikedItem(
-                  person: state.peopleWhoLiked[index],
-                ),
+          return SliverList.builder(
+            itemBuilder: (context, index) => FadeInLeft(
+              child: PersonWhoLikedItem(
+                person: state.peopleWhoLiked[index],
               ),
-              childCount: state.peopleWhoLiked.length,
             ),
+            itemCount: state.peopleWhoLiked.length,
           );
         } else if (state is GetPeopleWhoLikedError) {
           return SliverFillRemaining(

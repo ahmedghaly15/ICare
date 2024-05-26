@@ -24,12 +24,10 @@ class BookmarkedTinyTalesSliverListBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state is GetBookmarkedTinyTalesSuccess) {
           return state.data.isNotEmpty
-              ? SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) =>
-                        TinyTaleItem(tinyTale: state.data[index]),
-                    childCount: state.data.length,
-                  ),
+              ? SliverList.builder(
+                  itemBuilder: (context, index) =>
+                      TinyTaleItem(tinyTale: state.data[index]),
+                  itemCount: state.data.length,
                 )
               : const SliverFillRemaining(
                   child: AnimatedEmptyView(

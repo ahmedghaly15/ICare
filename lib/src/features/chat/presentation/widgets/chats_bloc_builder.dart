@@ -28,11 +28,10 @@ class ChatsBlocBuilder extends StatelessWidget {
                     horizontal: 16.w,
                     vertical: 16.h,
                   ),
-                  sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) => ChatItem(user: state.users[index]),
-                      childCount: state.users.length,
-                    ),
+                  sliver: SliverList.builder(
+                    itemBuilder: (context, index) =>
+                        ChatItem(user: state.users[index]),
+                    itemCount: state.users.length,
                   ),
                 )
               : (context.read<ChatCubit>().isSearching
