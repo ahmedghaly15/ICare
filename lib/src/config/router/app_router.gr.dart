@@ -78,16 +78,17 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<ChatDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ChatDetailsView(
+        child: WrappedRoute(
+            child: ChatDetailsView(
           key: args.key,
           receiver: args.receiver,
-        ),
+        )),
       );
     },
     ChatsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const ChatsView(),
+        child: WrappedRoute(child: const ChatsView()),
       );
     },
     CommentRepliesRoute.name: (routeData) {

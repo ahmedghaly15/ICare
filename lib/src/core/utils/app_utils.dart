@@ -10,7 +10,6 @@ import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
-import 'package:icare/src/features/chat/presentation/cubit/chat_cubit.dart';
 import 'package:icare/src/features/home/data/models/custom_drawer_item.dart';
 import 'package:icare/src/features/home/data/models/home_ai_feature.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
@@ -69,10 +68,7 @@ class AppUtils {
         CustomDrawerItem(
           title: AppStrings.chats,
           icon: Icons.forum,
-          onPressed: () {
-            context.read<ChatCubit>().getChats();
-            context.pushRoute(const ChatsRoute());
-          },
+          onPressed: () => context.pushRoute(const ChatsRoute()),
         ),
         CustomDrawerItem(
           title: AppStrings.search,
