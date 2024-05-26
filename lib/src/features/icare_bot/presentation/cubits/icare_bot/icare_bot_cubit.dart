@@ -80,10 +80,15 @@ class ICareBotCubit extends Cubit<ICareBotState> {
       _convertSendMessageTextFieldStatus();
       emit(ICareBotState.success(response.text));
       textController.clear();
+      _scrollToTheBottom();
+    }
+  }
 
+  void _scrollToTheBottom() {
+    // Ensure the scroll operation is performed after the widget tree is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       final bool isScrolledToBottom = scrollController.position.pixels ==
           scrollController.position.maxScrollExtent;
-
       // Scroll to the bottom of the chat history
       if (!isScrolledToBottom) {
         scrollController.animateTo(
@@ -92,7 +97,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
           curve: Curves.easeOut,
         );
       }
-    }
+    });
   }
 
   bool isSendMessageTextFieldEnabled = true;

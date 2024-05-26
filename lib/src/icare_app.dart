@@ -27,36 +27,34 @@ class ICareApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<UserCubit>(
-            create: (_) => getIt.get<UserCubit>(),
+            create: (context) => getIt.get<UserCubit>(),
           ),
           BlocProvider<TinyTalesCubit>(
-            create: (_) => getIt.get<TinyTalesCubit>(),
+            create: (context) => getIt.get<TinyTalesCubit>(),
           ),
           BlocProvider<SpeechTherapyCubit>(
-            create: (_) => getIt.get<SpeechTherapyCubit>(),
+            create: (context) => getIt.get<SpeechTherapyCubit>(),
           ),
           BlocProvider<ThemesCubit>(
-            create: (_) => getIt.get<ThemesCubit>(),
+            create: (context) => getIt.get<ThemesCubit>(),
           ),
           BlocProvider<NotificationsCubit>(
-            create: (_) => getIt.get<NotificationsCubit>(),
+            create: (context) => getIt.get<NotificationsCubit>(),
           ),
         ],
         child: BlocBuilder<ThemesCubit, ThemeData>(
           buildWhen: (previous, current) => previous != current,
-          builder: (context, themeState) {
-            return MaterialApp.router(
-              debugShowCheckedModeBanner: false,
-              title: AppStrings.appTitle,
-              theme: themeState,
-              routerConfig: getIt.get<AppRouter>().config(
-                    navigatorObservers: () => [
-                      AppRoutesObserver(),
-                      AutoRouteObserver(),
-                    ],
-                  ),
-            );
-          },
+          builder: (context, themeState) => MaterialApp.router(
+            debugShowCheckedModeBanner: false,
+            title: AppStrings.appTitle,
+            theme: themeState,
+            routerConfig: getIt.get<AppRouter>().config(
+                  navigatorObservers: () => [
+                    AppRoutesObserver(),
+                    AutoRouteObserver(),
+                  ],
+                ),
+          ),
         ),
       ),
     );

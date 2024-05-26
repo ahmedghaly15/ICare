@@ -46,7 +46,6 @@ class BookmarkCubit extends Cubit<BookmarkState> {
   Future<void> retrieveICareBotBookmarks() async {
     emit(const BookmarkState.retrieveICareBotBookmarksLoading());
     final result = await retrieveICareBotBookmarksUseCase(const NoParams());
-
     result.when(
       success: (bookmarks) =>
           emit(BookmarkState.retrieveICareBotBookmarksSuccess(bookmarks)),
@@ -61,7 +60,6 @@ class BookmarkCubit extends Cubit<BookmarkState> {
   void deleteBookmark(DeleteBookmarkParams params) async {
     emit(const BookmarkState.deleteBookmarkLoading());
     final response = await deleteBookmarkUseCase(params);
-
     response.when(
       success: (data) => emit(BookmarkState.deleteBookmarkSuccess(data)),
       error: (error) => emit(
@@ -92,19 +90,19 @@ class BookmarkCubit extends Cubit<BookmarkState> {
     }
   }
 
-  void bookmarkStateListener(
+  void handleDeleteBookmarkStates(
     BookmarkState<dynamic> state,
     BuildContext context,
   ) {
     state.whenOrNull(
-      deleteBookmarkSuccess: (data) =>
-          _handleDeleteBookmarkSuccessState(context),
-      retrieveICareBotBookmarksError: (error) => ShowICareDialog.show(
-        context: context,
-        state: ICareDialogStates.error,
-        message: error,
-      ),
-    );
+        deleteBookmarkSuccess: (data) =>
+            _handleDeleteBookmarkSuccessState(context),
+        retrieveICareBotBookmarksError: (error) {
+          ShowICareDialog.showICareDialogError(context, error);
+        },
+        deleteBookmarkError: (error) {
+          ShowICareDialog.showICareDialogError(context, error);
+        });
   }
 
   void _handleDeleteBookmarkSuccessState(BuildContext context) {
@@ -112,13 +110,28 @@ class BookmarkCubit extends Cubit<BookmarkState> {
       if (value) {
         debugPrint(
             '=========>>>> CACHED BOOKMARKS DELETED <<<<<<<<<<==========');
-
         context.read<BookmarkCubit>().retrieveICareBotBookmarks();
       }
     });
   }
 
-  Future<bool> _removeCachedBookmarks() {
-    return getIt.get<CacheHelper>().removeData(key: AppStrings.cachedBookmarks);
+  void handleBookmarkMessageStates(
+    BookmarkState<dynamic> state,
+    BuildContext context,
+  ) {
+    state.whenOrNull(
+      bookmarkICareBotMessageSuccess: (_) {
+        _removeCachedBookmarks().then((_) => retrieveICareBotBookmarks());
+      },
+      bookmarkICareBotMessageError: (error) {
+        ShowICareDialog.showICareDialogError(context, error);
+      },
+    );
+  }
+
+  Future<bool> _removeCachedBookmarks() async {
+    return await getIt
+        .get<CacheHelper>()
+        .removeData(key: AppStrings.cachedBookmarks);
   }
 }

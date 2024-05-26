@@ -21,10 +21,10 @@ class ICareBotView extends StatelessWidget implements AutoRouteWrapper {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ICareBotCubit>(
-          create: (_) => getIt.get<ICareBotCubit>(),
+          create: (context) => getIt.get<ICareBotCubit>(),
         ),
         BlocProvider<BookmarkCubit>(
-          create: (_) => getIt.get<BookmarkCubit>(),
+          create: (context) => getIt.get<BookmarkCubit>(),
         ),
       ],
       child: this,

@@ -8,7 +8,7 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_refresh_indicator.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/bookmark/bookmark_cubit.dart';
-import 'package:icare/src/features/icare_bot/presentation/widgets/bookmarks_bloc_consumer.dart';
+import 'package:icare/src/features/icare_bot/presentation/widgets/bookmarks_bloc_builder.dart';
 
 @RoutePage()
 class BookmarksView extends StatelessWidget implements AutoRouteWrapper {
@@ -37,7 +37,7 @@ class BookmarksView extends StatelessWidget implements AutoRouteWrapper {
                 padding: EdgeInsets.only(left: 8.w),
                 sliver: const CustomSliverAppBar(title: AppStrings.bookmarks),
               ),
-              const BookmarksBlocConsumer(),
+              const BookmarksBlocBuilder(),
             ],
           ),
         ),
