@@ -1,6 +1,7 @@
 part of '../../../dependency_injection.dart';
 
 class SetupDIForCore {
+  SetupDIForCore._();
   static void setup() {
     getIt.registerLazySingleton<NetworkInfo>(
       () => NetworkInfoImpl(

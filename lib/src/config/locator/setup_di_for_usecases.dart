@@ -1,6 +1,7 @@
 part of '../../../dependency_injection.dart';
 
 class SetupDIForUseCases {
+  SetupDIForUseCases._();
   static void setup() {
     // ========== Login feature ==========
     getIt.registerLazySingleton<LoginUseCase>(

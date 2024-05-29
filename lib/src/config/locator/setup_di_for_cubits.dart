@@ -1,6 +1,7 @@
 part of '../../../dependency_injection.dart';
 
 class SetupDIForCubits {
+  SetupDIForCubits._();
   static void setup() {
     // ========== Themes feature ==========
     getIt.registerFactory<ThemesCubit>(() => ThemesCubit());

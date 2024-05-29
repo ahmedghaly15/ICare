@@ -1,6 +1,7 @@
 part of '../../../dependency_injection.dart';
 
 class SetupDIForRepos {
+  SetupDIForRepos._();
   static void setup() {
     // ========== Login feature ==========
     getIt.registerLazySingleton<LoginRepo>(

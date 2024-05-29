@@ -1,6 +1,7 @@
 part of '../../../dependency_injection.dart';
 
 class SetupDIForExternal {
+  SetupDIForExternal._();
   static Future<void> setup() async {
     getIt.registerLazySingleton<InternetConnectionChecker>(
       () => InternetConnectionChecker(),

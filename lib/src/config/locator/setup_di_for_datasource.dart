@@ -1,6 +1,7 @@
 part of '../../../dependency_injection.dart';
 
 class SetupDIForDatasource {
+  SetupDIForDatasource._();
   static void setup() {
     // ========== Login feature ==========
     getIt.registerLazySingleton<LoginDataSource>(
@@ -118,7 +119,9 @@ class SetupDIForDatasource {
     );
 
     // ========== Profile feature ==========
-    getIt.registerLazySingleton<ProfileDatasource>(() => const ProfileDatasourceImpl(),);
+    getIt.registerLazySingleton<ProfileDatasource>(
+      () => const ProfileDatasourceImpl(),
+    );
 
     // ========== Home feature ==========
     getIt.registerLazySingleton<HomeRemoteDatasource>(
