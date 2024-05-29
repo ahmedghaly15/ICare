@@ -87,8 +87,6 @@ class NotificationItem extends StatelessWidget {
                               ? Colors.white
                               : Colors.black,
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
@@ -103,8 +101,6 @@ class NotificationItem extends StatelessWidget {
                           ? Colors.white
                           : Colors.black,
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
         ],
