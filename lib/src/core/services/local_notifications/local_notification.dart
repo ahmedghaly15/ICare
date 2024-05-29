@@ -1,8 +1,11 @@
-class LocalNotification {
-  final String title, body;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const LocalNotification({
-    required this.title,
-    required this.body,
-  });
+part 'local_notification.freezed.dart';
+
+@freezed
+class LocalNotification with _$LocalNotification {
+  const factory LocalNotification({
+    required String title,
+    required String body,
+  }) = _LocalNotification;
 }
