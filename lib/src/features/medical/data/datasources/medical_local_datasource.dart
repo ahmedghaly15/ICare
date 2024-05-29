@@ -37,11 +37,9 @@ class MedicalLocalDatasourceImpl implements MedicalLocalDatasource {
   @override
   List<DiseaseData> getCachedEmergencyDiseases() {
     final List<DiseaseData> data = <DiseaseData>[];
-
     for (final element in json.decode(emergencyDiseasesJson()!)) {
       data.add(DiseaseData.fromJson(element));
     }
-
     return data;
   }
 
@@ -63,11 +61,9 @@ class MedicalLocalDatasourceImpl implements MedicalLocalDatasource {
   @override
   List<GetMedicalInfoResponse> getCachedMedicalInfo() {
     final List<GetMedicalInfoResponse> data = [];
-
     for (final element in json.decode(cachedMedicalInfoJson()!)) {
       data.add(GetMedicalInfoResponse.fromJson(element));
     }
-
     return data;
   }
 }

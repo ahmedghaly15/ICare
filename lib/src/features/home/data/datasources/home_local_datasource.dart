@@ -32,7 +32,6 @@ class HomeLocalDatasourceImpl implements HomeLocalDatasource {
   @override
   List<Developer> retrieveCachedDevelopers() {
     final List<Developer> developers = <Developer>[];
-
     for (final developer in json.decode(cachedDevelopersJson()!)) {
       developers.add(Developer.fromJson(developer));
     }

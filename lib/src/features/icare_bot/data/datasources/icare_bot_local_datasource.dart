@@ -36,11 +36,9 @@ class ICareBotLocalDatasourceImpl implements ICareBotLocalDatasource {
   List<BookmarkICareBotMessageResponse> retrieveCachedBookmarks() {
     final List<BookmarkICareBotMessageResponse> bookmarks =
         <BookmarkICareBotMessageResponse>[];
-
     for (final element in json.decode(bookmarksJson()!)) {
       bookmarks.add(BookmarkICareBotMessageResponse.fromJson(element));
     }
-
     return bookmarks;
   }
 }

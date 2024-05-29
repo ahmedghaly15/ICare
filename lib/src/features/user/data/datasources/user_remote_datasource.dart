@@ -9,9 +9,8 @@ import 'package:icare/src/core/utils/functions/access_collections.dart';
 
 abstract class UserRemoteDataSource {
   Future<ICareUser> getUserData();
-  Future<QuerySnapshot<Map<String, dynamic>>> getAllUsers();
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowers(ICareUser user);
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowing(ICareUser user);
+  Future<List<ICareUser>> getFollowers(ICareUser user);
+  Future<List<ICareUser>> getFollowing(ICareUser user);
   Future<void> follow(ICareUser user);
   Future<void> unFollow(ICareUser user);
   Future<void> signOut();
@@ -25,11 +24,6 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
     final DocumentSnapshot<Map<String, dynamic>> documentSnapshot =
         await accessUsersCollection().doc(Helper.uId).get();
     return ICareUser.fromJson(documentSnapshot.data()!);
-  }
-
-  @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getAllUsers() async {
-    return await accessUsersCollection().get();
   }
 
   @override
@@ -53,15 +47,17 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
   }
 
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowers(
-      ICareUser user) async {
-    return await accessUserFollowersCollection(user.uId!).get();
+  Future<List<ICareUser>> getFollowers(ICareUser user) async {
+    final QuerySnapshot<Map<String, dynamic>> querySnapshot =
+        await accessUserFollowersCollection(user.uId!).get();
+    return querySnapshot.docs.map((e) => ICareUser.fromJson(e.data())).toList();
   }
 
   @override
-  Future<QuerySnapshot<Map<String, dynamic>>> getFollowing(
-      ICareUser user) async {
-    return await accessUserFollowingCollection(user.uId!).get();
+  Future<List<ICareUser>> getFollowing(ICareUser user) async {
+    final QuerySnapshot<Map<String, dynamic>> querySnapshot =
+        await accessUserFollowingCollection(user.uId!).get();
+    return querySnapshot.docs.map((e) => ICareUser.fromJson(e.data())).toList();
   }
 
   @override

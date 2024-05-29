@@ -10,7 +10,7 @@ abstract class TipsLocalDataSource {
   Future<bool> cacheRandomTip(GetRandomTipResponse randomTip);
   GetRandomTipResponse getCachedRandomTip();
   Future<DateTime?> getLastRetrievalTime();
-  Future<void> updateLastRetrievalTime(DateTime time);
+  Future<bool> updateLastRetrievalTime(DateTime time);
 }
 
 class TipsLocalDataSourceImpl implements TipsLocalDataSource {
@@ -46,8 +46,8 @@ class TipsLocalDataSourceImpl implements TipsLocalDataSource {
   }
 
   @override
-  Future<void> updateLastRetrievalTime(DateTime time) async {
-    await getIt.get<CacheHelper>().saveData(
+  Future<bool> updateLastRetrievalTime(DateTime time) async {
+    return await getIt.get<CacheHelper>().saveData(
           key: AppStrings.lastRetrievedCachedRandomTip,
           value: time.toIso8601String(),
         );

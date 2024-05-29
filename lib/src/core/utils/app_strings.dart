@@ -231,4 +231,6 @@ class AppStrings {
   static const String localNotificationsChannelId = 'basic_channel';
   static const String localNotificationsChannelName = 'Local Notifications';
   static const String tipsCollection = 'Tips Collection';
+  static const String currentUserCachedFollowers = 'currentUserCachedFollowers';
+  static const String currentUserCachedFollowing = 'currentUserCachedFollowing';
 }
