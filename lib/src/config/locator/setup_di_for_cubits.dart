@@ -44,7 +44,6 @@ class SetupDIForCubits {
     getIt.registerFactory<UserCubit>(
       () => UserCubit(
         getUserDataUseCase: getIt.get<GetUserDataUseCase>(),
-        getAllUsersUseCase: getIt.get<GetAllUsersUseCase>(),
         followUseCase: getIt.get<FollowUseCase>(),
         unFollowUseCase: getIt.get<UnFollowUseCase>(),
         getFollowersUseCase: getIt.get<GetFollowersUseCase>(),

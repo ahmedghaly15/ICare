@@ -9,10 +9,6 @@ class UserState<T> with _$UserState<T> {
   const factory UserState.getUserDataLoading() = GetUserDataLoading;
   const factory UserState.getUserData(ICareUser user) = GetUserDataSuccess<T>;
   const factory UserState.getUserDataError(String error) = GetUserDataError<T>;
-  const factory UserState.getAllUsersLoading() = GetAllUsersLoading;
-  const factory UserState.getAllUsers(List<ICareUser> users) =
-      GetAllUsersSuccess<T>;
-  const factory UserState.getAllUsersError(String error) = GetAllUsersError<T>;
   const factory UserState.getFollowingLoading() = GetFollowingLoading;
   const factory UserState.getFollowing(List<ICareUser> users) =
       GetFollowingSuccess<T>;

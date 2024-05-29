@@ -22,9 +22,6 @@ mixin _$UserState<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -45,9 +42,6 @@ mixin _$UserState<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -68,9 +62,6 @@ mixin _$UserState<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -92,9 +83,6 @@ mixin _$UserState<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -115,9 +103,6 @@ mixin _$UserState<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -138,9 +123,6 @@ mixin _$UserState<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -218,9 +200,6 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -244,9 +223,6 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -270,9 +246,6 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -300,9 +273,6 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -326,9 +296,6 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -352,9 +319,6 @@ class _$UserInitialImpl<T> implements _UserInitial<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -423,9 +387,6 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -449,9 +410,6 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -475,9 +433,6 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -505,9 +460,6 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -531,9 +483,6 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -557,9 +506,6 @@ class _$GetUserDataLoadingImpl<T> implements GetUserDataLoading<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -664,9 +610,6 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -690,9 +633,6 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -716,9 +656,6 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -746,9 +683,6 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -772,9 +706,6 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -798,9 +729,6 @@ class _$GetUserDataSuccessImpl<T> implements GetUserDataSuccess<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -901,9 +829,6 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -927,9 +852,6 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -953,9 +875,6 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -983,9 +902,6 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -1009,9 +925,6 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -1035,9 +948,6 @@ class _$GetUserDataErrorImpl<T> implements GetUserDataError<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -1066,691 +976,6 @@ abstract class GetUserDataError<T> implements UserState<T> {
   String get error;
   @JsonKey(ignore: true)
   _$$GetUserDataErrorImplCopyWith<T, _$GetUserDataErrorImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GetAllUsersLoadingImplCopyWith<T, $Res> {
-  factory _$$GetAllUsersLoadingImplCopyWith(_$GetAllUsersLoadingImpl<T> value,
-          $Res Function(_$GetAllUsersLoadingImpl<T>) then) =
-      __$$GetAllUsersLoadingImplCopyWithImpl<T, $Res>;
-}
-
-/// @nodoc
-class __$$GetAllUsersLoadingImplCopyWithImpl<T, $Res>
-    extends _$UserStateCopyWithImpl<T, $Res, _$GetAllUsersLoadingImpl<T>>
-    implements _$$GetAllUsersLoadingImplCopyWith<T, $Res> {
-  __$$GetAllUsersLoadingImplCopyWithImpl(_$GetAllUsersLoadingImpl<T> _value,
-      $Res Function(_$GetAllUsersLoadingImpl<T>) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$GetAllUsersLoadingImpl<T> implements GetAllUsersLoading<T> {
-  const _$GetAllUsersLoadingImpl();
-
-  @override
-  String toString() {
-    return 'UserState<$T>.getAllUsersLoading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllUsersLoadingImpl<T>);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getUserDataLoading,
-    required TResult Function(ICareUser user) getUserData,
-    required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
-    required TResult Function() getFollowingLoading,
-    required TResult Function(List<ICareUser> users) getFollowing,
-    required TResult Function(String error) getFollowingError,
-    required TResult Function() getFollowersLoading,
-    required TResult Function(List<ICareUser> users) getFollowers,
-    required TResult Function(String error) getFollowersError,
-    required TResult Function() followSuccess,
-    required TResult Function(String error) followError,
-    required TResult Function() unFollowSuccess,
-    required TResult Function(String error) unFollowError,
-    required TResult Function() signOutSuccess,
-    required TResult Function(String error) signOutError,
-  }) {
-    return getAllUsersLoading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getUserDataLoading,
-    TResult? Function(ICareUser user)? getUserData,
-    TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
-    TResult? Function()? getFollowingLoading,
-    TResult? Function(List<ICareUser> users)? getFollowing,
-    TResult? Function(String error)? getFollowingError,
-    TResult? Function()? getFollowersLoading,
-    TResult? Function(List<ICareUser> users)? getFollowers,
-    TResult? Function(String error)? getFollowersError,
-    TResult? Function()? followSuccess,
-    TResult? Function(String error)? followError,
-    TResult? Function()? unFollowSuccess,
-    TResult? Function(String error)? unFollowError,
-    TResult? Function()? signOutSuccess,
-    TResult? Function(String error)? signOutError,
-  }) {
-    return getAllUsersLoading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getUserDataLoading,
-    TResult Function(ICareUser user)? getUserData,
-    TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
-    TResult Function()? getFollowingLoading,
-    TResult Function(List<ICareUser> users)? getFollowing,
-    TResult Function(String error)? getFollowingError,
-    TResult Function()? getFollowersLoading,
-    TResult Function(List<ICareUser> users)? getFollowers,
-    TResult Function(String error)? getFollowersError,
-    TResult Function()? followSuccess,
-    TResult Function(String error)? followError,
-    TResult Function()? unFollowSuccess,
-    TResult Function(String error)? unFollowError,
-    TResult Function()? signOutSuccess,
-    TResult Function(String error)? signOutError,
-    required TResult orElse(),
-  }) {
-    if (getAllUsersLoading != null) {
-      return getAllUsersLoading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UserInitial<T> value) initial,
-    required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
-    required TResult Function(GetUserDataSuccess<T> value) getUserData,
-    required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
-    required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
-    required TResult Function(GetFollowingSuccess<T> value) getFollowing,
-    required TResult Function(GetFollowingError<T> value) getFollowingError,
-    required TResult Function(GetFollowersLoading<T> value) getFollowersLoading,
-    required TResult Function(GetFollowersSuccess<T> value) getFollowers,
-    required TResult Function(GetFollowersError<T> value) getFollowersError,
-    required TResult Function(FollowSuccess<T> value) followSuccess,
-    required TResult Function(FollowError<T> value) followError,
-    required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
-    required TResult Function(UnFollowError<T> value) unFollowError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
-    required TResult Function(SignOutError<T> value) signOutError,
-  }) {
-    return getAllUsersLoading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserInitial<T> value)? initial,
-    TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
-    TResult? Function(GetUserDataSuccess<T> value)? getUserData,
-    TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
-    TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
-    TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
-    TResult? Function(GetFollowingError<T> value)? getFollowingError,
-    TResult? Function(GetFollowersLoading<T> value)? getFollowersLoading,
-    TResult? Function(GetFollowersSuccess<T> value)? getFollowers,
-    TResult? Function(GetFollowersError<T> value)? getFollowersError,
-    TResult? Function(FollowSuccess<T> value)? followSuccess,
-    TResult? Function(FollowError<T> value)? followError,
-    TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
-    TResult? Function(UnFollowError<T> value)? unFollowError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult? Function(SignOutError<T> value)? signOutError,
-  }) {
-    return getAllUsersLoading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserInitial<T> value)? initial,
-    TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
-    TResult Function(GetUserDataSuccess<T> value)? getUserData,
-    TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
-    TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
-    TResult Function(GetFollowingSuccess<T> value)? getFollowing,
-    TResult Function(GetFollowingError<T> value)? getFollowingError,
-    TResult Function(GetFollowersLoading<T> value)? getFollowersLoading,
-    TResult Function(GetFollowersSuccess<T> value)? getFollowers,
-    TResult Function(GetFollowersError<T> value)? getFollowersError,
-    TResult Function(FollowSuccess<T> value)? followSuccess,
-    TResult Function(FollowError<T> value)? followError,
-    TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
-    TResult Function(UnFollowError<T> value)? unFollowError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult Function(SignOutError<T> value)? signOutError,
-    required TResult orElse(),
-  }) {
-    if (getAllUsersLoading != null) {
-      return getAllUsersLoading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAllUsersLoading<T> implements UserState<T> {
-  const factory GetAllUsersLoading() = _$GetAllUsersLoadingImpl<T>;
-}
-
-/// @nodoc
-abstract class _$$GetAllUsersSuccessImplCopyWith<T, $Res> {
-  factory _$$GetAllUsersSuccessImplCopyWith(_$GetAllUsersSuccessImpl<T> value,
-          $Res Function(_$GetAllUsersSuccessImpl<T>) then) =
-      __$$GetAllUsersSuccessImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({List<ICareUser> users});
-}
-
-/// @nodoc
-class __$$GetAllUsersSuccessImplCopyWithImpl<T, $Res>
-    extends _$UserStateCopyWithImpl<T, $Res, _$GetAllUsersSuccessImpl<T>>
-    implements _$$GetAllUsersSuccessImplCopyWith<T, $Res> {
-  __$$GetAllUsersSuccessImplCopyWithImpl(_$GetAllUsersSuccessImpl<T> _value,
-      $Res Function(_$GetAllUsersSuccessImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? users = null,
-  }) {
-    return _then(_$GetAllUsersSuccessImpl<T>(
-      null == users
-          ? _value._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<ICareUser>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAllUsersSuccessImpl<T> implements GetAllUsersSuccess<T> {
-  const _$GetAllUsersSuccessImpl(final List<ICareUser> users) : _users = users;
-
-  final List<ICareUser> _users;
-  @override
-  List<ICareUser> get users {
-    if (_users is EqualUnmodifiableListView) return _users;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_users);
-  }
-
-  @override
-  String toString() {
-    return 'UserState<$T>.getAllUsers(users: $users)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllUsersSuccessImpl<T> &&
-            const DeepCollectionEquality().equals(other._users, _users));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllUsersSuccessImplCopyWith<T, _$GetAllUsersSuccessImpl<T>>
-      get copyWith => __$$GetAllUsersSuccessImplCopyWithImpl<T,
-          _$GetAllUsersSuccessImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getUserDataLoading,
-    required TResult Function(ICareUser user) getUserData,
-    required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
-    required TResult Function() getFollowingLoading,
-    required TResult Function(List<ICareUser> users) getFollowing,
-    required TResult Function(String error) getFollowingError,
-    required TResult Function() getFollowersLoading,
-    required TResult Function(List<ICareUser> users) getFollowers,
-    required TResult Function(String error) getFollowersError,
-    required TResult Function() followSuccess,
-    required TResult Function(String error) followError,
-    required TResult Function() unFollowSuccess,
-    required TResult Function(String error) unFollowError,
-    required TResult Function() signOutSuccess,
-    required TResult Function(String error) signOutError,
-  }) {
-    return getAllUsers(users);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getUserDataLoading,
-    TResult? Function(ICareUser user)? getUserData,
-    TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
-    TResult? Function()? getFollowingLoading,
-    TResult? Function(List<ICareUser> users)? getFollowing,
-    TResult? Function(String error)? getFollowingError,
-    TResult? Function()? getFollowersLoading,
-    TResult? Function(List<ICareUser> users)? getFollowers,
-    TResult? Function(String error)? getFollowersError,
-    TResult? Function()? followSuccess,
-    TResult? Function(String error)? followError,
-    TResult? Function()? unFollowSuccess,
-    TResult? Function(String error)? unFollowError,
-    TResult? Function()? signOutSuccess,
-    TResult? Function(String error)? signOutError,
-  }) {
-    return getAllUsers?.call(users);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getUserDataLoading,
-    TResult Function(ICareUser user)? getUserData,
-    TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
-    TResult Function()? getFollowingLoading,
-    TResult Function(List<ICareUser> users)? getFollowing,
-    TResult Function(String error)? getFollowingError,
-    TResult Function()? getFollowersLoading,
-    TResult Function(List<ICareUser> users)? getFollowers,
-    TResult Function(String error)? getFollowersError,
-    TResult Function()? followSuccess,
-    TResult Function(String error)? followError,
-    TResult Function()? unFollowSuccess,
-    TResult Function(String error)? unFollowError,
-    TResult Function()? signOutSuccess,
-    TResult Function(String error)? signOutError,
-    required TResult orElse(),
-  }) {
-    if (getAllUsers != null) {
-      return getAllUsers(users);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UserInitial<T> value) initial,
-    required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
-    required TResult Function(GetUserDataSuccess<T> value) getUserData,
-    required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
-    required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
-    required TResult Function(GetFollowingSuccess<T> value) getFollowing,
-    required TResult Function(GetFollowingError<T> value) getFollowingError,
-    required TResult Function(GetFollowersLoading<T> value) getFollowersLoading,
-    required TResult Function(GetFollowersSuccess<T> value) getFollowers,
-    required TResult Function(GetFollowersError<T> value) getFollowersError,
-    required TResult Function(FollowSuccess<T> value) followSuccess,
-    required TResult Function(FollowError<T> value) followError,
-    required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
-    required TResult Function(UnFollowError<T> value) unFollowError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
-    required TResult Function(SignOutError<T> value) signOutError,
-  }) {
-    return getAllUsers(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserInitial<T> value)? initial,
-    TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
-    TResult? Function(GetUserDataSuccess<T> value)? getUserData,
-    TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
-    TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
-    TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
-    TResult? Function(GetFollowingError<T> value)? getFollowingError,
-    TResult? Function(GetFollowersLoading<T> value)? getFollowersLoading,
-    TResult? Function(GetFollowersSuccess<T> value)? getFollowers,
-    TResult? Function(GetFollowersError<T> value)? getFollowersError,
-    TResult? Function(FollowSuccess<T> value)? followSuccess,
-    TResult? Function(FollowError<T> value)? followError,
-    TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
-    TResult? Function(UnFollowError<T> value)? unFollowError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult? Function(SignOutError<T> value)? signOutError,
-  }) {
-    return getAllUsers?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserInitial<T> value)? initial,
-    TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
-    TResult Function(GetUserDataSuccess<T> value)? getUserData,
-    TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
-    TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
-    TResult Function(GetFollowingSuccess<T> value)? getFollowing,
-    TResult Function(GetFollowingError<T> value)? getFollowingError,
-    TResult Function(GetFollowersLoading<T> value)? getFollowersLoading,
-    TResult Function(GetFollowersSuccess<T> value)? getFollowers,
-    TResult Function(GetFollowersError<T> value)? getFollowersError,
-    TResult Function(FollowSuccess<T> value)? followSuccess,
-    TResult Function(FollowError<T> value)? followError,
-    TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
-    TResult Function(UnFollowError<T> value)? unFollowError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult Function(SignOutError<T> value)? signOutError,
-    required TResult orElse(),
-  }) {
-    if (getAllUsers != null) {
-      return getAllUsers(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAllUsersSuccess<T> implements UserState<T> {
-  const factory GetAllUsersSuccess(final List<ICareUser> users) =
-      _$GetAllUsersSuccessImpl<T>;
-
-  List<ICareUser> get users;
-  @JsonKey(ignore: true)
-  _$$GetAllUsersSuccessImplCopyWith<T, _$GetAllUsersSuccessImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$GetAllUsersErrorImplCopyWith<T, $Res> {
-  factory _$$GetAllUsersErrorImplCopyWith(_$GetAllUsersErrorImpl<T> value,
-          $Res Function(_$GetAllUsersErrorImpl<T>) then) =
-      __$$GetAllUsersErrorImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$GetAllUsersErrorImplCopyWithImpl<T, $Res>
-    extends _$UserStateCopyWithImpl<T, $Res, _$GetAllUsersErrorImpl<T>>
-    implements _$$GetAllUsersErrorImplCopyWith<T, $Res> {
-  __$$GetAllUsersErrorImplCopyWithImpl(_$GetAllUsersErrorImpl<T> _value,
-      $Res Function(_$GetAllUsersErrorImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-  }) {
-    return _then(_$GetAllUsersErrorImpl<T>(
-      null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$GetAllUsersErrorImpl<T> implements GetAllUsersError<T> {
-  const _$GetAllUsersErrorImpl(this.error);
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'UserState<$T>.getAllUsersError(error: $error)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GetAllUsersErrorImpl<T> &&
-            (identical(other.error, error) || other.error == error));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, error);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GetAllUsersErrorImplCopyWith<T, _$GetAllUsersErrorImpl<T>> get copyWith =>
-      __$$GetAllUsersErrorImplCopyWithImpl<T, _$GetAllUsersErrorImpl<T>>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() getUserDataLoading,
-    required TResult Function(ICareUser user) getUserData,
-    required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
-    required TResult Function() getFollowingLoading,
-    required TResult Function(List<ICareUser> users) getFollowing,
-    required TResult Function(String error) getFollowingError,
-    required TResult Function() getFollowersLoading,
-    required TResult Function(List<ICareUser> users) getFollowers,
-    required TResult Function(String error) getFollowersError,
-    required TResult Function() followSuccess,
-    required TResult Function(String error) followError,
-    required TResult Function() unFollowSuccess,
-    required TResult Function(String error) unFollowError,
-    required TResult Function() signOutSuccess,
-    required TResult Function(String error) signOutError,
-  }) {
-    return getAllUsersError(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? getUserDataLoading,
-    TResult? Function(ICareUser user)? getUserData,
-    TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
-    TResult? Function()? getFollowingLoading,
-    TResult? Function(List<ICareUser> users)? getFollowing,
-    TResult? Function(String error)? getFollowingError,
-    TResult? Function()? getFollowersLoading,
-    TResult? Function(List<ICareUser> users)? getFollowers,
-    TResult? Function(String error)? getFollowersError,
-    TResult? Function()? followSuccess,
-    TResult? Function(String error)? followError,
-    TResult? Function()? unFollowSuccess,
-    TResult? Function(String error)? unFollowError,
-    TResult? Function()? signOutSuccess,
-    TResult? Function(String error)? signOutError,
-  }) {
-    return getAllUsersError?.call(error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? getUserDataLoading,
-    TResult Function(ICareUser user)? getUserData,
-    TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
-    TResult Function()? getFollowingLoading,
-    TResult Function(List<ICareUser> users)? getFollowing,
-    TResult Function(String error)? getFollowingError,
-    TResult Function()? getFollowersLoading,
-    TResult Function(List<ICareUser> users)? getFollowers,
-    TResult Function(String error)? getFollowersError,
-    TResult Function()? followSuccess,
-    TResult Function(String error)? followError,
-    TResult Function()? unFollowSuccess,
-    TResult Function(String error)? unFollowError,
-    TResult Function()? signOutSuccess,
-    TResult Function(String error)? signOutError,
-    required TResult orElse(),
-  }) {
-    if (getAllUsersError != null) {
-      return getAllUsersError(error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_UserInitial<T> value) initial,
-    required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
-    required TResult Function(GetUserDataSuccess<T> value) getUserData,
-    required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
-    required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
-    required TResult Function(GetFollowingSuccess<T> value) getFollowing,
-    required TResult Function(GetFollowingError<T> value) getFollowingError,
-    required TResult Function(GetFollowersLoading<T> value) getFollowersLoading,
-    required TResult Function(GetFollowersSuccess<T> value) getFollowers,
-    required TResult Function(GetFollowersError<T> value) getFollowersError,
-    required TResult Function(FollowSuccess<T> value) followSuccess,
-    required TResult Function(FollowError<T> value) followError,
-    required TResult Function(UnFollowSuccess<T> value) unFollowSuccess,
-    required TResult Function(UnFollowError<T> value) unFollowError,
-    required TResult Function(SignOutSuccess<T> value) signOutSuccess,
-    required TResult Function(SignOutError<T> value) signOutError,
-  }) {
-    return getAllUsersError(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UserInitial<T> value)? initial,
-    TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
-    TResult? Function(GetUserDataSuccess<T> value)? getUserData,
-    TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
-    TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
-    TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
-    TResult? Function(GetFollowingError<T> value)? getFollowingError,
-    TResult? Function(GetFollowersLoading<T> value)? getFollowersLoading,
-    TResult? Function(GetFollowersSuccess<T> value)? getFollowers,
-    TResult? Function(GetFollowersError<T> value)? getFollowersError,
-    TResult? Function(FollowSuccess<T> value)? followSuccess,
-    TResult? Function(FollowError<T> value)? followError,
-    TResult? Function(UnFollowSuccess<T> value)? unFollowSuccess,
-    TResult? Function(UnFollowError<T> value)? unFollowError,
-    TResult? Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult? Function(SignOutError<T> value)? signOutError,
-  }) {
-    return getAllUsersError?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UserInitial<T> value)? initial,
-    TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
-    TResult Function(GetUserDataSuccess<T> value)? getUserData,
-    TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
-    TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
-    TResult Function(GetFollowingSuccess<T> value)? getFollowing,
-    TResult Function(GetFollowingError<T> value)? getFollowingError,
-    TResult Function(GetFollowersLoading<T> value)? getFollowersLoading,
-    TResult Function(GetFollowersSuccess<T> value)? getFollowers,
-    TResult Function(GetFollowersError<T> value)? getFollowersError,
-    TResult Function(FollowSuccess<T> value)? followSuccess,
-    TResult Function(FollowError<T> value)? followError,
-    TResult Function(UnFollowSuccess<T> value)? unFollowSuccess,
-    TResult Function(UnFollowError<T> value)? unFollowError,
-    TResult Function(SignOutSuccess<T> value)? signOutSuccess,
-    TResult Function(SignOutError<T> value)? signOutError,
-    required TResult orElse(),
-  }) {
-    if (getAllUsersError != null) {
-      return getAllUsersError(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GetAllUsersError<T> implements UserState<T> {
-  const factory GetAllUsersError(final String error) =
-      _$GetAllUsersErrorImpl<T>;
-
-  String get error;
-  @JsonKey(ignore: true)
-  _$$GetAllUsersErrorImplCopyWith<T, _$GetAllUsersErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1797,9 +1022,6 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -1823,9 +1045,6 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -1849,9 +1068,6 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -1879,9 +1095,6 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -1905,9 +1118,6 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -1931,9 +1141,6 @@ class _$GetFollowingLoadingImpl<T> implements GetFollowingLoading<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -2034,9 +1241,6 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -2060,9 +1264,6 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -2086,9 +1287,6 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -2116,9 +1314,6 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -2142,9 +1337,6 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -2168,9 +1360,6 @@ class _$GetFollowingSuccessImpl<T> implements GetFollowingSuccess<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -2272,9 +1461,6 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -2298,9 +1484,6 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -2324,9 +1507,6 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -2354,9 +1534,6 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -2380,9 +1557,6 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -2406,9 +1580,6 @@ class _$GetFollowingErrorImpl<T> implements GetFollowingError<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -2483,9 +1654,6 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -2509,9 +1677,6 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -2535,9 +1700,6 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -2565,9 +1727,6 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -2591,9 +1750,6 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -2617,9 +1773,6 @@ class _$GetFollowersLoadingImpl<T> implements GetFollowersLoading<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -2720,9 +1873,6 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -2746,9 +1896,6 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -2772,9 +1919,6 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -2802,9 +1946,6 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -2828,9 +1969,6 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -2854,9 +1992,6 @@ class _$GetFollowersSuccessImpl<T> implements GetFollowersSuccess<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -2958,9 +2093,6 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -2984,9 +2116,6 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -3010,9 +2139,6 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -3040,9 +2166,6 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -3066,9 +2189,6 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -3092,9 +2212,6 @@ class _$GetFollowersErrorImpl<T> implements GetFollowersError<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -3168,9 +2285,6 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -3194,9 +2308,6 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -3220,9 +2331,6 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -3250,9 +2358,6 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -3276,9 +2381,6 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -3302,9 +2404,6 @@ class _$FollowSuccessImpl<T> implements FollowSuccess<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -3399,9 +2498,6 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -3425,9 +2521,6 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -3451,9 +2544,6 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -3481,9 +2571,6 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -3507,9 +2594,6 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -3533,9 +2617,6 @@ class _$FollowErrorImpl<T> implements FollowError<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -3608,9 +2689,6 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -3634,9 +2712,6 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -3660,9 +2735,6 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -3690,9 +2762,6 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -3716,9 +2785,6 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -3742,9 +2808,6 @@ class _$UnFollowSuccessImpl<T> implements UnFollowSuccess<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -3839,9 +2902,6 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -3865,9 +2925,6 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -3891,9 +2948,6 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -3921,9 +2975,6 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -3947,9 +2998,6 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -3973,9 +3021,6 @@ class _$UnFollowErrorImpl<T> implements UnFollowError<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -4048,9 +3093,6 @@ class _$SignOutSuccessImpl<T> implements SignOutSuccess<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -4074,9 +3116,6 @@ class _$SignOutSuccessImpl<T> implements SignOutSuccess<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -4100,9 +3139,6 @@ class _$SignOutSuccessImpl<T> implements SignOutSuccess<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -4130,9 +3166,6 @@ class _$SignOutSuccessImpl<T> implements SignOutSuccess<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -4156,9 +3189,6 @@ class _$SignOutSuccessImpl<T> implements SignOutSuccess<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -4182,9 +3212,6 @@ class _$SignOutSuccessImpl<T> implements SignOutSuccess<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,
@@ -4279,9 +3306,6 @@ class _$SignOutErrorImpl<T> implements SignOutError<T> {
     required TResult Function() getUserDataLoading,
     required TResult Function(ICareUser user) getUserData,
     required TResult Function(String error) getUserDataError,
-    required TResult Function() getAllUsersLoading,
-    required TResult Function(List<ICareUser> users) getAllUsers,
-    required TResult Function(String error) getAllUsersError,
     required TResult Function() getFollowingLoading,
     required TResult Function(List<ICareUser> users) getFollowing,
     required TResult Function(String error) getFollowingError,
@@ -4305,9 +3329,6 @@ class _$SignOutErrorImpl<T> implements SignOutError<T> {
     TResult? Function()? getUserDataLoading,
     TResult? Function(ICareUser user)? getUserData,
     TResult? Function(String error)? getUserDataError,
-    TResult? Function()? getAllUsersLoading,
-    TResult? Function(List<ICareUser> users)? getAllUsers,
-    TResult? Function(String error)? getAllUsersError,
     TResult? Function()? getFollowingLoading,
     TResult? Function(List<ICareUser> users)? getFollowing,
     TResult? Function(String error)? getFollowingError,
@@ -4331,9 +3352,6 @@ class _$SignOutErrorImpl<T> implements SignOutError<T> {
     TResult Function()? getUserDataLoading,
     TResult Function(ICareUser user)? getUserData,
     TResult Function(String error)? getUserDataError,
-    TResult Function()? getAllUsersLoading,
-    TResult Function(List<ICareUser> users)? getAllUsers,
-    TResult Function(String error)? getAllUsersError,
     TResult Function()? getFollowingLoading,
     TResult Function(List<ICareUser> users)? getFollowing,
     TResult Function(String error)? getFollowingError,
@@ -4361,9 +3379,6 @@ class _$SignOutErrorImpl<T> implements SignOutError<T> {
     required TResult Function(GetUserDataLoading<T> value) getUserDataLoading,
     required TResult Function(GetUserDataSuccess<T> value) getUserData,
     required TResult Function(GetUserDataError<T> value) getUserDataError,
-    required TResult Function(GetAllUsersLoading<T> value) getAllUsersLoading,
-    required TResult Function(GetAllUsersSuccess<T> value) getAllUsers,
-    required TResult Function(GetAllUsersError<T> value) getAllUsersError,
     required TResult Function(GetFollowingLoading<T> value) getFollowingLoading,
     required TResult Function(GetFollowingSuccess<T> value) getFollowing,
     required TResult Function(GetFollowingError<T> value) getFollowingError,
@@ -4387,9 +3402,6 @@ class _$SignOutErrorImpl<T> implements SignOutError<T> {
     TResult? Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult? Function(GetUserDataSuccess<T> value)? getUserData,
     TResult? Function(GetUserDataError<T> value)? getUserDataError,
-    TResult? Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult? Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult? Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult? Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult? Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult? Function(GetFollowingError<T> value)? getFollowingError,
@@ -4413,9 +3425,6 @@ class _$SignOutErrorImpl<T> implements SignOutError<T> {
     TResult Function(GetUserDataLoading<T> value)? getUserDataLoading,
     TResult Function(GetUserDataSuccess<T> value)? getUserData,
     TResult Function(GetUserDataError<T> value)? getUserDataError,
-    TResult Function(GetAllUsersLoading<T> value)? getAllUsersLoading,
-    TResult Function(GetAllUsersSuccess<T> value)? getAllUsers,
-    TResult Function(GetAllUsersError<T> value)? getAllUsersError,
     TResult Function(GetFollowingLoading<T> value)? getFollowingLoading,
     TResult Function(GetFollowingSuccess<T> value)? getFollowing,
     TResult Function(GetFollowingError<T> value)? getFollowingError,

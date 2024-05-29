@@ -171,7 +171,6 @@ import 'package:icare/src/features/user/data/datasources/user_remote_datasource.
 import 'package:icare/src/features/user/data/repositories/user_repo_impl.dart';
 import 'package:icare/src/features/user/domain/repositories/user_repo.dart';
 import 'package:icare/src/features/user/domain/usecases/follow.dart';
-import 'package:icare/src/features/user/domain/usecases/get_all_users.dart';
 import 'package:icare/src/features/user/domain/usecases/get_followers.dart';
 import 'package:icare/src/features/user/domain/usecases/get_following.dart';
 import 'package:icare/src/features/user/domain/usecases/get_user_data.dart';

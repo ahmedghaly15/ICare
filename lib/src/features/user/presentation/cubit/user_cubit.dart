@@ -6,7 +6,6 @@ import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/user/domain/usecases/follow.dart';
-import 'package:icare/src/features/user/domain/usecases/get_all_users.dart';
 import 'package:icare/src/features/user/domain/usecases/get_followers.dart';
 import 'package:icare/src/features/user/domain/usecases/get_following.dart';
 import 'package:icare/src/features/user/domain/usecases/get_user_data.dart';
@@ -16,7 +15,6 @@ import 'package:icare/src/features/user/presentation/cubit/user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
   final GetUserDataUseCase getUserDataUseCase;
-  final GetAllUsersUseCase getAllUsersUseCase;
   final FollowUseCase followUseCase;
   final UnFollowUseCase unFollowUseCase;
   final GetFollowersUseCase getFollowersUseCase;
@@ -25,7 +23,6 @@ class UserCubit extends Cubit<UserState> {
 
   UserCubit({
     required this.getUserDataUseCase,
-    required this.getAllUsersUseCase,
     required this.followUseCase,
     required this.unFollowUseCase,
     required this.getFollowersUseCase,
@@ -43,16 +40,6 @@ class UserCubit extends Cubit<UserState> {
       },
       error: (error) =>
           emit(UserState.getUserDataError(error.failureMsg ?? '')),
-    );
-  }
-
-  void getAllUsers() async {
-    emit(const UserState.getAllUsersLoading());
-    final result = await getAllUsersUseCase(const NoParams());
-    result.when(
-      success: (data) => emit(UserState.getAllUsers(data)),
-      error: (error) =>
-          emit(UserState.getAllUsersError(error.failureMsg ?? '')),
     );
   }
 

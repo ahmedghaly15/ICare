@@ -37,9 +37,6 @@ class SetupDIForUseCases {
     getIt.registerLazySingleton<GetUserDataUseCase>(
       () => GetUserDataUseCase(getIt.get<UserRepo>()),
     );
-    getIt.registerLazySingleton<GetAllUsersUseCase>(
-      () => GetAllUsersUseCase(getIt.get<UserRepo>()),
-    );
     getIt.registerLazySingleton<FollowUseCase>(
       () => FollowUseCase(getIt.get<UserRepo>()),
     );
