@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/firebase/firebase_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
+import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/user/data/datasources/user_local_datasource.dart';
@@ -36,16 +37,6 @@ class UserRepoImpl implements UserRepo {
   }
 
   @override
-  Future<FirebaseRequestResult<List<ICareUser>>> getAllUsers() {
-    return executeAndHandleFirebaseErrors<List<ICareUser>>(
-      () async {
-        final query = await _userRemoteDataSource.getAllUsers();
-        return query.docs.map((doc) => ICareUser.fromJson(doc.data())).toList();
-      },
-    );
-  }
-
-  @override
   Future<FirebaseRequestResult<void>> follow(ICareUser user) {
     return executeAndHandleFirebaseErrors<void>(
       () async => await _userRemoteDataSource.follow(user),
@@ -60,23 +51,75 @@ class UserRepoImpl implements UserRepo {
   }
 
   @override
-  Future<FirebaseRequestResult<List<ICareUser>>> getFollowers(ICareUser user) {
-    return executeAndHandleFirebaseErrors<List<ICareUser>>(
-      () async {
-        final query = await _userRemoteDataSource.getFollowers(user);
-        return query.docs.map((e) => ICareUser.fromJson(e.data())).toList();
-      },
-    );
+  Future<FirebaseRequestResult<List<ICareUser>>> getFollowers(
+    ICareUser user,
+  ) async {
+    if (user.uId == Helper.uId) {
+      return await _getCurrentUserFollowers(user);
+    } else {
+      return executeAndHandleFirebaseErrors<List<ICareUser>>(
+        () async => await _userRemoteDataSource.getFollowers(user),
+      );
+    }
+  }
+
+  Future<FirebaseRequestResult<List<ICareUser>>> _getCurrentUserFollowers(
+    ICareUser user,
+  ) async {
+    if (_userLocalDatasource.currentUserFollowersJson() == null) {
+      try {
+        debugPrint(
+            '*********** GOT NOT CACHED CURRENT USER FOLLOWERS **********');
+        final List<ICareUser> followers =
+            await _userRemoteDataSource.getFollowers(user);
+        await _userLocalDatasource.cacheCurrentUserFollowers(followers);
+        return FirebaseRequestResult<List<ICareUser>>.success(followers);
+      } catch (error) {
+        return FirebaseRequestResult<List<ICareUser>>.error(
+          FirebaseErrorHandler.handleError(error),
+        );
+      }
+    } else {
+      debugPrint('*********** GOT CACHED CURRENT USER FOLLOWERS **********');
+      return FirebaseRequestResult<List<ICareUser>>.success(
+        _userLocalDatasource.getCachedCurrentUserFollowers(),
+      );
+    }
   }
 
   @override
   Future<FirebaseRequestResult<List<ICareUser>>> getFollowing(ICareUser user) {
-    return executeAndHandleFirebaseErrors<List<ICareUser>>(
-      () async {
-        final query = await _userRemoteDataSource.getFollowing(user);
-        return query.docs.map((e) => ICareUser.fromJson(e.data())).toList();
-      },
-    );
+    if (user.uId == Helper.uId) {
+      return _getCurrentUserFollowing(user);
+    } else {
+      return executeAndHandleFirebaseErrors<List<ICareUser>>(
+        () async => await _userRemoteDataSource.getFollowing(user),
+      );
+    }
+  }
+
+  Future<FirebaseRequestResult<List<ICareUser>>> _getCurrentUserFollowing(
+    ICareUser user,
+  ) async {
+    if (_userLocalDatasource.currentUserFollowingJson() == null) {
+      try {
+        debugPrint(
+            '*********** GOT NOT CACHED CURRENT USER FOLLOWING **********');
+        final List<ICareUser> following =
+            await _userRemoteDataSource.getFollowing(user);
+        await _userLocalDatasource.cacheCurrentUserFollowing(following);
+        return FirebaseRequestResult<List<ICareUser>>.success(following);
+      } catch (error) {
+        return FirebaseRequestResult<List<ICareUser>>.error(
+          FirebaseErrorHandler.handleError(error),
+        );
+      }
+    } else {
+      debugPrint('*********** GOT CACHED CURRENT USER FOLLOWING **********');
+      return FirebaseRequestResult<List<ICareUser>>.success(
+        _userLocalDatasource.getCachedCurrentUserFollowing(),
+      );
+    }
   }
 
   @override
