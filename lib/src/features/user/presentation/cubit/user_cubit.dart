@@ -1,10 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/helper.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
+import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
+import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/user/domain/usecases/follow.dart';
 import 'package:icare/src/features/user/domain/usecases/get_followers.dart';
 import 'package:icare/src/features/user/domain/usecases/get_following.dart';
@@ -43,10 +48,21 @@ class UserCubit extends Cubit<UserState> {
     );
   }
 
-  void follow(ICareUser user) async {
+  void follow(
+    BuildContext context, {
+    required ICareUser user,
+  }) async {
     final result = await followUseCase(user);
     result.when(
-      success: (_) => emit(const UserState.followSuccess()),
+      success: (_) {
+        emit(const UserState.followSuccess());
+        context.read<NotificationsCubit>().sendNotification(ICareNotification(
+              to: user.mobileToken!,
+              body: '${Helper.currentUser!.name} is now following you',
+              receiverId: user.uId,
+              user: Helper.currentUser,
+            ));
+      },
       error: (error) => emit(UserState.followError(error.failureMsg ?? '')),
     );
   }
@@ -117,5 +133,47 @@ class UserCubit extends Cubit<UserState> {
         .doc(user.uId)
         .collection(AppStrings.followingCollection)
         .snapshots();
+  }
+
+  Future<bool> _removeCachedFollowers() async {
+    return await getIt
+        .get<CacheHelper>()
+        .removeData(key: AppStrings.currentUserCachedFollowers);
+  }
+
+  Future<bool> _removeCachedFollowing() async {
+    return await getIt
+        .get<CacheHelper>()
+        .removeData(key: AppStrings.currentUserCachedFollowing);
+  }
+
+  void _handleFollowUnfollowSuccess(ICareUser user) {
+    if (user.uId == Helper.uId) {
+      _removeCachedFollowers().then((removed) {
+        if (removed) {
+          getFollowers(Helper.currentUser!);
+        }
+      });
+    } else {
+      _removeCachedFollowing().then((removed) {
+        if (removed) {
+          getFollowing(Helper.currentUser!);
+        }
+      });
+    }
+  }
+
+  void handleFollowUnfollowStates({
+    required UserState<dynamic> state,
+    required ICareUser user,
+  }) {
+    state.whenOrNull(
+      followSuccess: () {
+        _handleFollowUnfollowSuccess(user);
+      },
+      unFollowSuccess: () {
+        _handleFollowUnfollowSuccess(user);
+      },
+    );
   }
 }

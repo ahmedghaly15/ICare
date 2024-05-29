@@ -63,42 +63,6 @@ class TipsCubit extends Cubit<TipsState> {
     );
   }
 
-  // Handling Apple and web platforms handle permissions
-  void requestNotificationsPermission(BuildContext context) async {
-    NotificationSettings settings =
-        await getIt.get<FirebaseMessaging>().requestPermission(
-              alert: true,
-              announcement: false,
-              badge: true,
-              carPlay: false,
-              criticalAlert: false,
-              provisional: false,
-              sound: true,
-            );
-
-    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      debugPrint('************ User granted permission ***********');
-    } else if (settings.authorizationStatus ==
-        AuthorizationStatus.provisional) {
-      debugPrint('User granted provisional permission');
-      ShowICareDialog.show(
-        // ignore: use_build_context_synchronously
-        context: context,
-        anotherTitle: '',
-        message:
-            'The app is currently authorized to post non-interrupting user notifications.',
-      );
-    } else {
-      debugPrint('User declined or has not accepted permission');
-      ShowICareDialog.show(
-        // ignore: use_build_context_synchronously
-        context: context,
-        anotherTitle: '',
-        message: 'Permissions declined or has not been accepted.',
-      );
-    }
-  }
-
   bool isRandomTipRead = false;
   void convertIsRandomTipRead() {
     isRandomTipRead = !isRandomTipRead;
@@ -183,6 +147,42 @@ class TipsCubit extends Cubit<TipsState> {
             );
       }
     });
+  }
+
+  // Handling Apple and web platforms handle permissions
+  void requestNotificationsPermission(BuildContext context) async {
+    NotificationSettings settings =
+        await getIt.get<FirebaseMessaging>().requestPermission(
+              alert: true,
+              announcement: false,
+              badge: true,
+              carPlay: false,
+              criticalAlert: false,
+              provisional: false,
+              sound: true,
+            );
+
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      debugPrint('************ User granted permission ***********');
+    } else if (settings.authorizationStatus ==
+        AuthorizationStatus.provisional) {
+      debugPrint('User granted provisional permission');
+      ShowICareDialog.show(
+        // ignore: use_build_context_synchronously
+        context: context,
+        anotherTitle: '',
+        message:
+            'The app is currently authorized to post non-interrupting user notifications.',
+      );
+    } else {
+      debugPrint('User declined or has not accepted permission');
+      ShowICareDialog.show(
+        // ignore: use_build_context_synchronously
+        context: context,
+        anotherTitle: '',
+        message: 'Permissions declined or has not been accepted.',
+      );
+    }
   }
 
   @override

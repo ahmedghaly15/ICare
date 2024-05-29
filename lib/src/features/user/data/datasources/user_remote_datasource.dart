@@ -86,7 +86,7 @@ class UserRemoteDatasourceImpl implements UserRemoteDataSource {
       <KeyAndType>[
         const KeyAndType(AppStrings.cachedOnboarding, 'bool'),
         const KeyAndType(AppStrings.cachedTheme, 'int'),
-        KeyAndType('${AppStrings.cachedIsDone}${Helper.uId}', 'bool'),
+        const KeyAndType(AppStrings.cachedIsDone, 'bool'),
         KeyAndType('${AppStrings.cachedRandomTip}${Helper.uId}', 'String'),
         KeyAndType(
             '${AppStrings.hasUserNotifiedAboutEnhancing}${Helper.uId}', 'bool'),
