@@ -43,6 +43,7 @@ class SendMessageTextField extends StatelessWidget {
           : null,
       borderSide: borderSide,
       maxLines: null,
+      keyboardType: TextInputType.multiline,
       contentPadding: EdgeInsets.all(16.h),
       textCapitalization: TextCapitalization.sentences,
       hintText: hintText,

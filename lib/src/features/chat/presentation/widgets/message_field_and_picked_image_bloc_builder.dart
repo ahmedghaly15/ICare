@@ -25,7 +25,9 @@ class MessageFieldAndPickedImageBlocBuilder extends StatelessWidget {
                 controller: context.read<ChatDetailsCubit>().messageController,
                 hintText: AppStrings.typeAMessage,
                 onChanged: (String value) {
-                  context.read<ChatDetailsCubit>().setNewTextValue(value);
+                  context
+                      .read<ChatDetailsCubit>()
+                      .setNewTextValue(value.trim());
                 },
               ),
               if (context.read<ChatDetailsCubit>().messageImage != null) ...[

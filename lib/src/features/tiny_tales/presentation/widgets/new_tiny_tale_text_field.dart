@@ -27,7 +27,7 @@ class NewTinyTaleTextField extends StatelessWidget {
       keyboardType: TextInputType.multiline,
       border: InputBorder.none,
       onChanged: (String value) =>
-          context.read<NewTinyTaleCubit>().setNewTinyTaleText(value),
+          context.read<NewTinyTaleCubit>().setNewTinyTaleText(value.trim()),
     );
   }
 }

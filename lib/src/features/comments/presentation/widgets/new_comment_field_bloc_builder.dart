@@ -25,7 +25,7 @@ class NewCommentFieldBlocBuilder extends StatelessWidget {
                 hintText: AppStrings.writeAComment,
                 controller: context.read<CommentsCubit>().commentController,
                 onChanged: (String value) =>
-                    context.read<CommentsCubit>().setNewTextValue(value),
+                    context.read<CommentsCubit>().setNewTextValue(value.trim()),
               ),
               if (context.read<CommentsCubit>().commentImage != null) ...[
                 MySizedBox.height8,

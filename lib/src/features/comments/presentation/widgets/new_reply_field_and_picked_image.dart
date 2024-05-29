@@ -25,7 +25,9 @@ class NewReplyFieldAndPickedImage extends StatelessWidget {
                 controller:
                     context.read<CommentRepliesCubit>().commentReplyController,
                 onChanged: (String value) {
-                  context.read<CommentRepliesCubit>().setNewTextValue(value);
+                  context
+                      .read<CommentRepliesCubit>()
+                      .setNewTextValue(value.trim());
                 },
               ),
               if (context.read<CommentRepliesCubit>().commentReplyImage !=
