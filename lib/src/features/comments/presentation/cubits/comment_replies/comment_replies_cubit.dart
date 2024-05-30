@@ -227,7 +227,8 @@ class CommentRepliesCubit extends Cubit<CommentRepliesState> {
   }
 
   void setNewTextValue(String text) {
-    emit(CommentRepliesState.setNewTextValue(text));
+    commentReplyController.text = text;
+    emit(CommentRepliesState.setNewTextValue(commentReplyController.text));
   }
 
   void removePickedCommentReplyImage() {

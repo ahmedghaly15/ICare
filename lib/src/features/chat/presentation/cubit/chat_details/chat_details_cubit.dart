@@ -156,7 +156,7 @@ class ChatDetailsCubit extends Cubit<ChatDetailsState> {
 
   void setNewTextValue(String text) {
     messageController.text = text;
-    emit(ChatDetailsState.setNewTextValue(text));
+    emit(ChatDetailsState.setNewTextValue(messageController.text));
   }
 
   @override

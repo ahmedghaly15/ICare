@@ -213,7 +213,8 @@ class CommentsCubit extends Cubit<CommentsState> {
   }
 
   void setNewTextValue(String text) {
-    emit(CommentsState.setNewTextValue(text));
+    commentController.text = text;
+    emit(CommentsState.setNewTextValue(commentController.text));
   }
 
   @override

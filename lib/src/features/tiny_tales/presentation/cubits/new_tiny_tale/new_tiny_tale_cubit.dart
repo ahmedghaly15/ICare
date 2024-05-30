@@ -130,7 +130,8 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
   }
 
   void setNewTinyTaleText(String text) {
-    emit(NewTinyTaleState.setNewTextValue(text));
+    createNewTinyTaleController.text = text;
+    emit(NewTinyTaleState.setNewTextValue(createNewTinyTaleController.text));
   }
 
   Future<void> _saveImageUrlInFirebaseFirestore(String imageUrl) async {

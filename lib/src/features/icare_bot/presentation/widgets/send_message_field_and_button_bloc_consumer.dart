@@ -24,7 +24,11 @@ class SendMessageFieldAndButtonBlocConsumer extends StatelessWidget {
               controller: context.read<ICareBotCubit>().textController,
               hintText: 'Ask ICare Bot...',
               onChanged: (String val) {
-                context.read<ICareBotCubit>().setNewTextValue(val.trim());
+                if (val.trim().isNotEmpty) {
+                  context.read<ICareBotCubit>().setNewTextValue(val);
+                } else {
+                  context.read<ICareBotCubit>().setNewTextValue('');
+                }
               },
             ),
           ),

@@ -113,7 +113,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
 
   void setNewTextValue(String text) {
     textController.text = text;
-    emit(ICareBotState.setNewTextValue(text));
+    emit(ICareBotState.setNewTextValue(textController.text));
   }
 
   @override
