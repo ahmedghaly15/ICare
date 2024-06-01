@@ -39,6 +39,22 @@ class FirebaseErrorHandler extends Failure {
         return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.invalidCredential,
         );
+      case FirebaseAuthCodes.requiresRecentLogin:
+        return const FirebaseErrorHandler(
+          failureMsg: FirebaseAuthErrorMessages.requiresRecentLogin,
+        );
+      case FirebaseAuthCodes.networkRequestFailed:
+        return const FirebaseErrorHandler(
+          failureMsg: FirebaseAuthErrorMessages.networkRequestFailed,
+        );
+      case FirebaseAuthCodes.userDisabled:
+        return const FirebaseErrorHandler(
+          failureMsg: FirebaseAuthErrorMessages.userDisabled,
+        );
+      case FirebaseAuthCodes.userTokenExpired:
+        return const FirebaseErrorHandler(
+          failureMsg: FirebaseAuthErrorMessages.userTokenExpired,
+        );
       default:
         return const FirebaseErrorHandler(
           failureMsg: FirebaseAuthErrorMessages.defaultError,
@@ -56,6 +72,14 @@ class FirebaseAuthErrorMessages {
   static const String defaultError = AppStrings.unKnownError;
   static const String invalidCredential =
       'Incorrect login details. Please ensure your email and password are correct.';
+  static const String requiresRecentLogin =
+      'Requires recent login. Please log in again.';
+  static const String networkRequestFailed =
+      'A network request failed. Please check your internet connection and try again.';
+  static const String userDisabled =
+      'The user account has been disabled by an administrator.';
+  static const String userTokenExpired =
+      'Your credentials have expired. Please log in again.';
 }
 
 class FirebaseAuthCodes {
@@ -65,4 +89,8 @@ class FirebaseAuthCodes {
   static const String emailAlreadyInUse = 'email-already-in-use';
   static const String invalidEmail = 'invalid-email';
   static const String invalidCredential = 'invalid-credential';
+  static const String requiresRecentLogin = 'requires-recent-login';
+  static const String networkRequestFailed = 'network-request-failed';
+  static const String userDisabled = 'user-disabled';
+  static const String userTokenExpired = 'user-token-expired';
 }
