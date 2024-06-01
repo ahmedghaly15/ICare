@@ -12,6 +12,7 @@ import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/profile/data/models/update_user_params.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_password.dart';
 import 'package:icare/src/features/profile/domain/usecases/update_user.dart';
+import 'package:icare/src/features/profile/domain/usecases/update_user_email.dart';
 import 'package:icare/src/features/profile/domain/usecases/upload_new_profile_image.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_state.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
@@ -19,11 +20,13 @@ import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 
 class EditProfileCubit extends Cubit<EditProfileState> {
+  final UpdateUserEmailUseCase _updateUserEmailUseCase;
   final UpdateUserUseCase _updateUserUseCase;
   final UploadNewProfileImageUseCase _uploadNewProfileImageUseCase;
   final UpdatePasswordUseCase _updatePasswordUseCase;
 
   EditProfileCubit(
+    this._updateUserEmailUseCase,
     this._updateUserUseCase,
     this._uploadNewProfileImageUseCase,
     this._updatePasswordUseCase,
@@ -48,27 +51,34 @@ class EditProfileCubit extends Cubit<EditProfileState> {
           AuthHelper.keyboardUnfocus(context);
           if (newProfileImage != null) {
             // If there's a new image, decide the update based on controller contents
-            _uploadNewProfileImage(UpdateUserParams(
-              name: nameController.text.isNotEmpty ? nameController.text : null,
-              email:
-                  emailController.text.isNotEmpty ? emailController.text : null,
-            ));
+            _uploadNewProfileImage(context,
+                params: UpdateUserParams(
+                  name: nameController.text.isNotEmpty
+                      ? nameController.text
+                      : null,
+                  email: emailController.text.isNotEmpty
+                      ? emailController.text
+                      : null,
+                ));
           } else {
             // No new image, update based on controller contents
             if (nameController.text.isNotEmpty &&
                 emailController.text.isNotEmpty) {
-              _updateUserFirestoreData(UpdateUserParams(
-                name: nameController.text,
-                email: emailController.text,
-              ));
+              _updateUserFirestoreData(context,
+                  params: UpdateUserParams(
+                    name: nameController.text,
+                    email: emailController.text,
+                  ));
             } else if (nameController.text.isNotEmpty) {
-              _updateUserFirestoreData(UpdateUserParams(
-                name: nameController.text,
-              ));
+              _updateUserFirestoreData(context,
+                  params: UpdateUserParams(
+                    name: nameController.text,
+                  ));
             } else if (emailController.text.isNotEmpty) {
-              _updateUserFirestoreData(UpdateUserParams(
-                email: emailController.text,
-              ));
+              _updateUserFirestoreData(context,
+                  params: UpdateUserParams(
+                    email: emailController.text,
+                  ));
             }
           }
         }
@@ -100,7 +110,41 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   bool _isControllerEmpty() =>
       (nameController.text.isEmpty || emailController.text.isEmpty);
 
-  Future<void> _updateUserFirestoreData(UpdateUserParams params) async {
+  void _showVerificationEmailSentDialog(BuildContext context) {
+    ShowICareDialog.show(
+      context: context,
+      state: ICareDialogStates.success,
+      message:
+          'Verification email has been sent to this email. Please verify your email to change it.',
+    );
+  }
+
+  Future<void> _updateUserEmail(
+    BuildContext context, {
+    required UpdateUserParams params,
+  }) async {
+    final result = await _updateUserEmailUseCase(emailController.text);
+    result.when(
+        success: (_) async {
+          _showVerificationEmailSentDialog(context);
+          await _handleUpdateUserResult(params);
+        },
+        error: (error) =>
+            emit(EditProfileState.editProfileError(error.failureMsg ?? '')));
+  }
+
+  Future<void> _updateUserFirestoreData(
+    BuildContext context, {
+    required UpdateUserParams params,
+  }) async {
+    if (params.email != null) {
+      await _updateUserEmail(context, params: params);
+    } else {
+      await _handleUpdateUserResult(params);
+    }
+  }
+
+  Future<void> _handleUpdateUserResult(UpdateUserParams params) async {
     emit(const EditProfileState.editProfileLoading());
     final result = await _updateUserUseCase.call(params);
     result.when(
@@ -133,23 +177,35 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     emit(EditProfileState.convertBoolValue(isPassVisible));
   }
 
-  void _uploadNewProfileImage(UpdateUserParams params) async {
+  void _uploadNewProfileImage(
+    BuildContext context, {
+    required UpdateUserParams params,
+  }) async {
     emit(const EditProfileState.uploadNewProfileImageLoading());
     final result = await _uploadNewProfileImageUseCase.call(newProfileImage!);
     result.when(
-      success: (taskSnapshot) => _updateUserImage(taskSnapshot, params),
+      success: (taskSnapshot) => _updateUserImage(
+        context,
+        taskSnapshot: taskSnapshot,
+        params: params,
+      ),
       error: (error) => emit(
           EditProfileState.uploadNewProfileImageError(error.failureMsg ?? '')),
     );
   }
 
-  void _updateUserImage(TaskSnapshot taskSnapshot, UpdateUserParams params) {
+  void _updateUserImage(
+    BuildContext context, {
+    required TaskSnapshot taskSnapshot,
+    required UpdateUserParams params,
+  }) {
     taskSnapshot.ref.getDownloadURL().then((value) {
-      _updateUserFirestoreData(UpdateUserParams(
-        name: params.name,
-        email: params.email,
-        profileImage: value,
-      ));
+      _updateUserFirestoreData(context,
+          params: UpdateUserParams(
+            name: params.name,
+            email: params.email,
+            profileImage: value,
+          ));
       emit(EditProfileState.uploadNewProfileImageSuccess(value));
     }).catchError((error) {
       emit(EditProfileState.uploadNewProfileImageError(error.toString()));
@@ -158,37 +214,44 @@ class EditProfileCubit extends Cubit<EditProfileState> {
 
   void setNewNameTextValue(String text) {
     nameController.text = text;
-    emit(EditProfileState.setNewNameTextValue(text));
+    emit(EditProfileState.setNewNameTextValue(nameController.text));
   }
 
   void setNewEmailTextValue(String text) {
     emailController.text = text;
-    emit(EditProfileState.setNewEmailTextValue(text));
+    emit(EditProfileState.setNewEmailTextValue(emailController.text));
   }
 
   void setNewPassTextValue(String text) {
     passwordController.text = text;
-    emit(EditProfileState.setNewPassTextValue(text));
+    emit(EditProfileState.setNewPassTextValue(passwordController.text));
   }
 
   void handleEditProfileState(
-      EditProfileState<dynamic> state, BuildContext context) {
-    state.whenOrNull(editProfileSuccess: () {
-      _handleSuccessStates(context);
-    }, uploadNewProfileImageSuccess: (imageUrl) {
-      _handleSuccessStates(context);
-    }, editProfileError: (error) {
-      ShowICareDialog.showICareDialogError(context, error);
-    }, uploadNewProfileImageError: (error) {
-      ShowICareDialog.showICareDialogError(context, error);
-    });
+    EditProfileState<dynamic> state,
+    BuildContext context,
+  ) {
+    state.whenOrNull(
+      editProfileSuccess: () {
+        _handleSuccessStates(context);
+      },
+      uploadNewProfileImageSuccess: (imageUrl) {
+        _handleSuccessStates(context);
+      },
+      editProfileError: (error) {
+        ShowICareDialog.showICareDialogError(context, error);
+      },
+      uploadNewProfileImageError: (error) {
+        ShowICareDialog.showICareDialogError(context, error);
+      },
+    );
   }
 
   void _handleSuccessStates(BuildContext context) {
     getIt.get<CacheHelper>().removeData(key: AppStrings.cachedUser).then(
       (value) {
-        debugPrint('*********** DELETE CACHED USER ***********');
         if (value) {
+          debugPrint('*********** DELETE CACHED USER ***********');
           context.read<UserCubit>().getUserData().then(
             (value) {
               context.read<TinyTalesCubit>().getBookmarkedTinyTales();
@@ -209,12 +272,12 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   void _initControllers() {
     nameController = TextEditingController();
     emailController = TextEditingController();
+    passwordController = TextEditingController();
   }
 
   void _assignValuesToControllers() {
     nameController.text = Helper.currentUser!.name!;
     emailController.text = Helper.currentUser!.email!;
-    passwordController = TextEditingController();
   }
 
   void _disposeController() {
