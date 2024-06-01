@@ -17,9 +17,9 @@ class UpdatePasswordButtonBlocConsumer extends StatelessWidget {
       listenWhen: (_, current) =>
           current is UpdatePasswordSuccess || current is UpdatePasswordError,
       listener: (context, state) {
+        Navigator.pop(context);
         state.whenOrNull(
           updatePasswordSuccess: () {
-            Navigator.pop(context);
             ShowICareDialog.show(
               context: context,
               state: ICareDialogStates.success,
@@ -27,13 +27,14 @@ class UpdatePasswordButtonBlocConsumer extends StatelessWidget {
             );
           },
           updatePasswordError: (error) {
-            Navigator.pop(context);
             ShowICareDialog.showICareDialogError(context, error);
           },
         );
       },
       buildWhen: (_, current) =>
-          current is UpdatePasswordSuccess || current is UpdatePasswordLoading,
+          current is UpdatePasswordSuccess ||
+          current is UpdatePasswordLoading ||
+          current is UpdatePasswordError,
       builder: (context, state) {
         return PrimaryButton(
           onPressed: () =>

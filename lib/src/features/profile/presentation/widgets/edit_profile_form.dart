@@ -45,6 +45,7 @@ class EditProfileForm extends StatelessWidget {
             emailController: context.read<EditProfileCubit>().emailController,
             onChanged: (String text) =>
                 context.read<EditProfileCubit>().setNewEmailTextValue(text),
+            hasEditingComplete: false,
           ),
           Align(
             alignment: AlignmentDirectional.centerEnd,
