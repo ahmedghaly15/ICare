@@ -31,4 +31,10 @@ class EditProfileRepo {
       () async => await _editProfileDatasource.updatePassword(password),
     );
   }
+
+  Future<FirebaseRequestResult<void>> updateUserEmail(String newEmail) {
+    return executeAndHandleFirebaseErrors<void>(
+      () async => await _editProfileDatasource.updateUserEmail(newEmail),
+    );
+  }
 }

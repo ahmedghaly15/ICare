@@ -14,6 +14,7 @@ import 'package:icare/src/features/disease_details/presentation/cubits/current_t
 import 'package:icare/src/features/profile/data/datasources/profile_datasource.dart';
 import 'package:icare/src/features/profile/data/repositories/profile_repo.dart';
 import 'package:icare/src/features/profile/domain/usecases/delete_photo_from_photos.dart';
+import 'package:icare/src/features/profile/domain/usecases/update_user_email.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';

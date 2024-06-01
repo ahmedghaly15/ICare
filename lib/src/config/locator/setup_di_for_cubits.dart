@@ -204,6 +204,7 @@ class SetupDIForCubits {
     // ========== Edit Profile feature ==========
     getIt.registerFactory<EditProfileCubit>(
       () => EditProfileCubit(
+        getIt.get<UpdateUserEmailUseCase>(),
         getIt.get<UpdateUserUseCase>(),
         getIt.get<UploadNewProfileImageUseCase>(),
         getIt.get<UpdatePasswordUseCase>(),
