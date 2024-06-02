@@ -41,31 +41,40 @@ class EmergencyDiseaseDetailsView extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: BlocBuilder<EmergencyDiseaseDetailsCubit,
-            EmergencyDiseaseDetailsState>(
-          builder: (context, state) {
-            if (state is GetEmergencyDiseaseDetailsError) {
-              return CustomErrorWidget(
-                error: state.error,
-                tryAgainOnPressed: () => context
-                    .read<EmergencyDiseaseDetailsCubit>()
-                    .getEmergencyDiseaseDetails(diseaseData.id),
-              );
-            } else if (state is GetEmergencyDiseaseDetailsSuccess) {
-              return Column(
+      body: BlocBuilder<EmergencyDiseaseDetailsCubit,
+          EmergencyDiseaseDetailsState>(
+        builder: (context, state) {
+          if (state is GetEmergencyDiseaseDetailsError) {
+            return CustomScrollView(
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: CustomErrorWidget(
+                    error: state.error,
+                    tryAgainOnPressed: () => context
+                        .read<EmergencyDiseaseDetailsCubit>()
+                        .getEmergencyDiseaseDetails(diseaseData.id),
+                  ),
+                ),
+              ],
+            );
+          } else if (state is GetEmergencyDiseaseDetailsSuccess) {
+            return SingleChildScrollView(
+              child: Column(
                 children: <Widget>[
                   DiseaseImage(diseaseData: diseaseData),
                   MySizedBox.height18,
                   CustomDiseaseDetailsTabsBlocBuilder(
                       diseaseDetails: state.data),
                 ],
-              );
-            } else {
-              return const DiseaseDetailsLoadingView();
-            }
-          },
-        ),
+              ),
+            );
+          } else {
+            return const SingleChildScrollView(
+              child: DiseaseDetailsLoadingView(),
+            );
+          }
+        },
       ),
     );
   }
