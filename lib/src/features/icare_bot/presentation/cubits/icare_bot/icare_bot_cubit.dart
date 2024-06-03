@@ -48,7 +48,6 @@ class ICareBotCubit extends Cubit<ICareBotState> {
     _convertSendMessageTextFieldStatus();
 
     AuthHelper.keyboardUnfocus(context);
-
     final response = await _askICareBotUseCase(
       AskICareBotParams(
         chat: chat,
