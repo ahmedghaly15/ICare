@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AskICareBotParams {
-  ChatSession get chat => throw _privateConstructorUsedError;
+  GenerativeModel get model => throw _privateConstructorUsedError;
   Content get content => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $AskICareBotParamsCopyWith<$Res> {
           AskICareBotParams value, $Res Function(AskICareBotParams) then) =
       _$AskICareBotParamsCopyWithImpl<$Res, AskICareBotParams>;
   @useResult
-  $Res call({ChatSession chat, Content content});
+  $Res call({GenerativeModel model, Content content});
 }
 
 /// @nodoc
@@ -46,14 +46,14 @@ class _$AskICareBotParamsCopyWithImpl<$Res, $Val extends AskICareBotParams>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chat = null,
+    Object? model = null,
     Object? content = null,
   }) {
     return _then(_value.copyWith(
-      chat: null == chat
-          ? _value.chat
-          : chat // ignore: cast_nullable_to_non_nullable
-              as ChatSession,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as GenerativeModel,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -70,7 +70,7 @@ abstract class _$$AskICareBotParamsImplCopyWith<$Res>
       __$$AskICareBotParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({ChatSession chat, Content content});
+  $Res call({GenerativeModel model, Content content});
 }
 
 /// @nodoc
@@ -84,14 +84,14 @@ class __$$AskICareBotParamsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chat = null,
+    Object? model = null,
     Object? content = null,
   }) {
     return _then(_$AskICareBotParamsImpl(
-      chat: null == chat
-          ? _value.chat
-          : chat // ignore: cast_nullable_to_non_nullable
-              as ChatSession,
+      model: null == model
+          ? _value.model
+          : model // ignore: cast_nullable_to_non_nullable
+              as GenerativeModel,
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
@@ -103,16 +103,16 @@ class __$$AskICareBotParamsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$AskICareBotParamsImpl implements _AskICareBotParams {
-  const _$AskICareBotParamsImpl({required this.chat, required this.content});
+  const _$AskICareBotParamsImpl({required this.model, required this.content});
 
   @override
-  final ChatSession chat;
+  final GenerativeModel model;
   @override
   final Content content;
 
   @override
   String toString() {
-    return 'AskICareBotParams(chat: $chat, content: $content)';
+    return 'AskICareBotParams(model: $model, content: $content)';
   }
 
   @override
@@ -120,12 +120,12 @@ class _$AskICareBotParamsImpl implements _AskICareBotParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AskICareBotParamsImpl &&
-            (identical(other.chat, chat) || other.chat == chat) &&
+            (identical(other.model, model) || other.model == model) &&
             (identical(other.content, content) || other.content == content));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, chat, content);
+  int get hashCode => Object.hash(runtimeType, model, content);
 
   @JsonKey(ignore: true)
   @override
@@ -137,11 +137,11 @@ class _$AskICareBotParamsImpl implements _AskICareBotParams {
 
 abstract class _AskICareBotParams implements AskICareBotParams {
   const factory _AskICareBotParams(
-      {required final ChatSession chat,
+      {required final GenerativeModel model,
       required final Content content}) = _$AskICareBotParamsImpl;
 
   @override
-  ChatSession get chat;
+  GenerativeModel get model;
   @override
   Content get content;
   @override

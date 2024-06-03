@@ -28,6 +28,8 @@ class EmergencyDiseaseDetailsRepo {
         );
         return ApiResult.success(data);
       } catch (error) {
+        debugPrint(
+            '*************** ERROR IN GETTING EMERGENCY DISEASE DETAILS DATA: $error ***************');
         return ApiResult.error(ErrorHandler.handle(error));
       }
     } else {

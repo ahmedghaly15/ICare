@@ -6,7 +6,7 @@ part 'ask_icare_bot_params.freezed.dart';
 @freezed
 class AskICareBotParams with _$AskICareBotParams {
   const factory AskICareBotParams({
-    required ChatSession chat,
+    required GenerativeModel model,
     required Content content,
   }) = _AskICareBotParams;
 }
