@@ -44,9 +44,9 @@ class ChatRepo {
       return FirebaseRequestResult.success(
           _chatLocalDatasource.retrieveCachedChats());
     } else {
-      debugPrint('*********** GOT REMOTE CHATS DATA **********');
       if (await getIt.get<NetworkInfo>().isConnected) {
         try {
+          debugPrint('*********** GOT REMOTE CHATS DATA **********');
           final chats = await _chatRemoteDatasource.getChats();
           await _chatLocalDatasource.cacheChats(chats);
           return FirebaseRequestResult.success(chats);
