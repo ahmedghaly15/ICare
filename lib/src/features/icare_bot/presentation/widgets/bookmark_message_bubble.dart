@@ -48,7 +48,11 @@ class BookmarkMessageBubble extends StatelessWidget {
                   data: bookmark.chatResponse,
                   padding: EdgeInsets.zero,
                   styleSheet: MarkdownStyleSheet(
-                    p: AppTextStyles.textStyle13Regular,
+                    p: AppTextStyles.textStyle13Regular.copyWith(
+                      color: isDarkModeActive(context)
+                          ? Colors.white
+                          : Colors.black,
+                    ),
                   ),
                   selectable: false,
                   shrinkWrap: true,

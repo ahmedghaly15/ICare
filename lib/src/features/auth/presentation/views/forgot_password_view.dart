@@ -5,7 +5,7 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/app_utils.dart';
-import 'package:icare/src/core/widgets/custom_circular_arrow_button.dart';
+import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/auth/presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'package:icare/src/features/auth/presentation/widgets/forgot_password/forgot_password_form.dart';
@@ -28,12 +28,7 @@ class ForgotPasswordView extends StatelessWidget implements AutoRouteWrapper {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            const SliverToBoxAdapter(
-              child: Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: CustomCircularArrowButton(size: 16),
-              ),
-            ),
+            const CustomSliverAppBar(),
             SliverPadding(
               padding: AppUtils.horizontalPadding,
               sliver: SliverFillRemaining(
