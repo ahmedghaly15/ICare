@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -72,7 +72,7 @@ class NotificationItem extends StatelessWidget {
                           fontWeight: notification.seen
                               ? FontWeight.w400
                               : FontWeight.bold,
-                          color: isDarkModeActive(context)
+                          color: context.isDarkModeActive
                               ? Colors.white
                               : Colors.black,
                         ),
@@ -83,7 +83,7 @@ class NotificationItem extends StatelessWidget {
                       Text(
                         notification.body,
                         style: AppTextStyles.textStyle10Regular.copyWith(
-                          color: isDarkModeActive(context)
+                          color: context.isDarkModeActive
                               ? Colors.white
                               : Colors.black,
                         ),
@@ -97,7 +97,7 @@ class NotificationItem extends StatelessWidget {
                     style: AppTextStyles.textStyle13Bold.copyWith(
                       fontWeight:
                           notification.seen ? FontWeight.w400 : FontWeight.bold,
-                      color: isDarkModeActive(context)
+                      color: context.isDarkModeActive
                           ? Colors.white
                           : Colors.black,
                     ),

@@ -1,6 +1,6 @@
 import 'package:icare/src/core/models/icare_user.dart';
 
-class Helper {
+class Constants {
   static String? uId;
   static ICareUser? currentUser;
 }

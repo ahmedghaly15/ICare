@@ -6,16 +6,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
+
+/// Navigates to the home screen after login or registration and updates the user's mobile token.
+///
+/// This method sets the user ID in the [Constants] class, retrieves the mobile token,
+/// saves the user ID to the cache, and then updates the mobile token in various collections.
+///
+/// [context] is the BuildContext used for navigation and accessing theme data.
+/// [data] is the user ID obtained after login or registration.
 
 void navigateToHomeAfterLoginOrRegister(
   BuildContext context,
   String data,
 ) async {
-  Helper.uId = data;
+  Constants.uId = data;
   final String? mobileToken = await _getMobileToken();
   getIt
       .get<CacheHelper>()
@@ -29,7 +37,7 @@ void navigateToHomeAfterLoginOrRegister(
 
 void _updateMobileTokenAndNavigate(BuildContext context, String? mobileToken) {
   context.read<UserCubit>().getUserData().then((_) {
-    if (Helper.currentUser!.mobileToken != mobileToken) {
+    if (Constants.currentUser!.mobileToken != mobileToken) {
       _navigateToHome(context);
       _updateUserMobileTokenEveryWhere(mobileToken, context);
     }
@@ -60,7 +68,7 @@ Future<String?> _getMobileToken() async {
 
 Future<void> _updateUserMobileToken(String? mobileToken) async {
   await accessUsersCollection()
-      .doc(Helper.uId!)
+      .doc(Constants.uId!)
       .update(_mobileTokenMap(mobileToken));
 }
 
@@ -88,7 +96,7 @@ Future<void> _updateMobileTokenInTinyTales(String? mobileToken) async {
   final tinyTalesQuery = await accessTinyTalesCollection().get();
 
   for (final tinyTale in tinyTalesQuery.docs) {
-    if (tinyTale.data()['user']?['uId'] == Helper.uId) {
+    if (tinyTale.data()['user']?['uId'] == Constants.uId) {
       await accessTinyTalesCollection()
           .doc(tinyTale.id)
           .update(_updateOnlyUserMobileTokenMap(tinyTale, mobileToken));
@@ -102,9 +110,9 @@ Future<void> _updateMobileTokenInTinyTalesLikes(String? mobileToken) async {
     final tinyTaleLikes =
         await accessTinyTaleLikesCollection(tinyTale.id).get();
     for (final like in tinyTaleLikes.docs) {
-      if (like.id == Helper.uId) {
+      if (like.id == Constants.uId) {
         await accessTinyTaleLikesCollection(tinyTale.id)
-            .doc(Helper.uId)
+            .doc(Constants.uId)
             .update(_updateOnlyUserMobileTokenMap(like, mobileToken));
       }
     }
@@ -116,7 +124,7 @@ Future<void> _updateMobileTokenInComments(String? mobileToken) async {
   for (final tinyTale in tinyTalesQuery.docs) {
     final comments = await accessCommentsCollection(tinyTale.id).get();
     for (final comment in comments.docs) {
-      if (comment.data()['user']?['uId'] == Helper.uId) {
+      if (comment.data()['user']?['uId'] == Constants.uId) {
         await accessCommentsCollection(tinyTale.id)
             .doc(comment.id)
             .update(_updateOnlyUserMobileTokenMap(comment, mobileToken));
@@ -133,9 +141,9 @@ Future<void> _updateMobileTokenInCommentsLikes(String? mobileToken) async {
       final commentLikes =
           await accessCommentLikesCollection(tinyTale.id, comment.id).get();
       for (final like in commentLikes.docs) {
-        if (like.id == Helper.uId) {
+        if (like.id == Constants.uId) {
           await accessCommentLikesCollection(tinyTale.id, comment.id)
-              .doc(Helper.uId)
+              .doc(Constants.uId)
               .update(_updateOnlyUserMobileTokenMap(like, mobileToken));
         }
       }
@@ -151,7 +159,7 @@ Future<void> _updateMobileTokenInCommentsReplies(String? mobileToken) async {
       final commentReplies =
           await accessCommentRepliesCollection(tinyTale.id, comment.id).get();
       for (final reply in commentReplies.docs) {
-        if (reply.data()['user']?['uId'] == Helper.uId) {
+        if (reply.data()['user']?['uId'] == Constants.uId) {
           await accessCommentRepliesCollection(tinyTale.id, comment.id)
               .doc(reply.id)
               .update(_updateOnlyUserMobileTokenMap(reply, mobileToken));
@@ -174,10 +182,10 @@ Future<void> _updateMobileTokenInCommentsRepliesLikes(
                 tinyTale.id, comment.id, reply.id)
             .get();
         for (final like in commentRepliesLikes.docs) {
-          if (like.id == Helper.uId) {
+          if (like.id == Constants.uId) {
             await accessCommentRepliesLikesCollection(
                     tinyTale.id, comment.id, reply.id)
-                .doc(Helper.uId)
+                .doc(Constants.uId)
                 .update(_updateOnlyUserMobileTokenMap(like, mobileToken));
           }
         }
@@ -191,7 +199,7 @@ Future<void> _updateMobileTokenInBookmarkedTinyTales(
   final bookmarkedTinyTalesQuery =
       await accessBookmarkedTinyTalesCollection().get();
   for (final tinyTale in bookmarkedTinyTalesQuery.docs) {
-    if (tinyTale.data()['user']?['uId'] == Helper.uId) {
+    if (tinyTale.data()['user']?['uId'] == Constants.uId) {
       await accessBookmarkedTinyTalesCollection()
           .doc(tinyTale.id)
           .update(_updateOnlyUserMobileTokenMap(tinyTale, mobileToken));
@@ -206,9 +214,9 @@ Future<void> _updateMobileTokenInOtherUsersFollowing(
     final followingQuery =
         await accessUserFollowingCollection(queryUser.id).get();
     for (final following in followingQuery.docs) {
-      if (following.id == Helper.uId) {
+      if (following.id == Constants.uId) {
         await accessUserFollowingCollection(queryUser.id)
-            .doc(Helper.uId)
+            .doc(Constants.uId)
             .update(_mobileTokenMap(mobileToken));
       }
     }
@@ -222,9 +230,9 @@ Future<void> _updateMobileTokenInOtherUsersFollowers(
     final followersQuery =
         await accessUserFollowersCollection(queryUser.id).get();
     for (final follower in followersQuery.docs) {
-      if (follower.id == Helper.uId) {
+      if (follower.id == Constants.uId) {
         await accessUserFollowersCollection(queryUser.id)
-            .doc(Helper.uId)
+            .doc(Constants.uId)
             .update(_mobileTokenMap(mobileToken));
       }
     }
@@ -234,12 +242,12 @@ Future<void> _updateMobileTokenInOtherUsersFollowers(
 Future<void> _updateMobileTokenInChats(String? mobileToken) async {
   final usersQuery = await accessUsersCollection().get();
   for (final queryUser in usersQuery.docs) {
-    if (queryUser.id != Helper.uId) {
+    if (queryUser.id != Constants.uId) {
       final chatQuery = await queryUser.reference
           .collection(AppStrings.chatsCollection)
           .get();
       for (final chat in chatQuery.docs) {
-        if (chat.id == Helper.uId) {
+        if (chat.id == Constants.uId) {
           await chat.reference.update(_mobileTokenMap(mobileToken));
         }
       }

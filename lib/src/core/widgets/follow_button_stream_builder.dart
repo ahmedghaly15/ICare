@@ -5,7 +5,7 @@ import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_state.dart';
 
@@ -36,7 +36,7 @@ class FollowButtonStreamBuilder extends StatelessWidget {
                 width: 1.w,
               ),
               backgroundColor: isFollowed
-                  ? (isDarkModeActive(context)
+                  ? (context.isDarkModeActive
                       ? AppColors.scaffoldDarkModeBackgroundColor
                       : Colors.white)
                   : AppColors.primaryColor,

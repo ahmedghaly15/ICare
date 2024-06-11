@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
 
 class FrequentlyAskedQuestion extends StatelessWidget {
@@ -25,7 +25,7 @@ class FrequentlyAskedQuestion extends StatelessWidget {
           vertical: 8.h,
           horizontal: 16.w,
         ),
-        backgroundColor: isDarkModeActive(context)
+        backgroundColor: context.isDarkModeActive
             ? AppColors.lightBlue
             : AppColors.lightGrey3,
         shape: RoundedRectangleBorder(
@@ -34,8 +34,7 @@ class FrequentlyAskedQuestion extends StatelessWidget {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         elevation: 0,
         textStyle: AppTextStyles.textStyle12Regular,
-        foregroundColor:
-            isDarkModeActive(context) ? Colors.white : Colors.black,
+        foregroundColor: context.isDarkModeActive ? Colors.white : Colors.black,
       ),
       child: Text(question),
     );

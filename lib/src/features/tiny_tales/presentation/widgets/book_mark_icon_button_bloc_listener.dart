@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
@@ -52,16 +52,16 @@ class BookmarkIconButtonBlocListener extends StatelessWidget {
                         .unBookmarkTinyTale(tinyTale.tinyTaleId!);
                   }
                 : () {
-                    if (tinyTale.user!.uId != Helper.uId) {
+                    if (tinyTale.user!.uId != Constants.uId) {
                       context
                           .read<NotificationsCubit>()
                           .sendNotification(ICareNotification(
                             to: tinyTale.user!.mobileToken!,
                             body:
-                                '${Helper.currentUser!.name} bookmarked your tiny tale',
+                                '${Constants.currentUser!.name} bookmarked your tiny tale',
                             receiverId: tinyTale.user!.uId!,
                             tinyTale: tinyTale,
-                            user: Helper.currentUser,
+                            user: Constants.currentUser,
                           ));
                     }
                     context.read<TinyTalesCubit>().bookmarkTinyTale(tinyTale);
@@ -69,7 +69,7 @@ class BookmarkIconButtonBlocListener extends StatelessWidget {
             icon: SvgPicture.asset(
               isTinyTaleBookmarkedByMe
                   ? AppAssets.svgsOrangeBookmarkIcon
-                  : (isDarkModeActive(context)
+                  : (context.isDarkModeActive
                       ? AppAssets.svgsBookmarkIcon
                       : (isTinyTaleContainsImage
                           ? AppAssets.svgsBookmarkIcon

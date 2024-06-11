@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 
 CollectionReference<Map<String, dynamic>> accessUsersCollection() {
@@ -21,7 +21,7 @@ CollectionReference<Map<String, dynamic>> accessUserFollowingCollection(
 CollectionReference<Map<String, dynamic>>
     accessBookmarkedTinyTalesCollection() {
   return accessUsersCollection()
-      .doc(Helper.uId)
+      .doc(Constants.uId)
       .collection(AppStrings.bookmarkedTinyTalesCollection);
 }
 
@@ -72,13 +72,13 @@ CollectionReference<Map<String, dynamic>> accessCommentRepliesLikesCollection(
 CollectionReference<Map<String, dynamic>>
     accessCurrentUserNotificationsCollection() {
   return accessUsersCollection()
-      .doc(Helper.uId)
+      .doc(Constants.uId)
       .collection(AppStrings.notificationsCollection);
 }
 
 CollectionReference<Map<String, dynamic>> accessTipsCollection() {
   return accessUsersCollection()
-      .doc(Helper.uId)
+      .doc(Constants.uId)
       .collection(AppStrings.tipsCollection);
 }
 
@@ -86,6 +86,6 @@ CollectionReference<Map<String, dynamic>> accessCurrentUserChatsCollection() {
   return getIt
       .get<FirebaseFirestore>()
       .collection(AppStrings.usersCollection)
-      .doc(Helper.uId)
+      .doc(Constants.uId)
       .collection(AppStrings.chatsCollection);
 }

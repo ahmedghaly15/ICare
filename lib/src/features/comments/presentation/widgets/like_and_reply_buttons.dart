@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
@@ -41,7 +41,7 @@ class LikeAndReplyButtons extends StatelessWidget {
           style: TextButton.styleFrom(
             padding: EdgeInsets.all(6.h),
             foregroundColor:
-                isDarkModeActive(context) ? Colors.white54 : AppColors.darkGrey,
+                context.isDarkModeActive ? Colors.white54 : AppColors.darkGrey,
             textStyle: AppTextStyles.textStyle13Bold,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             minimumSize: Size.zero,

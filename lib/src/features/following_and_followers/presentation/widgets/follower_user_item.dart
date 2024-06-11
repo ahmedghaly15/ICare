@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
@@ -67,7 +67,7 @@ class FollowerUserItem extends StatelessWidget {
             ),
           ),
           MySizedBox.width10,
-          user.uId != Helper.uId
+          user.uId != Constants.uId
               ? FollowButtonStreamBuilder(user: user)
               : const SizedBox.shrink(),
         ],

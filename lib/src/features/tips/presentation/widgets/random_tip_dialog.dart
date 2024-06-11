@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/icare_dialog_content.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_state.dart';
@@ -18,7 +18,7 @@ class RandomTipDialog extends StatelessWidget {
     return ICareDialogContent(
       appLogoBoxShadow: [
         BoxShadow(
-          color: isDarkModeActive(context)
+          color: context.isDarkModeActive
               ? Colors.black
               : Colors.black.withOpacity(0.25),
           offset: const Offset(0, -4),
@@ -28,7 +28,7 @@ class RandomTipDialog extends StatelessWidget {
         ),
       ],
       gradient: LinearGradient(
-        colors: isDarkModeActive(context)
+        colors: context.isDarkModeActive
             ? <Color>[
                 AppColors.darkOrange,
                 AppColors.deepBrown,

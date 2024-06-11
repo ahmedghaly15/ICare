@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/action_dialog.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
@@ -23,7 +23,7 @@ class ProfilePhotoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return userId == Helper.uId
+    return userId == Constants.uId
         ? GestureDetector(
             onLongPress: () {
               ShowICareDialog.show(

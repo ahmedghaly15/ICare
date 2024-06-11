@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
@@ -32,10 +32,10 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
                 .read<NotificationsCubit>()
                 .sendNotification(ICareNotification(
                   to: receiver.mobileToken!,
-                  title: Helper.currentUser!.name!,
+                  title: Constants.currentUser!.name!,
                   body: message,
                   receiverId: receiver.uId,
-                  user: Helper.currentUser,
+                  user: Constants.currentUser,
                   isMessage: true,
                 ));
           },

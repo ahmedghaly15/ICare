@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 
 class DiseaseInfoSectionItem extends StatelessWidget {
   const DiseaseInfoSectionItem({
@@ -35,7 +35,7 @@ class DiseaseInfoSectionItem extends StatelessWidget {
         decoration: BoxDecoration(
           color: isActive
               ? AppColors.primaryColor
-              : (isDarkModeActive(context)
+              : (context.isDarkModeActive
                   ? AppColors.lightBlue
                   : AppColors.lightGrey),
           borderRadius: BorderRadius.all(Radius.circular(50.r)),
@@ -45,7 +45,7 @@ class DiseaseInfoSectionItem extends StatelessWidget {
           style: AppTextStyles.textStyle10Bold.copyWith(
             color: isActive
                 ? Colors.white
-                : (isDarkModeActive(context) ? Colors.white : Colors.black),
+                : (context.isDarkModeActive ? Colors.white : Colors.black),
           ),
         ),
       ),

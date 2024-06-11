@@ -5,10 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/features/home/data/models/custom_drawer_item.dart';
 import 'package:icare/src/features/home/data/models/home_ai_feature.dart';
@@ -93,7 +93,7 @@ class AppUtils {
   static BoxDecoration surahItemDecoration(BuildContext context) =>
       BoxDecoration(
         borderRadius: BorderRadius.circular(50.r),
-        color: isDarkModeActive(context)
+        color: context.isDarkModeActive
             ? AppColors.scaffoldDarkModeBackgroundColor
             : Colors.white,
         boxShadow: <BoxShadow>[

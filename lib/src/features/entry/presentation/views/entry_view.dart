@@ -5,9 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 @RoutePage()
@@ -20,17 +20,17 @@ class EntryView extends StatefulWidget {
 
 class _EntryViewState extends State<EntryView> {
   void _goToNextView() {
-    Helper.uId =
+    Constants.uId =
         getIt.get<CacheHelper>().getStringData(key: AppStrings.cachedUserId);
 
     bool? onboarding =
         getIt.get<CacheHelper>().getBoolData(key: AppStrings.cachedOnboarding);
 
     if (onboarding != null) {
-      if (Helper.uId != null) {
+      if (Constants.uId != null) {
         context.replaceRoute(const BottomNavBarRoute());
         context.read<UserCubit>().getUserData().then((value) {
-          debugPrint('****** CURRENT USER:${Helper.currentUser} ******');
+          debugPrint('****** CURRENT USER:${Constants.currentUser} ******');
         });
       } else {
         context.replaceRoute(const StartRoute());
@@ -55,11 +55,11 @@ class _EntryViewState extends State<EntryView> {
         // systemNavigationBarColor: Colors.transparent,
         statusBarColor: Colors.transparent,
         statusBarBrightness:
-            isDarkModeActive(context) ? Brightness.dark : Brightness.light,
+            context.isDarkModeActive ? Brightness.dark : Brightness.light,
         statusBarIconBrightness:
-            isDarkModeActive(context) ? Brightness.light : Brightness.dark,
+            context.isDarkModeActive ? Brightness.light : Brightness.dark,
         systemNavigationBarIconBrightness:
-            isDarkModeActive(context) ? Brightness.dark : Brightness.light,
+            context.isDarkModeActive ? Brightness.dark : Brightness.light,
       ),
     );
   }

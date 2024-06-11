@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 
 class NotificationIconStreamBuilder extends StatelessWidget {
@@ -21,7 +21,7 @@ class NotificationIconStreamBuilder extends StatelessWidget {
                     Icons.notifications_outlined,
                     size: 24.h,
                     color:
-                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                        context.isDarkModeActive ? Colors.white : Colors.black,
                   ),
                   PositionedDirectional(
                     top: 2.h,
@@ -36,7 +36,7 @@ class NotificationIconStreamBuilder extends StatelessWidget {
             : Icon(
                 Icons.notifications_outlined,
                 size: 24.h,
-                color: isDarkModeActive(context) ? Colors.white : Colors.black,
+                color: context.isDarkModeActive ? Colors.white : Colors.black,
               );
       },
     );

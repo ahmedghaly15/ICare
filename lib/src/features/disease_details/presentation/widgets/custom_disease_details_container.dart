@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_utils.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
 class CustomDiseaseDetailsContainer extends StatelessWidget {
@@ -22,13 +22,13 @@ class CustomDiseaseDetailsContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(25.r)),
-        boxShadow: isDarkModeActive(context)
+        boxShadow: context.isDarkModeActive
             ? [
                 AppUtils.primaryBoxShadow,
               ]
             : null,
         gradient: LinearGradient(
-          colors: isDarkModeActive(context)
+          colors: context.isDarkModeActive
               ? <Color>[
                   AppColors.darkOrange,
                   AppColors.deepBrown,

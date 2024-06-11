@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -104,11 +104,11 @@ class CustomTextFormField extends StatelessWidget {
         onFieldSubmitted: onSubmit,
         onChanged: onChanged,
         style: style ?? _customTextFieldTextStyle(context),
-        cursorColor: isDarkModeActive(context) ? Colors.white : Colors.black,
+        cursorColor: context.isDarkModeActive ? Colors.white : Colors.black,
         decoration: InputDecoration(
           filled: filled ?? true,
           fillColor: fillColor ??
-              (isDarkModeActive(context)
+              (context.isDarkModeActive
                   ? AppColors.lightBlue
                   : AppColors.secondaryColor),
           errorStyle: AppTextStyles.textStyle13Light.copyWith(
@@ -120,9 +120,9 @@ class CustomTextFormField extends StatelessWidget {
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           suffixIconColor:
-              isDarkModeActive(context) ? Colors.white : Colors.black,
+              context.isDarkModeActive ? Colors.white : Colors.black,
           prefixIconColor:
-              isDarkModeActive(context) ? Colors.white : Colors.black,
+              context.isDarkModeActive ? Colors.white : Colors.black,
           labelText: label,
           labelStyle: Theme.of(context).textTheme.titleSmall,
           contentPadding: contentPadding ??
@@ -156,7 +156,7 @@ class CustomTextFormField extends StatelessWidget {
 
   TextStyle _customTextFieldTextStyle(BuildContext context) {
     return AppTextStyles.textStyle10Regular.copyWith(
-      color: isDarkModeActive(context) ? Colors.white : Colors.black,
+      color: context.isDarkModeActive ? Colors.white : Colors.black,
     );
   }
 

@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/core/models/no_params.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/services/local_notifications/local_notification.dart';
 import 'package:icare/src/core/services/local_notifications/local_notifications_service.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -41,7 +41,7 @@ class TipsCubit extends Cubit<TipsState> {
   }
 
   Future<void> _setIsDoneToFalse() async {
-    await accessTipsCollection().doc(Helper.uId).update({
+    await accessTipsCollection().doc(Constants.uId).update({
       AppStrings.cachedIsDone: false,
     });
   }
@@ -76,13 +76,13 @@ class TipsCubit extends Cubit<TipsState> {
   }
 
   Future<void> _saveIsDone() async {
-    return await accessTipsCollection().doc(Helper.uId).set({
+    return await accessTipsCollection().doc(Constants.uId).set({
       AppStrings.cachedIsDone: isDone,
     });
   }
 
   Future<void> _getSavedIsDone() async {
-    final isDoneQuery = await accessTipsCollection().doc(Helper.uId).get();
+    final isDoneQuery = await accessTipsCollection().doc(Constants.uId).get();
     isDone = isDoneQuery.data()?[AppStrings.cachedIsDone] ?? false;
     debugPrint(
         '******* =>>>>>>>> IS DONE ${isDoneQuery.data()?[AppStrings.cachedIsDone]}');

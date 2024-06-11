@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_sliver_app_bar.dart';
 import 'package:icare/src/core/widgets/send_message_text_field.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat/chat_cubit.dart';
@@ -32,7 +32,7 @@ class ChatsViewBody extends StatelessWidget {
                         hintText: AppStrings.search,
                         hasShadow: false,
                         borderSide: BorderSide(
-                          color: isDarkModeActive(context)
+                          color: context.isDarkModeActive
                               ? AppColors.lightBlue
                               : Colors.black,
                         ),
@@ -47,7 +47,7 @@ class ChatsViewBody extends StatelessWidget {
                         context.read<ChatCubit>().invertIsSearching(),
                     icon: Icon(
                       isSearching ? Icons.cancel : Icons.search_rounded,
-                      color: isDarkModeActive(context)
+                      color: context.isDarkModeActive
                           ? Colors.white
                           : Colors.black,
                     ),

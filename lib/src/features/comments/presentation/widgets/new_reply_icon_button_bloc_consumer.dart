@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -31,16 +31,17 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
             ShowICareDialog.showICareDialogError(context, error);
           },
           typeNewCommentReplySuccess: (_) {
-            if (params.comment!.user!.uId != Helper.uId) {
+            if (params.comment!.user!.uId != Constants.uId) {
               context
                   .read<NotificationsCubit>()
                   .sendNotification(ICareNotification(
                     to: params.comment!.user!.mobileToken!,
-                    body: '${Helper.currentUser!.name} replied on your comment',
+                    body:
+                        '${Constants.currentUser!.name} replied on your comment',
                     receiverId: params.comment!.user!.uId,
                     comment: params.comment,
                     tinyTaleId: params.tinyTaleId,
-                    user: Helper.currentUser,
+                    user: Constants.currentUser,
                   ));
             }
           },

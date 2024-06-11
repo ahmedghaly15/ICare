@@ -7,7 +7,7 @@ import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
 import 'package:icare/src/features/tiny_tales/presentation/cubits/tiny_tales/tiny_tales_cubit.dart';
@@ -34,7 +34,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
             context.pushRoute(CommentsRoute(tinyTale: tinyTale));
           },
           icon: SvgPicture.asset(
-            isDarkModeActive(context)
+            context.isDarkModeActive
                 ? AppAssets.svgsCommentIcon
                 : (isTinyTaleContainsImage
                     ? AppAssets.svgsCommentIcon
@@ -51,7 +51,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
             return Text(
               '$commentsCount',
               style: AppTextStyles.textStyle13Bold.copyWith(
-                color: isDarkModeActive(context)
+                color: context.isDarkModeActive
                     ? AppColors.white80Percent
                     : (isTinyTaleContainsImage
                         ? AppColors.white80Percent
@@ -74,7 +74,7 @@ class LikeCommentBookmarkButtons extends StatelessWidget {
             return Text(
               '$likesCount',
               style: AppTextStyles.textStyle13Bold.copyWith(
-                color: isDarkModeActive(context)
+                color: context.isDarkModeActive
                     ? AppColors.white80Percent
                     : (isTinyTaleContainsImage
                         ? AppColors.white80Percent

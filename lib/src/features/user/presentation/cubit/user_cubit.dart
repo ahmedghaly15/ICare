@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
@@ -41,7 +41,7 @@ class UserCubit extends Cubit<UserState> {
     final remoteUser = await getUserDataUseCase(const NoParams());
     remoteUser.when(
       success: (data) {
-        Helper.currentUser = data;
+        Constants.currentUser = data;
         emit(UserState.getUserData(data));
       },
       error: (error) =>
@@ -59,9 +59,9 @@ class UserCubit extends Cubit<UserState> {
         emit(const UserState.followSuccess());
         context.read<NotificationsCubit>().sendNotification(ICareNotification(
               to: user.mobileToken!,
-              body: '${Helper.currentUser!.name} is now following you',
+              body: '${Constants.currentUser!.name} is now following you',
               receiverId: user.uId,
-              user: Helper.currentUser,
+              user: Constants.currentUser,
             ));
       },
       error: (error) => emit(UserState.followError(error.failureMsg ?? '')),
@@ -98,7 +98,7 @@ class UserCubit extends Cubit<UserState> {
 
   Stream<bool> userIsInFollowing(String uId) {
     return accessUsersCollection()
-        .doc(Helper.uId!)
+        .doc(Constants.uId!)
         .collection(AppStrings.followingCollection)
         .doc(uId)
         .snapshots()
@@ -107,7 +107,7 @@ class UserCubit extends Cubit<UserState> {
 
   Stream<bool> userIsInFollowers(String userId) {
     return accessUsersCollection()
-        .doc(Helper.uId!)
+        .doc(Constants.uId!)
         .collection(AppStrings.followersCollection)
         .doc(userId)
         .snapshots()
@@ -149,16 +149,16 @@ class UserCubit extends Cubit<UserState> {
   }
 
   void _handleFollowUnfollowSuccess(ICareUser user) {
-    if (user.uId == Helper.uId) {
+    if (user.uId == Constants.uId) {
       _removeCachedFollowers().then((removed) {
         if (removed) {
-          getFollowers(Helper.currentUser!);
+          getFollowers(Constants.currentUser!);
         }
       });
     } else {
       _removeCachedFollowing().then((removed) {
         if (removed) {
-          getFollowing(Helper.currentUser!);
+          getFollowing(Constants.currentUser!);
         }
       });
     }

@@ -1,4 +1,4 @@
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 
@@ -12,7 +12,7 @@ class ProfileDatasourceImpl implements ProfileDatasource {
   @override
   Future<void> deletePhotoFromPhotos(String imageId) async {
     await accessUsersCollection()
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .collection(AppStrings.photos)
         .doc(imageId)
         .delete();

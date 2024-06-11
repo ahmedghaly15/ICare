@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/functions/open_url.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/tiny_tales/data/models/tiny_tale.dart';
@@ -28,7 +28,7 @@ class TinyTaleItem extends StatelessWidget {
             Linkify(
               text: tinyTale.tinyTaleData!.text!.trim(),
               style: AppTextStyles.textStyle14Regular.copyWith(
-                color: isDarkModeActive(context) ? Colors.white : Colors.black,
+                color: context.isDarkModeActive ? Colors.white : Colors.black,
               ),
               onOpen: (link) => openUrl(link),
             )

@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor/baby_cry_predictor_cubit.dart';
 
 class NotifyingUserAboutEnhancingDialog extends StatelessWidget {
@@ -17,7 +17,7 @@ class NotifyingUserAboutEnhancingDialog extends StatelessWidget {
         Text(
           AppStrings.notifyingUserAboutEnhancingAIModel,
           style: AppTextStyles.textStyle14Regular.copyWith(
-            color: isDarkModeActive(context) ? Colors.white : Colors.black,
+            color: context.isDarkModeActive ? Colors.white : Colors.black,
           ),
           textAlign: TextAlign.center,
         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 
 class CustomDrawerIconButton extends StatelessWidget {
   const CustomDrawerIconButton({super.key});
@@ -10,7 +10,7 @@ class CustomDrawerIconButton extends StatelessWidget {
       onPressed: () => Scaffold.of(context).openDrawer(),
       icon: Icon(
         Icons.menu,
-        color: isDarkModeActive(context) ? Colors.white : Colors.black,
+        color: context.isDarkModeActive ? Colors.white : Colors.black,
       ),
     );
   }

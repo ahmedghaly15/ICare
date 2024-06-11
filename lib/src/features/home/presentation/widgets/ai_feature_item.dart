@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_utils.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/home/data/models/home_ai_feature.dart';
 
@@ -21,12 +21,12 @@ class AIFeatureItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 20.h),
       decoration: BoxDecoration(
-        color: isDarkModeActive(context)
+        color: context.isDarkModeActive
             ? AppColors.scaffoldDarkModeBackgroundColor
             : Colors.white,
         borderRadius: BorderRadius.circular(25.r),
         boxShadow: <BoxShadow>[
-          isDarkModeActive(context)
+          context.isDarkModeActive
               ? BoxShadow(
                   offset: Offset(0, 6.h),
                   blurRadius: 4.w,
@@ -42,7 +42,7 @@ class AIFeatureItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(25.r),
         ),
-        splashColor: isDarkModeActive(context) ? AppColors.lightBlue : null,
+        splashColor: context.isDarkModeActive ? AppColors.lightBlue : null,
         child: Row(
           children: <Widget>[
             Expanded(

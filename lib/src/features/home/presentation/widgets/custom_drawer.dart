@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_divider.dart';
 import 'package:icare/src/features/home/presentation/widgets/custom_home_drawer_header.dart';
@@ -15,7 +15,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: SizeConfig.width * 0.7,
-      color: isDarkModeActive(context)
+      color: context.isDarkModeActive
           ? AppColors.scaffoldDarkModeBackgroundColor
           : Colors.white,
       padding: EdgeInsets.only(

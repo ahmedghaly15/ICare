@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/animated_empty_view.dart';
@@ -15,7 +15,7 @@ class ThisUserEmptyAnimatedFollowingOrFollowers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return uId == Helper.uId
+    return uId == Constants.uId
         ? const SliverFillRemaining(
             child: AnimatedEmptyFollowingOrFollowers(
               title: AppStrings.notFollowingAnyone,

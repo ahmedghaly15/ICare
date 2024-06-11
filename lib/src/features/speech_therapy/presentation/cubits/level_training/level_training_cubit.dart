@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/utils/size_config.dart';
@@ -100,7 +100,7 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
   void _mark({required int id, required int level}) async {
     emit(const LevelTrainingState.markLoading());
     final result = await _markUseCase.call(MarkParams(
-      userId: Helper.uId!,
+      userId: Constants.uId!,
       audioFile: File(_audioPath!),
       id: id,
       level: level,
@@ -146,7 +146,7 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
     emit(const LevelTrainingState.advancedLevelMarkingLoading());
     final result = await _advancedLevelMarkingUseCase.call(
       MarkParams(
-        userId: Helper.uId!,
+        userId: Constants.uId!,
         id: id,
         audioFile: File(_audioPath!),
         ayahNum: selectedAyah?.ayahNum,

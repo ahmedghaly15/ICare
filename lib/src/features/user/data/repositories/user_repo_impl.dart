@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/firebase/firebase_error_handler.dart';
 import 'package:icare/src/core/firebase/firebase_request_result.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_firebase_errors.dart';
 import 'package:icare/src/features/user/data/datasources/user_local_datasource.dart';
@@ -54,7 +54,7 @@ class UserRepoImpl implements UserRepo {
   Future<FirebaseRequestResult<List<ICareUser>>> getFollowers(
     ICareUser user,
   ) async {
-    if (user.uId == Helper.uId) {
+    if (user.uId == Constants.uId) {
       return await _getCurrentUserFollowers(user);
     } else {
       return executeAndHandleFirebaseErrors<List<ICareUser>>(
@@ -89,7 +89,7 @@ class UserRepoImpl implements UserRepo {
 
   @override
   Future<FirebaseRequestResult<List<ICareUser>>> getFollowing(ICareUser user) {
-    if (user.uId == Helper.uId) {
+    if (user.uId == Constants.uId) {
       return _getCurrentUserFollowing(user);
     } else {
       return executeAndHandleFirebaseErrors<List<ICareUser>>(

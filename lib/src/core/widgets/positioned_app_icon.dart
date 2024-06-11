@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 
 class PositionedAppIcon extends StatelessWidget {
   const PositionedAppIcon({super.key, this.boxShadow});
@@ -17,14 +17,14 @@ class PositionedAppIcon extends StatelessWidget {
         height: 48.h,
         width: 48.h,
         decoration: BoxDecoration(
-          color: isDarkModeActive(context)
+          color: context.isDarkModeActive
               ? AppColors.scaffoldDarkModeBackgroundColor
               : Colors.white,
           shape: BoxShape.circle,
           boxShadow: boxShadow ??
               <BoxShadow>[
                 BoxShadow(
-                  color: isDarkModeActive(context)
+                  color: context.isDarkModeActive
                       ? Colors.black
                       : Colors.black.withOpacity(0.25),
                   offset: const Offset(0, 0),

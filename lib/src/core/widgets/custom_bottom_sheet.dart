@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +25,7 @@ class ShowCustomImageBottomSheet {
       ),
       showDragHandle: true,
       enableDrag: true,
-      backgroundColor: isDarkModeActive(context)
+      backgroundColor: context.isDarkModeActive
           ? AppColors.scaffoldDarkModeBackgroundColor
           : Colors.white,
     );
@@ -47,7 +47,7 @@ class CustomImageBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomSheet(
-      backgroundColor: isDarkModeActive(context)
+      backgroundColor: context.isDarkModeActive
           ? AppColors.scaffoldDarkModeBackgroundColor
           : Colors.white,
       onClosing: () => context.maybePop(),
@@ -61,8 +61,7 @@ class CustomImageBottomSheet extends StatelessWidget {
               Text(
                 "Pick a $type Picture",
                 style: AppTextStyles.textStyle18Bold.copyWith(
-                  color:
-                      isDarkModeActive(context) ? Colors.white : Colors.black,
+                  color: context.isDarkModeActive ? Colors.white : Colors.black,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -130,7 +129,7 @@ class ImageCircle extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 16.h,
-        backgroundColor: isDarkModeActive(context)
+        backgroundColor: context.isDarkModeActive
             ? AppColors.scaffoldDarkModeBackgroundColor
             : Colors.white,
         shape: const CircleBorder(),

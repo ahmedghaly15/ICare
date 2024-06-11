@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 
@@ -19,7 +19,7 @@ class TipsLocalDataSourceImpl implements TipsLocalDataSource {
   @override
   Future<bool> cacheRandomTip(GetRandomTipResponse randomTip) async {
     return await getIt.get<CacheHelper>().saveData(
-          key: '${AppStrings.cachedRandomTip}${Helper.uId}',
+          key: '${AppStrings.cachedRandomTip}${Constants.uId}',
           value: json.encode(randomTip.toJson()),
         );
   }
@@ -28,7 +28,7 @@ class TipsLocalDataSourceImpl implements TipsLocalDataSource {
   GetRandomTipResponse getCachedRandomTip() {
     final String? cachedRandomTip = getIt
         .get<CacheHelper>()
-        .getStringData(key: '${AppStrings.cachedRandomTip}${Helper.uId}');
+        .getStringData(key: '${AppStrings.cachedRandomTip}${Constants.uId}');
 
     if (cachedRandomTip != null) {
       return GetRandomTipResponse.fromJson(json.decode(cachedRandomTip));

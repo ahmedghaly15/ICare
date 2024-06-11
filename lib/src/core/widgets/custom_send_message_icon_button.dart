@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 
 class CustomSendMessageIconButton extends StatelessWidget {
   const CustomSendMessageIconButton({
@@ -19,7 +19,7 @@ class CustomSendMessageIconButton extends StatelessWidget {
       radius: 20.r,
       backgroundColor: isEnabled
           ? AppColors.primaryColor
-          : (isDarkModeActive(context) ? AppColors.lightBlue : Colors.grey),
+          : (context.isDarkModeActive ? AppColors.lightBlue : Colors.grey),
       child: IconButton(
         style: IconButton.styleFrom(
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -52,7 +52,7 @@ class CommentItem extends StatelessWidget {
             ),
           ],
         ),
-        if (comment.user!.uId == Helper.uId)
+        if (comment.user!.uId == Constants.uId)
           Flexible(
             child: CommentMoreIconButtonBlocListener(
               tinyTaleId: tinyTaleId,

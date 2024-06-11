@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 
 class CustomRefreshIndicator extends StatelessWidget {
   const CustomRefreshIndicator({
@@ -15,7 +15,7 @@ class CustomRefreshIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      backgroundColor: isDarkModeActive(context)
+      backgroundColor: context.isDarkModeActive
           ? AppColors.scaffoldDarkModeBackgroundColor
           : Colors.white,
       color: AppColors.primaryColor,

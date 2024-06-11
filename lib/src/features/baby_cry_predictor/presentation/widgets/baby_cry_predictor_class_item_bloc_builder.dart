@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/models/baby_cry_predictor_class.dart';
 import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/baby_cry_predictor_feedback/bab_cry_predictor_feedback_cubit.dart';
@@ -29,7 +29,7 @@ class BabyCryPredictorClassItemBlocBuilder extends StatelessWidget {
         return Container(
           margin: EdgeInsets.only(bottom: 15.h),
           decoration: BoxDecoration(
-            color: isDarkModeActive(context)
+            color: context.isDarkModeActive
                 ? AppColors.lightBlue
                 : AppColors.lightGrey2,
             borderRadius: BorderRadius.circular(25.r),

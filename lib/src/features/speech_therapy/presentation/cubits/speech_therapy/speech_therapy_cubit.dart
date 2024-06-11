@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/speech_therapy/data/models/advanced_level_marking_response.dart';
@@ -48,7 +48,7 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
 
   void getLevelOneTrainingData() async {
     emit(const SpeechTherapyState.getLevelOneTrainingDataLoading());
-    final result = await _getLevelOneTrainingDataUseCase.call(Helper.uId!);
+    final result = await _getLevelOneTrainingDataUseCase.call(Constants.uId!);
     result.when(
       success: (data) =>
           emit(SpeechTherapyState.getLevelOneTrainingDataSuccess(data)),
@@ -61,7 +61,7 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
 
   void getLevelTwoTrainingData() async {
     emit(const SpeechTherapyState.getLevelTwoTrainingDataLoading());
-    final result = await _getLevelTwoTrainingDataUseCase.call(Helper.uId!);
+    final result = await _getLevelTwoTrainingDataUseCase.call(Constants.uId!);
     result.when(
       success: (data) =>
           emit(SpeechTherapyState.getLevelTwoTrainingDataSuccess(data)),
@@ -75,7 +75,7 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
   void getScore(int level) async {
     emit(const SpeechTherapyState.getScoreLoading());
     final result = await _scoreUseCase.call(
-      ScoreParams(userId: Helper.uId!, level: level),
+      ScoreParams(userId: Constants.uId!, level: level),
     );
     result.when(
       success: (data) => emit(SpeechTherapyState.getScoreSuccess(data)),

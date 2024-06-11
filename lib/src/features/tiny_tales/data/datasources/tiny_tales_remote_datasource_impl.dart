@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/tiny_tales/data/datasources/tiny_tales_remote_datasource.dart';
@@ -20,7 +20,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
     CreateTinyTaleParams params,
   ) async {
     final TinyTale tinyTale = TinyTale(
-      user: Helper.currentUser,
+      user: Constants.currentUser,
       tinyTaleData: TinyTaleData(
         text: params.text,
         date: params.date,
@@ -39,19 +39,19 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   @override
   Future<void> likeTinyTale(LikeParams params) async {
     final LikeModel like = LikeModel(
-      user: Helper.currentUser,
+      user: Constants.currentUser,
       dateTime: DateTime.now().toString(),
     );
 
     return await accessTinyTaleLikesCollection(params.tinyTaleId)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .set(like.toJson());
   }
 
   @override
   Future<void> unLikeTinyTale(String tinyTaleId) async {
     return await accessTinyTaleLikesCollection(tinyTaleId)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .delete();
   }
 
@@ -159,7 +159,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
   @override
   Stream<bool> isTinyTaleLikedByMe(String tinyTaleId) {
     return accessTinyTaleLikesCollection(tinyTaleId)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .snapshots()
         .map((snapshot) => snapshot.exists);
   }
@@ -169,7 +169,7 @@ class TinyTalesRemoteDatasourceImpl implements TinyTalesRemoteDatasource {
     return getIt
         .get<FirebaseFirestore>()
         .collection(AppStrings.usersCollection)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .collection(AppStrings.bookmarkedTinyTalesCollection);
   }
 

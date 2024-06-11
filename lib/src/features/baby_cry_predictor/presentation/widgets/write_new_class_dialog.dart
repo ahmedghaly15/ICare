@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -26,7 +26,7 @@ class WriteNewClassDialog extends StatelessWidget {
           Text(
             AppStrings.correctReason,
             style: AppTextStyles.textStyle18Bold.copyWith(
-              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+              color: context.isDarkModeActive ? Colors.white : Colors.black,
             ),
           ),
           MySizedBox.height8,

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
 import 'package:icare/src/features/comments/data/datasources/comments_remote_datasource.dart';
@@ -21,7 +21,7 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
     TypeNewCommentParams typeCommentParams,
   ) async {
     final CommentModel comment = CommentModel(
-      user: Helper.currentUser,
+      user: Constants.currentUser,
       commentData: typeCommentParams.commentData,
       dateTime: Timestamp.now(),
     );
@@ -111,12 +111,12 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   @override
   Future<void> likeComment(LikeParams params) async {
     final LikeModel like = LikeModel(
-      user: Helper.currentUser,
+      user: Constants.currentUser,
       dateTime: DateTime.now().toString(),
     );
     return await accessCommentLikesCollection(
             params.tinyTaleId, params.commentId!)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .set(like.toJson());
   }
 
@@ -124,14 +124,14 @@ class CommentsRemoteDatasourceImpl implements CommentsRemoteDatasource {
   Future<void> unLikeComment(LikeParams params) async {
     return await accessCommentLikesCollection(
             params.tinyTaleId, params.commentId!)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .delete();
   }
 
   @override
   Stream<bool> isCommentLikedByMe(LikeParams params) {
     return accessCommentLikesCollection(params.tinyTaleId, params.commentId!)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .snapshots()
         .map((snapshot) => snapshot.exists);
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 
 class SendMessageTextField extends StatelessWidget {
@@ -30,7 +30,7 @@ class SendMessageTextField extends StatelessWidget {
       autofocus: autofocus,
       enabled: enabled,
       controller: controller,
-      fillColor: isDarkModeActive(context) ? AppColors.lightBlue : Colors.white,
+      fillColor: context.isDarkModeActive ? AppColors.lightBlue : Colors.white,
       boxShadow: hasShadow
           ? <BoxShadow>[
               BoxShadow(

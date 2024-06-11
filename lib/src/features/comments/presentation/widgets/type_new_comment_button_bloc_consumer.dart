@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -28,16 +28,16 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           typeNewCommentSuccess: (_) {
-            if (tinyTale.user!.uId != Helper.uId) {
+            if (tinyTale.user!.uId != Constants.uId) {
               context
                   .read<NotificationsCubit>()
                   .sendNotification(ICareNotification(
                     to: tinyTale.user!.mobileToken!,
                     body:
-                        '${Helper.currentUser!.name} commented on your tiny tale',
+                        '${Constants.currentUser!.name} commented on your tiny tale',
                     receiverId: tinyTale.user!.uId,
                     tinyTale: tinyTale,
-                    user: Helper.currentUser,
+                    user: Constants.currentUser,
                     isComment: true,
                   ));
             }

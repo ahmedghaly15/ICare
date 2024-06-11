@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 
 class AuthSmallSizeDescription extends StatelessWidget {
   const AuthSmallSizeDescription({
@@ -15,7 +15,7 @@ class AuthSmallSizeDescription extends StatelessWidget {
     return Text(
       description,
       style: AppTextStyles.textStyle13Light.copyWith(
-        color: isDarkModeActive(context) ? Colors.white : Colors.black,
+        color: context.isDarkModeActive ? Colors.white : Colors.black,
       ),
     );
   }

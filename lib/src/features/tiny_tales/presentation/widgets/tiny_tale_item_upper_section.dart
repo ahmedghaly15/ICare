@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/helpers/helper.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -51,7 +51,7 @@ class TinyTaleItemUpperSection extends StatelessWidget {
                   tinyTale.user!.name!,
                   style: AppTextStyles.textStyle15Bold.copyWith(
                     color:
-                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                        context.isDarkModeActive ? Colors.white : Colors.black,
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -61,14 +61,14 @@ class TinyTaleItemUpperSection extends StatelessWidget {
                 '${tinyTale.tinyTaleData!.date} at ${tinyTale.tinyTaleData!.time}',
                 style: AppTextStyles.textStyle10Regular.copyWith(
                   color:
-                      isDarkModeActive(context) ? Colors.white54 : Colors.grey,
+                      context.isDarkModeActive ? Colors.white54 : Colors.grey,
                 ),
               ),
             ],
           ),
         ),
         MySizedBox.width15,
-        if (tinyTale.user!.uId == Helper.uId)
+        if (tinyTale.user!.uId == Constants.uId)
           TinyTaleMoreIconButtonBlocListener(tinyTaleId: tinyTale.tinyTaleId!),
       ],
     );

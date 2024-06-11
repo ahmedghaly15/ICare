@@ -1,6 +1,6 @@
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/core/api/api_service.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/features/icare_bot/data/models/ask_icare_bot_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_response.dart';
@@ -36,7 +36,7 @@ class ICareBotRemoteDatasourceImpl implements ICareBotRemoteDatasource {
   @override
   Future<List<BookmarkICareBotMessageResponse>>
       retrieveICareBotBookmarks() async {
-    return await _apiService.retrieveICareBotBookmarks(Helper.uId!);
+    return await _apiService.retrieveICareBotBookmarks(Constants.uId!);
   }
 
   @override

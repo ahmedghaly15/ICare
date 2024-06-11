@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
@@ -45,7 +45,7 @@ class RecordingResultWidget extends StatelessWidget {
                   text: AppStrings.theBabyIs,
                   style: AppTextStyles.textStyle18Bold.copyWith(
                     color:
-                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                        context.isDarkModeActive ? Colors.white : Colors.black,
                   ),
                 ),
                 TextSpan(

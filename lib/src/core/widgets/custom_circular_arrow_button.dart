@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 
 class CustomCircularArrowButton extends StatelessWidget {
@@ -22,7 +22,7 @@ class CustomCircularArrowButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: SizeConfig.height * 0.008),
       decoration: BoxDecoration(
-        color: isDarkModeActive(context)
+        color: context.isDarkModeActive
             ? AppColors.lightBlue
             : AppColors.primaryColor,
         shape: BoxShape.circle,

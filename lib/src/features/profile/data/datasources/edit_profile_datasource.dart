@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:icare/dependency_injection.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
@@ -29,14 +29,14 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
   @override
   Future<void> updateUser(UpdateUserParams params) async {
     final ICareUser user = ICareUser(
-      email: params.email ?? Helper.currentUser!.email,
-      uId: Helper.uId,
-      name: params.name ?? Helper.currentUser!.name,
-      profileImage: params.profileImage ?? Helper.currentUser!.profileImage,
+      email: params.email ?? Constants.currentUser!.email,
+      uId: Constants.uId,
+      name: params.name ?? Constants.currentUser!.name,
+      profileImage: params.profileImage ?? Constants.currentUser!.profileImage,
     );
-    Helper.currentUser = user;
+    Constants.currentUser = user;
     Future.wait([
-      accessUsersCollection().doc(Helper.uId).update(user.toJson()),
+      accessUsersCollection().doc(Constants.uId).update(user.toJson()),
       _updateUserTinyTales(user),
       _updateUserTinyTalesLikes(user),
       _updateUserComments(user),
@@ -54,7 +54,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
   Future<void> _updateUserInNotifications(ICareUser iCareUser) async {
     final users = await accessUsersCollection().get();
     for (final user in users.docs) {
-      if (user.id == Helper.uId) {
+      if (user.id == Constants.uId) {
         final notifications =
             await accessCurrentUserNotificationsCollection().get();
         for (final notification in notifications.docs) {
@@ -136,7 +136,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
   Future<void> _updateUserTinyTales(ICareUser user) async {
     final tinyTalesQuery = await accessTinyTalesCollection().get();
     for (final tinyTale in tinyTalesQuery.docs) {
-      if (tinyTale.data()['user']?['uId'] == Helper.uId) {
+      if (tinyTale.data()['user']?['uId'] == Constants.uId) {
         await accessTinyTalesCollection().doc(tinyTale.id).update(
           {
             'user': user.toJson(),
@@ -152,9 +152,9 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       final tinyTaleLikes =
           await accessTinyTaleLikesCollection(tinyTale.id).get();
       for (final like in tinyTaleLikes.docs) {
-        if (like.id == Helper.uId) {
+        if (like.id == Constants.uId) {
           await accessTinyTaleLikesCollection(tinyTale.id)
-              .doc(Helper.uId)
+              .doc(Constants.uId)
               .update(
             {
               'user': user.toJson(),
@@ -170,7 +170,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     for (final tinyTale in tinyTalesQuery.docs) {
       final comments = await accessCommentsCollection(tinyTale.id).get();
       for (final comment in comments.docs) {
-        if (comment.data()['user']?['uId'] == Helper.uId) {
+        if (comment.data()['user']?['uId'] == Constants.uId) {
           await accessCommentsCollection(tinyTale.id).doc(comment.id).update(
             {
               'user': user.toJson(),
@@ -189,9 +189,9 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
         final commentLikes =
             await accessCommentLikesCollection(tinyTale.id, comment.id).get();
         for (final like in commentLikes.docs) {
-          if (like.id == Helper.uId) {
+          if (like.id == Constants.uId) {
             await accessCommentLikesCollection(tinyTale.id, comment.id)
-                .doc(Helper.uId)
+                .doc(Constants.uId)
                 .update(
               {
                 'user': user.toJson(),
@@ -211,7 +211,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
         final commentReplies =
             await accessCommentRepliesCollection(tinyTale.id, comment.id).get();
         for (final reply in commentReplies.docs) {
-          if (reply.data()['user']?['uId'] == Helper.uId) {
+          if (reply.data()['user']?['uId'] == Constants.uId) {
             await accessCommentRepliesCollection(tinyTale.id, comment.id)
                 .doc(reply.id)
                 .update(
@@ -237,10 +237,10 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
                   tinyTale.id, comment.id, reply.id)
               .get();
           for (final like in commentRepliesLikes.docs) {
-            if (like.id == Helper.uId) {
+            if (like.id == Constants.uId) {
               await accessCommentRepliesLikesCollection(
                       tinyTale.id, comment.id, reply.id)
-                  .doc(Helper.uId)
+                  .doc(Constants.uId)
                   .update(
                 {
                   'user': user.toJson(),
@@ -257,7 +257,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
     final bookmarkedTinyTalesQuery =
         await accessBookmarkedTinyTalesCollection().get();
     for (final tinyTale in bookmarkedTinyTalesQuery.docs) {
-      if (tinyTale.data()['user']?['uId'] == Helper.uId) {
+      if (tinyTale.data()['user']?['uId'] == Constants.uId) {
         await accessBookmarkedTinyTalesCollection().doc(tinyTale.id).update(
           {
             'user': user.toJson(),
@@ -273,9 +273,9 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       final followingQuery =
           await accessUserFollowingCollection(queryUser.id).get();
       for (final following in followingQuery.docs) {
-        if (following.id == Helper.uId) {
+        if (following.id == Constants.uId) {
           await accessUserFollowingCollection(queryUser.id)
-              .doc(Helper.uId)
+              .doc(Constants.uId)
               .update(user.toJson());
         }
       }
@@ -288,9 +288,9 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
       final followersQuery =
           await accessUserFollowersCollection(queryUser.id).get();
       for (final follower in followersQuery.docs) {
-        if (follower.id == Helper.uId) {
+        if (follower.id == Constants.uId) {
           await accessUserFollowersCollection(queryUser.id)
-              .doc(Helper.uId)
+              .doc(Constants.uId)
               .update(user.toJson());
         }
       }
@@ -305,7 +305,7 @@ class EditProfileDatasourceImpl implements EditProfileDatasource {
           .get();
 
       for (final chat in chatQuery.docs) {
-        if (chat.id == Helper.uId) {
+        if (chat.id == Constants.uId) {
           await chat.reference.update(user.toJson());
         }
       }

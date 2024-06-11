@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/icare_bot/presentation/cubits/icare_bot/icare_bot_cubit.dart';
 import 'package:icare/src/features/icare_bot/presentation/widgets/frequently_asked_question.dart';
@@ -23,7 +23,7 @@ class FrequentlyAskedQuestions extends StatelessWidget {
           Text(
             AppStrings.frequentlyAskedQuestions,
             style: AppTextStyles.textStyle16Bold.copyWith(
-              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+              color: context.isDarkModeActive ? Colors.white : Colors.black,
             ),
           ),
           MySizedBox.height18,

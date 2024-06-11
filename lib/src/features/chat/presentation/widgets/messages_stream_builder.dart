@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/features/chat/data/models/message_model.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_cubit.dart';
@@ -40,7 +40,7 @@ class MessagesStreamBuilder extends StatelessWidget {
                   itemBuilder: (_, index) {
                     return CustomMessageBubble(
                       message: messages[index],
-                      isMe: Helper.uId == messages[index].senderId,
+                      isMe: Constants.uId == messages[index].senderId,
                     );
                   },
                 )

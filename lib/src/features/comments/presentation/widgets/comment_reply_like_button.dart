@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/features/comments/data/models/comment_model.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
@@ -39,15 +39,15 @@ class CommentReplyLikeButton extends StatelessWidget {
                 replyId: reply.commentId,
               ),
             );
-        if (reply.user!.uId != Helper.uId) {
+        if (reply.user!.uId != Constants.uId) {
           context.read<NotificationsCubit>().sendNotification(ICareNotification(
                 to: reply.user!.mobileToken!,
-                body: '${Helper.currentUser!.name} liked your reply',
+                body: '${Constants.currentUser!.name} liked your reply',
                 receiverId: reply.user!.uId,
                 reply: reply,
                 comment: params.comment,
                 tinyTaleId: params.tinyTaleId,
-                user: Helper.currentUser,
+                user: Constants.currentUser,
               ));
         }
       },

@@ -9,7 +9,7 @@ import 'package:record/record.dart';
 
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
@@ -185,13 +185,13 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
 
   bool? _getHasUserNotifiedAboutEnhancingBool() {
     return getIt.get<CacheHelper>().getBoolData(
-          key: '${AppStrings.hasUserNotifiedAboutEnhancing}${Helper.uId}',
+          key: '${AppStrings.hasUserNotifiedAboutEnhancing}${Constants.uId}',
         );
   }
 
   Future<bool> cacheHasUserNotifiedAboutEnhancing() async {
     return await getIt.get<CacheHelper>().saveData(
-          key: '${AppStrings.hasUserNotifiedAboutEnhancing}${Helper.uId}',
+          key: '${AppStrings.hasUserNotifiedAboutEnhancing}${Constants.uId}',
           value: true,
         );
   }

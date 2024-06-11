@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/custom_disease_details_container.dart';
 import 'package:icare/src/features/disease_details/presentation/widgets/custom_title_container.dart';
 
@@ -36,7 +36,7 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                         child: Text(
                           entry.key,
                           style: AppTextStyles.textStyle16Bold.copyWith(
-                            color: isDarkModeActive(context)
+                            color: context.isDarkModeActive
                                 ? Colors.white
                                 : Colors.black,
                           ),
@@ -52,7 +52,7 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                             data: '${(entry.value as List<dynamic>)[index]}\n',
                             styleSheet: MarkdownStyleSheet(
                               p: AppTextStyles.textStyle14Regular.copyWith(
-                                color: isDarkModeActive(context)
+                                color: context.isDarkModeActive
                                     ? Colors.white
                                     : Colors.black,
                               ),
@@ -74,7 +74,7 @@ class CustomDiseaseDetailsTab extends StatelessWidget {
                 styleSheet: MarkdownStyleSheet(
                   p: AppTextStyles.textStyle14Regular.copyWith(
                     color:
-                        isDarkModeActive(context) ? Colors.white : Colors.black,
+                        context.isDarkModeActive ? Colors.white : Colors.black,
                   ),
                 ),
                 padding: EdgeInsets.zero,

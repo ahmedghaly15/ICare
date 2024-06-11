@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubits/edit_profile/edit_profile_state.dart';
 
@@ -27,8 +27,8 @@ class EditProfileImageBlocBuilder extends StatelessWidget {
         }
         return CircleAvatar(
           radius: 90.r,
-          backgroundImage:
-              NetworkImage(Helper.currentUser!.profileImage!) as ImageProvider,
+          backgroundImage: NetworkImage(Constants.currentUser!.profileImage!)
+              as ImageProvider,
           backgroundColor: AppColors.primaryColor,
         );
       },

@@ -3,7 +3,7 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/functions/open_url.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
@@ -30,7 +30,7 @@ class CommentItemContent extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.r),
-        color: isDarkModeActive(context)
+        color: context.isDarkModeActive
             ? AppColors.lightBlue
             : AppColors.lightGrey2,
       ),
@@ -40,7 +40,7 @@ class CommentItemContent extends StatelessWidget {
           Text(
             comment.user!.name!,
             style: AppTextStyles.textStyle15Bold.copyWith(
-              color: isDarkModeActive(context) ? Colors.white : Colors.black,
+              color: context.isDarkModeActive ? Colors.white : Colors.black,
             ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -50,7 +50,7 @@ class CommentItemContent extends StatelessWidget {
             Linkify(
               text: comment.commentData!.commentText!.trim(),
               style: AppTextStyles.textStyle13Regular.copyWith(
-                color: isDarkModeActive(context) ? Colors.white : Colors.black,
+                color: context.isDarkModeActive ? Colors.white : Colors.black,
               ),
               onOpen: (link) => openUrl(link),
             ),
@@ -71,7 +71,7 @@ class CommentItemContent extends StatelessWidget {
           Text(
             '${comment.commentData!.date} at ${comment.commentData!.time!}',
             style: AppTextStyles.textStyle10Regular.copyWith(
-              color: isDarkModeActive(context) ? Colors.white54 : Colors.grey,
+              color: context.isDarkModeActive ? Colors.white54 : Colors.grey,
             ),
           ),
         ],

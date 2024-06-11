@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -139,7 +139,7 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
     final imageQuery = await getIt
         .get<FirebaseFirestore>()
         .collection(AppStrings.usersCollection)
-        .doc(Helper.uId)
+        .doc(Constants.uId)
         .collection(AppStrings.photos)
         .add(photo.toJson());
     await imageQuery.update({'id': imageQuery.id});

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 
 class ScoreButton extends StatelessWidget {
@@ -18,7 +18,7 @@ class ScoreButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(16.h),
       decoration: BoxDecoration(
-        color: isDarkModeActive(context)
+        color: context.isDarkModeActive
             ? AppColors.scaffoldDarkModeBackgroundColor
             : AppColors.secondaryColor,
         borderRadius: BorderRadius.circular(25.r),

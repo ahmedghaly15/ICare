@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
-import 'package:icare/src/core/helpers/helper.dart';
+import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/profile/data/models/update_user_params.dart';
@@ -104,8 +104,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   }
 
   bool _controllersHaveNoChange() =>
-      (nameController.text == Helper.currentUser!.name &&
-          emailController.text == Helper.currentUser!.email);
+      (nameController.text == Constants.currentUser!.name &&
+          emailController.text == Constants.currentUser!.email);
 
   bool _isControllerEmpty() =>
       (nameController.text.isEmpty || emailController.text.isEmpty);
@@ -276,8 +276,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   }
 
   void _assignValuesToControllers() {
-    nameController.text = Helper.currentUser!.name!;
-    emailController.text = Helper.currentUser!.email!;
+    nameController.text = Constants.currentUser!.name!;
+    emailController.text = Constants.currentUser!.email!;
   }
 
   void _disposeController() {

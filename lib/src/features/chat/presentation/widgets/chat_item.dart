@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/icare_user.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
 import 'package:icare/src/core/widgets/custom_delete_pop_up_menu_button.dart';
 import 'package:icare/src/core/widgets/custom_divider.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -59,7 +59,7 @@ class ChatItem extends StatelessWidget {
           ),
           CustomDivider(
             isExpanded: false,
-            color: isDarkModeActive(context)
+            color: context.isDarkModeActive
                 ? Colors.white54
                 : const Color(0xff5A5A5B).withOpacity(0.5),
             thickness: 0.5,

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/utils/functions/is_dark_mode_active.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/features/user/presentation/cubit/user_cubit.dart';
 
 class FollowsYouStreamBuilder extends StatelessWidget {
@@ -22,7 +22,7 @@ class FollowsYouStreamBuilder extends StatelessWidget {
             ? Expanded(
                 child: Container(
                   padding: EdgeInsets.all(2.h),
-                  color: isDarkModeActive(context)
+                  color: context.isDarkModeActive
                       ? AppColors.lightBlue
                       : Colors.black26,
                   child: Center(
