@@ -95,7 +95,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         emit(RegisterState.success(params.uId));
       },
       error: (error) => emit(
-        RegisterState.error(error: error.failureMsg ?? 'Unknown'),
+        RegisterState.error(error: error.failureMsg ?? ''),
       ),
     );
   }

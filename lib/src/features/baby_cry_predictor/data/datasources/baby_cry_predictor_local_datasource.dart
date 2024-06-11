@@ -10,10 +10,9 @@ abstract class BabyCryPredictorLocalDatasource {
   Future<bool> cacheBabyCryPredictorClasses(
     List<BabyCryPredictorClass> classes,
   );
-  String? cachedBabyCryPredictorClassesJson();
+  String? getCachedJson(String key);
   List<BabyCryPredictorClass> retrieveCachedBabyCryPredictorClasses();
   Future<bool> cacheBabyCryPredictorLastResult(LastResultResponse lastResult);
-  String? cachedBabyCryPredictorLastResultJson();
   LastResultResponse retrieveCachedBabyCryPredictorLastResult();
 }
 
@@ -32,16 +31,15 @@ class BabyCryPredictorLocalDatasourceImpl
   }
 
   @override
-  String? cachedBabyCryPredictorClassesJson() {
-    return getIt
-        .get<CacheHelper>()
-        .getStringData(key: AppStrings.cachedBabyCryPredictorClasses);
+  String? getCachedJson(String key) {
+    return getIt.get<CacheHelper>().getStringData(key: key);
   }
 
   @override
   List<BabyCryPredictorClass> retrieveCachedBabyCryPredictorClasses() {
     final List<BabyCryPredictorClass> classes = <BabyCryPredictorClass>[];
-    for (final element in json.decode(cachedBabyCryPredictorClassesJson()!)) {
+    for (final element in json
+        .decode(getCachedJson(AppStrings.cachedBabyCryPredictorClasses)!)) {
       classes.add(BabyCryPredictorClass.fromJson(element));
     }
     return classes;
@@ -58,15 +56,9 @@ class BabyCryPredictorLocalDatasourceImpl
   }
 
   @override
-  String? cachedBabyCryPredictorLastResultJson() {
-    return getIt
-        .get<CacheHelper>()
-        .getStringData(key: AppStrings.cachedBabyCryPredictorLastResult);
-  }
-
-  @override
   LastResultResponse retrieveCachedBabyCryPredictorLastResult() {
     return LastResultResponse.fromJson(
-        json.decode(cachedBabyCryPredictorLastResultJson()!));
+      json.decode(getCachedJson(AppStrings.cachedBabyCryPredictorLastResult)!),
+    );
   }
 }

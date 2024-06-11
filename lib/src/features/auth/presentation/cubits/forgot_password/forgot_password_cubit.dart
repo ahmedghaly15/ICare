@@ -31,9 +31,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
 
   void forgotPassword() async {
     emit(const ForgotPasswordState.loading());
-
     final response = await _forgotPasswordUseCase(emailController.text.trim());
-
     response.when(
       success: (data) => emit(const ForgotPasswordState.success()),
       error: (error) => emit(

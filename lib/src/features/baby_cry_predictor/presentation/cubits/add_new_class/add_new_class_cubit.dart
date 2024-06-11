@@ -6,6 +6,7 @@ import 'package:icare/src/features/baby_cry_predictor/presentation/cubits/add_ne
 
 class AddNewClassCubit extends Cubit<AddNewClassState> {
   final BabyCryPredictorAddNewClassUseCase _babyCryPredictorAddNewClassUseCase;
+
   AddNewClassCubit(
     this._babyCryPredictorAddNewClassUseCase,
   ) : super(const AddNewClassState.initial()) {

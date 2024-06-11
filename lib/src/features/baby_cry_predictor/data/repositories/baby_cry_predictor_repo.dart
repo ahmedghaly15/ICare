@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:icare/src/core/api/api_error_handler.dart';
 import 'package:icare/src/core/api/api_result.dart';
+import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/execute_and_handle_errors.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_predictor_local_datasource.dart';
 import 'package:icare/src/features/baby_cry_predictor/data/datasources/baby_cry_predictor_remote_datasource.dart';
@@ -30,7 +31,8 @@ class BabyCryPredictorRepo {
 
   Future<ApiResult<List<BabyCryPredictorClass>>>
       getBabyCryPredictorClasses() async {
-    if (_babyCryPredictorLocalDatasource.cachedBabyCryPredictorClassesJson() !=
+    if (_babyCryPredictorLocalDatasource
+            .getCachedJson(AppStrings.cachedBabyCryPredictorClasses) !=
         null) {
       debugPrint('*********** GOT CACHED CLASSES **********');
       return ApiResult.success(
@@ -53,7 +55,7 @@ class BabyCryPredictorRepo {
 
   Future<ApiResult<LastResultResponse>> getBabyCryPredictorLastResult() async {
     if (_babyCryPredictorLocalDatasource
-            .cachedBabyCryPredictorLastResultJson() !=
+            .getCachedJson(AppStrings.cachedBabyCryPredictorLastResult) !=
         null) {
       debugPrint('*********** GOT CACHED LAST RESULT **********');
       return ApiResult.success(

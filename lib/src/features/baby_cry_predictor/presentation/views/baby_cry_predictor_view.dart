@@ -13,9 +13,9 @@ class BabyCryPredictorView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<BabyCryPredictorCubit>(
       create: (_) => getIt.get<BabyCryPredictorCubit>()
-        ..showNotifyingUserAboutEnhancingDialog(context)
+        ..notifyingUserAboutEnhancing(context)
         ..getBabyCryPredictorLastResult(context),
       child: this,
     );

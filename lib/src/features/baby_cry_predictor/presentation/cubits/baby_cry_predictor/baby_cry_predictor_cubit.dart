@@ -166,7 +166,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     }
   }
 
-  void showNotifyingUserAboutEnhancingDialog(BuildContext context) {
+  void notifyingUserAboutEnhancing(BuildContext context) {
     bool? hasUserNotifiedAboutEnhancing =
         _getHasUserNotifiedAboutEnhancingBool();
     if (hasUserNotifiedAboutEnhancing == null) {

@@ -65,7 +65,6 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
   void _forgotPassword(BuildContext context) {
     if (context.read<ForgotPasswordCubit>().formKey.currentState!.validate()) {
       AuthHelper.keyboardUnfocus(context);
-
       context.read<ForgotPasswordCubit>().forgotPassword();
     } else {
       setState(() {

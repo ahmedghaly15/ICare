@@ -19,7 +19,7 @@ class RegisterView extends StatelessWidget implements AutoRouteWrapper {
 
   @override
   Widget wrappedRoute(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<RegisterCubit>(
       create: (context) => getIt.get<RegisterCubit>(),
       child: this,
     );
