@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,9 +21,10 @@ class EntryView extends StatefulWidget {
 }
 
 class _EntryViewState extends State<EntryView> {
-  void _goToNextView() {
-    Constants.uId =
-        getIt.get<CacheHelper>().getStringData(key: AppStrings.cachedUserId);
+  void _goToNextView() async {
+    Constants.uId = await getIt
+        .get<CacheHelper>()
+        .getSecuredString(AppStrings.cachedUserId);
 
     bool? onboarding =
         getIt.get<CacheHelper>().getBoolData(key: AppStrings.cachedOnboarding);

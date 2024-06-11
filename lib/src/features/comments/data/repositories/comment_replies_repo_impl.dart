@@ -17,7 +17,8 @@ class CommentRepliesRepoImpl implements CommentRepliesRepo {
 
   @override
   Future<FirebaseRequestResult<void>> deleteCommentReply(
-      DeleteCommentParams params) {
+    DeleteCommentParams params,
+  ) {
     return executeAndHandleFirebaseErrors<void>(
       () async => await _commentRepliesDatasource.deleteCommentReply(params),
     );

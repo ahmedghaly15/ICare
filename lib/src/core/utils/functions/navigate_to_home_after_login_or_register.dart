@@ -25,10 +25,7 @@ void navigateToHomeAfterLoginOrRegister(
 ) async {
   Constants.uId = data;
   final String? mobileToken = await _getMobileToken();
-  getIt
-      .get<CacheHelper>()
-      .saveData(key: AppStrings.cachedUserId, value: data)
-      .then(
+  getIt.get<CacheHelper>().setSecuredString(AppStrings.cachedUserId, data).then(
     (_) {
       _updateMobileTokenAndNavigate(context, mobileToken);
     },

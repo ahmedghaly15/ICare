@@ -84,7 +84,8 @@ class BabyCryPredictorRepo {
   }
 
   Future<ApiResult<String>> babyCryPredictorUploadMissClassifying(
-      String className) async {
+    String className,
+  ) {
     return executeAndHandleErrors<String>(
       () async => await _babyCryPredictorRemoteDatasource
           .babyCryPredictorLeaveFeedback(className),
