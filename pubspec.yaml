@@ -87,6 +87,8 @@ dependencies:
   flutter_local_notifications: ^17.1.2
   # Provides API to request and check permissions on Android and iOS.
   permission_handler: ^11.3.1
+  # Provides API to store data in secure storage
+  flutter_secure_storage: ^9.2.2
 
 dev_dependencies:
   flutter_test:
