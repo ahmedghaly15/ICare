@@ -25,8 +25,8 @@ class TipsCubit extends Cubit<TipsState> {
   }
 
   Future<void> _initialization() async {
-    await _showOrNotShowTipDialogTimer();
     await _getSavedIsDone();
+    await _showOrNotShowTipDialogTimer();
     _updateRandomTipDialogOpacity();
     _showRandomTipDialog();
   }
@@ -35,12 +35,12 @@ class TipsCubit extends Cubit<TipsState> {
     _timer = Timer.periodic(
       const Duration(hours: 24),
       (Timer t) async {
-        await _setIsDoneToFalse();
+        await _setIsDoneToFalseInFirestore();
       },
     );
   }
 
-  Future<void> _setIsDoneToFalse() async {
+  Future<void> _setIsDoneToFalseInFirestore() async {
     await accessTipsCollection().doc(Constants.uId).update({
       AppStrings.cachedIsDone: false,
     });
