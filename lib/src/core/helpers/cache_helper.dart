@@ -63,6 +63,7 @@ class CacheHelper {
     }
     // Clear all data
     await clearData();
+    await clearAllSecuredData();
     // Restore the preserved values
     for (var entry in preservedValues.entries) {
       await saveData(key: entry.key, value: entry.value);
