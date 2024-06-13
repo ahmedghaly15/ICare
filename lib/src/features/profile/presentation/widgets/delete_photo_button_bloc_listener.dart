@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_state.dart';
@@ -22,7 +22,7 @@ class DeletePhotoButtonBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           deletePhotoError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
         );
       },

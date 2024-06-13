@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/chat/domain/usecases/also_delete_chat_for_other_user.dart';
 import 'package:icare/src/features/chat/domain/usecases/delete_chat.dart';
 import 'package:icare/src/features/chat/domain/usecases/get_chats.dart';
@@ -81,7 +81,7 @@ class ChatCubit extends Cubit<ChatState> {
         checkChatExistence(receiverId);
       },
       deleteChatError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
+        context.showICareDialogError(error);
       },
     );
   }

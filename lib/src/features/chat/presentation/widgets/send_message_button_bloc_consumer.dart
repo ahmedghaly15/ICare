@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_cubit.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat_details/chat_details_state.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
@@ -40,10 +40,10 @@ class SendMessageButtonBlocConsumer extends StatelessWidget {
                 ));
           },
           sendMessageError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
           uploadMessageImageError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
         );
       },

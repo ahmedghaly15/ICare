@@ -46,13 +46,21 @@ class SentenceContainerBlocBuilder extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     sentence,
-                    style: AppTextStyles.textStyle20Regular,
+                    style: AppTextStyles.textStyle20Regular.copyWith(
+                      color: context.isDarkModeActive
+                          ? Colors.white
+                          : Colors.black,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   MySizedBox.height15,
                   Text(
                     AppStrings.whoAmI,
-                    style: AppTextStyles.textStyle20Bold,
+                    style: AppTextStyles.textStyle20Bold.copyWith(
+                      color: context.isDarkModeActive
+                          ? Colors.white
+                          : Colors.black,
+                    ),
                   ),
                 ],
               ),

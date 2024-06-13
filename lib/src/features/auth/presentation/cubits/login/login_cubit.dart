@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/auth/data/models/create_firestore_user_params.dart';
 import 'package:icare/src/features/auth/data/models/auth_request_params.dart';
 import 'package:icare/src/features/auth/domain/usecases/create_firestore_user.dart';
@@ -106,7 +106,7 @@ class LoginCubit extends Cubit<LoginState> {
       },
       signInWithGoogleError: (error) {
         if (error != "type 'Null' is not a subtype of type 'UserCredential'") {
-          ShowICareDialog.showICareDialogError(context, error);
+          context.showICareDialogError(error);
         }
       },
     );

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -69,9 +70,8 @@ class ICareBotCubit extends Cubit<ICareBotState> {
   void _handleAskICareBotSuccess(
       GenerateContentResponse response, BuildContext context) {
     if (response.text == null) {
-      ShowICareDialog.show(
-        // ignore: use_build_context_synchronously
-        context: context,
+      // ignore: use_build_context_synchronously
+      context.showICareDialog(
         state: ICareDialogStates.warning,
         message: 'No response from API.',
       );
@@ -136,7 +136,7 @@ class ICareBotCubit extends Cubit<ICareBotState> {
     BuildContext context,
   ) {
     state.whenOrNull(
-      error: (error) => ShowICareDialog.showICareDialogError(context, error),
+      error: (error) => context.showICareDialogError(error),
     );
   }
 }

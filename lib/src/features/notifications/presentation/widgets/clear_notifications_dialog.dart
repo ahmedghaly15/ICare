@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
 import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/helpers/extensions.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/core/widgets/outlined_cancel_button.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
@@ -46,10 +45,10 @@ class ClearNotificationsDialog extends StatelessWidget {
                 listener: (context, state) {
                   state.whenOrNull(
                     clearNotificationsHistoryError: (error) {
-                      ShowICareDialog.showICareDialogError(context, error);
+                      context.showICareDialogError(error);
                     },
                     deleteNotificationError: (error) {
-                      ShowICareDialog.showICareDialogError(context, error);
+                      context.showICareDialogError(error);
                     },
                   );
                 },

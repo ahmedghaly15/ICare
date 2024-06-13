@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_countdown_timer/countdown_timer_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 
@@ -117,9 +118,8 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
         _startRecording(context);
         _convertIsRecording();
       } else {
-        ShowICareDialog.show(
-          // ignore: use_build_context_synchronously
-          context: context,
+        // ignore: use_build_context_synchronously
+        context.showICareDialog(
           state: ICareDialogStates.warning,
           message: AppStrings.microphonePermissionDenied,
         );
@@ -156,8 +156,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     if (lastResult.feeling != null && lastResult.photo != null) {
       // To build this dialog after the frame (UI) is built
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        ShowICareDialog.show(
-          context: context,
+        context.showICareDialog(
           padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 32.h),
           isBlurred: false,
           child: LastResultDialog(lastResult: lastResult),
@@ -172,8 +171,7 @@ class BabyCryPredictorCubit extends Cubit<BabyCryPredictorState> {
     if (hasUserNotifiedAboutEnhancing == null) {
       // To build this dialog after the frame (UI) is built
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        ShowICareDialog.show(
-          context: context,
+        context.showICareDialog(
           child: BlocProvider<BabyCryPredictorCubit>(
             create: (_) => getIt.get<BabyCryPredictorCubit>(),
             child: const NotifyingUserAboutEnhancingDialog(),

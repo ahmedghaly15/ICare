@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -20,14 +21,13 @@ class UpdatePasswordButtonBlocConsumer extends StatelessWidget {
         Navigator.pop(context);
         state.whenOrNull(
           updatePasswordSuccess: () {
-            ShowICareDialog.show(
-              context: context,
+            context.showICareDialog(
               state: ICareDialogStates.success,
               message: AppStrings.passwordUpdatedSuccessfully,
             );
           },
           updatePasswordError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
         );
       },

@@ -6,7 +6,6 @@ import 'package:icare/src/config/themes/themes_cubit.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/action_dialog.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/home/presentation/widgets/log_out_button_bloc_listener.dart';
 
@@ -38,8 +37,7 @@ class SwitchThemeAndSignOutButtons extends StatelessWidget {
         ),
         MaterialButton(
           onPressed: () {
-            ShowICareDialog.show(
-              context: context,
+            context.showICareDialog(
               child: const ActionDialog(
                 text: AppStrings.sureToLogoutQuestion,
                 actionButtonWidget: LogoutButtonBlocListener(),

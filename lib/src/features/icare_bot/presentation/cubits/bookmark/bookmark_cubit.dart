@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/icare_bot/data/models/bookmark_icare_bot_message_params.dart';
 import 'package:icare/src/features/icare_bot/data/models/delete_bookmark_params.dart';
 import 'package:icare/src/features/icare_bot/domain/usecases/bookmark_icare_bot_message.dart';
@@ -98,10 +98,10 @@ class BookmarkCubit extends Cubit<BookmarkState> {
         deleteBookmarkSuccess: (data) =>
             _handleDeleteBookmarkSuccessState(context),
         retrieveICareBotBookmarksError: (error) {
-          ShowICareDialog.showICareDialogError(context, error);
+          context.showICareDialogError(error);
         },
         deleteBookmarkError: (error) {
-          ShowICareDialog.showICareDialogError(context, error);
+          context.showICareDialogError(error);
         });
   }
 
@@ -124,7 +124,7 @@ class BookmarkCubit extends Cubit<BookmarkState> {
         _removeCachedBookmarks().then((_) => retrieveICareBotBookmarks());
       },
       bookmarkICareBotMessageError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
+        context.showICareDialogError(error);
       },
     );
   }

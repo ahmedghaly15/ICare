@@ -103,9 +103,8 @@ class CustomImageBottomSheet extends StatelessWidget {
     if (await Permission.storage.request().isGranted) {
       execute!();
     } else {
-      ShowICareDialog.show(
-        // ignore: use_build_context_synchronously
-        context: context,
+      // ignore: use_build_context_synchronously
+      context.showICareDialog(
         state: ICareDialogStates.warning,
         message: AppStrings.storagePermissionDenied,
       );

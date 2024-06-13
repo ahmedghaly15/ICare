@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/speech_therapy/data/models/advanced_level_marking_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/data/models/score_params.dart';
@@ -103,8 +103,7 @@ class SpeechTherapyCubit extends Cubit<SpeechTherapyState> {
     required String status,
     required String imageUrl,
   }) {
-    return ShowICareDialog.show(
-      context: context,
+    return context.showICareDialog(
       padding: EdgeInsets.zero,
       child: MarkSuccessDialog(
         status: status,

@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
 import 'package:rive/rive.dart';
 
@@ -10,7 +11,6 @@ import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/rive_utils.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/custom_text_form_field.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
 import 'package:icare/src/features/auth/presentation/cubits/login/login_cubit.dart';
@@ -133,15 +133,15 @@ class _LoginFormState extends State<LoginForm> {
         });
       },
       success: (data) {
-        _successLoginListener(data, context);
+        _successLoginListener(context, data: data);
       },
       error: (error) {
-        _errorLoginListener(error);
+        _errorLoginListener(context, error: error);
       },
     );
   }
 
-  void _successLoginListener(String data, BuildContext context) {
+  void _successLoginListener(BuildContext context, {required String data}) {
     checkTrigger.fire();
 
     Future.delayed(
@@ -160,7 +160,7 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 
-  void _errorLoginListener(String error) {
+  void _errorLoginListener(BuildContext context, {required String error}) {
     errorTrigger.fire();
 
     Future.delayed(const Duration(seconds: 2), () {
@@ -168,7 +168,7 @@ class _LoginFormState extends State<LoginForm> {
         isShowLoading = false;
       });
 
-      ShowICareDialog.showICareDialogError(context, error);
+      context.showICareDialogError(error);
     });
   }
 

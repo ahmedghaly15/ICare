@@ -5,11 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/src/config/router/app_router.dart';
 import 'package:icare/src/config/themes/app_colors.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/size_config.dart';
 import 'package:icare/src/core/widgets/custom_drawer_icon_button.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/home/presentation/widgets/ai_features_sliver_list.dart';
 import 'package:icare/src/features/home/presentation/widgets/notification_icon_stream_builder.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_cubit.dart';
@@ -37,8 +37,7 @@ class HomeViewBody extends StatelessWidget {
                     return IconButton(
                       icon: Image.asset(AppAssets.imagesAppLogo),
                       onPressed: () {
-                        ShowICareDialog.show(
-                          context: context,
+                        context.showICareDialog(
                           message: context.read<TipsCubit>().randomTip!.info,
                           anotherTitle: AppStrings.dailyRandomTip,
                         );

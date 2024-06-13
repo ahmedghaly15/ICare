@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/app_regex.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_home_after_login_or_register.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/auth/presentation/widgets/register/password_validations.dart';
 import 'package:rive/rive.dart';
 
@@ -217,15 +217,15 @@ class _RegisterFormState extends State<RegisterForm> {
         });
       },
       success: (data) {
-        _successListener(data, context);
+        _successListener(context, data: data);
       },
       error: (error) {
-        _errorListener(error);
+        _errorListener(context, error: error);
       },
     );
   }
 
-  void _errorListener(String error) {
+  void _errorListener(BuildContext context, {required String error}) {
     errorTrigger.fire();
 
     Future.delayed(const Duration(seconds: 2), () {
@@ -233,11 +233,11 @@ class _RegisterFormState extends State<RegisterForm> {
         isShowLoading = false;
       });
 
-      ShowICareDialog.showICareDialogError(context, error);
+      context.showICareDialogError(error);
     });
   }
 
-  void _successListener(String data, BuildContext context) {
+  void _successListener(BuildContext context, {required String data}) {
     checkTrigger.fire();
 
     Future.delayed(

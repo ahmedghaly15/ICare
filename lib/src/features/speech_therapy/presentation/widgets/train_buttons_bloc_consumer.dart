@@ -1,8 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/speech_therapy/data/models/mark_response.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_cubit.dart';
 import 'package:icare/src/features/speech_therapy/presentation/cubits/level_training/level_training_state.dart';
@@ -32,7 +32,7 @@ class TrainButtonsBlocConsumer extends StatelessWidget {
         listener: (context, state) {
           state.whenOrNull(
             markError: (error) {
-              ShowICareDialog.showICareDialogError(context, error);
+              context.showICareDialogError(error);
             },
             markSuccess: onMarkSuccess,
           );

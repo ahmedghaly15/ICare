@@ -47,12 +47,11 @@ class WriteNewClassDialog extends StatelessWidget {
               state.whenOrNull(
                 addNewClassError: (error) {
                   Navigator.pop(context);
-                  ShowICareDialog.showICareDialogError(context, error);
+                  context.showICareDialogError(error);
                 },
                 addNewClassSuccess: (_) {
                   Navigator.pop(context);
-                  ShowICareDialog.show(
-                    context: context,
+                  context.showICareDialog(
                     state: ICareDialogStates.success,
                     message: AppStrings.thankYouForFeedback,
                   );

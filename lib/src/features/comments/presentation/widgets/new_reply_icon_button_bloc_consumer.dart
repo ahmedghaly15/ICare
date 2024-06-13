@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/data/models/comment_replies_view_params.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_cubit.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comment_replies/comment_replies_state.dart';
@@ -28,7 +28,7 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           typeNewCommentReplyError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
           typeNewCommentReplySuccess: (_) {
             if (params.comment!.user!.uId != Constants.uId) {
@@ -46,7 +46,7 @@ class NewReplyIconButtonBlocConsumer extends StatelessWidget {
             }
           },
           uploadCommentReplyImageError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
         );
       },

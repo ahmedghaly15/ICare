@@ -8,9 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/get_date.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/tiny_tales/data/models/create_tiny_tale_params.dart';
 import 'package:icare/src/features/profile/data/models/photo.dart';
 import 'package:icare/src/features/tiny_tales/domain/usecases/create_tiny_tale.dart';
@@ -155,7 +155,7 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
         createNewTinyTaleController.clear();
       },
       createTinyTaleError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
+        context.showICareDialogError(error);
       },
       uploadTinyTaleImageSuccess: (imageUrl) {
         _saveImageUrlInFirebaseFirestore(imageUrl).then((value) {
@@ -164,7 +164,7 @@ class NewTinyTaleCubit extends Cubit<NewTinyTaleState> {
         });
       },
       uploadTinyTaleImageError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
+        context.showICareDialogError(error);
       },
     );
   }

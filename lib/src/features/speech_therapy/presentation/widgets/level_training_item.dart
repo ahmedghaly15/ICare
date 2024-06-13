@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/app_utils.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
@@ -32,8 +33,7 @@ class LevelTrainingItem extends StatelessWidget {
         onTap: available
             ? onTap
             : () {
-                ShowICareDialog.show(
-                  context: context,
+                context.showICareDialog(
                   state: ICareDialogStates.error,
                   message: AppStrings.youAreAlmostThere,
                 );

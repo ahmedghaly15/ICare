@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/custom_send_message_icon_button.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_cubit.dart';
 import 'package:icare/src/features/comments/presentation/cubits/comments/comments_state.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
@@ -43,10 +43,10 @@ class TypeNewCommentButtonBlocConsumer extends StatelessWidget {
             }
           },
           typeNewCommentError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
           uploadCommentImageError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
         );
       },

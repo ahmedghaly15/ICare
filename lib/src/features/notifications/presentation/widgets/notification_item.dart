@@ -7,7 +7,6 @@ import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/functions/navigate_to_user_profile.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/my_sized_box.dart';
 import 'package:icare/src/features/notifications/data/models/icare_notification.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
@@ -32,8 +31,7 @@ class NotificationItem extends StatelessWidget {
             .navigateToNotificationView(context, notification);
       },
       onLongPress: () {
-        ShowICareDialog.show(
-          context: context,
+        context.showICareDialog(
           child: ClearNotificationsDialog(
             text: AppStrings.sureToDeleteThisNotification,
             clearButtonText: AppStrings.delete,

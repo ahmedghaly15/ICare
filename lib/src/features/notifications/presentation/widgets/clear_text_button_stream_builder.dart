@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/notifications/presentation/cubits/notifications_cubit.dart';
 import 'package:icare/src/features/notifications/presentation/widgets/clear_notifications_dialog.dart';
 
@@ -18,8 +18,7 @@ class ClearTextButtonStreamBuilder extends StatelessWidget {
         return isNotificationNotEmpty
             ? TextButton(
                 onPressed: () {
-                  ShowICareDialog.show(
-                    context: context,
+                  context.showICareDialog(
                     child: ClearNotificationsDialog(
                       text: AppStrings.sureToClearNotificationsHistory,
                       clearButtonText: AppStrings.clear,

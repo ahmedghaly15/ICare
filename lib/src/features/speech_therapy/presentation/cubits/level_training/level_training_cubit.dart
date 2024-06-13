@@ -4,6 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/generate_audio_path_random_id.dart';
 import 'package:icare/src/core/utils/size_config.dart';
@@ -128,9 +129,8 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
         // ignore: use_build_context_synchronously
         await _startRecording(context);
       } else {
-        ShowICareDialog.show(
-          // ignore: use_build_context_synchronously
-          context: context,
+        // ignore: use_build_context_synchronously
+        context.showICareDialog(
           state: ICareDialogStates.warning,
           message: AppStrings.microphonePermissionDenied,
         );
@@ -171,9 +171,8 @@ class LevelTrainingCubit extends Cubit<LevelTrainingState> {
         // ignore: use_build_context_synchronously
         await _startRecording(context);
       } else {
-        ShowICareDialog.show(
-          // ignore: use_build_context_synchronously
-          context: context,
+        // ignore: use_build_context_synchronously
+        context.showICareDialog(
           state: ICareDialogStates.warning,
           message: AppStrings.microphonePermissionDenied,
         );

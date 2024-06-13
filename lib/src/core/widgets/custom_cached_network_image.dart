@@ -11,12 +11,16 @@ class CustomCachedNetworkImage extends StatelessWidget {
     this.imageBuilder,
     this.height,
     this.width,
+    this.fadeInDuration = const Duration(milliseconds: 500),
+    this.fadeOutDuration = const Duration(milliseconds: 1000),
   });
 
   final String imageUrl;
   final BoxFit fit;
   final Widget Function(BuildContext, ImageProvider<Object>)? imageBuilder;
   final double? height, width;
+  final Duration fadeInDuration;
+  final Duration? fadeOutDuration;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +30,8 @@ class CustomCachedNetworkImage extends StatelessWidget {
       width: height,
       height: width,
       imageBuilder: imageBuilder,
+      fadeInDuration: fadeInDuration,
+      fadeOutDuration: fadeOutDuration,
       errorWidget: (_, __, ___) => Icon(
         Icons.error,
         size: 22.h,

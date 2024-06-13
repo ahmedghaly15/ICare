@@ -7,7 +7,6 @@ import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/widgets/custom_delete_pop_up_menu_button.dart';
 import 'package:icare/src/core/widgets/custom_divider.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/core/widgets/user_item.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat/chat_cubit.dart';
 import 'package:icare/src/features/chat/presentation/cubit/chat/chat_state.dart';
@@ -48,8 +47,7 @@ class ChatItem extends StatelessWidget {
                 },
                 child: CustomDeletePopupMenuButton(
                   deleteOnPressed: () {
-                    ShowICareDialog.show(
-                      context: context,
+                    context.showICareDialog(
                       child: buildDeleteChatDialog(context, receiver: user),
                     );
                   },

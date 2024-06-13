@@ -25,7 +25,7 @@ class LevelsListViewBlocBuilder extends StatelessWidget {
             padding: EdgeInsets.zero,
             itemBuilder: (_, index) {
               return SpeechTherapyLevelItem(
-                onTap: () => moveToLevelDetails(state.levels[index], context),
+                onTap: () => _moveToLevelDetails(state.levels[index], context),
                 level: state.levels[index],
               );
             },
@@ -38,7 +38,7 @@ class LevelsListViewBlocBuilder extends StatelessWidget {
     );
   }
 
-  void moveToLevelDetails(SpeechTherapyLevel level, BuildContext context) {
+  void _moveToLevelDetails(SpeechTherapyLevel level, BuildContext context) {
     if (level.level == AppStrings.levelOne) {
       context.read<SpeechTherapyCubit>().getLevelOneTrainingData();
       context.pushRoute(const LevelOneRoute());

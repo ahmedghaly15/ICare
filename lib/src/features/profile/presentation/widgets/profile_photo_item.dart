@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/action_dialog.dart';
 import 'package:icare/src/core/widgets/custom_cached_network_image.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/profile/data/models/photo.dart';
 import 'package:icare/src/features/profile/presentation/cubits/profile/profile_cubit.dart';
 import 'package:icare/src/features/profile/presentation/widgets/delete_photo_button_bloc_listener.dart';
@@ -26,8 +26,7 @@ class ProfilePhotoItem extends StatelessWidget {
     return userId == Constants.uId
         ? GestureDetector(
             onLongPress: () {
-              ShowICareDialog.show(
-                context: context,
+              context.showICareDialog(
                 child: BlocProvider<ProfileCubit>(
                   create: (context) => getIt.get<ProfileCubit>(),
                   child: ActionDialog(

@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/config/router/app_router.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/models/no_params.dart';
 import 'package:icare/src/core/helpers/constants.dart';
 import 'package:icare/src/core/services/local_notifications/local_notification.dart';
 import 'package:icare/src/core/services/local_notifications/local_notifications_service.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/utils/functions/access_collections.dart';
-import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/tips/data/models/get_random_tip_response.dart';
 import 'package:icare/src/features/tips/domain/usecases/get_random_tip.dart';
 import 'package:icare/src/features/tips/presentation/cubit/tips_state.dart';
@@ -167,18 +167,16 @@ class TipsCubit extends Cubit<TipsState> {
     } else if (settings.authorizationStatus ==
         AuthorizationStatus.provisional) {
       debugPrint('User granted provisional permission');
-      ShowICareDialog.show(
-        // ignore: use_build_context_synchronously
-        context: context,
+      // ignore: use_build_context_synchronously
+      context.showICareDialog(
         anotherTitle: '',
         message:
             'The app is currently authorized to post non-interrupting user notifications.',
       );
     } else {
       debugPrint('User declined or has not accepted permission');
-      ShowICareDialog.show(
-        // ignore: use_build_context_synchronously
-        context: context,
+      // ignore: use_build_context_synchronously
+      context.showICareDialog(
         anotherTitle: '',
         message: 'Permissions declined or has not been accepted.',
       );

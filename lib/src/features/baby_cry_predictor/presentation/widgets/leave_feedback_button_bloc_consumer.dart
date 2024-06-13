@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icare/dependency_injection.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/custom_circular_progress_indicator.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
@@ -25,14 +26,13 @@ class LeaveFeedbackButtonBlocConsumer extends StatelessWidget {
             context
                 .read<BabyCryPredictorFeedbackCubit>()
                 .emitSelectedClassNull();
-            ShowICareDialog.show(
-              context: context,
+            context.showICareDialog(
               state: ICareDialogStates.success,
               message: AppStrings.thankYouForFeedback,
             );
           },
           leaveFeedbackError: (error) {
-            ShowICareDialog.showICareDialogError(context, error);
+            context.showICareDialogError(error);
           },
         );
       },
@@ -50,8 +50,7 @@ class LeaveFeedbackButtonBlocConsumer extends StatelessWidget {
                       .read<BabyCryPredictorFeedbackCubit>()
                       .babyCryPredictorLeaveFeedback()
                   : () {
-                      ShowICareDialog.show(
-                        context: context,
+                      context.showICareDialog(
                         isBlurred: false,
                         child: BlocProvider<AddNewClassCubit>(
                           create: (_) => getIt.get<AddNewClassCubit>(),

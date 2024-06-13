@@ -7,6 +7,7 @@ import 'package:icare/dependency_injection.dart';
 import 'package:icare/src/core/helpers/auth_helper.dart';
 import 'package:icare/src/core/helpers/cache_helper.dart';
 import 'package:icare/src/core/helpers/constants.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/icare_dialog.dart';
 import 'package:icare/src/features/profile/data/models/update_user_params.dart';
@@ -111,8 +112,7 @@ class EditProfileCubit extends Cubit<EditProfileState> {
       (nameController.text.isEmpty || emailController.text.isEmpty);
 
   void _showVerificationEmailSentDialog(BuildContext context) {
-    ShowICareDialog.show(
-      context: context,
+    context.showICareDialog(
       state: ICareDialogStates.success,
       message:
           'Verification email has been sent to this email. Please verify your email to change it.',
@@ -239,10 +239,10 @@ class EditProfileCubit extends Cubit<EditProfileState> {
         _handleSuccessStates(context);
       },
       editProfileError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
+        context.showICareDialogError(error);
       },
       uploadNewProfileImageError: (error) {
-        ShowICareDialog.showICareDialogError(context, error);
+        context.showICareDialogError(error);
       },
     );
   }
