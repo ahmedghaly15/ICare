@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
-import 'package:icare/src/core/utils/app_constants.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/widgets/custom_animated_dialog.dart';
@@ -9,78 +8,20 @@ import 'package:icare/src/core/widgets/my_sized_box.dart';
 
 enum ICareDialogStates { warning, success, error }
 
-class ShowICareDialog {
-  static Future show({
-    required BuildContext context,
-    ICareDialogStates? state,
-    String? message,
-    bool isBlurred = true,
-    String? anotherTitle,
-    Widget? child,
-    EdgeInsetsGeometry? padding,
-    List<BoxShadow>? appLogoBoxShadow,
-    Color backgroundColor = Colors.white,
-    Gradient? gradient,
-  }) async {
-    return await showGeneralDialog(
-      context: context,
-      barrierDismissible: true,
-      barrierLabel: '',
-      pageBuilder: (context, _, __) => const SizedBox.shrink(),
-      transitionDuration: AppConstants.dialogsTransitionDuration,
-      transitionBuilder: (context, animation1, animation2, widget) {
-        return child == null
-            ? ICareDialog(
-                animation1: animation1,
-                isBlurred: isBlurred,
-                padding: padding,
-                title: anotherTitle ?? _chooseDialogTitle(state!),
-                message: message,
-                backgroundColor: backgroundColor,
-                appLogoBoxShadow: appLogoBoxShadow,
-                gradient: gradient,
-              )
-            : ICareDialog(
-                animation1: animation1,
-                isBlurred: isBlurred,
-                padding: padding,
-                backgroundColor: backgroundColor,
-                appLogoBoxShadow: appLogoBoxShadow,
-                gradient: gradient,
-                child: child,
-              );
-      },
-    );
+String chooseDialogTitle(ICareDialogStates state) {
+  String title;
+  switch (state) {
+    case ICareDialogStates.error:
+      title = 'Opps!';
+      break;
+    case ICareDialogStates.warning:
+      title = 'Warning';
+      break;
+    case ICareDialogStates.success:
+      title = 'Success!';
+      break;
   }
-
-  static String _chooseDialogTitle(ICareDialogStates state) {
-    String title;
-    switch (state) {
-      case ICareDialogStates.error:
-        title = 'Opps!';
-        break;
-      case ICareDialogStates.warning:
-        title = 'Warning';
-        break;
-      case ICareDialogStates.success:
-        title = 'Success!';
-        break;
-    }
-    return title;
-  }
-
-  static Future<dynamic> showICareDialogError(
-    BuildContext context,
-    String error, {
-    bool isBlurred = true,
-  }) {
-    return show(
-      context: context,
-      state: ICareDialogStates.error,
-      message: error,
-      isBlurred: isBlurred,
-    );
-  }
+  return title;
 }
 
 class ICareDialog extends StatelessWidget {
