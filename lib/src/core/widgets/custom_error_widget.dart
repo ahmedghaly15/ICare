@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icare/src/config/themes/app_text_styles.dart';
+import 'package:icare/src/core/helpers/extensions.dart';
 import 'package:icare/src/core/utils/app_assets.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 import 'package:icare/src/core/widgets/primary_button.dart';
@@ -39,7 +40,9 @@ class CustomErrorWidget extends StatelessWidget {
           const Spacer(),
           Text(
             error,
-            style: AppTextStyles.textStyle16Bold,
+            style: AppTextStyles.textStyle16Bold.copyWith(
+              color: context.isDarkModeActive ? Colors.white : Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
           const Spacer(),

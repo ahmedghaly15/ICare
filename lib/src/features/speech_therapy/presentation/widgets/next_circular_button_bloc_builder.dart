@@ -25,13 +25,15 @@ class NextCircularButtonBlocBuilder extends StatelessWidget {
                   sliver: SliverToBoxAdapter(
                     child: Align(
                       alignment: AlignmentDirectional.centerEnd,
-                      child: FadeInLeft(
-                        child: CustomCircularArrowButton(
-                          icon: Icons.arrow_forward_ios,
-                          onPressed: () {
-                            context.read<LevelTrainingCubit>().emitInitial();
-                            onPressed(state.data.next);
-                          },
+                      child: IntrinsicWidth(
+                        child: FadeInLeft(
+                          child: CustomCircularArrowButton(
+                            icon: Icons.arrow_forward_ios,
+                            onPressed: () {
+                              context.read<LevelTrainingCubit>().emitInitial();
+                              onPressed(state.data.next);
+                            },
+                          ),
                         ),
                       ),
                     ),

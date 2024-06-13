@@ -18,20 +18,18 @@ class LogoutButtonBlocListener extends StatelessWidget {
       listenWhen: (_, current) =>
           current is SignOutSuccess || current is SignOutError,
       listener: (context, state) {
-        state.whenOrNull(
-          signOutSuccess: () {
-            context.maybePop().then(
-              (value) {
+        context.maybePop().then((popped) {
+          if (popped) {
+            state.whenOrNull(
+              signOutSuccess: () {
                 context.router.replace(const StartRoute());
               },
+              signOutError: (error) {
+                context.showICareDialogError(error);
+              },
             );
-          },
-          signOutError: (error) {
-            context.maybePop().then((value) {
-              context.showICareDialogError(error);
-            });
-          },
-        );
+          }
+        });
       },
       child: PrimaryButton(
         onPressed: () => context.read<UserCubit>().logout(),
