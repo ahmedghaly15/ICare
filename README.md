@@ -1,6 +1,11 @@
 # ICare 👶❤️
 
+<p align="center">
+  <img src="assets/app_icon.png" alt="ICare Logo" width="120" height="120">
+</p>
+
 Welcome to **ICare**, a child care app designed to help mothers take care of their babies using various features and AI-assisted functionalities. Our mission is to provide mothers with the tools and community support they need to ensure their child's well-being and development.
+
 
 ## Table of Contents
 
@@ -64,7 +69,7 @@ We have implemented smooth animations and a friendly user interface to ensure a 
 
 ## Installation 🚀
 
-(https://www.mediafire.com/file/p9f89wxv63mgity/ICare.apk/file)[Download the APK]
+[Download the APK](https://www.mediafire.com/file/p9f89wxv63mgity/ICare.apk/file)
 
 ## Usage 📱
 Explore the various features of ICare once the application is up and running. Use the AI-assisted features, access medical information, connect with other mothers, and much more.
