@@ -10,11 +10,11 @@ Welcome to **ICare**, a child care app designed to help mothers take care of the
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [AI-Assisted Features](#ai-assisted-features)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
+- [AI-Assisted Features](#ai-assisted-features-🤖)
+- [Features](#features-🌟)
+- [Installation](#installation-🚀)
+- [Usage](#usage-📱)
+- [Screenshots](#screenshots-📸)
 
 ## Introduction
 
