@@ -15,9 +15,6 @@ Welcome to **ICare**, a child care app designed to help mothers take care of the
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Introduction
 
