@@ -6,9 +6,9 @@ import 'package:icare/src/core/models/icare_user.dart';
 import 'package:icare/src/core/utils/app_strings.dart';
 
 abstract class UserLocalDatasource {
-  Future<bool> cacheUser(ICareUser user);
-  ICareUser getCachedUser();
-  String? userJson();
+  Future<void> cacheUser(ICareUser user);
+  Future<ICareUser> getCachedUser();
+  Future<String?> userJson();
   Future<bool> cacheCurrentUserFollowers(List<ICareUser> followers);
   List<ICareUser> getCachedCurrentUserFollowers();
   String? currentUserFollowersJson();
@@ -21,21 +21,24 @@ class UserLocalDatasourceImpl implements UserLocalDatasource {
   const UserLocalDatasourceImpl();
 
   @override
-  Future<bool> cacheUser(ICareUser user) async {
-    return await getIt.get<CacheHelper>().saveData(
-          key: AppStrings.cachedUser,
-          value: json.encode(user.toJson()),
+  Future<void> cacheUser(ICareUser user) async {
+    return await getIt.get<CacheHelper>().setSecuredString(
+          AppStrings.cachedUser,
+          json.encode(user.toJson()),
         );
   }
 
   @override
-  ICareUser getCachedUser() {
-    return ICareUser.fromJson(json.decode(userJson()!));
+  Future<String?> userJson() async {
+    return await getIt
+        .get<CacheHelper>()
+        .getSecuredString(AppStrings.cachedUser);
   }
 
   @override
-  String? userJson() {
-    return getIt.get<CacheHelper>().getStringData(key: AppStrings.cachedUser);
+  Future<ICareUser> getCachedUser() async {
+    final String? user = await userJson();
+    return ICareUser.fromJson(json.decode(user!));
   }
 
   @override

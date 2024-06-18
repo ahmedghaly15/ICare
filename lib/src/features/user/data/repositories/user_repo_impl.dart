@@ -19,8 +19,10 @@ class UserRepoImpl implements UserRepo {
 
   @override
   Future<FirebaseRequestResult<ICareUser>> getUserData() async {
-    if (_userLocalDatasource.userJson() == null) {
+    final String? usersJson = await _userLocalDatasource.userJson();
+    if (usersJson == null || usersJson.isEmpty) {
       try {
+        debugPrint('********* GOT NOT CACHED USER DATA **********');
         final ICareUser user = await _userRemoteDataSource.getUserData();
         await _userLocalDatasource.cacheUser(user);
         return FirebaseRequestResult<ICareUser>.success(user);
@@ -30,9 +32,8 @@ class UserRepoImpl implements UserRepo {
       }
     } else {
       debugPrint('********* GOT CACHED USER DATA **********');
-      return FirebaseRequestResult<ICareUser>.success(
-        _userLocalDatasource.getCachedUser(),
-      );
+      final user = await _userLocalDatasource.getCachedUser();
+      return FirebaseRequestResult<ICareUser>.success(user);
     }
   }
 

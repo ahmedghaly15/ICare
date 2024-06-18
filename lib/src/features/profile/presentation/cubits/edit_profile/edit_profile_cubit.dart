@@ -248,16 +248,14 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   }
 
   void _handleSuccessStates(BuildContext context) {
-    getIt.get<CacheHelper>().removeData(key: AppStrings.cachedUser).then(
-      (value) {
-        if (value) {
-          debugPrint('*********** DELETE CACHED USER ***********');
-          context.read<UserCubit>().getUserData().then(
-            (value) {
-              context.read<TinyTalesCubit>().getBookmarkedTinyTales();
-            },
-          );
-        }
+    getIt.get<CacheHelper>().deleteSecuredString(AppStrings.cachedUser).then(
+      (_) {
+        debugPrint('*********** DELETE CACHED USER ***********');
+        context.read<UserCubit>().getUserData().then(
+          (value) {
+            context.read<TinyTalesCubit>().getBookmarkedTinyTales();
+          },
+        );
       },
     );
   }
